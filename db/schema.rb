@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2021_08_02_211001) do
   end
 
   create_table "destinations", force: :cascade do |t|
-    t.string "name"
     t.string "location"
     t.datetime "start_date"
     t.datetime "end_date"
