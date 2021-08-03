@@ -13,14 +13,14 @@
 ActiveRecord::Schema.define(version: 2021_08_02_211001) do
 
   create_table "activities", force: :cascade do |t|
-    t.integer "traveler_id_id", null: false
-    t.integer "destination_id_id", null: false
+    t.integer "traveler_id"
+    t.integer "destination_id"
     t.datetime "start_time"
     t.datetime "end_time"
     t.string "activity"
     t.string "description"
-    t.index ["destination_id_id"], name: "index_activities_on_destination_id_id"
-    t.index ["traveler_id_id"], name: "index_activities_on_traveler_id_id"
+    t.index ["destination_id"], name: "index_activities_on_destination_id"
+    t.index ["traveler_id"], name: "index_activities_on_traveler_id"
   end
 
   create_table "destinations", force: :cascade do |t|
@@ -33,6 +33,6 @@ ActiveRecord::Schema.define(version: 2021_08_02_211001) do
     t.string "name"
   end
 
-  add_foreign_key "activities", "destination_ids"
-  add_foreign_key "activities", "traveler_ids"
+  add_foreign_key "activities", "destinations"
+  add_foreign_key "activities", "travelers"
 end
