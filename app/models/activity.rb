@@ -1,4 +1,3 @@
 class Activity < ActiveRecord::Base
-    belongs_to :destination
-    belongs_to :traveler
+    belongs_to :day
 end

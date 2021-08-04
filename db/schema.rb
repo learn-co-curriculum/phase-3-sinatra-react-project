@@ -10,29 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_02_211001) do
+ActiveRecord::Schema.define(version: 2021_08_04_170501) do
 
   create_table "activities", force: :cascade do |t|
-    t.integer "traveler_id"
-    t.integer "destination_id"
+    t.integer "day_id"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.string "activity"
+    t.string "name"
     t.string "description"
-    t.index ["destination_id"], name: "index_activities_on_destination_id"
-    t.index ["traveler_id"], name: "index_activities_on_traveler_id"
+    t.index ["day_id"], name: "index_activities_on_day_id"
   end
 
-  create_table "destinations", force: :cascade do |t|
-    t.string "location"
-    t.datetime "start_date"
-    t.datetime "end_date"
+  create_table "days", force: :cascade do |t|
+    t.datetime "date"
+    t.integer "trip_id"
+    t.index ["trip_id"], name: "index_days_on_trip_id"
   end
 
   create_table "travelers", force: :cascade do |t|
     t.string "name"
   end
 
-  add_foreign_key "activities", "destinations"
-  add_foreign_key "activities", "travelers"
+  create_table "trips", force: :cascade do |t|
+    t.string "location"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer "traveler_id"
+    t.index ["traveler_id"], name: "index_trips_on_traveler_id"
+  end
+
+  add_foreign_key "activities", "days"
+  add_foreign_key "days", "trips"
+  add_foreign_key "trips", "travelers"
 end

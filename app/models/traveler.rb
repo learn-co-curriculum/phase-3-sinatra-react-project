@@ -1,5 +1,3 @@
 class Traveler < ActiveRecord::Base
-    has_many :activities, dependent: :destroy
-    has_many :destinations, through: :activities
-
+    has_many :trips, dependent: :destroy
 end
