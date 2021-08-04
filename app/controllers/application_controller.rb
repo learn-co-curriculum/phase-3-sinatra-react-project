@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
 
   # Days Paths
   post "/days" do
-    day = Day.find_or_create_by(day_params).to_json
+    params[:dates].map {|date| Day.find_or_create_by(date: date, trip_id: params[:trip_id])}.to_json
   end
 
 # Activities Paths
