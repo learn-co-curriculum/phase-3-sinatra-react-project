@@ -2,6 +2,11 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   # Destinations Paths
+  get "/trips" do
+    trips = Trip.all
+    trips.to_json(include: {days: {include: :activities}})
+  end
+
   post "/trips" do
     trip = Trip.find_or_create_by(trip_params).to_json
   end
