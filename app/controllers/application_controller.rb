@@ -2,6 +2,12 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
     # Destinations Paths
+
+    post "/notes" do
+      note = Note.create(note_params).to_json
+    end
+
+
     get "/trips/" do
       trips = Trip.all
       trips.to_json(include: {days: {include: :activities}})
@@ -13,7 +19,7 @@ class ApplicationController < Sinatra::Base
     end
 
     post "/trips" do
-      trip = Trip.find_or_create_by(trip_params).to_json
+      trip = Trip.create(trip_params).to_json
     end
 
     # Days Paths
@@ -39,6 +45,12 @@ class ApplicationController < Sinatra::Base
     end
 
     private
+
+    def note_params 
+      allowed_params = %w(note_text trip_id)
+      params.select {|param,value| allowed_params.include?(param)}
+    end
+
     def trip_params
       allowed_params = %w(location start_date end_date traveler_id)
       params.select {|param,value| allowed_params.include?(param)}

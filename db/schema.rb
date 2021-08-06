@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_04_170501) do
+ActiveRecord::Schema.define(version: 2021_08_06_021131) do
 
   create_table "activities", force: :cascade do |t|
     t.integer "day_id"
@@ -27,6 +27,12 @@ ActiveRecord::Schema.define(version: 2021_08_04_170501) do
     t.index ["trip_id"], name: "index_days_on_trip_id"
   end
 
+  create_table "notes", force: :cascade do |t|
+    t.string "note_text"
+    t.integer "trip_id", null: false
+    t.index ["trip_id"], name: "index_notes_on_trip_id"
+  end
+
   create_table "travelers", force: :cascade do |t|
     t.string "name"
   end
@@ -41,5 +47,6 @@ ActiveRecord::Schema.define(version: 2021_08_04_170501) do
 
   add_foreign_key "activities", "days"
   add_foreign_key "days", "trips"
+  add_foreign_key "notes", "trips"
   add_foreign_key "trips", "travelers"
 end
