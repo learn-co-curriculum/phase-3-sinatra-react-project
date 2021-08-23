@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/zookeepers" do 
-  zookeepeers = Zookeeper.all
+  zookeepers = Zookeeper.all
   zookeepers.to_json
 
   end
