@@ -1,3 +1,5 @@
+require 'faker'
+
 puts "Clearing old data..."
 
 AnimalLog.destroy_all
@@ -15,6 +17,18 @@ Animal.create(name: "Adam", image:'https://upload.wikimedia.org/wikipedia/common
 Animal.create(name: "Toni", image:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Walking_tiger_female.jpg/440px-Walking_tiger_female.jpg', birthdate: 'March 14, 1993', species: "Tiger")
 Animal.create(name: "Antonio", image:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Giraffe_Mikumi_National_Park.jpg/440px-Giraffe_Mikumi_National_Park.jpg', birthdate: 'September 13, 1986', species: "Giraffe")
 Animal.create(name: "Dakota", image:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Pomeranian.JPG/440px-Pomeranian.JPG', birthdate: 'February 2, 1987', species: "Pomeranian")
+
+25.times do
+
+    note = Faker::Quote.matz
+    zookeeper_id = rand(1..4) 
+    pooped = [true,false].sample
+    fed = [true, false].sample
+    animal_id = rand(1..4)
+
+    AnimalLog.create( note: note  , animal_id: animal_id, zookeeper_id: zookeeper_id , pooped: pooped , fed: fed)
+
+end
 
 
 puts "✅ Done seeding!"
