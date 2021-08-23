@@ -1,4 +1,4 @@
-puts "🌱 Starting games.."
+puts "🌱 Starting games..."
 
 20.times do
 
@@ -26,4 +26,4 @@ puts "Finished games, starting companies..."
 
 end
 
-puts "✅ Done seeding..!"
+puts "✅ Done seeding!"
