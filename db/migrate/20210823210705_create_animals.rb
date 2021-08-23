@@ -3,7 +3,7 @@ class CreateAnimals < ActiveRecord::Migration[6.1]
     create_table :animals do |t|
       t.string :name
       t.string :image
-      t.datetime :birthdate
+      t.string :birthdate
       t.string :species
     end
   end
