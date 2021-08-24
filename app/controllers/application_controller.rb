@@ -15,10 +15,8 @@ class ApplicationController < Sinatra::Base
     game = Game.find(params[:id])
     
     game.to_json(only: [:id, :title, :genre, :price], include: {
-      reviews: { only: [:comment, :score], include: {
-        user: { only: [:name] }
-      } }
-    })
+      company: { only: [:name] }
+      })
   end
 
   delete '/games/:id' do
@@ -37,6 +35,18 @@ class ApplicationController < Sinatra::Base
     )
     game.to_json
 
+  end
+
+  patch '/games/:id' do
+    game = Game.find(params[:id])
+    game.update(
+      name: params[:name],
+      release_date: params[:release_date],
+      price: params[:price],
+      genre: params[:genre],
+      company_id: params[:company_id]
+    )
+    game.to_json
   end
 
 
