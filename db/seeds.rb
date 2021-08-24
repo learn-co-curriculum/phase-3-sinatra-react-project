@@ -7,9 +7,10 @@ puts "🌱 Starting games..."
         name: Faker::Game.title,
         release_date: rand(1980..2021),
         price: rand(10..60),
+        company_id: rand(1..5),
         genre: Faker::Game.genre,
-        company_id: rand(1..5)
-
+        image: Faker::Avatar.image
+    
     )
 
 end

@@ -14,7 +14,7 @@ class ApplicationController < Sinatra::Base
   get '/games/:id' do
     game = Game.find(params[:id])
     
-    game.to_json(only: [:id, :title, :genre, :price], include: {
+    game.to_json(only: [:id, :name, :release_date, :genre, :price, :image], include: {
       company: { only: [:name] }
       })
   end
@@ -31,7 +31,8 @@ class ApplicationController < Sinatra::Base
       release_date: params[:release_date],
       price: params[:price],
       genre: params[:genre],
-      company_id: params[:company_id]
+      company_id: params[:company_id],
+      image: params[:image]
     )
     game.to_json
 
@@ -44,7 +45,8 @@ class ApplicationController < Sinatra::Base
       release_date: params[:release_date],
       price: params[:price],
       genre: params[:genre],
-      company_id: params[:company_id]
+      company_id: params[:company_id], 
+      image: params[:image]
     )
     game.to_json
   end
