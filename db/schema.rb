@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_23_210734) do
+ActiveRecord::Schema.define(version: 2021_08_24_075007) do
 
   create_table "animal_logs", force: :cascade do |t|
     t.string "note"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_08_23_210734) do
     t.string "image"
     t.string "birthdate"
     t.string "species"
+    t.string "sex"
   end
 
   create_table "zookeepers", force: :cascade do |t|
