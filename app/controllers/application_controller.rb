@@ -11,6 +11,21 @@ class ApplicationController < Sinatra::Base
     animal.to_json(include: :animal_logs)
   end
 
+  post "/animals" do 
+    animal = Animal.create(animal_params)
+    animal.to_json
+  end
+
+  delete "/animals/:id" do
+    animal = Animal.find(params[:id])
+    animal.destroy
+  end
+
+
+
+
+
+
   get "/zookeepers" do 
   zookeepers = Zookeeper.all
   zookeepers.to_json
@@ -63,6 +78,11 @@ class ApplicationController < Sinatra::Base
 
   def animal_log_params
     allowed_params = %w(animal_id log_time pooped fed updated_at id note)
+    params.select {|param,value| allowed_params.include?(param)}
+  end
+
+  def animal_params 
+    allowed_params =%w(name image birthdate species sex id)
     params.select {|param,value| allowed_params.include?(param)}
   end
 
