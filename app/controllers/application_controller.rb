@@ -27,6 +27,19 @@ class ApplicationController < Sinatra::Base
     game.to_json
   end
 
+  post '/games' do
+    game = Game.create(
+      name: params[:name],
+      release_date: params[:release_date],
+      price: params[:price],
+      genre: params[:genre],
+      company_id: params[:company_id]
+    )
+    game.to_json
+
+  end
+
+
 
 
 end
