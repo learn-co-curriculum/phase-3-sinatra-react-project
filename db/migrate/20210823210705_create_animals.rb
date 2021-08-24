@@ -5,6 +5,7 @@ class CreateAnimals < ActiveRecord::Migration[6.1]
       t.string :image
       t.string :birthdate
       t.string :species
+      t.string :sex
     end
   end
 end

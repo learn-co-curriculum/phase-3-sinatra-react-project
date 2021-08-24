@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_08_23_210734) do
     t.string "image"
     t.string "birthdate"
     t.string "species"
+    t.string "sex"
   end
 
   create_table "zookeepers", force: :cascade do |t|
