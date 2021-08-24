@@ -16,6 +16,12 @@ class ApplicationController < Sinatra::Base
     animal.to_json
   end
 
+  patch "/animals/:id" do
+    animal = Animal.find(params[:id])
+    animal.update(animal_params)
+    animal.to_json
+  end 
+
   delete "/animals/:id" do
     animal = Animal.find(params[:id])
     animal.destroy
