@@ -38,5 +38,4 @@ ActiveRecord::Schema.define(version: 2021_08_23_210734) do
   end
 
   add_foreign_key "animal_logs", "animals"
-  add_foreign_key "animal_logs", "zookeepers"
 end

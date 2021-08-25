@@ -28,10 +28,10 @@ Animal.create(name: "Didi", image:'https://images.costco-static.com/ImageDeliver
 25.times do
 
     note = Faker::Quote.matz
-    zookeeper_id = rand(1..4) 
+    zookeeper_id = rand(1..6) 
     pooped = [true,false].sample
     fed = [true, false].sample
-    animal_id = rand(1..4)
+    animal_id = rand(1..10)
 
     AnimalLog.create( note: note  , animal_id: animal_id, zookeeper_id: zookeeper_id , pooped: pooped , fed: fed)
 

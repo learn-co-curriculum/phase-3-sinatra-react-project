@@ -28,13 +28,21 @@ class ApplicationController < Sinatra::Base
   end
 
 
-
-
-
-
   get "/zookeepers" do 
   zookeepers = Zookeeper.all
   zookeepers.to_json
+  end
+
+  delete "/zookeepers/:id" do
+    zookeeper=Zookeeper.find(params[:id])
+    zookeeper.destroy
+    zookeeper.to_json()
+  end
+
+  patch "/zookeepers/:id" do
+    zookeeper = Zookeeper.find(params[:id])
+    zookeeper.update(name: params[:name], image: params[:image])
+    zookeeper.to_json()
   end
 
   post "/animal_logs" do 
