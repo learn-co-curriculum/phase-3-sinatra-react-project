@@ -34,6 +34,17 @@ class ApplicationController < Sinatra::Base
   zookeepers.to_json
   end
 
+  get "/zookeepers/:id" do 
+    zookeeper = Zookeeper.find(params[:id])
+    animals = zookeeper.animals.uniq
+    animals.to_json
+  end
+
+  post "/zookeepers" do 
+    zookeeper = Zookeeper.create(zookeeper_params)
+    zookeeper.to_json
+  end
+
   delete "/zookeepers/:id" do
     zookeeper=Zookeeper.find(params[:id])
     zookeeper.destroy
@@ -74,6 +85,15 @@ class ApplicationController < Sinatra::Base
     animalLog.to_json(methods: [:formatted_time])
   end
 
+  # get "/animals/filtered/:id" do
+  
+  # end
+
+  # get "/animal_logs/zookeeper/:id" do 
+  #   animalLog = AnimalLog.where(zookeeper_id: params[:id]).order(:created_at)
+  #   animalLog.to_json(methods: [:formatted_time])
+  # end
+
   # post "/animal_logs" do
 
   #   newLog = AnimalLog.create(note: params[:note] , 
@@ -98,6 +118,11 @@ class ApplicationController < Sinatra::Base
 
   def animal_params 
     allowed_params =%w(name image birthdate species sex id)
+    params.select {|param,value| allowed_params.include?(param)}
+  end
+
+  def zookeeper_params 
+    allowed_params =%w(name image)
     params.select {|param,value| allowed_params.include?(param)}
   end
 
