@@ -3,12 +3,13 @@ class ApplicationController < Sinatra::Base
 
   get "/animals" do 
     animals = Animal.all
-    animals.to_json
+    animals.to_json(methods: [:age])
   end
 
   get "/animals/:id" do 
     animal = Animal.find(params[:id])
-    animal.to_json(include: :animal_logs)
+    ordered_logs = animal.animal_logs.order(:created_at)
+    animal.to_json(includes: :animal_logs)
   end
 
   post "/animals" do 
@@ -47,42 +48,42 @@ class ApplicationController < Sinatra::Base
 
   post "/animal_logs" do 
     animal_log = AnimalLog.create(animal_log_params)
-    animal_log.to_json(methods: [:updated_at])
+    animal_log.to_json(methods: [:formatted_time])
   end
 
   patch "/animal_logs/:id" do
     animal_log = AnimalLog.find(params[:id])
     animal_log.update(animal_log_params)
-    animal_log.to_json(methods: [:updated_at])
+    animal_log.to_json(methods: [:formatted_time])
   end
 
   delete "/animal_logs/:id" do
     animal_log = AnimalLog.find(params[:id])
     animal_log.destroy
-    animal_log.to_json(methods: [:updated_at])
+    animal_log.to_json(methods: [:formatted_time])
   end
 
-  get "/animal_logs/zookeeper/:id" do
-    keeperLogs = AnimalLog.where(zookeeper_id: params[:id])
-    keeperLogs.to_json
+  # get "/animal_logs/zookeeper/:id" do
+  #   keeperLogs = AnimalLog.where(zookeeper_id: params[:id])
+  #   keeperLogs.to_json
 
-  end
+  # end
 
   get "/animal_logs/animal/:id" do 
-    animalLog = AnimalLog.where(animal_id: params[:id])
-    animalLog.to_json
+    animalLog = AnimalLog.where(animal_id: params[:id]).order(:created_at)
+    animalLog.to_json(methods: [:formatted_time])
   end
 
-  post "/animal_logs" do
+  # post "/animal_logs" do
 
-    newLog = AnimalLog.create(note: params[:note] , 
-                     animal_id: params[:animal_id],
-                     zookeeper_id: params[:zookeeper_id],
-                     pooped: params[:pooped],
-                     fed: params[:fed]
-                    )
-    newLog.to_json
-  end
+  #   newLog = AnimalLog.create(note: params[:note] , 
+  #                    animal_id: params[:animal_id],
+  #                    zookeeper_id: params[:zookeeper_id],
+  #                    pooped: params[:pooped],
+  #                    fed: params[:fed]
+  #                   )
+  #   newLog.to_json
+  # end
   
   get "/" do
     { message: "Home Page" }.to_json
