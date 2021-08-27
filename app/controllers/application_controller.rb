@@ -14,7 +14,7 @@ class ApplicationController < Sinatra::Base
 
   post "/animals" do 
     animal = Animal.create(animal_params)
-    animal.to_json
+    animal.to_json(methods: [:age])
   end
 
   patch "/animals/:id" do
@@ -37,7 +37,7 @@ class ApplicationController < Sinatra::Base
   get "/zookeepers/:id" do 
     zookeeper = Zookeeper.find(params[:id])
     animals = zookeeper.animals.uniq
-    animals.to_json
+    animals.to_json(include: :animal_logs)
   end
 
   post "/zookeepers" do 
@@ -59,7 +59,14 @@ class ApplicationController < Sinatra::Base
 
   post "/animal_logs" do 
     animal_log = AnimalLog.create(animal_log_params)
-    animal_log.to_json(methods: [:formatted_time])
+    animal_log.to_json(include: :animal, methods: [:formatted_time])
+  end
+
+  post "/zookeepers/:id" do 
+    puts params.inspect
+    animal_log = AnimalLog.create(animal_log_params)
+    puts animal_log.inspect
+    # animal_log.animal.to_json
   end
 
   patch "/animal_logs/:id" do
@@ -74,36 +81,16 @@ class ApplicationController < Sinatra::Base
     animal_log.to_json(methods: [:formatted_time])
   end
 
-  # get "/animal_logs/zookeeper/:id" do
-  #   keeperLogs = AnimalLog.where(zookeeper_id: params[:id])
-  #   keeperLogs.to_json
-
-  # end
-
   get "/animal_logs/animal/:id" do 
     animalLog = AnimalLog.where(animal_id: params[:id]).order(:created_at)
     animalLog.to_json(methods: [:formatted_time])
   end
 
-  # get "/animals/filtered/:id" do
-  
-  # end
-
-  # get "/animal_logs/zookeeper/:id" do 
-  #   animalLog = AnimalLog.where(zookeeper_id: params[:id]).order(:created_at)
-  #   animalLog.to_json(methods: [:formatted_time])
-  # end
-
-  # post "/animal_logs" do
-
-  #   newLog = AnimalLog.create(note: params[:note] , 
-  #                    animal_id: params[:animal_id],
-  #                    zookeeper_id: params[:zookeeper_id],
-  #                    pooped: params[:pooped],
-  #                    fed: params[:fed]
-  #                   )
-  #   newLog.to_json
-  # end
+  delete "/zookeepers/:id1/:id2" do
+    log = AnimalLog.where(zookeeper_id: params[:id1], animal_id: params[:id2])
+    log.destroy_all
+    log.to_json
+  end
   
   get "/" do
     { message: "Home Page" }.to_json
@@ -112,7 +99,7 @@ class ApplicationController < Sinatra::Base
   private 
 
   def animal_log_params
-    allowed_params = %w(animal_id log_time pooped fed updated_at id note)
+    allowed_params = %w(animal_id log_time pooped fed updated_at id note zookeeper_id)
     params.select {|param,value| allowed_params.include?(param)}
   end
 

@@ -3,6 +3,6 @@ class Animal < ActiveRecord::Base
     has_many :zookeepers, through: :animal_logs
 
     def age
-        DateTime.now.year - self.birthdate.slice(-4,4).to_i
+        DateTime.now.year - self.birthdate.slice(0,4).to_i
     end
 end
