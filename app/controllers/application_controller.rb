@@ -11,6 +11,9 @@ class ApplicationController < Sinatra::Base
 
   get "/play_card/:id" do
     card = Card.find(params[:id])
+    player = Character.all[0]
+    enemy = Character.all[1]
+    characters = Character.all
     card.play(player, enemy)
     characters.to_json
   end
