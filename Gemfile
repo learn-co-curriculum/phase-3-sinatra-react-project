@@ -34,6 +34,9 @@ gem "sqlite3", "~> 1.4"
 # Require all files in a folder
 gem "require_all", "~> 3.0"
 
+# Require nokogiri
+gem 'nokogiri', '~> 1.12', '>= 1.12.4'
+
 # These gems will only be used when we are running the application locally
 group :development do
   gem "pry", "~> 0.14.1"
