@@ -8,7 +8,8 @@ class Card < ActiveRecord::Base
         user.update(shield: user.shield + self.shield)
 
         puts "#{user.name} used #{self.name} on #{target.name}"
-
     end
+
+    # can implement more sophisticated game logic as more cards are added
 
 end
