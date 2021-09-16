@@ -18,7 +18,7 @@ class LabController < ApplicationController
     end
 
     delete "/labs/:id" do
-        Lab.find(params[:id]).destory
+        Lab.find(params[:id]).destroy
     end
     
 end
