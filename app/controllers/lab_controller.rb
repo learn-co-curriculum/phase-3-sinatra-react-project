@@ -9,6 +9,10 @@ class LabController < ApplicationController
         Lab.find(params[:id]).to_json
     end
 
+    get "/students/:student" do 
+        Student.find(params[:student_id]).get_labs_by_student.to_json
+    end
+
     patch "/labs/:id" do
         lab = Lab.find(params[:id])
         lab.update(
