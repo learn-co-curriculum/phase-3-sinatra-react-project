@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2021_09_14_210440) do
     t.string "num_commits"
     t.string "date_of_commit"
     t.string "time_of_commit"
+    t.string "completed"
     t.integer "student_id"
   end
 
