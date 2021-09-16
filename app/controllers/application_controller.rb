@@ -15,6 +15,7 @@ class ApplicationController < Sinatra::Base
     enemy = Character.all[1]
     characters = Character.all
     card.play(player, enemy)
+
     characters.to_json
   end
 
