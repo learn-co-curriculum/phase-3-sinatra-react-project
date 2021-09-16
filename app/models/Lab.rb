@@ -5,4 +5,7 @@
 class Lab < ActiveRecord::Base
     belongs_to :student
 
+    # def self.get_labs_by_student(id)
+    #     Lab.find_by_student_id(id).name
+    # end
 end

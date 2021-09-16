@@ -7,12 +7,18 @@ puts "🌱 Seeding spices..."
 jeff = Student.create(user_name: "jthomassen")
 michael = Student.create(user_name: "mkenton")
 
-Lab.create(name: "phase-3-ruby-oo-self-count-sentences-lab", num_commits: "12", date_of_commit: "Sep 7, 2021", time_of_commit: "01:23 AM MDT", completed: "No", student_id: jeff.id)
+
+
+lab1 = Lab.create(name: "phase-3-ruby-oo-self-count-sentences-lab", num_commits: "12", date_of_commit: "Sep 7, 2021", time_of_commit: "01:23 AM MDT", completed: "No", student_id: jeff.id)
 Lab.create(name: "phase-3-control-flow-conditional-statements", num_commits: "7", date_of_commit: "Sep 10, 2021", time_of_commit: "05:23 AM MDT", completed: "No", student_id: jeff.id)
 Lab.create(name: "phase-3-ruby-oo-basics-instance-methods-lab", num_commits: "9", date_of_commit: "Sep 1, 2021", time_of_commit: "09:23 AM MDT", completed: "No", student_id: jeff.id)
 Lab.create(name: "phase-3-ruby-oo-self-count-sentences-lab", num_commits: "10", date_of_commit: "Sep 11, 2021", time_of_commit: "10:23 AM MDT", completed: "No", student_id: michael.id)
 Lab.create(name: "phase-3-control-flow-conditional-statements", num_commits: "6", date_of_commit: "Sep 13, 2021", time_of_commit: "04:23 AM MDT", completed: "No", student_id: michael.id)
-Lab.create(name: "phase-3-ruby-oo-basics-instance-methods-lab", num_commits: "13", date_of_commit: "Sep 14, 2021", time_of_commit: "09:23 AM MDT", completed: "No", student_id: michael.id)
+# Lab.create(name: "phase-3-ruby-oo-basics-instance-methods-lab", num_commits: "13", date_of_commit: "Sep 14, 2021", time_of_commit: "09:23 AM MDT", completed: "No", student_id: michael.id)
+
+puts jeff.get_labs_by_student
+
+# binding.pry
 
 # puts michael.labs.map(&:num_commits)
 
