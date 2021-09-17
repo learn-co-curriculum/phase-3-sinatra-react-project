@@ -6,6 +6,7 @@ class CreateLabs < ActiveRecord::Migration[6.1]
       t.string :date_of_commit
       t.string :time_of_commit
       t.string :completed
+      t.boolean :tasked
       t.integer :student_id
     end
   end
