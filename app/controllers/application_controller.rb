@@ -35,17 +35,78 @@ class ApplicationController < Sinatra::Base
     Card.all.to_json
   end
 
+  delete "/cards" do
+    cards_in_hand = Card.all.each do |card| 
+      if card.subset == "hand"
+        card.delete
+      end
+    end
+    
+    Card.create(
+      subset: "hand",
+      name: "Attack",
+      card_type: "attack",
+      cost: 1,
+      damage: 6,
+      shield: 0,
+      heal: 0,
+      upgrade: 0
+    )
+
+    Card.create(
+      subset: "hand",
+      name: "Defense",
+      card_type: "skill",
+      cost: 1,
+      damage: 0,
+      shield: 4,
+      heal: 0,
+      upgrade: 0
+    )
+
+    Card.create(
+      subset: "hand",
+      name: "Heal",
+      card_type: "skill",
+      cost: 1,
+      damage: 0,
+      shield: 0,
+      heal: 2,
+      upgrade: 0
+    )
+  end
+
+  post '/hand' do
+    card = Card.create(
+      subset: "hand",
+      name: params[:name],
+      card_type: params[:card_type],
+      cost: params[:cost],
+      damage: params[:damage],
+      shield: params[:shield],
+      heal: params[:heal],
+      upgrade: 0
+  )
+    card.to_json
+  end
+
+  get "/hand" do
+    Card.all.to_json
+  end
+
   get "/play_card/:id" do
     card = Card.find(params[:id])
-    player = Character.all[0]
-    enemy = Character.all[1]
-    characters = Character.all
+    if card.subset == "hand"
+      player = Character.all[0]
+      enemy = Character.all[1]
+      characters = Character.all
 
 
-    if player.current_energy - card.cost >= 0
-      card.play(player, enemy)
+      if player.current_energy - card.cost >= 0
+        card.play(player, enemy)
+      end
+      characters.to_json
     end
-    characters.to_json
 
   end
 
