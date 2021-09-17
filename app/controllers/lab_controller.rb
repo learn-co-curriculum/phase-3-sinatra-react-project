@@ -2,7 +2,7 @@ require 'pry'
 
 class LabController < ApplicationController
     get "/labs" do 
-        Lab.all.to_json
+        Lab.all.to_json(include: :student)
     end
 
     get "/labs/:id" do 
@@ -19,14 +19,6 @@ class LabController < ApplicationController
     get "/students/:student" do 
         Student.find(params[:student_id]).get_labs_by_student.to_json
     end
-
-    # patch "/labs/:id" do
-    #     lab = Lab.find(params[:id])
-    #     lab.update(
-    #         completed: params[:completed]
-    #     )
-    #     lab.to_json
-    # end
 
     patch "/labs/:id" do
         lab = Lab.find(params[:id])
