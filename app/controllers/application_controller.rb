@@ -54,6 +54,9 @@ class ApplicationController < Sinatra::Base
     enemy = Character.all[1]
     characters = Character.all
 
+    # reset the enemy's shield to 0
+    enemy.update(shield: 0)
+
     # reset the player's energy to maximum after the end of the turn
     player.update(current_energy: player.max_energy)
 
@@ -66,6 +69,10 @@ class ApplicationController < Sinatra::Base
 
     # reset the enemy's energy to maximum after the end of the turn
     enemy.update(current_energy: enemy.max_energy)
+
+    # reset the player's shield to 0
+    player.update(shield: 0)
+
 
     characters.to_json
 

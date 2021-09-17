@@ -39,8 +39,8 @@ card_heal = Card.create(
 
 player = Character.create(
     name: "Player01",
-    max_HP: 100,
-    current_HP: 100,
+    max_HP: 30,
+    current_HP: 30,
     max_energy: 3,
     current_energy: 3,
     shield: 0
@@ -48,8 +48,8 @@ player = Character.create(
 
 enemy1 = Character.create(
     name: "Enemy01",
-    max_HP: 100,
-    current_HP: 100,
+    max_HP: 50,
+    current_HP: 50,
     max_energy: 3,
     current_energy: 3,
     shield: 0
@@ -60,9 +60,5 @@ enemy1 = Character.create(
 # card_attack.play(player, enemy1)
 # puts "Player's HP = #{player.current_HP} / #{player.max_HP}"
 # puts "Enemy's HP = #{enemy1.current_HP} / #{enemy1.max_HP}"
-
-Character.all.each do |character|
-    puts character.max_HP
-end
 
 puts "✅ Done seeding!"
