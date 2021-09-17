@@ -15,13 +15,34 @@ card_attack = Card.create(
     upgrade: 0
 )
 
+card_attack = Card.create(
+    subset: "player_all",
+    name: "Smash",
+    card_type: "attack",
+    cost: 2,
+    damage: 14,
+    shield: 0,
+    heal: 0,
+    upgrade: 0
+)
+
 card_defense = Card.create(
     subset: "player_all",
     name: "Defense",
     card_type: "skill",
     cost: 1,
     damage: 0,
-    shield: 5,
+    shield: 4,
+    heal: 0,
+    upgrade: 0
+)
+card_defense = Card.create(
+    subset: "player_all",
+    name: "Protection",
+    card_type: "skill",
+    cost: 2,
+    damage: 0,
+    shield: 10,
     heal: 0,
     upgrade: 0
 )
@@ -33,7 +54,18 @@ card_heal = Card.create(
     cost: 1,
     damage: 0,
     shield: 0,
-    heal: 3,
+    heal: 2,
+    upgrade: 0
+)
+
+card_super_heal = Card.create(
+    subset: "player_all",
+    name: "Super Heal",
+    card_type: "skill",
+    cost: 2,
+    damage: 0,
+    shield: 0,
+    heal: 5,
     upgrade: 0
 )
 
@@ -48,8 +80,8 @@ player = Character.create(
 
 enemy1 = Character.create(
     name: "Enemy01",
-    max_HP: 50,
-    current_HP: 50,
+    max_HP: 40,
+    current_HP: 40,
     max_energy: 3,
     current_energy: 3,
     shield: 0

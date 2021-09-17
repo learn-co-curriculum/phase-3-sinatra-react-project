@@ -41,7 +41,8 @@ class ApplicationController < Sinatra::Base
     enemy = Character.all[1]
     characters = Character.all
 
-    if player.current_energy > 0
+
+    if player.current_energy - card.cost >= 0
       card.play(player, enemy)
     end
     characters.to_json
