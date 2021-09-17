@@ -125,7 +125,9 @@ class ApplicationController < Sinatra::Base
     # enemy plays the card until its energy is depleted
     while enemy.current_energy > 0
       card = card_all[rand(0..(card_all.length - 1))]
-      card.play(enemy, player)
+      if enemy.current_energy - card.cost >= 0
+        card.play(enemy, player)
+      end
       puts "while loop ran"
     end
 
