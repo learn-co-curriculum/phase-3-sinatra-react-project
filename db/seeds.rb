@@ -55,11 +55,14 @@ enemy1 = Character.create(
     shield: 0
 )
 
-puts Card.all
+# puts Card.all
 
-card_attack.play(player, enemy1)
-puts "Player's HP = #{player.current_HP} / #{player.max_HP}"
-puts "Enemy's HP = #{enemy1.current_HP} / #{enemy1.max_HP}"
+# card_attack.play(player, enemy1)
+# puts "Player's HP = #{player.current_HP} / #{player.max_HP}"
+# puts "Enemy's HP = #{enemy1.current_HP} / #{enemy1.max_HP}"
 
+Character.all.each do |character|
+    puts character.max_HP
+end
 
 puts "✅ Done seeding!"

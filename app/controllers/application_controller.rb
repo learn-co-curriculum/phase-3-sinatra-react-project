@@ -5,6 +5,32 @@ class ApplicationController < Sinatra::Base
     Character.all.to_json
   end
 
+  patch "/characters" do
+    character_all = Character.all
+    character_all.each do |character|
+      character.update(
+      current_energy: params[:current_energy],
+      current_HP: params[:current_HP],
+      shield: params[:shield]
+      )
+    end
+    character_all.to_json
+  end
+
+  get "/characters/:id" do
+    Character.find(params[:id]).to_json
+  end
+
+  patch "/characters/:id" do
+    character = Character.find(params[:id])
+    character.update(
+      current_energy: params[:current_energy],
+      current_HP: params[:current_HP],
+      shield: params[:shield]
+    )
+    character.to_json
+  end
+
   get "/cards" do
     Card.all.to_json
   end
@@ -44,6 +70,11 @@ class ApplicationController < Sinatra::Base
     characters.to_json
 
   end
+
+  # patch "/characters" do
+  #   Character.reset
+  # end
+
 
 
 end
