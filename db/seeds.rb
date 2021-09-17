@@ -80,7 +80,7 @@ player = Character.create(
 
 enemy1 = Character.create(
     name: "Enemy01",
-    max_HP: 40,
+    max_HP: 60,
     current_HP: 40,
     max_energy: 3,
     current_energy: 3,
