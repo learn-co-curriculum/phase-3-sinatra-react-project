@@ -61,5 +61,8 @@ enemy1 = Character.create(
 # puts "Player's HP = #{player.current_HP} / #{player.max_HP}"
 # puts "Enemy's HP = #{enemy1.current_HP} / #{enemy1.max_HP}"
 
+Character.all.each do |character|
+    puts character.max_HP
+end
 
 puts "✅ Done seeding!"
