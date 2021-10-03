@@ -18,11 +18,15 @@ ActiveRecord::Schema.define(version: 2021_10_05_205825) do
   end
 
   create_table "pieces", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.string "image"
-    t.datetime "date"
+    t.string "date"
+    t.string "artist"
+    t.string "medium"
+    t.string "dimensions"
+    t.string "city"
     t.integer "price"
-    t.string "desc"
+    t.boolean "in_stock"
     t.integer "buyer_id"
     t.integer "seller_id"
     t.index ["buyer_id"], name: "index_pieces_on_buyer_id"
