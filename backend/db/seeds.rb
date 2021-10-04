@@ -24,9 +24,9 @@ object_ids.each do |object_id|
         dimensions: art_hash["dimensions"],
         city: art_hash["city"],
         price:rand(100000...10000000),
-        in_stock: [true, false].sample, 
-        buyer_id: Buyer.all.sample.id, 
-        seller_id: Seller.all.sample.id,)
+        in_stock: true, 
+        buyer_id:'', 
+        seller_id: Seller.all.sample.id)
 
 end
 
