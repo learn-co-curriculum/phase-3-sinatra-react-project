@@ -116,3 +116,72 @@ fetch("http://localhost:9292/test")
 [dbdiagram.io]: https://dbdiagram.io/
 [postman download]: https://www.postman.com/downloads/
 [network tab]: https://developer.chrome.com/docs/devtools/network/
+
+
+
+## Requirements
+
+For this project, you must:
+Use Active Record to interact with a database.
+Have a minimum of two models with a one-to-many relationship.
+Create API routes in Sinatra that handles at least three different CRUD actions for at least one of your Active Record models.
+Build a separate React frontend application that interacts with the API to perform CRUD actions.
+Use good OO design patterns. You should have separate classes for each of your models, and create instance and class methods as necessary.
+Description
+An admin view of a wellness provider of services. 
+
+  # Name ideas:
+  Health Nuts
+  Healthies
+  Fit goals
+  
+  # MVP 
+  Our two models, joined by reservations:
+  Clients
+  First Name
+  Last Name
+  Email
+  Class count (Stretch)
+  Services
+  Name
+  Description
+  Date/Time
+  Reservations
+  client_id
+  service_id
+
+# Project Three MVP
+
+# Description
+
+Admin or staff can CRUD the Clients and Services tables which modify the joint table Reversations.  Clients and Services have a many to many Project Three MVP
+
+-delete the user from a clients
+
+-see scheduled classes
+
+## CRUD actions:
+The admin can book services for clients (create)
+Update client appointments (update)
+  -services
+Cancel appointments (delete)
+  -delete entire services
+View all booked appointments (read)
+The frontend view will have cards for each service.
+
+# Stretch Goals
+Handle multiple cancellations at the same time
+Have a cap on appointments - when the class is full, recommend other class times/instructors
+
+# Tips
+Once you have a project idea, come up with a domain model and decide what relationships exist between the models in your application. Use a tool like dbdiagram.io  (Links to an external site.) to help visualize your models.
+Decide on your API endpoints. What data should they return? What kind of CRUD action should they perform? What data do they need from the client?
+Use Postman (Links to an external site.) to test your endpoints.
+Use binding.pry to debug your requests on the server. It's very helpful to use a binding.pry in your controller within a route to see what params are being sent.
+Use the Network Tab in the Dev Tools (Links to an external site.) in the frontend to debug your requests.
+
+  # User Inter
+  - list
+  - Gallery
+  - or integrate UI Kit at the begining. e.g. Bootstrap or Semantic
+  
