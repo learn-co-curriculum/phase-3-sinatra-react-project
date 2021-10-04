@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useState, useEffect }  from "react";
 import Header from "./components/Header";
 import ArtGallery from "./components/ArtGallery";
 import ArtForm from "./components/ArtForm";
 
-//import { useState, useEffect } from 'react';
 import {Switch, Route} from 'react-router-dom';
 
 
 function App() {
-  //const[artworks, setArtworks] = useState([]);
+  const[artworks, setArtworks] = useState([]);
   //const[update, setUpdate] = useState(false);
-
-  /*useEffect(()=>{
-    //get request
-  },[update]);*/
+  function getPieces(){
+    fetch(`http://localhost:9292/pieces`)
+    .then(resp => resp.json())
+    .then(artworks => setArtworks(artworks))
+  }
+  useEffect(()=>{
+    getPieces();
+  },[]);
   return (
     <div className="app">
       <Header />
@@ -25,7 +28,7 @@ function App() {
         </Route>
 
         <Route path="/">
-          <ArtGallery />
+          <ArtGallery artworks={artworks}/>
         </Route>
       </Switch>
     
