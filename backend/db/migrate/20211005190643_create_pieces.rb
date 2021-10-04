@@ -3,7 +3,7 @@ class CreatePieces < ActiveRecord::Migration[6.1]
     create_table :pieces do |t|
       t.string :title
       t.string :image
-      t.string :date
+      t.datetime :date
       t.string :artist
       t.string :medium
       t.string :dimensions

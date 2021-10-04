@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_10_05_205825) do
   create_table "pieces", force: :cascade do |t|
     t.string "title"
     t.string "image"
-    t.string "date"
+    t.datetime "date"
     t.string "artist"
     t.string "medium"
     t.string "dimensions"

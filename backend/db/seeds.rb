@@ -18,7 +18,7 @@ object_ids.each do |object_id|
     Piece.create(
         title: art_hash["title"] ,
         image: art_hash["primaryImage"], 
-        date: art_hash["period"], 
+        date: Time.now, 
         artist: art_hash["artistDisplayName"],
         medium: art_hash["medium"],
         dimensions: art_hash["dimensions"],
