@@ -31,6 +31,12 @@ gem "rake", "~> 13.0"
 # Provides functionality to interact with a SQLite3 database
 gem "sqlite3", "~> 1.4"
 
+# Provides functionality to produce random data in our seed file
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
+# Provides datetime functionality
+gem 'date', '~> 0.0.1'
+
 # Require all files in a folder
 gem "require_all", "~> 3.0"
 
