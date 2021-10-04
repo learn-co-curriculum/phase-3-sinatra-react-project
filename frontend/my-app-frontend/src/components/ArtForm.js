@@ -96,9 +96,9 @@ function ArtForm() {
         />
         <input
           type="text" 
-          name="username" 
+          name="seller_name" 
           placeholder="Username" 
-          value={formData.username}
+          value={formData.seller_name}
           onChange={handleChange}
         />
         <button type="submit">Add Piece</button>
