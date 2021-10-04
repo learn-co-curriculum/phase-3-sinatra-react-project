@@ -35,7 +35,7 @@ gem "sqlite3", "~> 1.4"
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 # Provides datetime functionality
-gem 'date', '~> 0.0.1'
+# gem 'datetime_helper', '~> 1.0', '>= 1.0.5'
 
 # Require all files in a folder
 gem "require_all", "~> 3.0"

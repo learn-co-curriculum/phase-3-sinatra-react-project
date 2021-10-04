@@ -29,7 +29,6 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
-    date (0.0.1)
     diff-lcs (1.4.4)
     eventmachine (1.2.7)
     ffi (1.15.3)
@@ -101,7 +100,6 @@ PLATFORMS
 DEPENDENCIES
   activerecord (~> 6.1)
   database_cleaner (~> 2.0)
-  date (~> 0.0.1)
   faker!
   pry (~> 0.14.1)
   rack-contrib (~> 2.3)
