@@ -8,6 +8,12 @@ function ArtCard({artwork}) {
     setInStock(!inStock)
   }
 
+  function handleDeletion(){
+    fetch(`http://localhost:9292/pieces/${artwork.id}`,{
+      method: 'Delete'
+    })
+  }
+
   return (
     <li className="card">
       <img src={image} alt={"art name"} />
@@ -18,6 +24,7 @@ function ArtCard({artwork}) {
       ) : (
         <button onClick={handleInStock}>Sold</button>
       )}
+      <button className="primary" onClick={handleDeletion}>Delete</button>
     </li>
   );
 }

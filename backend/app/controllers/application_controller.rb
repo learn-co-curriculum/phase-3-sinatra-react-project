@@ -8,4 +8,11 @@ class ApplicationController < Sinatra::Base
   get '/pieces' do 
     Piece.all.to_json
   end
+
+  delete '/pieces/:id' do
+    piece = Piece.find(params[:id])
+    piece.destroy
+  end
+
+  
 end
