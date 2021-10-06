@@ -57,4 +57,41 @@ class ApplicationController < Sinatra::Base
     new_student.to_json 
   end
 
+  post "/students/:id/request" do
+    new_match = Match.create(
+      tutor_id: params[:tutor_id],
+      student_id: params[:id],
+      subject: params[:subject],
+      schedule: params[:schedule],
+      online_in_person: params[:online_in_person],
+      location: params[:location],
+      matched: false
+    )
+    new_match.to_json
+  end
+
+  patch "/tutor/:id/accepts_request" do
+    Match.find(params[:id]).update(matched:true).to_json
+  end
+
+  patch "/students/:id/profile_edit" do
+    Student.find(params[:id]).update(params).to_json
+  end
+
+  patch "/tutors/:id/profile_edit" do
+    Tutor.find(params[:id]).update(params).to_json
+  end
+
+  delete "/tutors/delete_match/:id" do
+    Match.find(params[:id]).destroy.to_json
+  end
+
+  delete "tutors/delete_request/:id" do
+    Match.find(params[:id]).destroy.to_json
+  end
+
+  delete "students/delete_match/:id" do
+    Match.find(params[:id]).destroy.to_json
+  end
+
 end
