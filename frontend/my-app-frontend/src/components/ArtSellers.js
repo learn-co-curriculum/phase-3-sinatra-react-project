@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from "react"
-function ArtSeller (){
+import {Link} from "react-router-dom"
+function ArtSellers ({sellers, handleOneSeller}){
+  
     const[formData, setFormData]=useState({
         seller_name:"",
         password:""
@@ -11,13 +13,11 @@ function ArtSeller (){
           [e.target.name]:e.target.value
         })
       }
-
-
-
       function handleSubmit(e){
         e.preventDefault();
         handleSellerPost(formData)
       }
+      
     
       function handleSellerPost(formData){
         fetch('http://localhost:9292/seller',{
@@ -29,7 +29,12 @@ function ArtSeller (){
         }).then(resp=>resp.json())
         .then(newData=> console.log(newData))
       }
-
+      const eachSeller = sellers.map(seller=> (
+      <div key={seller.id}>
+        <li >{seller.seller_name}</li>
+        <Link to={`/art/seller`}><button className="primary" onClick={()=>handleOneSeller(seller.id)}>View Full Seller list</button></Link>
+        </div>
+      ))
     return(
     <div>
         <form onSubmit={handleSubmit}>
@@ -49,8 +54,9 @@ function ArtSeller (){
         />
         <button type="submit">New Seller</button>
       </form>
+      {eachSeller}
     </div>
 )
 }
 
-export default ArtSeller;
+export default ArtSellers;

@@ -2,7 +2,8 @@ import React, { useState, useEffect }  from "react";
 import Header from "./components/Header";
 import ArtGallery from "./components/ArtGallery";
 import ArtForm from "./components/ArtForm";
-import ArtSeller from "./components/ArtSeller";
+import ArtSellers from "./components/ArtSellers";
+import ArtSeller from "./ArtSeller";
 import ArtDetails from "./components/ArtDetails";
 
 import {Switch, Route} from 'react-router-dom';
@@ -13,6 +14,9 @@ function App() {
   const[piece, setPiece]=useState([]);
   const[reviews, setReviews]=useState([]);
   const[update, setUpdate] = useState(false);
+  const[sellers, setSellers] = useState([])
+  const[sellerData, setSellerData]= useState([])
+  const[sellerPieces, setSellerPieces]=useState([])
   function getPieces(){
     fetch(`http://localhost:9292/pieces`)
     .then(resp => resp.json())
@@ -40,6 +44,29 @@ function App() {
       setReviews(piece.reviews)
     })
   }
+
+  function handleOneSeller(id){
+    fetch(`http://localhost:9292/sellers/${id}`)
+    .then(resp => resp.json())
+    .then(data=>{
+      console.log(data)
+      setSellerData(data)
+      setSellerPieces(data.pieces)
+    })
+  }
+
+
+
+  
+  useEffect(()=>{
+    fetch(`http://localhost:9292/sellers`)
+      .then(resp=> resp.json())
+      .then(data=>{
+        console.log(data)
+        setSellers(data)
+      })
+  },[update])
+
   return (
     <div className="app">
       <Header />
@@ -50,14 +77,24 @@ function App() {
           <ArtForm />
         </Route>
 
-        <Route path="/art/seller">
-          <ArtSeller />
+        <Route path="/art/sellers">
+          <ArtSellers 
+          sellers={sellers}
+          handleOneSeller={handleOneSeller}
+          />
         </Route>
 
         <Route path="/art/details">
           <ArtDetails
             piece={piece}
             reviews={reviews}
+          />
+        </Route>
+
+        <Route path="/art/seller">
+          <ArtSeller
+            sellerData={sellerData}
+            sellerPieces={sellerPieces}
           />
         </Route>
 
