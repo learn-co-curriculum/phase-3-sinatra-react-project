@@ -12,6 +12,11 @@ class ApplicationController < Sinatra::Base
     piece.destroy
   end
 
+  get '/pieces/:id' do
+    piece = Piece.find(params[:id])
+    piece.to_json(include: :reviews)
+  end
+
   get '/sellers' do
     Seller.all.to_json
   end
