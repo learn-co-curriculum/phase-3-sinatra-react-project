@@ -1,6 +1,7 @@
-import React, {useState} from "react";
- 
+import React, {useState, useEffect} from "react";
+
 function ArtForm() {
+  const[sellers, setSellers] = useState([])
   const[formData,setFormData]=useState({
     title:"",
     image:"",
@@ -23,21 +24,39 @@ function ArtForm() {
  
   function handleSubmit(e){
     e.preventDefault();
-    fetch("http://localhost:9292/pieces", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({formData}),
-    })
-    .then(r=>r.json())
+    handlePiecePost(formData)
   }
-  
+
+  function handlePiecePost(formData){
+    fetch('http://localhost:9292/piece',{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    }).then(resp=>resp.json())
+    .then(newData=> console.log(newData))
+  }
+
+
+  useEffect(()=>{
+    fetch(`http://localhost:9292/sellers`)
+      .then(resp=> resp.json())
+      .then(data=>{
+        console.log(data)
+        setSellers(data)
+      })
+  },[])
+  const eachSeller = sellers.map(seller=> (
+    <li key={seller.id}>{seller.seller_name}</li>
+  ))
+
   return (
+    <div className="container-div">
     <div className="new-art-form">
       <h2>New Art Piece</h2>
       <form onSubmit={handleSubmit}>
-        <input 
+      <input 
           type="text" 
           name="name" 
           placeholder="Art Piece Name" 
@@ -72,7 +91,6 @@ function ArtForm() {
           value={formData.medium}
           onChange={handleChange}
         />
- 
         <input
           type="text" 
           name="dimensions" 
@@ -103,6 +121,8 @@ function ArtForm() {
         />
         <button type="submit">Add Piece</button>
       </form>
+    </div>
+    {eachSeller}
     </div>
   );
 }
