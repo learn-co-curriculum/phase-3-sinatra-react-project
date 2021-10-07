@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function ArtCard({artwork}) {
+function ArtCard({artwork, update, setUpdate}) {
   const[inStock,setInStock]=useState(true)
   const{title, image, price}= artwork
 
@@ -11,6 +11,11 @@ function ArtCard({artwork}) {
   function handleDeletion(){
     fetch(`http://localhost:9292/pieces/${artwork.id}`,{
       method: 'Delete'
+    })
+    .then(resp=> resp.json())
+    .then(data=>{
+      console.log(data)
+      setUpdate(!update)
     })
   }
 

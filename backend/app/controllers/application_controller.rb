@@ -14,5 +14,28 @@ class ApplicationController < Sinatra::Base
     piece.destroy
   end
 
-  
+  get '/sellers' do
+    Seller.all.to_json
+  end
+
+  post '/seller' do
+    newSeller = Seller.create(seller_name:params[:seller_name], password:params[:password])
+    newSeller.to_json
+  end
+
+  post '/piece' do 
+    newPiece = Piece.create( title: params[:title],
+      image:params[:image],
+      date:params[:date],
+      artist:params[:artist],
+      medium: params[:medium],
+      dimensions: params[:dimensions],
+      city:params[:city],
+      price: params[:price],
+      in_stock: params[:in_stock],
+      seller_id: Seller.find_by(seller_name: params[:seller_name]).id )
+    newPiece.to_json
+  end
+
+
 end

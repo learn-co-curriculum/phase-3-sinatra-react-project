@@ -1,11 +1,18 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 function ArtForm() {
+  const[sellers, setSellers] = useState([])
   const[formData,setFormData]=useState({
-    name:"",
+    title:"",
     image:"",
-    description:"",
-    comment: ""
+    date:"",
+    artist:"",
+    medium:"",
+    dimensions:"",
+    city:"",
+    price: "",
+    in_stock: true,
+    seller_name: ""
   })
 
   function handleChange(e){
@@ -17,12 +24,39 @@ function ArtForm() {
 
   function handleSubmit(e){
     e.preventDefault();
+    handlePiecePost(formData)
   }
+
+  function handlePiecePost(formData){
+    fetch('http://localhost:9292/piece',{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    }).then(resp=>resp.json())
+    .then(newData=> console.log(newData))
+  }
+
+
+  useEffect(()=>{
+    fetch(`http://localhost:9292/sellers`)
+      .then(resp=> resp.json())
+      .then(data=>{
+        console.log(data)
+        setSellers(data)
+      })
+  },[])
+  const eachSeller = sellers.map(seller=> (
+    <li key={seller.id}>{seller.seller_name}</li>
+  ))
+
   return (
+    <div className="container-div">
     <div className="new-art-form">
       <h2>New Art Piece</h2>
       <form onSubmit={handleSubmit}>
-        <input 
+      <input 
           type="text" 
           name="name" 
           placeholder="Art Piece Name" 
@@ -37,14 +71,58 @@ function ArtForm() {
           onChange={handleChange}
         />
         <input 
+          type="datetime-local"
+          name="date"
+          placeholder="Today's Date" 
+          value={formData.date}
+          onChange={handleChange}
+        />
+        <input 
           type="text" 
-          name="description" 
-          placeholder="Artwork description" 
-          value={formData.description}
+          name="artist" 
+          placeholder="Artist Name" 
+          value={formData.artist}
+          onChange={handleChange}
+        />
+        <input 
+          type="text" 
+          name="medium" 
+          placeholder="Medium" 
+          value={formData.medium}
+          onChange={handleChange}
+        />
+        <input
+          type="text" 
+          name="dimensions" 
+          placeholder="Dimensions" 
+          value={formData.dimensions}
+          onChange={handleChange}
+        />
+        <input
+          type="text" 
+          name="city" 
+          placeholder="City of Origin" 
+          value={formData.city}
+          onChange={handleChange}
+        />
+        <input
+          type="number" 
+          name="price" 
+          placeholder="Price" 
+          value={formData.price}
+          onChange={handleChange}
+        />
+        <input
+          type="text" 
+          name="seller_name" 
+          placeholder="Username" 
+          value={formData.seller_name}
           onChange={handleChange}
         />
         <button type="submit">Add Piece</button>
       </form>
+    </div>
+    {eachSeller}
     </div>
   );
 }

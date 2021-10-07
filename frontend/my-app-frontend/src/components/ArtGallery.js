@@ -1,11 +1,13 @@
 import React from "react";
 import ArtCard from "./ArtCard";
 
-function ArtGallery({artworks}) {
+function ArtGallery({artworks, update, setUpdate}) {
     let artWorkCard = artworks.map((artwork)=>{return(
       <ArtCard 
       key={artwork.id}
       artwork={artwork}
+      update={update}
+      setUpdate={setUpdate}
       />
     )})
   return (
