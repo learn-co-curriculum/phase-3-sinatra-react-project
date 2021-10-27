@@ -3,6 +3,7 @@ class CardDeckController < ApplicationController
     post '/card_decks' do
         card_deck = CardDeck.create(deck_id: params[:deck_id], card_id: params[:card_id])
         card_deck.to_json
+        # binding.pry
     end
 
     delete '/card_decks/:id' do
