@@ -1,6 +1,6 @@
 class HeroController < ApplicationController
     get '/heros' do
-        cards = Card.all
-        cards.to_json
+        heros = Hero.all
+        heros.to_json
     end
 end
