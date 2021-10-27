@@ -17,3 +17,4 @@ use CardController
 use DeckController
 use CardDeckController
 use UserController
+use HeroController
