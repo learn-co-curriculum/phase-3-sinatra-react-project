@@ -9,6 +9,11 @@ class DeckController < ApplicationController
         deck.to_json
     end
 
+    get '/decks/:id/allcards' do
+        cards = Deck.find(params[:id]).cards
+        cards.to_json
+    end
+
     post '/decks' do
         new_deck = Deck.create(name: params[:name], user_id: params[:user_id])
         new_deck.to_json
