@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_12_153831) do
+ActiveRecord::Schema.define(version: 2021_11_12_232301) do
 
   create_table "applications", force: :cascade do |t|
     t.string "company"
     t.string "position"
     t.string "status"
+    t.string "logo_url"
   end
 
   create_table "communications", force: :cascade do |t|
