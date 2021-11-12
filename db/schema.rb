@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_12_145903) do
+ActiveRecord::Schema.define(version: 2021_11_12_153831) do
 
   create_table "applications", force: :cascade do |t|
     t.string "company"
     t.string "position"
     t.string "status"
+  end
+
+  create_table "communications", force: :cascade do |t|
+    t.datetime "time"
+    t.boolean "received"
+    t.text "comment"
+    t.integer "application_id"
+    t.index ["application_id"], name: "index_communications_on_application_id"
   end
 
 end
