@@ -6,6 +6,7 @@ GEM
     activerecord (6.1.4)
       activemodel (= 6.1.4)
       activesupport (= 6.1.4)
+    activerecord-reset-pk-sequence (0.2.1)
     activesupport (6.1.4)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
@@ -87,9 +88,11 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-linux
 
 DEPENDENCIES
   activerecord (~> 6.1)
+  activerecord-reset-pk-sequence
   database_cleaner (~> 2.0)
   pry (~> 0.14.1)
   rack-contrib (~> 2.3)
@@ -106,4 +109,4 @@ DEPENDENCIES
   thin (~> 1.8)
 
 BUNDLED WITH
-   2.2.23
+   2.2.30
