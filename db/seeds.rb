@@ -3,8 +3,8 @@ User.destroy_all
 
 puts "Create User..."
 
-user1 = User.create(name: "Bob Smith")
-user2 = User.create(name: "Avy Pang")
+user1 = User.create(name: "Sebastian Stan")
+user2 = User.create(name: "Chris Evans")
 
 puts "Create Items..."
 Item.create(
@@ -92,7 +92,7 @@ Item.create(
         name: "ANTIQUE 19thC FRENCH SILVER GILT MUSIC SNUFF BOX c.1810", 
         price:509744, 
         product_description:"Antique 19th Century French very rare silver gilt musical snuff box, of traditional form, the base and the cover with panels of peaked-pattern engine turning within stamped sable boarders, the same pattern is repeated along the sides. Comes with its original key and works by sliding the left button to the right.
-        A musical snuff box would have sat at a lady's dressing tble, or played to amuse one's guests when ordering snuff, for its makers, it also served as a show of skill, the idea was to show the craftsmanship of both the goldsmith and maker of musical instruments - the practise having florished in Geneva and Paris in the late 18th Century.
+        A musical snuff box would have sat at a lady's dressing table, or played to amuse one's guests when ordering snuff, for its makers, it also served as a show of skill, the idea was to show the craftsmanship of both the goldsmith and maker of musical instruments - the practise having florished in Geneva and Paris in the late 18th Century.
         Hallmarked French Silver (800 standard), Paris, Guarantee mark 'Moyenne', year 1808-1819, Maker's mark Unknown to me.
         CONDITION
         In Great Condition - No Damage.
