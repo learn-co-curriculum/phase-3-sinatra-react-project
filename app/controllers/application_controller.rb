@@ -40,12 +40,9 @@ post "/" do
  loser: params[:loser]
  )
  
- binding.pry
- 
- game_instance.to_json
+
 
  
- binding.pry
  
  x= X.create(
   game_instance_id: game_instance.id,
@@ -55,6 +52,8 @@ o= O.create(
   game_instance_id: game_instance.id,
   player_id: params[:o]
 )
+
+game_instance.to_json
 
 x.to_json
 o.to_json
