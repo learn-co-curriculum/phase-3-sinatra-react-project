@@ -1,10 +1,6 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  # Add your routes here
-  get "/" do
-    { message: "Good luck with your project!" }.to_json
-  end
 
 
   get "/players" do
@@ -28,24 +24,44 @@ end
 
 
 
-get '/game_instance'do
-
-
+get '/'do 
 game_instance = GameInstance.all
-game_instance.to_json(include: :players)
+game_instance.to_json
 end
 
 
 
-post "/game_instance" do
-  game_inatance= GameInstance.create(
+post "/" do
+
+
+
+  game_instance= GameInstance.create(
  winner: params[:winner],
  loser: params[:loser]
+ )
+ 
+ binding.pry
+ 
+ game_instance.to_json
 
-  )
-game_inatance.to_json
+ 
+ binding.pry
+ 
+ x= X.create(
+  game_instance_id: game_instance.id,
+  player_id: params[:x]
+)
+o= O.create(
+  game_instance_id: game_instance.id,
+  player_id: params[:o]
+)
+
+x.to_json
+o.to_json
 
 end
+
+
 
 
 

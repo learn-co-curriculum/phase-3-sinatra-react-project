@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_15_210157) do
+ActiveRecord::Schema.define(version: 2021_11_15_234244) do
 
   create_table "game_instances", force: :cascade do |t|
     t.integer "winner"
     t.integer "loser"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "os", force: :cascade do |t|
+    t.integer "game_instance_id"
+    t.integer "player_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -24,7 +31,13 @@ ActiveRecord::Schema.define(version: 2021_11_15_210157) do
     t.integer "player_wins"
     t.integer "player_losses"
     t.string "player_avatar"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "xes", force: :cascade do |t|
     t.integer "game_instance_id"
+    t.integer "player_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
