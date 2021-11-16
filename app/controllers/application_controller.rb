@@ -29,9 +29,10 @@ post "/players" do
   player_name: params[:player_name],
   player_wins: 0,
   player_losses: 0,
-  player_avatar: params[:player_avatar]
+  player_avatar: params[:playerAvatar]
   )
-player.json
+
+player.to_json
 end
 
 
@@ -40,8 +41,8 @@ end
 patch "/players/:id" do 
 player = Player.find(params[:id])
 player.update(
-  player_wins: params[:player_wins],
-  player_losses: params[:player_losses]
+  player_wins: params[:playerWins],
+  player_losses: params[:playerosses]
 )
 player.to_json
 end
