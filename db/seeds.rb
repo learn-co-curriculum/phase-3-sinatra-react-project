@@ -1,14 +1,19 @@
 puts "🌱 Seeding spices..."
 puts "Deleteing previous data..."
-Animal.destroy_all
 Shelter.destroy_all
+Animal.destroy_all
 AdoptionApplication.destroy_all
+
+puts "🏞️ Creating shelters..."
+40.times do 
+    Shelter.create(name: Faker::Educator.campus, address: Faker::Address.full_address)
+end
 
 puts "🐩 Creating animals..."
 20.times do
     Animal.create(
         name: Faker::Creature::Dog.name, 
-        type: "dog", 
+        animal_type: "dog", 
         breed: Faker::Creature::Dog.breed, 
         img_url: Faker::LoremFlickr.image(size: "150x160", search_terms: ['dog', 'cute'], match_all: true),
         shelter_id: Shelter.all.sample.id
@@ -17,16 +22,11 @@ end
 20.times do 
     Animal.create(
         name: Faker::Creature::Cat.name, 
-        type: "cat", 
+        animal_type: "cat", 
         breed: Faker::Creature::Cat.breed, 
         img_url: Faker::LoremFlickr.image(size: "150x160", search_terms: ['cat', 'cute'], match_all: true),
         shelter_id: Shelter.all.sample.id
     )
-end
-
-puts "🏞️ Creating shelters..."
-40.times do 
-    Shelter.create(name: Faker::Educator.campus, address: Faker::Address.full_address)
 end
 
 puts "📝 Creating adoption applications..."
