@@ -12,20 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2021_11_15_234244) do
 
-#TABLES 
-#PLAYERS = KEEPS TRACK OF ALL PLAYER DATA INCLUDING NAME AND WIN/LOSE COUNT
-#XS/OS KEEPS TRACK OF WHO WAS XS AND WHO WAS OS IN EACH GAMES
-#XES/OS ARE NEEDED BECUASE IF WE HAVE MORE THAB ONE GAME THEN PLAYERS WILL 
-#HAS MANY DOES NOT 
-# THE FRONT END DOENS'T HAVE TO WORRY TOO MUCH ABOUT XES AND OS IT JUST ADDS SOME FLEXABILITY
-# COOLEO 
-#game instance tracks who won or lost that game instance 
-
-
-
-
-
-
   create_table "game_instances", force: :cascade do |t|
     t.integer "winner"
     t.integer "loser"
@@ -33,9 +19,7 @@ ActiveRecord::Schema.define(version: 2021_11_15_234244) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-
-
-create_table "os", force: :cascade do |t|
+  create_table "os", force: :cascade do |t|
     t.integer "game_instance_id"
     t.integer "player_id"
     t.datetime "created_at", precision: 6, null: false

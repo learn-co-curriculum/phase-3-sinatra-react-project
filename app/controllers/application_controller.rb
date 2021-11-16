@@ -8,9 +8,12 @@ class ApplicationController < Sinatra::Base
 ### WHEN a game starts a POST request is created----- currently 1 post request------ this then makes a new line in the game_instance table(that is blank) and a new line_ in the xes and os table 
 
 ### this one can be improved
-###WHEN a game finishes ----- two patch requests ---- one will send to the game instance table and let us know who won. and who lost.----- one will go to the players table and update total wins 
-###  Might be three instead of two not sure  three would mean two for the player. 
+###WHEN a game finishes ----- three patch requests ---- one will send to the game instance table and let us know who won. and who lost.----- 
+#####two  will go to the players table and update total wins/loses for both players 
+###  
 #########
+
+
 ##### Example of what we may need for a player GET reques players 
 #####
 #####
@@ -35,11 +38,12 @@ end
 ######## Update total win/lose counts 
 ####### This should run after a player loses or wins 
 patch "/players/:id" do 
-player = Players.find(params[:id])
+player = Player.find(params[:id])
 player.update(
-  player_wins: params[:player_wins]
-  player_loses: params[:player_loses]
+  player_wins: params[:player_wins],
+  player_losses: params[:player_losses]
 )
+player.to_json
 end
 
 
@@ -90,7 +94,7 @@ end
 ########## This will done at the end of every game 
 ######### WINNER?LOSER params are expected to id's but it can be whatever
 patch "/game_instances/:id" do 
-game_instance = GameInstance.find(param[:id])
+game_instance = GameInstance.find(params[:id])
 game_instance.update(
   winner: params[:winner],
   loser: params[:loser]
