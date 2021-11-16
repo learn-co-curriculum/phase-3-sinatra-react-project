@@ -10,21 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_15_224513) do
+ActiveRecord::Schema.define(version: 2021_11_16_000618) do
 
   create_table "adoption_applications", force: :cascade do |t|
     t.string "name"
     t.date "date"
     t.integer "animal_id"
-    t.integer "shelter_id"
     t.index ["animal_id"], name: "index_adoption_applications_on_animal_id"
-    t.index ["shelter_id"], name: "index_adoption_applications_on_shelter_id"
   end
 
   create_table "animals", force: :cascade do |t|
     t.string "name"
     t.string "type"
     t.string "breed"
+    t.string "img_url"
+    t.integer "shelter_id"
   end
 
   create_table "shelters", force: :cascade do |t|
