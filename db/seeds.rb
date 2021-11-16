@@ -28,4 +28,6 @@ profile = Profile.all.sample
     )
 end
 
+##word
+
 puts "✅ Done seeding!"
