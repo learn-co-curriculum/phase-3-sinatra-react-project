@@ -43,10 +43,6 @@ post "/" do
  loser: params[:loser]
  )
  
-
-
- 
- 
  x= X.create(
   game_instance_id: game_instance.id,
   player_id: params[:x]
@@ -56,11 +52,13 @@ o= O.create(
   player_id: params[:o]
 )
 
+Player.find_by_id(winner).add_wins
+Player.find_by_id(loser).add_loses
+
 game_instance.to_json
 
 x.to_json
 o.to_json
-
 end
 
 
