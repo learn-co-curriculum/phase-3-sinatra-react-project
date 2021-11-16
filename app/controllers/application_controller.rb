@@ -30,7 +30,10 @@ game_instance.to_json
 end
 
 
-
+###This post request updates gameinstanst as well as X and O
+### next up is to update total winners 
+###should be doable
+###
 post "/" do
 
 
