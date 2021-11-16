@@ -27,10 +27,11 @@ end
 ####This method should only be run when we complete a game instance -- 
 #### this method adds 1  to the total_wins column 
 ##### As such if we run it when not needed it can mess stuff up 
-def add_wins
-i =  1+ self.total_wins
-self.update(player_wins: i)
-end
+### Addwins/loses is not used ATM
+# def add_wins
+# i =  1+ self.total_wins
+# self.update(player_wins: i)
+# end
 
 
 
@@ -47,11 +48,11 @@ i=0
    end
 i
 end
-   
-def add_loses
-   i =  1+ self.total_loses
-   self.update(player_losses: i)
-end
+ ### Addwins/loses is not used ATM  
+# def add_loses
+#    i =  1+ self.total_loses
+#    self.update(player_losses: i)
+# end
    
 
 
