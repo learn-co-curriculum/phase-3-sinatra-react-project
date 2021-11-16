@@ -11,12 +11,13 @@ def players
 end
 
 
- # might be needed  
+ # Checks a game_instance to see who won 
 def whoWon
 Player.find_by_id(self.winner)
 end
 
 
+ # Checks a game_instance to see who lost 
 def whoLost
     Player.find_by_id(self.loser)
 end
