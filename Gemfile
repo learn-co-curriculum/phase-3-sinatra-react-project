@@ -52,3 +52,7 @@ group :test do
 end
 
 gem "faker", "~> 2.19"
+
+gem 'themoviedb-api'
+
+gem "httparty", "~> 0.20.0"

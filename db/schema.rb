@@ -33,11 +33,14 @@ ActiveRecord::Schema.define(version: 2021_11_15_232639) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
-    t.string "genre"
+    t.text "genre"
     t.text "description"
     t.string "thumbnail"
-    t.string "movie_link"
+    t.string "backdrop"
     t.integer "rating"
+    t.integer "runtime"
+    t.string "release_date"
+    t.string "movie_link"
   end
 
   create_table "profiles", force: :cascade do |t|
