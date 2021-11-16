@@ -50,3 +50,9 @@ group :test do
   gem "rspec", "~> 3.10"
   gem "rspec-json_expectations", "~> 2.2"
 end
+
+# This gem will reset the table id to 1
+gem 'activerecord-reset-pk-sequence'
+
+# Faker file
+gem "faker", "~> 2.18"
