@@ -48,11 +48,11 @@ i=0
    end
 i
 end
- ### Addwins/loses is not used ATM  
-# def add_loses
-#    i =  1+ self.total_loses
-#    self.update(player_losses: i)
-# end
+ ## Addwins/loses is not used ATM  
+def add_loses
+   i =  1+ self.total_loses
+   self.update(player_losses: i)
+end
    
 
 
