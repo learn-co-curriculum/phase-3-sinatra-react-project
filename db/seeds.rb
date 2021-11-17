@@ -22,8 +22,8 @@ end
 #create planes
 puts "seeding planes"
 
-Plane.create(plane_number: 1, destination: "Cancun")
-Plane.create(plane_number: 2, destination: "Aruba")
+Plane.create(plane_number: 1, destination: "Cancun", pilot_id: 1)
+Plane.create(plane_number: 2, destination: "Aruba", pilot_id: 2)
 
 puts "seeding seats"
 
@@ -41,7 +41,7 @@ end
 
 #creating seats for plane 2
 #seat_num is global variable
-cus2_id = 15
+cus2_id = 0
 15.times do 
     Seat.create(
         seat_number: seat_num +=1,
