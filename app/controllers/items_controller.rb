@@ -1,6 +1,7 @@
 class ItemController < ApplicationController
   
     get '/items' do
+      binding.pry
       items =  Item.all
       items.to_json
     end
