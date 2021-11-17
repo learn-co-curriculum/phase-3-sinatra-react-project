@@ -27,7 +27,7 @@ class ApplicationController < Sinatra::Base
 ##### DATA that needs to be sent ---- player name and avatar
 post "/players" do
   player= Player.create(
-  player_name: params[:player_name],
+  player_name: params[:playerName],
   player_wins: 0,
   player_losses: 0,
   player_avatar: params[:playerAvatar]
