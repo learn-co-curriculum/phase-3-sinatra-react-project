@@ -45,7 +45,6 @@ player = Player.find(params[:id])
 
 player.add_wins  
 
-binding.pry
 
 player.to_json
 end
@@ -103,6 +102,23 @@ game_instance.update(
   winner: params[:winner],
   loser: params[:loser]
 )
+
+
+
+
+Player.find_by_id(params[:winner]).add_wins
+Player.find_by_id(params[:loser]).add_loses
+
+
+
+
+
+
+
+
+
+
+
 game_instance.to_json
 end
 

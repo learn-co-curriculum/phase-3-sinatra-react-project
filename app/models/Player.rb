@@ -29,7 +29,7 @@ end
 ##### As such if we run it when not needed it can mess stuff up 
 ### Addwins/loses is not used ATM
 def add_wins
-i =  1+ self.total_wins
+i =  self.total_wins
 self.update(player_wins: i)
 end
 
@@ -50,7 +50,7 @@ i
 end
  ## Addwins/loses is not used ATM  
 def add_loses
-   i =  1+ self.total_loses
+   i =   self.total_loses
    self.update(player_losses: i)
 end
    
