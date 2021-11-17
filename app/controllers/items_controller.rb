@@ -10,4 +10,9 @@ class ItemController < ApplicationController
       vintage = Item.find(params[:id])
       vintage.to_json
     end 
+
+    delete '/items/:id' do
+      vintage = Item.find(params[:id])
+      vintage.destroy
+    end
 end
