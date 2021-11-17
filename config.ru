@@ -11,6 +11,7 @@ end
 # Parse JSON from the request body into the params hash
 use Rack::JSONBodyParser
 use MovieController
+use ProfileController
 
 # Our application
 run ApplicationController
