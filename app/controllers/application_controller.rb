@@ -59,7 +59,7 @@ class ApplicationController < Sinatra::Base
 
   patch "/applications/:id" do
     animal = Animal.find_by_name(params[:animal]).id
-    application = AdoptionApplication.create(
+    application = AdoptionApplication.find(params[:id]).update(
       name: params[:name],
       date: params[:date],
       animal_id: animal
@@ -75,8 +75,8 @@ class ApplicationController < Sinatra::Base
     Shelter.to_json
   end
 
-  patch "/shelters" do
-    Shelter.create(
+  patch "/shelters/:id" do
+    Shelter.find(params[:id]).update(
       name: params[:name],
       address: params[:address],
     )
