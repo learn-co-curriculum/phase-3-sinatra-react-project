@@ -11,4 +11,9 @@ class CustomersController < ApplicationController
 
        ) 
     end
+
+    delete '/customers/:id' do 
+        customer = Customer.find(params[:id])
+        customer.destroy
+    end
 end
