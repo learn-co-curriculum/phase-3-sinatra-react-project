@@ -8,7 +8,7 @@ user2 = User.create(name: "Chris Evans")
 
 puts "Create Items..."
 Item.create(
-    
+    user: user1 ,
     name: "Zoltar Speaks Fortune Teller Arcade - Economy", 
     price:769900, 
     product_description:"Zoltar Speaks Fortune Teller Arcade - Economy
@@ -32,7 +32,7 @@ Item.create(
     Weight (lbs.): 220", imgUrl:"https://3702250.app.netsuite.com/core/media/media.nl?id=22657110&c=3702250&h=b9fc4fb0b9309eb3875f")
 
     Item.create(
-        
+        user: user2,
         name: "ANTIQUE~QUEEN VICTORIA CORONATION CHAIR", 
         price:5000, 
         product_description:"ANTIQUE~QUEEN VICTORIA CORONATION CHAIR. This is a Rare, Original, Hand-carved, Coronation Hall Chair that
@@ -46,7 +46,7 @@ Item.create(
         imgUrl:"https://i.ebayimg.com/images/g/sSYAAOSwJr5hkHeV/s-l64.jpg")
 
     Item.create(
-        
+        user: user1,
         name: "NAPOLEON BONAPARTE 1769- VERY RARE ANTIQUE STIPPLE ENGRAVING -BARTOLOZZI 1802", 
         price:1309620, 
         product_description:"VERY RARE  NAPOLEON  BONAPARTE 1769-1821
@@ -61,7 +61,7 @@ Item.create(
         imgUrl:"https://i.ebayimg.com/images/g/hl4AAOSweldhJOx-/s-l64.jpg")
 
     Item.create(
-        
+        user: user2,
         name: "Gordon Highlanders Antique 1892 Sterling Silver Scottish Dirk ID'd Charles Monro", 
         price:1350000, 
         product_description:"Gordon Highlanders Antique 1892 Sterling Silver Scottish Dirk ID'd Charles Monro
@@ -81,14 +81,14 @@ Item.create(
         imgUrl:"https://i.ebayimg.com/images/g/kwcAAOSwOithbZkg/s-l64.jpg")
 
     Item.create(
-        
+        user: user1,
         name: "Antique hand carved Chinese foo dog lion shishi guardian jade statue", 
         price:625000, 
         product_description:"This magnificent, totally hand carved Chinese Foo Dog Lion ShiShi statue is absolutely gorgeous. Jade symbolizes purity, serenity and attracts good luck. This intricately designed piece is a very high quality and was handmade with superior craftsmanship. This massive statue weighs 3,200grams or 7lbs 1oz and is 9.0inches long, 6.0inches tall and has a width of 4.0inches. This exceptional Chinese Foo Dog Lion was handcrafted from jade, which was a popular material for carving small animal figures in the late 19th early 20th century and was much appreciated by the famous Russian jeweler Carl Fabergé. This terrific foo dog was hand carved by a fine Chinese master, this piece is smartly detailed and has a smooth polished surface. The lion was passionately carved from a single piece of wonderful glowing semi-translucent stone, that is cold to the touch. This gorgeous Foo Dog Lion is a true handmade work of art, it would make a great addition to any collection.", 
         imgUrl:"https://i.ebayimg.com/images/g/3KMAAOSwsFdfrb3n/s-l64.jpg")
 
     Item.create(
-        
+        user: user2,
         name: "ANTIQUE 19thC FRENCH SILVER GILT MUSIC SNUFF BOX c.1810", 
         price:509744, 
         product_description:"Antique 19th Century French very rare silver gilt musical snuff box, of traditional form, the base and the cover with panels of peaked-pattern engine turning within stamped sable boarders, the same pattern is repeated along the sides. Comes with its original key and works by sliding the left button to the right.
@@ -103,7 +103,7 @@ Item.create(
         imgUrl:"https://i.ebayimg.com/images/g/7~wAAOSwPOhabxK3/s-l64.jpg")
 
     Item.create(
-        
+        user: user1,
         name: "Antique Imperial Russian gild silver,Malachite Easter Egg by Julius Rappoport", 
         price:650000, 
         product_description:"I am pleased to offer from my private collection this very rare antique Imperial Russian presentation gild silver and Malachite Easter Egg by Julius Rappoport ,St.Petersburg,c1896.
@@ -117,7 +117,7 @@ Item.create(
         imgUrl:"https://i.ebayimg.com/images/g/Hv0AAOSwSShhi7G2/s-l64.jpg")
 
     Item.create(
-        
+        user: user2,
         name: "ANTIQUE OSCAR BLUEMNER FINE ART HARLEM RIVER NY 2nd AV RR BRIDGE AMERICAN MODERN", 
         price:839999, 
         product_description:"An artwork by American artist Oscar F. Bluemner (1867 - 1938) of Harlem River, New York City, June 18, 1910, of the 2nd Avenue  Railroad  Bridge, signed OFB lower right.  Colored pencil, pencil, and crayon measuring approximately 4 3/4 x 7 inches in a later frame behind glass measuring approximately 15 x 18 inches. Brilliant colors and fine condition as pictured. Thanks for looking.
@@ -125,7 +125,7 @@ Item.create(
         imgUrl:"https://i.ebayimg.com/images/g/yBAAAOSw~tJd8quI/s-l64.jpg")
 
     Item.create(
-        
+        user: user1,
         name: "ANTIQUE 19thC GEORGIAN SOLID SILVER FOX STIRRUP CUP, REILY & STORER c.1832", 
         price:509744, 
         product_description:"Antique 19th Century Georgian solid silver stirrup cup, of very unusual design, the cup is cone shape, resting on twisted vines and mounted with a model of a fox, the top boarder depicting hunting dogs in a country landscape chasing a fox, large vacant cartouche, the base rests inside a fox fur coaster. Stirrup cups are extremely rare and sought and this is undoubtedly the most unusual example. Hallmarked English silver (925 standard), London, year 1832 (r), Maker's mark CR GS for Charles Reily & George Storer.
@@ -138,7 +138,7 @@ Item.create(
         imgUrl:"https://i.ebayimg.com/images/g/pFcAAOSw9ClcbuQT/s-l64.jpg")
 
     Item.create(
-        
+        user: user2,
         name: "ANTIQUE 20thC IMPERIAL RUSSIAN SOLID SILVER & ENAMEL SUGAR BOWL & TONGS c.1910", 
         price:509744, 
         product_description:"Antique early 20th Century Imperial Russian solid silver-gilt and cloisonne' enamel sugar bowl and tongs, particularly large size and fine quality, richly gilt and beautifully enamelled with multicoloured stylised design on stippled ground and applied with stylised scroll handles. The sugar bowl is hallmarked Russian silver 84 (875 standard), Moscow, 1908-1917, Maker's mark in Cyrillic G.S (Grigoriy Sbitnev), sugar tongs by Ivan Zaharov. The bowl also bearing later Soviet marks, was part of the Mazzoleni Collection, Milan.
