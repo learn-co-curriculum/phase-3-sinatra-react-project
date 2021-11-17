@@ -48,7 +48,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/applications" do
-    animal = Animal.find_by_name(params[:animal]).id
+    animal = Animal.find_by_name(params[:animal_name]).id
     application = AdoptionApplication.create(
       name: params[:name],
       date: params[:date],
@@ -58,7 +58,7 @@ class ApplicationController < Sinatra::Base
   end
 
   patch "/applications/:id" do
-    animal = Animal.find_by_name(params[:animal]).id
+    animal = Animal.find_by_name(params[:animal_name]).id
     application = AdoptionApplication.find(params[:id]).update(
       name: params[:name],
       date: params[:date],
