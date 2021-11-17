@@ -34,7 +34,7 @@ class ApplicationsController < ApplicationController
       application = Application.find(params[:id])
       if !application
         {success: false, message: 'Application not found.'}.to_json
-      elsif application.user.id != params[:user_id]
+      elsif application.user.id != params[:user_id].to_i
         {success: false, message: 'You do not have permission to edit this application.'}.to_json
       else
         [:company, :position, :status, :logo_url, :favorite].each do |param|

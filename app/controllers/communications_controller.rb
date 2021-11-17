@@ -26,11 +26,12 @@ class CommunicationsController < ApplicationController
 
   patch '/communications/:id' do
     validate_user = logged_in(user_id: params[:user_id], login_token: params[:login_token])
+    p validate_user
     if validate_user[:success]
       communication = Communication.find(params[:id])
       if !communication
         {success: false, message: 'Communication not found.'}.to_json
-      elsif communication.application.user.id != params[:user_id]
+      elsif communication.application.user.id != params[:user_id].to_i
         {success: false, message: 'You do not have permission to edit this communication.'}.to_json
       else
         [:time, :received, :comment].each do |param|
