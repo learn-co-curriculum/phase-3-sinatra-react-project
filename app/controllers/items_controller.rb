@@ -5,4 +5,8 @@ class ItemController < ApplicationController
       items.to_json
     end
 
+    get '/items/:id' do
+      vintage = Item.find(params[:id])
+      vintage.to_json
+    end 
 end
