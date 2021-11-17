@@ -70,17 +70,15 @@ class ApplicationController < Sinatra::Base
   post "/shelters" do
     Shelter.create(
       name: params[:name],
-      address: params[:address],
-    )
-    Shelter.to_json
+      address: params[:address]
+    ).to_json
   end
 
   patch "/shelters/:id" do
     Shelter.find(params[:id]).update(
       name: params[:name],
-      address: params[:address],
-    )
-    Shelter.to_json
+      address: params[:address]
+    ).to_json
   end
 
 end
