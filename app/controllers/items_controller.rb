@@ -9,4 +9,15 @@ class ItemController < ApplicationController
       vintage = Item.find(params[:id])
       vintage.to_json
     end 
+
+    post '/items' do
+      items = Item.create(
+        name: params[:name],
+        price: params[:price],
+        product_description: params[:product_description],
+        imgUrl: params[:imgUrl],
+        user_id: params[:user_id]
+      )
+      items.to_json
+    end
 end
