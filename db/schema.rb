@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_15_232639) do
+ActiveRecord::Schema.define(version: 2021_11_16_233102) do
 
   create_table "actors", force: :cascade do |t|
     t.string "name"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2021_11_15_232639) do
 
   create_table "profiles", force: :cascade do |t|
     t.string "user_name"
+    t.string "profile_img"
   end
 
 end
