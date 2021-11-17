@@ -28,10 +28,10 @@ end
 #### this method adds 1  to the total_wins column 
 ##### As such if we run it when not needed it can mess stuff up 
 ### Addwins/loses is not used ATM
-# def add_wins
-# i =  1+ self.total_wins
-# self.update(player_wins: i)
-# end
+def add_wins
+i =  1+ self.total_wins
+self.update(player_wins: i)
+end
 
 
 

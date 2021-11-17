@@ -19,6 +19,7 @@ class ApplicationController < Sinatra::Base
 #####
   get "/players" do
     player = Player.all
+    
     player.to_json
   end
 
@@ -39,11 +40,13 @@ end
 ######## Update total win/lose counts 
 ####### This should run after a player loses or wins 
 patch "/players/:id" do 
+
 player = Player.find(params[:id])
-player.update(
-  player_wins: params[:playerWins],
-  player_losses: params[:playerosses]
-)
+
+player.add_wins  
+
+binding.pry
+
 player.to_json
 end
 
