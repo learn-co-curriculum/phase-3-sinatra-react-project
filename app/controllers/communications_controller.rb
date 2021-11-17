@@ -25,14 +25,23 @@ class CommunicationsController < ApplicationController
   end
 
   patch '/communications/:id' do
-    communication = Communication.find(params[:id])
-    communication.update(
-      time: params[:time],
-      received: params[:received],
-      comment: params[:comment]
-      
-    )
-    communication.to_json
+    validate_user = logged_in(user_id: params[:user_id], login_token: params[:login_token])
+    if validate_user[:success]
+      communication = Communication.find(params[:id])
+      if !communication
+        {success: false, message: 'Communication not found.'}.to_json
+      elsif communication.application.user.id != params[:user_id]
+        {success: false, message: 'You do not have permission to edit this communication.'}.to_json
+      else
+        [:time, :received, :comment].each do |param|
+          communication[param] = params[param] if params.has_key?(param)
+        end
+        communication.save
+        {success: true, data: communication}.to_json
+      end
+    else
+      {success: false, message: validate_user[:message]}.to_json
+    end
   end
 
   delete "/communications/:id" do
