@@ -11,8 +11,7 @@ Item.create(
     user: user1 ,
     name: "Zoltar Speaks Fortune Teller Arcade - Economy", 
     price:769900, 
-    product_description:"Zoltar Speaks Fortune Teller Arcade - Economy
-    Our least expensive Zoltar model. This high quality machine is great for smaller spaces or for those on a budget. Animations include only eye movement and talking. Add more movements like arm, head or breathing for an extra cost.
+    product_description:"Our least expensive Zoltar model. This high quality machine is great for smaller spaces or for those on a budget. Animations include only eye movement and talking. Add more movements like arm, head or breathing for an extra cost.
     Quality Details
     Zoltar’s hands and head are handcrafted and hand-painted by our artists to ensure the most realistic quality. The cabinet is made of birch veneers and is finished with black and gold trim. Zoltar is outfitted with a luxurious gold head wrap and shirt, topped with a detailed paisley vest and jewelry. He arrives with many trinkets such as statues, incense, coins, etc. to decorate the inside of his cabinet with.
     Activation Options
@@ -35,7 +34,7 @@ Item.create(
         user: user2,
         name: "ANTIQUE~QUEEN VICTORIA CORONATION CHAIR", 
         price:5000, 
-        product_description:"ANTIQUE~QUEEN VICTORIA CORONATION CHAIR. This is a Rare, Original, Hand-carved, Coronation Hall Chair that
+        product_description:" This is a Rare, Original, Hand-carved, Coronation Hall Chair that
         was designed complete with Appropriate Insignia exclusively for the Queen Victoria Coronation with year 1837-1897 
         carved in the back below the crown.  It is designed to represent a replica of the Historical Coronation chair by making the
         space beneath the seat that for centuries since 1296, a Stone of Scone was taken to England and placed under the
@@ -47,11 +46,9 @@ Item.create(
 
     Item.create(
         user: user1,
-        name: "NAPOLEON BONAPARTE 1769- VERY RARE ANTIQUE STIPPLE ENGRAVING -BARTOLOZZI 1802", 
+        name: "NAPOLEON BONAPARTE 1769-1821 VERY RARE ANTIQUE STIPPLE ENGRAVING -BARTOLOZZI 1802", 
         price:1309620, 
-        product_description:"VERY RARE  NAPOLEON  BONAPARTE 1769-1821
-        ANTIQUE MONOCHROME STIPPLE ENGRAVING OF NAPOLEON 1802
-        PRINTED ON BASE OF ENGRAVING:
+        product_description:"PRINTED ON BASE OF ENGRAVING:
         A. Appiani pinx            F. Bartolozzi R.A. Sculpt.
         N. BONAPARTE.
         London, Published as the Act directs June 10 1802, by G. Bartolozzi, No 82, Wells Street, Oxford Street.
@@ -64,9 +61,7 @@ Item.create(
         user: user2,
         name: "Gordon Highlanders Antique 1892 Sterling Silver Scottish Dirk ID'd Charles Monro", 
         price:1350000, 
-        product_description:"Gordon Highlanders Antique 1892 Sterling Silver Scottish Dirk ID'd Charles Monro
-        Used
-        I am very pleased to offer this Antique Late 19th Century Sterling Silver & Leather Scottish Gordon Highlanders Dirk!
+        product_description:"I am very pleased to offer this Antique Late 19th Century Sterling Silver & Leather Scottish Gordon Highlanders Dirk!
         This piece is absolutely stunning, and the craftsmanship is second to none!  The piece is engraved by the maker on the blade: T.A. Lyon 50, Leith St. Edinburgh.
         The Hilt of the dirk, as well as the small fork & knife, appear to be intricately carved wood (likely bog or ebony) and are decorated with sterling nails.  The hilts are also adorned with beautiful sterling silver thistle pommels with large set Cairngorm stones.
         The blade measures a little bit over 12inchs in length, and has a peculiar double-edged tip and jimping down 2/3rds of the back edge.
@@ -128,7 +123,7 @@ Item.create(
         user: user1,
         name: "ANTIQUE 19thC GEORGIAN SOLID SILVER FOX STIRRUP CUP, REILY & STORER c.1832", 
         price:509744, 
-        product_description:"Antique 19th Century Georgian solid silver stirrup cup, of very unusual design, the cup is cone shape, resting on twisted vines and mounted with a model of a fox, the top boarder depicting hunting dogs in a country landscape chasing a fox, large vacant cartouche, the base rests inside a fox fur coaster. Stirrup cups are extremely rare and sought and this is undoubtedly the most unusual example. Hallmarked English silver (925 standard), London, year 1832 (r), Maker's mark CR GS for Charles Reily & George Storer.
+        product_description:"Very unusual design, the cup is cone shape, resting on twisted vines and mounted with a model of a fox, the top boarder depicting hunting dogs in a country landscape chasing a fox, large vacant cartouche, the base rests inside a fox fur coaster. Stirrup cups are extremely rare and sought and this is undoubtedly the most unusual example. Hallmarked English silver (925 standard), London, year 1832 (r), Maker's mark CR GS for Charles Reily & George Storer.
         CONDITION
         In Excellent Condition - No Damage.
         SIZE
@@ -141,7 +136,7 @@ Item.create(
         user: user2,
         name: "ANTIQUE 20thC IMPERIAL RUSSIAN SOLID SILVER & ENAMEL SUGAR BOWL & TONGS c.1910", 
         price:509744, 
-        product_description:"Antique early 20th Century Imperial Russian solid silver-gilt and cloisonne' enamel sugar bowl and tongs, particularly large size and fine quality, richly gilt and beautifully enamelled with multicoloured stylised design on stippled ground and applied with stylised scroll handles. The sugar bowl is hallmarked Russian silver 84 (875 standard), Moscow, 1908-1917, Maker's mark in Cyrillic G.S (Grigoriy Sbitnev), sugar tongs by Ivan Zaharov. The bowl also bearing later Soviet marks, was part of the Mazzoleni Collection, Milan.
+        product_description:"Enamel sugar bowl and tongs, particularly large size and fine quality, richly gilt and beautifully enamelled with multicoloured stylised design on stippled ground and applied with stylised scroll handles. The sugar bowl is hallmarked Russian silver 84 (875 standard), Moscow, 1908-1917, Maker's mark in Cyrillic G.S (Grigoriy Sbitnev), sugar tongs by Ivan Zaharov. The bowl also bearing later Soviet marks, was part of the Mazzoleni Collection, Milan.
         CONDITION
         In Great Condition - No Damage.
         SUGAR BOWL
