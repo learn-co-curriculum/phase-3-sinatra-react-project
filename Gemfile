@@ -56,3 +56,6 @@ gem 'activerecord-reset-pk-sequence'
 
 # Faker file
 gem "faker", "~> 2.18"
+
+#mode 
+gem 'mode', '~> 0.0.26'

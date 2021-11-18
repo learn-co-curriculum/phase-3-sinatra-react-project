@@ -39,12 +39,18 @@ cus_id = 0
     )
 end
 
+#this data is here to test customers that have many seats
+# Seat.create(seat_number: 2, customer_id: 1, plane_id: 1)
+# Seat.create(seat_number: 3, customer_id: 1, plane_id: 1)
+# Seat.create(seat_number: 1, customer_id: 1, plane_id: 1)
+
 #creating seats for plane 2
 #seat_num is global variable
-cus2_id = 0
+cus2_id = 15
+seat_num2 = 0
 15.times do 
     Seat.create(
-        seat_number: seat_num +=1,
+        seat_number: seat_num2 +=1,
         customer_id: cus2_id +=1,
         plane_id: 2
         

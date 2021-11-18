@@ -6,14 +6,13 @@ class CustomersController < ApplicationController
 
     post '/customers' do
        Customer.create(
-        first_name: params[:first_name]
+        first_name: params[:first_name],
         last_name: params[:last_name]
-
-       ) 
+       ).to_json
     end
 
     delete '/customers/:id' do 
         customer = Customer.find(params[:id])
-        customer.destroy
+        customer.destroy.to_json
     end
 end
