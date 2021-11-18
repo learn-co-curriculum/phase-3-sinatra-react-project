@@ -58,7 +58,7 @@ end
 
 get '/game_instances'do 
 game_instance = GameInstance.all
-game_instance.to_json
+game_instance.to_json(include: :players)
 end
 
 
@@ -100,7 +100,8 @@ patch "/game_instances/:id" do
 game_instance = GameInstance.find(params[:id])
 game_instance.update(
   winner: params[:winner],
-  loser: params[:loser]
+  loser: params[:loser],
+  board: params[:board]
 )
 
 
