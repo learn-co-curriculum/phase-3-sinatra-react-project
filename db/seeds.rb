@@ -456,10 +456,33 @@ runtime: eachObject[:runtime],
 release_date: response[:release_date], 
 movie_link: response[:movie_link])}
 
+Movie.create(
+title: "The Invention of Lying",
+genre: "Comedy", 
+description: "eachObject[:description]", 
+thumbnail: "https://flxt.tmsimg.com/assets/p182956_p_v10_aa.jpg", 
+backdrop: "https://www.slantmagazine.com/wp-content/uploads/2009/09/inventionoflying.jpg", 
+rating: 6.4, 
+runtime: 100, 
+release_date: "2009", 
+movie_link:"https://www.youtube.com/watch?v=FkrlYQy_zK8&list=PLHPTxTxtC0ibVZrT2_WKWUl2SAxsKuKwx&index=63")
+
+Movie.create(
+title: "Millennium Actress",
+genre: "Drama", 
+description: "When the legendary Ginei Studios shuts down, filmmaker Genya Tachibana and his assistant are tasked with interviewing its reclusive star, Chiyoko Fujiwara, who had retired from the spotlight 30 years prior. As she recounts her career, Genya and his crew are literally pulled into her memories where they witness her chance encounter with a mysterious man on the run from the police. Despite never knowing his name or his face, Chiyoko relentlessly pursues that man in a seamless blend of reality and memory.", 
+thumbnail: "https://pics.filmaffinity.com/Millennium_Actress-864201341-large.jpg", 
+backdrop: "https://epochemagazine.org/wp-content/uploads/post//15.03.01-Hero.png", 
+rating: 10, 
+runtime: 84, 
+release_date: "2001", 
+movie_link:"https://www.youtube.com/watch?v=3KasqdsIaIs&list=PLHPTxTxtC0ibVZrT2_WKWUl2SAxsKuKwx&index=159")
+
+
 
 avatar = ["https://cdn.pixabay.com/photo/2020/10/11/18/45/cow-5646719__480.png", 
 "https://cdn.pixabay.com/photo/2021/01/08/10/02/monkey-5899489__480.png",
-"https://cdn4.iconfinder.com/data/icons/animal-2-1/100/animal-19-512.png,"
+"https://cdn4.iconfinder.com/data/icons/animal-2-1/100/animal-19-512.png,",
 "https://images.clipartlogo.com/files/istock/previews/1026/102672691-animal-emotion-avatar-vector-icon.jpg",
 "https://library.kissclipart.com/20180917/xzw/kissclipart-animal-avatar-icon-clipart-owl-computer-icons-gian-89b9976cf9dcaaa2.png",
 "https://cdn.imgbin.com/3/16/6/imgbin-geometric-wolf-avatar-XKYvCD5J4tGSSn5pAtkWgmA9s.jpg"
