@@ -1,118 +1,92 @@
-# Phase 3 Project Guidelines
+# Illegal Streaming Website 
 
-## Learning Goals
+![illegal streaming website](https://i.imgur.com/CaBpbR4.png)
 
-- Build a web basic API with Sinatra and Active Record to support a React
-  frontend
+Are you tired of trying to find links to stream your favorite movies? Dont wanna pay for a subscription to Netflix, HBO Max, Hulu or any other service? GREAT! We dont like to either :)
+That is why we have created the ISW platform for your viewing pleasure! Browse our massive collection of movies and stream them on demand without ever having to pay out to a corporation $$$
 
-## Introduction
+Its easy to create an account (completley free!) - and once logged in, you can search our extensive and eclectic library of movies. 
 
-Congrats on getting through all the material for Phase 3! Now's the time to put
-it all together and build something from scratch to reinforce what you know and
-expand your horizons.
+We have a dedidicated suggested page for you when you log in, or feel free to browse by genre
 
-The focus of this project is **building a Sinatra API backend** that uses
-**Active Record** to access and persist data in a database, which will be used
-by a separate **React frontend** that interacts with the database via the API.
+---
 
-## Requirements
+# Why Was This Built?
 
-For this project, you must:
+This project was the brainchild of our group for our Phase 3 project using Ruby and React. The purpose and the goal was to build and populate a data base in Ruby with Sinatra and using routes, have that data populate into React via fetch calls to those specific API endpoints. 
 
-- Use Active Record to interact with a database.
-- Have a minimum of two models with a one-to-many relationship.
-- Create API routes in Sinatra that handles at least three different CRUD
-  actions for at least one of your Active Record models.
-- Build a separate React frontend application that interacts with the API to
-  perform CRUD actions.
-- Use good OO design patterns. You should have separate classes for each of your
-  models, and create instance and class methods as necessary.
+---
 
-For example, build a todo list application with a React frontend interface and a
-Sinatra backend API, where a user can:
+# Technologies Used
 
-- **Create** a new todo
-- **Read** a list of all todos
-- **Update** an individual todo
-- **Delete** a todo
+For this poject, we used several technologies to bring this app to life. There was a strong focus on backend and data base set up. Below is a list of the tech stacked used in this project:
 
-A `Todo` can be tagged with a `Category`, so that each todo _belongs to_ a
-category and each category _has many_ todos.
+    1. Ruby
+    2. ActiveRecord
+    3. Sinatra 
+    4. React
+    5. HTML/JSX
+    6. CSS
 
-## Getting Started
+---
 
-### Backend Setup
+# Back End Features (Ruby/Sinatra)
 
-This repository has all the starter code needed to get a Sinatra backend up and
-running. [**Fork and clone**][fork link] this repository to get started. Then, run
-`bundle install` to install the gems.
+To start the backend server, run: rake server
 
-[fork link]: https://github.com/learn-co-curriculum/phase-3-sinatra-react-project/fork
+For the front end, we used React to construct and render our needed components to populate our tables from Ruby. We elected to harness useEffect to make our fetches hitting different API ends points constructed in Ruby. With the fetches completed, we then used useState within React to toggle differnt states on and off depending on the users clicks. 
+From the CRUD method, we gave this application the ablilty to:
 
-The `app/controllers/application_controller.rb` file has an example GET route
-handler. Replace this route with routes for your project.
+For the back end setup, we used Ruby and ActiveRecord to create our data base and models. We created our tables and migrated them so that we could connect our models with associations to pull and push data. With the tables created and our data seeded, we could then create our routes/API end points within our controllers so that they aligned with CRUD methods to connect to our front end
 
-You can start your server with:
+## READ:
+*Fetch*
+---
+http://localhost:9292/movies
+/movies
+/movies/suggested
+/movies/genres
 
-```console
-$ bundle exec rake server
-```
+These were the main routes to fetch the movie database which allowed us to pull all the movies from the public API. This is how we were able to populate our "All Movies", "Generes" and "Suggested" containers.
 
-This will run your server on port
-[http://localhost:9292](http://localhost:9292).
+## CREATE:
+*Post*
+---
+http://localhost:9292/profiles
+/profiles
 
-### Frontend Setup
+We gave our uses the ability to 'create' new profiles within our application. Using the POST method, a user can create a new profile with a name and a profile picture. This POST request then hits the API end point within Ruby, and then new profile data is then added to the data base and is saved.
 
-Your backend and your frontend should be in **two different repositories**.
+## DELETE:
+*Delete*
+---
+http://localhost:9292/profiles
+/profiles/:id
 
-Create a new repository in a **separate folder** with a React app for your
-frontend. `cd` out of the backend project directory, and use
-[create-react-app][] to generate the necessary code for your React frontend:
+Finally, we also gave our users the ability to delete profiles. Using the DELETE method, a user can choose a profile and delete it. This then sends a request to the API end point matching the user ID wihtin the data base. It is then permanently removed from the database, and will not be present on the login screen after making the fetch reqeust to the database.
 
-```console
-$ npx create-react-app my-app-frontend
-```
+---
 
-After creating the project locally, you should also
-[create a repository on GitHub][create repo] to host your repo and help
-collaborate, if you're working with a partner.
+# The Team/Collaborators
 
-### Fetch Example
+This project was a collective effort between:
 
-Your React app should make fetch requests to your Sinatra backend! Here's an
-example:
+**Oluwayemisi Soremekun**
 
-```js
-fetch("http://localhost:9292/test")
-  .then((r) => r.json())
-  .then((data) => console.log(data));
-```
+*Instagram*: www.instagram.com/oluwayemisi_s/
 
-## Project Tips
+*Email*: oluwayemisi.soremekun@gmail.com
 
-- This project is intended to focus more on the backend than the frontend, so
-  try and keep the React side of things relatively simple. Focus on working with
-  Active Record and performing CRUD actions. What are some interesting queries you can write? What kinds of questions can you ask of your data?
-- Once you have a project idea, come up with a domain model and decide what
-  relationships exist between the models in your application. Use a tool like
-  [dbdiagram.io][] to help visualize your models.
-- Decide on your API endpoints. What data should they return? What kind of CRUD
-  action should they perform? What data do they need from the client?
-- Use [Postman][postman download] to test your endpoints.
-- Use `binding.pry` to debug your requests on the server. It's very helpful to use a
-  `binding.pry` in your controller within a route to see what `params` are being
-  sent.
-- Use the [Network Tab in the Dev Tools][network tab] in the frontend to debug
-  your requests.
+*Youtube*: www.youtube.com/channel/UCOMU9_StCtTTqnwSr_Jlvvw
 
-## Resources
+**Zachary Vallarino**
 
-- [create-react-app][]
-- [dbdiagram.io][]
-- [Postman][postman download]
+*Instagram*: https://www.instagram.com/zvallarino/
 
-[create-react-app]: https://create-react-app.dev/docs/getting-started
-[create repo]: https://docs.github.com/en/get-started/quickstart/create-a-repo
-[dbdiagram.io]: https://dbdiagram.io/
-[postman download]: https://www.postman.com/downloads/
-[network tab]: https://developer.chrome.com/docs/devtools/network/
+*Email*: zvcoding@gmail.com
+
+**Garrett Dick**
+
+*Instagram*: https://www.instagram.com/bobross4life/
+
+*Email*: garrettd0511@gmail.com
