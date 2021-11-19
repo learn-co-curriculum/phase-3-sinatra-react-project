@@ -12,6 +12,7 @@ end
 use Rack::JSONBodyParser
 use MovieController
 use ProfileController
+use GenreController
 
 # Our application
 run ApplicationController

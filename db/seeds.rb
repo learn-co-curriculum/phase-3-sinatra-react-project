@@ -413,29 +413,15 @@ fullArray =
 fullList = []
  fullArray.map{|element| fullList.push(element[0])}
  fullArray2.map{|element| fullList.push(element[0])}
-# pp fullList.count
 
 
-# # pp newnewArray = fullArray.map{|element| [element[1], element[0]]}
-# # pp newnewArray[0][0]
-# fullListOfOptions = [] 
 i = 0
 allObjects = []
 while i < 381
-# pp fullList[i]
+
 eachObject = {}
 response = HTTParty.get("https://api.themoviedb.org/3/movie/#{fullList[i]}?api_key=84e4d1652d357878897c1101c5c35ea9")
-# # pp response['title']
-# # pp response['genres'][0]["name"]
-# # pp response['overview']
-# # pp response['vote_average']
-# # pp response['poster_path']
-# # pp response['poster_path']
-# # pp response['backdrop_path']
-# # pp "https://www.themoviedb.org/t/p/w600_and_h900_bestv2#{response['backdrop_path']}"
-# # pp response['runtime']
-# # pp response['release_date']
-# # pp response['video']
+
 eachObject = {
   title: response['title'],
   genre: response['genres'][0]["name"], 
@@ -447,16 +433,15 @@ eachObject = {
   release_date: response['release_date'],
   movie_link: response['video']}
 
-#      pp eachObject[:release_date]
 
 allObjects << eachObject
 #Movie.create(title: response['title'], genre: response['genre'], description: response['overview'], thumbnail: response['poster_path'], backdrop: response['backdrop_path'], rating: response['vote_average'], runtime: response['runtime'], release_date: response['release_date'], movie_link: response['video'])
 i+=1
 response.to_json if response.code == 200
-# # D ["#{sketch},#{response['adult']}"]
+
 end
 
-# /gd8JNjwgiM6ZgGm6NFAkovQWoYn.jpg
+
 
 
 allObjects.map{|eachObject|  
@@ -472,44 +457,19 @@ release_date: response[:release_date],
 movie_link: response[:movie_link])}
 
 
-# pp fullListOfOptions
-# return fullListOfOptions
-# end
-# binding.pry
-# pp fullListOfOptions
+avatar = ["https://cdn.pixabay.com/photo/2020/10/11/18/45/cow-5646719__480.png", 
+"https://cdn.pixabay.com/photo/2021/01/08/10/02/monkey-5899489__480.png",
+"https://cdn4.iconfinder.com/data/icons/animal-2-1/100/animal-19-512.png,"
+"https://images.clipartlogo.com/files/istock/previews/1026/102672691-animal-emotion-avatar-vector-icon.jpg",
+"https://library.kissclipart.com/20180917/xzw/kissclipart-animal-avatar-icon-clipart-owl-computer-icons-gian-89b9976cf9dcaaa2.png",
+"https://cdn.imgbin.com/3/16/6/imgbin-geometric-wolf-avatar-XKYvCD5J4tGSSn5pAtkWgmA9s.jpg"
+]
 
-
-
-# Seed your database here
-
-
-# genres = ["drama", "comedy", "action", "fantasy", "horror", "romance", "western", "thriller"]
-# 1.times do
-#     Movie.create(
-#         movie = Tmdb::Movie.detail(550),
-
-#         id: 5, 
-#         title: Faker::Movie.quote,
-#         genre: "quote",
-#         description: "cats",
-#         thumbnail: "cats",
-#         movie_link: "cats",
-#         rating: 2
-# 
-#         # title:Faker::Movie.quote,
-#         # genre: genres.sample,
-#         # description: Faker::Movie.quote,
-#         # thumbnail: "https://photoadking.com/images/template-images/poster/movie/2.webp",
-#         # movie_link: "https://www.youtube.com/watch?v=rhmT5yTkGfU",
-#     )
-# end 
-
-4.times do
-    Profile.create(user_name: Faker::Name.first_name, profile_img:"https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png")
+5.times do
+    profile_img = avatar.sample
+    Profile.create(user_name: Faker::Name.first_name, profile_img: profile_img)
 end
 
-# movie = Movie.all.sample
-# profile = Profile.all.sample
 300.times do 
     movie = Movie.all.sample
     profile = Profile.all.sample
@@ -518,7 +478,5 @@ end
         profile_id: profile.id
     )
 end
-
-##word
 
 puts "✅ Done seeding!"
