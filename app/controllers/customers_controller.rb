@@ -5,10 +5,17 @@ class CustomersController < ApplicationController
     end
 
     post '/customers' do
-       Customer.create(
+     customer = Customer.create(
         first_name: params[:first_name],
         last_name: params[:last_name]
        ).to_json
+       puts customer
+       Seat.create(
+           customer_id: JSON.parse(customer)['id'],
+           plane_id: params[:plane_id],
+           seat_number: params[:seat_number]
+           
+       )
     end
 
     delete '/customers/:id' do 

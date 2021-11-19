@@ -22,8 +22,8 @@ end
 #create planes
 puts "seeding planes"
 
-Plane.create(plane_number: 1, destination: "Cancun", pilot_id: 1)
-Plane.create(plane_number: 2, destination: "Aruba", pilot_id: 2)
+Plane.create(plane_number: 1, destination: "Cancun")
+Plane.create(plane_number: 2, destination: "Aruba")
 
 puts "seeding seats"
 
@@ -59,12 +59,15 @@ end
 
 #creating Pilots
 
-2.times do 
-    Pilot.create(first_name: Faker::Name.first_name,
-            last_name: Faker::Name.last_name
+# 2.times do 
+#     Pilot.create(first_name: Faker::Name.first_name,
+#             last_name: Faker::Name.last_name
 
-        )
-    end
+#         )
+#     end
+
+Pilot.create(first_name: "spider",last_name: "man",plane_id: 1)
+Pilot.create(first_name: "john",last_name: "wick",plane_id: 2)
 
 
 
