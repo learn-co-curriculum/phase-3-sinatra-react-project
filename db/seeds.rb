@@ -1,13 +1,18 @@
 puts "🌱 Seeding..."
 
+Category.destroy_all
+Post.destroy_all
+
 
 5.times do
   Category.create(name: Faker::Food.ethnic_category)
 end
 puts "Categories ✅"
 
+
+
 def get_rand_category
-  Category.all[rand(Category.all.count)]
+  Category.all[rand(Category.all.count)].id
 end
 
 25.times do
