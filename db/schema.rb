@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2021_12_03_210415) do
     t.text "content"
     t.string "image_url"
     t.integer "category_id"
+    t.string "contributor_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
