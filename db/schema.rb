@@ -22,9 +22,12 @@ ActiveRecord::Schema.define(version: 2021_12_05_175659) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
-    t.string "genre"
+    t.string "img_url"
     t.integer "release_year"
-    t.string "description"
+    t.string "genre"
+    t.string "desc"
+    t.integer "runtime"
+    t.integer "rating"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -42,9 +45,14 @@ ActiveRecord::Schema.define(version: 2021_12_05_175659) do
 
   create_table "shows", force: :cascade do |t|
     t.string "title"
-    t.string "genre"
+    t.string "img_url"
     t.integer "release_year"
-    t.string "description"
+    t.string "genre"
+    t.string "desc"
+    t.integer "total_season"
+    t.integer "total_episode"
+    t.integer "runtime"
+    t.integer "rating"
   end
 
   create_table "users", force: :cascade do |t|
