@@ -39,6 +39,8 @@ end
     Review.create(comment: Faker::Lorem.sentence(word_count: 8), rating: rand(1..10), show_id: Show.all.sample.id, user_id: User.all.sample.id)
 end
 
+Review.create(comment: Faker::Lorem.sentence(word_count: 8), rating: rand(1..10), show_id: Show.first.id, user_id: User.first.id)
+
 20.times do 
     Review.create(comment: Faker::Lorem.sentence(word_count: 8), rating: rand(1..10), movie_id: Show.all.sample.id, user_id: User.all.sample.id)
 end
