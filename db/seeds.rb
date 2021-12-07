@@ -15,7 +15,7 @@ csv.each do |t|
         })
 end
 
-shows = File.read('lib/seeds/show_lists_TV_shows.csv')
+shows = File.read('lib/seeds/show_lists_tv_shows.csv')
 csv = CSV.parse(shows, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |t|
       Show.create({
