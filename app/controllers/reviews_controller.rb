@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
   patch '/reviews/:id' do 
     review = Review.find(params[:id])
     review.update(
-      comment: params[:comment]
+      comment: params[:comment],
       rating: params[:rating]
     )
     review.to_json
