@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_05_175659) do
-
-  create_table "actors", force: :cascade do |t|
-    t.string "full_name"
-  end
-
-  create_table "genre", force: :cascade do |t|
-    t.string "genre_name"
-  end
+ActiveRecord::Schema.define(version: 2021_12_04_191345) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"

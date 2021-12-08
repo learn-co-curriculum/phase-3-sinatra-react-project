@@ -4,7 +4,8 @@ import './App.css';
 import MovieList from './components/MovieList';
 import MovieListHeading from './components/MovieListHeading';
 import SearchBox from './components/SearchBox';
-import StarRating from './components/StarRating';
+// import StarRating from './components/StarRating';
+
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -30,8 +31,7 @@ const App = () => {
     <div className='djm-movie'>
         <MovieListHeading heading='Movies' />
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-        <StarRating />
-
+    
       <div className='row_poster'>
         < MovieList movies={movies} />
       </div>
