@@ -9,4 +9,6 @@ class MoviesController < ApplicationController
     movie = Movie.find(params[:id])
     movie.to_json(include: :reviews)
   end
+
+
 end
