@@ -31,7 +31,7 @@ const App = () => {
     <div className='djm-movie'>
         <MovieListHeading heading='Movies' />
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-    
+        
       <div className='row_poster'>
         < MovieList movies={movies} />
       </div>
