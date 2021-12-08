@@ -16,7 +16,7 @@ end
 
 25.times do
   Post.create(
-    content: Faker::Lorem.sentence(word_count: 50),
+    content: Faker::Quote.famous_last_words,
     image_url: Faker::Fillmurray.image,
     category_id: Category.all.sample.id,
     contributor_name: Faker::Name.unique.name,
@@ -29,12 +29,12 @@ puts 'Posts ✅'
 100.times do
   Comment.create(
     name: Faker::Name.unique.name,
-    avatar_url: "https://i.pravatar.cc/150",
+    avatar_url: "https://i.pravatar.cc/50/#{rand(100)}",
     message: Faker::Lorem.sentence(word_count: 10),
-    post_id: Post.all.sample.id
+    post_id: Post.all.sample.id,
   )
 end
 
-  puts 'Comments ✅'
+puts 'Comments ✅'
 
 puts '✅ Done seeding!'

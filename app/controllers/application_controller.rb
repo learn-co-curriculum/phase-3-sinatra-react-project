@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
   # Add your routes here
   get '/' do
     post = Post.all.order(:created_at).reverse
-    post.to_json
+    post.to_json(include: :comments)
   end
 
   get '/categories' do
@@ -25,7 +25,7 @@ class ApplicationController < Sinatra::Base
   get '/category_posts/name=:name' do
     category =
       Category.find_by(name: params[:name]).posts.order(:created_at).reverse
-    category.to_json
+    category.to_json(include: :comments)
   end
 
   delete '/post/:id' do
