@@ -40,7 +40,7 @@ end
 #handle submit to update reviews for movie
 # function EditReviewForm({ review, onUpdateReview }) {
 #   const [comment, setComment] = useState("");
-#   const [score, setScore] = useState("0");
+#   const [rating, setRating] = useState("0");
 
 #   function handleSubmit(e) {
 #     e.preventDefault();
