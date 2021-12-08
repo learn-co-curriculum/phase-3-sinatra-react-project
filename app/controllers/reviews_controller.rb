@@ -6,22 +6,17 @@ class ReviewsController < ApplicationController
   end
 
   post '/reviews' do
-  review = Review.create(
-    rating: params[:rating],
-    comment: params[:comment],
-    show_id: params[:show_id],
-    movie_id: params[:movie_id]
-    user_id: params[:user_id]
-  )
-  review.to_json
-end
-
-  delete "/reviews/:id" do
-    review = Review.find(params[:id])
-    review.destroy
-    {message:'review destroyed'}.to_json
+    review = Review.create(
+      rating: params[:rating],
+      comment: params[:comment],
+      show_id: params[:show_id],
+      movie_id: params[:movie_id],
+      user_id: params[:user_id]
+    )
+    review.to_json
   end
 
+  
   patch '/reviews/:id' do 
     review = Review.find(params[:id])
     review.update(
@@ -30,9 +25,15 @@ end
     )
     review.to_json
   end
+  
 
+  delete "/reviews/:id" do
+    review = Review.find(params[:id])
+    review.destroy
+    {message:'review destroyed'}.to_json
+  end
+  
 end
-
 #handle delete for front end
 # const handleDelete = (id) => {
 #   fetch(`http://localhost:9292/reviews/${id}`, {

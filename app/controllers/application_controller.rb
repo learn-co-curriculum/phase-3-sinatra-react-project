@@ -3,6 +3,7 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/" do
-    { message: "This is a test" }.to_json
+    { message: "Welcome to our API, This is the API we made for our Phase 3 project
+      The movies and shows thats in this API are just a random movies and shows that we added" }.to_json
   end
 end

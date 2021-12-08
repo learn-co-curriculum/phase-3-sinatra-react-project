@@ -35,16 +35,18 @@ puts "seeding users..."
 40.times do
     User.create(full_name: Faker::Name.name)
 end
-puts "seeding movie reviews"
-20.times do 
-    Review.create(comment: Faker::Lorem.sentence(word_count: 8), rating: rand(1..10), show_id: Show.all.sample.id, user_id: User.all.sample.id)
+puts "seeding movie/show reviews"
+User.all.each do |t|
+    rand(1..5).times do 
+        Review.create(comment: Faker::Lorem.sentence(word_count: 8), rating: rand(1..10), movie_id: Movie.all.sample.id, user_id: t.id)
+        Review.create(comment: Faker::Lorem.sentence(word_count: 8), rating: rand(1..10), show_id: Show.all.sample.id, user_id: t.id)
+    end
 end
-
-Review.create(comment: Faker::Lorem.sentence(word_count: 8), rating: rand(1..10), show_id: Show.first.id, user_id: User.first.id)
-puts "seeding show reviews"
-20.times do 
-    Review.create(comment: Faker::Lorem.sentence(word_count: 8), rating: rand(1..10), movie_id: Show.all.sample.id, user_id: User.all.sample.id)
-end
+# puts "seeding show reviews"
+# User.all.each do |t|
+#     rand(1..10) do 
+#     end
+# end
 
 
 
