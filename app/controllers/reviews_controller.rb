@@ -20,8 +20,6 @@ class ReviewsController < ApplicationController
     review.to_json
   end
 
-
-
 end
 
 #handle delete for front end
