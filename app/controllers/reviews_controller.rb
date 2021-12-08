@@ -20,6 +20,15 @@ class ReviewsController < ApplicationController
     review.to_json
   end
 
+  post '/reviews' do 
+    review = Review.create(
+    rating: params[:rating],
+    comment: params[:comment],
+    show_id: params[:show_id],
+    movie_id: params[:movie_id]
+    user_id: params[:user_id]
+  end
+
 
 
 end
