@@ -1,7 +1,9 @@
 puts '🌱 Seeding...'
 
 Category.destroy_all
+Category.reset_pk_sequence
 Post.destroy_all
+Post.reset_pk_sequence
 
 5.times { Category.create(name: Faker::Food.ethnic_category) }
 puts 'Categories ✅'
@@ -14,7 +16,7 @@ end
   Post.create(
     content: Faker::Lorem.sentence(word_count: 50),
     image_url: Faker::Fillmurray.image,
-    category_id: get_rand_category,
+    category_id: Category.all.sample.id,
     contributor_name: Faker::Name.unique.name,
     subject: Faker::Beer.name,
   )
