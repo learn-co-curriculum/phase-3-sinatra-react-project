@@ -12,15 +12,15 @@ class ApplicationController < Sinatra::Base
     category.to_json
   end
 
-  get '/category/id=:id' do
-    category = Category.find(params[:id])
-    category.to_json
-  end
+  # get '/category/id=:id' do
+  #   category = Category.find(params[:id])
+  #   category.to_json
+  # end
 
-  get '/category/name=:name' do
-    category = Category.find_by(name: params[:name])
-    category.to_json
-  end
+  # get '/category/name=:name' do
+  #   category = Category.find_by(name: params[:name])
+  #   category.to_json
+  # end
 
   get '/category_posts/name=:name' do
     category =
@@ -33,7 +33,17 @@ class ApplicationController < Sinatra::Base
     post.destroy
     post.to_json
   end
-
+  
+  post '/new_comment' do
+    comment = Comment.create(
+      name: params[:name],
+      message: params[:message],
+      avatar_url: "https://i.pravatar.cc/50",
+      post_id: params[:post_id],
+    )
+    comment.to_json
+  end
+  
   post '/new_post' do
     post =
       Post.create(
@@ -44,6 +54,12 @@ class ApplicationController < Sinatra::Base
         subject: params[:subject],
         color: params[:color],
       )
-    post.to_json
+      post.to_json
+    end
+
+    get '/comments' do
+      comments = Comment.all.order(:created_at).reverse
+      comments.to_json
+    end
+
   end
-end
