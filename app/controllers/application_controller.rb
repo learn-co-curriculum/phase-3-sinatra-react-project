@@ -46,12 +46,13 @@ class ApplicationController < Sinatra::Base
   
   post '/new_post' do
     post =
-    Post.create(
-      content: params[:content],
-      image_url: params[:image_url],
-      category_id: params[:category_id],
-      contributor_name: params[:contributor_name],
-      subject: params[:subject],
+      Post.create(
+        content: params[:content],
+        image_url: params[:image_url],
+        category_id: params[:category_id],
+        contributor_name: params[:contributor_name],
+        subject: params[:subject],
+        color: params[:color],
       )
       post.to_json
     end
