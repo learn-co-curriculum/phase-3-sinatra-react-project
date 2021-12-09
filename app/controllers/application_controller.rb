@@ -25,7 +25,7 @@ class ApplicationController < Sinatra::Base
   get '/category_posts/name=:name' do
     category =
       Category.find_by(name: params[:name]).posts.order(:created_at).reverse
-    category.to_json
+    category.to_json(include: :comments)
   end
 
   delete '/post/:id' do
