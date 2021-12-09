@@ -40,6 +40,8 @@ gem "require_all", "~> 3.0"
 #reset pk sequence
 gem 'activerecord-reset-pk-sequence'
 
+gem 'pg'
+
 #eventmachine?
 gem "eventmachine", "~> 1.2.7"
 
