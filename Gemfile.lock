@@ -97,6 +97,7 @@ DEPENDENCIES
   activerecord (~> 6.1)
   activerecord-reset-pk-sequence
   database_cleaner (~> 2.0)
+  eventmachine (~> 1.2.7)
   faker
   pry (~> 0.14.1)
   rack-contrib (~> 2.3)

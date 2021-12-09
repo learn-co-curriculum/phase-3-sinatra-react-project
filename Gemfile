@@ -38,9 +38,10 @@ gem "faker"
 gem "require_all", "~> 3.0"
 
 #reset pk sequence
-
 gem 'activerecord-reset-pk-sequence'
 
+#eventmachine?
+gem "eventmachine", "~> 1.2.7"
 
 # These gems will only be used when we are running the application locally
 group :development do
