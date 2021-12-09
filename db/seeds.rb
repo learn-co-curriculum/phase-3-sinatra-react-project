@@ -14,6 +14,8 @@ def get_rand_category
   Category.all[rand(Category.all.count)].id
 end
 
+colors = %w[#ff7eb9 # #7afcff #feff9c #fff740 #A5E864]
+
 25.times do
   Post.create(
     content: Faker::Quote.famous_last_words,
@@ -21,6 +23,7 @@ end
     category_id: Category.all.sample.id,
     contributor_name: Faker::Name.unique.name,
     subject: Faker::Beer.name,
+    color: colors.sample,
   )
 end
 

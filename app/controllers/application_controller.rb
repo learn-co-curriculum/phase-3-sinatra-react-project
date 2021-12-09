@@ -42,6 +42,7 @@ class ApplicationController < Sinatra::Base
         category_id: params[:category_id],
         contributor_name: params[:contributor_name],
         subject: params[:subject],
+        color: params[:color],
       )
     post.to_json
   end
