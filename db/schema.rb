@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_12_08_163451) do
     t.string "header"
     t.string "description"
     t.string "image_url"
-    t.string "content"
+    t.string "content_link"
     t.integer "like_count"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false

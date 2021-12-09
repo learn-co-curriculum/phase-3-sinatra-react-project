@@ -23,7 +23,7 @@ puts "🌱 Seeding spices..."
         header: Faker::Verb.base,
         description: Faker::ProgrammingLanguage.name,
         image_url: 'https://media.istockphoto.com/photos/programming-code-abstract-technology-background-of-software-developer-picture-id1224500457?b=1&k=20&m=1224500457&s=170667a&w=0&h=OOPEMFamnZo63_2t_W40mYSfU1WrFAHHZRBgNN-GSgI=',
-        content: Faker::Hacker.say_something_smart,
+        content_link: 'https://learning.flatironschool.com/courses/4543/assignments/157705?module_item_id=336041',
         like_count: rand(1..100),
         user_id: User.all.sample.id
     })

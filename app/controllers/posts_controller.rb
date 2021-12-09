@@ -13,7 +13,7 @@ class PostsController < ApplicationController
             header: params[:header],
             description: params[:description],
             image_url: params[:image_url],
-            content: params[:content],
+            content_link: params[:content_link],
             like_count: params[:like_count],
             user_id: params[:user_id]
         })
