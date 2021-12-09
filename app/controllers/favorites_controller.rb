@@ -13,7 +13,7 @@ class FavoritesController < ApplicationController
             user_id: params[:user_id],
             post_id: params[:post_id]
         })
-        Favorite.to_json(include: [:post, :user])
+        favorite.to_json(include: [:post, :user])
     end
 
     delete "/favorites/:id" do
