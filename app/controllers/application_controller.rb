@@ -18,10 +18,18 @@ class ApplicationController < Sinatra::Base
 
   
   post '/new_category' do
-    category=Category.create(
-      name: params[:name]
+
+    # Category.create(name: params[:name])
+
+    # if Category.all.!includes(category) do
+    #   category.to_json end
+    name=params[:name].downcase.titleize
+    category=Category.find_or_create_by(
+      name: name
     )
-    category.to_json
+
+
+    Category.all.uniq.to_json
   end
 
 
