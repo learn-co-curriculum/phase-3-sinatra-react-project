@@ -12,6 +12,23 @@ class ApplicationController < Sinatra::Base
     category.to_json
   end
 
+
+
+
+
+  
+  post '/new_category' do
+    category=Category.create(
+      name: params[:name]
+    )
+    category.to_json
+  end
+
+
+
+
+
+
   # get '/category/id=:id' do
   #   category = Category.find(params[:id])
   #   category.to_json
@@ -30,7 +47,9 @@ class ApplicationController < Sinatra::Base
 
   delete '/post/:id' do
     post = Post.find(params[:id])
+    comments = post.comments
     post.destroy
+    comments.destroy_all
     post.to_json
   end
   
