@@ -17,8 +17,16 @@ task :server do
   exec "bundle exec rerun -b '#{rackup}'"
 end
 
+
 desc "Start the console"
 task :console do
   ActiveRecord::Base.logger = Logger.new(STDOUT)
+
+  puts "
+  
+    💻👀.... WE'RE IN!!!! 
+
+  "
+
   Pry.start
 end
