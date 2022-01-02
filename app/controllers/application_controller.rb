@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/todos" do
-    todos = Todo.all
+    todos = Todo.all.order(:category_id)
     todos.to_json(include: { category: {only: [:category]} })
   end
 
