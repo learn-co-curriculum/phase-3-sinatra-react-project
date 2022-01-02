@@ -1,10 +1,20 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  # Add your routes here
+
   get "/todos" do
     todos = Todo.all.order(:category_id)
     todos.to_json(include: { category: {only: [:category]} })
+  end
+
+  get "/todos-alphabetical" do
+    todos = Todo.all_items
+    todos.to_json(include: { category: {only: [:category]} })
+  end
+
+  get "/categories" do
+    categories = Category.all
+    categories.to_json
   end
 
   get "/todos/:id" do
