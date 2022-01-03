@@ -1,5 +1,10 @@
 puts "🌱 Seeding spices..."
 
-# Seed your database here
+Household.destroy_all
+Person.destroy_all
+Pet.destroy_all
+Task.destroy_all
+
+
 
 puts "✅ Done seeding!"
