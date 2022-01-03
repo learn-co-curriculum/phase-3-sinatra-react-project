@@ -1,3 +1,9 @@
+puts 'Seeds are being destroyed'
+Order.destroy_all
+OrderItem.destroy_all
+Product.destroy_all
+puts 'Seeds destroyed'
+
 puts "🌱 Seeding spices..."
 
 # Seed your database right here
