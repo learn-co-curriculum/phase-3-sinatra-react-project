@@ -8,6 +8,8 @@ gem "sinatra", "~> 2.1"
 # https://github.com/macournoyer/thin
 gem "thin", "~> 1.8"
 
+gem 'faker'
+
 # Rack middleware. Used specifically for parsing the request body into params.
 # https://github.com/rack/rack-contrib
 gem "rack-contrib", "~> 2.3"
