@@ -5,7 +5,7 @@ class ProductController < ApplicationController
       end
 
     post '/products' do
-        patient = Product.create(
+        product = Product.create(
         {name: params[:name],
         category: params[:category],
         description: params[:description],
@@ -13,7 +13,6 @@ class ProductController < ApplicationController
         img_url: params[:img_url],
         review: params[:review]}
         )
-        patient.to_json(include: :clinic)
       end  
 
 

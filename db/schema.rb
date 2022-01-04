@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_03_180323) do
+ActiveRecord::Schema.define(version: 2022_01_04_060532) do
+
+  create_table "departments", force: :cascade do |t|
+    t.string "title"
+  end
 
   create_table "order_items", force: :cascade do |t|
     t.integer "quantity"
     t.decimal "unit_price"
-    t.decimal "total"
     t.integer "order_id"
     t.integer "product_id"
     t.datetime "created_at", precision: 6, null: false
@@ -33,13 +36,22 @@ ActiveRecord::Schema.define(version: 2022_01_03_180323) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
-    t.string "category"
+    t.string "department"
     t.string "description"
     t.integer "unit_price"
     t.string "img_url"
-    t.string "review"
+    t.integer "inventory"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "comment"
+    t.integer "score"
+    t.integer "product_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_reviews_on_product_id"
   end
 
 end
