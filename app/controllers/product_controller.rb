@@ -27,13 +27,11 @@ class ProductController < ApplicationController
       description: params[:description],
       unit_price: params[:unit_price],
       img_url: params[:img_url],
-      clinic_id: params[:clinic_id],
-      review: params[:review]}
+      inventory: params[:inventory]}
       )
+      product.to_json
     end  
     
-
-
 
 end
 
