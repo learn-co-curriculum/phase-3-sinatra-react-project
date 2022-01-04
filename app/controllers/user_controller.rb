@@ -2,7 +2,7 @@ class UserController < Sinatra::Base
     set :default_content_type, 'application/json'
   
     get "/users" do
-      User.all.to_json
+      User.all.to_json(include: :household)
     end
   
     get "/users/:id" do
