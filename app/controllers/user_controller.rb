@@ -22,4 +22,14 @@ class UserController < Sinatra::Base
       user.destroy
       user.to_json
     end
+
+    patch "/users/:id" do
+        user = User.find(params[:id])
+        user.update(
+            first_name: params[:first_name],
+            last_name: params[:last_name],
+            household_id: params[:household_id]
+        )
+        user.to_json
+    end
 end

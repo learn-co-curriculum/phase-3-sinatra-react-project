@@ -25,6 +25,19 @@ class TaskController < Sinatra::Base
       task.destroy
       task.to_json
     end
+
+    patch "/tasks/:id" do
+        task = Task.find(params[:id])
+        task.update(
+            user_id: params[:user_id],
+            pet_id: params[:pet_id],
+            task_name: params[:task_name],
+            task_due_date: params[:task_due_date],
+            task_end_date: params[:task_end_date],
+            task_location: params[:task_location]
+        )
+        task.to_json
+    end
   
   end
   

@@ -20,4 +20,12 @@ class HouseholdController < Sinatra::Base
       house.destroy
       house.to_json
     end
+
+    patch "/households/:id" do
+        house = Household.find(params[:id])
+        house.update(
+            household_name: params[:household_name]
+        )
+        house.to_json
+    end
 end

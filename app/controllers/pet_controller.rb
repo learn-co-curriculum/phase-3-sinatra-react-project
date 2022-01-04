@@ -24,4 +24,16 @@ class PetController < Sinatra::Base
       pet.destroy
       pet.to_json
     end
+
+    patch "/pets/:id" do
+        pet = Pet.find(params[:id])
+        pet.update(
+            first_name: params[:first_name],
+            last_name: params[:last_name],
+            age: params[:age],
+            species: params[:species],
+            household_id: params[:household_id]
+        )
+        pet.to_json
+    end
 end
