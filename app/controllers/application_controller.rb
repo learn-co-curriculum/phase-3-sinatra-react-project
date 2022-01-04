@@ -7,7 +7,14 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/posts" do
+    #This should return all posts
     posts = Post.all 
     posts.to_json(include: :author)
+  end
+
+  get "/posts/:id" do 
+    #This should acquire a single specific post via id
+    post = Post.find(params[:id])
+    post.to_json(include: :author)
   end
 end
