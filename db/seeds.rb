@@ -31,9 +31,12 @@ end
 end
 
 100.times do
+    
+    userid = Faker::Number.between(from: 1, to: 20)
+
     Task.create({
-        household_id: Faker::Number.between(from: 1, to: 10),
-        user_id: Faker::Number.between(from: 1, to: 20),
+        user_id: userid,
+        household_id: User.all.find(userid).household_id,
         pet_id: Faker::Number.between(from: 1, to: 100),
         task_name: Faker::Lorem.sentence(word_count: 3),
         task_due_date: Faker::Date.in_date_period,
