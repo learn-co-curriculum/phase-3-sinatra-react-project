@@ -16,6 +16,11 @@ class ApplicationController < Sinatra::Base
     movie.to_json
   end
 
+  get "/movies/search/:word" do
+    movie = Movie.where('main LIKE ?', "%#{params[:word]}%").or(Movie.where('title LIKE ?', "%#{params[:word]}%")).or(Movie.where('phase LIKE ?', "%#{params[:word]}%")).or(Movie.where('descriptions LIKE ?', "%#{params[:word]}%"))
+    movie.to_json
+  end
+
   # not sure if we need get for comments
   get "/comments" do
     comment = Comment.all
