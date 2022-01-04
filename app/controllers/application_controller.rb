@@ -6,4 +6,44 @@ class ApplicationController < Sinatra::Base
     { message: "Good luck with your project!" }.to_json
   end
 
+  get "/movies" do
+    movie = Movie.all
+    movie.to_json
+  end
+
+  get "/movies/:id" do
+    movie = Movie.find(params[:id])
+    movie.to_json
+  end
+
+  # not sure if we need get for comments
+  get "/comments" do
+    comment = Comment.all
+    comment.to_json
+  end
+
+  post "/comments" do
+    comment = Comment.create(
+      score: params[:score],
+      review: params[:review],
+      user_id: params[:user_id],
+      movie_id: params[:movie_id]
+    )
+    comment.to_json
+  end
+
+  patch "/comments/:id" do
+    comment = Comment.find(params[:id])
+    comment.update(
+      body: params[:body]
+    )
+    comment.to_json
+  end
+
+  delete "/comments/:id" do
+    comment = Comment.find(params[:id])
+    comment.destroy
+    comment.to_json
+  end
+
 end
