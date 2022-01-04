@@ -231,4 +231,6 @@ m27 = Movie.create(
     descriptions: "For the first time in the cinematic history of Spider-Man, our friendly neighborhood hero's identity is revealed, bringing his Super Hero responsibilities into conflict with his normal life and putting those he cares about most at risk. When he enlists Doctor Strange's help to restore his secret, the spell tears a hole in their world, releasing the most powerful villains who've ever fought a Spider-Man in any universe. Now, Peter will have to overcome his greatest challenge yet, which will not only forever alter his own future but the future of the Multiverse."
 )
 
+com1 = Comment.create(score: 5,review: "Great Best Movie I have Ever Seen", user_id: 1, movie_id: 8)
+
 puts "✅ Done seeding!"
