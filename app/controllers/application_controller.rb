@@ -6,4 +6,8 @@ class ApplicationController < Sinatra::Base
     { message: "Good luck with your project!" }.to_json
   end
 
+  get "/posts" do
+    posts = Post.all 
+    posts.to_json(include: :author)
+  end
 end
