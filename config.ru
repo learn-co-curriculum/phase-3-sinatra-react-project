@@ -13,3 +13,7 @@ use Rack::JSONBodyParser
 
 # Our application
 run ApplicationController
+use TaskController
+use UserController
+use PetController
+use HouseholdController
