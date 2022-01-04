@@ -15,6 +15,7 @@ class ApplicationController < Sinatra::Base
 
   get "/todos" do
     todos = Todo.all.all_importance
+    todos.to_json
     todos.to_json(include: { category: {only: [:category]} })
   end
 
@@ -35,7 +36,10 @@ class ApplicationController < Sinatra::Base
 
   patch "/todos/:id" do
     todo = Todo.find(params[:id])
-    todo.update(item: params[:item])
+    todo.update(item: params[:item],
+      importance: params[:importance],
+      category_id: params[:category_id]
+    )
     todo.to_json(include: { category: {only: [:category]} })
   end
 
