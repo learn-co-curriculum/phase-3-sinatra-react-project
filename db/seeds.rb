@@ -8,7 +8,7 @@ puts "🌱 Seeding spices..."
 
 # Seed your database right here
 10.times do
-    Product.create(name: Faker::Beer.name, category:Faker::Beer.alcohol, unit_price: rand(0..10),img_url: Faker::Avatar.image, review: Faker::Verb.base )
+    Product.create(name: Faker::Beer.name, category:Faker::Beer.alcohol, unit_price: rand(0..10),img_url: Faker::Avatar.image, review: Faker::Verb.base)
 end
 
 5.times do
