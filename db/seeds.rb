@@ -8,10 +8,6 @@ puts "🌱 Seeding user..."
 user1 = User.create(name: "Kwan")
 user2 = User.create(name: "Bennett")
 
-# puts "🌱 Seeding comment..."
-# c1 = Comment.create(score: 10, review: "Love Spiderman", user_id: user1.id, movie_id: m27.id)
-# c2 = Comment.create(score: 9, review: "Go go captian", user_id: user2.id, movie_id: m1.id)
-
 puts "🌱 Seeding movie..."
 m1 = Movie.create(
     title: "CAPTAIN AMERICA: THE FIRST AVENGER",
@@ -230,5 +226,9 @@ m27 = Movie.create(
     phase: 4,
     descriptions: "For the first time in the cinematic history of Spider-Man, our friendly neighborhood hero's identity is revealed, bringing his Super Hero responsibilities into conflict with his normal life and putting those he cares about most at risk. When he enlists Doctor Strange's help to restore his secret, the spell tears a hole in their world, releasing the most powerful villains who've ever fought a Spider-Man in any universe. Now, Peter will have to overcome his greatest challenge yet, which will not only forever alter his own future but the future of the Multiverse."
 )
+
+puts "🌱 Seeding comment..."
+c1 = Comment.create(score: 10, review: "Love Spiderman", user_id: user1.id, movie_id: m27.id)
+c2 = Comment.create(score: 9, review: "Go go captian", user_id: user2.id, movie_id: m1.id)
 
 puts "✅ Done seeding!"
