@@ -8,9 +8,9 @@ puts "🌱 Seeding user..."
 user1 = User.create(name: "Kwan")
 user2 = User.create(name: "Bennett")
 
-puts "🌱 Seeding comment..."
-c1 = Comment.create(score: 10, review: "Love Spiderman", user_id: user1.id, movie_id: m27.id)
-c2 = Comment.create(score: 9, review: "Go go captian", user_id: user2.id, movie_id: m1.id)
+# puts "🌱 Seeding comment..."
+# c1 = Comment.create(score: 10, review: "Love Spiderman", user_id: user1.id, movie_id: m27.id)
+# c2 = Comment.create(score: 9, review: "Go go captian", user_id: user2.id, movie_id: m1.id)
 
 puts "🌱 Seeding movie..."
 m1 = Movie.create(
@@ -222,7 +222,7 @@ m26 = Movie.create(
     phase: 4,
     descriptions: "Marvel Studios' Eternals features an exciting new team of Super Heroes in the Marvel Cinematic Universe, ancient aliens who have been living on Earth in secret for thousands of years. Following the events of Avengers: Endgame, an unexpected tragedy forces them out of the shadows to reunite against mankind's most ancient enemy, the Deviants."
 )
-m28 = Movie.create(
+m27 = Movie.create(
     title: "SPIDER-MAN: NO WAY HOME",
     main: "SPIDER-MAN",
     poster: "https://m.media-amazon.com/images/M/MV5BZWMyYzFjYTYtNTRjYi00OGExLWE2YzgtOGRmYjAxZTU3NzBiXkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_FMjpg_UX1000_.jpg",
