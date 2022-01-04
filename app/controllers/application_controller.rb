@@ -51,5 +51,14 @@ class ApplicationController < Sinatra::Base
     comment.to_json
   end
 
+  get "/user" do
+    user = User.find_by(name:params[:username])
+    user.to_json
+  end
+
+  post "/user" do
+    user = User.create(name:params[:username], password:params[:password])
+    user.to_json
+  end
 end
 # testing adding commments for branch merging delete if you see
