@@ -5,8 +5,8 @@ Comment.destroy_all
 
 puts "🌱 Seeding user..."
 # Seed your database here
-user1 = User.create(name: "Kwan")
-user2 = User.create(name: "Bennett")
+user1 = User.create(name: "Kwan", password: "password")
+user2 = User.create(name: "Bennett", password: "password")
 
 puts "🌱 Seeding movie..."
 m1 = Movie.create(
