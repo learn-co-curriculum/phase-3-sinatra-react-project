@@ -51,7 +51,7 @@ class ApplicationController < Sinatra::Base
     comment.to_json
   end
 
-  get "/user" do
+  get "/user/:username" do
     user = User.find_by(name:params[:username])
     user.to_json
   end
