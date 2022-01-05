@@ -5,7 +5,6 @@ class OrderItemsController < ApplicationController
         items.to_json(include: :product)
       end
 
-
       get '/order_items/:id' do
         OrderItem.find(params[:id]).to_json
     end
@@ -15,5 +14,4 @@ class OrderItemsController < ApplicationController
         item.destroy
         {message: 'item deleted'}.to_json
     end
-
 end
