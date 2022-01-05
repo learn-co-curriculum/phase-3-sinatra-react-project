@@ -40,6 +40,9 @@ end
         pet_id: Faker::Number.between(from: 1, to: 100),
         task_name: Faker::Lorem.sentence(word_count: 3),
         task_due_date: Faker::Date.in_date_period,
+        task_start_date: Faker::Date.in_date_period,
+        task_is_recurring: Faker::Boolean.boolean,
+        task_frequency: Faker::Number.between(from: 0, to: 365),
         task_end_date: Faker::Date.in_date_period,
         task_location: Faker::WorldCup.city
         })

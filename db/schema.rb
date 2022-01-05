@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_03_184211) do
+ActiveRecord::Schema.define(version: 2022_01_05_181335) do
 
   create_table "households", force: :cascade do |t|
     t.string "household_name"
@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(version: 2022_01_03_184211) do
     t.string "task_location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "task_start_date"
+    t.boolean "task_is_recurring"
+    t.integer "task_frequency"
     t.index ["household_id"], name: "index_tasks_on_household_id"
     t.index ["pet_id"], name: "index_tasks_on_pet_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
