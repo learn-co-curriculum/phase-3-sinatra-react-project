@@ -27,6 +27,14 @@ class ApplicationController < Sinatra::Base
     comment.to_json
   end
 
+  get "/comments/movie/:id" do
+    comments = Comment.where(movie_id: params[:id])
+    comments.to_json
+  end
+  get "/comments/user/:id"do
+    comments = Comment.where(user_id: params[:id])
+    comments.to_json
+  end
   post "/comments" do
     comment = Comment.create(
       score: params[:score],
@@ -50,6 +58,10 @@ class ApplicationController < Sinatra::Base
     comment.destroy
     comment.to_json
   end
+  get "/user/id/:id" do 
+    user = User.find(params[:id])
+    user.to_json
+  end
 
   get "/user/:username" do
     user = User.find_by(name:params[:username])
@@ -57,7 +69,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/user" do
-    user = User.create(name:params[:username], password:params[:password])
+    user = User.create(name:params[:name], password:params[:password])
     user.to_json
   end
 end
