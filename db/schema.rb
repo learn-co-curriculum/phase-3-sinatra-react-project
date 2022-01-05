@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 2022_01_04_060532) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.decimal "subtotal"
-    t.decimal "total"
+    t.integer "total_quantity"
+    t.decimal "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

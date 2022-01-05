@@ -1,6 +1,6 @@
 class Order < ActiveRecord::Base
     has_many :order_items
-    before_save :set_subtotal
+    # before_save :set_subtotal
     # has_many :products, through: :order_items
 
 

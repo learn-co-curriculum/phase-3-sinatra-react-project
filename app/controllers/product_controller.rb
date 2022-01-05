@@ -18,6 +18,7 @@ class ProductController < ApplicationController
         img_url: params[:img_url],
         inventory: params[:inventory]}
         )
+        product.to_json(include: :reviews)
     end
 
     patch '/products/:id' do
@@ -31,7 +32,7 @@ class ProductController < ApplicationController
       inventory: params[:inventory]}
       )
       product.to_json
-      OrderItem.create(quantity: 1, unit_price: product.price, product_id: product.id )
+      OrderItem.create(quantity: 1, unit_price: product.price, product_id: product.id ).to_json
     end  
     
     delete '/products/:id' do
