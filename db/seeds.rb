@@ -36,4 +36,7 @@ agency2 = Agency.create(name: "Cat's Cradle", city: "Vivec")
 agency3 = Agency.create(name: "Hamsterville", city: "Whiterun")
 agency4 = Agency.create(name: "Ferretsburg", city: "Morthal")
 
+puts "Create a match!"
+match1 = Match.create(user_id: 1, pet_id: 1)
+
 puts "✅ Done seeding!"
