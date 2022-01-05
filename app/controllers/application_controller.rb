@@ -17,4 +17,11 @@ class ApplicationController < Sinatra::Base
     post = Post.find(params[:id])
     post.to_json(include: :author)
   end
+
+  delete "/posts/:id" do 
+    #Acquire the specific post by id and then delete it.
+    post = Post.find(params[:id])
+    post.destroy 
+    post.to_json
+  end
 end
