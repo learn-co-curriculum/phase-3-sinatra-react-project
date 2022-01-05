@@ -42,6 +42,7 @@ class ProductController < ApplicationController
     end
 
 
+    
 
 end
 
