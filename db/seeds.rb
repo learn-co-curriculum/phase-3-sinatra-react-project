@@ -10,7 +10,7 @@ puts "🌱 Seeding spices..."
 
 # Seed your database right here
 10.times do
-    Product.create(name: Faker::Appliance.equipment, department: Faker::Commerce.department(max: 5), description: Faker::Appliance.brand, unit_price: rand(0.9..14.99),img_url: Faker::Avatar.image, inventory: rand(1..15))
+    Product.create(name: Faker::Appliance.equipment, department: Faker::Commerce.department(max: 5), description: Faker::Appliance.brand, unit_price: rand(5.00..55.99),img_url: Faker::Avatar.image, inventory: rand(1..15))
 end
 
 

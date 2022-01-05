@@ -10,8 +10,8 @@ has_many :reviews
     end
 
     def add_to_cart
-    self.inventory -= 1
-    save
+    # self.inventory -= 1
+    # save
     OrderItem.create(quantity: 1, unit_price: self.price, product_id: self.id )
     end
 
