@@ -37,6 +37,14 @@ class ApplicationController < Sinatra::Base
     matches.to_json
   end
 
+  post "/matches" do
+    match = Match.create(
+      user_id: params[:user_id],
+      pet_id: params[:pet_id]
+    )
+    match.to_json
+  end
+
   ##
   # agency controller
   get "/agencies" do
