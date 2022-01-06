@@ -89,6 +89,7 @@ Product.create(name: "Good Grips 20-Piece POP Assorted Container Set with Airtig
 Product.create(name: "84-Bottle Antiqued Wine Jail Console" ,department: "Kitchen", description: "A twist on the classic wine jail, this steel-scrolled console is a decorative option that fits anywhere in your home. It comes complete with padlock and key to protect your prized collection. The wooden top provides an extra surface for collectibles, bar accessories or a platter of hors d'oeuvres. Antiqued bronze finish.", unit_price: 399 ,img_url: "https://images.thdstatic.com/productImages/4201acfa-c7cd-4e28-bf89-f3165e684fd2/svn/wine-enthusiast-wine-racks-634-84-01-64_600.jpg", inventory: rand(1..100))
 
 
+
 # 5.times do
 #     Order.create(subtotal: rand(1..100), total: rand(1..100))
 # end
@@ -97,9 +98,11 @@ Product.create(name: "84-Bottle Antiqued Wine Jail Console" ,department: "Kitche
 #     OrderItem.create(quantity: rand(0..3), total: rand(0..100), unit_price: rand(1..10),product_id: Product.all.sample.id, order_id: Order.all.sample.id )
 # end
 
+
 70.times do
     Review.create(comment: 'This is a fucking kick ass product', score: rand(1..5), product_id: Product.all.sample.id)
 end
+
 
 # Department.create(title: 'Appliances')
 # Department.create(title: 'Bath & Faucets')
@@ -116,3 +119,4 @@ end
 
 
 puts "✅ Done seeding!"
+

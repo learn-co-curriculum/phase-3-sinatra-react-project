@@ -6,7 +6,7 @@ class OrderItemsController < ApplicationController
     end
 
 
-    get '/order_items/:id' do
+      get '/order_items/:id' do
         OrderItem.find(params[:id]).to_json
     end
 
@@ -16,12 +16,15 @@ class OrderItemsController < ApplicationController
         {message: 'item deleted'}.to_json
     end
 
+
     post '/order_items' do
         OrderItem.create_order
     end
+
 
     delete '/order_items' do
         OrderItem.destroy_all
     end
 
 end
+
