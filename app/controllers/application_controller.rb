@@ -35,6 +35,10 @@ class ApplicationController < Sinatra::Base
     comments = Comment.where(user_id: params[:id])
     comments.to_json
   end
+  get "/comments/movie/user/:movieid/:userid" do
+    comment = Comment.find_by(user_id:params[:userid], movie_id:params[:movieid])
+    comment.to_json
+  end
   post "/comments" do
     comment = Comment.create(
       score: params[:score],
