@@ -22,5 +22,9 @@ class OrderItemsController < ApplicationController
     end
 
 
+    delete '/order_items' do
+        OrderItem.destroy_all
+    end
+
 end
 
