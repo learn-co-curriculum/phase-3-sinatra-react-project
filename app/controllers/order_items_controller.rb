@@ -20,4 +20,8 @@ class OrderItemsController < ApplicationController
         OrderItem.create_order
     end
 
+    delete '/order_items' do
+        OrderItem.destroy_all
+    end
+
 end
