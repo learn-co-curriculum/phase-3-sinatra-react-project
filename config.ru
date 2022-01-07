@@ -16,3 +16,4 @@ run ApplicationController
 use ProductController
 use OrderItemsController
 use OrderController
+use ReviewController

@@ -15,7 +15,7 @@ class OrderItem < ActiveRecord::Base
         quantity = self.all.count
         Order.create(total_quantity: quantity, total_price: cost.to_f)
         OrderItem.update(order_id: Order.ids)
-        # self.destroy_all
+        self.destroy_all
     end
 
 

@@ -1,7 +1,7 @@
 class ProductController < ApplicationController
 
     get '/products' do
-        Product.all.to_json
+        Product.all.to_json(include: :reviews)
     end
 
     get '/products/:id' do
