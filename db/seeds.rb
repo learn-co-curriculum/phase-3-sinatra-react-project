@@ -1,4 +1,4 @@
-puts "🌱 Seeding todos...."
+puts "🌱 Seeding todos.........."
 
 Category.destroy_all
 
