@@ -13,10 +13,16 @@ class ApplicationController < Sinatra::Base
   #   todos.to_json(include: { category: {only: [:category]} })
   # end
 
+  # get "/todos" do
+  #   todos = Todo.all.all_importance
+  #   # todos.to_json
+  #   todos.to_json(include: { category: {only: [:category]} })
+  # end
+
   get "/todos" do
     todos = Todo.all.all_importance
-    todos.to_json
-    todos.to_json(include: { category: {only: [:category]} })
+    # todos.to_json
+    todos.to_json(include: :category)
   end
 
   get "/todos-low" do
@@ -51,7 +57,8 @@ class ApplicationController < Sinatra::Base
 
   get "/todos/:id" do
     todos = Todo.find(params[:id])
-    todos.to_json
+    # todos.to_json
+    todos.to_json(include: { category: {only: [:category]} })
   end
 
   get "/todos-alphabetical" do
