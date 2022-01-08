@@ -14,6 +14,22 @@ class ApplicationController < Sinatra::Base
     #(include: except:) - patients.to_json({include:[clinic: {only: :clinic_name}], except: :clinic_id})
   end
 
+  get "/pets/:user_id" do
+    matches = Match.all.where("user_id = ?", params[:user_id]) #turn this line into an array of pet IDs
+    pet_ids = matches.pluck(:pet_id)
+    # pet_ids.to_json
+    pets = Pet.where(id: [pet_ids])
+    pets.to_json
+  end
+
+  get "/pets/not/:user_id" do
+    matches = Match.all.where("user_id = ?", params[:user_id]) #turn this line into an array of pet IDs
+    pet_ids = matches.pluck(:pet_id)
+    # pet_ids.to_json
+    pets = Pet.where.not(id: [pet_ids])
+    pets.to_json
+  end
+
   # post "/pets" do
   #   pet = Pet.create(params)
   #   pet.to_json
