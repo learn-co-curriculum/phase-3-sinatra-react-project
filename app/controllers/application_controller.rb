@@ -62,10 +62,12 @@ class ApplicationController < Sinatra::Base
   end
 
   ## deletes the match when the red X is clicked on User View
-  delete "/matches/delete/:id" do
-    match = Match.find(params[:id])
-    match.destroy
-    match.to_json
+  delete "/matches/delete/:pet_id/:user_id" do
+    pet = Pet.find(params[:pet_id])
+    matches_found = pet.matches.where("user_id = ?", params[:user_id])
+    # binding.pry
+    matches_found.destroy_all
+    matches_found.to_json
   end
 
   ##
