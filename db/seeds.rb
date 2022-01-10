@@ -38,7 +38,9 @@ cat_pics_array = [
 ]
 
 
-number_of_users = 20
+# number_of_users = 20
+# Adjusted this to 5 since we're using a limited number of users
+number_of_users = 5
 puts "Creating #{number_of_users} users..."
 number_of_users.times do
     User.create(
@@ -99,10 +101,22 @@ agency2 = Agency.create(id: 2, name: "Cat's Cradle", city: "Vivec")
 agency3 = Agency.create(id: 3, name: "Hamsterville", city: "Whiterun")
 agency4 = Agency.create(id: 4, name: "Ferretsburg", city: "Morthal")
 
-puts "Adding sample match..."
-Match.create(id: 1, user_id: 1, pet_id: 1)
+number_of_matches = 5
+puts "Creating #{number_of_matches} matches..."
 
-puts "Create a match!"
-match1 = Match.create(user_id: 1, pet_id: 1)
+i = 0
+while i < number_of_matches
+  Match.create(
+    user_id: rand(1..number_of_users),
+    pet_id: rand(1..number_of_pets),
+  )  
+  i += 1
+end
+
+i = 0
+while i < (number_of_matches)
+  Match.all[i].update(id: i + 1)
+  i += 1
+end
 
 puts "✅ Done seeding!"
