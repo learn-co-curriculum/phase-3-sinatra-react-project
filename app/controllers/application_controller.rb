@@ -61,6 +61,13 @@ class ApplicationController < Sinatra::Base
     match.to_json
   end
 
+  ## deletes the match when the red X is clicked on User View
+  delete "/matches/delete/:id" do
+    match = Match.find(params[:id])
+    match.destroy
+    match.to_json
+  end
+
   ##
   # agency controller
   get "/agencies" do
