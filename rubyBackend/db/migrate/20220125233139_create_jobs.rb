@@ -1,6 +1,6 @@
 class CreateJobs < ActiveRecord::Migration[6.1]
    def change
-    create_table :job do |t| 
+    create_table :jobs do |t| 
       t.string :company_name 
       t.string :job_title 
       t.date :application_date 

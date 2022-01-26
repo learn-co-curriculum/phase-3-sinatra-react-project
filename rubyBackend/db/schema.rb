@@ -12,20 +12,20 @@
 
 ActiveRecord::Schema.define(version: 2022_01_25_233321) do
 
-  create_table "job", force: :cascade do |t|
+  create_table "jobs", force: :cascade do |t|
     t.string "company_name"
     t.string "job_title"
     t.date "application_date"
     t.date "follow_up_date"
   end
 
-  create_table "user", force: :cascade do |t|
-    t.string "name"
-  end
-
-  create_table "user_job", force: :cascade do |t|
+  create_table "user_jobs", force: :cascade do |t|
     t.integer "user_id"
     t.integer "job_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
   end
 
 end

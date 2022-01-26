@@ -27,5 +27,5 @@ class JobsController < ApplicationController
             follow_up_date: params[:follow_up_date]
         ).to_json
     end
-
+    
 end
