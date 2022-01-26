@@ -10,4 +10,9 @@ puts "🌱 Seeding spices..."
     )
 end
 
+100.times do 
+    JobTitle.create(
+        job_title: Faker::Job.title
+    )
+
 puts "✅ Done seeding!"
