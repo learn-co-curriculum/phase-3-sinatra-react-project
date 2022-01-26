@@ -3,6 +3,7 @@ puts "🌱 Seeding spices..."
 
 to_visit = List.create(list_name: 'To Visit')
 visited = List.create(list_name: 'Visited')
+unvisited = List.create(list_name: 'Unvisited')
 
 al = State.create(state_name: 'Alabama', abbr: "AL")
 ak = State.create(state_name: 'Alaska', abbr: "AK")
@@ -70,7 +71,8 @@ def parks_dataset
 
     parks_array = JSON.parse(parks)["data"]
     parks_array.each do |p|
-        Park.create(park_name: p["fullName"], description: p["description"], fee: p.dig("entranceFees", 0, "cost"), image_url: p.dig("images", 0, "url"), location: p.dig("addresses", 0), states: p["states"], website: p["url"], state_id: set_states(p["states"][0,2]), list_id: nil)
+        Park.create(park_name: p["fullName"], description: p["description"], fee: p.dig("entranceFees", 0, "cost"), image_url: p.dig("images", 0, "url"), 
+            location: p.dig("addresses", 0), states: p["states"], website: p["url"], state_id: set_states(p["states"][0,2]), list_id: List.third.id)
     end
 end
 
