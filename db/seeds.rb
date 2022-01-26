@@ -64,6 +64,7 @@ def set_states api_abbr
     key = State.all.where(abbr: api_abbr)
     key.pluck(:id).first
 end
+
 def parks_dataset
     api_data = {key: 'N7C8ItBAYqHG7msTfmr54HHRqWLAm5iZPL03Lo3F'}
 

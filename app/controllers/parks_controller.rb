@@ -16,5 +16,4 @@ class ParksController < ApplicationController
         park.to_json({include: :list, include: :state})
     end
 
-
 end
