@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 2022_01_26_182424) do
     t.string "work_site"
     t.string "job_url"
     t.integer "salary"
-    t.date "application_date"
-    t.date "follow_up_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "languages", force: :cascade do |t|

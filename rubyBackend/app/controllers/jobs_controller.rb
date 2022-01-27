@@ -11,14 +11,14 @@ class JobsController < ApplicationController
 
   
     post '/jobs' do 
-       binding.pry
+       
         Job.create(
-            company_name: params[:company_name]
-            # job_title: params["jobTitle"],
-            # location: params[:location],
-            # work_site: params[:workSite],
-            # job_url: params[:jobURL],
-            # salary: params[:salary],        
+            company_name: params[:company_name],
+            job_title: params[:job_title],
+            location: params[:location],
+            work_site: params[:work_site],
+            job_url: params[:job_url],
+            salary: params[:salary],        
         )
     end
 

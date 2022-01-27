@@ -8,8 +8,7 @@ class CreateJobs < ActiveRecord::Migration[6.1]
       t.string :work_site
       t.string :job_url      
       t.integer :salary
-      t.date :application_date 
-      t.date :follow_up_date
+      t.timestamps
   end
 end
 end
