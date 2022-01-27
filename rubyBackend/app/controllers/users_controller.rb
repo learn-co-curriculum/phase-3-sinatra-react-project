@@ -1,7 +1,12 @@
 class UsersController < ApplicationController 
 
     get '/users' do 
-        User.all.to_json({include: :job})
+        User.all.to_json({include: :jobs})
+    end
+
+    get '/users/:user' do
+        user = User.find_by(params[:user.name]).id
+        user.to_json({include: :jobs})
     end
 
     post '/users' do 
