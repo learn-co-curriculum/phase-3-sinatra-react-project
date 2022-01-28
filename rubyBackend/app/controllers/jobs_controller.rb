@@ -1,7 +1,7 @@
 class JobsController < ApplicationController 
 
     get '/jobs' do 
-        Job.all.to_json
+       job = Job.all.to_json({include: :languages})        
     end
 
     # get '/jobs/:id' do
@@ -20,6 +20,11 @@ class JobsController < ApplicationController
             job_url: params[:job_url],
             salary: params[:salary],        
         )
+    end
+
+    post '/jobs/:company_name' do         
+        binding.pry
+        Language.create()
     end
 
     delete '/jobs/:id' do 
