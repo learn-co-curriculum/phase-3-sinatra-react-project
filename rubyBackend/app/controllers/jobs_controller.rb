@@ -10,22 +10,22 @@ class JobsController < ApplicationController
     # end
 
   
-    post '/jobs' do 
-       
+    post '/jobs' do        
         Job.create(
             company_name: params[:company_name],
             job_title: params[:job_title],
             location: params[:location],
             work_site: params[:work_site],
+            employment_type: params[:employment_type],
             job_url: params[:job_url],
             salary: params[:salary],        
         )
     end
 
-    # delete '/jobs/:id' do 
-    #     job = Job.find(params[:id]) 
-    #     job.destroy.to_json
-    # end
+    delete '/jobs/:id' do 
+        job = Job.find(params[:id]) 
+        job.destroy.to_json
+    end
 
     # patch '/jobs/:id' do 
     #     job = Job.find(params[:id]) 
