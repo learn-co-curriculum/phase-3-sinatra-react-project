@@ -21,42 +21,42 @@ c3 = Category.create({
 # Products
 p1 = Product.create({
     name: "Acid Smiles - Neon Green",
-    inventory: 10,
+    inventory: 100,
     retail_price: 50.99,
     image: "https://cdn-image02.casetify.com/usr/16571/16546571/~v30/13084976x2_iphone13-pro-max_16003282.png.1000x1000-w.m80.jpg"
 })
 
 p2 = Product.create({
     name: "You are exactly where you need to be",
-    inventory: 10,
+    inventory: 100,
     retail_price: 45.99,
     image: "https://cdn-image02.casetify.com/usr/5435/19535435/~v23/19190000x2_iphone13-pro-max_16003282.png.1000x1000-w.m80.jpg"
 })
 
 p3 = Product.create({
     name: "Clouds",
-    inventory: 10,
+    inventory: 100,
     retail_price: 40.99,
     image: "https://cdn-image02.casetify.com/usr/16571/16546571/~v58/12332179x2_iphone13-pro-max_16003471.png.1000x1000-w.m80.jpg"
 })
 
 p4 = Product.create({
     name: "White Butterfly",
-    inventory: 10,
+    inventory: 100,
     retail_price: 50.99,
     image: "https://cdn-image02.casetify.com/usr/24035/1524035/~v91/3165656x2_iphone13-pro-max_16003471.png.1000x1000-w.m80.jpg"
 })
 
 p5 = Product.create({
     name: "Dragons",
-    inventory: 10,
+    inventory: 100,
     retail_price: 45.99,
     image: "https://cdn-image02.casetify.com/usr/5386/1655386/~v68/9017505x2_iphone13-pro-max_16003331.png.1000x1000-w.m80.jpg"
 })
 
 p6 = Product.create({
     name: "Scratch N Sniff Vintage Smelly Stickers",
-    inventory: 10,
+    inventory: 100,
     retail_price: 40.99,
     image: "https://cdn-image02.casetify.com/usr/17492/1337492/~v23/17145165x2_iphone13-pro-max_16003300.png.1000x1000-w.m80.jpg"
 })
