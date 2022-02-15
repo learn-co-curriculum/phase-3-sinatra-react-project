@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
-    belongs_to :category
+    has_many :collections
+    has_many :categories, through: :collections
 
-    has_many :product_suppliers
-    has_many :suppliers, through: :product_suppliers
+    has_many :purchases
+    has_many :suppliers, through: :purchases
 end
