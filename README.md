@@ -1,3 +1,63 @@
+# Group Agreement
+
+Working hours:
+-Work during flatiron course hours
+-Work until you’re too tired to work
+
+Github workflow:
+-Work on separate branches
+-Group will review work and agree before merging with master branch
+- * NOT OKAY to push to master branch without prior group discussion
+
+Communication:
+-Slack to share links
+-Zoom for group discussions
+-Afters hours will communicate over slack mostly
+
+Conflict resolution:
+-Conflicts are unlikely because of the time limits of the project
+-If conflict arises, we will discuss
+
+----
+
+# timeline
+
+One sentence app description:
+-This app will help you track and manage your personal expenses
+
+User Stories:
+-A user will be able to keep track of their monthly and annual expenses/income
+-A user will be able to get notified when a bill 
+
+# 3/7 - monday
+-Build out main structure of project. Draw out diagrams
+-build out 2 models with one-to-many relationship
+1. User — Home Expenses
+    * 1 user “has many” expenses
+2. Users — Budgets
+    * food = $500/month
+    * gas = $300
+* Use Active Record to interact with a database.
+* Have a minimum of two models with a one-to-many relationship.
+
+
+# 3/8 - tuesday
+* Start building out API
+* Create API routes in Sinatra that handles at least three different CRUD actions for at least one of your Active Record models.
+* Use good OO design patterns. You should have separate classes for each of your models, and create instance and class methods as necessary.
+
+# 3/9 - wednesday
+* Work on styling
+
+# 3/10 - Thursday
+* (stretch deliverable) - BALANCE TRACKER - calculate how much extra money you need in order to pay a bill. For example, utilities
+* Link app with BankAmerica API to pull in your expenses and do calculations
+
+# 3/11 - Friday
+* Present
+
+———
+
 # Phase 3 Project Guidelines
 
 ## Learning Goals
