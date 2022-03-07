@@ -34,3 +34,4 @@ Likes.create(user_id: 1, profile_id: 16, user_like: null, profile_like: true)
 Likes.create(user_id: 1, profile_id: 12, user_like: null, profile_like: true)
 
 puts "✅ Done seeding!"
+puts "test!"
