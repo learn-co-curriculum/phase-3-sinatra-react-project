@@ -1,3 +1,5 @@
+class CommentsController < ApplicationController
+
 #GET
 get '/comments' do
     { message: "Hello World" }.to_json
