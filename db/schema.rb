@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_07_202639) do
+ActiveRecord::Schema.define(version: 2022_03_07_213317) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "profile_id"
     t.boolean "user_like"
     t.boolean "profile_like"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "profiles", force: :cascade do |t|
