@@ -1,7 +1,8 @@
 class Playlist < ActiveRecord::Base
-    has_many :songs
+    has_many :playlist_songs
+    has_many :songs, through: :playlist_songs
     belongs_to :user
-    has_many :artists, through: :songs
-    has_many :albums, through: :songs
+    # has_many :artists, through: :songs
+    # has_many :albums, through: :songs
 
 end
