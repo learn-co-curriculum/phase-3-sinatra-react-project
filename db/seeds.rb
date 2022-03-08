@@ -46,9 +46,9 @@ currentMovieTitles.each { |title|
     actorDetails = movieDetails["cast"]
     actorDetails.each { |actorDetail| 
     
-        actor = Actor.find_by name: actorDetail["name"]
+        actor = Actor.find_by actor_name: actorDetail["name"]
         if actor == nil
-            actor = Actor.create(name: actorDetail["name"])
+            actor = Actor.create(actor_name: actorDetail["name"])
         end
         Role.create(movie_id: movie.id , actor_id: actor.id)
     }
@@ -56,12 +56,12 @@ currentMovieTitles.each { |title|
     reviews = searchReviews(movieDetails["emsId"])
     reviews.each { |review|
 
-        critic = Critic.find_by name: review["critic"]["name"]
+        critic = Critic.find_by critic_name: review["critic"]["name"]
         if critic == nil
-            critic = Critic.create(name: review["critic"]["name"])
+            critic = Critic.create(critic_name: review["critic"]["name"])
         end
 
-        Review.create(movie_id: movie.id, critic_id: critic.id, content: review["quote"])
+        Review.create(movie_id: movie.id, critic_id: critic.id, review_content: review["quote"])
     }
 }
 
