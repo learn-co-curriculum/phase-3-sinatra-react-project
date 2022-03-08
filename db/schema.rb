@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_03_07_224546) do
     t.integer "downloads"
     t.integer "duration"
     t.integer "artist_id"
+    t.string "album_cover"
   end
 
   create_table "artists", force: :cascade do |t|

@@ -27,10 +27,17 @@ s_outro = Song.create(title: "Hand of God - Outro", album_id: humancon.id, genre
 s_strawberry = Song.create(title: "Strawberry Fields Forever", album_id: strawberry.id ,  genre: "rock", youtube_link: "https://www.youtube.com/watch?v=HtUH9z_Oey8&ab_channel=TheBeatlesVEVO", duration: 263)
 s_red = Song.create(title: "Dark Red", album_id: demo.id ,  genre: "indie", youtube_link: "https://www.youtube.com/watch?v=L0wusEVceek&ab_channel=SteveLacy-Topic", duration: 173)
 
-#Playlist
-# p1 = Playlist.create(user_id: u1.id , creation_date: Date.new , last_update: Date.new, duration: )
-
 #User
 u1 = User.create(user_name: "test_user", password: "test123", email: "test_user@test.com")
+
+#Playlist
+p1 = Playlist.create(user_id: u1.id , creation_date: Date.new , last_update: Date.new, duration: nil, name: "Liked Songs")
+p2 = Playlist.create(user_id: u1.id , creation_date: Date.new , last_update: Date.new, duration: nil, name: "~Chill Vibes~")
+
+#Playlist Songs
+ps1 = PlaylistSong.create(song_id: s_footsteps.id, playlist_id: p1.id)
+ps2 = PlaylistSong.create(song_id: s_outro.id, playlist_id: p1.id)
+
+
 
 puts "✅ Done seeding!"
