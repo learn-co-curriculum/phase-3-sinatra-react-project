@@ -18,7 +18,4 @@ end
     GroceryList.create(title: Faker::Name.name, category: Category.all.sample, item: Item.all.sample)
 end
 
-
-
-
 puts "✅ Done seeding!"
