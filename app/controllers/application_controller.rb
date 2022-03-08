@@ -33,4 +33,4 @@ class ApplicationController < Sinatra::Base
     )
     new_building.to_json
   end
-end
+end 
