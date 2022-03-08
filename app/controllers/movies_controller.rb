@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
    
     get '/movies' do
-        movies = Movie.all.order(:title)
+        movies = Movie.all
         movies.to_json(
             only: [:title]
         )
