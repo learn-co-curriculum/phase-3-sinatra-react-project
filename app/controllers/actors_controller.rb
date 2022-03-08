@@ -1,4 +1,5 @@
 require_relative 'application_controller.rb'
+
 class ActorsController < ApplicationController
 
     get '/actors/:id' do
