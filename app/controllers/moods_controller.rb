@@ -5,8 +5,13 @@ class MoodsController < ApplicationController
         activities.to_json()
     end
 
+    get '/chill/:id' do
+        chillActivity = Activity.find(params[:id])
+        chillActivity.to_json()
+    end
+
     get "/adventurous" do
-        activities = Activity.all.where(mood_id: 2)
+        activities = Activity.all.where(mood_id:2)
         activities.to_json()
     end
 
