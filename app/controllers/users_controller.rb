@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-    get "/users" do
+    get '/users' do
         users = User.all
-        users.to_json(include: { comments: { include: :post } })
+        users.to_json(include: { comments: { include: :posts } })
 
     end
 
