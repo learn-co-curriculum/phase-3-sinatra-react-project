@@ -14,25 +14,21 @@ ActiveRecord::Schema.define(version: 2022_03_07_224415) do
 
   create_table "architects", force: :cascade do |t|
     t.string "full_name"
-    t.string "style"
-    t.string "url"
+    t.string "image_url"
   end
 
   create_table "buildings", force: :cascade do |t|
     t.string "name"
     t.string "opened"
-    t.integer "stories"
-    t.integer "height"
     t.integer "architect_id"
     t.integer "city_id"
-    t.string "style"
     t.string "map_location"
-    t.string "url"
+    t.string "image_url"
+    t.string "description"
   end
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
-    t.string "url"
   end
 
 end
