@@ -1,11 +1,14 @@
-# Yoga_Class_Poses.destroy_all
-# Pose.destroy_all
-# Yoga_Class.destroy_all
+puts "Seeding yoga class poses"
+Yoga_Class_Pose.destroy_all
+Pose.destroy_all
+Yoga_Class_Pose.destroy_all
 
 
-puts "🌱 Seeding spices..."
+puts "Seeding yoga classes"
+Yoga_Class.create(teacher_name: "Melissa", class_name: "Slow Flow", class_time: "6:00 am")
+Yoga_Class.create(teacher_name: "Jeff", class_name: "Power Vinyasa", class_time: "8:00 am")
 
-# Seed your database here
+puts "Seeding yoga poses"
 
 Pose.create([
   {
@@ -222,4 +225,9 @@ Pose.create([
     img_url:"https://www.dropbox.com/s/d1dbdvo4l7xry4w/downdogflip.svg?raw=1"}
   ])
 
+  20.times do
+  yoga_class = Yoga_Class.all.sample
+  pose  = Pose.all.sample
+Yoga_Class_Pose.create(yoga_class_id: yoga_class.id, pose_id: pose.id)
+end
 puts "✅ Done seeding!"
