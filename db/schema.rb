@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2022_03_08_022004) do
+
+ActiveRecord::Schema.define(version: 2022_03_07_225625) do
+main
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
@@ -21,13 +25,17 @@ ActiveRecord::Schema.define(version: 2022_03_08_022004) do
   create_table "posts", force: :cascade do |t|
     t.string "content"
     t.integer "user_id"
+
+main
   end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "photo_src"
     t.string "bio"
+
     t.integer "post_id"
+ main
   end
 
 end
