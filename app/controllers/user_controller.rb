@@ -9,8 +9,4 @@ class UserController < Sinatra::Base
       user.to_json
     end
     
-    #create new playlist song
-    post "" do
-      PlaylistSong.create()
-    end
   end

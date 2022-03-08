@@ -31,13 +31,11 @@ s_red = Song.create(title: "Dark Red", album_id: demo.id ,  genre: "indie", yout
 u1 = User.create(user_name: "test_user", password: "test123", email: "test_user@test.com")
 
 #Playlist
-p1 = Playlist.create(user_id: u1.id , creation_date: Date.new , last_update: Date.new, duration: nil, name: "Liked Songs")
-p2 = Playlist.create(user_id: u1.id , creation_date: Date.new , last_update: Date.new, duration: nil, name: "~Chill Vibes~")
+p1 = Playlist.create(user_id: u1.id , creation_date: Time.new , last_update: Time.new, duration: 0, name: "Liked Songs")
+p2 = Playlist.create(user_id: u1.id , creation_date: Time.new , last_update: Time.new, duration: 0, name: "~Chill Vibes~")
 
 #Playlist Songs
 ps1 = PlaylistSong.create(song_id: s_footsteps.id, playlist_id: p1.id)
 ps2 = PlaylistSong.create(song_id: s_outro.id, playlist_id: p1.id)
-
-
 
 puts "✅ Done seeding!"
