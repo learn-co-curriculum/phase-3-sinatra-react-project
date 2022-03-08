@@ -2,7 +2,7 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   get "/profiles" do
-    profiles = Profile.all 
+    profiles = Profile.all.shuffle 
     profiles.to_json
   end
 
