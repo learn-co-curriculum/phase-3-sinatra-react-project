@@ -16,4 +16,12 @@ class ApplicationController < Sinatra::Base
     users.to_json
   end
 
+  get "/matches" do
+    match_array = Like.matching_profiles
+    matches = match_array.collect do |match|
+      match.profile
+    end
+    matches.to_json
+  end
+
 end
