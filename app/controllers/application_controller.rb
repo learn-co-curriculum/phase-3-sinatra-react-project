@@ -1,14 +1,8 @@
 class ApplicationController < Sinatra::Base
+  # Add this line to set the Content-Type header for all responses
   set :default_content_type, 'application/json'
-  
-  # Add your routes here
-  get "/" do
-    { message: "Good luck with your project!" }.to_json
+
+  get '/' do
+      "Hello World"
   end
-
-  # get "/users" do
-  #   { message: "Good luck with your project!" }.to_json
-  # end
-
-
 end

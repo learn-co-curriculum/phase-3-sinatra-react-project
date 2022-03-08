@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
 
-    #GET
-    get "/posts" do
+    get '/posts' do
         posts = Post.all
-        posts.to_json(include: { comments: { include: :user} })
+        posts.to_json(include: { comments: { include: :users} })
 
     end
-
 end
+
+
+
