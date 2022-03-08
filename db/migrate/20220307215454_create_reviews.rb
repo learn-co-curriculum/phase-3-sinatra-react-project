@@ -8,6 +8,7 @@ class CreateReviews < ActiveRecord::Migration[6.1]
       t.string :score_ori
       t.string :score_sentiment
       t.string :review_url
+      t.string :review_content
     end
   end
 end

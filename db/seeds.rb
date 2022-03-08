@@ -61,7 +61,7 @@ currentMovieTitles.each { |title|
     actorDetails = movieDetails["cast"]
     actorDetails.each { |actorDetail| 
     
-        actor = Actor.find_by name: actorDetail["name"]
+        actor = Actor.find_by actor_name: actorDetail["name"]
         if actor == nil
             actorInformation = searchActor(actorDetail["name"])
             actorInformation = actorInformation != nil ? actorInformation : {
@@ -70,6 +70,7 @@ currentMovieTitles.each { |title|
                 "profileImageUrl" => "",
             }
             actor = Actor.create(name: actorDetail["name"], filmography_count: actorInformation["filmographyCount"], recent_title_year: actorInformation["recentTitleYear"], profile_image_url: actorInformation["profileImageUrl"])
+            actor = Actor.create(actor_name: actorDetail["name"])
         end
         Role.create(movie_id: movie.id , actor_id: actor.id)
     }
@@ -77,12 +78,16 @@ currentMovieTitles.each { |title|
     reviews = getReviews(movieDetails["emsId"])
     reviews.each { |review|
 
-        critic = Critic.find_by name: review["critic"]["name"]
+        critic = Critic.find_by critic_name: review["critic"]["name"]
         if critic == nil
             critic = Critic.create(name: review["critic"]["name"], image:review["critic"]["criticPictureUrl"])
         end
 
         Review.create(movie_id: movie.id, critic_id: critic.id, content: review["quote"], creation_date: review["creationDate"], score_ori: review["scoreOri"], score_sentiment: review["scoreSentiment"], review_url: review["reviewUrl"])
+            critic = Critic.create(critic_name: review["critic"]["name"])
+        end
+
+        Review.create(movie_id: movie.id, critic_id: critic.id, review_content: review["quote"])
     }
 }
 
