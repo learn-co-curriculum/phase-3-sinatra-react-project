@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2022_03_08_001739) do
   create_table "poses", force: :cascade do |t|
     t.string "sanskrit_name"
     t.string "english_name"
-    t.string "image_url"
+    t.string "img_url"
   end
 
   create_table "yoga_class_poses", force: :cascade do |t|
