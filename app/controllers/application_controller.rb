@@ -2,7 +2,7 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   get "/profiles" do
-    profiles = Profile.all 
+    profiles = Profile.all.shuffle 
     profiles.to_json
   end
 
@@ -14,6 +14,14 @@ class ApplicationController < Sinatra::Base
   get "/users" do 
     users = User.all
     users.to_json
+  end
+
+  get "/matches" do
+    match_array = Like.matching_profiles
+    matches = match_array.collect do |match|
+      match.profile
+    end
+    matches.to_json
   end
 
 end
