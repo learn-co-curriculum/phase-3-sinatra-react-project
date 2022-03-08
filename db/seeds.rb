@@ -1,9 +1,11 @@
 puts "🌱 Seeding spices..."
 
+User.delete_all
 Word.delete_all
 Suggestion.delete_all
+Score.delete_all
 
-50.times do
+10.times do
     user = User.create(
         username: Faker::Creature::Horse.name,
         difficulty: 'medium',
@@ -18,14 +20,27 @@ Suggestion.delete_all
             user_id: user.id
         )
     end
+
+    10.times do
+        word = Word.create(
+            game_word: Faker::ProgrammingLanguage.name,
+            is_used: false
+        )
+    end
+    
+    1.times do
+        score = Score.create(
+            user_id: user.id,
+            word_id: 1,
+            session_score: rand(20..50),
+            guesses: rand(0..1),
+            completed: false
+        )
+    end
+
 end
 
-200.times do
-    word = Word.create(
-        game_word: Faker::ProgrammingLanguage.name,
-        is_used: false
-    )
-end
+
 
 
 puts "✅ Done seeding!"
