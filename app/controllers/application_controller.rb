@@ -1,9 +1,8 @@
 class ApplicationController < Sinatra::Base
-  set :default_content_type, 'application/json'
-  
-  # Add your routes here
-  get "/" do
-    { message: "Good luck with your project!" }.to_json
-  end
+    # Add this line to set the Content-Type header for all responses
+    set :default_content_type, 'application/json'
+
+    # DSL (Domain Specific Language) => Sinatra
+    # Convention Over Configuration 
 
 end

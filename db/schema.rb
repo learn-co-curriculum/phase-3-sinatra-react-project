@@ -12,11 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2022_03_07_224546) do
 
-  create_table "album", force: :cascade do |t|
+  create_table "albums", force: :cascade do |t|
     t.string "title"
     t.string "release_date"
     t.integer "downloads"
     t.integer "duration"
+    t.integer "artist_id"
   end
 
   create_table "artists", force: :cascade do |t|
@@ -35,12 +36,12 @@ ActiveRecord::Schema.define(version: 2022_03_07_224546) do
     t.datetime "creation_date"
     t.datetime "last_update"
     t.integer "duration"
+    t.string "name"
   end
 
   create_table "songs", force: :cascade do |t|
     t.string "title"
     t.integer "album_id"
-    t.integer "artist_id"
     t.string "genre"
     t.string "youtube_link"
     t.integer "duration"

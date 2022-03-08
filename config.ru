@@ -13,3 +13,9 @@ use Rack::JSONBodyParser
 
 # Our application
 run ApplicationController
+use AlbumController
+use ArtistController
+use PlaylistSongController
+use PlaylistController
+use SongController
+use UserController
