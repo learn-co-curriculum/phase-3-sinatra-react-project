@@ -22,7 +22,11 @@ class ApplicationController < Sinatra::Base
     building = Building.create(
       name: params[:name],
       city_id: params[:city_id],
-      architect_id: params[:architect_id]
+      architect_id: params[:architect_id],
+      opened: params[:opened],
+      image_url: params[:image_url],
+      description: params[:description],
+      map_location: params[:map_location]
     )
     building.to_json
   end
