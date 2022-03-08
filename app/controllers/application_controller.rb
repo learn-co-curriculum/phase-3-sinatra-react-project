@@ -24,4 +24,25 @@ class ApplicationController < Sinatra::Base
     matches.to_json
   end
 
+  post "/like" do
+    user = User.find(params[:user_id])
+    profile = Profile.find(params[:profile_id])
+
+    Like.like_function(user, profile)
+  end
+
+  post "/dislike" do
+    user = User.find(params[:user_id])
+    profile = Profile.find(params[:profile_id])
+
+    Like.dislike_function(user, profile)
+  end
+
+  patch "/undo" do
+    user = User.find(params[:user_id])
+    profile = Profile.find(params[:profile_id])
+
+    Like.undo_function(user, profile)
+  end
+
 end
