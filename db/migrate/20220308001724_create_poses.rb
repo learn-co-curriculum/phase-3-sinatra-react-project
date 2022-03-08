@@ -3,7 +3,7 @@ class CreatePoses < ActiveRecord::Migration[6.1]
     create_table :poses do |t|
       t.string :sanskrit_name
       t.string :english_name
-      t.string :image_url
+      t.string :img_url
     end
   end
 end
