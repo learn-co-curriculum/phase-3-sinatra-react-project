@@ -3,4 +3,9 @@ class GroceryListsController < ApplicationController
         groceries = GroceryList.all
         groceries.to_json
     end
+
+
 end 
+
+
+#read, update
