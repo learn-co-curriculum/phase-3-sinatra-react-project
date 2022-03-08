@@ -9,8 +9,10 @@ class ReviewsController < Sinatra::Base
 
     post '/reviews/:id' do
         review = Review.create(
+            movie_id: params[:movie_id],
             content: params[:review_content]
         )
+        review.to_json
     end
 
     patch '/reviews/:id' do
