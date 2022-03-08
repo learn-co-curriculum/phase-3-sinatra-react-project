@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
     patch '/item/:id' do
         items = Item.find(params[:id])
         items.update(
-            title: params[:title]
+            title: params[:title],
             quantity: params[:quantity]
         )
         items.to_json
