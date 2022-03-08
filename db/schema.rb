@@ -13,6 +13,16 @@
 ActiveRecord::Schema.define(version: 2022_03_07_215502) do
 
   create_table "actors", force: :cascade do |t|
+
+    t.string "name"
+    t.integer "filmography_count"
+    t.string "recent_title_year"
+    t.string "profile_image_url"
+  end
+
+  create_table "critics", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
     t.string "actor_name"
   end
 
@@ -22,11 +32,24 @@ ActiveRecord::Schema.define(version: 2022_03_07_215502) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
+    t.string "description"
+    t.string "release_year"
+    t.string "rating"
+    t.string "poster_image_url"
+    t.integer "run_time"
+    t.integer "audience_score"
+    t.string "score_sentiment"
+    t.integer "critics_score"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.integer "critic_id"
     t.integer "movie_id"
+    t.string "content"
+    t.string "creation_date"
+    t.string "score_ori"
+    t.string "score_sentiment"
+    t.string "review_url"
     t.string "review_content"
   end
 
