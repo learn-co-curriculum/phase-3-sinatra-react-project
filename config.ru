@@ -13,3 +13,8 @@ use Rack::JSONBodyParser
 
 # Our application
 run ApplicationController
+use ActorsController
+use CriticsController
+use MoviesController
+use ReviewsController
+use RolesController

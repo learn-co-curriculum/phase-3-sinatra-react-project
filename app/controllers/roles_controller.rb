@@ -1,5 +1,5 @@
 class RolesController < ApplicationController
-    get 'roles/:id' do
+    get '/roles/:id' do
         role = Role.find(params[:id])
         role.to_json(
             include: [:actor, :movie]
