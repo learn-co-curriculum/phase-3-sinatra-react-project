@@ -18,7 +18,9 @@ Suggestion.delete_all
             user_id: user.id
         )
     end
+end
 
+200.times do
     word = Word.create(
         game_word: Faker::ProgrammingLanguage.name,
         is_used: false
