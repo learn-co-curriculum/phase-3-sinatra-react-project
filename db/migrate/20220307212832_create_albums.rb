@@ -6,6 +6,7 @@ class CreateAlbums < ActiveRecord::Migration[6.1]
       t.integer :downloads
       t.integer :duration
       t.integer :artist_id
+      t.string :album_cover
     end
   end
 end
