@@ -32,14 +32,12 @@ p19 = Profile.create(name: "Jack", pronouns: "he/him/his", age: 133, description
 p20 = Profile.create(name: "James", pronouns: "he/they/his", age: 66, description: "Rebel looking for a cause", location: "Hollywood, CA", image: "https://upload.wikimedia.org/wikipedia/commons/e/e6/James_Dean_in_Rebel_Without_a_Cause.jpg")
 p21 = Profile.create(name: "Joe", pronouns: "he/him/his", age: 69, description: "DM me for my twitter account", location: "Moscow, USSR", image: "https://upload.wikimedia.org/wikipedia/commons/6/68/Young_stalin_screenshot.jpg")
 
-puts "seeding likes"
-
 l1 = Like.create(user_id: u1.id, profile_id: p10.id, user_like: true, profile_like: true)
-l2 = Like.create(user_id: u1.id, profile_id: p3.id, user_like: true, profile_like: true)
-l3 = Like.create(user_id: u1.id, profile_id: p5.id, user_like: true, profile_like: nil)
-l4 = Like.create(user_id: u1.id, profile_id: p17.id, user_like: true, profile_like: false)
-l5 = Like.create(user_id: u1.id, profile_id: p16.id, user_like: nil, profile_like: true)
-l6 = Like.create(user_id: u1.id, profile_id: p12.id, user_like: nil, profile_like: true)
+    l2 = Like.create(user_id: u1.id, profile_id: p3.id, user_like: true, profile_like: true)
+    l3 = Like.create(user_id: u1.id, profile_id: p5.id, user_like: true, profile_like: nil)
+    l4 = Like.create(user_id: u1.id, profile_id: p17.id, user_like: true, profile_like: false)
+    l5 = Like.create(user_id: u1.id, profile_id: p16.id, user_like: nil, profile_like: true)
+    l6 = Like.create(user_id: u1.id, profile_id: p12.id, user_like: nil, profile_like: true)
 
 puts "✅ Done seeding!"
 
