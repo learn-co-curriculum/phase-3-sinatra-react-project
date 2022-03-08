@@ -1,4 +1,4 @@
-class RolesController < Sinatra::Base
+class RolesController < ApplicationController
     get 'roles/:id' do
         role = Role.find(params[:id])
         role.to_json(

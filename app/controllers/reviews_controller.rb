@@ -1,4 +1,4 @@
-class ReviewsController < Sinatra::Base
+class ReviewsController < ApplicationController
     
     get '/reviews/:id' do
         review = Review.find(params[:id])

@@ -1,4 +1,4 @@
-class MoviesController < Sinatra::Base
+class MoviesController < ApplicationController
    
     get '/movies' do
         movies = Movie.all.order(:title)

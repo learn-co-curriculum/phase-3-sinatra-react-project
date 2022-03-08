@@ -1,4 +1,4 @@
-class CriticsController < Sinatra::Base
+class CriticsController < ApplicationController
     
     get '/critics' do
         critics = Critic.all

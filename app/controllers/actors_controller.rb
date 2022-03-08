@@ -1,4 +1,4 @@
-class ActorsController < Sinatra::Base
+class ActorsController < ApplicationController
     get '/actors/:id' do
         actor = Actor.find(params[:id])
         actor.to_json(
