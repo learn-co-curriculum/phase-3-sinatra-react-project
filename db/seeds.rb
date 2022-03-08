@@ -2,6 +2,8 @@ puts "🌱 Seeding spices..."
 
 # Seed your database here
 
+# When you what to fetch details of a movie, we send a post request to the API 
+
 def searchMovie(keyword)
     body = {
             :requests => [
@@ -29,6 +31,10 @@ end
 Movie.destroy_all
 Actor.destroy_all
 Role.destroy_all
+Review.destroy_all
+Critic.destroy_all
+
+
 
 currentMovieTitles = JSON.parse(HTTParty.get("https://www.rottentomatoes.com/api/private/v2.0/search/default-list").body).map {|movie| movie["title"]}
 
@@ -48,22 +54,15 @@ currentMovieTitles.each { |title|
     }
 
     reviews = searchReviews(movieDetails["emsId"])
+    reviews.each { |review|
 
+        critic = Critic.find_by name: review["critic"]["name"]
+        if critic == nil
+            critic = Critic.create(name: review["critic"]["name"])
+        end
 
-
-
+        Review.create(movie_id: movie.id, critic_id: critic.id, content: review["quote"])
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 puts "✅ Done seeding!"
