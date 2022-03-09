@@ -38,4 +38,5 @@ class Like < ActiveRecord::Base
             interaction.update(user_like: nil)
         end
     end
+
 end
