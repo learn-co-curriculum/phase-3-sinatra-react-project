@@ -89,6 +89,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-darwin-20
   x86_64-darwin-21
 
 DEPENDENCIES
@@ -110,4 +111,4 @@ DEPENDENCIES
   thin (~> 1.8)
 
 BUNDLED WITH
-   2.3.7
+   2.3.8
