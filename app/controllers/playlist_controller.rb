@@ -13,8 +13,8 @@ class PlaylistController < Sinatra::Base
       post "/users/:user_id/playlists" do
         Playlist.create(
           user_id: params[:user_id], 
-          creation_date: Date.new,
-          last_update: Date.new,
+          creation_date: Time.new,
+          last_update: Time.new,
           duration: 0,
           name: params[:name]
         )
