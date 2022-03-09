@@ -25,7 +25,7 @@ class PlaylistSongController < Sinatra::Base
       playlist_songs = playlist.songs
       playlist_songs.to_json( 
         include: { album: 
-        {only: :title, 
+        {only: [:title, :album_cover], 
             include: { artist:
                 {only: :name}
             }

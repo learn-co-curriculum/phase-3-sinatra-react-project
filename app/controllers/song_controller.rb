@@ -8,7 +8,7 @@ class SongController < Sinatra::Base
         songs = Song.all
         songs.to_json( 
             include: { album: 
-            {only: :title, 
+            {only: [:title, :album_cover], 
                 include: { artist:
                     {only: :name}
                 }
