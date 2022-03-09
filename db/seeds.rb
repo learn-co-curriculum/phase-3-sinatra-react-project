@@ -24,7 +24,8 @@ Score.delete_all
     10.times do
         word = Word.create(
             game_word: Faker::ProgrammingLanguage.name,
-            is_used: false
+            is_used: false,
+            date_used: nil
         )
     end
     

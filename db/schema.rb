@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2022_03_08_001646) do
   create_table "words", force: :cascade do |t|
     t.string "game_word"
     t.boolean "is_used"
+    t.date "date_used"
   end
 
 end
