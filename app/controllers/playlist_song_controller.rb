@@ -23,7 +23,14 @@ class PlaylistSongController < Sinatra::Base
       user = User.find(params[:user_id])
       playlist = user.playlists.find(params[:playlist_id])
       playlist_songs = playlist.songs
-      playlist_songs.to_json
+      playlist_songs.to_json( 
+        include: { album: 
+        {only: [:title, :album_cover], 
+            include: { artist:
+                {only: :name}
+            }
+        }}
+      )
     end
 
     #Delete song from playlist
