@@ -1,3 +1,5 @@
+require 'pry'
+
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
@@ -29,7 +31,7 @@ class ApplicationController < Sinatra::Base
       opened: params[:opened],
       image_url: params[:image_url],
       description: params[:description],
-      map_location: params[:map_location]
+      map_location: params[:map_location],
     )
     new_building.to_json
   end
