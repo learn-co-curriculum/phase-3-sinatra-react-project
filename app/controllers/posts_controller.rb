@@ -20,7 +20,9 @@ class PostsController < ApplicationController
             user_id: params[:user_id],
             is_click: false
         )
-        post.to_json
+        post.to_json(
+    include: :user
+        )
     end
 
     #DELETE
