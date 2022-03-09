@@ -24,6 +24,16 @@ class ApplicationController < Sinatra::Base
     matches.to_json
   end
 
+  get "/user/:id" do
+   target = User.find(params[:id])
+   target.to_json
+  end
+
+  get "/profile/:id" do
+    target = Profile.find(params[:id])
+    target.to_json
+  end
+
   post "/like" do
     user = User.find(params[:user_id])
     profile = Profile.find(params[:profile_id])
