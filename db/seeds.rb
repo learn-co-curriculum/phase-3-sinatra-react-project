@@ -4,7 +4,7 @@ Role.destroy_all
 Review.destroy_all
 Critic.destroy_all
 
-puts "🌱 Seeding spices..."
+puts "🌱 Seeding..."
 
 # Seed your database here
 
@@ -69,7 +69,7 @@ currentMovieTitles.each { |title|
                 "recentTitleYear" => "NA",
                 "profileImageUrl" => "",
             }
-            actor = Actor.create(name: actorDetail["name"], filmography_count: actorInformation["filmographyCount"], recent_title_year: actorInformation["recentTitleYear"], profile_image_url: actorInformation["profileImageUrl"])
+            actor = Actor.create(actor_name: actorDetail["name"], filmography_count: actorInformation["filmographyCount"], recent_title_year: actorInformation["recentTitleYear"], profile_image_url: actorInformation["profileImageUrl"])
             actor = Actor.create(actor_name: actorDetail["name"])
         end
         Role.create(movie_id: movie.id , actor_id: actor.id)
@@ -85,7 +85,6 @@ currentMovieTitles.each { |title|
 
         Review.create(movie_id: movie.id, critic_id: critic.id, content: review["quote"], creation_date: review["creationDate"], score_ori: review["scoreOri"], score_sentiment: review["scoreSentiment"], review_url: review["reviewUrl"])
             critic = Critic.create(critic_name: review["critic"]["name"])
-        end
 
         Review.create(movie_id: movie.id, critic_id: critic.id, review_content: review["quote"])
     }

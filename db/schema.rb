@@ -13,20 +13,16 @@
 ActiveRecord::Schema.define(version: 2022_03_07_215502) do
 
   create_table "actors", force: :cascade do |t|
-
     t.string "name"
     t.integer "filmography_count"
     t.string "recent_title_year"
     t.string "profile_image_url"
+    t.string "actor_name"
   end
 
   create_table "critics", force: :cascade do |t|
     t.string "name"
     t.string "image"
-    t.string "actor_name"
-  end
-
-  create_table "critics", force: :cascade do |t|
     t.string "critic_name"
   end
 

@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     post '/reviews/:id' do
         review = Review.create(
             movie_id: params[:movie_id],
-            content: params[:review_content]
+            review_content: params[:review_content]
         )
         review.to_json
     end
