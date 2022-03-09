@@ -17,7 +17,8 @@ class PostsController < ApplicationController
     post '/posts' do 
         post = Post.create(
             content: params[:content],
-            user_id: params[:user_id]
+            user_id: params[:user_id],
+            is_click: false
         )
         post.to_json
     end
@@ -33,7 +34,7 @@ class PostsController < ApplicationController
     patch '/posts/:id' do
         post = Post.find(params[:id])
         post.update(
-            content: params[:content]
+            is_click: params[:is_click]
         )
         post.to_json
     end
