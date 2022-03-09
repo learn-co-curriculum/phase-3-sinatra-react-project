@@ -11,9 +11,9 @@ class ApplicationController < Sinatra::Base
     likes.to_json
   end
 
-  get "/users" do 
-    users = User.all
-    users.to_json
+  get "/user" do 
+    user = User.all[0]
+    user.to_json
   end
 
   get "/matches" do
@@ -24,9 +24,9 @@ class ApplicationController < Sinatra::Base
     matches.to_json
   end
 
-  get "/user/:id" do
-   target = User.find(params[:id])
-   target.to_json
+  get "/unswiped_profiles" do
+    unique_profiles = Profile.unswiped_profiles.shuffle
+    unique_profiles.to_json
   end
 
   get "/profile/:id" do
