@@ -9,6 +9,7 @@ class Like < ActiveRecord::Base
     end
     
     def self.like_function(user, profile)
+        profile.update(:swipe_status => true)
         if Like.exists?(:user_id => user.id, :profile_id => profile.id)
             interaction = Like.find_by(user_id: user.id, profile_id: profile.id)
             interaction.update(:user_like => true)
@@ -18,6 +19,7 @@ class Like < ActiveRecord::Base
     end
 
     def self.dislike_function(user, profile)
+        profile.update(:swipe_status => true)
         if Like.exists?(:user_id => user.id, :profile_id => profile.id)
             interaction = Like.find_by(user_id: user.id, profile_id: profile.id)
             interaction.update(:user_like => false)
@@ -27,7 +29,7 @@ class Like < ActiveRecord::Base
     end
 
     def self.undo_function(user, profile)
-
+        profile.update(:swipe_status => false)
         interaction = Like.find_by(user_id: user.id, profile_id: profile.id)
 
         if interaction.profile_like == nil
