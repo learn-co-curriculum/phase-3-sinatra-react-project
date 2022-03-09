@@ -10,8 +10,6 @@ class ApplicationController < Sinatra::Base
     buildings.to_json(include: [:architect, :city])
   end
 
-  
-
   get '/buildings/:id' do
     building = Building.find(params[:id])
     building.to_json
