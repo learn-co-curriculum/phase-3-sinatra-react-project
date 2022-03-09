@@ -4,8 +4,8 @@ puts "🌱 Seeding spices..."
 # p1 = Post.create(content: "winter is coming")
 # p2 = Post.create(content: "where are my dragons?")
 
-p1 = Post.create(content: "winter is coming", user_id: 1)
-p2 = Post.create(content: "where are my dragons?", user_id: 2)
+p1 = Post.create(content: "winter is coming", user_id: 1, is_click: "")
+p2 = Post.create(content: "where are my dragons?", user_id: 2, is_click: "")
 
 # user
 u1 = User.create(username: "John_Snow", photo_src: "https://th.bing.com/th/id/R.97b7c380105d4492dcdf6edfa2a037b4?rik=ngUecPVKWdZjDg&pid=ImgRaw&r=0", bio: "Night's Watch Member", post_id: p1.id)
