@@ -4,8 +4,20 @@ class ApplicationController < Sinatra::Base
   
 
   get "/words" do
-    words = Word.all
+    words = Word.all.filter {|w| w.game_word.length == 5 && w.is_used == false}
     words.to_json
+  end
+
+  get "/word_otd" do
+    todays_word = Word.where(date_used: Date.current)
+    if todays_word
+      word_of_the_day = todays_word
+    else
+      words = Word.all.filter {|w| w.game_word.length == 5 && w.is_used == false}
+      word_of_the_day = words.sample
+      word_of_the_day.update(is_used: true, date_used: Date.current)
+    end
+    word_of_the_day.to_json
   end
 
   get '/scores' do 
