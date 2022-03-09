@@ -14,7 +14,7 @@ p1 = Profile.create(name: "Abe", pronouns: "he/they/theirs", age: 156, descripti
 p2 = Profile.create(name: "Anne", pronouns: "she/her/hers", age: 485, description: "So no head?", location: "London, England", image: "https://upload.wikimedia.org/wikipedia/commons/0/03/AnneBoleynHever.jpg", swipe_status: false)
 p3 = Profile.create(name: "Ben", pronouns: "he/him/his", age: 233, description: "Inventor | Writer | Entrepreneur | West Philadelphia born and raised", location: "Philadelphia, PA", image: "https://upload.wikimedia.org/wikipedia/commons/8/87/Joseph_Siffrein_Duplessis_-_Benjamin_Franklin_-_Google_Art_Project.jpg", swipe_status: true)
 p4 = Profile.create(name: "Elizabeth", pronouns: "she/her/hers", age: 407, description: "Beauty fanatic, love a good bath bomb.", location: "Budapest, Hungary", image: "https://upload.wikimedia.org/wikipedia/commons/7/73/Elizabeth_Bathory_Portrait.jpg", swipe_status: false)
-p5 = Profile.create(name: "Lizzie", pronouns: "she/her/hers", age: 94, description: "Can I axe you a question? Jk lol, I don't do that anymore.", location: "Fall River, MA", image: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Lizzie_borden.jpg", swipe_status: true)
+p5 = Profile.create(name: "Lizzie", pronouns: "she/her/hers", age: 94, description: "Can I axe you a question? Jk lol, I don't do that anymore.", location: "Fall River, MA", image: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Lizzie_borden.jpg", swipe_status: false)
 p6 = Profile.create(name: "Walt", pronouns: "he/him/his", age: 55, description: "Theme park date?", location: "Orlando, FL", image: "https://upload.wikimedia.org/wikipedia/commons/d/df/Walt_Disney_1946.JPG", swipe_status: false)
 p7 = Profile.create(name: "Julius", pronouns: "he/him/his", age: 2062, description: "It's about drive, it's about power, we stay hungry, we devour!", location: "Rome, Italy", image: "https://cdn-cdaac.nitrocdn.com/tFOqLIaMYIaFjSGNUoYXbEDiJHtqbEtH/assets/static/optimized/rev-7fdb227/wp-content/uploads/2014/12/830px-Ca%CC%88sar.jpg", swipe_status: false)
 p8 = Profile.create(name: "Genghis", pronouns: "he/him/his", age: 794, description: "Travel enthusiast, horse guy", location: "Ulaanbaatar, Mongolia", image: "https://upload.wikimedia.org/wikipedia/commons/3/35/YuanEmperorAlbumGenghisPortrait.jpg", swipe_status: false)
@@ -32,12 +32,27 @@ p19 = Profile.create(name: "Jack", pronouns: "he/him/his", age: 133, description
 p20 = Profile.create(name: "James", pronouns: "he/they/his", age: 66, description: "Rebel looking for a cause", location: "Hollywood, CA", image: "https://upload.wikimedia.org/wikipedia/commons/e/e6/James_Dean_in_Rebel_Without_a_Cause.jpg", swipe_status: false)
 p21 = Profile.create(name: "Joe", pronouns: "he/him/his", age: 69, description: "DM me for my twitter account", location: "Moscow, USSR", image: "https://upload.wikimedia.org/wikipedia/commons/6/68/Young_stalin_screenshot.jpg", swipe_status: false)
 
+puts "randomizing profile likes..."
+
+profile_array = [p1.id, p2.id, p4.id, p5.id, p6.id, p7.id, p8.id, p9.id, p11.id, p12.id, 
+p13.id, p14.id, p15.id, p16.id, p17.id, p18.id, p19.id, p20.id, p21.id].shuffle
+
+puts "creating likes..."
+
 l1 = Like.create(user_id: u1.id, profile_id: p10.id, user_like: true, profile_like: true)
-    l2 = Like.create(user_id: u1.id, profile_id: p3.id, user_like: true, profile_like: true)
-    l3 = Like.create(user_id: u1.id, profile_id: p5.id, user_like: true, profile_like: false)
-    l4 = Like.create(user_id: u1.id, profile_id: p17.id, user_like: nil, profile_like: false)
-    l5 = Like.create(user_id: u1.id, profile_id: p16.id, user_like: nil, profile_like: true)
-    l6 = Like.create(user_id: u1.id, profile_id: p12.id, user_like: nil, profile_like: true)
+l2 = Like.create(user_id: u1.id, profile_id: p3.id, user_like: true, profile_like: true)
+l3 = Like.create(user_id: u1.id, profile_id: profile_array[0], user_like: nil, profile_like: false)
+l4 = Like.create(user_id: u1.id, profile_id: profile_array[1], user_like: nil, profile_like: false)
+l5 = Like.create(user_id: u1.id, profile_id: profile_array[2], user_like: nil, profile_like: true)
+l6 = Like.create(user_id: u1.id, profile_id: profile_array[4], user_like: nil, profile_like: true)
+l7 = Like.create(user_id: u1.id, profile_id: profile_array[5], user_like: nil, profile_like: true)
+l8 = Like.create(user_id: u1.id, profile_id: profile_array[6], user_like: nil, profile_like: true)
+l9 = Like.create(user_id: u1.id, profile_id: profile_array[7], user_like: nil, profile_like: true)
+l10 = Like.create(user_id: u1.id, profile_id: profile_array[8], user_like: nil, profile_like: true)
+l11 = Like.create(user_id: u1.id, profile_id: profile_array[9], user_like: nil, profile_like: true)
+l12 = Like.create(user_id: u1.id, profile_id: profile_array[10], user_like: nil, profile_like: true)
+l13 = Like.create(user_id: u1.id, profile_id: profile_array[11], user_like: nil, profile_like: true)
+l14 = Like.create(user_id: u1.id, profile_id: profile_array[12], user_like: nil, profile_like: true)
 
 puts "✅ Done seeding!"
 
