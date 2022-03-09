@@ -14,7 +14,7 @@ class Movie < ActiveRecord::Base
 
     def self.average_score
         score = 0
-        if self.all.cout > 0
+        if self.all.count > 0
             score = self.all.map{|movie| movie.critics_score}.sum / self.all.count
         end
         score

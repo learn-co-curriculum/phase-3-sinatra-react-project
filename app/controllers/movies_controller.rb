@@ -11,4 +11,9 @@ class MoviesController < ApplicationController
             include: { actors: { only: [:actor_name] } }
         )
     end
+
+    get '/top_movies' do
+        top_movies = Movie.top_movies
+        top_movies.to_json
+    end
 end
