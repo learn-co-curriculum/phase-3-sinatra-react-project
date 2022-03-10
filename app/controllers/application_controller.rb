@@ -45,4 +45,25 @@ class ApplicationController < Sinatra::Base
     delete.to_json
   end
 
+  get '/users' do 
+    users = User.all
+    users.to_json
+  end
+
+  get '/users/:id' do 
+    users = User.find(params[:id])
+    users.to_json(include: :scores)
+  end
+
+  post '/users' do 
+    new_user = User.create(
+      username: params[:username],
+      password: params[:password],
+      difficulty: params[:difficulty],
+      highscore: params[:highscore],
+      ip_address: params[:ip_address]
+    )
+    new_user.to_json
+  end
+
 end
