@@ -68,12 +68,17 @@ class ApplicationController < Sinatra::Base
     users.to_json(include: :scores)
   end
 
+
   patch '/users/:id' do
     user = User.find(params[:id])
     user.update(
       highscore: params[:highscore]
     )
     user.to_json
+
+  get '/users/:id/recent' do
+    user = User.find(params[:id])
+    user.recent_scores.to_json()
   end
 
   post '/users' do 
