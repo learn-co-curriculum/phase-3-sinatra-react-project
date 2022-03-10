@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_03_10_205746) do
     t.string "breed"
     t.string "size"
     t.string "description"
-    t.boolean "walk_time"
+    t.boolean "walk_time", default: true
     t.string "image"
     t.integer "user_id"
   end

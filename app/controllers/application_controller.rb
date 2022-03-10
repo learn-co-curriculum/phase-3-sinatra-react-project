@@ -1,5 +1,6 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
+  set :public_folder, File.dirname(__FILE__) + '/static'
   
   # Add your routes here
   get "/" do
@@ -18,6 +19,8 @@ class ApplicationController < Sinatra::Base
     dogs.destroy
     dogs.to_json
   end
-
+  post "/dogs" do
+    create_dog(name, age, breed,size,description, image)
+  end
 
 end
