@@ -9,7 +9,7 @@ class CreateDogs < ActiveRecord::Migration[6.1]
       t.integer :walk_time #in minutes     
       t.string :image     
       t.integer :client_id
-      t.integer :walker_id
+      
     end
   end
 end
