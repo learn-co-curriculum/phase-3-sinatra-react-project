@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_09_010034) do
+ActiveRecord::Schema.define(version: 2022_03_10_002454) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2022_03_09_010034) do
     t.string "photo_src"
     t.string "bio"
     t.integer "post_id"
+    t.string "password"
   end
 
 end
