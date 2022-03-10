@@ -5,7 +5,7 @@ class CreateClients < ActiveRecord::Migration[6.1]
       t.string :contact             
       t.string :days_wanted
       t.string :image 
-      t.integer :walker_id
+      
       end
   end
 end
