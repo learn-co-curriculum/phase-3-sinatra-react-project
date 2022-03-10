@@ -1,4 +1,4 @@
-class Client < ActiveRecord::Base 
+class User < ActiveRecord::Base 
     has_many :dogs
     
 
