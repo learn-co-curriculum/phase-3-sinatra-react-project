@@ -10,12 +10,13 @@ class ApplicationController < Sinatra::Base
 
   get "/word_otd" do
     todays_word = Word.where(date_used: Date.current)
-    if todays_word
+    if todays_word.empty? === false
       word_of_the_day = todays_word
     else
       words = Word.all.filter {|w| w.game_word.length == 5 && w.is_used == false}
       word_of_the_day = words.sample
       word_of_the_day.update(is_used: true, date_used: Date.current)
+      word_of_the_day
     end
     word_of_the_day.to_json
   end
