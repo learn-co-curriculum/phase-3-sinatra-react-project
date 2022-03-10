@@ -15,7 +15,7 @@ Score.delete_all
 
     3.times do
         suggestion = Suggestion.create(
-            suggested_word: Faker::ProgrammingLanguage.name,
+            suggested_word: Faker::ProgrammingLanguage.unique.name,
             approved: false,
             user_id: user.id
         )
@@ -23,7 +23,7 @@ Score.delete_all
 
     10.times do
         word = Word.create(
-            game_word: Faker::ProgrammingLanguage.name,
+            game_word: Faker::ProgrammingLanguage.unique.name,
             is_used: false,
             date_used: nil
         )
