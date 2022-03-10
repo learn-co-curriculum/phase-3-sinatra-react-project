@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
     get '/movies/:id' do
         movie = Movie.find(params[:id])
         movie.to_json(
-            include: { actors: { only: [:actor_name] } }
+            include: { actors: { only: [:name, :profile_image_url] }, reviews: { only: [:content]} }
         )
     end
 
