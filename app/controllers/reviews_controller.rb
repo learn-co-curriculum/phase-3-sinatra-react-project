@@ -7,12 +7,14 @@ class ReviewsController < ApplicationController
         )
     end
 
-    post '/reviews/:id' do
+    post '/reviews' do
         review = Review.create(
             movie_id: params[:movie_id],
-            review_content: params[:review_content]
+            critic_id: params[:critic_id],
+            content: params[:content])
+        review.to_json(
+            include: { critic: { only: [:name, :image] } }
         )
-        review.to_json
     end
 
     patch '/reviews/:id' do
@@ -28,4 +30,5 @@ class ReviewsController < ApplicationController
         review.destroy
         review.to_json
     end
+
 end
