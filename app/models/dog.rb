@@ -1,4 +1,4 @@
 class Dog < ActiveRecord::Base
-    belongs_to :clients
+    belongs_to :user
    
 end

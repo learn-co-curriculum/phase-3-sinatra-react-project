@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_09_004802) do
-
-  create_table "clients", force: :cascade do |t|
-    t.string "name"
-    t.string "contact"
-    t.string "days_wanted"
-    t.string "image"
-    t.integer "walker_id"
-  end
+ActiveRecord::Schema.define(version: 2022_03_10_174706) do
 
   create_table "dogs", force: :cascade do |t|
     t.string "name"
@@ -28,17 +20,13 @@ ActiveRecord::Schema.define(version: 2022_03_09_004802) do
     t.string "description"
     t.integer "walk_time"
     t.string "image"
-    t.integer "client_id"
-    t.integer "walker_id"
+    t.integer "user_id"
   end
 
-  create_table "walkers", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "contact"
-    t.string "about"
-    t.string "availability"
-    t.string "review"
-    t.integer "rating"
+    t.string "days_wanted"
     t.string "image"
   end
 
