@@ -67,6 +67,11 @@ class ApplicationController < Sinatra::Base
     users.to_json(include: :scores)
   end
 
+  get '/users/:id/recent' do
+    user = User.find(params[:id])
+    user.recent_scores.to_json()
+  end
+
   post '/users' do 
     new_user = User.create(
       username: params[:username],
