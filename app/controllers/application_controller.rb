@@ -68,6 +68,14 @@ class ApplicationController < Sinatra::Base
     users.to_json(include: :scores)
   end
 
+  patch '/users/:id' do
+    user = User.find(params[:id])
+    user.update(
+      highscore: params[:highscore]
+    )
+    user.to_json
+  end
+
   post '/users' do 
     new_user = User.create(
       username: params[:username],
@@ -79,4 +87,17 @@ class ApplicationController < Sinatra::Base
     new_user.to_json
   end
 
+  post '/scores' do 
+    new_score = Score.create(
+      user_id: params[:user_id],
+      word_id: params[:word_id],
+      session_score: params[:session_score],
+      guesses: params[:guesses],
+      completed: params[:completed]
+    )
+    new_score.to_json
+  end  
+
 end
+
+
