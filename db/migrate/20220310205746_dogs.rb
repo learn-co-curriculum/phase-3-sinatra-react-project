@@ -6,7 +6,7 @@ class Dogs < ActiveRecord::Migration[6.1]
       t.string :breed     
       t.string :size     
       t.string :description     
-      t.integer :walk_time #in minutes     
+      t.boolean :walk_time     
       t.string :image     
       t.integer :user_id
     end
