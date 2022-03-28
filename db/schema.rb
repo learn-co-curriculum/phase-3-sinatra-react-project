@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2022_03_28_150822) do
   end
 
   create_table "fridges", force: :cascade do |t|
-    t.string "loaction"
+    t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
