@@ -22,8 +22,7 @@ animal8 = Animal.create(animal_name: Faker::Name.name , breed: "rabbit", age: ra
 animal9 = Animal.create(animal_name: Faker::Name.name , breed: "hamster", age: rand(1..15), shelter_id: shelter.id, adopter_id: rand(1..5))
 animal10 = Animal.create(animal_name: Faker::Name.name , breed: "fish", age: rand(1..15), shelter_id: shelter.id, adopter_id: rand(1..5))
 
-
-puts "Createing adopters"
+puts "Creating adopters"
 adopter1 = Adopter.create(adopter_name: Faker::Name.name, email: Faker::Internet.email, adopter_phone: Faker::PhoneNumber.phone_number)
 adopter2 = Adopter.create(adopter_name: Faker::Name.name, email: Faker::Internet.email, adopter_phone: Faker::PhoneNumber.phone_number)
 adopter3 = Adopter.create(adopter_name: Faker::Name.name, email: Faker::Internet.email, adopter_phone: Faker::PhoneNumber.phone_number)
