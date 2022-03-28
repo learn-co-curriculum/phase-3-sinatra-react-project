@@ -2,26 +2,51 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   # Add your routes here
+  get "/companies" do
+    companies = Company.all
+    companies.to_json
+  end
+
+  get "/dashboard/:id" do
+    employee = Employee.find(params[:id])
+    company = {
+      company_info: employee.company,
+      teams: employee.company.teams
+    }
+    information = {
+      employee: employee,
+      company: company
+    }
+    binding.pry
+    information.to_json
+  end
+
   post "/" do
-    user = User.find_or_initialize_by(
+    employee = Employee.find_or_initialize_by(
       email: params[:email]
     )
 
-    if user.new_record?
-      user.update(
-        name: params[:name],
+    if employee.new_record?
+      employee.update(
+        first_name: params[:name],
+        last_name: nil,
         email_verified: params[:email_verified],
-        nickname: params[:nickname],
-        picture: params[:picture]
+        picture: params[:picture],
+        company_id: nil,
+        team_id: nil
       )
     end
 
-    user.to_json
+    employee.to_json
   end
 
-  post "/submit_user" do
-    user = User.find_by(email: params[:user_data][:name])
-    user.update(name: params[:form_data][:firstName] + " " + params[:form_data][:lastName])
-    user.to_json
+  post "/submit_employee" do
+    employee = Employee.find_by(email: params[:employee_data][:email])
+    employee.update(
+      first_name: params[:form_data][:firstName], 
+      last_name: params[:form_data][:lastName],
+      company_id: params[:form_data][:companyId].to_i
+    )
+    employee.to_json
   end
 end
