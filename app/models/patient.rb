@@ -1,5 +1,6 @@
 class Patient < ActiveRecord::Base
-# belongs_to :physician, through: :apointment
+    has_many :appointments
+    has_many :physicians, through: :appointments
 
 
 

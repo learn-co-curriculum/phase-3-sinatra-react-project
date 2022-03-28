@@ -3,7 +3,7 @@ class CreateAppointments < ActiveRecord::Migration[6.1]
     create_table :appointments do |t|
       t.integer :patient_id
       t.integer :physician_id
-      t.integer :appt_date
+      t.date :appt_date
     end
   end
 end

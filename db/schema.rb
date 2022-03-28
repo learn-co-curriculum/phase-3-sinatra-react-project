@@ -15,12 +15,13 @@ ActiveRecord::Schema.define(version: 2022_03_27_124948) do
   create_table "appointments", force: :cascade do |t|
     t.integer "patient_id"
     t.integer "physician_id"
-    t.integer "appt_date"
+    t.date "appt_date"
   end
 
   create_table "patients", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.string "phone"
     t.string "id_number"
   end
 
