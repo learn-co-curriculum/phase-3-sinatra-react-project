@@ -1,0 +1,3 @@
+class WaitListPatient < ApplicationController
+    
+end
