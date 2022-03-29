@@ -1,4 +1,6 @@
 class Physicians < ApplicationController
+    set :default_content_type, 'application/json'
+    
     get "/physicians" do 
         physician = Physicians.all
         physician.to_json
