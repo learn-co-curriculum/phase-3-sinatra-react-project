@@ -1,4 +1,4 @@
-class WaitListPatient < ActiveRecord::Base
+class Waitlistpatient < ActiveRecord::Base
     belongs_to :patient
 
 
