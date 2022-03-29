@@ -1,4 +1,4 @@
-class ApplicationController < Sinatra::Base
+class CategoriesController < ApplicationController
     
     get "/categories" do 
       categories = Category.all 
@@ -15,4 +15,4 @@ class ApplicationController < Sinatra::Base
       food.to_json
     end
     
-  end
+end
