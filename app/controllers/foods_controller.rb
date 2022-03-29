@@ -9,5 +9,4 @@ class FoodsController < ApplicationController
       food = Food.find(params[:id])
       food.to_json
     end
-    
 end
