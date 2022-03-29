@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/bcrypt-ruby/bcrypt-ruby
+  revision: 5bf36393d330947e055af635687b32719a8df668
+  branch: master
+  specs:
+    bcrypt (3.1.17)
+
+GIT
   remote: https://github.com/faker-ruby/faker.git
   revision: 91950218dd39119e420ca431fc9fae09b53986c7
   branch: master
@@ -94,11 +101,11 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
-  arm64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
   activerecord (~> 6.1)
+  bcrypt!
   database_cleaner (~> 2.0)
   faker!
   pry (~> 0.14.1)
@@ -116,4 +123,4 @@ DEPENDENCIES
   thin (~> 1.8)
 
 BUNDLED WITH
-   2.3.6
+   2.2.31
