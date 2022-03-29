@@ -8,4 +8,6 @@ class PatientsController < ApplicationController
         patient = Patient.find(params[:id])
         patient.to_json(include: :appointments)
     end
+
+    
 end
