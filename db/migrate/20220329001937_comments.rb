@@ -4,6 +4,7 @@ class Comments < ActiveRecord::Migration[6.1]
 
     t.string :text
     t.references :box
+    t.references :user
     end
   end
 end

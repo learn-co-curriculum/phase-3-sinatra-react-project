@@ -1,4 +1,4 @@
 class Box < ActiveRecord::Base
-    has_many :boxes
-    has_many :upvotes
+    has_many :comments
+    has_many :users, through: :comments
   end

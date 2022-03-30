@@ -10,22 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_29_001937) do
+ActiveRecord::Schema.define(version: 2022_03_30_141452) do
 
   create_table "boxes", force: :cascade do |t|
     t.string "title"
+    t.integer "upvotes"
   end
 
   create_table "comments", force: :cascade do |t|
     t.string "text"
     t.integer "box_id"
+    t.integer "user_id"
     t.index ["box_id"], name: "index_comments_on_box_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "upvotes", force: :cascade do |t|
-    t.integer "amount"
-    t.integer "box_id"
-    t.index ["box_id"], name: "index_upvotes_on_box_id"
+  create_table "users", force: :cascade do |t|
+    t.string "username"
   end
 
 end
