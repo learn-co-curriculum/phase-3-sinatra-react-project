@@ -88,9 +88,20 @@ class ApplicationController < Sinatra::Base
     employee.to_json
   end
 
+  post "/tasks" do
+    task = Task.create(description: params[:description], deadline: params[:deadline], team_id: params[:team_id], completed: false)
+    task.to_json
+  end
+
   post "/tasks/edit" do
     new_task = EmployeeTask.create(team_id: params[:teamID], employee_id: params[:employeeID], task_id: params[:taskID])
     new_task.to_json
+  end
+
+  patch "/tasks/:taskID" do
+    task = Task.find(params[:taskID])
+    task.update(completed: params[:completed])
+    task.to_json
   end
 
   patch "/tasks/edit/:taskID" do
