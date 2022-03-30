@@ -9,14 +9,18 @@ class ApplicationController < Sinatra::Base
 
   get "/dashboard/:id" do
     employee = Employee.find(params[:id])
+
     company = {
       company_info: employee.company,
-      teams: employee.company.teams
+      teams: employee.company.teams.order(:name)
     }
+
     information = {
       employee: employee,
-      company: company
+      company: company,
+      employees: employee.company.employees.where.not(id: params[:id]).order(:last_name)
     }
+
     information.to_json
   end
 
@@ -26,14 +30,14 @@ class ApplicationController < Sinatra::Base
     if employee.team
       res_hash = {
         personal_tasks: [],
-        team_tasks: employee.team.tasks,
+        team_tasks: employee.team.tasks.order(:deadline),
         team: employee.team,
-        members: employee.team.employees,
+        members: employee.team.employees.order(:last_name),
         company: employee.company
       }
 
       if EmployeeTask.where("employee_id=?", employee.id).length > 0
-        EmployeeTask.where("employee_id=?", employee.id).each do |t|
+        EmployeeTask.where("employee_id=?", employee.id).order(:deadline).each do |t|
           res_hash[:personal_tasks] << Task.find(t.task_id)
         end
       end
@@ -88,6 +92,23 @@ class ApplicationController < Sinatra::Base
     employee.to_json
   end
 
+  post "/create_company" do
+    employee = Employee.find_by(email: params[:employee_data][:email])
+    company = Company.create(name: params[:form_data][:newCompany])
+    employee.update(
+      first_name: params[:form_data][:firstName], 
+      last_name: params[:form_data][:lastName],
+      company_id: Company.all.last.id
+    )
+    employee.to_json
+  end
+
+  post "/create_team" do
+    company = Company.find(params[:companyId])
+    team = Team.create(name: params[:teamName], company: company)
+    team.to_json
+  end
+
   post "/tasks" do
     task = Task.create(description: params[:description], deadline: params[:deadline], team_id: params[:team_id], completed: false)
     task.to_json
@@ -112,7 +133,7 @@ class ApplicationController < Sinatra::Base
 
   patch "/team/:employeeID" do
     employee = Employee.find(params[:employeeID])
-    employee.update(team_id: params[:teamID])
+    employee.update(team_id: params[:teamId], title: params[:title])
     employee.to_json
   end
 
