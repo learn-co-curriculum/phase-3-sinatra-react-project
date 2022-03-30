@@ -8,6 +8,14 @@ get '/fridges' do
     )
 end
 
+post '/fridges' do
+    newFridge = Fridge.create(
+        location: params[:location],
+    )
+    newFridge.to_json(
+        include: :foods
+    )
+end
 
 
 
