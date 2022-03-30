@@ -23,11 +23,27 @@ end
     )
 end
 
-5.times do
+3.times do
     Task.create(
         description: Faker::Lorem.sentence(word_count: 10),
         deadline: Faker::Date.forward(days: rand(7..14)),
-        team_id: rand(1..3)
+        team_id: 1
+    )
+end
+
+3.times do
+    Task.create(
+        description: Faker::Lorem.sentence(word_count: 10),
+        deadline: Faker::Date.forward(days: rand(7..14)),
+        team_id: 2
+    )
+end
+
+3.times do
+    Task.create(
+        description: Faker::Lorem.sentence(word_count: 10),
+        deadline: Faker::Date.forward(days: rand(7..14)),
+        team_id: 3
     )
 end
 
