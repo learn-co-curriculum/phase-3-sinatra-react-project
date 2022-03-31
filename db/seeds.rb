@@ -1,3 +1,5 @@
+puts "Destroying seeds"
+
 puts "Seeding..."
 
 teams = ["Software", "Marketing", "Finance"]
@@ -16,7 +18,6 @@ end
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
         email: Faker::Internet.email,
-        email_verified: false,
         picture: nil,
         company_id: 1,
         team_id: rand(1..3)
@@ -44,6 +45,14 @@ end
         description: Faker::Lorem.sentence(word_count: 10),
         deadline: Faker::Date.forward(days: rand(7..14)),
         team_id: 3
+    )
+end
+
+6.times do
+    Note.create(
+        description: Faker::Lorem.sentence(word_count:3),
+        task_id: rand(1..3),
+        employee_id: rand(1..9)
     )
 end
 

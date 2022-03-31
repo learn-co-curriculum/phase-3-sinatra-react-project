@@ -72,7 +72,6 @@ class ApplicationController < Sinatra::Base
       employee.update(
         first_name: params[:name],
         last_name: nil,
-        email_verified: params[:email_verified],
         picture: params[:picture],
         company_id: nil,
         team_id: nil
@@ -141,5 +140,22 @@ class ApplicationController < Sinatra::Base
     employee = EmployeeTask.where("task_id = ? and employee_id = ?", params[:taskID], params[:employeeID])
     employee[0].destroy
     employee[0].to_json
+  end
+
+  get '/teams' do
+    teams = Team.all
+    teams.to_json(only: :name)
+  end
+
+  post "/notes" do
+    employee = Employee.find_by(email: params[:email])
+    note = Note.create(description: params[:description], task_id: params[:task_id], employee_id: employee.id)
+    note.to_json
+  end
+
+
+  get '/notes' do
+    notes = Note.all
+    notes.to_json
   end
 end
