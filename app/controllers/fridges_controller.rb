@@ -17,6 +17,11 @@ post '/fridges' do
     )
 end
 
+delete '/fridges/:id' do
+    deletedFridge = Fridge.find(params[:id])
+    deletedFridge.destroy
+    deletedFridge.to_json
+  end
 
 
 
