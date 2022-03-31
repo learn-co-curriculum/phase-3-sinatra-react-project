@@ -72,7 +72,6 @@ class ApplicationController < Sinatra::Base
       employee.update(
         first_name: params[:name],
         last_name: nil,
-        email_verified: params[:email_verified],
         picture: params[:picture],
         company_id: nil,
         team_id: nil
