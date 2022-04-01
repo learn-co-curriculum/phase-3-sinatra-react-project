@@ -24,7 +24,15 @@ delete '/fridges/:id' do
     deletedFridge.to_json
   end
 
-
+patch '/fridges/:id' do
+editFridge = Fridge.find(params[:id])
+editFridge.update(
+    location: params[:location],
+)
+editFridge.to_json(
+    include: :foods
+)
+end
 
 
 end
