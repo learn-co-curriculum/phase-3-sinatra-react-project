@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
     information = {
       employee: employee,
       company: company,
-      employees: employee.company.employees.where.not(id: params[:id]).order(:last_name)
+      employees: employee.company.employees.order(:last_name)
     }
 
     information.to_json
@@ -142,17 +142,11 @@ class ApplicationController < Sinatra::Base
     employee[0].to_json
   end
 
-  get '/teams' do
-    teams = Team.all
-    teams.to_json(only: :name)
-  end
-
   post "/notes" do
     employee = Employee.find_by(email: params[:email])
     note = Note.create(description: params[:description], task_id: params[:task_id], employee_id: employee.id)
     note.to_json
   end
-
 
   get '/notes' do
     notes = Note.all
