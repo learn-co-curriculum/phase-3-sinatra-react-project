@@ -19,6 +19,7 @@ end
 
 delete '/fridges/:id' do
     deletedFridge = Fridge.find(params[:id])
+    deletedFridge.foods.destroy_all
     deletedFridge.destroy
     deletedFridge.to_json
   end
