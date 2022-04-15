@@ -1,6 +1,8 @@
 # Phase 3 Project Guidelines
 
 
+![entity relationship diagram](./diagram.png)
+
 ## TODO:
 - [ ] Task 1
 - [ ] Task 2
