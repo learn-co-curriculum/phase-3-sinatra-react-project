@@ -4,7 +4,7 @@
 ![entity relationship diagram](./diagram.png)
 
 ## TODO:
-- [ ] Make Seeds
+- [x] Make Seeds
 - [ ] Write methods in the Models (patient.rb, appointment.rb, and doctor.rb)
 - [ ] Write routes in the Controller (application_controller.rb)
 - [ ] Task 4
