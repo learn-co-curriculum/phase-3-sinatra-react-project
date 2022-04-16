@@ -7,7 +7,7 @@
 * `GET /`: TODO
 * `GET /appointments`: Get appointments 
   * `POST /appointments`: Create appointments 
-  * `PATCH /appointments`: Update appointments 
+  * `PATCH /appointments/:id`: Update appointment by id
     * Updating: date, duration, reason, and type
   * `DELETE /appointments`: Delete appointment
   * `GET /appointment/:id`: Get appointment by id
