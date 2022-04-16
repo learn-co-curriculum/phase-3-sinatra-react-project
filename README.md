@@ -4,7 +4,7 @@
 ![entity relationship diagram](./diagram.png)
 
 ## TODO:
-- [ ] Task 1
+- [ ] Make Seeds
 - [ ] Task 2
 - [ ] Task 3
 - [ ] Task 4
