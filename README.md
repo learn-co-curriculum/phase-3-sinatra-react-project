@@ -23,14 +23,18 @@
 - [ ] Write some methods in the Models (patient.rb, appointment.rb, and doctor.rb)
 - [ ] Write routes in the Controller (application_controller.rb)
 
+- [  ] `GET /appointments/<YYYY-MM-DD date string>`: Get appointments for a day
+
 - [ ] Have seperate pages for list of all patients and doctors
   - [ ] `POST /doctors/`: Create new doctor
+  - [ ] `POST /doctors/names`: Get all doctor's first and last names
   - [ ] `GET /doctors/:doctor_id`:
   - [ ] `PATCH /doctors/:doctor_id`:
   - [ ] `DELETE /doctors/:doctor_id`:
   - [ ] `GET /doctors/:doctor_id/appointments`:
 
   - [ ] `POST /patients/`: Create new patient
+  - [ ] `POST /patients/names`: Get all patient's first and last names
   - [ ] `GET /patients/:patient_id`: 
   - [ ] `PATCH /patients/:patient_id`: 
   - [ ] `DELETE /patients/:patient_id`: 
