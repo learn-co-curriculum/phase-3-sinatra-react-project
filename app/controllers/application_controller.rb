@@ -20,4 +20,36 @@ class ApplicationController < Sinatra::Base
     appointments = Appointment.all
     appointments.to_json
   end
+
+  get "/appointment/:id" do
+    appointment = Appointment.find(params[:id])
+    appointment.to_json
+  end
+
+  post "/appointments" do
+    appointment = Appointment.create(
+      appointment_date: params[:appointment_date],
+      appointment_duration: params[:appointment_duration],
+      appointment_reason: params[:appointment_reason],
+      appointment_type: params[:appointment_type],
+      doctor_id: params[:doctor_id],
+      patient_id: params[:patient_id],
+    )
+  end
+
+  patch "/appointments/:id" do
+    appointment = Appointment.find(params[:id])
+    appointment.update(
+      appointment_date: params[:appointment_date],
+      appointment_duration: params[:appointment_duration],
+      appointment_reason: params[:appointment_reason],
+      appointment_type: params[:appointment_type],
+    )
+  end
+
+  delete "/appointments/:id" do
+    appointment = Appointment.find(params[:id])
+    appointment.destroy
+    appointment.to_json
+  end
 end

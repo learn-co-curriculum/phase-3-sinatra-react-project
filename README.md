@@ -6,6 +6,11 @@
 ## Endpoints
 * `GET /`: TODO
 * `GET /appointments`: Get appointments 
+  * `POST /appointments`: Create appointments 
+  * `PATCH /appointments`: Update appointments 
+    * Updating: date, duration, reason, and type
+  * `DELETE /appointments`: Delete appointment
+  * `GET /appointment/:id`: Get appointment by id
 * `GET /doctors`: Get doctors
 * `GET /patients`: Get patients
 
