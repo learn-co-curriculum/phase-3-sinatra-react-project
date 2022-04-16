@@ -3,12 +3,18 @@
 
 ![entity relationship diagram](./diagram.png)
 
+## Endpoints
+* `GET /`: TODO
+* `GET /appointments`: Get appointments 
+* `GET /doctors`: Get doctors
+* `GET /patients`: Get patients
+
+
+
 ## TODO:
 - [x] Make Seeds
 - [ ] Write methods in the Models (patient.rb, appointment.rb, and doctor.rb)
 - [ ] Write routes in the Controller (application_controller.rb)
-- [ ] Task 4
-- [ ] Task 5
 
 
 ## Directory:
