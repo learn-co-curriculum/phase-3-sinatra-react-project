@@ -10,6 +10,40 @@
 - [ ] Task 4
 - [ ] Task 5
 
+
+## Directory:
+```
+.
+├── CONTRIBUTING.md
+├── Gemfile
+├── Gemfile.lock
+├── LICENSE.md
+├── README.md
+├── Rakefile
+├── app
+│   ├── controllers
+│   │   └── application_controller.rb
+│   └── models
+│       ├── appointment.rb
+│       ├── doctor.rb
+│       └── patient.rb
+├── config
+│   ├── database.yml
+│   └── environment.rb
+├── config.ru
+├── db
+│   ├── development.sqlite3
+│   ├── migrate
+│   │   ├── 20220415214412_create_doctors.rb
+│   │   ├── 20220415214417_create_patients.rb
+│   │   └── 20220415214424_create_appointments.rb
+│   ├── schema.rb
+│   └── seeds.rb
+├── diagram.png
+└── spec
+    └── spec_helper.rb
+```
+
 ## Learning Goals
 
 - Build a web basic API with Sinatra and Active Record to support a React
