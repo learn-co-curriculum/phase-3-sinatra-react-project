@@ -10,12 +10,11 @@
   * `POST /appointments`: Create appointments 
   * `PATCH /appointments/:id`: Update appointment by id (Change only to date and duration?)
     * Updating: date, duration, reason, and type
-  * `DELETE /appointments`: Delete appointment
+  * `DELETE /appointments/:id`: Delete appointment
   * `GET /appointments/:id`: Get appointment by id
 
 * `GET /doctors`: Get doctors
 * `GET /patients`: Get patients
-
 
 
 ## TODO:
@@ -23,7 +22,7 @@
 - [ ] Write some methods in the Models (patient.rb, appointment.rb, and doctor.rb)
 - [ ] Write routes in the Controller (application_controller.rb)
 
-- [  ] `GET /appointments/<YYYY-MM-DD date string>`: Get appointments for a day
+- [ ] `GET /appointments/<YYYY-MM-DD date string>`: Get appointments for a day
 
 - [ ] Have seperate pages for list of all patients and doctors
   - [ ] `POST /doctors/`: Create new doctor
@@ -39,7 +38,17 @@
   - [ ] `PATCH /patients/:patient_id`: 
   - [ ] `DELETE /patients/:patient_id`: 
   - [ ] `GET /patients/:patient_id/appointments`: 
-
+- [ ] Add more columns:
+  - [ ] photo (doctor, patient)
+  - [ ] Zoom url (appointment)
+  - [ ] race (patient)
+  - [ ] gender (patient)
+  - [ ] available hours (in minutes integer) (doctor)
+  - [ ] specialty (doctor)
+  - [ ] insurance (patient)
+  - [ ] status (appointment)
+  - [ ] office (appointment)
+  
 
 ## Directory:
 ```
