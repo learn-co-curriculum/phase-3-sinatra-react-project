@@ -21,7 +21,7 @@ class ApplicationController < Sinatra::Base
     appointments.to_json
   end
 
-  get "/appointment/:id" do
+  get "/appointments/:id" do
     appointment = Appointment.find(params[:id])
     appointment.to_json
   end

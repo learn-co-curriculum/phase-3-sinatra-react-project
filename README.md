@@ -5,12 +5,14 @@
 
 ## Endpoints
 * `GET /`: TODO
+
 * `GET /appointments`: Get appointments 
   * `POST /appointments`: Create appointments 
-  * `PATCH /appointments/:id`: Update appointment by id
+  * `PATCH /appointments/:id`: Update appointment by id (Change only to date and duration?)
     * Updating: date, duration, reason, and type
   * `DELETE /appointments`: Delete appointment
-  * `GET /appointment/:id`: Get appointment by id
+  * `GET /appointments/:id`: Get appointment by id
+
 * `GET /doctors`: Get doctors
 * `GET /patients`: Get patients
 
@@ -18,8 +20,21 @@
 
 ## TODO:
 - [x] Make Seeds
-- [ ] Write methods in the Models (patient.rb, appointment.rb, and doctor.rb)
+- [ ] Write some methods in the Models (patient.rb, appointment.rb, and doctor.rb)
 - [ ] Write routes in the Controller (application_controller.rb)
+
+- [ ] Have seperate pages for list of all patients and doctors
+  - [ ] `POST /doctors/`: Create new doctor
+  - [ ] `GET /doctors/:doctor_id`:
+  - [ ] `PATCH /doctors/:doctor_id`:
+  - [ ] `DELETE /doctors/:doctor_id`:
+  - [ ] `GET /doctors/:doctor_id/appointments`:
+
+  - [ ] `POST /patients/`: Create new patient
+  - [ ] `GET /patients/:patient_id`: 
+  - [ ] `PATCH /patients/:patient_id`: 
+  - [ ] `DELETE /patients/:patient_id`: 
+  - [ ] `GET /patients/:patient_id/appointments`: 
 
 
 ## Directory:
