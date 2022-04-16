@@ -5,8 +5,8 @@
 
 ## TODO:
 - [ ] Make Seeds
-- [ ] Task 2
-- [ ] Task 3
+- [ ] Write methods in the Models (patient.rb, appointment.rb, and doctor.rb)
+- [ ] Write routes in the Controller (application_controller.rb)
 - [ ] Task 4
 - [ ] Task 5
 
