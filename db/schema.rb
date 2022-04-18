@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2022_04_18_150644) do
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.string "play_style"
+    t.string "description"
+    t.string "image_url"
     t.float "rating"
     t.integer "avg_play_time"
     t.integer "min_play_time"

@@ -1,3 +1,7 @@
+puts "Deleting old data..."
+Game.destroy_all
+User.destroy_all
+
 puts "🌱 Seeding users..."
 
 20.times do
@@ -15,6 +19,8 @@ puts "🌱 Seeding games..."
     Game.create(
         title: Faker::Movie.title,
         rating: rand(0.0..10.0),
+        description: Faker::ChuckNorris.fact,
+        image_url: Faker::Avatar.image,
         avg_play_time: avg_play_time,
         min_play_time: rand(avg_play_time),
         max_players: max_players,
