@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_04_18_150644) do
     t.boolean "owned?"
     t.boolean "played?"
     t.boolean "liked?"
+    t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -6,7 +6,7 @@ class MakeGameRelationships < ActiveRecord::Migration[6.1]
       t.boolean :owned?
       t.boolean :played?
       t.boolean :liked?
-      #t.string :comment
+      t.string :comment
     
       t.timestamps
     end

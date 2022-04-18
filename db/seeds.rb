@@ -38,6 +38,7 @@ puts "🌱 Seeding game relationships..."
         played?: [true, false].sample,
         owned?: [true, false].sample,
         liked?: [true, false].sample,
+        comment: Faker::Movie.quote
     )
 end
 

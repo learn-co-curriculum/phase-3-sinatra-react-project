@@ -10,9 +10,38 @@ class ApplicationController < Sinatra::Base
     Game.all.order(:title).to_json
   end
 
+  get '/games/:id' do
+    game = Game.find(params[:id])
+    game.to_json
+  end
+
+  get '/users/:id' do
+    user = User.find(params[:id])
+    user.to_json
+  end
+
   delete '/users/:id' do
     user = User.find(params[:id])
     user.destroy
+    user.to_json
+  end
+
+  post '/game_relationships' do
+    game_relatinship = GameRelationship.create(
+      user: params[:user]
+      game: params[:game]
+      owned?: params[:owned?]
+      played?: params[:played?]
+      liked?: params[:liked?]
+      comment: params[:comment]
+    )
+    game_relatinship.to_json
+  end
+
+  post '/users' do
+    user = User.create(
+      username: params[:username]
+    )
     user.to_json
   end
 
