@@ -10,18 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_18_042019) do
+ActiveRecord::Schema.define(version: 2022_04_18_152905) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.string "image_url"
     t.integer "film_id"
-    t.integer "info_id"
+    t.integer "user_id"
   end
 
   create_table "films", force: :cascade do |t|
     t.string "name"
     t.string "image_url"
+    t.integer "rating"
+    t.integer "character_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
     t.integer "character_id"
   end
 

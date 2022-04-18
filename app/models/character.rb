@@ -1,3 +1,4 @@
 class Character < ActiveRecord::Base
-    has_many :films
+    belongs_to :film
+
 end
