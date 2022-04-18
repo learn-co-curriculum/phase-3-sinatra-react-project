@@ -10,19 +10,34 @@ class ApplicationController < Sinatra::Base
     Game.all.order(:title).to_json
   end
 
+  get "/games/random" do
+    random = Game.find(Game.last.id)
+    random.to_json
+  end
+
   get '/games/:id' do
     game = Game.find(params[:id])
     game.to_json
   end
 
-  #get all users
-
-  #game relationship
+  get '/users' do
+    User.all.to_json
+  end
 
   get '/users/:id' do
     user = User.find(params[:id])
     user.to_json
   end
+  #game relationship
+  get '/game_relationships' do
+    GameRelationship.all.order(:user_id).to_json
+  end
+
+  #gets all messages based on user's id 
+  get '/messages/:id' do
+    Message.where(user_id: params[:id])
+  end
+  
 
   delete '/users/:id' do
     user = User.find(params[:id])
@@ -30,13 +45,27 @@ class ApplicationController < Sinatra::Base
     user.to_json
   end
 
+  delete '/games/:id' do
+    game = Game.find(params[:id])
+    game.destroy
+    game.to_json
+  end
+
+  
+  delete '/messages/:id' do
+    message = Message.find(params[:id])
+    message.destroy
+    message.to_json
+  end
+
+
   post '/game_relationships' do
     game_relatinship = GameRelationship.create(
-      user: params[:user]
-      game: params[:game]
-      owned?: params[:owned?]
-      played?: params[:played?]
-      liked?: params[:liked?]
+      user: params[:user],
+      game: params[:game],
+      owned?: params[:owned?],
+      played?: params[:played?],
+      liked?: params[:liked?],
       comment: params[:comment]
     )
     game_relatinship.to_json
@@ -44,9 +73,17 @@ class ApplicationController < Sinatra::Base
 
   post '/users' do
     user = User.create(
-      username: params[:username]
+      username: params[:username],
+      profile_pic_id: params[:profile_pic_id]
     )
     user.to_json
+  end
+
+  post 'messages' do
+    message = Message.create(
+      user: params[:user],
+      content: params[:content]
+    )
   end
 
   #users patch change profile picture

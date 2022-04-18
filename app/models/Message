@@ -1,0 +1,4 @@
+class Message < ActiveRecord::Base
+    belongs_to :user
+    #if_has_many has_many :, dependent: : destroy
+end
