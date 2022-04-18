@@ -15,6 +15,10 @@ class ApplicationController < Sinatra::Base
     game.to_json
   end
 
+  #get all users
+
+  #game relationship
+
   get '/users/:id' do
     user = User.find(params[:id])
     user.to_json
@@ -45,7 +49,12 @@ class ApplicationController < Sinatra::Base
     user.to_json
   end
 
+  #users patch change profile picture
+  #messages all show up by create table
+  #messages have user_to and user_from
+
   #stand in for when we make game relationships editable
+  #change comment
   # patch '' do
   #   game_relationship = GameRelationship.find(params[:id])
   #   game_relationship.update()
