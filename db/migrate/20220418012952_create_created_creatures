@@ -1,0 +1,9 @@
+class CreateCreatedCreatures < ActiveRecord::Migration[6.1]
+  def change
+    create_table :created_creatures do |t|
+      t.integer :user_id
+      t.string :creature_type
+      t.string :description
+    end
+  end
+end

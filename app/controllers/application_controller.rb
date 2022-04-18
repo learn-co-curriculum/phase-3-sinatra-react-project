@@ -3,7 +3,15 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/characters" do
-    'characters/index'
+    @characters = Character.all 
+    return @characters.to_json
+    
+  end
+
+  get "/films" do
+    @films = Film.all 
+    return @films.to_json
+    
   end
 
 end
