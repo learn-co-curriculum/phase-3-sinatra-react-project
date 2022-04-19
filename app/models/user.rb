@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-    has_many :creatures
-    has_many :created_creature
+    has_many :pets
+    has_many :species
 
 end

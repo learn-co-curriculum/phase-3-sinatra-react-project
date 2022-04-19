@@ -1,14 +1,70 @@
 --- !ruby/object:ActiveRecord::ConnectionAdapters::SchemaCache
 columns:
-  schema_migrations:
+  creatures:
+  - &3 !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: id
+    sql_type_metadata: &2 !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+      sql_type: INTEGER
+      type: :integer
+      limit:
+      precision:
+      scale:
+    'null': false
+    default:
+    default_function:
+    collation:
+    comment:
   - !ruby/object:ActiveRecord::ConnectionAdapters::Column
-    name: version
+    name: creature_type
     sql_type_metadata: &1 !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
       sql_type: varchar
       type: :string
       limit:
       precision:
       scale:
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  - !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: film
+    sql_type_metadata: *1
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  - !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: image_url
+    sql_type_metadata: *1
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  - !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: user_id
+    sql_type_metadata: *2
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  users:
+  - *3
+  - !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: name
+    sql_type_metadata: *1
+    'null': true
+    default:
+    default_function:
+    collation:
+    comment:
+  schema_migrations:
+  - !ruby/object:ActiveRecord::ConnectionAdapters::Column
+    name: version
+    sql_type_metadata: *1
     'null': false
     default:
     default_function:
@@ -33,7 +89,7 @@ columns:
     comment:
   - !ruby/object:ActiveRecord::ConnectionAdapters::Column
     name: created_at
-    sql_type_metadata: &2 !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
+    sql_type_metadata: &4 !ruby/object:ActiveRecord::ConnectionAdapters::SqlTypeMetadata
       sql_type: datetime(6)
       type: :datetime
       limit:
@@ -46,22 +102,28 @@ columns:
     comment:
   - !ruby/object:ActiveRecord::ConnectionAdapters::Column
     name: updated_at
-    sql_type_metadata: *2
+    sql_type_metadata: *4
     'null': false
     default:
     default_function:
     collation:
     comment:
 primary_keys:
+  creatures: id
+  users: id
   schema_migrations: version
   ar_internal_metadata: key
 data_sources:
+  creatures: true
+  users: true
   schema_migrations: true
   ar_internal_metadata: true
 indexes:
+  creatures: []
+  users: []
   schema_migrations: []
   ar_internal_metadata: []
-version: 0
+version: 20220418152905
 database_version: !ruby/object:ActiveRecord::ConnectionAdapters::AbstractAdapter::Version
   version:
   - 3
