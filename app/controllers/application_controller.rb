@@ -12,8 +12,11 @@ class ApplicationController < Sinatra::Base
 
   get '/games/:id' do
     game = Game.find(params[:id])
+    #game.comments = game.get_all_comments
     game.to_json
   end
+
+  #get /games/with_comments/:id'
 
   get '/users' do
     User.all.to_json

@@ -10,9 +10,9 @@ class Game < ActiveRecord::Base
 
     end
 
-    def print_all_comments
+    def get_all_comments
         comments = self.game_relationships.map do |relationship|
-            relationship.comment 
+            relationship.comment + "  -  " + relationship.user.username
         end
         comments
     end
