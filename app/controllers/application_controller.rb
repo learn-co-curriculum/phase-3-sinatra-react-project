@@ -37,6 +37,11 @@ class ApplicationController < Sinatra::Base
     user = User.find(params[:id])
     user.to_json
   end
+
+  get '/users/by-username/:username' do
+    user = User.find_by(username: params[:id])
+    user.to_json
+  end
   #game relationship
   get '/game_relationships' do
     GameRelationship.all.order(:user_id).to_json

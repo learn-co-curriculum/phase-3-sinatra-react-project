@@ -6,12 +6,23 @@ puts "🌱 Seeding users..."
 
 20.times do
     User.create(
-        username: Faker::Twitter.screen_name
+        username: Faker::Twitter.screen_name,
+        password: "im a unique individual"
     )
+
 end
 
-puts "🌱 Seeding games..."
+User.create(
+    username: "eamon",
+    password: "password"
+)
 
+User.create(
+    username: "calypso",
+    password: "margot"
+)
+
+puts "🌱 Seeding games..."
 
 
 game1 = Game.create(
