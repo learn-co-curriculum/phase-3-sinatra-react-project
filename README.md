@@ -17,29 +17,27 @@
   - `GET /appointments/:id`: Get appointment by id
 
 - `GET /doctors`: Get doctors
+
+  - `POST /doctors/`: Create new doctor
+  - `PATCH /doctors/:doctor_id`: Update doctor by id
+    - Updating: firstname, lastname, phone, email
+  - `GET /doctors/:doctor_id`: Get doctor by id
+  - `GET /doctors/:doctor_id/appointments`: Get appointments associated with doctor by id
+  - `GET /doctors/:doctor_id/patients`: Get patients (unique) associated with doctor by id
+
 - `GET /patients`: Get patients
+  - `POST /patients/`: Create new patient
+  - `PATCH /patients/:patient_id`: Update patient by id
+    - Updating: firstname, lastname, address, city, state, phone, email
+  - `GET /patients/:patient_id`: Get patient by id
+  - `GET /patients/:patient_id/appointments`: Get appointments associated with patient by id
+  - `GET /patients/:patient_id/doctors`: Get doctors (unique) associated with patient by id
 
 ## TODO:
 
 - [x] Make Seeds
 - [x] Write some methods in the Models (patient.rb, appointment.rb, and doctor.rb)
-- [ ] Write routes in the Controller (application_controller.rb)
-
-- [ ] `GET /appointments/<YYYY-MM-DD date string>`: Get appointments for a day
-
-- [ ] Have seperate pages for list of all patients and doctors
-
-  - [x] `POST /doctors/`: Create new doctor
-  - [x] `GET /doctors/:doctor_id`:
-  - [x] `GET /doctors/:doctor_id/appointments`:
-  - [x] `GET /doctors/:doctor_id/patients`:
-  - [x] `PATCH /doctors/:doctor_id`:
-
-  - [x] `POST /patients/`: Create new patient
-  - [x] `GET /patients/:patient_id`:
-  - [x] `GET /patients/:patient_id/appointments`:
-  - [x] `GET /patients/:patient_id/doctors`:
-  - [x] `PATCH /patients/:patient_id`:
+- [x] Write routes in the Controller (application_controller.rb)
 
 ~~- [ ] `GET /doctors/names`: Get all doctor's first and last names~~
 
@@ -48,6 +46,8 @@
 ~~- [ ] `GET /patients/names`: Get all patient's first and last names~~
 
 ~~- [ ] `DELETE /patients/:patient_id`:~~
+
+~~- [ ] `GET /appointments/<YYYY-MM-DD date string>`: Get appointments for a day~~
 
 - [ ] Add more columns:
   - [ ] photo (doctor, patient)

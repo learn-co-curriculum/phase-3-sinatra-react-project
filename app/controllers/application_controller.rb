@@ -2,7 +2,24 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, "application/json"
 
   get "/" do
-    { message: "Good luck with your project!" }.to_json
+    { 'authors': [
+      {
+        "name": "jae won choi",
+        "github": "https://github.com/jwc20",
+      },
+      {
+        "name": "daniel owens",
+        "github": "https://github.com/Owens8",
+      },
+    ],
+     'project': {
+      'name': "Appointment Assist",
+      'backend': "https://github.com/jwc20/appointment-assist-backend/tree/main",
+      'frontend': "https://github.com/jwc20/appointment-assist-frontend/tree/main",
+    },
+     'endpoints': {
+      "TODO": "",
+    } }.to_json
   end
 
   # Appointment routes
@@ -49,7 +66,6 @@ class ApplicationController < Sinatra::Base
     doctors.to_json
   end
 
-  #########################################################
   post "/doctors" do
     doctor = Doctor.create(
       doctor_firstname: params[:doctor_firstname],
@@ -85,8 +101,6 @@ class ApplicationController < Sinatra::Base
       doctor_email: params[:doctor_email],
     )
   end
-
-  #########################################################
 
   # Patient routes
   get "/patients" do
