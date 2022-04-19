@@ -22,26 +22,32 @@
 ## TODO:
 
 - [x] Make Seeds
-- [ ] Write some methods in the Models (patient.rb, appointment.rb, and doctor.rb)
+- [x] Write some methods in the Models (patient.rb, appointment.rb, and doctor.rb)
 - [ ] Write routes in the Controller (application_controller.rb)
 
 - [ ] `GET /appointments/<YYYY-MM-DD date string>`: Get appointments for a day
 
 - [ ] Have seperate pages for list of all patients and doctors
 
-  - [ ] `POST /doctors/`: Create new doctor
-  - [ ] `POST /doctors/names`: Get all doctor's first and last names
-  - [ ] `GET /doctors/:doctor_id`:
-  - [ ] `PATCH /doctors/:doctor_id`:
-  - [ ] `DELETE /doctors/:doctor_id`:
-  - [ ] `GET /doctors/:doctor_id/appointments`:
+  - [x] `POST /doctors/`: Create new doctor
+  - [x] `GET /doctors/:doctor_id`:
+  - [x] `GET /doctors/:doctor_id/appointments`:
+  - [x] `GET /doctors/:doctor_id/patients`:
+  - [x] `PATCH /doctors/:doctor_id`:
 
-  - [ ] `POST /patients/`: Create new patient
-  - [ ] `POST /patients/names`: Get all patient's first and last names
-  - [ ] `GET /patients/:patient_id`:
-  - [ ] `PATCH /patients/:patient_id`:
-  - [ ] `DELETE /patients/:patient_id`:
-  - [ ] `GET /patients/:patient_id/appointments`:
+  - [x] `POST /patients/`: Create new patient
+  - [x] `GET /patients/:patient_id`:
+  - [x] `GET /patients/:patient_id/appointments`:
+  - [x] `GET /patients/:patient_id/doctors`:
+  - [x] `PATCH /patients/:patient_id`:
+
+~~- [ ] `GET /doctors/names`: Get all doctor's first and last names~~
+
+~~- [ ] `DELETE /doctors/:doctor_id`:~~
+
+~~- [ ] `GET /patients/names`: Get all patient's first and last names~~
+
+~~- [ ] `DELETE /patients/:patient_id`:~~
 
 - [ ] Add more columns:
   - [ ] photo (doctor, patient)
