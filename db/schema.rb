@@ -16,17 +16,21 @@ ActiveRecord::Schema.define(version: 2022_04_18_210752) do
     t.string "creature_type"
     t.string "film"
     t.string "image_url"
+  end
+
+  create_table "pets", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "creature_id"
   end
 
   create_table "species", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "species_type"
+    t.string "species_name"
     t.string "description"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "username"
   end
 
 end
