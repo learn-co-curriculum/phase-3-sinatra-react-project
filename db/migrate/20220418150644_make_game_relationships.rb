@@ -7,7 +7,7 @@ class MakeGameRelationships < ActiveRecord::Migration[6.1]
       t.boolean :played?
       t.boolean :liked?
       t.string :comment
-      #hours played
+      t.integer :hours_played
     
       t.timestamps
     end

@@ -1,11 +1,6 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  # Add your routes here
-  get "/" do
-    { message: "Good luck with your project!" }.to_json
-  end
-
   get "/games" do
     Game.all.order(:title).to_json
   end
@@ -66,7 +61,8 @@ class ApplicationController < Sinatra::Base
       owned?: params[:owned?],
       played?: params[:played?],
       liked?: params[:liked?],
-      comment: params[:comment]
+      comment: params[:comment],
+      hours_played: params[:hours_played]
     )
     game_relatinship.to_json
   end
@@ -74,7 +70,8 @@ class ApplicationController < Sinatra::Base
   post '/users' do
     user = User.create(
       username: params[:username],
-      profile_pic_id: params[:profile_pic_id]
+      profile_pic_id: params[:profile_pic_id],
+      password: params[:password]
     )
     user.to_json
   end
@@ -86,13 +83,19 @@ class ApplicationController < Sinatra::Base
     )
   end
 
-  #users patch change profile picture
+
+  patch 'users/:id' do
+    user = User.find(params[:id])
+    user.update(profile_pic_id: params[:profile_pic_id])
+    user.to_json
+  end
+
   #messages all show up by create table
-  #messages have user_to and user_from
+  #messages have user_to and user_from?
 
   #stand in for when we make game relationships editable
   #change comment
-  # patch '' do
+  # patch 'game_relationship/:id' do
   #   game_relationship = GameRelationship.find(params[:id])
   #   game_relationship.update()
   #   game_relatinship.to_json

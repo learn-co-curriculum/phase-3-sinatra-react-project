@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
             owned?: param_hash.owned?,
             played?: param_hash.played?,
             liked?:param_hash.liked?,
-            comment: param_hash.comment
+            comment: param_hash.comment,
+            hours_played: param_hash.hours_played
         )
     end
 

@@ -19,20 +19,24 @@ ActiveRecord::Schema.define(version: 2022_04_18_190559) do
     t.boolean "played?"
     t.boolean "liked?"
     t.string "comment"
+    t.integer "hours_played"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "games", force: :cascade do |t|
     t.string "title"
-    t.string "play_style"
     t.string "description"
     t.string "image_url"
     t.float "rating"
-    t.integer "avg_play_time"
     t.integer "min_play_time"
-    t.integer "max_players"
+    t.integer "max_play_time"
     t.integer "min_players"
+    t.integer "max_players"
+    t.integer "min_age"
+    t.boolean "is_expansion"
+    t.string "mechanics"
+    t.string "categories"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -47,6 +51,7 @@ ActiveRecord::Schema.define(version: 2022_04_18_190559) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.integer "profile_pic_id"
+    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

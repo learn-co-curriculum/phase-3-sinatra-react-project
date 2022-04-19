@@ -3,7 +3,9 @@ class Game < ActiveRecord::Base
     has_many :users, through: :game_relationships
 
     def find_similar_games num
-        sim_game = Game.where("avg_play_time > ?", self.avg_play_time)
+        sim_game = Game.where(
+            "avg_play_time > ?", self.avg_play_time
+            )
         #w/in 15 min avg playtime, genre = genre, num players == 
 
     end
@@ -12,7 +14,6 @@ class Game < ActiveRecord::Base
         comments = self.game_relationships.map do |relationship|
             relationship.comment 
         end
-        #comments.each{|comment| puts comment}
         comments
     end
 end
