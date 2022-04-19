@@ -1,4 +1,5 @@
-# Will Smith's Best Films: The Ultimate Showdown
+# Back End
+## Will Smith's Best Films: The Ultimate Showdown
 
 This is a web basic API created with Sinatra and Active Record, supporting a React frontend. It allows users to create reviews and ratings for Will Smith movies with the goal of giving users an idea of which Will Smith movies are most popular and highest rated amongst his viewers.
 
