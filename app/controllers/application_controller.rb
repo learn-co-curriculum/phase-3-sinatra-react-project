@@ -16,7 +16,14 @@ class ApplicationController < Sinatra::Base
     game.to_json
   end
 
-  #get /games/with_comments/:id'
+  get '/games_with_comments' do
+    Game.all.to_json(include: {game_relationships: {include: :user}})
+  end
+
+  get '/games/search' do
+    Game.where(title: "catan")
+  end
+
 
   get '/users' do
     User.all.to_json
