@@ -2,7 +2,7 @@ puts "🌱 Seeding spices..."
 puts "Deleting User/Species/Creature/Pet data..."
 User.destroy_all
 Creature.destroy_all
-Collection.destroy_all
+Pet.destroy_all
 Species.destroy_all
 
 puts "Creating users..."
@@ -18,9 +18,9 @@ c4 = Creature.create(creature_type: "Hutt", film: "Star Wars: Return of the Jedi
 c5 = Creature.create(creature_type: "Bantha", film: "Star Wars: The Phantom Menace", image_url:"https://static.wikia.nocookie.net/disney/images/a/a2/Bantha-ST.jpg/revision/latest?cb=20130604032107")
 
 puts "Creating pets..."
-Collection.create(user_id: user1.id, creature_id: c1.id)
-Collection.create(user_id: user1.id, creature_id: c2.id)
-Collection.create(user_id: user2.id, creature_id: c5.id)
+Pet.create(user_id: user1.id, creature_id: c1.id)
+Pet.create(user_id: user1.id, creature_id: c2.id)
+Pet.create(user_id: user2.id, creature_id: c5.id)
 
 
 puts "Creating species..."

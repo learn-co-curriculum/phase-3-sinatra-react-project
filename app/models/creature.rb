@@ -1,4 +1,4 @@
 class Creature < ActiveRecord::Base
-    has_many :collections
-    has_many :users, through: :collections
+    has_many :pets
+    has_many :users, through: :pets
 end
