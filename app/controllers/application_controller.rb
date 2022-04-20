@@ -24,7 +24,7 @@ class ApplicationController < Sinatra::Base
 
   # Appointment routes
   get "/appointments" do
-    appointments = Appointment.all
+    appointments = Appointment.all.order(:appointment_date)
     appointments.to_json
   end
 
