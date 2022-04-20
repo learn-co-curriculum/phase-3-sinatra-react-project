@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2022_04_19_202942) do
     t.string "author"
     t.string "age_range"
     t.integer "rating"
-    t.string "best"
+    t.string "best_seller"
     t.string "link"
     t.string "photo"
   end
