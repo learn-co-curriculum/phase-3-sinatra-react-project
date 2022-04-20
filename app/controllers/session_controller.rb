@@ -1,7 +1,9 @@
 class SessionController < ApplicationController
 
     post "/login" do
-        @user = User.find_or_create_by(username: params[:username])
+        p "loginnnnn"
+        p params
+        @user = User.find_or_create_by(username: params[:username].strip)
         @user.update(token: SecureRandom.hex )
         return {token: @user.token}.to_json
     end
