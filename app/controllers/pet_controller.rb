@@ -10,7 +10,7 @@ class PetController < ApplicationController
     end
 
     post "/pet" do 
-        p "hhhhhhhhhhh=#{params}"
+        p "hh=#{params}"
         if check_login
           Pet.create(user_id: @user.id, creature_id: params[:creature_id]).to_json
         else
