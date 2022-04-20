@@ -95,8 +95,8 @@ movie13 = Movie.create(
 )
 
 movie14 = Movie.create(
-    name: "The Pursuit of Happyness",
-    year: 2006,
+    name: "Seven Pounds",
+    year: 2008,
     avg_rating: Faker::Number.number(digits: 1)
 )
 
