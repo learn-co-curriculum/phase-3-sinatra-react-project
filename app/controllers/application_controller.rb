@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/" do
-    { message: "Good luck with your project!" }.to_json
+    { message: "Good luck with your project! weiner" }.to_json
   end
 
   get "/books" do
@@ -25,9 +25,10 @@ class ApplicationController < Sinatra::Base
     best_all = Best.all
     best_all.to_json
   end 
-get "/book/:title" do
-    book = Book.where(("title LIKE ?", "%#{params[:title]}%")
-    book.to_json
-  end
+
+  # get "/book/:title" do
+  #   book = Book.where("title LIKE ?" "%#{params[:title]}%")
+  #   book.to_json
+  # end
 
 end
