@@ -17,6 +17,6 @@ This is a web basic API created with Sinatra and Active Record, supporting a Rea
 ![alt text](https://user-images.githubusercontent.com/43020545/164034840-f05f6cc1-35fa-4ca1-aa2c-0faf9fa2bbc3.PNG)
 
 ## ERD Model
-![alt text](https://user-images.githubusercontent.com/43020545/164045538-66396c12-e534-411a-8502-64349f8dc00b.png)
+![alt text](https://user-images.githubusercontent.com/43020545/164262010-1e62b1f5-fd24-4bb6-8ec0-4bf149c0a8ec.png)
 
 
