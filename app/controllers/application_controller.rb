@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
   # Add your routes here
   get "/museums" do
     museum = Museum.all
-    museum.to_json
+    museum.to_json(include: :city)
   end
 
   get "/museums/:id" do
