@@ -14,3 +14,6 @@ use Rack::JSONBodyParser
 # Our application
 run ApplicationController
 use CreatureController
+use SessionController
+use SpeciesController
+use PetController

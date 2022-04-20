@@ -10,6 +10,7 @@ class SessionController < ApplicationController
     delete "/logoff" do
         @user = User.find_by(token: request.env["HTTP_TOKEN"])
         @user.update(token: nil)
+        return {message: "Successfully logged off"}.to_json
     end
 end
 
