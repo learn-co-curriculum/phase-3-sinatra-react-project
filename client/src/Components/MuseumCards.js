@@ -15,9 +15,11 @@ function MuseumCards({ museum }) {
             </div>
             <div className="details">
                 <strong>{museum.name}</strong>
+                <br/>
                 <strong>{museum.description} </strong>
-                <strong> {museum.address} {museum.city.city_name}, Texas</strong>
-                <strong> {museum.weburl}</strong>
+                <strong> {`${museum.address} ${museum.city.city_name}, ${museum.zipcode}, Texas`}</strong>
+                <br/>
+                <a href={`${museum.weburl}`}><strong> Museum's Website </strong></a>
                 {/* {favorited ? (
                     <button onClick={handleStar} className="emoji-button favorite active">★</button>
                 ) : (
