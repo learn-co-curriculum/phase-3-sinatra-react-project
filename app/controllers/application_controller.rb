@@ -19,9 +19,16 @@ class ApplicationController < Sinatra::Base
   get '/games_with_comments' do
     Game.all.to_json(include: {game_relationships: {include: :user}})
   end
+
+  get '/get_similar_games/:id' do
+    game = Game.find(params[:id])
+    similar = game.find_similar_games
+    similar.to_json
+  end
   
   get 'search/:playtime/:num_players' do
     game = Game.all.filter{ |g| 
+      g.title.downcase.include?(params[:name].downcase) &&
       g.max_play_time <= params[:playtime].to_i &&
       g.min_players <= params[:num_players].to_i
       }
