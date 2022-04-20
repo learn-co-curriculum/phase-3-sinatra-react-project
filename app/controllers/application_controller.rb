@@ -39,7 +39,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/users/by-username/:username' do
-    user = User.find_by(username: params[:id])
+    user = User.find_by(username: params[:username])
     user.to_json
   end
   #game relationship
