@@ -1,5 +1,4 @@
 import '../App.css';
-import { Route, Switch } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import Trips from "./Trips"
 import MuseumSelection from "./MuseumSelection"
@@ -31,21 +30,11 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        <NavBar />
-      </div>
-      <Switch>
-        <Route exact path="/">
-          <HomePage />
-        </Route>
-        <Route exact path="/museums">
-          <MuseumSelection museumData={museumData} />
-        </Route>
-        <Route exact path="/trips">
-        {mapTripsData}
-      </Route>
-    </Switch>
-    </div >
+      <HomePage/>
+      <NavBar/>
+      <MuseumSelection museumData= {museumData}/>
+      {mapTripsData}
+    </div>
   );
 }
 
