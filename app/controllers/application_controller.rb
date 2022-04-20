@@ -20,8 +20,15 @@ class ApplicationController < Sinatra::Base
     Game.all.to_json(include: {game_relationships: {include: :user}})
   end
   
-  get '/games/search/:name/:playtime/:num_players' do
-
+  get '/search/:name/:playtime/:num_players' do
+  if params[:name] == "" 
+    game = Game.all.filter{ |g| 
+      g.max_play_time <= params[:playtime].to_i &&
+      g.min_players <= params[:num_players].to_i
+      }
+     game.to_json
+  
+  else 
    game = Game.all.filter{ |g| 
     g.title.downcase.include?(params[:name].downcase) &&
     g.max_play_time <= params[:playtime].to_i &&
@@ -29,7 +36,7 @@ class ApplicationController < Sinatra::Base
     }
    game.to_json
   end
-
+  end
 
   get '/users' do
     User.all.to_json
