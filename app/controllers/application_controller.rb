@@ -37,12 +37,12 @@ class ApplicationController < Sinatra::Base
 
   get '/users/:id' do
     user = User.find(params[:id])
-    user.to_json
+    user.to_json(include: {game_relationships: {include: :games}})
   end
 
   get '/users/by-username/:username' do
     user = User.find_by(username: params[:username])
-    user.to_json
+    user.to_json(include: :game_relationships)
   end
   #game relationship
   get '/game_relationships' do
@@ -88,10 +88,10 @@ class ApplicationController < Sinatra::Base
     game_relatinship.to_json
   end
 
-  post '/users' do
+  post '/users/' do
     user = User.create(
       username: params[:username],
-      profile_pic_id: params[:profile_pic_id],
+      # profile_pic_id: params[:profile_pic_id],
       password: params[:password]
     )
     user.to_json
