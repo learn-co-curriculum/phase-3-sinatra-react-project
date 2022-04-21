@@ -61,7 +61,7 @@ function App() {
           <HomePage />
         </Route>
         <Route exact path="/museums">
-          <MuseumSelection museumData={museumData} />
+          <MuseumSelection museumData={museumData} mapTripsData={mapTripsData} tripsData={tripsData} setTripsData={setTripsData}/>
           <NewMuseumForm museums={museums} addMuseum={addMuseum} />
         </Route>
         <Route exact path="/trips">
