@@ -1,9 +1,7 @@
+import NavChild from "./NavChild";
 function NavBar() {
-    return <div className="navBar" >
-        <h1>Home</h1>
-        <h1>Museums</h1>
-        <h1>Trips</h1>
+    return <div id="navBar">
+        <div className="navChild"> <NavChild /></div>
     </div>
 }
-
-export default NavBar;
+export default NavBar
