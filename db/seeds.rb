@@ -1,13 +1,27 @@
 puts "Deleting old data..."
 Game.destroy_all
 User.destroy_all
+ProfilePic.destroy_all
+
+
+puts "🌱 Seeding profile pics..."
+
+ProfilePic.create(picture_src: "https://www.pngmart.com/files/11/Chuck-Norris-Cowboy-PNG-File.png", alt_text: "a beauteus gent")
+ProfilePic.create(picture_src: "https://www.pngmart.com/files/11/Chuck-Norris-PNG-Transparent.png", alt_text: "a beauteus gent")
+ProfilePic.create(picture_src: "https://www.pngmart.com/files/11/Chuck-Norris-Cowboy-PNG-Photos.png", alt_text: "a beauteus gent")
+ProfilePic.create(picture_src: "https://www.pngmart.com/files/11/Chuck-Norris-Cowboy-Transparent-PNG.png", alt_text: "a beauteus gent")
+ProfilePic.create(picture_src: "https://www.pngmart.com/files/11/Chuck-Norris-PNG-Image.png", alt_text: "a beauteus gent")
+ProfilePic.create(picture_src: "https://www.pngmart.com/files/11/Chuck-Norris-PNG-File.png", alt_text: "a beauteus gent")
+ProfilePic.create(picture_src: "https://www.pngmart.com/files/2/Chuck-Norris-PNG-Pic.png", alt_text: "a beauteus gent")
+ProfilePic.create(picture_src: "https://www.pngmart.com/files/11/Chuck-Norris-PNG-HD.png", alt_text: "a beauteus gent")
 
 puts "🌱 Seeding users..."
 
 20.times do
     User.create(
         username: Faker::Twitter.screen_name,
-        password: "im a unique individual"
+        password: "im a unique individual",
+        profile_pic: ProfilePic.all.sample
     )
 
 end
@@ -194,7 +208,7 @@ game9 = Game.create(
 
 puts "🌱 Seeding game relationships..."
 
-80.times do
+100.times do
     GameRelationship.create(
         game: Game.all.sample,
         user: User.all.sample,
@@ -204,5 +218,8 @@ puts "🌱 Seeding game relationships..."
         comment: Faker::Movie.quote
     )
 end
+
+
+
 
 puts "✅ Done seeding!"

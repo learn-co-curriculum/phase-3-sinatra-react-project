@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
     has_many :game_relationships, dependent: :destroy
     has_many :games, through: :game_relationships
     has_many :messages, dependent: :destroy
+    belongs_to :profile_pic
 
     def add_game game, param_hash
         GameRelationship.create(

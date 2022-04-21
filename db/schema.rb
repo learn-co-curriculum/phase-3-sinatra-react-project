@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_18_190559) do
+ActiveRecord::Schema.define(version: 2022_04_21_021618) do
 
   create_table "game_relationships", force: :cascade do |t|
     t.integer "user_id"
@@ -48,12 +48,18 @@ ActiveRecord::Schema.define(version: 2022_04_18_190559) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "profile_pics", force: :cascade do |t|
+    t.string "picture_src"
+    t.string "alt_text"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.integer "profile_pic_id"
     t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "profile_pic_src"
   end
 
 end

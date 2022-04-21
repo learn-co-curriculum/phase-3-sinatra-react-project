@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/games_with_comments' do
-    Game.all.to_json(include: {game_relationships: {include: :user}})
+    Game.all.to_json(include: {game_relationships: {include: {user: {include: :profile_pic}}}})
   end
 
   get '/get_similar_games/:id' do
@@ -32,7 +32,7 @@ class ApplicationController < Sinatra::Base
       g.max_play_time <= params[:playtime].to_i &&
       g.min_players <= params[:num_players].to_i
       }
-    game.to_json(include: {game_relationships: {include: :user}})
+    game.to_json(include: {game_relationships: {include: {user: {include: :profile_pic}}}})
   end
 
   get '/search/:name/:playtime/:num_players' do
@@ -68,6 +68,15 @@ class ApplicationController < Sinatra::Base
     Message.where(user_id: params[:id])
   end
   
+  #Profile pics
+
+  get '/profile_pics' do
+    ProfilePic.all.to_json
+  end
+
+
+
+
 
   delete '/users/:id' do
     user = User.find(params[:id])
