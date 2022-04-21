@@ -1,4 +1,4 @@
 class Trip < ActiveRecord::Base
-    has_many :museums
-    has_many :cities, through: :museums
+    has_many :visits
+    has_many :museums, through: :visits
 end

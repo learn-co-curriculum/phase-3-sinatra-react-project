@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_19_150141) do
+ActiveRecord::Schema.define(version: 2022_04_20_222945) do
 
   create_table "cities", force: :cascade do |t|
     t.string "city_name"
@@ -29,10 +29,14 @@ ActiveRecord::Schema.define(version: 2022_04_19_150141) do
   end
 
   create_table "trips", force: :cascade do |t|
-    t.integer "museum_id"
-    t.integer "city_id"
-    t.string "notes"
     t.string "trip_title"
+  end
+
+  create_table "visits", force: :cascade do |t|
+    t.integer "city_id"
+    t.integer "museum_id"
+    t.integer "trip_id"
+    t.string "notes"
   end
 
 end
