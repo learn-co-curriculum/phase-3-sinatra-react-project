@@ -24,13 +24,14 @@ class ApplicationController < Sinatra::Base
 
   # Appointment routes
   get "/appointments" do
-    appointments = Appointment.all.order(:appointment_date)
-    appointments.to_json
+    appointments = Appointment.all.order(:created_at).reverse_order
+    # appointments.to_json(include: [{ doctor: { only: [:doctor_lastname] } }, { patient: { only: [:patient_lastname] } }])
+    appointments.to_json(include: [:doctor, :patient])
   end
 
   get "/appointments/:id" do
     appointment = Appointment.find(params[:id])
-    appointment.to_json
+    appointment.to_json(include: [:doctor, :patient])
   end
 
   post "/appointments" do
