@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
 
   get "/books" do
     book_all = Book.all
-    book_all.to_json
+    book_all.to_json(include: :comments)
   end 
 
   get "/books/:title" do
@@ -21,8 +21,8 @@ class ApplicationController < Sinatra::Base
     age_all.to_json
   end 
 
-  get "/bests" do
-    best_all = Best.all
+  get "/comments" do
+    best_all = Comment.all
     best_all.to_json
   end 
   get "/book/:title" do

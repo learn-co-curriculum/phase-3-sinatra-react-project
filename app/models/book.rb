@@ -1,5 +1,5 @@
 class Book < ActiveRecord::Base
-    belongs_to :best
+    has_many :comments
     belongs_to :age
  def method_name
         

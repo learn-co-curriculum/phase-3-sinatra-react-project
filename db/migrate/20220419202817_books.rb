@@ -6,9 +6,11 @@ class Books < ActiveRecord::Migration[6.1]
       t.string :author
       t.string :age_range
       t.integer :rating
-      t.string :best_seller
+      t.string :comment
+      t.string :id_comments
       t.string :link
       t.string :photo
+
     end
   end
 end

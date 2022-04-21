@@ -16,19 +16,21 @@ ActiveRecord::Schema.define(version: 2022_04_19_202942) do
     t.string "age_range"
   end
 
-  create_table "bests", force: :cascade do |t|
-    t.string "title"
-  end
-
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "genre"
     t.string "author"
     t.string "age_range"
     t.integer "rating"
-    t.string "best_seller"
+    t.string "comment"
+    t.string "id_comments"
     t.string "link"
     t.string "photo"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "comment"
+    t.string "book_id"
   end
 
 end
