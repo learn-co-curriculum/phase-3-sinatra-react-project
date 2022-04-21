@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2022_04_20_134826) do
     t.integer "year"
     t.string "name"
     t.integer "avg_rating"
+    t.string "image"
   end
 
   create_table "reviews", force: :cascade do |t|

@@ -19,138 +19,161 @@ puts "Creating movies..."
 movie1 = Movie.create(
     name: "Six Degrees of Separation",
     year: 1993,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: '6degreesofseparation.jpeg'
 )
 
 movie2 = Movie.create(
     name: "Bad Boys",
     year: 1995,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'badboys.jpeg'
 )
 
 movie3 = Movie.create(
     name: "Independence Day",
     year: 1996,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'Independenceday.jpeg'
 )
 
 movie4 = Movie.create(
     name: "Men in Black",
     year: 1997,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'meninblack.jpeg'
 )
 
 movie5 = Movie.create(
     name: "Wild Wild West",
     year: 1999,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'wildwildwest.jpeg'
 )
 
 movie6 = Movie.create(
     name: "Ali",
     year: 2001,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'ali.jpeg'
 )
 
 movie7 = Movie.create(
     name: "Men in Black II",
     year: 2002,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'meninblack2.jpeg'
 )
 
 movie8 = Movie.create(
     name: "Bad Boys II",
     year: 2003,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'badboys2.jpeg'
 )
 
 movie9 = Movie.create(
     name: "I, Robot",
     year: 2004,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'irobot.jpeg'
 )
 
 movie10 = Movie.create(
     name: "Hitch",
     year: 2005,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'hitch.jpeg'
 )
 
 movie11 = Movie.create(
     name: "The Pursuit of Happyness",
     year: 2006,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'thepursuitofhappyness.jpeg'
 )
 
 movie12 = Movie.create(
     name: "I Am Legend",
     year: 2007,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'iamlegend.jpeg'
 )
 
 movie13 = Movie.create(
     name: "Hancock",
     year: 2008,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'hancock.jpeg'
 )
 
 movie14 = Movie.create(
     name: "Seven Pounds",
     year: 2008,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'sevenpounds.jpeg'
 )
 
 movie15 = Movie.create(
     name: "Men in Black 3",
     year: 2012,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'meninblack3.jpeg'
 )
 
 movie16 = Movie.create(
     name: "After Earth",
     year: 2013,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'afterearth.jpeg'
 )
 
 movie17 = Movie.create(
     name: "Focus",
     year: 2015,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'focus.png'
 )
 
 movie18 = Movie.create(
     name: "Suicide Squad",
     year: 2016,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'suicidesquad.png'
 )
 
 movie19 = Movie.create(
     name: "Bright",
     year: 2017,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'bright.jpeg'
 )
 
 movie20 = Movie.create(
     name: "Aladdin",
     year: 2019,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'aladdin.png'
 )
 
 movie21 = Movie.create(
     name: "Gemini Man",
     year: 2019,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'geminiman.jpeg'
 )
 movie22 = Movie.create(
     name: "Bad Boys for Life",
     year: 2020,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'badboysforlife.jpeg'
 )
 
 movie23 = Movie.create(
     name: "King Richard",
     year: 2021,
-    avg_rating: Faker::Number.number(digits: 1)
+    avg_rating: Faker::Number.number(digits: 1),
+    image: 'kingrichard.jpeg'
 )
 puts "Creating reviews..."
 Review.create(
