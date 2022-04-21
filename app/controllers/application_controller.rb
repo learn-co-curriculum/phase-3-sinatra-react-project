@@ -30,4 +30,21 @@ class ApplicationController < Sinatra::Base
     book.to_json
   end
 
+  patch "/comments/:id" do 
+    commentary = Comment.find(params[:id])
+    Comment.update({comment:params[:comment]})
+    commentary.to_json
+  end 
+
+  post "/comments/:id" do 
+    commentary = Comment.create({comment:params[:comment], book_id:params[:book_id]})
+    commentary.to_json(include: :books)
+  end
+
+  post "/comments/:id" do 
+    commentary = Comment.find(params[:id])
+    commentary.destroy
+    commentary.to_json
+  end
+  
 end
