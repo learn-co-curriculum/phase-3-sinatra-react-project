@@ -43,6 +43,7 @@ class ApplicationController < Sinatra::Base
       doctor_id: params[:doctor_id],
       patient_id: params[:patient_id],
     )
+    appointment.to_json
   end
 
   patch "/appointments/:id" do
@@ -74,12 +75,20 @@ class ApplicationController < Sinatra::Base
       doctor_phone: params[:doctor_phone],
       doctor_email: params[:doctor_email],
     )
+    doctor.to_json
   end
 
   get "/doctors/:doctor_id" do
     doctor = Doctor.find(params[:doctor_id])
     doctor.to_json
   end
+
+  # get "/doctors/search/:doctor_lastname" do
+  #   # doctor = Doctor.find_by(:doctor_lastname)
+  #   # doctor = Doctor.all(doctor_lastname: params[:lastname])
+  #   doctor = Doctor.all(:doctor_lastname.like => "%#{params[:doctor_lastname]}%")
+  #   doctor.to_json
+  # end
 
   get "/doctors/:doctor_id/appointments" do
     doctor = Doctor.find(params[:doctor_id])
@@ -101,6 +110,7 @@ class ApplicationController < Sinatra::Base
       doctor_phone: params[:doctor_phone],
       doctor_email: params[:doctor_email],
     )
+    doctor.to_json
   end
 
   # Patient routes
@@ -119,6 +129,7 @@ class ApplicationController < Sinatra::Base
       patient_phone: params[:patient_phone],
       patient_email: params[:patient_email],
     )
+    patient.to_json
   end
 
   get "/patients/:patient_id" do
@@ -149,5 +160,6 @@ class ApplicationController < Sinatra::Base
       patient_phone: params[:patient_phone],
       patient_email: params[:patient_email],
     )
+    patient.to_json
   end
 end
