@@ -1,18 +1,22 @@
 import './App.css';
-import { Route, Switch } from "react-router-dom";
-import { useState, useEffect } from 'react';
+import { Route, Switch, useHistory, useLocation } from "react-router-dom";
+import { useState, useEffect, } from 'react';
 import Trips from "./Components/Trips";
 import MuseumSelection from "./Components/MuseumSelection";
 import HomePage from "./Components/HomePage";
 import NavBar from "./Components/NavBar";
 import NewMuseumForm from "./Components/NewMuseumForm";
+import NewTripForm from "./Components/NewTripForm";
 
 
 function App() {
 
-  const [museumData, setMuseumData] = useState([])
-  const [tripsData, setTripsData] = useState([])
+  const [museumData, setMuseumData] = useState([]);
+  const [tripsData, setTripsData] = useState([]);
   const [museums, setMuseums] = useState([]);
+  const [visits, setVisits] = useState([]);
+  const history = useHistory();
+  const location = useLocation();
 
   useEffect(() => {
     fetch('http://localhost:9292/museums')
@@ -51,6 +55,70 @@ function App() {
       });
   }
 
+  const addTrip = (formData) => {
+    fetch('http://localhost:9292/trips', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(res => res.json())
+      .then(newTrip => {
+        setTripsData(tripsData.concat(newTrip))
+      });
+  }
+
+  const updateTrip = (id, formData) => {
+    fetch(`http://localhost:9292/trips/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(res => res.json())
+      .then(updatedTrip => {
+        // pessimistically update the dog in state after we get a response from the api
+        setTripsData(tripsData.map((trip) => (trip.id === parseInt(id) ? updatedTrip : trip)));
+        history.push(`/trips/${updatedTrip.id}`);
+      });
+  }
+
+  const deleteTrip = (trip_id) => {
+      // optimistically update the ui
+      setTripsData(tripsData.filter(trip => trip.id !== parseInt(trip_id)))
+      // update the API
+      fetch(`http://localhost:9292/trips/${trip_id}`, {
+        method: 'DELETE',
+        headers: { Accept: 'application/json' }
+      })
+        .then(res => res.json())
+        .then(deletedTrip => {
+          console.log('deleted', deletedTrip.trip_title)
+          if (location.pathname !== "/trips") {
+            history.push("/trips")
+          }
+        });
+  }
+
+  const addVisit = (formData) => {
+    fetch('http://localhost:9292/visits', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(res => res.json())
+      .then(newVisit => {
+        setVisits(visits.concat(newVisit))
+      });
+  }
+
   return (
     <div>
       <div>
@@ -61,11 +129,14 @@ function App() {
           <HomePage />
         </Route>
         <Route exact path="/museums">
-          <MuseumSelection museumData={museumData} tripsData={tripsData} setTripsData={setTripsData}/>
+
+          <MuseumSelection museumData={museumData} visits={visits} addVisit={addVisit} />
+
           <NewMuseumForm museums={museums} addMuseum={addMuseum} />
         </Route>
         <Route exact path="/trips">
-          <Trips tripsData={tripsData} />
+          <Trips tripsData={tripsData} addTrip={addTrip} updateTrip={updateTrip} deleteTrip={deleteTrip}/>
+          <NewTripForm addTrip={addTrip}/>
         </Route>
       </Switch>
 

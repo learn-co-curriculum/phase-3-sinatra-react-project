@@ -1,9 +1,9 @@
 import TripCards from "./TripCards"
 
-function Trips({ tripsData }) {
+function Trips({ tripsData, addTrip, updateTrip, deleteTrip }) {
 
 
-  const mapTripsData = tripsData.map((visit) => <TripCards key={visit.id} visit={visit} />)
+  // const mapTripsData = tripsData.map((visit) => <TripCards key={visit.id} visit={visit} addTrip={addTrip} updateTrip={updateTrip} deleteTrip={deleteTrip}/>)
 
 
 
