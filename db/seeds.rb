@@ -188,6 +188,119 @@ game9 = Game.create(
     categories: "comic_book, deduction, fantasy, sci-fi, spies"
 )
 
+roots = Game.create(
+    title: "Root",
+    rating: rand(0.0..10.0),
+    description: "<p>Find adventure in this marvelous asymmetric game. Root provides limitless replay value as you and your friends explore the unique factions all wanting to rule a fantastic forest kingdom. Play as the Marquise de Cat and dominate the woods, extracting its riches and policing its inhabitants, as the Woodland Alliance, gathering supporters and coordinate revolts against the ruling regime, the Eyrie Dynasties, regaining control of the woods while keeping your squabbling court at bay, or as the Vagabond, seeking fame and fortune as you forge alliances and rivalries with the other players. Each faction has its own play style and paths to victory, providing an immersive game experience you will want to play again and again.</p>",
+    image_url:  "https://s3-us-west-1.amazonaws.com/5cc.images/games/uploaded/1629324760985.jpg",
+    min_play_time: 60,
+    max_play_time: 90,
+    min_players: 2,
+    max_players: 5,
+
+    min_age: 4,
+    is_expansion: false,
+    mechanics: "action_queue, area_control, dice_rolling, engine_building, hand_management, variable_player_powers",
+    categories: "adventure, animals, asymmetric",
+)
+
+banana = Game.create(
+    title: "Bananagrams",
+    rating: rand(0.0..10.0),
+    description: "",
+    image_url:  "https://s3-us-west-1.amazonaws.com/5cc.images/games/uploaded/1559257788549-4190ktYkAjL.jpg",
+    min_play_time: 5,
+    max_play_time: 30,
+    min_players: 1,
+    max_players: 8,
+    min_age: 7,
+    is_expansion: false,
+    mechanics: "tile_placement",
+    categories: "",
+
+)
+
+splendor = Game.create(
+    title: "Splendor",
+    rating: rand(0.0..10.0),
+    description: "<p>As a wealthy Renaissance merchant, acquire mines and transportation, hire artisans and woo the nobility. Create the most fantastic jewelry to become the best-known merchant of them all! Acquire precious stones to trade them for development cards. Use development cards to acquire more gem stones. Use your gems and gold to create the most fantastic jewelry, and appeal to the nobles to gain the prestige you need to win.<br /><br />Splendor is a fast-paced and addictive game of chip-collecting and card development. Players are merchants of the Renaissance trying to buy gem mines, means of transportation, shops; all in order to acquire the most prestige points. If you're wealthy enough, you might even receive a visit from a noble at some point, which of course will further increase your prestige.<br /><br />On your turn, you may (1) collect chips (gems), or (2) buy and build a card, or (3) reserve one card. If you collect chips, you take either three different kinds of chips or two chips of the same kind. If you buy a card, you pay its price in chips and add it to your playing area. To reserve a card, you place it in front of you face down for later building; this costs you a round, but you also get gold in the form of a joker chip, which you can use as any gem.<br /><br />All of the cards you buy increase your wealth as they give you a permanent gem bonus for later buys; some of the cards also give you prestige points. In order to win the game, you must reach 15 prestige points before your opponents do.</p>",
+    image_url:  "https://s3-us-west-1.amazonaws.com/5cc.images/games/uploaded/1559254164722-51AHDwGznvL.jpg",
+    min_play_time: 30,
+    max_play_time: 60,
+    min_players: 2,
+    max_players: 4,
+
+    min_age: 10,
+    is_expansion: false,
+    mechanics: "drafting, engine_building, set_collection ",
+    categories: "card_game, economic, resource_management",
+
+)
+
+wolf = Game.create(
+    title: "One Night Ultimate Werewolf",
+    rating: rand(0.0..10.0),
+    description: "<p>One Night Ultimate Werewolf is a fast game for 3-10 players where everyone gets a role: One of the dastardly Werewolves, the tricky Troublemaker, the helpful Seer or one of a dozen different characters, each with a special ability. In the course of a single morning, your village will decide who is a werewolf... because all it takes is lynching one werewolf to win!!<br /><br />Because it's so fast, fun and engaging, you'll want to play it again and again and no two games are ever the same.</p>",
+    image_url:  "https://s3-us-west-1.amazonaws.com/5cc.images/games/uploaded/1629323264855.png",
+    min_play_time: 15,
+    max_play_time: 30,
+    min_players: 3,
+    max_players: 10,
+
+    min_age: 8,
+    is_expansion: false,
+    mechanics: "hidden_roles, hidden_traitor, role_playing, variable_player_powers, voting ",
+    categories: "bluffing, card_game, deduction, party_game",
+
+)
+
+hanabi = Game.create(
+    title: "Hanabi",
+    rating: rand(0.0..10.0),
+    description:"<p>In <strong>Hanabi</strong>, players race against the clock to build a dazzling fireworks finale. Trouble is, you can see the cards that everyone holds - except your own!<br /><br />Working together, players exchange vital information in order to play their cards in the proper launch sequence. Build and light each firework correctly to win the game and avoid a fizzling fiasco!</p>\r\n<p>In the deluxe version, the cards are replaced with tiles.</p>\r\n<p>Winner of the prestigious <em>Spiel des Jahres</em> Award for 2013. </p>",
+    image_url:   "https://s3-us-west-1.amazonaws.com/5cc.images/games/uploaded/1635965913684",
+    min_play_time: 30,
+    max_play_time: 45,
+    max_players: 5,
+    min_players: 2,
+    min_age: 8,
+    is_expansion: false,
+    mechanics: "communication_limits, cooperative_play, hand_management, memory, set_collection",
+    categories: "card_game, deduction",
+
+)
+
+azul = Game.create(
+    title: "Azul",
+    rating: rand(0.0..10.0),
+    description: "<p><strong>Azul</strong> was designed by the world famous, award-winning game author Michael Riesling. Azul captures the beautiful aesthetics of Moorish art in a contemporary board game.</p>\r\n<p>Players compete as artisans decorating the walls of the royal Palace of Dvora. By carefully drafting the correct Quantity and style of tiles, the most clever of artisans plan ahead to maximize the beauty of their work (not to mention their scores!) while ensuring they wasted no supplies in the process.</p>\r\n<p>Introduced by the moors, &quot;azulejos&quot; (originally white and blue ceramic tiles) were fully embraced by the Portuguese, when their King Manuel I, on a visit to the Alhambra Palace in Southern Spain, was mesmerized by the stunning beauty of the Moorish decorative tiles. The King, awestruck by the interior beauty of the Alhambra, immediately ordered that his own Palace in Portugal be decorated with similar wall tiles.</p>\r\n<p>As a tile-laying artist, you have been challenged to embellish the walls of the royal Palace of Dvora.</p>",
+    image_url:  "https://s3-us-west-1.amazonaws.com/5cc.images/games/uploaded/1559254200327-61EFZADvURL.jpg",
+    min_play_time: 30,
+    max_play_time: 60,
+    max_players: 4,
+    min_players: 2,
+    min_age: 8,
+    is_expansion: false,
+    mechanics: "drafting, end_game_bonuses, pattern_building, tile_placement",
+    categories: "abstract",
+
+)
+
+scyth = Game.create(
+    title:  "Scythe",
+    rating: rand(0.0..10.0),
+    description: "<p><em>Scythe</em> gives players almost complete control over their fate. Other than each player's individual hidden objective card, the only elements of luck or variability are &quot;Encounter&quot; cards that players will draw as they interact with the citizens of newly explored lands. Each encounter card provides the player with several options, allowing them to mitigate the luck of the draw through their selection. Combat is also driven by choices, not luck or randomness.<br /><br /><em>Scythe</em> uses a streamlined action-selection mechanism (no rounds or phases) to keep gameplay moving at a brisk pace and reduce downtime between turns. While there is plenty of direct conflict for players who seek it, there is no player elimination.<br /><br />Every part of <em>Scythe</em> has an aspect of engine-building to it. Players can upgrade actions to become more efficient, build structures that improve their position on the map, enlist new recruits to enhance character abilities, activate mechs to deter opponents from invading, and expand their borders to reap greater types and quantities of resources. These engine-building aspects create a sense of momentum and progress throughout the game. The order in which players improve their engine adds to the unique feel of each game, even when playing one faction multiple times.</p>",
+    image_url:   "https://cdn.shopify.com/s/files/1/0513/4077/1515/products/scythe-board-game.jpg?v=1611090922",
+    min_play_time: 90,
+    max_play_time: 120,
+    max_players: 5,
+    min_players: 1,
+    min_age: 14,
+    is_expansion: false,
+    mechanics: "action_selection, area_control, hidden_objective, variable_player_powers, engine_building, grid_movement",
+    categories: "asymmetric, resource_management, territory_building",
+
+)
 
 # 40.times do 
 #     #need these two out of the create because both mins require them
@@ -208,14 +321,18 @@ game9 = Game.create(
 
 puts "🌱 Seeding game relationships..."
 
+<<<<<<< HEAD
 100.times do
+=======
+300.times do
+>>>>>>> 2db9e9357e86019f0c759a8b7674ebeb7b2fb609
     GameRelationship.create(
         game: Game.all.sample,
         user: User.all.sample,
         played?: [true, false].sample,
         owned?: [true, false].sample,
         liked?: [true, false].sample,
-        comment: Faker::Movie.quote
+        comment: Faker::ChuckNorris.fact
     )
 end
 
