@@ -7,6 +7,7 @@ import HomePage from "./Components/HomePage";
 import NavBar from "./Components/NavBar";
 import NewMuseumForm from "./Components/NewMuseumForm";
 import NewTripForm from "./Components/NewTripForm";
+import TripEditForm from "./Components/TripEditForm";
 
 
 function App() {
@@ -135,9 +136,19 @@ function App() {
           <NewMuseumForm museums={museums} addMuseum={addMuseum} />
         </Route>
         <Route exact path="/trips">
-          <Trips tripsData={tripsData} addTrip={addTrip} updateTrip={updateTrip} deleteTrip={deleteTrip}/>
+          <Trips tripsData={tripsData} addTrip={addTrip} updateTrip={updateTrip} deleteTrip={deleteTrip} history={history} />
           <NewTripForm addTrip={addTrip}/>
         </Route>
+        <Route
+                exact
+                path="/trips/:id/edit"
+                render={({ match }) => (
+                    <TripEditForm
+                    trip={tripsData.find((trip) => trip.id === parseInt(match.params.id))}
+                    updateTrip={updateTrip}
+                  />
+                )}
+              /> 
       </Switch>
 
     </div>
@@ -147,13 +158,13 @@ export default App;
 
 
 /* {mapTripsData} */
-/* <Route
-                exact
-                path="/trips/:id/edit"
-                render={({ match }) => (
-                    <TripEditForm
-                    trip={tripsData.find((trip) => trip.id === parseInt(match.params.id))}
-                    updateTrip={updateTrip}
-            />
-          )}
-        /> */
+            // <Route
+            //     exact
+            //     path="/trips/:id/edit"
+            //     render={({ match }) => (
+            //         <TripEditForm
+            //         trip={tripsData.find((trip) => trip.id === parseInt(match.params.id))}
+            //         updateTrip={updateTrip}
+            //       />
+            //     )}
+            //   /> 
