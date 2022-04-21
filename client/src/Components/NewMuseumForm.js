@@ -86,19 +86,45 @@ function NewMuseumForm({addMuseum}) {
           />
         </fieldset>
         <fieldset className="">
-          <label className="" htmlFor="city_id">
-            City ID:
+          <label className="" htmlFor="weburl">
+            Website Url:
           </label>
           <input
+            type="text"
+            className=""
+            name="weburl"
+            id="weburl"
+            value={weburl}
+            onChange={(e) => setWeburl(e.target.value)}
+          />
+        </fieldset>
+        <fieldset className="">
+          <label className="" htmlFor="city_id">
+            City:
+          </label>
+          {/* <input
             type="integer"
             className=""
             name="city_id"
             id="city_id"
             value={city_id}
             onChange={(e) => setCity_id(e.target.value)}
-          />
+          /> */}
+          <select
+          value={city_id}
+          onChange={(e) => setCity_id(e.target.value)}
+          >
+          <option value= "1">Austin</option>
+          <option value= "2">Fort Worth</option>
+          <option value= "3">Dallas</option>
+          <option value= "4">San Antonio</option>
+          <option value= "5">El Paso</option>
+          <option value= "6">Houston</option>
+          <option value= "7">Paris</option>
+          <option value= "8">Arlington</option>
+          </select>
         </fieldset>
-        <fieldset className="">
+        {/* <fieldset className="">
           <label className="" htmlFor="trip_id">
             Trip ID:
           </label>
@@ -110,7 +136,7 @@ function NewMuseumForm({addMuseum}) {
             value={trip_id}
             onChange={(e) => setTrip_id(e.target.value)}
           />
-        </fieldset>
+        </fieldset> */}
         <fieldset className="">
           <label className="" htmlFor="operating_hours">
             Operating Hours:
