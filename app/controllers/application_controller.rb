@@ -26,7 +26,8 @@ class ApplicationController < Sinatra::Base
   get "/appointments" do
     appointments = Appointment.all.order(:created_at).reverse_order
     # appointments.to_json(include: [{ doctor: { only: [:doctor_lastname] } }, { patient: { only: [:patient_lastname] } }])
-    appointments.to_json(include: [:doctor, :patient])
+    # appointments.to_json(include: [:doctor, :patient])
+    appointments.to_json
   end
 
   get "/appointments/:id" do
@@ -40,6 +41,8 @@ class ApplicationController < Sinatra::Base
       appointment_duration: params[:appointment_duration],
       appointment_reason: params[:appointment_reason],
       appointment_type: params[:appointment_type],
+      appointment_doctor: params[:appointment_doctor],
+      appointment_patient: params[:appointment_patient],
       doctor_id: params[:doctor_id],
       patient_id: params[:patient_id],
     )

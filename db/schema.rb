@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 2022_04_15_214424) do
     t.integer "appointment_duration"
     t.string "appointment_reason"
     t.string "appointment_type"
+    t.string "appointment_doctor"
+    t.string "appointment_patient"
     t.integer "doctor_id"
     t.integer "patient_id"
     t.datetime "created_at", precision: 6, null: false

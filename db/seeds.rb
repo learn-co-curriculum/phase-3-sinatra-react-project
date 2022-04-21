@@ -81,8 +81,10 @@ a1 = Appointment.create(
   appointment_duration: 30,
   appointment_reason: "Reason 1",
   appointment_type: "New Patient",
-  doctor_id: d1.id,
-  patient_id: p1.id,
+  appointment_doctor: d1.doctor_lastname,
+  appointment_patient: p1.patient_lastname,
+  # doctor_id: d1.id,
+  # patient_id: p1.id,
 )
 
 a2 = Appointment.create(
@@ -91,8 +93,10 @@ a2 = Appointment.create(
   appointment_duration: 30,
   appointment_reason: "Reason 2",
   appointment_type: "Check-up",
-  doctor_id: d2.id,
-  patient_id: p2.id,
+  appointment_doctor: d2.doctor_lastname,
+  appointment_patient: p2.patient_lastname,
+  # doctor_id: d2.id,
+  # patient_id: p2.id,
 )
 
 a3 = Appointment.create(
@@ -101,8 +105,10 @@ a3 = Appointment.create(
   appointment_duration: 50,
   appointment_reason: "Reason 3",
   appointment_type: "Surgery",
-  doctor_id: d3.id,
-  patient_id: p3.id,
+  appointment_doctor: d3.doctor_lastname,
+  appointment_patient: p3.patient_lastname,
+  # doctor_id: d3.id,
+  # patient_id: p3.id,
 )
 
 a4 = Appointment.create(
@@ -111,8 +117,10 @@ a4 = Appointment.create(
   appointment_duration: 100,
   appointment_reason: "Reason 4",
   appointment_type: "New Patient",
-  doctor_id: d4.id,
-  patient_id: p4.id,
+  appointment_doctor: d4.doctor_lastname,
+  appointment_patient: p4.patient_lastname,
+  # doctor_id: d4.id,
+  # patient_id: p4.id,
 )
 
 a5 = Appointment.create(
@@ -121,8 +129,10 @@ a5 = Appointment.create(
   appointment_duration: 30,
   appointment_reason: "Reason 5",
   appointment_type: "New Patient",
-  doctor_id: d5.id,
-  patient_id: p1.id,
+  appointment_doctor: d5.doctor_lastname,
+  appointment_patient: p5.patient_lastname,
+  # doctor_id: d5.id,
+  # patient_id: p1.id,
 )
 
 a6 = Appointment.create(
@@ -131,8 +141,10 @@ a6 = Appointment.create(
   appointment_duration: 30,
   appointment_reason: "Reason 6",
   appointment_type: "New Patient",
-  doctor_id: d5.id,
-  patient_id: p6.id,
+  appointment_doctor: d5.doctor_lastname,
+  appointment_patient: p6.patient_lastname,
+  # doctor_id: d5.id,
+  # patient_id: p6.id,
 )
 
 a7 = Appointment.create(
@@ -141,8 +153,10 @@ a7 = Appointment.create(
   appointment_duration: 40,
   appointment_reason: "Reason 7",
   appointment_type: "Check-up",
-  doctor_id: d5.id,
-  patient_id: p6.id,
+  appointment_doctor: d1.doctor_lastname,
+  appointment_patient: p4.patient_lastname,
+  # doctor_id: d5.id,
+  # patient_id: p6.id,
 )
 
 puts "✅ Done seeding!"
