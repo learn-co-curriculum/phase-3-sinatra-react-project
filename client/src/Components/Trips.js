@@ -7,6 +7,7 @@ function Trips({trip}) {
   
     return (
       <div >
+        
         <button onClick={changeRoute}> {trip.trip_title}</button>
       
       </div>

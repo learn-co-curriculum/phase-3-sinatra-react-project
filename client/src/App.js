@@ -1,13 +1,11 @@
-import '../App.css';
+import './App.css';
 import { Route, Switch } from "react-router-dom";
 import { useState, useEffect } from 'react';
-import MuseumsContainer from './Components/MuseumsContainer';
 import Trips from "./Components/Trips";
 import MuseumSelection from "./Components/MuseumSelection";
 import HomePage from "./Components/HomePage";
 import NavBar from "./Components/NavBar";
 import NewMuseumForm from "./Components/NewMuseumForm";
-import MuseumSelection from "./Components/MuseumSelection";
 
 
 function App() {
@@ -65,10 +63,9 @@ function App() {
           <NewMuseumForm museums={museums} addMuseum={addMuseum} />
         </Route>
         <Route exact path="/trips">
-          <Trips />
+          {mapTripsData}
         </Route>
       </Switch>
-      <MuseumsContainer />
 
     </div>
   );
@@ -76,8 +73,8 @@ function App() {
 export default App;
 
 
-{/* {mapTripsData} */ }
-{/* <Route
+/* {mapTripsData} */ 
+/* <Route
                 exact
                 path="/trips/:id/edit"
                 render={({ match }) => (
@@ -86,4 +83,4 @@ export default App;
                     updateTrip={updateTrip}
             />
           )}
-        /> */}
+        /> */
