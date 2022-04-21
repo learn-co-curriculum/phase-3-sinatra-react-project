@@ -41,7 +41,7 @@ class ApplicationController < Sinatra::Base
     commentary.to_json(include: :books)
   end
 
-  post "/comments/:id" do 
+  delete "/comments/:id" do 
     commentary = Comment.find(params[:id])
     commentary.destroy
     commentary.to_json
