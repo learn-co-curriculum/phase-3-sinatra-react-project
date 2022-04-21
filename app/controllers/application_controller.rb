@@ -36,7 +36,7 @@ class ApplicationController < Sinatra::Base
     commentary.to_json
   end 
 
-  post "/comments/:id" do 
+  post "/comments" do 
     commentary = Comment.create({comment:params[:comment], book_id:params[:book_id]})
     commentary.to_json(include: :books)
   end
