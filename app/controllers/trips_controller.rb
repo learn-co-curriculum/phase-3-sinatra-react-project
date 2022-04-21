@@ -2,7 +2,7 @@ class TripsController < ApplicationController
 
     get "/trips" do
         trip = Trip.all
-        trip.to_json
+        trip.to_json(include: :visits)
     end
 
     get "/trips/:id" do
