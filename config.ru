@@ -17,3 +17,4 @@ run ApplicationController
 use CitiesController
 use MuseumsController
 use TripsController
+use VisitsController

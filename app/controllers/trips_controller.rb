@@ -7,26 +7,27 @@ class TripsController < ApplicationController
 
     get "/trips/:id" do
         trip = Trip.find(params[:id])
-        trip.to_json
+        trip.to_json(include: :visits)
     end 
 
     post "/trips" do
         trip = Trip.create(
-            museum_id: params[:museum_id],
-            city_id: params[:city_id],
-            trip_title: params[:trip_title],
-            notes: params[:notes])
+            trip_title: params[:trip_title])
         trip.to_json
     end
+
+    post "/trips/:id" do
+      trip = Trip.create(
+          id: params[:id],
+          trip_title: params[:trip_title])
+      trip.to_json
+  end
 
 
       patch "/trips/:id" do
         trip = Trip.find(params[:id])
         trip.update(
-          museum_id: params[:museum_id],
-          city_id: params[:city_id],
-          trip_title: params[:trip_title],
-          notes: params[:notes])
+          trip_title: params[:trip_title])
         trip.to_json
       end
     

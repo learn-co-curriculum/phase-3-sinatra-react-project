@@ -22,8 +22,13 @@ City.create(city_name: "Houston", state: "TX")
 City.create(city_name: "Paris", state: "TX")
 City.create(city_name: "Arlington", state: "TX")
 
+puts "creating visits..."
+Visit.create(museum_id: 1, city_id: 1, notes: "So awesome!", trip_id: 1)
+Visit.create(museum_id: 2, city_id: 2, notes: "Couldhave been better.", trip_id: 2)
+Visit.create(museum_id: 2, city_id: 2, notes: "So awesome!", trip_id: 1)
+
 puts "creating trips..."
-Trip.create(museum_id: 1, city_id: 1, notes: "So awesome!", trip_title: "Monday Museum Visit")
-Trip.create(museum_id: 2, city_id: 2, notes: "Couldhave been better.", trip_title: "Tuesday Museum Visit")
+Trip.create(trip_title: "Monday Trip")
+Trip.create(trip_title: "Tuesday Trip")
 
 puts "✅ Done seeding!"
