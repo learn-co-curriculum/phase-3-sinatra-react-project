@@ -1,10 +1,12 @@
-function TripCards ({trip}){
+function TripCards({ visit }) {
 
-return <div>
+    console.log(visit)
 
-*musem_cards*
+    return <div>
 
-</div>
+
+
+    </div>
 }
 
 

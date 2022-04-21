@@ -20,7 +20,7 @@ function App() {
       .then((data) => setMuseumData(data))
   }, [])
 
-  console.log(museumData)
+  // console.log(museumData)
 
   useEffect(() => {
     fetch('http://localhost:9292/trips')
@@ -30,7 +30,9 @@ function App() {
 
   console.log(tripsData)
 
-  const mapTripsData = tripsData.map((trip) => <Trips key={trip.id} trip={trip} />)
+  // const mapVisitsData = visitsData.map((visit) => <Trips key={visit.id} visit={visit} />)
+
+  // console.log(mapVisitsData)
 
   const addMuseum = (formData) => {
     fetch('http://localhost:9292/museums', {
@@ -63,7 +65,7 @@ function App() {
           <NewMuseumForm museums={museums} addMuseum={addMuseum} />
         </Route>
         <Route exact path="/trips">
-          {mapTripsData}
+          <Trips tripsData={tripsData} />
         </Route>
       </Switch>
 
@@ -73,7 +75,7 @@ function App() {
 export default App;
 
 
-/* {mapTripsData} */ 
+/* {mapTripsData} */
 /* <Route
                 exact
                 path="/trips/:id/edit"
