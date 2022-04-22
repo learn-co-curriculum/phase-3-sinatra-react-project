@@ -106,6 +106,8 @@ function App() {
   }
 
   const addVisit = (formData) => {
+    console.log(formData)
+    console.log(JSON.stringify(formData))
     fetch('http://localhost:9292/visits', {
       method: 'POST',
       headers: {
@@ -131,7 +133,7 @@ function App() {
         </Route>
         <Route exact path="/museums">
 
-          <MuseumSelection museumData={museumData} visits={visits} addVisit={addVisit} />
+          <MuseumSelection museumData={museumData} visits={visits} addVisit={addVisit} tripsData={tripsData} setTripsData={setTripsData}/>
 
           <NewMuseumForm museums={museums} addMuseum={addMuseum} />
         </Route>
