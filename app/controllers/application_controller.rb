@@ -56,7 +56,10 @@ class ApplicationController < Sinatra::Base
       appointment_duration: params[:appointment_duration],
       appointment_reason: params[:appointment_reason],
       appointment_type: params[:appointment_type],
+      # appointment_doctor: params[:appointment_doctor],
+      # appointment_patient: params[:appointment_patient],
     )
+    appointment.to_json
   end
 
   delete "/appointments/:id" do
@@ -86,6 +89,12 @@ class ApplicationController < Sinatra::Base
     doctor.to_json
   end
 
+  # This is magic
+  get "/doctors/search/:doctor_lastname" do
+    doctor = Doctor.where("doctor_lastname=?", params[:doctor_lastname])
+    doctor.to_json
+  end
+
   # get "/doctors/search/:doctor_lastname" do
   #   # doctor = Doctor.find_by(:doctor_lastname)
   #   # doctor = Doctor.all(doctor_lastname: params[:lastname])
@@ -109,7 +118,7 @@ class ApplicationController < Sinatra::Base
     doctor = Doctor.find(params[:doctor_id])
     doctor.update(
       doctor_firstname: params[:doctor_firstname],
-      doctor_lastname: params[:doctor_lastname],
+      # doctor_lastname: params[:doctor_lastname],
       doctor_phone: params[:doctor_phone],
       doctor_email: params[:doctor_email],
     )
@@ -156,7 +165,7 @@ class ApplicationController < Sinatra::Base
     patient = Patient.find(params[:patient_id])
     patient.update(
       patient_firstname: params[:patient_firstname],
-      patient_lastname: params[:patient_lastname],
+      # patient_lastname: params[:patient_lastname],
       patient_address: params[:patient_address],
       patient_city: params[:patient_city],
       patient_state: params[:patient_state],
