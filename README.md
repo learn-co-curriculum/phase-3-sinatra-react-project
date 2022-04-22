@@ -1,12 +1,10 @@
 # Phase 3 Project Guidelines
 
-# DEVELOPMENT BRANCH
-
 ![entity relationship diagram](./diagram.png)
 
 ## Endpoints
 
-- `GET /`: TODO
+- `GET /`:
 
 - `GET /appointments`: Get appointments
 
@@ -24,6 +22,7 @@
   - `GET /doctors/:doctor_id`: Get doctor by id
   - `GET /doctors/:doctor_id/appointments`: Get appointments associated with doctor by id
   - `GET /doctors/:doctor_id/patients`: Get patients (unique) associated with doctor by id
+  - `GET /doctors/search/:doctor_lastname`: Get doctor object using the lastname
 
 - `GET /patients`: Get patients
   - `POST /patients/`: Create new patient
@@ -32,33 +31,6 @@
   - `GET /patients/:patient_id`: Get patient by id
   - `GET /patients/:patient_id/appointments`: Get appointments associated with patient by id
   - `GET /patients/:patient_id/doctors`: Get doctors (unique) associated with patient by id
-
-## TODO:
-
-- [x] Make Seeds
-- [x] Write some methods in the Models (patient.rb, appointment.rb, and doctor.rb)
-- [x] Write routes in the Controller (application_controller.rb)
-
-~~- [ ] `GET /doctors/names`: Get all doctor's first and last names~~
-
-~~- [ ] `DELETE /doctors/:doctor_id`:~~
-
-~~- [ ] `GET /patients/names`: Get all patient's first and last names~~
-
-~~- [ ] `DELETE /patients/:patient_id`:~~
-
-~~- [ ] `GET /appointments/<YYYY-MM-DD date string>`: Get appointments for a day~~
-
-- [ ] Add more columns:
-  - [ ] photo (doctor, patient)
-  - [ ] Zoom url (appointment)
-  - [ ] race (patient)
-  - [ ] gender (patient)
-  - [ ] available hours (in minutes integer) (doctor)
-  - [ ] specialty (doctor)
-  - [ ] insurance (patient)
-  - [ ] status (appointment)
-  - [ ] office (appointment)
 
 ## Directory:
 
@@ -108,14 +80,3 @@ $ bundle exec rake server
 
 This will run your server on port
 [http://localhost:9292](http://localhost:9292).
-
-### Fetch Example
-
-Your React app should make fetch requests to your Sinatra backend! Here's an
-example:
-
-```js
-fetch("http://localhost:9292/test")
-  .then((r) => r.json())
-  .then((data) => console.log(data));
-```

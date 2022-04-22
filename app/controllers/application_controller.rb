@@ -16,9 +16,6 @@ class ApplicationController < Sinatra::Base
       'name': "Appointment Assist",
       'backend': "https://github.com/jwc20/appointment-assist-backend/tree/main",
       'frontend': "https://github.com/jwc20/appointment-assist-frontend/tree/main",
-    },
-     'endpoints': {
-      "TODO": "",
     } }.to_json
   end
 
@@ -94,13 +91,6 @@ class ApplicationController < Sinatra::Base
     doctor = Doctor.where("doctor_lastname=?", params[:doctor_lastname])
     doctor.to_json
   end
-
-  # get "/doctors/search/:doctor_lastname" do
-  #   # doctor = Doctor.find_by(:doctor_lastname)
-  #   # doctor = Doctor.all(doctor_lastname: params[:lastname])
-  #   doctor = Doctor.all(:doctor_lastname.like => "%#{params[:doctor_lastname]}%")
-  #   doctor.to_json
-  # end
 
   get "/doctors/:doctor_id/appointments" do
     doctor = Doctor.find(params[:doctor_id])
