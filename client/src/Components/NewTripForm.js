@@ -16,13 +16,13 @@ function NewTripForm({addTrip}) {
 
     return (
         <>
-      <h1 className="New Trip">New Trip</h1>
+      <h1 className="new-trip-form-title">New Trip</h1>
       <form
         onSubmit={handleSubmit}
-        className="New Museum Form"
+        className="new-trip-form"
       >
         <fieldset className="">
-          <label className="" htmlFor="name">
+          <label className="new-trip-label" htmlFor="name">
             Trip Title:
           </label>
           <input

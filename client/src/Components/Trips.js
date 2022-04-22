@@ -1,4 +1,4 @@
-import TripCards from "./TripCards"
+// import TripCards from "./TripCards"
 
 function Trips({ tripsData, addTrip, updateTrip, deleteTrip, history }) {
 
@@ -12,8 +12,12 @@ function Trips({ tripsData, addTrip, updateTrip, deleteTrip, history }) {
   // }
 
   return (
-    <div >
-      {tripsData.map((trip) => <button key={trip.id} onClick={() => history.push(`trips/${trip.id}`)}> {trip.trip_title} </button>)}
+    <div className="trips-page">
+      <div className="trips-button-parent">
+        <div className="trips-button-child">
+          {tripsData.map((trip) => <button className="trips-button" key={trip.id} onClick={() => history.push(`trips/${trip.id}`)}> {trip.trip_title} </button>)}
+        </div>
+      </div>
     </div>
   );
 }

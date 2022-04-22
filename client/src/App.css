@@ -1,38 +1,248 @@
+@font-face{
+  font-family:"TheMachineGun";
+  src: url(../public/fonts/TheMachineGun.ttf)
+}
+
+@font-face{
+  font-family:"gomarice_nantoka_western";
+  src: url(../public/fonts/gomarice_nantoka_western.ttf)
+}
+
+@font-face{
+  font-family:"euro-western";
+  src: url(../public/fonts/euro-western.ttf)
+}
+
+@font-face{
+  font-family:"Future-West";
+  src: url(../public/fonts/Future-West.ttf)
+}
+
+@font-face{
+  font-family:"Linli";
+  src: url(../public/fonts/Linli.ttf)
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#navBar {
+  background-color: #ffeedb;
+  /* padding-left: 100px;
+  padding-right: 100px; */
+  text-align: center;
+  color: white;
+
+}
+
+.navChild {
+  margin: 1vh;
+  display: inline;
+  text-align: center;
+  font-size: 90px;
+  font-family: euro-western;
+  color: brown;
+  text-decoration: none;
+}
+
+.main-nav-active{
+  color: white;
+}
+
+.home-page{
+  background-color: #ada8b6;
+}
+
+.home-title {
+  font-family: euro-western;
+  font-size: 100px;
+}
+
+.home-paragraph{
+  font-family:gomarice_nantoka_western;
+  font-size: 30;
+
+}
+
+.home-parent-container {
+  text-align: center;
+  padding: 9rem 9rem;
+}
+.home-child {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5rem 5rem;
+}
+
+.museum{
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  color: black;
+  /* display: grid; */
+  padding-top: 75px;
+  padding-bottom: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  grid-gap: 100px;
+  font-family: Linli;
+  font-size: 50 px;
+}
+
+.museum img{
+  width: 900px; /* width of container */
+  height: 600px; /* height of container */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.museum-name{
+  font-family: euro-western;
+  font-size: 65px;
+  text-align: center;
+}
+.museum-text{
+font-size: 40px;
+}
+
+.museum-card{
+    cursor: pointer;
+    width: 1400px;
+    height: 900px;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 10px solid rgba(255, 187, 0, 0.469);
+    transition: all .2s;
+    box-shadow: 12px 12px 2px 1px rgba(200, 174, 72, 0.374);
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .museum-card:hover {
+    box-shadow: -12px 12px 2px -1px rgba(222, 186, 29, 0.28);
   }
+
+.trips-page{
+  background: white;
+}
+
+.trips-button {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.trips-button:after {
+  content: "";
+  background-color: #ffc558;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.trips-button:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .trips-button {
+    padding: 13px 50px 13px;
+}}
+
+.dropdown {
+  position: relative;
+  width: 230px;
+  filter: url(#goo); 
+  &__face,
+  &__items {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 25px;
+  }
+
+  face {
+    display: block;
+    position: relative;
+  }
+
+ items {
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 100%;
+    list-style: none;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.93, 0.88, 0.1, 0.8);
+
+    :before {
+      content: "";
+      background-color: #fff;
+      position: absolute;
+      bottom: 100%;
+      right: 20%;
+      height: 40px;
+      width: 20px;
+    }
+  }
+
+  &__arrow {
+    border-bottom: 2px solid #000;
+    border-right: 2px solid #000;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg) translateY(-50%);
+    transform-origin: right;
+  }
+
+  input {
+    display: none;
+
+    &:checked ~ .dropdown__items {
+      top: calc(100% + 25px);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+/* body {
+  background-image: linear-gradient(140deg, #e2e2e2, #cdcdcd);
+  display: grid;
+  place-items: center;
+  font-family: "Lato", Arial, sans-serif;
+  height: 100vh;
+  margin: 0;
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+svg {
+  display: none;
 }
