@@ -1,6 +1,8 @@
 import React from 'react';
 
+
 function MuseumCards({ museum, mapTripsData, tripsData, setTripsData, addVisit }) {
+
 
     let museum_id = museum.id
     let city_id = museum.city_id
@@ -38,8 +40,10 @@ function MuseumCards({ museum, mapTripsData, tripsData, setTripsData, addVisit }
                         // value={trip}
                         onChange={(e) => handleOnChange(e)}
                     >
-                        <option>Create New Trip</option>
-                        {tripsData.map((trip) => <option key={trip.id} value={trip.id}>{trip.trip_title}</option>)}
+
+                    <option>Select trip</option>
+                    {tripsData.map((trip) => <option key={trip.id} value={trip.id}>{trip.trip_title}</option>)}
+                    
                     </select>
                 </fieldset>
             </div>
