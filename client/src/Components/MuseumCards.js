@@ -1,18 +1,6 @@
 import React, { useState } from 'react';
 
 function MuseumCards({ museum, mapTripsData, tripsData, setTripsData, addVisit}) {
-    // const [trip, setTrip] = useState([]);
-
-    // const [favorited, setFavorited] = useState(false);
-
-    // function handleStar() {
-    //     setFavorited(!favorited)
-    // };
-
-    // const [museum_id, setMuseum_id] = useState();
-    // const [city_id, setCity_id] = useState();
-    // const [trip_id, setTrip_id] = useState();
-    // const [notes, setNotes] = useState();
     
     let museum_id = museum.id
     let city_id = museum.city_id
@@ -48,7 +36,7 @@ function MuseumCards({ museum, mapTripsData, tripsData, setTripsData, addVisit})
                     // value={trip}
                     onChange={(e) => handleOnChange(e)}
                     >
-                    <option>Create New Trip</option>
+                    <option>Select trip</option>
                     {tripsData.map((trip) => <option key={trip.id} value={trip.id}>{trip.trip_title}</option>)}
                     </select>
             </fieldset>
