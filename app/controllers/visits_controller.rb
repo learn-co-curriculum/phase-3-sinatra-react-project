@@ -14,18 +14,18 @@ post "/visits" do
     visit = Visit.create(
         museum_id: params[:museum_id],
         city_id: params[:city_id],
-        trip_id: params[:trip_id],
-        notes: params[:notes])
+        trip_id: params[:trip_id])
+        # notes: params[:notes])
     visit.to_json
 end
 
 post "/visits/:id" do
   visit = Visit.create(
-      id: params[:id],
+      # id: params[:id],
       museum_id: params[:museum_id],
       city_id: params[:city_id],
-      trip_id: params[:trip_id],
-      notes: params[:notes])
+      trip_id: params[:trip_id])
+      # notes: params[:notes])
   visit.to_json
 end
 
