@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Switch, useHistory, useLocation } from "react-router-dom";
+import { Route, Switch, useHistory, useLocation, useRouteMatch } from "react-router-dom";
 import { useState, useEffect, } from 'react';
 import Trips from "./Components/Trips";
 import MuseumSelection from "./Components/MuseumSelection";
@@ -8,6 +8,7 @@ import NavBar from "./Components/NavBar";
 import NewMuseumForm from "./Components/NewMuseumForm";
 import NewTripForm from "./Components/NewTripForm";
 import TripEditForm from "./Components/TripEditForm";
+import TripCards from './Components/TripCards';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
   const [visits, setVisits] = useState([]);
   const history = useHistory();
   const location = useLocation();
+  const match = useRouteMatch();
 
   useEffect(() => {
     fetch('http://localhost:9292/museums')
@@ -84,7 +86,7 @@ function App() {
       .then(updatedTrip => {
         // pessimistically update the dog in state after we get a response from the api
         setTripsData(tripsData.map((trip) => (trip.id === parseInt(id) ? updatedTrip : trip)));
-        history.push(`/trips/${updatedTrip.id}`);
+        history.push(`/trips`);
       });
   }
 
@@ -101,9 +103,26 @@ function App() {
           console.log('deleted', deletedTrip.trip_title)
           if (location.pathname !== "/trips") {
             history.push("/trips")
+            window.location.reload()
           }
         });
   }
+
+  const deleteVisit = (visit_id) => {
+    // optimistically update the ui
+    setTripsData(tripsData.filter(trip => trip.id !== parseInt(visit_id)))
+    // update the API
+    fetch(`http://localhost:9292/visits/${visit_id}`, {
+      method: 'DELETE',
+      headers: { Accept: 'application/json' }
+    })
+      .then(res => res.json())
+      .then(deletedVisit => {
+        console.log('deleted', deletedVisit.id)
+        // window.location.reload()
+        history.push(`/trips`)
+      });
+}
 
   const addVisit = (formData) => {
     console.log(formData)
@@ -119,6 +138,7 @@ function App() {
       .then(res => res.json())
       .then(newVisit => {
         setVisits(visits.concat(newVisit))
+        window.location.reload()
       });
   }
 
@@ -141,8 +161,11 @@ function App() {
           <Trips tripsData={tripsData} addTrip={addTrip} updateTrip={updateTrip} deleteTrip={deleteTrip} history={history} />
           <NewTripForm addTrip={addTrip}/>
         </Route>
+        <Route path={"/trips/:id"}>
+          <TripCards tripsData={tripsData} museumData={museumData} deleteVisit={deleteVisit} deleteTrip={deleteTrip} updateTrip={updateTrip}/>
+        </Route>
         <Route
-                exact
+      
                 path="/trips/:id/edit"
                 render={({ match }) => (
                     <TripEditForm
