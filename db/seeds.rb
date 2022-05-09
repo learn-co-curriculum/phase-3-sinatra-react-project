@@ -25,7 +25,6 @@ end
 
 puts "🌱 Seeding matches..."
 
-
 Match.create(comment: Faker::Hipster.sentence, user_id: 1, lover_id: 1)
 Match.create(comment: Faker::Hipster.sentence, user_id: 1, lover_id: 13)
 Match.create(comment: Faker::Hipster.sentence, user_id: 1, lover_id: 6)
