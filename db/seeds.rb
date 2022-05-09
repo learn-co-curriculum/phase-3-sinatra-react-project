@@ -17,22 +17,24 @@ lover = Lover.create(
     profile_picture: Faker::LoremFlickr.image(size: "50x60", search_terms: ['person', 'computer']),
     bio: Faker::Quote.most_interesting_man_in_the_world,
     gender: Faker::Gender.type,
-    interests: Faker::Hipster.words(number: 4),
+    interests: Faker::Hipster.words(number: 4).to_s,
     birthdate: Faker::Date.between(from: '1940-09-23', to: '2004-09-25'),
     wants_a_date: Faker::Boolean.boolean
 )
 end
 
 puts "🌱 Seeding matches..."
-10.times do 
-match = Match.create(
-    comment: Faker::Hipster.paragraph(sentence_count: 2),
-    user_id: 1,
-    lover_id: rand(1..20)
-)
-end
 
 
+Match.create(comment: Faker::Hipster.sentence, user_id: 1, lover_id: 1)
+Match.create(comment: Faker::Hipster.sentence, user_id: 1, lover_id: 13)
+Match.create(comment: Faker::Hipster.sentence, user_id: 1, lover_id: 6)
+Match.create(comment: Faker::Hipster.sentence, user_id: 1, lover_id: 8)
+Match.create(comment: Faker::Hipster.sentence, user_id: 1, lover_id: 2)
+Match.create(comment: Faker::Hipster.sentence, user_id: 1, lover_id: 12)
+Match.create(comment: Faker::Hipster.sentence, user_id: 1, lover_id: 9)
+Match.create(comment: Faker::Hipster.sentence, user_id: 1, lover_id: 10)
+Match.create(comment: Faker::Hipster.sentence, user_id: 1, lover_id: 19)
 
 # Seed your database here
 
