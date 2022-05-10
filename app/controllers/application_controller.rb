@@ -7,7 +7,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/users" do
-    users = User.all 
+    users = User.all
+    #  INCLUDE A METHOD OF AGE
     users.to_json
   end
 

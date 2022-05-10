@@ -12,12 +12,15 @@ User.create(
 
 puts "🌱 Seeding lovers..."
 20.times do 
+random_photo = Faker::LoremFlickr.image(size: "250x250", search_terms: ['person', 'computer'])
+# random_photo = Faker::LoremFlickr.unique.image(size: "250x250", search_terms: ['person', 'computer'])
+
 lover = Lover.create(
     username: Faker::Name.name,
-    profile_picture: Faker::LoremFlickr.image(size: "50x60", search_terms: ['person', 'computer']),
+    profile_picture: random_photo,
     bio: Faker::Quote.most_interesting_man_in_the_world,
     gender: Faker::Gender.type,
-    interests: Faker::Hipster.words(number: 4).to_s,
+    interests: Faker::Hipster.words(number: 4).join(", ").to_s,
     birthdate: Faker::Date.between(from: '1940-09-23', to: '2004-09-25'),
     wants_a_date: Faker::Boolean.boolean
 )
