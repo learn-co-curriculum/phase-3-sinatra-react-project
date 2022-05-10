@@ -40,5 +40,15 @@ Review.create(review_details: "Chef is royalty!", star_rating: 5, customer_id: f
 Review.create(review_details: "No flavour", star_rating: 1, customer_id: fourth.id, restaurant_id: sinatras_finest.id)
 Review.create(review_details: "Nice atmosphere", star_rating: 3, customer_id: seventh.id, restaurant_id: sinatras_finest.id)
 
+MenuItem.create(course: "dinner", name: "Chiken Parm", price: 14.99, image_url: "https://preppykitchen.com/wp-content/uploads/2018/10/Chicken-Parmesan-Recipe-n.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "dinner", name: "Risotto", price: 16.99, image_url: "https://poshjournal.com/wp-content/uploads/2021/08/orzo-risotto-recipe-3.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "dinner", name: "Pizza Pie", price: 13.99, image_url: "https://www.hormelfoods.com/wp-content/uploads/Inspired_20220322_Happy-Little-Plants-Pepperoni-Pizza-Toppings.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "desert", name: "Gelato", price: 9.99, image_url: "https://images.media-allrecipes.com/userphotos/6732586.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "dinner", name: "Pesto alla Genovese", price: 17.99, image_url: "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/0802C73C-3213-4AA6-BD3E-7390A13989FF/Derivates/ff280a78-bfae-46c9-9ea8-c63f5508cde8.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "dinner", name: "Lasagne", price: 19.99, image_url: "https://3f4c2184e060ce99111b-f8c0985c8cb63a71df5cb7fd729edcab.ssl.cf2.rackcdn.com/media/19227/classiclasagna.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "dinner", name: "Prosciutto di Parma", price: 22.99, image_url: "https://www.delibusiness.com/wp-content/uploads/2021/11/AdobeStock_327766584-scaled.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "dinner", name: "Ribollita", price: 14.99, image_url: "https://www.thespruceeats.com/thmb/F0i0xGAKlpW4eN5oXrY6hYV5jyQ=/2667x2000/smart/filters:no_upscale()/ribollita-classic-tuscan-winter-soup-recipe-4105780-c004fb72de164e0a8dfd8e686308ef68.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "dinner", name: "Tortelli and Ravioli", price: 17.99, image_url: "https://www.the-pasta-project.com/wp-content/uploads/Pumpkin-Tortelli-recipe-from-Mantova-13-640x433.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "dinner", name: "Panzerotto fritto", price: 14.99, image_url: "https://www.crazymasalafood.com/wp-content/images/2022/02/Panzerotto-fFritto.jpg", restaurant_id: sinatras_finest.id)
 
 puts "✅ Done seeding!"
