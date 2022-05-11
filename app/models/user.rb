@@ -1,8 +1,12 @@
 require 'pry'
-
 class User < ActiveRecord::Base
   has_many :likes
-  has_many :matches, through: :likes
+  has_many :likes_as_liked, class_name: 'Like', foreign_key: :liked_user_id
+  has_many  :liked_users, through: :likes,  source: :liked_user
+  has_many :admirers, through: :likes_as_liked, source: :user
+
+  # has_many  :liked_users, through: :likes,  source: :user
+  # has_many :matches, through: :likes
 
 
 
