@@ -12,6 +12,12 @@ class ApplicationController < Sinatra::Base
     users.to_json
   end
 
+  # patch "/users/:id/likes" do
+  #   user = User.find(params[:id])
+  #   user.create_like
+  # end
+
+
   get "/lovers" do
     lovers = Lover.all
     lovers.to_json
