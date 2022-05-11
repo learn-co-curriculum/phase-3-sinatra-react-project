@@ -26,13 +26,11 @@ class ApplicationController < Sinatra::Base
     order.to_json
   end
 
-  # post "/reviews" do
-  #   Review.create()
-  # end
+  post "/reviews" do
+    new_review = Review.create(params)
+    new_review.to_json
+  end
 
-  # Try to determine how to set up this post request to handle
-  # adding an order onClick event to orders table using the data
-  # from the menu item we clicked in the front end
   post "/orders" do
     new_order = Order.create(params)
     new_order.to_json
