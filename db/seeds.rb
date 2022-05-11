@@ -19,15 +19,15 @@ end
 
 puts "🌱 Seeding likes..."
 
-# Like.create(active_user_id: 1, liked_person_id: 2)
-# Like.create(active_user_id: 1, liked_person_id: 13)
-# Like.create(active_user_id: 1, liked_person_id: 8)
-# Like.create(active_user_id: 8, liked_person_id: 1)
-# Like.create(active_user_id: 12, liked_person_id: 2)
-# Like.create(active_user_id: 9, liked_person_id: 1)
-# Like.create(active_user_id: 1, liked_person_id: 9)
-# Like.create(active_user_id: 10, liked_person_id: 1)
-# Like.create(active_user_id: 1, liked_person_id: 5)
+Like.create(liked_user_id: 1, user_id: 2)
+Like.create(liked_user_id: 1, user_id: 13)
+Like.create(liked_user_id: 1, user_id: 8)
+Like.create(liked_user_id: 8, user_id: 1)
+Like.create(liked_user_id: 12, user_id: 2)
+Like.create(liked_user_id: 9, user_id: 1)
+Like.create(liked_user_id: 1, user_id: 9)
+Like.create(liked_user_id: 10, user_id: 1)
+Like.create(liked_user_id: 1, user_id: 5)
 
 puts "🌱 Seeding matches..."
 # Match.create(likes_id_1: nil, likes_id_2: nil)
