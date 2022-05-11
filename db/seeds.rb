@@ -38,6 +38,7 @@ Review.create(review_details: "Chef is royalty!", star_rating: 5, customer_id: f
 Review.create(review_details: "No flavour", star_rating: 1, customer_id: fourth.id, restaurant_id: sinatras_finest.id)
 Review.create(review_details: "Nice atmosphere", star_rating: 3, customer_id: seventh.id, restaurant_id: sinatras_finest.id)
 
+
 # Menu Items
 # change spelling of desert to dessert
 MenuItem.create(course: "dinner", name: "Chiken Parm", ingredients: Faker::Food.ingredient, price: 14, image_url: "https://preppykitchen.com/wp-content/uploads/2018/10/Chicken-Parmesan-Recipe-n.jpg", restaurant_id: sinatras_finest.id)
@@ -50,6 +51,7 @@ MenuItem.create(course: "dinner", name: "Prosciutto di Parma", ingredients: Fake
 MenuItem.create(course: "dinner", name: "Ribollita", ingredients: Faker::Food.ingredient, price: 14, image_url: "https://www.thespruceeats.com/thmb/F0i0xGAKlpW4eN5oXrY6hYV5jyQ=/2667x2000/smart/filters:no_upscale()/ribollita-classic-tuscan-winter-soup-recipe-4105780-c004fb72de164e0a8dfd8e686308ef68.jpg", restaurant_id: sinatras_finest.id)
 MenuItem.create(course: "dinner", name: "Tortelli and Ravioli", ingredients: Faker::Food.ingredient, price: 17, image_url: "https://www.the-pasta-project.com/wp-content/uploads/Pumpkin-Tortelli-recipe-from-Mantova-13-640x433.jpg", restaurant_id: sinatras_finest.id)
 MenuItem.create(course: "dinner", name: "Panzerotto fritto", ingredients: Faker::Food.ingredient, price: 14, image_url: "https://www.crazymasalafood.com/wp-content/images/2022/02/Panzerotto-fFritto.jpg", restaurant_id: sinatras_finest.id)
+
 
 
 puts "✅ Done seeding!"
