@@ -25,9 +25,12 @@ class ApplicationController < Sinatra::Base
   # post "/reviews" do
   #   Review.create()
   # end
-  
-  # post "/orders" do
-  #   Order.create()
-  # end
+
+  # Try to determine how to set up this post request to handle
+  # adding an order onClick event to orders table using the data
+  # from the menu item we clicked in the front end
+  post "/orders" do
+    Order.create()
+  end
 
 end
