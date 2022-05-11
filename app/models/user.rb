@@ -8,8 +8,6 @@ class User < ActiveRecord::Base
   # has_many  :liked_users, through: :likes,  source: :user
   # has_many :matches, through: :likes
 
-
-
     def age
         return nil if self.birthdate.nil?
         days_old = (Date.today - self.birthdate).to_i.days
@@ -25,11 +23,22 @@ class User < ActiveRecord::Base
         end
       end
 
+      def match
+        # get all ids of people i liked
+        like_you = self.likes.map {|like| like.liked_user_id}
+        # get all ids of people who liked me
+        like_me = self.likes_as_liked.map {|like| like.user_id}
+        # compare the two arrays and return every instance in which they match.
+        match_ids = like_you & like_me
+        # find the all user match instances by the id
+        matches = match_ids.map{|num| User.find(num)}
+      end
+
       def has_liked (other_person_id)
         # liked_people = []
       
         # If she likes him, and he likes her then create a match
-        # binding.pry
+        binding.pry
         test = Like.where(user_id: other_person_id , liked_user_id: self.id).first
         # print test
         if test #create a match

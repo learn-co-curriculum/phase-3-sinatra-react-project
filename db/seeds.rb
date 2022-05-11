@@ -29,14 +29,6 @@ Like.create(liked_user_id: 1, user_id: 9)
 Like.create(liked_user_id: 10, user_id: 1)
 Like.create(liked_user_id: 1, user_id: 5)
 
-puts "🌱 Seeding matches..."
-# Match.create(likes_id_1: nil, likes_id_2: nil)
-# Match.create(likes_id_1: nil, likes_id_2: nil)
-# Match.create(likes_id_1: nil, likes_id_2: nil)
-# Match.create(likes_id_1: nil, likes_id_2: nil)
-# Match.create(likes_id_1: nil, likes_id_2: nil)
-# Match.create(likes_id_1: nil, likes_id_2: nil)
-
 # Seed your database here
 
 puts "✅ Done seeding!"

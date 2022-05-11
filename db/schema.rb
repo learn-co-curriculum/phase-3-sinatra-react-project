@@ -10,18 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_10_185647) do
+ActiveRecord::Schema.define(version: 2022_05_10_185422) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "liked_user_id"
-  end
-
-  create_table "matches", force: :cascade do |t|
-    t.integer "likes_id_1"
-    t.integer "likes_id_2"
-    t.integer "user_id_1"
-    t.integer "user_id_2"
   end
 
   create_table "users", force: :cascade do |t|
