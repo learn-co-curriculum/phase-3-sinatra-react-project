@@ -6,7 +6,7 @@ class CreateMenuItems < ActiveRecord::Migration[6.1]
       t.string :ingredients
       t.integer :price
       t.string :image_url
-      t.integer :restaurant
+      t.integer :restaurant_id
     end
   end
 end

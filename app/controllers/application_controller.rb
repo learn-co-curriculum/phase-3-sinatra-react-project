@@ -21,7 +21,11 @@ class ApplicationController < Sinatra::Base
     customer.to_json
   end
 
-  
+  get "/orders" do 
+    order = Order.all
+    order.to_json
+  end
+
   # post "/reviews" do
   #   Review.create()
   # end
@@ -30,7 +34,15 @@ class ApplicationController < Sinatra::Base
   # adding an order onClick event to orders table using the data
   # from the menu item we clicked in the front end
   post "/orders" do
-    Order.create()
+    new_order = Order.create(params)
+    new_order.to_json
   end
+
+  private
+
+  # def order_params
+  #   allowed_params = %w(name price)
+  #   #params.select {|param,value| allowed_params.include?(param)}
+  # end
 
 end
