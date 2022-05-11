@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
         # print test
         if test #create a match
           newLike = Like.create(user_id:self.id, liked_user_id: other_person_id )
-          Match.create(likes_id_1:test.id , likes_id_2:newLike.id)
+          Match.create(likes_id_1:test.id , likes_id_2:newLike.id, user_id_1:self.id, user_id_2:other_person_id)
         elsif
           # create a like 
           create_like_instance = Like.create(user_id: self.id, liked_user_id: other_person_id)
