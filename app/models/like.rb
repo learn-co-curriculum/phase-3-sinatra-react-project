@@ -1,4 +1,4 @@
 class Like < ActiveRecord::Base
     has_many :matches
-    belongs_to :user, foreign_key: :user_id
+    belongs_to :user
 end
