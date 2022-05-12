@@ -42,11 +42,17 @@ class ApplicationController < Sinatra::Base
     deleted_order.to_json
   end
 
+  patch "/reviews/:id" do
+    edited_review = Review.find(params[:id])
+    edited_review.update(edit_review_params)
+    edited_review.to_json
+  end
+
   private
 
-  # def order_params
-  #   allowed_params = %w(name price)
-  #   #params.select {|param,value| allowed_params.include?(param)}
-  # end
+  def edit_review_params
+    allowed_params = %w(review_details star_rating)
+    params.select {|param,value| allowed_params.include?(param)}
+  end
 
 end
