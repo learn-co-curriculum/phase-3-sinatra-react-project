@@ -36,6 +36,12 @@ class ApplicationController < Sinatra::Base
     new_order.to_json
   end
 
+  delete "/orders/:id" do 
+    deleted_order = Order.find(params[:id])
+    deleted_order.destroy
+    deleted_order.to_json
+  end
+
   private
 
   # def order_params
