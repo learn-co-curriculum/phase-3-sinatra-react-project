@@ -48,6 +48,12 @@ class ApplicationController < Sinatra::Base
     edited_review.to_json
   end
 
+  delete "/reviews/:id" do 
+    deleted_review = Review.find(params[:id])
+    deleted_review.destroy
+    deleted_review.to_json
+  end
+
   private
 
   def edit_review_params
