@@ -24,7 +24,7 @@ puts "creating Review Sections..."
 review_section1 = ReviewSection.create(name:"Lunch Menu Reviews")
 
 puts "creating Reviews..."
-review1 = Review.create(name: "Will Johnson", content: "Best restaurant in town!", review_section_id: review_section1.id)
+review1 = Review.create(name: "Phil", content: "Best restaurant in town ran by the best group students ive ever had!", review_section_id: review_section1.id)
 
 
 puts "✅ Done seeding!"
