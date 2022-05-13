@@ -123,19 +123,77 @@ fetch("http://localhost:9292/test")
 My Notes:
 NOTES
 
-### myNeighbors
-A user will be able to enter/create a household,
-get a list of households,
-delete or edit households/members.
+### MyStreet
+A user will be able to: 
+
+-enter/create a household,
+
+-get a list of households on their street,
+
+-get a list of household in their neighborhood,
+
+-view household members, 
+
+-delete households/members,
+
+-edit households/members
+
 
 ### Features/MVP
-*Homepage
-*Navigation
-*List households page
-*View household details page
-*Create household form page
-*Delete a household
-*Edit a household
+* Homepage
+* Navigation
+* List neighborhood/households page
+* View household details page
+* Create household form page
+* Delete a household
+* Edit a household
 
 ### Stretch Goals
 ??
+
+## Models
+ 
+Neighborhood
+-
+Has many locations
+Has many Households through ...
+
+
+Location
+-
+Join Neighborhood with Address
+
+Attributes: neighborhood_id, address_id
+
+Address
+-
+Belongs to a location
+
+Belongs to a neighborhood through location
+
+Has a household
+
+Has many household members through household
+
+Attributes: address, household_id, neighborhood_id
+
+Household
+-
+Belongs to an address
+
+Has many household members
+Has a neighborhood through address
+
+Attributes: address_id, neighborhood_id, household_member_id, 
+
+Household Member
+-
+Belongs to a household
+
+Belongs to an address through household
+
+Attributes: name, age, profession
+
+(address, location, neighborhood)
+
+

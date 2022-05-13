@@ -14,7 +14,7 @@ If you haven't already, follow directions from frontend: url here
 
 ## Licensing 
 
-##Contributions
+## Contributions
 
 
 
