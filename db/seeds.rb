@@ -49,22 +49,40 @@ MenuItem.create(course: "Dinner", name: "Prosciutto di Parma", ingredients: Fake
 MenuItem.create(course: "Dinner", name: "Ribollita", ingredients: Faker::Food.ingredient, price: 14, image_url: "https://www.thespruceeats.com/thmb/F0i0xGAKlpW4eN5oXrY6hYV5jyQ=/2667x2000/smart/filters:no_upscale()/ribollita-classic-tuscan-winter-soup-recipe-4105780-c004fb72de164e0a8dfd8e686308ef68.jpg", restaurant_id: sinatras_finest.id)
 MenuItem.create(course: "Dinner", name: "Tortelli and Ravioli", ingredients: Faker::Food.ingredient, price: 15, image_url: "https://www.the-pasta-project.com/wp-content/uploads/Pumpkin-Tortelli-recipe-from-Mantova-13-640x433.jpg", restaurant_id: sinatras_finest.id)
 MenuItem.create(course: "Dinner", name: "Panzerotto fritto", ingredients: Faker::Food.ingredient, price: 14, image_url: "https://www.crazymasalafood.com/wp-content/images/2022/02/Panzerotto-fFritto.jpg", restaurant_id: sinatras_finest.id)
+# DESSERTS
+MenuItem.create(course: "Dessert", name: "Gelato", ingredients: Faker::Food.ingredient, price: 10, image_url: "https://images.media-allrecipes.com/userphotos/6732586.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "Dessert", name: "Tiramisu", ingredients: Faker::Food.ingredient, price: 13, image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPHX_X_ZuFFSw53A6rDu0q2NEeEmeTwa5slQ&usqp=CAU", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "Dessert", name: "Maritozzo", ingredients: Faker::Food.ingredient, price: 13, image_url: "https://c8.alamy.com/comp/2FJRXWC/homemade-maritozzo-is-italian-roman-breakfast-sweet-that-whipped-cream-sandwiched-between-brioche-2FJRXWC.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "Dessert", name: "Cannoli", ingredients: Faker::Food.ingredient, price: 12, image_url: "https://www.cookingclassy.com/wp-content/uploads/2020/02/cannoli-20.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "Dessert", name: "Panettone", ingredients: Faker::Food.ingredient, price: 9, image_url: "https://www.cento.com/images/articles/panettone_pandoro/panettone_featured.jpg", restaurant_id: sinatras_finest.id)
 
-MenuItem.create(course: "Desert", name: "Gelato", ingredients: Faker::Food.ingredient, price: 10, image_url: "https://images.media-allrecipes.com/userphotos/6732586.jpg", restaurant_id: sinatras_finest.id)
-MenuItem.create(course: "Desert", name: "Tiramisu", ingredients: Faker::Food.ingredient, price: 13, image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPHX_X_ZuFFSw53A6rDu0q2NEeEmeTwa5slQ&usqp=CAU", restaurant_id: sinatras_finest.id)
-MenuItem.create(course: "Desert", name: "Maritozzo", ingredients: Faker::Food.ingredient, price: 13, image_url: "https://c8.alamy.com/comp/2FJRXWC/homemade-maritozzo-is-italian-roman-breakfast-sweet-that-whipped-cream-sandwiched-between-brioche-2FJRXWC.jpg", restaurant_id: sinatras_finest.id)
-MenuItem.create(course: "Desert", name: "Cannoli", ingredients: Faker::Food.ingredient, price: 12, image_url: "https://www.cookingclassy.com/wp-content/uploads/2020/02/cannoli-20.jpg", restaurant_id: sinatras_finest.id)
-MenuItem.create(course: "Desert", name: "Panettone", ingredients: Faker::Food.ingredient, price: 9, image_url: "https://www.cento.com/images/articles/panettone_pandoro/panettone_featured.jpg", restaurant_id: sinatras_finest.id)
 
+# LUNCHES
 MenuItem.create(course: "Lunch", name: "Caprese Salad", ingredients: Faker::Food.ingredient, price: 10, image_url: "https://emilybites.com/wp-content/uploads/2020/08/Caprese-Salad-7b.jpg", restaurant_id: sinatras_finest.id)
 MenuItem.create(course: "Lunch", name: "Beef and Barley Soup", ingredients: Faker::Food.ingredient, price: 14, image_url: "https://thecozyapron.com/wp-content/uploads/2018/09/beef-barley-soup_thecozyapron_1.jpg", restaurant_id: sinatras_finest.id)
 MenuItem.create(course: "Lunch", name: "Deep-fried Courgette Flowers", ingredients: Faker::Food.ingredient, price: 13, image_url: "https://www.nonnabox.com/wp-content/uploads/Fried_Zucchini_Blossoms_Recipe_Fiori_di_Zucca.jpg", restaurant_id: sinatras_finest.id)
 MenuItem.create(course: "Lunch", name: "Parmesan Hero", ingredients: Faker::Food.ingredient, price: 18, image_url: "https://static.wikia.nocookie.net/spongebob/images/2/27/Unreal_Estate_113.png/revision/latest?cb=20170604214809", restaurant_id: sinatras_finest.id)
 MenuItem.create(course: "Lunch", name: "Acciughe al Verde", ingredients: Faker::Food.ingredient, price: 14, image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx-g9wqORuTA6YS8_4bwbvUsCEurRUuZ0mXg&usqp=CAU", restaurant_id: sinatras_finest.id)
 
+
+# APPETIZERS
 MenuItem.create(course: "appetizer", name: "Oysters", ingredients: "Oysters, butter, lemon", price: 14.99, image_url: "https://media.istockphoto.com/photos/half-dozen-fresh-oysters-are-served-with-lemon-in-bowl-with-plenty-of-picture-id1321303618?b=1&k=20&m=1321303618&s=170667a&w=0&h=c2swJOM6sK8Cc05Iuzh2wK7ica71KkSD7OHl4YmrerI=", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "appetizer", name: "Caponata", ingredients: "Olives, Eggplant", price: 14.99, image_url: "https://static01.nyt.com/images/2008/09/04/health/nutrition/04recipe.health.ready/04recipe.health.ready-articleLarge.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "appetizer", name: "Spiedini", ingredients: "Beef, Onion", price: 14.99, image_url: "https://www.billyparisi.com/wp-content/uploads/2020/09/spiedini-3.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "appetizer", name: "Crostini", ingredients: "Bread, Tomato", price: 14.99, image_url: "https://www.rachelcooks.com/wp-content/uploads/2019/11/how-to-make-crostini-web-3-of-5.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "appetizer", name: "Bruschetta", ingredients: "Tomato, Salad", price: 14.99, image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhc__9EERUuEMlnSobZStxcZKI5ZiUOlq-6Q&usqp=CAU", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "appetizer", name: "Focaccia", ingredients: "Bread, Spices", price: 14.99, image_url: "https://thebananadiaries.com/wp-content/uploads/2021/08/homemade-easy-no-knead-focaccia-vegan_5694.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "appetizer", name: "Italian Meatballs", ingredients: "Beef, Spices", price: 14.99, image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAhAMpVcY534N3dY3pzxtFhGPtTts3QeKpXA&usqp=CAU", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "appetizer", name: "Marinated Mozzarella", ingredients: "Mozzarella, Olive Oil", price: 14.99, image_url: "https://www.lastingredient.com/wp-content/uploads/2017/07/marinated-mozzarella-balls6.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "appetizer", name: "Italian Green Beans", ingredients: "Green Beans, Parmesan", price: 14.99, image_url: "https://keytomylime.com/wp-content/uploads/2021/07/Best-Italian-Green-Bean-Recipe-735x735.jpg", restaurant_id: sinatras_finest.id)
 
-
+# DRINKS
+MenuItem.create(course: "Drink", name: "Aperitivo", ingredients: "delicious", price: 10, image_url: "https://cookingmydreams.com/wp-content/uploads/2021/06/Italian-Aperitivo-4.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "Drink", name: "Negroni", ingredients: "delicious", price: 10, image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzdhrxOvETnAXTva0Uyj5B2zB80xB691r8bQ&usqp=CAU", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "Drink", name: "Campari", ingredients: "delicious", price: 10, image_url: "https://www.insidetherustickitchen.com/wp-content/uploads/2019/04/campari-cocktail-square-inside-the-rustic-kitchen-500x500.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "Drink", name: "Americano", ingredients: "delicious", price: 10, image_url: "https://www.acouplecooks.com/wp-content/uploads/2020/04/Americano-Cocktail-010.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "Drink", name: "Bellini", ingredients: "delicious", price: 10, image_url: "https://www.giallozafferano.com/images/228-22850/bellini-cocktail_650x433_wm.jpg", restaurant_id: sinatras_finest.id)
+MenuItem.create(course: "Drink", name: "Spritz", ingredients: "delicious", price: 10, image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2ETuTm_7Pwhdxqg_QMAoO86zH_-c3Hp5GTQ&usqp=CAU", restaurant_id: sinatras_finest.id)
 
 
 puts "✅ Done seeding!"
