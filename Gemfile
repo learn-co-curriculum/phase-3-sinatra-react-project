@@ -23,10 +23,13 @@ gem "activerecord", "~> 6.1"
 # Configures common Rake tasks for working with Active Record
 # https://github.com/sinatra-activerecord/sinatra-activerecord
 gem "sinatra-activerecord", "~> 2.0"
+gem 'sinatra-cross_origin'
 
 # Run common tasks from the command line
 # https://github.com/ruby/rake
 gem "rake", "~> 13.0"
+
+gem "json"
 
 # Provides functionality to interact with a SQLite3 database
 gem "sqlite3", "~> 1.4"
@@ -41,6 +44,7 @@ group :development do
   # Automatically reload when there are changes
   # https://github.com/alexch/rerun
   gem "rerun"
+  gem "shotgun"
 end
 
 # These gems will only be used when we are running tests
