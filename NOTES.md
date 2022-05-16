@@ -155,21 +155,17 @@ A user will be able to:
  
 Neighborhood
 -
-Has many locations
-Has many Households through ...
+Has many addresses
+Has many Households through addresses
+
+Attributes: name, household_id
 
 
-Location
--
-Join Neighborhood with Address
 
-Attributes: neighborhood_id, address_id
 
 Address
 -
-Belongs to a location
-
-Belongs to a neighborhood through location
+Belongs to a neighborhood
 
 Has a household
 
