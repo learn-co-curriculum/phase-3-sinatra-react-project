@@ -155,41 +155,33 @@ A user will be able to:
  
 Neighborhood
 -
-Has many addresses
-Has many Households through addresses
+Has many locations
 
-Attributes: name, household_id
+Has many Households through location
 
+Attributes: name
 
+Location
+---
+Belongs to neighborhoods
+Belongs to household
 
-
-Address
--
-Belongs to a neighborhood
-
-Has a household
-
-Has many household members through household
-
-Attributes: address, household_id, neighborhood_id
+Attributes: name, address, neighborhood_id, location_id
 
 Household
 -
-Belongs to an address
+Has many locations
+Has neighborhoods through locations
+Has many members
 
-Has many household members
-Has a neighborhood through address
+Attributes: family_name
 
-Attributes: address_id, neighborhood_id, household_member_id, 
-
-Household Member
+Member
 -
 Belongs to a household
 
-Belongs to an address through household
+Attributes: first_name, last_name, age, profession
 
-Attributes: name, age, profession
 
-(address, location, neighborhood)
 
 

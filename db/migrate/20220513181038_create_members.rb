@@ -1,4 +1,4 @@
-class CreateMember < ActiveRecord::Migration[6.1]
+class CreateMembers < ActiveRecord::Migration[6.1]
   def change
 
     create_table :members do |t|
@@ -10,4 +10,6 @@ class CreateMember < ActiveRecord::Migration[6.1]
       t.timestamps
     end
   end
+
+
 end
