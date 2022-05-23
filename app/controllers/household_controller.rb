@@ -1,0 +1,3 @@
+class HouseholdController < ApplicationController
+
+end
