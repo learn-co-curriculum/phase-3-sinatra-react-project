@@ -4,10 +4,12 @@ class CreateLocations < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :address
 
-      t.integer :neighborhood_id
-      t.integer :household_id
+      t.belongs_to :neighborhood
+      t.belongs_to :household
 
       t.timestamps
+
+
     end
   end
 end

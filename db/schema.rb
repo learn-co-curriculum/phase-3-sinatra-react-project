@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2022_05_16_160242) do
     t.integer "household_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["household_id"], name: "index_locations_on_household_id"
+    t.index ["neighborhood_id"], name: "index_locations_on_neighborhood_id"
   end
 
   create_table "members", force: :cascade do |t|
@@ -32,8 +34,10 @@ ActiveRecord::Schema.define(version: 2022_05_16_160242) do
     t.string "last_name"
     t.integer "age"
     t.string "profession"
+    t.integer "household_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["household_id"], name: "index_members_on_household_id"
   end
 
   create_table "neighborhoods", force: :cascade do |t|

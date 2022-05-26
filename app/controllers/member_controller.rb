@@ -1,3 +1,7 @@
 class MemberController < ApplicationController
 
+
+
+
+
 end

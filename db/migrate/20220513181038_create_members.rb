@@ -7,6 +7,8 @@ class CreateMembers < ActiveRecord::Migration[6.1]
       t.integer :age
       t.string :profession
 
+      t.belongs_to :household
+
       t.timestamps
     end
   end
