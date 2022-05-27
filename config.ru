@@ -17,8 +17,9 @@ end
 use Rack::JSONBodyParser
 
 # Our application
+run ApplicationController
 use NeighborhoodController
 use HouseholdController
 use MemberController
-run ApplicationController
+
 

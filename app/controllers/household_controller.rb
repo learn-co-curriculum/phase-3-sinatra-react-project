@@ -1,8 +1,14 @@
 class HouseholdController < ApplicationController
 
+  # get all households of a neighborhood
+  # create a household
+  # update a household
+  # delete a household
+
+
   get '/households' do
     households = Household.all
-    households.to_json
+    households.to_json(include: [:members])
   end
 
   post '/households' do
@@ -10,7 +16,7 @@ class HouseholdController < ApplicationController
     if  household.save
       household.to_json
     else
-      { errors: household.errors.full_message }.to_json
+      { errors: household.errors.full_messages }.to_json
     end
   end
 

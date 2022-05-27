@@ -149,7 +149,7 @@ A user will be able to:
 * Edit a household
 
 ### Stretch Goals
-??
+* Error handling
 
 ## Models
  
