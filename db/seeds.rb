@@ -22,15 +22,17 @@ household_8 = Household.create(family_name: "Maison de Vil")
 household_9 = Household.create(family_name: "The Sopranos")
 
 #locations -join
-Location.create(name: "Springfield peeps", neighborhood: neighborhood_1, household: household_1)
-Location.create(name: "LA house", neighborhood: neighborhood_2, household: household_2)
-Location.create(name: "Weird Austin", neighborhood: neighborhood_3, household: household_3)
-Location.create(name: "Miami Vice", neighborhood: neighborhood_2, household: household_4)
-Location.create(name: "Merica", neighborhood: neighborhood_1, household: household_5)
-Location.create(name: "Cartoons", neighborhood: neighborhood_2, household: household_6)
-Location.create(name: "SpookyTown", neighborhood: neighborhood_3, household: household_7)
-Location.create(name: "Dalmatian City", neighborhood: neighborhood_1, household: household_8)
-Location.create(name: "Mafia Central", neighborhood: neighborhood_3, household: household_9)
+Location.create(name: "Springfield Home", neighborhood: neighborhood_1, household: household_1, address: "742 Evergreen Terrace, Springfield, OR 97477")
+Location.create(name: "Anytown House", neighborhood: neighborhood_3, household: household_1, address: "321 Anystreet, Anytown, AT 54320")
+Location.create(name: "LA House", neighborhood: neighborhood_2, household: household_2, address: "10336 Dunleer Dr, Los Angeles, LA 90064")
+Location.create(name: "Vacay House", neighborhood: neighborhood_1, household: household_2, address: "470 Sunshine Ln, Santa Barbara, CA 93105 ")
+Location.create(name: "Austin House", neighborhood: neighborhood_3, household: household_3, address: "680 Capitol Dr, Austin, TX 78753")
+Location.create(name: "Miami Vacation Home", neighborhood: neighborhood_2, household: household_4, address: "7701 Collins Ave, Miami, FL 3141")
+Location.create(name: "Home Sweet Home", neighborhood: neighborhood_1, household: household_5, address: "123 American Rd, Greenville, AL 36307")
+Location.create(name: "Primary Residence", neighborhood: neighborhood_2, household: household_6, address: "552 Getaway Dr, Manhattan, NY 10001")
+Location.create(name: "Spooky House", neighborhood: neighborhood_3, household: household_7, address: "001 Cemetery Ln, Westfield, NJ 07091")
+Location.create(name: "Dalmatian Central", neighborhood: neighborhood_1, household: household_8, address: "101 Dalmatian St, London, SW1V 3NS, England")
+Location.create(name: "Mafia HQ", neighborhood: neighborhood_3, household: household_9, address: "14 Aspen Dr, North Caldwell, NJ 7006")
 
 
 
