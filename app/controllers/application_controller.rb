@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/posts" do
-     Post.all.to_json
+    Post.all.to_json
   end
   get "/posts/:id" do
     Post.find(params[:id]).to_json
@@ -14,7 +14,7 @@ class ApplicationController < Sinatra::Base
  end
 
  delete '/posts/:id' do
-  serialize(Post.find(params[:id]).destroy)
+    Post.find(params[:id]).destroy
     
 end
   get "/users" do
@@ -23,6 +23,10 @@ end
   post "/users" do
     user = User.create(name:params[:name], age:params[:age])
     user.to_json
+  end
+
+  get "/products" do
+    Product.all.to_json
   end
 
 end

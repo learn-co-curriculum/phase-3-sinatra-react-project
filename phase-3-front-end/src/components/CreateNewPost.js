@@ -7,11 +7,12 @@ function CreateNewPost(){
     const [body, setBody] = useState('')
     const [name, setName] = useState('')
     const [genre, setGenre] = useState('')
-    const [userId, setUserId] = useState(0)
+    const [userId, setUserId] = useState('')
+    
     
 
 
-
+ 
     
 
 
@@ -23,14 +24,11 @@ function CreateNewPost(){
             headers: {"content-type": "application/json"},
             body: JSON.stringify(post)
         })
-
-        setBody('')
-        setTitle('')
-        setGenre('')
-        setUserId(0)
-        setName('')
+        
+        
     }
     
+
 
     return(
         <div>
