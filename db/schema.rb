@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_31_174641) do
+ActiveRecord::Schema.define(version: 2022_05_31_194356) do
+
+  create_table "galaxies", force: :cascade do |t|
+    t.string "galaxy_name"
+  end
 
   create_table "regions", force: :cascade do |t|
     t.string "region_name"
@@ -19,11 +23,13 @@ ActiveRecord::Schema.define(version: 2022_05_31_174641) do
     t.string "weather"
     t.string "prominent_species"
     t.integer "population"
+    t.integer "world_id"
   end
 
   create_table "worlds", force: :cascade do |t|
     t.string "name_of_world"
     t.integer "discovered_year"
+    t.integer "galaxy_id"
   end
 
 end

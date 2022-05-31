@@ -7,6 +7,7 @@ class CreateRegions < ActiveRecord::Migration[6.1]
       t.string :weather
       t.string :prominent_species
       t.integer :population
+      t.integer :world_id
     end
   end
 end
