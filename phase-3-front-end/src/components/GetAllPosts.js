@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 function GetAllPosts(){
 
     const [posts, setPosts] = useState([])
+    const [allProducts, setAllProducts] = useState([])
     
     
 
@@ -10,6 +11,12 @@ function GetAllPosts(){
         fetch("http://localhost:9292/posts")
         .then(res => res.json())
         .then(data => setPosts(data))
+    },[])
+
+    useEffect(() => {
+        fetch("http://localhost:9292/products")
+        .then(res => res.json())
+        .then(products => setAllProducts(products))
     },[])
 
     // function handleDeletePost(id){
@@ -21,6 +28,15 @@ function GetAllPosts(){
     //         setPosts(posts.filter(t => t.id !== deletedPost.id))
     //     })
     // }
+   const newProducts = allProducts.map(product => {
+       return(
+       <div key={product.id} >
+           <h1>{product.name}</h1>
+           <p>{product.description}</p>
+           <p>{product.price}</p>
+       </div>
+       )
+   })
 
    const newPosts = posts.map(post => {
        return (
@@ -48,7 +64,10 @@ function GetAllPosts(){
         //     </div>
         //     )
         // })}</div>
-        <div>{newPosts}</div>
+        <div>
+        <p>{newPosts}</p>
+        <p>{newProducts}</p>
+        </div>
     )
 }
 

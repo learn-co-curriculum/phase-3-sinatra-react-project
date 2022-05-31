@@ -28,5 +28,8 @@ end
   get "/products" do
     Product.all.to_json
   end
+  post "/products" do
+    product = Product.create(name:params[:name],description:params[:description],price:params[:price])
+  end
 
 end
