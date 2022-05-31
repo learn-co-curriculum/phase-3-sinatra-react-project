@@ -3,7 +3,9 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/" do
-    { message: "Good luck with your project!" }.to_json
+    # world = Region.all
+    # world.to_json
+    {hello: "World"}.to_json
   end
 
 end
