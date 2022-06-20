@@ -6,4 +6,15 @@ class ApplicationController < Sinatra::Base
     { message: "Good luck with your project!" }.to_json
   end
 
+  get "/students" do
+    students = Student.all
+    students.to_json
+  end
+
+  get "/students/:id" do
+    student = Student.find(params[:id])
+    student.to_json
+  end
+
+
 end
