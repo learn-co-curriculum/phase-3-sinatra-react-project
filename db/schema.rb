@@ -10,24 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_19_020049) do
+ActiveRecord::Schema.define(version: 2022_06_21_175826) do
 
   create_table "drinks", force: :cascade do |t|
     t.string "name"
-    t.string "drink_img"
+    t.string "image"
   end
 
   create_table "emojis", force: :cascade do |t|
     t.string "feeling"
-    t.string "emoji_img"
-    t.integer "student_id"
-    t.integer "drink_id"
+    t.string "icon"
   end
 
-  create_table "students", force: :cascade do |t|
-    t.string "name"
-    t.string "profile_img"
-    t.string "feeling"
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "image"
+    t.integer "emoji_id"
+    t.integer "drink_id"
   end
 
 end

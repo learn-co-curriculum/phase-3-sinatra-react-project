@@ -1,4 +1,4 @@
 class Drink < ActiveRecord::Base
-    has_many :emojis
-    has_many :students, through: :emojis
+    has_many :users
+    has_many :emojis, through: :users
 end
