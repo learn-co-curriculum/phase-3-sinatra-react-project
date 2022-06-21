@@ -16,5 +16,4 @@ class ApplicationController < Sinatra::Base
     student.to_json
   end
 
-
 end
