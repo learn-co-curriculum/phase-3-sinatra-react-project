@@ -10,15 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_06_21_175826) do
 
   create_table "drinks", force: :cascade do |t|
     t.string "name"
     t.string "image"
+=======
+ActiveRecord::Schema.define(version: 2022_06_19_020049) do
+
+  create_table "drinks", force: :cascade do |t|
+    t.string "name"
+    t.string "drink_img"
+>>>>>>> be510aa (setup backend)
   end
 
   create_table "emojis", force: :cascade do |t|
     t.string "feeling"
+<<<<<<< HEAD
     t.string "icon"
   end
 
@@ -29,4 +38,17 @@ ActiveRecord::Schema.define(version: 2022_06_21_175826) do
     t.integer "drink_id"
   end
 
+=======
+    t.string "emoji_img"
+    t.integer "student_id"
+    t.integer "drink_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.string "profile_img"
+    t.string "feeling"
+  end
+
+>>>>>>> be510aa (setup backend)
 end
