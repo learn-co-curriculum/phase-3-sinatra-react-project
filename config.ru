@@ -1,6 +1,7 @@
 require_relative "./config/environment"
 
 require_relative './app/controllers/neighborhood_controller'
+require_relative './app/controllers/location_controller'
 require_relative './app/controllers/household_controller'
 require_relative './app/controllers/member_controller'
 require_relative './app/controllers/application_controller'
@@ -19,6 +20,7 @@ use Rack::JSONBodyParser
 # Our application
 run ApplicationController
 use NeighborhoodController
+use LocationController
 use HouseholdController
 use MemberController
 
