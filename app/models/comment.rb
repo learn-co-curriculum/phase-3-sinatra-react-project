@@ -1,4 +1,3 @@
 class Comment < ActiveRecord::Base
-belongs_to :cheese
-
+    belongs_to :cheese
 end
