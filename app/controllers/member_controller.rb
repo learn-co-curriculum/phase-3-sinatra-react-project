@@ -1,10 +1,5 @@
 class MemberController < ApplicationController
 
-  # get all members of a household
-  # create a member
-  # update a member
-  # delete a member
-
   get '/members' do
     members = Member.all
     if params[:household_id]
@@ -14,13 +9,19 @@ class MemberController < ApplicationController
     members.to_json
   end
 
+  get '/members/:id' do
+    member = Member.find(params[:id])
+    member.to_json
+  end
+
+
   post '/members' do
     member = Member.new({
-                          first_name: params["firstName"],
-                          last_name: params["lastName"],
+                          first_name: params["first_name"],
+                          last_name: params["last_name"],
                           age: params["age"],
-                          profession: params["profession"]
-
+                          profession: params["profession"],
+                          household_id: params["household_id"]
                         })
     if  member.save
       member.to_json
@@ -29,9 +30,22 @@ class MemberController < ApplicationController
     end
   end
 
-  # get '/members/:id' do
-  #   members = Member.all.select {|m| m.household_id === params[id]}
-  # end
 
+  delete '/members/:id' do
+    member = Member.find(params[:id])
+    member.destroy
+    member.to_json
+  end
+
+  patch '/members/:id' do
+    member = Member.find(params[:id])
+    member.update(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      age: params[:age],
+      profession: params[:profession]
+    )
+    member.to_json
+  end
 
 end

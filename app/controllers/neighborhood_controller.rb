@@ -5,7 +5,7 @@ class NeighborhoodController < ApplicationController
 
   get '/neighborhoods' do
     neighborhoods = Neighborhood.all
-    neighborhoods.to_json(include: {locations: { include: :household } })
+    neighborhoods.to_json
   end
 
   post '/neighborhoods' do
@@ -21,7 +21,7 @@ class NeighborhoodController < ApplicationController
 
   get '/neighborhoods/:id' do
     neighborhood = Neighborhood.find(params[:id])
-    neighborhood.to_json(include: {locations: { include: :household } })
+    neighborhood.to_json(include: {locations: { include: {household: {include: :members }}} })
   end
 
 end

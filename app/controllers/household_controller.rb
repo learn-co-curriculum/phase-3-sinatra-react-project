@@ -26,7 +26,7 @@ class HouseholdController < ApplicationController
 
   get '/households/:id' do
     household = Household.find(params[:id])
-    household.to_json
+    household.to_json(include: [:locations, :members])
   end
 
 end
