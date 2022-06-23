@@ -7,4 +7,12 @@ require 'bundler/setup'
 Bundler.require(:default, ENV['RACK_ENV'])
 
 # Require in all files in 'app' directory
+
+def reload
+    Dir.glob('app/models/*').each do |file_name|
+        load file_name
+    end
+    puts 'files reloaded'
+end
+
 require_all 'app'
