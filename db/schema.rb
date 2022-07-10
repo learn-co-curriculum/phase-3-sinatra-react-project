@@ -12,4 +12,21 @@
 
 ActiveRecord::Schema.define(version: 2022_07_10_172940) do
 
+  create_table "days", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "dishes", force: :cascade do |t|
+    t.string "name"
+    t.string "food"
+    t.integer "day_id"
+    t.integer "meal_id"
+  end
+
+  create_table "meals", force: :cascade do |t|
+    t.integer "time"
+    t.string "name"
+    t.string "tod"
+  end
+
 end
