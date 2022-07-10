@@ -9,12 +9,12 @@ Day.create(name: "Saturday")
 Day.create(name: "Sunday")
 
 
-Meal.create(time: 8, type: "Breakfast")
-Meal.create(time: 12, type: "Lunch")
-Meal.create(time: 7, type: "Dinner")
-Meal.create(time: 10, type: "Snack")
-Meal.create(time: 3, type: "Snack")
-Meal.create(time: 9, type: "Snack")
+Meal.create(time: 8, tod: "am" name: "Breakfast")
+Meal.create(time: 12, tod: "pm" name: "Lunch")
+Meal.create(time: 7, tod: "pm" name: "Dinner")
+Meal.create(time: 10, tod: "am" name: "Snack")
+Meal.create(time: 3, tod: "pm" name: "Snack")
+Meal.create(time: 9, tod: "pm" name: "Snack")
 # Seed your database here
 
 puts "✅ Done seeding!"
