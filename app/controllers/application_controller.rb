@@ -71,7 +71,7 @@ class ApplicationController < Sinatra::Base
     dish = Dish.create(
       food: params[:food],
       name: params[:name],
-      day_id: params[:day_id]
+      day_id: params[:day_id],
       meal_id: params[:meal_id]
     )
     dish.to_json
