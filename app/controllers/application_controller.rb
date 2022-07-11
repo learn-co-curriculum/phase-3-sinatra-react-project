@@ -41,8 +41,8 @@ class ApplicationController < Sinatra::Base
   post '/animals' do
       animal = Animal.create(
         name: params[:name],
-        sighted?: params[:sighted?],
-        extinct?: params[:extinct?]
+        sighted: params[:sighted],
+        extinct: params[:extinct]
       )
       habitat.to_json
   end
@@ -50,7 +50,7 @@ class ApplicationController < Sinatra::Base
   patch '/animal/:id' do
     animal = Animal.find(params[:id])
     animal.update(
-      sighted?: params[:sighted?]
+      sighted: params[:sighted]
     )
     animal.to_json
   end
