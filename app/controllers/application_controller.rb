@@ -2,6 +2,10 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   # Add your routes here
+  get '/' do 
+    habitats = Habitat.all
+    habitats.to_json(include: {sightings: {include: :animal}})
+  end
 
   get '/habitats' do 
     habitats = Habitat.all
