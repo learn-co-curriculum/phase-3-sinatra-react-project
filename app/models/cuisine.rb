@@ -1,4 +1,3 @@
-class Cuisines < ActiveRecord::Base
-    has_many :restaurants
-
-end 
+class Cuisine < ActiveRecord::Base
+  has_many :restaurants
+end
