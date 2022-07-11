@@ -5,5 +5,8 @@ class Restaurant < ActiveRecord::Base
     has_many :ratings
     belongs_to :cuisine
 
-
+    def average_rating
+        totalratings = self.ratings.sum(:rating)
+        totalratings / self.ratings.length
+    end
 end 
