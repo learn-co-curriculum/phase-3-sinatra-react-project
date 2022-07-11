@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2022_07_11_192010) do
   end
 
   create_table "rounds", force: :cascade do |t|
-    t.datetime "round_date"
+    t.date "round_date"
     t.integer "player_id"
   end
 
