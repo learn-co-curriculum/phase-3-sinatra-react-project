@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// Create a form that allows me to "POST" new blog posts to
-// the database.
-
-// Needs to be able to also "DELETE" an individual post.
 
 function CreateNewPost() {
   const [title, setTitle] = useState("");
