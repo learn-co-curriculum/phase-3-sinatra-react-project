@@ -52,3 +52,4 @@ group :test do
 end
 
 gem "seed" 
+gem "faker"
