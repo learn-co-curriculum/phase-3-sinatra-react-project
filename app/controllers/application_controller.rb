@@ -26,6 +26,31 @@ class ApplicationController < Sinatra::Base
     meal.to_json
   end
 
+  delete "/meals/:id" do
+    meal = Meal.find(params[:id])
+    meal.destroy
+    meal.to_json
+  end
+
+  patch "/meals/:id" do
+    meal = Meal.find(params[:id])
+    meal.update(
+      time: params[:time],
+      name: params[:name],
+      tod: params[:tod]
+    )
+    meal.to_json
+  end
+
+  post "/meals/:id" do
+    meal = Meal.create(
+      time: params[:time],
+      name: params[:name],
+      tod: params[:tod]
+    )
+    meal.to_json
+  end
+
   get "/dishes" do
     dishes = Dish.all
     dishes.to_json
@@ -33,6 +58,22 @@ class ApplicationController < Sinatra::Base
 
   get "/dishes/:id" do
     dish = Dish.find(params[:id])
+    dish.to_json
+  end
+
+  delete "/dishes/:id" do
+    dish = Dish.find(params[:id])
+    dish.destroy
+    dish.to_json
+  end
+
+  post "/dishes/:id" do
+    meal = dish.create(
+      food: params[:food],
+      name: params[:name],
+      day_id: params[:day_id]
+      meal_id: params[:meal_id]
+    )
     dish.to_json
   end
 end
