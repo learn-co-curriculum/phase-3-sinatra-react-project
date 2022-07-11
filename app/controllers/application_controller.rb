@@ -68,7 +68,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/dishes/:id" do
-    meal = dish.create(
+    dish = Dish.create(
       food: params[:food],
       name: params[:name],
       day_id: params[:day_id]
