@@ -14,7 +14,7 @@ Restaurant.create(
   delivery_time: 45,
   display_image_url:
     "https://media.istockphoto.com/photos/close-up-photo-of-steak-picture-id1174657393?k=20&m=1174657393&s=612x612&w=0&h=UmLstY7GpqLUDexV_A7S5XfcO4O0cD5Ai-9WBuZdqFk=",
-  price: 2
+  price_gauge: 2
 )
 Restaurant.create(
   name: "Bertha's Diner",
@@ -22,7 +22,7 @@ Restaurant.create(
   delivery_time: 50,
   display_image_url:
     "https://media.istockphoto.com/photos/theres-enough-place-for-everyone-picture-id956025576?k=20&m=956025576&s=612x612&w=0&h=eOJk_kONwXlJg1gFQbmnI-XZdTsV3OTSqUpNpoQ4QO4=",
-  price: 1
+  price_gauge: 1
 )
 Restaurant.create(
   name: "India Jones",
@@ -30,7 +30,7 @@ Restaurant.create(
   delivery_time: 30,
   display_image_url:
     "https://media.istockphoto.com/photos/indian-thali-indian-food-picture-id464597982?k=20&m=464597982&s=612x612&w=0&h=ktqyfjPcpw5Ehs7YQCAnrUNOC9jqyNdxU7vJ6Wa15Rs=",
-  price: 2
+  price_gauge: 2
 )
 Restaurant.create(
   name: "Naan Starter",
@@ -38,7 +38,7 @@ Restaurant.create(
   delivery_time: 25,
   display_image_url:
     "https://media.istockphoto.com/photos/vegan-sweet-potato-chickpea-curry-in-wooden-bowl-on-light-background-picture-id953638668?k=20&m=953638668&s=612x612&w=0&h=VWILbVNicUpPtAd4-2AfhTzlVoHF5cGVtHtSMJiym70=",
-  price: 3
+  price_gauge: 3
 )
 Restaurant.create(
   name: "Thai Me Up",
@@ -46,7 +46,7 @@ Restaurant.create(
   delivery_time: 33,
   display_image_url:
     "https://media.istockphoto.com/photos/floating-market-thailand-picture-id944871842?k=20&m=944871842&s=612x612&w=0&h=uCtUQ5Bi7Grs5z02sJHQdy2SPIdVeAIbW-huWj-bn4U=",
-  price: 1
+  price_gauge: 1
 )
 Restaurant.create(
   name: "Thai Tanic",
@@ -54,7 +54,7 @@ Restaurant.create(
   delivery_time: 55,
   display_image_url:
     "https://media.istockphoto.com/photos/thai-green-curry-picture-id1140580445?k=20&m=1140580445&s=612x612&w=0&h=I8W4G28Ff4Fp_MtgfE7h8OCfPLrkKJgp8-HAw2--jlw=",
-  price: 4
+  price_gauge: 4
 )
 Restaurant.create(
   name: "Tequila Mockingbird",
@@ -62,7 +62,7 @@ Restaurant.create(
   delivery_time: 20,
   display_image_url:
     "https://media.istockphoto.com/photos/tequila-with-lime-picture-id1134229698?k=20&m=1134229698&s=612x612&w=0&h=CxEjaj6dbHVb4KcGrRowtGWbDmlPFVuj_nWw-6oCf7g=",
-  price: 2
+  price_gauge: 2
 )
 Restaurant.create(
   name: "Mexillent",
@@ -70,7 +70,7 @@ Restaurant.create(
   delivery_time: 40,
   display_image_url:
     "https://media.istockphoto.com/photos/row-of-mexican-street-tacos-on-slate-with-carne-asada-and-al-pastor-picture-id1250133101?k=20&m=1250133101&s=612x612&w=0&h=c6UQoXkXGN9DVUdeX2_1AduRw2FcegiC6xz5fezckDU=",
-  price: 3
+  price_gauge: 3
 )
 Restaurant.create(
   name: "Spec-taco-lar",
@@ -78,7 +78,7 @@ Restaurant.create(
   delivery_time: 30,
   display_image_url:
     "https://media.istockphoto.com/photos/tamale-with-corn-leaf-and-filled-chili-pepper-picture-id913677844?k=20&m=913677844&s=612x612&w=0&h=G5I0YSBJhmw7lnUZjpAjM0dNP_VnOs1Uui48U9L0NOs=",
-  price: 3
+  price_gauge: 3
 )
 Restaurant.create(
   name: "Pre-Pasta-rous",
@@ -86,7 +86,7 @@ Restaurant.create(
   delivery_time: 22,
   display_image_url:
     "https://media.istockphoto.com/photos/pasta-plate-picture-id632439546?k=20&m=632439546&s=612x612&w=0&h=pkj0ywccJNs8YChKc188E_sIxeO_ENpF0dnvQkQOBqo=",
-  price: 2
+  price_gauge: 2
 )
 Restaurant.create(
   name: "Pasta La Vista",
@@ -94,7 +94,7 @@ Restaurant.create(
   delivery_time: 18,
   display_image_url:
     "https://media.istockphoto.com/photos/ravioli-with-tomato-sauce-picture-id184637819?k=20&m=184637819&s=612x612&w=0&h=l-hSfmKTDfeVJGG4T7I9Qlpnkh-zks3CY2CMuCoQg0U=",
-  price: 5
+  price_gauge: 5
 )
 
 puts "Creating Ratings"
