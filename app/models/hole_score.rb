@@ -1,3 +1,4 @@
-class HoleScores < ActiveRecord::Base
+class HoleScore < ActiveRecord::Base
+    belongs_to :round
     
 end
