@@ -5,8 +5,7 @@ class ApplicationController < Sinatra::Base
 
   get '/habitats' do 
     habitats = Habitat.all
-    habitats.to_json
-    ##habitats.to_json(include: {sightings: {include: :animals}})
+    habitats.to_json(include: {sightings: {include: :animal}})
   end
 
   post '/habitats' do
