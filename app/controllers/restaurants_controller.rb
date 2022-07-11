@@ -2,7 +2,7 @@ class RestaurantsController < ApplicationController
     get "/restaurants" do
         if params.include?("include_review")
             #can we get this to return most recent review based on time?
-            Restaurant.includes(:reviews).first.to_json
+            Restaurant.all.to_json(include: :reviews)
         else 
             Restaurant.all.to_json
         end
