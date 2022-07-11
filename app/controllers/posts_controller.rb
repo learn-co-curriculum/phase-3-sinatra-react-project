@@ -3,9 +3,7 @@ class PostsController < ApplicationController
         Post.all.to_json()
     end
 
-    # get "/posts/:post_id/user" do
-    #     Post.find_by_id(params['id'])
-    # end
+   
     delete '/posts/:id' do
         Post.find(params[:id]).destroy
        
