@@ -33,10 +33,10 @@ player3 = Player.create(username: "Kiran")
 
 puts "Creating Rounds..."
 
-round1 = Round.create(round_date: 05/10/22, player_id: player1.id)
-round2 = Round.create(round_date: 05/15/22, player_id: player1.id)
-round3 = Round.create(round_date: 05/10/22, player_id: player2.id)
-round4 = Round.create(round_date: 05/15/22, player_id: player2.id)
+round1 = Round.create(round_date: 20220510, player_id: player1.id)
+round2 = Round.create(round_date: 20220515, player_id: player1.id)
+round3 = Round.create(round_date: 20220510, player_id: player2.id)
+round4 = Round.create(round_date: 20220515, player_id: player2.id)
 
 
 puts "Creating HoleScores..."
