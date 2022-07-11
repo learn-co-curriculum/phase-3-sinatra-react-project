@@ -34,7 +34,7 @@ class ApplicationController < Sinatra::Base
   # database.
 
   get '/animals' do 
-      animals = Animal.all.order("created_at ASC")
+      animals = Animal.all
       animals.to_json
   end
 
