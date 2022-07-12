@@ -4,6 +4,7 @@ backend for sinatra-react fullstack app
 START SERVER
 
     RUN  #bundle exec rake db:migrate
+    RUN  #bundle exec rake db:seed
     RUN  #bundle exec rake server
 
 
