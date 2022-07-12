@@ -1,5 +1,3 @@
-require 'pry'
-
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
@@ -47,16 +45,19 @@ class ApplicationController < Sinatra::Base
   order.to_json
   end
 
-#Delete a specific order and all items in the order
-# delete "/orders/:order_id/delete" do
-#   order = 
-# end
-
 #Delete an item in the cart
   delete "/orders/:order_id/ordered_item/:item_id/delete" do
     item = OrderedItem.find(params[:item_id])
     item.destroy
     item.to_json
+  end
+
+#Delete a specific order and all items in the order
+  delete "/orders/:order_id/delete" do
+    order = Order.find(params[:order_id])
+    order.ordered_items.destroy_all
+    order.destroy
+    order.to_json
   end
 
 end
