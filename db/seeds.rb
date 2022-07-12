@@ -17,8 +17,12 @@ end
 
 puts 'making friends'
 User.all.each do |user|
-  rand(1..10).times do
-    Friend.create(user_id: user.id, friend_id: User.where.not(id: user.id).ids.sample)
+  rand(1..5).times do
+    exclude_list = user.followers.ids
+    exclude_list << user.id
+    # puts 'excluding ', exclude_list.join(',').to_s
+    available_friends = User.where.not(id: exclude_list)
+    Friend.create(followee_id: user.id, follower_id: available_friends.ids.sample) if available_friends.count > 0
   end
 end
 
