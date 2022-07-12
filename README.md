@@ -62,19 +62,10 @@ $ bundle exec rake server
 This will run your server on port
 [http://localhost:9292](http://localhost:9292).
 
-### Frontend Setup
+## Project Idea
 
-Create a new repository in a **separate folder** with a React app for your
-frontend. `cd` out of the backend project directory, and use
-[create-react-app][] to generate the necessary code for your React frontend:
-
-```console
-$ npx create-react-app my-app-frontend
-```
-
-After creating the project locally, you should also
-[create a repository on GitHub][create repo] to host your repo and help
-collaborate, if you're working with a partner.
+This project was inspired by the application "after-school", an app where
+anyone can post,edit or delete anyones post. the user creates a username and anyone can use that name to create a post with that username!
 
 ## Resources
 
