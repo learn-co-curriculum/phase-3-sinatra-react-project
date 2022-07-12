@@ -10,17 +10,20 @@ class ReviewsController < ApplicationController
             Review.all.to_json
         end
     end
+    get "/reviews/:id" do
+        find_review
+        @review.to_json
+    end
     patch "/reviews/:id" do
         find_review
         #use private method to grab only acceptable params
         @review.update(review_params)
-        
     end
-    post ".reviews/:id" do 
+    post "/reviews/:id" do 
         review = Review.create(review_params)
         review.to_json
     end
-    delete "./reviews/:id" do
+    delete "/reviews/:id" do
         find_review
         Review.delete(@review)
     end

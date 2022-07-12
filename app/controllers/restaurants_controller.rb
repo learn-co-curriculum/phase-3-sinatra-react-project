@@ -14,7 +14,7 @@ class RestaurantsController < ApplicationController
     end
     get "/restaurants/:id" do 
         find_restaurant
-        @restaurant.includes(:reviews).to_json
+        @restaurant.to_json({include: :reviews})
     end
     private 
     def find_restaurant
