@@ -51,6 +51,11 @@ class ApplicationController < Sinatra::Base
     meal.to_json
   end
 
+  get "/dishes/:id/meal" do
+    meal = Dish.find(params[:id]).meal
+    meal.to_json
+  end
+    
   get "/dishes" do
     dishes = Dish.all
     dishes.to_json
@@ -76,4 +81,16 @@ class ApplicationController < Sinatra::Base
     )
     dish.to_json
   end
-end
+    patch "/dishes/:id" do
+      dish = Dish.find(params[:id])
+      dish.update(dish_params)
+      dish.to_json
+    end
+
+    def dish_params
+      allowed_params = %w()
+      params.select { |k,v| allowed_params.include?(k) }
+    end
+ 
+  
+  end

@@ -26,5 +26,5 @@ puts "✅ Done seeding!"
 
 
 
-
+#need to manually seed for dish images
 #Faker::Food.description /// Faker::Food.dish
