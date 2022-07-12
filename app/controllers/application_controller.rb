@@ -3,8 +3,8 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/restaurants" do
-    restaurants = Restaurant.all.order(:name)
-    restaurants.to_json(include: :ratings)
+    restaurants = Restaurant.serialize_restaurants
+    restaurants.to_json
   end
 
   get"/restaurants/:id" do
