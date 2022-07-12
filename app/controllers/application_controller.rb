@@ -6,4 +6,19 @@ class ApplicationController < Sinatra::Base
     { message: "Good luck with your project!" }.to_json
   end
 
+  get "/players" do
+    player = Player.all
+    player.to_json
+  end
+
+  get "/rounds" do
+    round = Round.all
+    round.to_json
+  end
+
+  get "/hole_scores" do
+    hole_score = HoleScore.all
+    hole_score.to_json
+  end
+
 end
