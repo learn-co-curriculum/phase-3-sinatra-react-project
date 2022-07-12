@@ -38,6 +38,13 @@ gem "require_all", "~> 3.0"
 group :development do
   gem "pry", "~> 0.14.1"
 
+  # Used to generate seed data
+  # https://github.com/faker-ruby/faker
+  gem "faker", "~> 2.18"
+  
+  # This gem allows resetting the id of an AR table to 0. It is useful after a delete_all command.
+  gem 'activerecord-reset-pk-sequence'
+
   # Automatically reload when there are changes
   # https://github.com/alexch/rerun
   gem "rerun"
@@ -50,3 +57,9 @@ group :test do
   gem "rspec", "~> 3.10"
   gem "rspec-json_expectations", "~> 2.2"
 end
+
+# which allows access to a method called “has_secure_password”. This allows our application to be protected against hacking attempts and helps us authenticate our user.
+gem 'bcrypt', '~> 3.1.7'
+
+# A Sinatra extension for setting and showing Rails-like flash messages. 
+gem 'sinatra-flash', '~> 0.3.0'
