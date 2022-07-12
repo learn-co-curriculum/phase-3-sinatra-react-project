@@ -6,12 +6,14 @@ GEM
     activerecord (6.1.4)
       activemodel (= 6.1.4)
       activesupport (= 6.1.4)
+    activerecord-reset-pk-sequence (0.2.1)
     activesupport (6.1.4)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    bcrypt (3.1.18)
     coderay (1.1.3)
     concurrent-ruby (1.1.9)
     daemons (1.4.0)
@@ -23,6 +25,8 @@ GEM
     database_cleaner-core (2.0.1)
     diff-lcs (1.4.4)
     eventmachine (1.2.7)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     ffi (1.15.3)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
@@ -75,6 +79,8 @@ GEM
     sinatra-activerecord (2.0.23)
       activerecord (>= 4.1)
       sinatra (>= 1.0)
+    sinatra-flash (0.3.0)
+      sinatra (>= 1.0.0)
     sqlite3 (1.4.2)
     thin (1.8.1)
       daemons (~> 1.0, >= 1.0.9)
@@ -87,10 +93,14 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-linux
 
 DEPENDENCIES
   activerecord (~> 6.1)
+  activerecord-reset-pk-sequence
+  bcrypt (~> 3.1.7)
   database_cleaner (~> 2.0)
+  faker (~> 2.18)
   pry (~> 0.14.1)
   rack-contrib (~> 2.3)
   rack-cors (~> 1.1)
@@ -102,6 +112,7 @@ DEPENDENCIES
   rspec-json_expectations (~> 2.2)
   sinatra (~> 2.1)
   sinatra-activerecord (~> 2.0)
+  sinatra-flash (~> 0.3.0)
   sqlite3 (~> 1.4)
   thin (~> 1.8)
 
