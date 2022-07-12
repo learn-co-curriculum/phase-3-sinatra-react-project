@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_11_215833) do
+ActiveRecord::Schema.define(version: 2022_07_12_224357) do
 
   create_table "business_hours", force: :cascade do |t|
     t.integer "restaurant_id"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2022_07_11_215833) do
   create_table "menu_items", force: :cascade do |t|
     t.integer "restaurant_id"
     t.integer "price"
-    t.boolean "is_special?"
+    t.boolean "is_special"
     t.integer "item_id"
   end
 
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2022_07_11_215833) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.boolean "completed?"
+    t.boolean "is_completed"
     t.integer "restaurant_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
