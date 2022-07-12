@@ -13,11 +13,11 @@ class ReviewsController < ApplicationController
     patch "/reviews/:id" do
         find_review
         #use private method to grab only acceptable params
-        @review.update(params)
+        @review.update(review_params)
         
     end
     post ".reviews/:id" do 
-        review = Review.create(params)
+        review = Review.create(review_params)
         review.to_json
     end
     delete "./reviews/:id" do
@@ -25,6 +25,10 @@ class ReviewsController < ApplicationController
         Review.delete(@review)
     end
     private 
+    def review_params
+        allowed_params = %w(comment score user_id restaurant_id) 
+        params.select { |k,v| allowed_params.include?(k) }
+    end
 
     def find_review
         @review = Review.find([params[:id]])
