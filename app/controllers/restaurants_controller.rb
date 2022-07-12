@@ -8,11 +8,11 @@ class RestaurantsController < ApplicationController
         end
     end
     get "/restaurants/:id" do 
-        find_restaurnt
+        find_restaurant
         @restaurant.includes(:reviews).to_json
     end
     private 
-    def find_restaurnt
+    def find_restaurant
         @restaurant = Restaurant.find(params[:id])
     end
 end
