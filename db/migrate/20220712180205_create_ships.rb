@@ -4,8 +4,6 @@ class CreateShips < ActiveRecord::Migration[6.1]
       t.string "name"
       t.integer "character1_id"
       t.integer "character2_id"
-      t.integer "character3_id"
-      t.integer "character4_id"
     end
   end
 end
