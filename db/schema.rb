@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_11_150824) do
+ActiveRecord::Schema.define(version: 2022_07_12_172818) do
 
   create_table "matches", force: :cascade do |t|
     t.boolean "swipe_user"
@@ -31,6 +31,12 @@ ActiveRecord::Schema.define(version: 2022_07_11_150824) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.integer "age"
+    t.string "gender"
+    t.string "sexuality"
+    t.string "location"
+    t.text "info"
+    t.text "image"
   end
 
 end
