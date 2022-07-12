@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2022_07_10_172940) do
     t.string "food"
     t.integer "day_id"
     t.integer "meal_id"
+    t.string "img"
   end
 
   create_table "meals", force: :cascade do |t|

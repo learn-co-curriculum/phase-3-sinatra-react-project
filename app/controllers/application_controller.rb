@@ -77,7 +77,8 @@ class ApplicationController < Sinatra::Base
       food: params[:food],
       name: params[:name],
       day_id: params[:day_id],
-      meal_id: params[:meal_id]
+      meal_id: params[:meal_id],
+      img: params[:img]
     )
     dish.to_json
   end

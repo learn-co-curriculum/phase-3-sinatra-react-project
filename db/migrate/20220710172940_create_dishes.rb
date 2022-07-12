@@ -5,6 +5,7 @@ class CreateDishes < ActiveRecord::Migration[6.1]
       t.string :food
       t.integer :day_id
       t.integer :meal_id
+      t.string :img
 
     end
   end
