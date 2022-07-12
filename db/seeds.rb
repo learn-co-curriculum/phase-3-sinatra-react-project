@@ -1,24 +1,25 @@
 puts 'Cleaning up...'
 User.destroy_all
+User.reset_pk_sequence
 Restaurant.destroy_all
+Restaurant.reset_pk_sequence
 Review.destroy_all
+Review.reset_pk_sequence
 Friend.destroy_all
+Friend.reset_pk_sequence
 
 puts '🌱 Seeding database...'
 puts 'creating users'
 60.times do
-  name = Faker::Name.name
+  name = Faker::Name.unique.name
   User.create(name: name, email: Faker::Internet.email(name: name, separators: '_'))
 end
 
 puts 'making friends'
 User.all.each do |user|
-  # puts "Creating friends for user #{user.id}: "
   rand(1..10).times do
     Friend.create(user_id: user.id, friend_id: User.where.not(id: user.id).ids.sample)
-    # print " #{User.ids.sample} "
   end
-  # puts ''
 end
 
 puts 'listing restaurants'
