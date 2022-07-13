@@ -12,6 +12,11 @@ class ApplicationController < Sinatra::Base
     habitats.to_json(include: {sightings: {include: :animal}})
   end
 
+  get '/habitats/:id' do
+    habitat = Habitat.all.find(params[:id])
+    habitat.to_json(include: {sightings: {include: :animal}})
+  end
+
   post '/habitats' do
     habitat = Habitat.create(
       name: params[:name]
