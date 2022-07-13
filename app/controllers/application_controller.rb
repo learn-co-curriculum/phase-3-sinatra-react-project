@@ -41,7 +41,7 @@ class ApplicationController < Sinatra::Base
 
   get '/animals' do 
       animals = Animal.all
-      animals.to_json
+      animals.to_json(include: {sightings: {include: :habitat}})
   end
 
   post '/animals' do
@@ -50,7 +50,7 @@ class ApplicationController < Sinatra::Base
         sighted: params[:sighted],
         extinct: params[:extinct]
       )
-      habitat.to_json
+      habitat.to_json(include: {sightings: {include: :habitat}})
   end
 
   patch '/animal/:id' do
@@ -58,13 +58,13 @@ class ApplicationController < Sinatra::Base
     animal.update(
       sighted: params[:sighted]
     )
-    animal.to_json
+    animal.to_json(include: {sightings: {include: :habitat}})
   end
 
   delete '/animal/:id' do
     animal = Animal.find(params[:id])
     animal.destroy
-    animal.to_json
+    animal.to_json(include: {sightings: {include: :habitat}})
   end
 
   get '/sightings' do
