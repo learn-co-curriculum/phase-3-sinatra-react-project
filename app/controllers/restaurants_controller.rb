@@ -13,6 +13,7 @@ class RestaurantsController < ApplicationController
       # set = friends.reviews.restaurants.id
       # Restaurant.all.where(id inside set).tojson(methods)
     end
+
     methods.merge!({ methods: :average_score })
     Restaurant.all.to_json(methods)
   end
@@ -20,10 +21,17 @@ class RestaurantsController < ApplicationController
     find_restaurant
     @restaurant.to_json({ include: :reviews, methods: :average_score })
   end
-
-  private
-
-  def find_restaurant
-    @restaurant = Restaurant.find(params[:id])
-  end
+    post "/restaurants" do {
+        restaurant = Restaurant.create(restaurant_params)
+        restaurant.to_json
+    }
+    private 
+    def restaurant_params
+        allows_params = %(name description category img)
+        params.select {|k,v| allowed_params.include(k)}
+    end
+    def find_restaurant
+        @restaurant = Restaurant.find(params[:id])
+    end
 end
+
