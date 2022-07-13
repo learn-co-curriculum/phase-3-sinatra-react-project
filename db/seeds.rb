@@ -1,18 +1,37 @@
+require "faker"
+
+file = File.read('./db/db.json')
+db = JSON.parse(file)
+
+# puts "Cleaning up..."
+
 puts "🌱 Seeding spices..."
 
-puts "Creating Character1s..."
-char1 = Character1.create(name: Faker::Name.name)
-char2 = Character1.create(name: Faker::Name.name)
-char3 = Character1.create(name: Faker::Name.name)
+db['characters'].each do |character|
+  puts character
+  Character1.create(name: character['name'], gender: character['gender'], description: character['desc'], imageURL: character['character_image'], anime_name: character['anime_name'], anime_imageURL: character['anime_image'])
+end
 
-puts "Creating Character2s..."
-charA = Character2.create(name: Faker::Name.name)
-charB = Character2.create(name: Faker::Name.name)
-charC = Character2.create(name: Faker::Name.name)
+puts "Character1s done!"
 
-puts "Creating Ships..."
-ship1 = Ship.create(Character1_id: 1, Character2_id: 1, comment:"it works...")
-ship2 = Ship.create(Character1_id: 2, Character2_id: 2, comment:"the best!")
-ship3 = Ship.create(Character1_id: 3, Character2_id: 3, comment:"terrible")
+db['characters'].each do |character|
+  puts character
+  Character2.create(name: character['name'], gender: character['gender'], description: character['desc'], imageURL: character['character_image'], anime_name: character['anime_name'], anime_imageURL: character['anime_image'])
+end
+
+puts "Character2s done!"
+
+80.times do
+  Ship.create(name: Faker::Dessert.variety, character1_id: Character1.all.sample.id, character2_id: Character2.all.sample.id)
+end
+
+puts "Ships done!"
+
+50.times do
+  Comment.create(name: Faker::Name.first_name, comment: Faker::TvShows::Community.quotes , ship_id: Ship.all.sample.id)
+end
+
+puts "Comments done!"
 
 puts "✅ Done seeding!"
+
