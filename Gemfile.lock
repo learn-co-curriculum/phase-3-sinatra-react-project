@@ -14,6 +14,7 @@ GEM
     activerecord (6.1.6)
       activemodel (= 6.1.6)
       activesupport (= 6.1.6)
+    activerecord-reset-pk-sequence (0.2.1)
     activesupport (6.1.6)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
@@ -75,6 +76,7 @@ GEM
       rspec-support (~> 3.11.0)
     rspec-support (3.11.0)
     ruby2_keywords (0.0.5)
+    seed (1.1.3)
     sinatra (2.2.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
@@ -100,6 +102,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (~> 6.1)
+  activerecord-reset-pk-sequence
   database_cleaner (~> 2.0)
   faker!
   pry (~> 0.14.1)
@@ -111,6 +114,7 @@ DEPENDENCIES
   rerun
   rspec (~> 3.10)
   rspec-json_expectations (~> 2.2)
+  seed
   sinatra (~> 2.1)
   sinatra-activerecord (~> 2.0)
   sqlite3 (~> 1.4)
