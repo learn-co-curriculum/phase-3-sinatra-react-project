@@ -3,18 +3,17 @@ class LogsController < ApplicationController
     get "/logs" do
         # binding.pry
         # find the current user by finding the user with the id that is stored in session[:id]
-        @user = User.find(session[:id])
+        @user = current_user
         # find all the logs of that user
         logs = @user.logs
         # send the response to json
         logs.to_json
     end
 
-
     # create a new log
     post "/logs" do 
         # find the user
-        @user = User.find(session[:id])
+        @user = current_user
         # create a new log using that user's id and params object
         new_log = Log.create(
             user_id: @user.id, 
@@ -47,5 +46,5 @@ class LogsController < ApplicationController
         # destroy the log 
         # status 204 # this was a successful request
         @log.destroy
-      end
+    end
 end
