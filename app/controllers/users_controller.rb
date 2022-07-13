@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
     get "/users" do
         if params.include?("name")
-            return User.find_by(name: params['name']).to_json
+            include_arr
+            include_arr <<  :following  if params.include?('following')
+            include_arr <<  :followers  if params.include?('followers')
+            return User.find_by(name: params['name']).to_json({include: include_arr})
         end
         User.all.to_json
     end
