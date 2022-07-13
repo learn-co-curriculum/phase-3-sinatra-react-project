@@ -7,10 +7,13 @@ class RestaurantsController < ApplicationController
         end
         if params.include?("friends_only")
             #user id in params 
+            user = User.all.find([params["friends_only"]])
+            # console.log(user.followers)
+            return user.to_json({methods: [:followers]})
             #set = friends.reviews.restaurants.id
             #Restaurant.all.where(id inside set).tojson(methods)
         end
-        Restaurant.all.to_json(methods)
+        #Restaurant.all.to_json(methods)
     end
     get "/restaurants/:id" do 
         find_restaurant

@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
     get "/users" do
-        Users.to_json
+        User.all.to_json
     end
     get "/users/:id" do
         find_user
         if params.include?("friends")
-            @user.friends.to_json
+            @user.to_json({include: :followers})
         else
             @user.to_json
         end

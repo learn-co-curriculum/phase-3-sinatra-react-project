@@ -16,3 +16,4 @@ run ApplicationController
 
 use RestaurantsController
 use ReviewsController
+use UsersController
