@@ -47,6 +47,6 @@ class RestaurantsController < ApplicationController
   end
 
   def find_restaurants
-    @restaurants = params.include?('friend_reviewed') ? Restaurant.reviewed_by(params[:id]) : Restaurant.reviewed_by_friends(params[:id])
+    @restaurants = params.include?('friend_reviewed') ? Restaurant.reviewed_by_friends(params[:id].to_i) : Restaurant.reviewed_by(params[:id].to_i)
   end
 end
