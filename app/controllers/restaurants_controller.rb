@@ -22,9 +22,11 @@ class RestaurantsController < ApplicationController
     @restaurant.to_json({ include: :reviews, methods: :average_score })
   end
     post "/restaurants" do {
+    post "/restaurants" do 
         restaurant = Restaurant.create(restaurant_params)
         restaurant.to_json
-    }
+    end
+    
     private 
     def restaurant_params
         allows_params = %(name description category img)
