@@ -13,7 +13,7 @@ class RestaurantsController < ApplicationController
             #set = friends.reviews.restaurants.id
             #Restaurant.all.where(id inside set).tojson(methods)
         end
-        #Restaurant.all.to_json(methods)
+        Restaurant.all.to_json(methods)
     end
     get "/restaurants/:id" do 
         find_restaurant

@@ -18,8 +18,9 @@ class ReviewsController < ApplicationController
         find_review
         #use private method to grab only acceptable params
         @review.update(review_params)
+        @review.to_json
     end
-    post "/reviews/:id" do 
+    post "/reviews" do 
         review = Review.create(review_params)
         review.to_json
     end
@@ -34,7 +35,7 @@ class ReviewsController < ApplicationController
     end
 
     def find_review
-        @review = Review.find([params[:id]])
+        @review = Review.find([params[:id]]).first
     end
 
 end
