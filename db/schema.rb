@@ -18,11 +18,12 @@ ActiveRecord::Schema.define(version: 2022_07_12_154909) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
-    t.date "release_date"
+    t.string "release_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "watched"
     t.integer "genre_id"
+    t.string "imageUrl"
   end
 
 end
