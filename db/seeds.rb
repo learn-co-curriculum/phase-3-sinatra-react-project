@@ -27,7 +27,6 @@ Movie.create(title: "300", release_date: "2006", watched: true, genre_id: 2, ima
 Movie.create(title: "Remember The Titans", release_date: "2000", watched: true, genre_id: 7, imageUrl: "")
 Movie.create(title: "Radio", release_date: "1985", watched: true, genre_id: 5, imageUrl: "")
 
-
 # Seed your database here
 
 puts "✅ Done seeding!"
