@@ -72,7 +72,7 @@ class ApplicationController < Sinatra::Base
     dish.to_json
   end
 
-  post "/dishes/:id" do
+  post "/dishes" do
     dish = Dish.create(
       food: params[:food],
       name: params[:name],
