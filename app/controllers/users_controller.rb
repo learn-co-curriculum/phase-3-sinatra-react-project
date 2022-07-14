@@ -46,4 +46,10 @@ class UsersController < ApplicationController
   get '/logout' do
     session.clear
   end
+
+  private
+
+    def signup_params
+        params.require([:first_name, :last_name, :email, :password])
+    end
 end
