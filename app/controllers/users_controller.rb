@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     User.all.to_json
   end
   
-  # get individual user/s log
+  # get individual user object, include logs
   get "/users/:id" do
     # binding.pry
     user = User.find(params[:id])
@@ -42,5 +42,8 @@ class UsersController < ApplicationController
     # redirect (`http://localhost:3000/dashboard/#{@user.id}`)
   end
 
-  
+  # when user clicks "logout" button, use this endpoint
+  get '/logout' do
+    session.clear
+  end
 end
