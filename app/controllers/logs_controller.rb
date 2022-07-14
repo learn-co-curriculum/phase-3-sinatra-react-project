@@ -1,22 +1,22 @@
 class LogsController < ApplicationController
-    # get all logs for that user to display
-    get "/logs" do
+    # get an existing log
+    get "/logs/:id" do 
         # binding.pry
-        # find the current user by finding the user with the id that is stored in session[:id]
-        @user = current_user
-        # find all the logs of that user
-        logs = @user.logs
+        # find the log by id 
+        log = Log.find_by_id(params[:id])
+        
         # send the response to json
-        logs.to_json
+        log.to_json
     end
 
-    # create a new log
-    post "/logs" do 
+    # create a new log for that user
+    post "/users/:id" do 
+        # binding.pry
         # find the user
-        @user = current_user
+        user = User.find(params[:user_id])
         # create a new log using that user's id and params object
         new_log = Log.create(
-            user_id: @user.id, 
+            user_id: user.id,
             title: params[:title],
             author: params[:author],
             star_rating: params[:star_rating],
@@ -28,14 +28,16 @@ class LogsController < ApplicationController
 
     # edit a previous log
     patch "/logs/:id" do 
+        # binding.pry
         # find the log by id 
-        log = Log.find(params[:id])
+        log = Log.find_by_id(params[:id])
 
         # update the log using the params object
-        @log.update(params)
-
+        log.update(params)
+        log.save
+        
         # send the response to json
-        @log.to_json
+        log.to_json
     end
 
     # delete a log
@@ -45,6 +47,13 @@ class LogsController < ApplicationController
         
         # destroy the log 
         # status 204 # this was a successful request
-        @log.destroy
+        log.destroy
     end
+
+    private
+
+    # def edit_logs_params
+    #     params.permit(:title, :author, :star_rating, :comment)
+    # end
+
 end
