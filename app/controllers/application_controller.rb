@@ -11,6 +11,11 @@ class ApplicationController < Sinatra::Base
     player.to_json
   end
 
+  get "players/:id" do
+    player = Player.find(params[:id])
+    player.to_json(include: :score_totals)
+  end
+
   get "/rounds" do
     round = Round.all
     round.to_json
@@ -27,6 +32,12 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/score_totals" do
+    search = Player.find_by(username: params[:username])
+    if !search
+      new_player = Player.create(username: params[:username])
+    else
+       new_player = search
+    end
     score_total = ScoreTotal.create(
       course_name: params[:course_name],
       round_date: params[:round_date],
@@ -34,7 +45,7 @@ class ApplicationController < Sinatra::Base
       strokes: params[:strokes],
       total_putts: params[:total_putts],
       fairways_hit: params[:fairways_hit],
-      round_id: params[:round_id],
+      player_id: new_player.id,
     )
     score_total.to_json
   end
