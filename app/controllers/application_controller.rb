@@ -42,7 +42,7 @@ class ApplicationController < Sinatra::Base
     meal.to_json
   end
 
-  post "/meals/:id" do
+  post "/meals" do
     meal = Meal.create(
       time: params[:time],
       name: params[:name],
@@ -84,14 +84,14 @@ class ApplicationController < Sinatra::Base
   end
     patch "/dishes/:id" do
       dish = Dish.find(params[:id])
-      dish.update(dish_params)
+      dish.update(
+      day_id: params[:day_id],
+      meal_id: params[:meal_id],
+      )
       dish.to_json
     end
 
-    def dish_params
-      allowed_params = %w()
-      params.select { |k,v| allowed_params.include?(k) }
-    end
+   
  
   
   end
