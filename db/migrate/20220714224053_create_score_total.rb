@@ -7,7 +7,7 @@ class CreateScoreTotal < ActiveRecord::Migration[6.1]
       t.string :strokes
       t.string :total_putts
       t.string :fairways_hit
-      t.integer :round_id
+      t.integer :player_id
     end
   end
 end

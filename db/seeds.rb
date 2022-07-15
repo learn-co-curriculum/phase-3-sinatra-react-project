@@ -128,4 +128,12 @@ puts "Creating HoleScores..."
 
 puts "Creates Total Scores..."
 
+    ScoreTotal.create(course_name: "St. Andrews", round_date: "05/10/2022", score_to_par: "72", strokes: "85", total_putts: "36", fairways_hit: "7", player_id: player1.id)
+    ScoreTotal.create(course_name: "St. Andrews", round_date: "05/10/2022", score_to_par: "72", strokes: "88", total_putts: "38", fairways_hit: "5", player_id: player2.id)
+    ScoreTotal.create(course_name: "St. Andrews", round_date: "05/10/2022", score_to_par: "72", strokes: "84", total_putts: "38", fairways_hit: "6", player_id: player3.id)
+    ScoreTotal.create(course_name: "Torrey Pines", round_date: "05/15/2022", score_to_par: "72", strokes: "83", total_putts: "32", fairways_hit: "8", player_id: player1.id)
+    ScoreTotal.create(course_name: "Torrey Pines", round_date: "05/15/2022", score_to_par: "72", strokes: "89", total_putts: "36", fairways_hit: "8", player_id: player2.id)
+    ScoreTotal.create(course_name: "Torrey Pines", round_date: "05/15/2022", score_to_par: "72", strokes: "85", total_putts: "35", fairways_hit: "6", player_id: player3.id)
+
+
 puts "✅ Done seeding!"

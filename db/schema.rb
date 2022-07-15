@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2022_07_14_224053) do
     t.string "strokes"
     t.string "total_putts"
     t.string "fairways_hit"
-    t.integer "round_id"
+    t.integer "player_id"
   end
 
 end
