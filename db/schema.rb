@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_11_192010) do
+ActiveRecord::Schema.define(version: 2022_07_14_224053) do
 
   create_table "hole_scores", force: :cascade do |t|
     t.integer "hole_num"
@@ -26,8 +26,18 @@ ActiveRecord::Schema.define(version: 2022_07_11_192010) do
   end
 
   create_table "rounds", force: :cascade do |t|
-    t.date "round_date"
+    t.datetime "round_date"
     t.integer "player_id"
+  end
+
+  create_table "score_totals", force: :cascade do |t|
+    t.string "course_name"
+    t.string "round_date"
+    t.string "score_to_par"
+    t.string "strokes"
+    t.string "total_putts"
+    t.string "fairways_hit"
+    t.integer "round_id"
   end
 
 end

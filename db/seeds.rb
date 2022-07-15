@@ -126,6 +126,6 @@ puts "Creating HoleScores..."
     HoleScore.create(hole_num: 17, par: 3, num_strokes: rand(1..10) , num_putts: rand(1..5), fairway_hit: [true, false].sample, round_id: round4.id)
     HoleScore.create(hole_num: 18, par: 4, num_strokes: rand(1..10) , num_putts: rand(1..5), fairway_hit: [true, false].sample, round_id: round4.id)
 
-
+puts "Creates Total Scores..."
 
 puts "✅ Done seeding!"
