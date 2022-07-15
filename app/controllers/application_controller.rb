@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
 
   get "/players" do
     player = Player.all
-    player.to_json
+    player.to_json(inlcude: :score_totals)
   end
 
   get "players/:id" do

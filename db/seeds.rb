@@ -24,6 +24,7 @@ puts "Deleting old data..."
 Player.destroy_all
 Round.destroy_all
 HoleScore.destroy_all
+ScoreTotal.destroy_all
 
 puts "Creating Players..."
 
