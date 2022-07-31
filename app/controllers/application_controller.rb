@@ -123,6 +123,25 @@ class ApplicationController < Sinatra::Base
     }.to_json
   end
 
+  get "/all_canvas_boards" do
+    # params
+    api_token = params[:api_token]
+    # end params
+
+    user = User.find_by(api_token:api_token)
+    if !user
+      return {
+        success: false,
+        errorMessage: "Invalid username/password"
+      }.to_json
+    end
+    {
+      success: true,
+      data: Canvasboard.show_all_canvas_boards_for_that_user(user.id)
+    }.to_json
+  end
+
+
 
   post "/create_canvas" do
     # params
