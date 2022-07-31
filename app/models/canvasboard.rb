@@ -2,7 +2,7 @@ require 'time'
 
 class Canvasboard < ActiveRecord::Base
 belongs_to :user
-has_many :canvaspaths
+has_many :canvaspaths, :dependent => :delete_all
 
 def get_canvas_points_and_format(last_timestamp = nil)
   canvaspaths = self.canvaspaths
@@ -29,6 +29,12 @@ def get_canvas_points_and_format(last_timestamp = nil)
 
   canvaspathsResult
 end
+
+
+def clear_canvas_paths
+  self.canvaspaths.destroy_all
+end
+
 
 
 

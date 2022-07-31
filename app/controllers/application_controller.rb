@@ -1,4 +1,5 @@
 require "bcrypt"
+require 'securerandom'
 
 
 VERY_UNSECRET_TOKEN = "some secret token"
@@ -20,7 +21,10 @@ class ApplicationController < Sinatra::Base
 
     api_token = BCrypt::Password.create(VERY_UNSECRET_TOKEN)
     user = User.create(username:username, password:password, api_token: api_token)
-    user.to_json
+    {
+      success: true,
+      data: user
+    }.to_json
   end
 
   post "/login" do
@@ -90,7 +94,7 @@ class ApplicationController < Sinatra::Base
   end
 
 
-  get "/get_canvas" do
+  get "/canvas_board" do
     # params
     api_token = params[:api_token]
     canvasboard_identifier = params[:canvasboard_identifier]
@@ -117,6 +121,88 @@ class ApplicationController < Sinatra::Base
       success: true,
       data: found_canvas.get_canvas_points_and_format(last_timestamp)
     }.to_json
+  end
+
+
+  post "/create_canvas" do
+    # params
+    api_token = params[:api_token]
+    canvas_name = params[:canvas_name]
+    # end params
+     
+    user = User.find_by(api_token:api_token)
+    if !user
+      return {
+        success: false,
+        errorMessage: "Invalid username/password"
+      }.to_json
+    end
+    canvasboard = Canvasboard.create(identifier:SecureRandom.uuid, user_id:user.id, canvas_name: canvas_name)
+    {
+      success: true,
+      data: canvasboard
+    }.to_json
+  end
+
+  post "/clear_canvas_paths" do
+    # params
+    api_token = params[:api_token]
+    canvasboard_identifier = params[:canvasboard_identifier]
+    # end params
+     
+    user = User.find_by(api_token:api_token)
+    if !user
+      return {
+        success: false,
+        errorMessage: "Invalid username/password"
+      }.to_json
+    end
+
+    found_canvas = Canvasboard.find_by(identifier:canvasboard_identifier)
+    if !found_canvas
+      return {
+        success: false,
+        errorMessage: "Invalid canvas board"
+      }.to_json
+    end
+
+
+    found_canvas.clear_canvas_paths
+    {
+      success: true
+    }.to_json
+    
+  end
+
+  delete "/canvas_board" do
+    # params
+    api_token = params[:api_token]
+    canvasboard_identifier = params[:canvasboard_identifier]
+    # end params
+     
+    user = User.find_by(api_token:api_token)
+    if !user
+      return {
+        success: false,
+        errorMessage: "Invalid username/password"
+      }.to_json
+    end
+
+    found_canvas = Canvasboard.find_by(identifier:canvasboard_identifier)
+    if !found_canvas
+      return {
+        success: false,
+        errorMessage: "Invalid canvas board"
+      }.to_json
+    end
+
+
+    found_canvas.destroy
+    
+    {
+      success: true
+    }.to_json
+    
   end
 
 end

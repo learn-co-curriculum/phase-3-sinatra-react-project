@@ -122,3 +122,31 @@ fetch("http://localhost:9292/test")
 [dbdiagram.io]: https://dbdiagram.io/
 [postman download]: https://www.postman.com/downloads/
 [network tab]: https://developer.chrome.com/docs/devtools/network/
+
+
+## Request
+
+##### POST /create_user
+
+parameters
+```
+{
+  "username": "test",
+  "password": "password"
+}
+```
+
+response
+```
+{
+    "success": true,
+    "data": {
+        "id": 4,
+        "username": "a1",
+        "password": "a1",
+        "api_token": "$2a$12$ZLOsxBbhGtELcQQjxyC8OuJ7Et29FSvPqmJ2BXVOZ5IIDBeHgUuhS",
+        "created_at": "2022-07-31T17:40:58.975Z",
+        "updated_at": "2022-07-31T17:40:58.975Z"
+    }
+}
+```
