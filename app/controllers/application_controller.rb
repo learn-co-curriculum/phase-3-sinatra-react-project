@@ -94,7 +94,7 @@ class ApplicationController < Sinatra::Base
   end
 
 
-  get "/canvas_board" do
+  post "/canvas_board" do
     # params
     api_token = params[:api_token]
     canvasboard_identifier = params[:canvasboard_identifier]

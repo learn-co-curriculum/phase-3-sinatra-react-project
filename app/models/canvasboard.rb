@@ -19,6 +19,10 @@ def get_canvas_points_and_format(last_timestamp = nil)
     end
 
     format_path = JSON.parse(pathdata.data)
+    if !format_path
+      next
+    end
+    
     format_path[:metadata] = {  
       id: pathdata.id,
       user_id: pathdata.user_id,
