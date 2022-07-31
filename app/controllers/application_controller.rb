@@ -75,7 +75,7 @@ class ApplicationController < Sinatra::Base
       end
 
       canvas_paths.each do |path|
-        Canvaspath.create(canvasboard_id:found_canvas.id, user_id:user.id, data: path.to_s)
+        Canvaspath.create(canvasboard_id:found_canvas.id, user_id:user.id, data: path.to_json)
       end
 
       {
@@ -89,5 +89,34 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+
+  get "/get_canvas" do
+    # params
+    api_token = params[:api_token]
+    canvasboard_identifier = params[:canvasboard_identifier]
+    last_timestamp = params[:last_timestamp]
+    # end params
+
+    user = User.find_by(api_token:api_token)
+    if !user
+      return {
+        success: false,
+        errorMessage: "Invalid username/password"
+      }.to_json
+    end
+
+    found_canvas = Canvasboard.find_by(identifier:canvasboard_identifier)
+    if !found_canvas
+      return {
+        success: false,
+        errorMessage: "Invalid canvas board"
+      }.to_json
+    end
+
+    {
+      success: true,
+      data: found_canvas.get_canvas_points_and_format(last_timestamp)
+    }.to_json
+  end
 
 end

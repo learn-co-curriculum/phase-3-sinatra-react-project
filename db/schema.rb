@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2022_07_30_232416) do
 
   create_table "canvasboards", force: :cascade do |t|
     t.string "identifier"
+    t.string "canvas_name"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
