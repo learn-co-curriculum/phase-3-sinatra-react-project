@@ -1,8 +1,9 @@
 puts "🌱 Seeding spices..."
 
-u1 = User.create(username:"frank", password:"abc", api_token: "abcfrank")
-u2 = User.create(username:"sam", password:"abc", api_token: "abcsam")
-u3 = User.create(username:"tom", password:"abc", api_token: "abctom")
+# password = abc
+u1 = User.create(username:"frank", password_hash:"$2a$12$HC204fX2PhviEhwdufWqNuBdf0FguLnAsQC.BaU.2stKVlJ/qxqX6", api_token: "abcfrank")
+u2 = User.create(username:"sam", password_hash:"$2a$12$HC204fX2PhviEhwdufWqNuBdf0FguLnAsQC.BaU.2stKVlJ/qxqX6", api_token: "abcsam")
+u3 = User.create(username:"tom", password_hash:"$2a$12$HC204fX2PhviEhwdufWqNuBdf0FguLnAsQC.BaU.2stKVlJ/qxqX6", api_token: "abctom")
 
 
 c1 = Canvasboard.create(identifier:"firstcanvas", user_id:u2.id, canvas_name: "bestcanvas")

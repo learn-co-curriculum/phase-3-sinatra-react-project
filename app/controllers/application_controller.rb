@@ -5,6 +5,8 @@ require 'securerandom'
 VERY_UNSECRET_TOKEN = "some secret token"
 
 class ApplicationController < Sinatra::Base
+  include BCrypt
+
   set :default_content_type, 'application/json'
   
   
@@ -20,7 +22,7 @@ class ApplicationController < Sinatra::Base
     # end params
 
     api_token = BCrypt::Password.create(VERY_UNSECRET_TOKEN)
-    user = User.create(username:username, password:password, api_token: api_token)
+    user = User.create(username:username, password_hash:Password.create(password), api_token: api_token)
     {
       success: true,
       data: user
@@ -34,8 +36,8 @@ class ApplicationController < Sinatra::Base
     # end params
 
     begin
-      user = User.where(username:username, password:password).first
-      if !user
+      user = User.where(username:username).first
+      if !user || user.password != password
         {
           success: false,
           errorMessage: "Invalid username/password"
