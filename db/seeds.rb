@@ -9,5 +9,12 @@ Dog.create(name: "Ume", breed: "Corgi", age: 1, weight: 25)
 Dog.create(name: "Stella", breed: "Mutt", age: 3, weight: 17)
 Dog.create(name: "Bodhi", breed: "Mutt", age: 5, weight: 18)
 
+Supplier.create(name: "Marin Farm", product: "chicken")
+Supplier.create(name: "Monterey Fish Market", product: "fish")
+Supplier.create(name: "Ducks Unlimited", product: "duck")
+Supplier.create(name: "Sonoma Ranch", product: "beef")
+Supplier.create(name: "Gualala Ranch", product: "lamb")
+Supplier.create(name: "Sutter Creek Farm", product: "pork")
+Supplier.create(name: "Judy's Bunnies", product: "rabbit")
 
 puts "✅ Done seeding!"
