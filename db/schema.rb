@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_30_232416) do
+ActiveRecord::Schema.define(version: 2022_08_02_214553) do
 
   create_table "canvasboards", force: :cascade do |t|
     t.string "identifier"
     t.string "canvas_name"
-    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -29,7 +28,14 @@ ActiveRecord::Schema.define(version: 2022_07_30_232416) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "collaborations", force: :cascade do |t|
+    t.integer "canvasboard_id"
+    t.integer "user_id"
+  end
+
   create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
     t.string "username"
     t.string "password_hash"
     t.string "api_token"

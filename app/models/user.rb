@@ -1,7 +1,8 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
-has_many :canvasboards
+has_many :collaborations
+has_many :canvasboards, through: :collaborations
 has_many :canvaspaths
 
 # users.password_hash in the database is a :string

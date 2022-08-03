@@ -2,7 +2,8 @@ require 'time'
 require 'set'
 
 class Canvasboard < ActiveRecord::Base
-belongs_to :user
+has_many :collaborations
+has_many :users, through: :collaborations
 has_many :canvaspaths, :dependent => :delete_all
 
 def get_canvas_points_and_format(last_timestamp = nil)
@@ -62,6 +63,12 @@ def as_json(options = {})
   h = super(options).merge({:canvas_paths => get_canvas_points_and_format})
 end
 # We are getting get_canvas_points_and_format and insert it into canvas_path, then converting it into json 
+
+
+def collaborators 
+  collabs = self.collaborations
+  collabs.all.map(item => item.user)
+end
 
 
 end
