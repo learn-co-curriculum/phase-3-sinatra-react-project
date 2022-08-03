@@ -23,4 +23,9 @@ class PlantsController < ApplicationController
         plant=Plant.find(params[:id])
         plant.destroy
     end
+
+    get '/plants/:id/user' do
+        plant= Plant.find(params[:id])
+        plant.user.to_json
+    end 
 end

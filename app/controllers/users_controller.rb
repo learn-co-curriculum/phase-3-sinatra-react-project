@@ -4,4 +4,9 @@ class UsersController < ApplicationController
         users=User.all
         users.to_json
     end
+    
+    
+    post '/users' do
+        User.create(params).to_json
+    end
 end
