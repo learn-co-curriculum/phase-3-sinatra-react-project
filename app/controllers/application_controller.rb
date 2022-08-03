@@ -14,15 +14,19 @@ class ApplicationController < Sinatra::Base
   get "/" do
     { message: "Good luck with your project!" }.to_json
   end
+  
+
 
   post "/create_user" do
     # params
     username = params[:username]
     password = params[:password]
+    first_name = params[:first_name]
+    last_name = params[:last_name]
     # end params
 
     api_token = BCrypt::Password.create(VERY_UNSECRET_TOKEN)
-    user = User.create(username:username, password_hash:Password.create(password), api_token: api_token)
+    user = User.create(username:username, password_hash:Password.create(password), api_token: api_token, first_name: first_name, last_name: last_name)
     {
       success: true,
       data: user
@@ -225,5 +229,62 @@ class ApplicationController < Sinatra::Base
     }.to_json
     
   end
+
+
+  get "/users" do 
+    User.all.to_json
+  end
+
+  get "/canvasboards" do 
+    Canvasboard.all.to_json
+  end
+
+  get "/users/:id" do
+    user = User.find(params[:id])
+    user.to_json(include: :collaborations)
+  end
+
+  get "/canvasboards/:id" do
+    canvas = Canvasboard.find(params[:id])
+    canvas.to_json(include: :users)
+
+  end
+
+# get '/games/:id' do
+#     game = Game.find(params[:id])
+
+#     # include associated reviews in the JSON response
+#     game.to_json(only: [:id, :title, :genre, :price], include: {
+#       reviews: { only: [:comment, :score], include: {
+#         user: { only: [:name] }
+#       } }
+#     })
+#   end
+
+
+
+
+
+  # get "/user/:collaborators" do
+  #   # params
+  #   api_token = params[:api_token]
+  #   # end params
+
+  #   user = User.find_by(api_token:api_token)
+  #   collaborations = User.collaborations
+  #   if !user
+  #     return {
+  #       success: false,
+  #       errorMessage: "Invalid username/password"
+  #     }.to_json
+  #   end
+  #   {
+  #     success: true,
+  #     data: user.canvasboards
+  #   }.to_json
+  # end
+
+
+
 
 end
