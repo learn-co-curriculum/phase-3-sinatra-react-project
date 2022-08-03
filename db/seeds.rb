@@ -5,9 +5,9 @@ p1=Plant.create(name: "Marbled Pothos", description: "beautiful propegation of a
 p2=Plant.create(name: "Monstera", description: "beautiful propegation of a 4 year old Monstera", image: "https://leafandpaw.com/wp-content/uploads/2018/02/IMG_7532-997x1024.jpg", likes: 10, user_id:1)
 p3=Plant.create(name: "Snake Plant", description: "beautiful propegation of a 1 year old Snake Plant", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzGuAqA7lk6Ep2NQYFJLJteW6OSocoVcSNXg&usqp=CAU", likes: 7, user_id:1)
 
-u1=User.create(first_name:"Spencer", last_name:"Mathews")
-u2=User.create(first_name:"John", last_name:"Hayes")
-u3=User.create(first_name:"Alexis", last_name:"Montgomery")
+u1=User.create(first_name:"Spencer", last_name:"Mathews", image:'https://imgix.theurbanlist.com/content/general/an-idiots-guide-to-climate-change.jpg?auto=format,compress&w=1200&h=630&fit=crop')
+u2=User.create(first_name:"John", last_name:"Hayes", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6dxz8yIhYoqgN9icXsWEUb4kmNfi13kY8EQ&usqp=CAU")
+u3=User.create(first_name:"Alexis", last_name:"Montgomery", image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRA4xpq30uC055g8hkpAVu-UJBfElRXyXBeg&usqp=CAU')
 
 
 puts "✅ Done seeding!"

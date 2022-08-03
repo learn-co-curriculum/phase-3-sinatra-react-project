@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2022_07_31_205021) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.string "image"
   end
 
 end
