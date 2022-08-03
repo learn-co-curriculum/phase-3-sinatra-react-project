@@ -4,7 +4,7 @@ class CreatePlants < ActiveRecord::Migration[6.1]
     t.string :name
     t.string :description
     t.string :image
-    t.integer :price
+    t.integer :likes
     t.integer :user_id
     end
   end
