@@ -58,6 +58,10 @@ def self.show_all_canvas_boards_for_that_user(user_id)
   return result
 end
 
+def as_json(options = {})
+  h = super(options).merge({:canvas_paths => get_canvas_points_and_format})
+end
+# We are getting get_canvas_points_and_format and insert it into canvas_path, then converting it into json 
 
 
 end
