@@ -257,47 +257,13 @@ class ApplicationController < Sinatra::Base
 
   end
 
+delete "/canvasboards/:identifier/users/:id" do
+    canvas = Canvasboard.find(params[:identifier])
+    collaborations = canvas.collaborations
+    collaboration = collaborations.where(user_id: :id)
+    collaboration.destroy
 
-
-# get '/games/:id' do
-#     game = Game.find(params[:id])
-
-#     # include associated reviews in the JSON response
-#     game.to_json(only: [:id, :title, :genre, :price], include: {
-#       reviews: { only: [:comment, :score], include: {
-#         user: { only: [:name] }
-#       } }
-#     })
-#   end
-
-
-
-
-
-  # get "/user/:collaborators" do
-  #   # params
-  #   api_token = params[:api_token]
-  #   # end params
-
-  #   user = User.find_by(api_token:api_token)
-  #   collaborations = User.collaborations
-  #   if !user
-  #     return {
-  #       success: false,
-  #       errorMessage: "Invalid username/password"
-  #     }.to_json
-  #   end
-  #   {
-  #     success: true,
-  #     data: user.canvasboards
-  #   }.to_json
-  # end
-
-  # def index
-  #   current_user = User.find_by_id(session[:current_user_id])
-  # end
-
-
+  end
 
 
 end
