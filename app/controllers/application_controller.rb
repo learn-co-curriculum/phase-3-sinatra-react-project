@@ -251,8 +251,8 @@ class ApplicationController < Sinatra::Base
 
 
 #using this to fetch collaborators 
-  get "/canvasboards/:id" do
-    canvas = Canvasboard.find(params[:id])
+  get "/canvasboards/:identifier" do
+    canvas = Canvasboard.find_by(identifier: params[:identifier])
     canvas.to_json(only: [:id], include: {users: { only: [:id, :first_name, :last_name, :username]}})
 
   end
