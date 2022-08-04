@@ -33,6 +33,8 @@ class ApplicationController < Sinatra::Base
     }.to_json
   end
 
+  # session[:current_user_id] = user.id  
+
   post "/login" do
     # params
     username = params[:username]
@@ -244,11 +246,15 @@ class ApplicationController < Sinatra::Base
     user.to_json(include: :collaborations)
   end
 
+
+#using this to fetch collaborators 
   get "/canvasboards/:id" do
     canvas = Canvasboard.find(params[:id])
-    canvas.to_json(include: :users)
+    canvas.to_json(only: [:id], include: {users: { only: [:id, :first_name, :last_name, :username]}})
 
   end
+
+
 
 # get '/games/:id' do
 #     game = Game.find(params[:id])
@@ -282,6 +288,10 @@ class ApplicationController < Sinatra::Base
   #     success: true,
   #     data: user.canvasboards
   #   }.to_json
+  # end
+
+  # def index
+  #   current_user = User.find_by_id(session[:current_user_id])
   # end
 
 
