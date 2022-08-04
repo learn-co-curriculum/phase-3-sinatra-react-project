@@ -29,7 +29,7 @@ class ApplicationController < Sinatra::Base
     user = User.create(username:username, password_hash:Password.create(password), api_token: api_token, first_name: first_name, last_name: last_name)
     {
       success: true,
-      data: user
+      # data: user
     }.to_json
   end
 
