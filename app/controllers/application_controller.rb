@@ -107,18 +107,18 @@ class ApplicationController < Sinatra::Base
 
   post "/canvas_board" do
     # params
-    api_token = params[:api_token]
+    # api_token = params[:api_token]
     canvasboard_identifier = params[:canvasboard_identifier]
     last_timestamp = params[:last_timestamp]
     # end params
 
-    user = User.find_by(api_token:api_token)
-    if !user
-      return {
-        success: false,
-        errorMessage: "Invalid username/password"
-      }.to_json
-    end
+    # user = User.find_by(api_token:api_token)
+    # if !user
+    #   return {
+    #     success: false,
+    #     errorMessage: "Invalid username/password"
+    #   }.to_json
+    # end
 
     found_canvas = Canvasboard.find_by(identifier:canvasboard_identifier)
     if !found_canvas
@@ -167,7 +167,8 @@ class ApplicationController < Sinatra::Base
         errorMessage: "Invalid username/password"
       }.to_json
     end
-    canvasboard = Canvasboard.create(identifier:SecureRandom.uuid, user_id:user.id, canvas_name: canvas_name)
+    canvasboard = Canvasboard.create(identifier:SecureRandom.uuid, canvas_name: canvas_name)
+    Collaboration.create(user: user, canvasboard: canvasboard)
     {
       success: true,
       data: canvasboard
