@@ -90,6 +90,9 @@ class ApplicationController < Sinatra::Base
         Canvaspath.create(canvasboard_id:found_canvas.id, user_id:user.id, data: path.to_json)
       end
 
+      # creates the connection
+      Collaboration.create(user: user, canvasboard: found_canvas)
+
       {
         success: true,
       }.to_json
@@ -131,7 +134,7 @@ class ApplicationController < Sinatra::Base
     }.to_json
   end
 
-  get "/all_canvas_boards" do
+  post "/all_canvas_boards" do
     # params
     api_token = params[:api_token]
     # end params
@@ -145,7 +148,7 @@ class ApplicationController < Sinatra::Base
     end
     {
       success: true,
-      data: Canvasboard.show_all_canvas_boards_for_that_user(user.id)
+      data: user.canvasboards
     }.to_json
   end
 
