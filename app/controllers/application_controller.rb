@@ -29,7 +29,7 @@ class ApplicationController < Sinatra::Base
     user = User.create(username:username, password_hash:Password.create(password), api_token: api_token, first_name: first_name, last_name: last_name)
     {
       success: true,
-      # data: user
+      data: user
     }.to_json
   end
 
@@ -258,12 +258,24 @@ class ApplicationController < Sinatra::Base
 
   end
 
-delete "/canvasboards/:identifier/users/:id" do
-    canvas = Canvasboard.find(params[:identifier])
+  delete "/canvasboards/:identifier/users/:id" do
+    canvas = Canvasboard.find_by(identifier: params[:identifier])
     collaborations = canvas.collaborations
-    collaboration = collaborations.where(user_id: :id)
-    collaboration.destroy
+    collaboration = collaborations.where(user_id: params[:id])
+    collaboration.destroy_all
 
+    # return full canvas to update collaborators on FE
+    canvas.to_json(only: [:id], include: {users: { only: [:id, :first_name, :last_name, :username]}})
+
+  end
+
+  post "/canvasboards/:identifier/users/:id" do
+    canvas = Canvasboard.find_by(identifier: params[:identifier])
+    user = User.find_by(id: params[:id])
+    Collaboration.create(user_id: user.id, canvasboard_id: canvas.id).to_json
+
+    # return full canvas to update collaborators on FE
+    canvas.to_json(only: [:id], include: {users: { only: [:id, :first_name, :last_name, :username]}})
   end
 
 
