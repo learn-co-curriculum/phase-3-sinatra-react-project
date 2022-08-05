@@ -1,5 +1,16 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
+
+  get "./dogs" do
+    dogs = Dog.all.order(:name)
+  end
+
+  post "./dogs" do
+    order = Dog.create(name: params[:name] breed: params[:breed], age: params[:age], weight: params[:weight])
+    order.to_json
+  end
+
+  
   
   get "/orders" do
     orders = Order.all.order(:pickup_date)
@@ -7,7 +18,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/orders" do
-    order = Order.create(dog: params[:dog], item: params[:item], quantity: params[:quantity], pickup_date: params[:pickup_date])
+    order = Order.create(dog_id: params[:dog_id] item: params[:item], quantity: params[:quantity], pickup_date: params[:pickup_date])
     order.to_json
   end
 
