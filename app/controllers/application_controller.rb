@@ -20,8 +20,6 @@ class ApplicationController < Sinatra::Base
   delete "/orders/:id" do
     order = Order.find(params[:id])
     order.destroy
-    order.to_json
   end
-
 
 end
