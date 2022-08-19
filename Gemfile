@@ -34,6 +34,13 @@ gem "sqlite3", "~> 1.4"
 # Provides quick access to dummy data
 gem 'faker', '~> 1.6', '>= 1.6.6'
 
+# Used to make network requests
+# https://github.com/rest-client/rest-client
+gem "rest-client", "~> 2.1"
+
+# Resets primary key sequence
+gem 'activerecord-reset-pk-sequence', '~> 0.2.0'
+
 # Require all files in a folder
 gem "require_all", "~> 3.0"
 

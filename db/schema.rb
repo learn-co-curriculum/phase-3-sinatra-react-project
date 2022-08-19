@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_19_151727) do
+ActiveRecord::Schema.define(version: 2022_08_19_161906) do
 
   create_table "char_feats", force: :cascade do |t|
     t.integer "character_id"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2022_08_19_151727) do
     t.integer "level"
     t.boolean "concentration"
     t.boolean "ritual"
+    t.string "description"
   end
 
 end
