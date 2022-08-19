@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_19_140432) do
+ActiveRecord::Schema.define(version: 2022_08_19_151727) do
+
+  create_table "char_feats", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "feat_id"
+  end
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -29,6 +34,11 @@ ActiveRecord::Schema.define(version: 2022_08_19_140432) do
     t.string "name"
     t.string "description"
     t.string "prerequisites"
+  end
+
+  create_table "klass_spells", force: :cascade do |t|
+    t.integer "klass_id"
+    t.integer "spell_id"
   end
 
   create_table "klasses", force: :cascade do |t|
