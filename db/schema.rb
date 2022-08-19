@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2022_08_19_140432) do
 
   create_table "klasses", force: :cascade do |t|
     t.string "name"
-    t.string "class_levels"
+    t.string "klass_levels"
     t.integer "hit_die"
     t.string "proficiencies"
     t.string "proficiency_choices"

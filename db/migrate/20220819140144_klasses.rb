@@ -2,7 +2,7 @@ class Klasses < ActiveRecord::Migration[6.1]
   def change
     create_table :klasses do |t|
       t.string :name
-      t.string :class_levels
+      t.string :klass_levels
       t.integer :hit_die
       t.string :proficiencies
       t.string :proficiency_choices
