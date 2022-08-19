@@ -6,6 +6,7 @@ Klass.destroy_all
 Feat.destroy_all
 Spell.destroy_all
 Race.destroy_all
+Player.destroy_all
 CharFeat.reset_pk_sequence
 KlassSpell.reset_pk_sequence
 Character.reset_pk_sequence
@@ -13,8 +14,14 @@ Klass.reset_pk_sequence
 Feat.reset_pk_sequence
 Spell.reset_pk_sequence
 Race.reset_pk_sequence
+Player.reset_pk_sequence
 
 Faker::UniqueGenerator.clear
+
+puts "🌱 Seeding players..."
+
+Player.create(username: "Alie")
+Player.create(username: "Andrea")
 
 puts "🌱 Seeding classes..."
 
@@ -80,7 +87,10 @@ puts "🌱 Seeding feats..."
 
 puts "🌱 Seeding characters..."
 
-8.times {Character.create name: Faker::Movies::LordOfTheRings.unique.character, level: rand(1..8), klass_id: Klass.all.sample.id, race_id: Race.all.sample.id, str: rand(8..18), dex: rand(8..18), con: rand(8..18), int: rand(8..18), wis: rand(8..18), cha: rand(8..18)}
+Player.all.size.times do |i|
+  4.times {Character.create player_id: i+1, name: Faker::Movies::LordOfTheRings.unique.character, level: rand(1..8), klass_id: Klass.all.sample.id, race_id: Race.all.sample.id, str: rand(8..18), dex: rand(8..18), con: rand(8..18), int: rand(8..18), wis: rand(8..18), cha: rand(8..18)}
+
+end
 
 puts "generating join tables..."
 
@@ -89,7 +99,7 @@ Klass.all.size.times { |k|
     5.times {spells << (rand(0..(Spell.all.size - 1)))}
     spells = spells.uniq
 
-    spells.each {|s| KlassSpell.create klass_id: k+1, spell_id: s}
+    spells.each {|s| KlassSpell.create klass_id: k+1, spell_id: s + 1}
 }
 
 Character.all.size.times { |c| 
@@ -97,7 +107,7 @@ Character.all.size.times { |c|
     2.times {feats << (rand(0..(Feat.all.size - 1)))}
     feats = feats.uniq
 
-    feats.each {|f| CharFeat.create character_id: c+1, feat_id: f}
+    feats.each {|f| CharFeat.create character_id: c+1, feat_id: f + 1}
 }
 
 puts "✅ Done seeding!"

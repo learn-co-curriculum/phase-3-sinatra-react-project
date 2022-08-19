@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_19_161906) do
+ActiveRecord::Schema.define(version: 2022_08_19_181507) do
 
   create_table "char_feats", force: :cascade do |t|
     t.integer "character_id"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2022_08_19_161906) do
     t.integer "int"
     t.integer "wis"
     t.integer "cha"
+    t.integer "player_id"
   end
 
   create_table "feats", force: :cascade do |t|
@@ -48,6 +49,10 @@ ActiveRecord::Schema.define(version: 2022_08_19_161906) do
     t.string "proficiencies"
     t.string "proficiency_choices"
     t.string "saving_throws"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "username"
   end
 
   create_table "races", force: :cascade do |t|
