@@ -1,5 +1,20 @@
-puts "🌱 Seeding spices..."
+puts "🌱 Seeding classes..."
 
-# Seed your database here
+
+
+puts "🌱 Seeding races..."
+
+
+
+puts "🌱 Seeding spells..."
+
+
+
+puts "🌱 Seeding feats..."
+
+
+
+puts "🌱 Seeding characters..."
+
 
 puts "✅ Done seeding!"
