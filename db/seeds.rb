@@ -1,3 +1,5 @@
+require 'json'
+
 puts "rerolling characters after a TPK...."
 CharFeat.destroy_all
 KlassSpell.destroy_all
@@ -83,7 +85,17 @@ spells["results"].each do |spell|
 end
 puts "🌱 Seeding feats..."
 
-20.times {Feat.create name: Faker::Game.unique.platform}
+# 20.times {Feat.create name: Faker::Game.unique.platform}
+file = File.read('./feats.json')
+feats = JSON.parse(file)
+
+feats.each do |feat|
+  Feat.create(
+    name: feat["Feat"],
+    description: feat["Description"],
+    prerequisites: feat["Prerequisite"]
+  )
+end
 
 puts "🌱 Seeding characters..."
 

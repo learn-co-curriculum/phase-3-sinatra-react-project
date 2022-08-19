@@ -3,7 +3,14 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/" do
-    { message: "Good luck with your project!" }.to_json
+    players = Player.all
+    players.to_json
+  end
+
+  get "/:id" do
+    characters = Player.find(params[:id]).characters.all
+    # puts characters
+    characters.to_json
   end
 
 end

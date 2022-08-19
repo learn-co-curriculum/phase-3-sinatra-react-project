@@ -1,0 +1,392 @@
+[
+ {
+   "Feat": "Actor",
+   "Prerequisite": "-",
+   "Description": "+1 in Cha., advantage on Deception and Performance checks, mimic the speech of a person or the sounds made by a creature."
+ },
+ {
+   "Feat": "Alert",
+   "Prerequisite": "-",
+   "Description": "+5 to initiative, you can't be surprised, and creatures you don't see don't gain advantage on attack roll against you."
+ },
+ {
+   "Feat": "Artificer Initiate",
+   "Prerequisite": "-",
+   "Description": "You learn one cantrip and one 1st-level artificier spell (cast without slot), proficiency with one type of artisan's tools."
+ },
+ {
+   "Feat": "Athlete",
+   "Prerequisite": "-",
+   "Description": "+1 in Str. or Dex., you stand up and climb more quickly, and you can jump with only a 5-ft run."
+ },
+ {
+   "Feat": "Blood Magic",
+   "Prerequisite": "The ability to cast at least one spell",
+   "Description": "Sacrifice hit points and regain spell slots of level 5 or lower."
+ },
+ {
+   "Feat": "Bountiful Luck",
+   "Prerequisite": "Halfling",
+   "Description": "You can let an ally within 30 ft of you to reroll a 1 on a d20."
+ },
+ {
+   "Feat": "Charger",
+   "Prerequisite": "-",
+   "Description": "As part of the Dash action you can make a melee attack with a +5 bonus if you move at least 10 ft before."
+ },
+ {
+   "Feat": "Chef",
+   "Prerequisite": "-",
+   "Description": "+1 in Con. or Wis., proficiency with cook's utensils and cook special food to regain hp."
+ },
+ {
+   "Feat": "Competent",
+   "Prerequisite": "-",
+   "Description": "+1 in one ability and you gain proficiency in one skill using this ability."
+ },
+ {
+   "Feat": "Crossbow Expert",
+   "Prerequisite": "-",
+   "Description": "You ignore the loading property of crossbows and don't have disadvantage for being in contact with a creature when you shoot."
+ },
+ {
+   "Feat": "Crusher",
+   "Prerequisite": "-",
+   "Description": "+1 in Str. or Con., 5 ft extra move when you hit (bludgeoning) and attacks with advantage after a critical hit."
+ },
+ {
+   "Feat": "Defensive Duelist",
+   "Prerequisite": "Dexterity 13 or higher",
+   "Description": "You can add your proficiency bonus to your AC if you are wielding a finesse weapon, in reaction to a melee attack."
+ },
+ {
+   "Feat": "Dragon Fear",
+   "Prerequisite": "Dragonborn",
+   "Description": "+1 in Str., Con., or Cha. and your Breath Weapon can frighten instead of inflicting damages."
+ },
+ {
+   "Feat": "Dragon Hide",
+   "Prerequisite": "Dragonborn",
+   "Description": "+1 in Str., Con., or Cha., your AC becomes 13+Dex. modifier and your retractable claws deal 1d4+Str. modifier slashing damage."
+ },
+ {
+   "Feat": "Drow High Magic",
+   "Prerequisite": "Elf (drow)",
+   "Description": "You can cast the detect magic spell (at will) and the levitate and dispel magic spells (1/long rest)."
+ },
+ {
+   "Feat": "Dual Wielder",
+   "Prerequisite": "-",
+   "Description": "+1 to AC if you're wielding a melee weapon in each hand, two-weapon fighting with non-light weapon, draw two weapons."
+ },
+ {
+   "Feat": "Dungeon Delver",
+   "Prerequisite": "-",
+   "Description": "Advantage to Perception and Investigation checks, to saving throws vs traps, and search for traps at normal pace."
+ },
+ {
+   "Feat": "Durable",
+   "Prerequisite": "-",
+   "Description": "+1 in Con. and for each Hit Dice you regain a minimum of hit points equals to 2 x your Constitution modifier."
+ },
+ {
+   "Feat": "Dwarf Fortitude",
+   "Prerequisite": "Dwarf",
+   "Description": "+1 in Con., and you can spend one Hit Die to heal yourself taking the Dodge action."
+ },
+ {
+   "Feat": "Eldritch Adept",
+   "Prerequisite": "Spellcasting or Pact Magic feature",
+   "Description": "You learn one Eldritch Invocation."
+ },
+ {
+   "Feat": "Elemental Adept",
+   "Prerequisite": "The ability to cast at least one spell",
+   "Description": "Your spells ignore resistance to a damage type (acid, cold, fire, lightning, or thunder) and treat any 1 in damage as a 2."
+ },
+ {
+   "Feat": "Elven Accuracy",
+   "Prerequisite": "Elf or half-elf",
+   "Description": "+1 in Dex., Int., Wis., or Cha., and you can reroll one attack roll if you have advantage."
+ },
+ {
+   "Feat": "Fade away",
+   "Prerequisite": "Gnome",
+   "Description": "+1 in Dex. or Int., and you can use your reaction to become invisible if you take damage."
+ },
+ {
+   "Feat": "Fey Teleportation",
+   "Prerequisite": "Elf (high)",
+   "Description": "+1 in Int. or Cha., you speak Sylvan, and you can cast the misty step spell (1/short rest)."
+ },
+ {
+   "Feat": "Fey Touched",
+   "Prerequisite": "-",
+   "Description": "+1 in Int., Wis., or Cha., and you learn misty step and one 1st-level spell from divination or enchantment school."
+ },
+ {
+   "Feat": "Fighting Initiate",
+   "Prerequisite": "Proficiency with a martial weapon",
+   "Description": "You learn one Fighting Style option from the fighter class."
+ },
+ {
+   "Feat": "Flames of Phlegethos",
+   "Prerequisite": "Tiefling",
+   "Description": "+1 in Int. or Cha., reroll any 1 on fire spell damage, and cause flames to wreathe you if you cast a fire spell."
+ },
+ {
+   "Feat": "Gift of the Chromatic Dragon",
+   "Prerequisite": "-",
+   "Description": "Extra 1d4 acid, cold, fire, lightning, or poison damage for 1 min (bonus action). Resistance to 1 of these damages (reaction)."
+ },
+ {
+   "Feat": "Gift of the Gem Dragon",
+   "Prerequisite": "-",
+   "Description": "+1 in Int., Wis., or Cha., Strength saving throw or 2d8 force damage and pushed away 10 ft in reaction to an attack (PB/day)."
+ },
+ {
+   "Feat": "Gift of the Metallic Dragon",
+   "Prerequisite": "-",
+   "Description": "You can cast cure wounds (1/long rest). As a reaction to an attack, can manifest wings to get +PB to your AC (PB/day)."
+ },
+ {
+   "Feat": "Grappler",
+   "Prerequisite": "Strength 13 or higher",
+   "Description": "You have advantage on attack rolls when grappling, and can try to restrained a creature grappled by you."
+ },
+ {
+   "Feat": "Great Weapon Master",
+   "Prerequisite": "-",
+   "Description": "Extra attack after a melee critical hit and you can choose to take -5 to attack roll to add +10 to damage with an heavy weapon."
+ },
+ {
+   "Feat": "Gunner",
+   "Prerequisite": "-",
+   "Description": "+1 in Dex., proficiency with firearms, ignore loading property of firearms and no disadvantage to attacks within 5 ft."
+ },
+ {
+   "Feat": "Healer",
+   "Prerequisite": "-",
+   "Description": "You can stabilize a creature and restore it to 1 hp, or restore [1d6+4+its number of Hit Dice] hp to it."
+ },
+ {
+   "Feat": "Heavily Armored",
+   "Prerequisite": "Proficiency with medium armor",
+   "Description": "+1 in Str. and you gain proficiency with heavy armor."
+ },
+ {
+   "Feat": "Heavy Armor Master",
+   "Prerequisite": "Proficiency with heavy armor",
+   "Description": "+1 in Str. and bludgeoning, piercing, and slashing damage are reduced by 3 if you are wearing an heavy armor."
+ },
+ {
+   "Feat": "Infernal Constitution",
+   "Prerequisite": "Tiefling",
+   "Description": "+1 in Con., resistance to cold and poison damage, and you have advantage on saving throws against being poisoned."
+ },
+ {
+   "Feat": "Inspiring Leader",
+   "Prerequisite": "Charisma 13 or higher",
+   "Description": "Up to 6 creatures within 30 ft of you can gain temporary hp equal to your level + your Cha. modifier."
+ },
+ {
+   "Feat": "Keen Mind",
+   "Prerequisite": "-",
+   "Description": "+1 in Int., you know which way is north, when is the next sunrise/sunset, and recall any events within the past month."
+ },
+ {
+   "Feat": "Lightly Armored",
+   "Prerequisite": "-",
+   "Description": "+1 in Str. or Dex. and you gain profociency with light armor."
+ },
+ {
+   "Feat": "Linguist",
+   "Prerequisite": "-",
+   "Description": "+1 in Int., you learn three languages, and you can ably create ciphers."
+ },
+ {
+   "Feat": "Lucky",
+   "Prerequisite": "-",
+   "Description": "You can reroll one d20 or force to reroll an attack roll against you (3/long rest)."
+ },
+ {
+   "Feat": "Mage Slayer",
+   "Prerequisite": "-",
+   "Description": "You can use a reaction to make a melee attack against a spellcaster and advantage on saving throws against spell within 5 ft."
+ },
+ {
+   "Feat": "Magic Initiate",
+   "Prerequisite": "-",
+   "Description": "You learn two cantrips and one 1st-level spell from one class."
+ },
+ {
+   "Feat": "Martial Adept",
+   "Prerequisite": "-",
+   "Description": "You learn two maneuvers from Battle Master archetype and gain one superiority die (d6)."
+ },
+ {
+   "Feat": "Medium Armor Master",
+   "Prerequisite": "Proficiency with medium armor",
+   "Description": "No disadvantage to Stealth checks wearing medium armor and Dexterity bonus max to +3 instead of +2."
+ },
+ {
+   "Feat": "Medium Weapon Master",
+   "Prerequisite": "-",
+   "Description": "You can reroll an attack roll and you can choose to take -3 to attack roll to add +6 to damage with a medium weapon."
+ },
+ {
+   "Feat": "Metamagic Adept",
+   "Prerequisite": "Spellcasting or Pact Magic feature",
+   "Description": "You learn two metamagic options and gain 2 sorcery points."
+ },
+ {
+   "Feat": "Mobile",
+   "Prerequisite": "-",
+   "Description": "Your speed increase by 10 ft, you can Dash on difficult terrain without malus, and don't provoke opportunity attacks in melee."
+ },
+ {
+   "Feat": "Moderately Armored",
+   "Prerequisite": "Proficiency with light armor",
+   "Description": "+1 in Str. or Dex. and you gain proficiency with medium armor and shields."
+ },
+ {
+   "Feat": "Mounted Combatant",
+   "Prerequisite": "-",
+   "Description": "Advantage on melee attacks against unmounted creature and force an attack to target you instead of your mount."
+ },
+ {
+   "Feat": "Observant",
+   "Prerequisite": "-",
+   "Description": "+1 in Int. or Wis., you can read on lips, and you have a +5 bonus in passive Perception and passive Investigation."
+ },
+ {
+   "Feat": "Orcish Fury",
+   "Prerequisite": "Half-orc",
+   "Description": "+1 in Str. or Con., add one of the weapon's damage dice, and use a reaction to attack after using Relentless Endurance."
+ },
+ {
+   "Feat": "Piercer",
+   "Prerequisite": "-",
+   "Description": "+1 in Str. or Dex., reroll one damage dice when you hit (piercing) and one additional damage dice in case of critical hit."
+ },
+ {
+   "Feat": "Poisoner",
+   "Prerequisite": "-",
+   "Description": "Proficiency with poisoner's kit, apply as a bonus action and your attacks ignore resistance to poison damage."
+ },
+ {
+   "Feat": "Polearm Master",
+   "Prerequisite": "-",
+   "Description": "You can make an extra attack with a polearm weapon, and make an opportunity attack if a creature enter your reach."
+ },
+ {
+   "Feat": "Prodigy",
+   "Prerequisite": "Half-elf, half-orc, or human",
+   "Description": "You gain proficiency with one skill, one tool or one language, and you gain expertise with one skill."
+ },
+ {
+   "Feat": "Resilient",
+   "Prerequisite": "-",
+   "Description": "+1 in one ability and you gain proficiency in saving throws using this ability."
+ },
+ {
+   "Feat": "Ritual Caster",
+   "Prerequisite": "Intelligence or Wisdom 13 or higher",
+   "Description": "You have a ritual book with two 1-st level ritual spells from one class and you can later on add other ritual spells you found."
+ },
+ {
+   "Feat": "Savage Attacker",
+   "Prerequisite": "-",
+   "Description": "You can reroll melee weapon attack damage once per turn."
+ },
+ {
+   "Feat": "Second Chance",
+   "Prerequisite": "Halfling",
+   "Description": "+1 in Dex., Con., or Cha., and you can force a creature to reroll its attack roll if it hits you."
+ },
+ {
+   "Feat": "Sentinel",
+   "Prerequisite": "-",
+   "Description": "A successful OA reduce creature's speed to 0 for this turn and possibility to make an OA even if the ennemy take Disengage."
+ },
+ {
+   "Feat": "Shadow Touched",
+   "Prerequisite": "-",
+   "Description": "+1 in Int., Wis., or Cha., and you learn invisibility and one 1st-level spell from illusion or necromancy school."
+ },
+ {
+   "Feat": "Sharpshooter",
+   "Prerequisite": "-",
+   "Description": "Your ranged attacks ignore some cover, no disavantage at long range, and possibility to take -5 to hit for +10 on ranged damage."
+ },
+ {
+   "Feat": "Shield Master",
+   "Prerequisite": "-",
+   "Description": "Attack also allows to shove, shield bonus to Dex. saving throws againts spells, and no 1/2 damage on successful saving throw."
+ },
+ {
+   "Feat": "Skill Expert",
+   "Prerequisite": "-",
+   "Description": "+1 in one ability, proficiency in one skill and expertise in one other in which you have proficiency."
+ },
+ {
+   "Feat": "Skilled",
+   "Prerequisite": "-",
+   "Description": "You gain proficiency with three skills or tools."
+ },
+ {
+   "Feat": "Skulker",
+   "Prerequisite": "Dexterity 13 or higher",
+   "Description": "Ranged weapon attack doesn't reveal your position and possibility to hide in a lighlly obscured area."
+ },
+ {
+   "Feat": "Slasher",
+   "Prerequisite": "-",
+   "Description": "+1 in Str. or Dex., reduce target's speed by 10 ft when you hit (slashing) and target has disadvantage on attacks rolls."
+ },
+ {
+   "Feat": "Spell Sniper",
+   "Prerequisite": "The ability to cast at least one spell",
+   "Description": "Offensive spell's range doubled, these spells ignore some cover, and you learn one offensive cantrip."
+ },
+ {
+   "Feat": "Squat Nimbleness",
+   "Prerequisite": "Dwarf or a Small race",
+   "Description": "+1 in Str. or Dex., your speed increases by 5 ft, and proficiency and advantage to escape with Acrobatics or Athletics checks."
+ },
+ {
+   "Feat": "Tavern Brawler",
+   "Prerequisite": "-",
+   "Description": "+1 in Str. or Con., proficiency with improvised weapons, d4 for unarmed strike, and grapple with a bonus action."
+ },
+ {
+   "Feat": "Telekinetic",
+   "Prerequisite": "-",
+   "Description": "+1 in Int., Wis., or Cha., you learn mage hand and you can try to telekinetically shove one creature (5 ft)."
+ },
+ {
+   "Feat": "Telepathic",
+   "Prerequisite": "-",
+   "Description": "+1 in Int., Wis., or Cha., you can cast detect thoughts and you can speak telepathically to any creature within 60 ft."
+ },
+ {
+   "Feat": "Tough",
+   "Prerequisite": "-",
+   "Description": "Your hit point maximum increases by an amount equal to twice your level then by +2 at each level."
+ },
+ {
+   "Feat": "War Caster",
+   "Prerequisite": "The ability to cast at least one spell",
+   "Description": "You have advantage on saving throws to maintain concentration and you can cast some spells as part of an OA with a reaction."
+ },
+ {
+   "Feat": "Weapon Master",
+   "Prerequisite": "-",
+   "Description": "+1 in Str. or Dex. and you gain proficiency with four weapons."
+ },
+ {
+   "Feat": "Wood Elf Magic",
+   "Prerequisite": "Elf (wood)",
+   "Description": "You learn one druid cantrip and can cast the longstrider and pass without trace spells (1/long rest)."
+ }
+]
