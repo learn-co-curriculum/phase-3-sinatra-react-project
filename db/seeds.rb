@@ -24,6 +24,7 @@ puts "🌱 Seeding players..."
 
 Player.create(username: "Alie")
 Player.create(username: "Andrea")
+Player.create(username: "Kelsey")
 
 puts "🌱 Seeding classes..."
 
@@ -105,13 +106,20 @@ Player.all.size.times do |i|
 end
 
 puts "generating join tables..."
+klasses_with_spells = ['bard', 'cleric', 'druid', 'paladin', 'ranger', 'sorcerer', 'warlock', 'wizard']
 
-Klass.all.size.times { |k| 
-    spells = []
-    5.times {spells << (rand(0..(Spell.all.size - 1)))}
-    spells = spells.uniq
+klasses_with_spells.each { |k| 
+  response = RestClient.get "https://www.dnd5eapi.co/api/classes/#{k}/spells"
+  spells = JSON.parse(response)
+  # iterate over each spell
+  spells["results"].each do |spell|
+  KlassSpell.create klass_id: Klass.find_by(name: k.capitalize()).id, spell_id: Spell.find_by(name: spell['name']).id
+  end
+    # spells = []
+    # 5.times {spells << (rand(0..(Spell.all.size - 1)))}
+    # spells = spells.uniq
 
-    spells.each {|s| KlassSpell.create klass_id: k+1, spell_id: s + 1}
+    # spells.each {|s| KlassSpell.create klass_id: k+1, spell_id: s + 1}
 }
 
 Character.all.size.times { |c| 
