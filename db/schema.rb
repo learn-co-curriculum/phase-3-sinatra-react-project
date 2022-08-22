@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 2022_08_22_144000) do
     t.integer "price"
     t.integer "inventory"
     t.string "category"
+    t.integer "store_id"
   end
 
   create_table "stores", force: :cascade do |t|
     t.string "name"
-    t.integer "product_id"
   end
 
 end
