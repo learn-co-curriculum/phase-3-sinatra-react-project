@@ -1,3 +1,6 @@
+User.destroy_all
+Task.destry_all
+
 puts "🌱 Seeding spices..."
 User.create(
     user_name: "Yari"
