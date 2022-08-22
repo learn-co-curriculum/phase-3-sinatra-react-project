@@ -13,12 +13,15 @@ class ApplicationController < Sinatra::Base
     characters.to_json
   end
 
-  
+
 
   get "/:username/:id" do
     player = Player.find_by(username: params[:username])
     character = player.characters.find(params[:id])
-    character.to_json
+    race = character.race
+    klass = character.klass
+    data = [character, race, klass]
+    data.to_json
   end
 
 
