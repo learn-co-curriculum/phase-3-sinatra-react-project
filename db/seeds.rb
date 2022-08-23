@@ -1,7 +1,6 @@
-puts "🌱 Seeding spices..."
-# Seed your database here
+puts "Seeding Jedi and Sith...May the force be with you..."
 
-puts "seeding Jedi and Sith...May the force be with you..."
+
 User.create(first_name: "Mace", last_name: "Windu", aliases: nil, jedi_or_sith: "Jedi", jedi_rank: "Master", sith_rank: nil, species: "Human", image_url: "https://user-images.githubusercontent.com/106715328/186039808-cc918735-752e-4a50-9835-6219bbc251fd.jpg" )
 User.create(first_name: "Yoda", last_name: nil, aliases: nil, jedi_or_sith: "Jedi", jedi_rank: "Grand Master", sith_rank: nil, species: "Unknown", image_url: "https://user-images.githubusercontent.com/106715328/186040196-87b2cffb-8b4b-4676-a16e-5d6f9a256605.png")
 User.create(first_name: "Plo", last_name: "Koon", aliases: nil, jedi_or_sith: "Jedi", jedi_rank: "Master", sith_rank: nil, species: "Kel Dor", image_url: "https://user-images.githubusercontent.com/106715328/186048964-03750c49-ab60-46aa-9f4f-9e67db8c78b8.jpg")
@@ -34,7 +33,7 @@ User.create(first_name: "Darth", last_name: "Krayt", aliases: nil, jedi_or_sith:
 User.create(first_name: "Bastila", last_name: "Shan", aliases: nil, jedi_or_sith: "Jedi", jedi_rank: "Knight", sith_rank: nil, species: "Human", image_url: "https://user-images.githubusercontent.com/106715328/186054973-f72dbc0a-1466-482f-97c4-fb76af04e452.jpg")
 User.create(first_name: "Darth", last_name: "Chratis", aliases: nil, jedi_or_sith: "Sith", jedi_rank: nil, sith_rank: "Lord", species: "Human", image_url: "https://user-images.githubusercontent.com/106715328/186055357-84bff90d-f553-48ec-9341-3462d03f4f11.jpg")
 
-
+puts "Seeding lightsaber colors..."
 
 
 
