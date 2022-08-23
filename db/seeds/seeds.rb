@@ -20,13 +20,13 @@ Player.reset_pk_sequence
 
 Faker::UniqueGenerator.clear
 
-puts "🌱 Seeding players..."
+puts "🎲 Seeding players..."
 
 Player.create(username: "Alie")
 Player.create(username: "Andrea")
 Player.create(username: "Kelsey")
 
-puts "🌱 Seeding classes..."
+puts "⚔️ Seeding classes..."
 
 response = RestClient.get "https://www.dnd5eapi.co/api/classes"
 klasses = JSON.parse(response)
@@ -37,14 +37,14 @@ klasses["results"].each do |klass|
   Klass.create(
     name: new_class["name"],
     hit_die: new_class["hit_die"],
-    proficiencies: new_class["proficiencies"][0],
-    proficiency_choices: new_class["proficiency_choices"][0],
-    saving_throws: new_class["saving_throws"][0],
+    proficiencies: new_class["proficiencies"],
+    proficiency_choices: new_class["proficiency_choices"][0]["desc"],
+    saving_throws: new_class["saving_throws"],
     klass_levels: new_class["class_levels"]
   )
 end
 
-puts "🌱 Seeding races..."
+puts "🧝🏼‍♀️ Seeding races..."
 
 response = RestClient.get "https://www.dnd5eapi.co/api/races"
 races = JSON.parse(response)
@@ -56,16 +56,17 @@ races["results"].each do |race|
   Race.create(
     name: new_race["name"],
     speed: new_race["speed"],
-    starting_proficiencies: new_race["starting_proficiencies"][0],
+    starting_proficiencies: new_race["starting_proficiencies"],
     # proficiency_choices: new_race["proficiency_choices"][0],
-    ability_bonuses: new_race["ability_bonuses"][0],
-    languages: new_race["languages"][0],
+    ability_bonuses: new_race["ability_bonuses"].map { |e| {e["ability_score"]["index"] => e["bonus"] }},
+    # ability_bonuses: new_race["ability_bonuses"][0],
+    languages: new_race["languages"],
     size: new_race["size"],
-    traits: new_race["traits"][0]
+    traits: new_race["traits"]
 )
 end
 
-puts "🌱 Seeding spells..."
+puts "🧙🏻‍♂️ Seeding spells..."
 
 response = RestClient.get "https://www.dnd5eapi.co/api/spells"
 spells = JSON.parse(response)
@@ -84,7 +85,7 @@ spells["results"].each do |spell|
     range: new_spell["range"]
   )
 end
-puts "🌱 Seeding feats..."
+puts "🛡️ Seeding feats..."
 
 # 20.times {Feat.create name: Faker::Game.unique.platform}
 file = File.read('./feats.json')
@@ -98,15 +99,17 @@ feats.each do |feat|
   )
 end
 
-puts "🌱 Seeding characters..."
+klasses_with_spells = ['bard', 'cleric', 'druid', 'paladin', 'ranger', 'sorcerer', 'warlock', 'wizard']
+
+puts "📜 Seeding characters..."
 
 Player.all.size.times do |i|
-  4.times {Character.create player_id: i+1, name: Faker::Movies::LordOfTheRings.unique.character, level: rand(1..8), klass_id: Klass.all.sample.id, race_id: Race.all.sample.id, str: rand(8..18), dex: rand(8..18), con: rand(8..18), int: rand(8..18), wis: rand(8..18), cha: rand(8..18)}
-
+  4.times {Character.create player_id: i+1, name: Faker::Movies::LordOfTheRings.unique.character, level: rand(1..8), klass_id: Klass.all.sample.id, race_id: Race.all.sample.id, str: rand(8..18), dex: rand(8..18), con: rand(8..18), int: rand(8..18), wis: rand(8..18), cha: rand(8..18)};
+  
 end
+Player.all.each {|p| p.characters.update_all(hp: self.calculate_hp, is_spellcaster: klasses_with_spells.includes(self.klass))}
 
-puts "generating join tables..."
-klasses_with_spells = ['bard', 'cleric', 'druid', 'paladin', 'ranger', 'sorcerer', 'warlock', 'wizard']
+puts "🎲 generating join tables..."
 
 klasses_with_spells.each { |k| 
   response = RestClient.get "https://www.dnd5eapi.co/api/classes/#{k}/spells"
@@ -130,4 +133,4 @@ Character.all.size.times { |c|
     feats.each {|f| CharFeat.create character_id: c+1, feat_id: f + 1}
 }
 
-puts "✅ Done seeding!"
+puts "💎 Adventure Awaits!"

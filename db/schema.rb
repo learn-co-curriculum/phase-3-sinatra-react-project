@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_19_181507) do
+ActiveRecord::Schema.define(version: 2022_08_23_202214) do
 
   create_table "char_feats", force: :cascade do |t|
     t.integer "character_id"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2022_08_19_181507) do
     t.integer "wis"
     t.integer "cha"
     t.integer "player_id"
+    t.boolean "is_spellcaster"
+    t.integer "hp"
   end
 
   create_table "feats", force: :cascade do |t|
