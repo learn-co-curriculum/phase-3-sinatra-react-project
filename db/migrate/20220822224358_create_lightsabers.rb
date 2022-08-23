@@ -1,6 +1,6 @@
 class CreateLightsabers < ActiveRecord::Migration[6.1]
   def change
-    create_table do |t|
+    create_table :lightsabers do |t|
       t.integer :user_id
       t.integer :lightsaber_color_id
       t.integer :lightsaber_style_id
