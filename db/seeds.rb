@@ -107,7 +107,7 @@ Player.all.size.times do |i|
   4.times {Character.create player_id: i+1, name: Faker::Movies::LordOfTheRings.unique.character, level: rand(1..8), klass_id: Klass.all.sample.id, race_id: Race.all.sample.id, str: rand(8..18), dex: rand(8..18), con: rand(8..18), int: rand(8..18), wis: rand(8..18), cha: rand(8..18)};
   
 end
-Player.all.each {|p| p.characters.map{|c| c.update(hp: c.calculate_hp, is_spellcaster: klasses_with_spells.any?(c.name))}}
+Player.all.each {|p| p.characters.map{|c| c.update(hp: c.calculate_hp, is_spellcaster: c.is_spellcaster?)}}
 
 puts "🎲 generating join tables..."
 
