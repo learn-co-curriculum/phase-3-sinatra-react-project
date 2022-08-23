@@ -3,12 +3,11 @@ class CreateUsers < ActiveRecord::Migration[6.1]
     create_table :users to |t|
     t.string :first_name
     t.string :last_name
+    t.string :aliases
     t.string :jedi_or_sith
     t.string :jedi_rank
     t.string :sith_rank
     t.string :species
-    t.sting :image
-  
-
+    t.string :image_url
   end
 end
