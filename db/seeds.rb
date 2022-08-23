@@ -107,7 +107,7 @@ Player.all.size.times do |i|
   4.times {Character.create player_id: i+1, name: Faker::Movies::LordOfTheRings.unique.character, level: rand(1..8), klass_id: Klass.all.sample.id, race_id: Race.all.sample.id, str: rand(8..18), dex: rand(8..18), con: rand(8..18), int: rand(8..18), wis: rand(8..18), cha: rand(8..18)};
   
 end
-Player.all.each {|p| p.characters.update_all(hp: self.calculate_hp, is_spellcaster: klasses_with_spells.includes(self.klass))}
+Player.all.each {|p| p.characters.map{|c| c.update(hp: c.calculate_hp, is_spellcaster: klasses_with_spells.any?(c.name))}}
 
 puts "🎲 generating join tables..."
 
@@ -125,12 +125,12 @@ klasses_with_spells.each { |k|
     # spells.each {|s| KlassSpell.create klass_id: k+1, spell_id: s + 1}
 }
 
-Character.all.size.times { |c| 
-    feats = []
-    2.times {feats << (rand(0..(Feat.all.size - 1)))}
-    feats = feats.uniq
+# Character.all.size.times { |c| 
+#     feats = []
+#     2.times {feats << (rand(0..(Feat.all.size - 1)))}
+#     feats = feats.uniq
 
-    feats.each {|f| CharFeat.create character_id: c+1, feat_id: f + 1}
-}
+#     feats.each {|f| CharFeat.create character_id: c+1, feat_id: f + 1}
+# }
 
 puts "💎 Adventure Awaits!"
