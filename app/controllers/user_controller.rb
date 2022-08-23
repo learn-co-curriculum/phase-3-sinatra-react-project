@@ -1,11 +1,4 @@
-class ApplicationController < Sinatra::Base
-  set :default_content_type, 'application/json'
-  
-  # Add your routes here
-  get "/" do
-    { message: "May the Force be with you" }.to_json
-  end
-
+class UserController < ApplicationController
   get "/users" do
     user = User.all 
     user.to_json
@@ -30,5 +23,4 @@ class ApplicationController < Sinatra::Base
     id = User.find(params[:id])
     id.to_json
   end
-
 end
