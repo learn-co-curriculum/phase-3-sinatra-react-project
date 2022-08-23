@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2022_08_22_224439) do
 
   create_table "lightsaber_colors", force: :cascade do |t|
     t.string "image_url"
-    t.string "attribute"
+    t.string "symbolism"
     t.string "force_users"
     t.string "crystal_color"
   end
