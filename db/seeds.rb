@@ -47,4 +47,5 @@ LightsaberColor.create(image_url: "https://user-images.githubusercontent.com/106
 
 
 
+
 puts "✅ Done seeding!"
