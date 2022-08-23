@@ -34,12 +34,12 @@ User.create(first_name: "Bastila", last_name: "Shan", aliases: nil, jedi_or_sith
 User.create(first_name: "Darth", last_name: "Chratis", aliases: nil, jedi_or_sith: "Sith", jedi_rank: nil, sith_rank: "Lord", species: "Human", image_url: "https://user-images.githubusercontent.com/106715328/186055357-84bff90d-f553-48ec-9341-3462d03f4f11.jpg")
 
 puts "Seeding lightsaber colors..."
-LightsaberColor.create(image_url: "https://user-images.githubusercontent.com/106715328/186197264-74e76b37-f5e1-4a84-a919-add0d70afef9.jpg", attribute: , force_users: , crystal_color: "white")
-LightsaberColor.create(image_url: "https://user-images.githubusercontent.com/106715328/186198956-c5d55d59-f20d-4063-971b-e217a963eb6c.jpg", attribute: , force_users: , crystal_color: "blue")
-LightsaberColor.create(image_url: "https://user-images.githubusercontent.com/106715328/186197458-f5bd09e2-b33b-42f9-838a-513c35a63c69.jpg" , attribute: , force_users: , crystal_color: "yellow-orange")
-LightsaberColor.create(image_url: "https://user-images.githubusercontent.com/106715328/186198868-2d8eff94-d57a-45f6-8261-91f7afe24e38.jpg", attribute: , force_users: , crystal_color: "green")
-LightsaberColor.create(image_url: "https://user-images.githubusercontent.com/106715328/186198697-1bf957a4-2fa2-4fe7-911e-693b8b607374.jpg", attribute: , force_users: , crystal_color: "red")
-LightsaberColor.create(image_url: "https://user-images.githubusercontent.com/106715328/186198779-57996478-5c25-482f-b352-ca544fa8b2e0.jpg", attribute: , force_users: , crystal_color: "purple")
+LightsaberColor.create(image_url: "https://user-images.githubusercontent.com/106715328/186197264-74e76b37-f5e1-4a84-a919-add0d70afef9.jpg", attribute: "Positivity, neutrality, purity,beginnings", force_users: "Ahsoka Tano, Orla Jereni", crystal_color: "white")
+LightsaberColor.create(image_url: "https://user-images.githubusercontent.com/106715328/186198956-c5d55d59-f20d-4063-971b-e217a963eb6c.jpg", attribute: "Calm, Trust, Stability, Loyalty, Sky, Sea", force_users: "Luke Skywalker, Anakin Skywalker, Obi-Wan Kenobi", crystal_color: "blue")
+LightsaberColor.create(image_url: "https://user-images.githubusercontent.com/106715328/186197458-f5bd09e2-b33b-42f9-838a-513c35a63c69.jpg" , attribute: "Energy, Optimism, Warmth, Sunshine, Caution", force_users: "Cal Kestis, Rey Skywalker, Ventress, Jedi Temple Guard", crystal_color: "yellow-orange")
+LightsaberColor.create(image_url: "https://user-images.githubusercontent.com/106715328/186198868-2d8eff94-d57a-45f6-8261-91f7afe24e38.jpg", attribute: "Growth, Renewal, Nature, Safety, Freshness", force_users: "Luke Skywalker, Yoda, Qui-Gon Jinn", crystal_color: "green")
+LightsaberColor.create(image_url: "https://user-images.githubusercontent.com/106715328/186198697-1bf957a4-2fa2-4fe7-911e-693b8b607374.jpg", attribute: "Anger, Passion, Danger, Blood, Power, Fire, Love, Leadership", force_users: "Darth Vader, Darth Maul, Kylo Ren, Darth Sidious", crystal_color: "red")
+LightsaberColor.create(image_url: "https://user-images.githubusercontent.com/106715328/186198779-57996478-5c25-482f-b352-ca544fa8b2e0.jpg", attribute: "Royalty, Power, Ambition, Wisdom, Nobility", force_users: "Mace Windu, Ty Yorrick, Vernestra Rwoh", crystal_color: "purple")
 
 
 
