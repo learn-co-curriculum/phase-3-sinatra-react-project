@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_22_224439) do
+ActiveRecord::Schema.define(version: 2022_08_23_172604) do
 
   create_table "lightsaber_colors", force: :cascade do |t|
     t.string "image_url"
