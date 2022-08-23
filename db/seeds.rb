@@ -34,7 +34,7 @@ User.create(first_name: "Bastila", last_name: "Shan", aliases: nil, jedi_or_sith
 User.create(first_name: "Darth", last_name: "Chratis", aliases: nil, jedi_or_sith: "Sith", jedi_rank: nil, sith_rank: "Lord", species: "Human", image_url: "https://user-images.githubusercontent.com/106715328/186055357-84bff90d-f553-48ec-9341-3462d03f4f11.jpg")
 
 puts "Seeding lightsaber colors..."
-
+LightsaberColor.create(image_url: , attribute: , force_users: , crystal_color: "white")
 
 
 
