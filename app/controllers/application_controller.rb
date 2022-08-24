@@ -31,6 +31,16 @@ class ApplicationController < Sinatra::Base
     animal.likes.to_json
   end
 
+  get "/donations/topdonor" do
+    top_donor = Donation.top_donor
+    top_donor.to_json
+  end
+
+  get "/donations/topdonee" do
+    top_donee = Donation.top_donee
+    top_donee.to_json
+  end
+
   post "/animals/:id/comments" do
     comment = Comment.create(
       message: params[:message],
@@ -48,7 +58,7 @@ class ApplicationController < Sinatra::Base
     like.to_json
   end
 
-  post "/users" do
+  post "/signup" do
     user = User.create(
       name: params[:name],
       username: params[:username],
@@ -65,6 +75,17 @@ class ApplicationController < Sinatra::Base
       user_id: params[:user_id]
     )
     donation.to_json
+  end
+
+  post "/login" do
+    username = params[:username]
+    password = params[:password]
+    user = User.find_by(username: username, password: password)
+    if user != nil
+      return user.to_json
+    else
+      halt 401, "Cannot find user"
+    end
   end
 
   # forego the "?" from the adopted when making a request.
