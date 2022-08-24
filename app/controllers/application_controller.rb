@@ -59,13 +59,18 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/signup" do
-    user = User.create(
-      name: params[:name],
-      username: params[:username],
-      password: params[:password],
-      location: params[:location]
-    )
-    user.to_json
+    user = User.find_by(username: params[:username])
+    if user != nil
+      halt 409, {:error => "Username already exists"}.to_json
+    else
+      user = User.create(
+        name: params[:name],
+        username: params[:username],
+        password: params[:password],
+        location: params[:location]
+      )
+      user.to_json
+    end
   end
 
   post "/animals/:id/donations" do
@@ -84,7 +89,7 @@ class ApplicationController < Sinatra::Base
     if user != nil
       return user.to_json
     else
-      halt 401, "Cannot find user"
+      halt 401, {:error => "Cannot find user"}.to_json
     end
   end
 
