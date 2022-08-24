@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_24_133819) do
+ActiveRecord::Schema.define(version: 2022_08_24_190844) do
 
   create_table "char_feats", force: :cascade do |t|
     t.integer "character_id"
@@ -67,6 +67,17 @@ ActiveRecord::Schema.define(version: 2022_08_24_133819) do
     t.string "languages"
     t.string "size"
     t.string "traits"
+  end
+
+  create_table "skill_joins", force: :cascade do |t|
+    t.integer "skill_id"
+    t.integer "race_id"
+    t.integer "klass_id"
+    t.integer "character_id"
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "spells", force: :cascade do |t|

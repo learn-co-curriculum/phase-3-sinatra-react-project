@@ -65,21 +65,16 @@ class ApplicationController < Sinatra::Base
   patch "/:username/:id/edit" do
     character = Character.find(params[:id])
     character.update(
-      name: params[:name],
-      level: params[:level],
-      hp: params[:hp],
-      current_hp: params[:current_hp],
-      is_spellcaster: params[:is_spellcaster],
-      str: params[:str],
-      dex: params[:dex],
-      con: params[:con],
-      int: params[:int],
-      wis: params[:wis],
-      cha: params[:cha],
-      player_id: Player.find_by(name: params[:player_id]).id,
-      klass_id: Klass.find_by(name: params[:klass_id]).id,
-      race_id: Race.find_by(name: params[:race_id]).id
+      name: params[:updatedCharacter][:name],
+      level: params[:updatedCharacter][:level],
+      str: params[:updatedCharacter][:str],
+      dex: params[:updatedCharacter][:dex],
+      con: params[:updatedCharacter][:con],
+      int: params[:updatedCharacter][:int],
+      wis: params[:updatedCharacter][:wis],
+      cha: params[:updatedCharacter][:cha]
     )
+    character.to_json
   end
 
 end
