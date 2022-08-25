@@ -9,7 +9,6 @@ class ApplicationController < Sinatra::Base
 
   get "/:username" do
     characters = Player.find_by(username: params[:username]).characters.all
-    # puts characters
     characters.to_json
   end
 
@@ -18,7 +17,8 @@ class ApplicationController < Sinatra::Base
     character = player.characters.find(params[:id])
     race = character.race
     klass = character.klass
-    data = [character, race, klass]
+    skills = [character.klass.skills.pluck(:name), character.race.skills.pluck(:name), character.skills.pluck(:name)]
+    data = [character, race, klass, skills]
     data.to_json
   end
 
@@ -36,7 +36,6 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/:username/new-character" do
-    # binding.pry
     character = Character.create(
       name: params[:newCharacter][:name],
       level: params[:newCharacter][:level],
@@ -50,7 +49,6 @@ class ApplicationController < Sinatra::Base
       klass_id: Klass.find_by(name: params[:newCharacter][:klass]).id,
       race_id: Race.find_by(name: params[:newCharacter][:race]).id
     )
-    # binding.pry
     character.update(
       hp: character.calculate_hp,
       current_hp: character.calculate_hp,
