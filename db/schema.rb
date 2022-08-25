@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_24_190844) do
+ActiveRecord::Schema.define(version: 2022_08_25_131022) do
 
   create_table "char_feats", force: :cascade do |t|
     t.integer "character_id"
     t.integer "feat_id"
+  end
+
+  create_table "char_skills", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "skill_id"
+    t.integer "race_id"
+    t.integer "klass_id"
   end
 
   create_table "characters", force: :cascade do |t|
@@ -49,9 +56,7 @@ ActiveRecord::Schema.define(version: 2022_08_24_190844) do
     t.string "name"
     t.string "klass_levels"
     t.integer "hit_die"
-    t.string "proficiencies"
     t.string "proficiency_choices"
-    t.string "saving_throws"
   end
 
   create_table "players", force: :cascade do |t|
@@ -62,22 +67,14 @@ ActiveRecord::Schema.define(version: 2022_08_24_190844) do
     t.string "name"
     t.string "speed"
     t.string "ability_bonuses"
-    t.string "starting_proficiencies"
-    t.string "proficiency_choices"
     t.string "languages"
     t.string "size"
     t.string "traits"
   end
 
-  create_table "skill_joins", force: :cascade do |t|
-    t.integer "skill_id"
-    t.integer "race_id"
-    t.integer "klass_id"
-    t.integer "character_id"
-  end
-
   create_table "skills", force: :cascade do |t|
     t.string "name"
+    t.string "stat"
   end
 
   create_table "spells", force: :cascade do |t|
