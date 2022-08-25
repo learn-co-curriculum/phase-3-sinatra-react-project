@@ -29,7 +29,6 @@ product3 = Product.create(
 
 Store.create(
     name: "Flatapple Store",
-
 )
 
 puts "✅ Done seeding!"
