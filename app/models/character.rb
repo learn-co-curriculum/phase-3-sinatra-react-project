@@ -68,7 +68,7 @@ class Character < ActiveRecord::Base
             spells << self.grab_spells(2, 3)
             spells << self.grab_spells(1, 4)
             spells << self.grab_spells(0, 5)
-        elsif self.level >= 15
+        elsif self.level == 15 || self.level == 16
             spells << self.grab_spells(8, 1)
             spells << self.grab_spells(7, 1)
             spells << self.grab_spells(6, 1)
@@ -78,7 +78,7 @@ class Character < ActiveRecord::Base
             spells << self.grab_spells(2, 3)
             spells << self.grab_spells(1, 4)
             spells << self.grab_spells(0, 5)
-        elsif self.level >= 13
+        elsif self.level == 13 || self.level == 14
             spells << self.grab_spells(7, 1)
             spells << self.grab_spells(6, 1)
             spells << self.grab_spells(5, 2)
@@ -87,7 +87,7 @@ class Character < ActiveRecord::Base
             spells << self.grab_spells(2, 3)
             spells << self.grab_spells(1, 4)
             spells << self.grab_spells(0, 5)
-        elsif self.level >= 11
+        elsif self.level == 11 || self.level == 12
             spells << self.grab_spells(6, 1)
             spells << self.grab_spells(5, 2)
             spells << self.grab_spells(4, 3)
@@ -146,7 +146,9 @@ class Character < ActiveRecord::Base
             spells << self.grab_spells(1, 2)
             spells << self.grab_spells(0, 3)
         end
+        # binding.pry
         spells = spells.flatten
+        # binding.pry
         spells
     end
 
