@@ -53,9 +53,9 @@ class ApplicationController < Sinatra::Base
     )
     character.update(
       hp: character.calculate_hp,
-      current_hp: character.calculate_hp,
       is_spellcaster: character.is_spellcaster?
     )
+    character.update(current_hp: character.hp)
     character.set_skills
     race = character.race
     klass = character.klass
@@ -75,6 +75,20 @@ class ApplicationController < Sinatra::Base
       wis: params[:updatedCharacter][:wis],
       cha: params[:updatedCharacter][:cha]
     )
+    character.to_json
+  end
+
+  patch "/:username/:id/heal" do
+    # binding.pry
+    character = Character.find(params[:id])
+    character.update(current_hp: (character.current_hp + params[:newHP].to_i).clamp(0,character.hp))
+    character.to_json
+  end
+  
+  patch "/:username/:id/damage" do
+    # binding.pry
+    character = Character.find(params[:id])
+    character.update(current_hp: (character.current_hp - params[:newHP].to_i).clamp(0,character.hp))
     character.to_json
   end
 

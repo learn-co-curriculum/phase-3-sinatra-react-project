@@ -115,7 +115,8 @@ Gandalf = Character.create(name: "Gandalf the White",player_id: 1,level: 20,klas
 
 fellowship = [Frodo, Sam, Pippin, Merry, Aragorn, Boromir, Legolas, Gimli, Gandalf]
 
-fellowship.map {|f| f.update(hp: f.calculate_hp, current_hp: f.calculate_hp, is_spellcaster: f.is_spellcaster?)}
+fellowship.map {|f| f.update(hp: f.calculate_hp, is_spellcaster: f.is_spellcaster?)}
+fellowship.map {|f| f.update(current_hp: f.hp)}
 
 
 puts "seeding skills...."
@@ -150,7 +151,7 @@ Aragorn_skills = [1,4,6,7,10,11,12,17,18]
 Boromir_skills = [6,8,12,14,18]
 Legolas_skills = [2,4,1,11,12,18]
 Gimli_skills = [6,7,8,9,10]
-Gandalf_skills = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,12,20,21,23]
+Gandalf_skills = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
 
 Frodo_skills.map {|s| CharSkill.create(character_id: 1, skill_id: s)}
 Sam_skills.map {|s| CharSkill.create(character_id: 2, skill_id: s)}
