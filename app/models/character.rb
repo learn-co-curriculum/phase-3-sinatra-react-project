@@ -149,5 +149,12 @@ class Character < ActiveRecord::Base
         spells = spells.flatten
         spells
     end
+
+    def set_skills
+        skills = []
+        6.times do skills << rand(1..18) end
+        skills = skills.uniq
+        skills.each {|s| CharSkill.create(skill_id: s, character_id: self.id)}
+    end
     
 end

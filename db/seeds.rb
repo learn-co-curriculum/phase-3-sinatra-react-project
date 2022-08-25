@@ -126,4 +126,6 @@ klasses_with_spells.each { |k|
   end
 }
 
+Character.all.each {|c| c.set_skills}
+
 puts "💎 Adventure Awaits!"
