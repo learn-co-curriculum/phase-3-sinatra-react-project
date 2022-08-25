@@ -9,6 +9,10 @@ Feat.destroy_all
 Spell.destroy_all
 Race.destroy_all
 Player.destroy_all
+Skill.destroy_all
+CharSkill.destroy_all
+Skill.reset_pk_sequence
+CharSkill.reset_pk_sequence
 CharFeat.reset_pk_sequence
 KlassSpell.reset_pk_sequence
 Character.reset_pk_sequence
@@ -108,6 +112,13 @@ Player.all.size.times do |i|
   
 end
 Player.all.each {|p| p.characters.map{|c| c.update(current_hp: c.calculate_hp, hp: c.calculate_hp, is_spellcaster: c.is_spellcaster?)}}
+
+
+puts "seeding skills...."
+
+skills = [{name: 'Acrobatics', stat: 'dex'}, {name: 'Animal Handling', stat: 'wis'}, {name: 'Arcana', stat: 'int'}, {name: 'Athletics', stat: 'str'}, {name: 'Deception', stat: 'cha'}, {name: 'History', stat: 'int'}, {name: 'Insight', stat: 'wis'}, {name: 'Intimidation', stat: 'cha'}, {name: 'Investigation', stat: 'int'}, {name: 'Medicine', stat: 'wis'}, {name: 'Nature', stat: 'int'}, {name: 'Perception', stat: 'wis'}, {name: 'Performance', stat: 'cha'}, {name: 'Persuasion', stat: 'cha'}, {name: 'Religion', stat: 'int'}, {name: 'Sleight of Hand', stat: 'dex'}, {name: 'Stealth', stat: 'dex'}, {name: 'Survival', stat: 'wis'}, {name: 'Str Save', stat: 'str'}, {name: 'Dex Save', stat: 'dex'}, {name: 'Con Save', stat: 'con'}, {name: 'Int Save', stat: 'int'}, {name: 'Wis Save', stat: 'wis'}, {name: 'Cha Save', stat: 'cha'}]
+
+skills.each {|skill| Skill.create(name: skill[:name], stat: skill[:stat])}
 
 puts "🎲 generating join tables..."
 
