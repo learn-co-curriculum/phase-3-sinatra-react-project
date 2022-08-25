@@ -8,7 +8,10 @@ class Animal < ActiveRecord::Base
         animal = self.find(id)
         animal_likes = animal.likes.size
         animal_total_donations = animal.donations.sum { |donation| donation.amount }
-        result = {**animal.attributes, "likes" => animal_likes, "donations" => animal_total_donations}
+        if animal.user_id != nil 
+            user_name = animal.user.name 
+        end
+        result = {**animal.attributes, "likes" => animal_likes, "donations" => animal_total_donations, "owner" => user_name}
         return result
     end
 end

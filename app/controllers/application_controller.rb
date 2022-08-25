@@ -21,9 +21,17 @@ class ApplicationController < Sinatra::Base
     animal.to_json
   end
 
+  get "/users/:id" do
+    user = User.find([params[:id]])
+    user.to_json
+  end
+
   get "/animals/:id/comments" do
     animal = Animal.find(params[:id])
-    animal.comments.to_json
+    animal_comments = animal.comments.map do |comment|
+      {**comment.attributes, "username" => comment.user.username, "location" => comment.user.location}
+    end
+    animal_comments.to_json
   end
 
   get "/animals/:id/likes" do
@@ -47,7 +55,20 @@ class ApplicationController < Sinatra::Base
       user_id: params[:user_id],
       animal_id: params[:id]
     )
-    comment.to_json
+    new_comment = {**comment.attributes, "username" => comment.user.username, "location" => comment.user.location}
+    new_comment.to_json
+  end
+
+  post "/animals" do
+    animal = Animal.create(
+      name: params[:name],
+      species: params[:species],
+      description: params[:description],
+      image_url: params[:image_url],
+      adopted?: params[:adopted?],
+      user_id: params[:user_id]
+    )
+    animal.to_json
   end
 
   post "/animals/:id/likes" do
@@ -97,16 +118,23 @@ class ApplicationController < Sinatra::Base
   patch "/animals/:id" do
     animal = Animal.find(params[:id])
     animal.update(
-      adopted?: params[:adopted],
+      adopted?: params[:adopted?],
       user_id: params[:user_id]
     )
-    animal.to_json
+    adoption_status = {**animal.attributes, "owner" => animal.user.name}
+    adoption_status.to_json
   end
 
   delete "/comments/:id" do
     comment = Comment.find(params[:id])
     comment.destroy
     comment.to_json
+  end
+
+  delete "/animals/:id" do
+    animal = Animal.find(params[:id])
+    animal.destroy
+    animal.to_json
   end
 
   # Sinatra does NOT accept a body for delete method, but it accepts query parameters.
