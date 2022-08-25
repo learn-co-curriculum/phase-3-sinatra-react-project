@@ -34,16 +34,13 @@ puts "⚔️ Seeding classes..."
 
 response = RestClient.get "https://www.dnd5eapi.co/api/classes"
 klasses = JSON.parse(response)
-# iterate over each class
 klasses["results"].each do |klass|
   class_response = RestClient.get "https://www.dnd5eapi.co#{klass["url"]}"
   new_class = JSON.parse(class_response)
   Klass.create(
     name: new_class["name"],
     hit_die: new_class["hit_die"],
-    proficiencies: new_class["proficiencies"],
     proficiency_choices: new_class["proficiency_choices"][0]["desc"],
-    saving_throws: new_class["saving_throws"],
     klass_levels: new_class["class_levels"]
   )
 end
@@ -52,21 +49,16 @@ puts "🧝🏼‍♀️ Seeding races..."
 
 response = RestClient.get "https://www.dnd5eapi.co/api/races"
 races = JSON.parse(response)
-# iterate over each race
 races["results"].each do |race|
-    # binding.pry
   race_response = RestClient.get "https://www.dnd5eapi.co#{race["url"]}"
   new_race = JSON.parse(race_response)
   Race.create(
     name: new_race["name"],
     speed: new_race["speed"],
-    starting_proficiencies: new_race["starting_proficiencies"],
-    # proficiency_choices: new_race["proficiency_choices"][0],
-    ability_bonuses: new_race["ability_bonuses"].map { |e| {e["ability_score"]["index"] => e["bonus"] }},
-    # ability_bonuses: new_race["ability_bonuses"][0],
-    languages: new_race["languages"],
+    ability_bonuses: new_race["ability_bonuses"].map { |a| {a["ability_score"]["index"] => a["bonus"] }},
+    languages: new_race["languages"].map {|l| l["name"]},
     size: new_race["size"],
-    traits: new_race["traits"]
+    traits: new_race["traits"].map {|t| t["name"]}
 )
 end
 
@@ -74,7 +66,6 @@ puts "🧙🏻‍♂️ Seeding spells..."
 
 response = RestClient.get "https://www.dnd5eapi.co/api/spells"
 spells = JSON.parse(response)
-# iterate over each spell
 spells["results"].each do |spell|
   spell_response = RestClient.get "https://www.dnd5eapi.co#{spell["url"]}"
   new_spell = JSON.parse(spell_response)
@@ -91,7 +82,6 @@ spells["results"].each do |spell|
 end
 puts "🛡️ Seeding feats..."
 
-# 20.times {Feat.create name: Faker::Game.unique.platform}
 file = File.read('./feats.json')
 feats = JSON.parse(file)
 
@@ -122,26 +112,18 @@ skills.each {|skill| Skill.create(name: skill[:name], stat: skill[:stat])}
 
 puts "🎲 generating join tables..."
 
+klass_skills = [[1,19], [1,21], [2,20], [2,24], [3,23], [3,24], [4,22], [4,23], [5,19], [5,21], [6,19], [6,20], [7,23], [7,24], [8,19], [8,20], [9,20], [9, 22], [10,21], [10,24], [11,23], [11,24], [12,22], [12,23]]
+race_skills = [[3, 12], [6, 8]]
+
+klass_skills.each {|ks| CharSkill.create(klass_id: ks[0], skill_id: ks[1])}
+race_skills.each {|rs| CharSkill.create(race_id: rs[0], skill_id: rs[1])}
+
 klasses_with_spells.each { |k| 
   response = RestClient.get "https://www.dnd5eapi.co/api/classes/#{k}/spells"
   spells = JSON.parse(response)
-  # iterate over each spell
   spells["results"].each do |spell|
   KlassSpell.create klass_id: Klass.find_by(name: k.capitalize()).id, spell_id: Spell.find_by(name: spell['name']).id
   end
-    # spells = []
-    # 5.times {spells << (rand(0..(Spell.all.size - 1)))}
-    # spells = spells.uniq
-
-    # spells.each {|s| KlassSpell.create klass_id: k+1, spell_id: s + 1}
 }
-
-# Character.all.size.times { |c| 
-#     feats = []
-#     2.times {feats << (rand(0..(Feat.all.size - 1)))}
-#     feats = feats.uniq
-
-#     feats.each {|f| CharFeat.create character_id: c+1, feat_id: f + 1}
-# }
 
 puts "💎 Adventure Awaits!"
