@@ -26,9 +26,9 @@ Faker::UniqueGenerator.clear
 
 puts "🎲 Seeding players..."
 
-Player.create(username: "Alie")
-Player.create(username: "Andrea")
-Player.create(username: "Kelsey")
+Player.create(username: "Alie", image: "../avatars/Alie.jpg")
+Player.create(username: "Andrea", image: "../avatars/Andrea.jpg")
+Player.create(username: "Kelsey", image: "../avatars/Kelsey.jpg")
 
 puts "⚔️ Seeding classes..."
 
@@ -97,11 +97,25 @@ klasses_with_spells = ['bard', 'cleric', 'druid', 'paladin', 'ranger', 'sorcerer
 
 puts "📜 Seeding characters..."
 
-Player.all.size.times do |i|
-  4.times {Character.create player_id: i+1, name: Faker::Movies::LordOfTheRings.unique.character, level: rand(1..8), klass_id: Klass.all.sample.id, race_id: Race.all.sample.id, str: rand(8..18), dex: rand(8..18), con: rand(8..18), int: rand(8..18), wis: rand(8..18), cha: rand(8..18)};
+# Player.all.size.times do |i|
+#   4.times {Character.create player_id: i+1, name: Faker::Movies::LordOfTheRings.unique.character, level: rand(1..8), klass_id: Klass.all.sample.id, race_id: Race.all.sample.id, str: rand(8..18), dex: rand(8..18), con: rand(8..18), int: rand(8..18), wis: rand(8..18), cha: rand(8..18)};
   
-end
-Player.all.each {|p| p.characters.map{|c| c.update(current_hp: c.calculate_hp, hp: c.calculate_hp, is_spellcaster: c.is_spellcaster?)}}
+# end
+# Player.all.each {|p| p.characters.map{|c| c.update(current_hp: c.calculate_hp, hp: c.calculate_hp, is_spellcaster: c.is_spellcaster?)}}
+
+Frodo = Character.create(name: "Frodo Baggins",player_id: 1,level: 6,klass_id: 11,race_id: 7,str: 11,dex: 15,con: 14,int: 18,wis: 12,cha: 16, image: "../avatars/frodo.jpg")
+Sam = Character.create(name: "Samwise Gamgee",player_id: 1,level: 8,klass_id: 3,race_id: 7,str: 12,dex: 8,con: 9,int: 13,wis: 17,cha: 12, image: "../avatars/sam.jpg")
+Pippin = Character.create(name: "Peregrin Took",player_id: 2,level: 7,klass_id: 2,race_id: 7,str: 13,dex: 20,con: 13,int: 13,wis: 7,cha: 16, image: "../avatars/pippin.jpg")
+Merry = Character.create(name: "Meriadoc Brandybuck",player_id: 2,level: 8,klass_id: 9,race_id: 7,str: 8,dex: 17,con: 14,int: 16,wis: 13,cha: 14, image: "../avatars/merry.jpg")
+Aragorn = Character.create(name: "Aragorn",player_id: 3,level: 18,klass_id: 8,race_id: 8,str: 18,dex: 16,con: 17,int: 13,wis: 18,cha: 12, image: "../avatars/aragorn.jpg")
+Boromir = Character.create(name: "Boromir",player_id: 2,level: 10,klass_id: 7,race_id: 8,str: 20,dex: 12,con: 16,int: 12,wis: 11,cha: 16, image: "../avatars/boromir.jpg")
+Legolas = Character.create(name: "Legolas",player_id: 3,level: 13,klass_id: 5,race_id: 3,str: 12,dex: 20,con: 15,int: 9,wis: 17,cha: 6, image: "../avatars/legolas.jpg")
+Gimli = Character.create(name: "Gimli",player_id: 3,level: 12,klass_id: 1,race_id: 2,str: 20,dex: 8,con: 15,int: 13,wis: 18,cha: 13, image: "../avatars/gimli.jpg")
+Gandalf = Character.create(name: "Gandalf the White",player_id: 1,level: 20,klass_id: 12,race_id: 9,str: 20,dex: 20,con: 20,int: 20,wis: 20,cha: 20, image: "../avatars/gandalf.jpg")
+
+fellowship = [Frodo, Sam, Pippin, Merry, Aragorn, Boromir, Legolas, Gimli, Gandalf]
+
+fellowship.map {|f| f.update(hp: f.calculate_hp, current_hp: f.calculate_hp, is_spellcaster: f.is_spellcaster?)}
 
 
 puts "seeding skills...."
@@ -126,6 +140,26 @@ klasses_with_spells.each { |k|
   end
 }
 
-Character.all.each {|c| c.set_skills}
+# Character.all.each {|c| c.set_skills}
+
+Frodo_skills = [4,7,16,17]
+Sam_skills = [6,4,15,18]
+Pippin_skills = [16,9,17]
+Merry_skills = [14,4,18]
+Aragorn_skills = [1,4,6,7,10,11,12,17,18]
+Boromir_skills = [6,8,12,14,18]
+Legolas_skills = [2,4,1,11,12,18]
+Gimli_skills = [6,7,8,9,10]
+Gandalf_skills = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,12,20,21,23]
+
+Frodo_skills.map {|s| CharSkill.create(character_id: 1, skill_id: s)}
+Sam_skills.map {|s| CharSkill.create(character_id: 2, skill_id: s)}
+Pippin_skills.map {|s| CharSkill.create(character_id: 3, skill_id: s)}
+Merry_skills.map {|s| CharSkill.create(character_id: 4, skill_id: s)}
+Aragorn_skills.map {|s| CharSkill.create(character_id: 5, skill_id: s)}
+Boromir_skills.map {|s| CharSkill.create(character_id: 6, skill_id: s)}
+Legolas_skills.map {|s| CharSkill.create(character_id: 7, skill_id: s)}
+Gimli_skills.map {|s| CharSkill.create(character_id: 8, skill_id: s)}
+Gandalf_skills.map {|s| CharSkill.create(character_id: 9, skill_id: s)}
 
 puts "💎 Adventure Awaits!"
