@@ -56,6 +56,7 @@ class ApplicationController < Sinatra::Base
       current_hp: character.calculate_hp,
       is_spellcaster: character.is_spellcaster?
     )
+    character.set_skills
     race = character.race
     klass = character.klass
     data = [character, race, klass]
