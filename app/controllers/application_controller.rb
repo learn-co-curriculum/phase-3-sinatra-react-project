@@ -18,7 +18,9 @@ class ApplicationController < Sinatra::Base
     race = character.race
     klass = character.klass
     skills = [character.klass.skills.pluck(:name), character.race.skills.pluck(:name), character.skills.pluck(:name)]
-    data = [character, race, klass, skills]
+    spells = character.fetch_spells
+    # binding.pry
+    data = [character, race, klass, skills, spells]
     data.to_json
   end
 
