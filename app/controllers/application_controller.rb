@@ -72,7 +72,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/animals/:id/likes" do
-    like = Like.create(
+    like = Like.find_or_create_by(
       animal_id: params[:id],
       user_id: params[:user_id]
     )
