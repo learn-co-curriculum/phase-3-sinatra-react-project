@@ -19,7 +19,6 @@ class ApplicationController < Sinatra::Base
     klass = character.klass
     skills = [character.klass.skills.pluck(:name), character.race.skills.pluck(:name), character.skills.pluck(:name)]
     spells = character.fetch_spells
-    # binding.pry
     data = [character, race, klass, skills, spells]
     data.to_json
   end
@@ -31,15 +30,14 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/new-player" do
-    player = Player.create(
-      username: params[:username]
-    )
+    player = Player.create(username: params[:username], image: params[:image])
     player.to_json
   end
 
   post "/:username/new-character" do
     character = Character.create(
       name: params[:newCharacter][:name],
+      image: params[:newCharacter][:image],
       level: params[:newCharacter][:level],
       str: params[:newCharacter][:str],
       dex: params[:newCharacter][:dex],
@@ -51,16 +49,10 @@ class ApplicationController < Sinatra::Base
       klass_id: Klass.find_by(name: params[:newCharacter][:klass]).id,
       race_id: Race.find_by(name: params[:newCharacter][:race]).id
     )
-    character.update(
-      hp: character.calculate_hp,
-      is_spellcaster: character.is_spellcaster?
-    )
+    character.update(hp: character.calculate_hp, is_spellcaster: character.is_spellcaster?)
     character.update(current_hp: character.hp)
     character.set_skills
-    race = character.race
-    klass = character.klass
-    data = [character, race, klass]
-    data.to_json
+    character.to_json
   end
 
   patch "/:username/:id/edit" do
@@ -79,14 +71,12 @@ class ApplicationController < Sinatra::Base
   end
 
   patch "/:username/:id/heal" do
-    # binding.pry
     character = Character.find(params[:id])
     character.update(current_hp: (character.current_hp + params[:newHP].to_i).clamp(0,character.hp))
     character.to_json
   end
   
   patch "/:username/:id/damage" do
-    # binding.pry
     character = Character.find(params[:id])
     character.update(current_hp: (character.current_hp - params[:newHP].to_i).clamp(0,character.hp))
     character.to_json

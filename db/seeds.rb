@@ -90,11 +90,11 @@ spells["results"].each do |spell|
     range: new_spell["range"]
   )
 end
+
 puts "🛡️ Seeding feats..."
 
 file = File.read('./feats.json')
 feats = JSON.parse(file)
-
 feats.each do |feat|
   Feat.create(
     name: feat["Feat"],
@@ -103,15 +103,7 @@ feats.each do |feat|
   )
 end
 
-klasses_with_spells = ['bard', 'cleric', 'druid', 'paladin', 'ranger', 'sorcerer', 'warlock', 'wizard']
-
 puts "📜 Seeding characters..."
-
-# Player.all.size.times do |i|
-#   4.times {Character.create player_id: i+1, name: Faker::Movies::LordOfTheRings.unique.character, level: rand(1..8), klass_id: Klass.all.sample.id, race_id: Race.all.sample.id, str: rand(8..18), dex: rand(8..18), con: rand(8..18), int: rand(8..18), wis: rand(8..18), cha: rand(8..18)};
-  
-# end
-# Player.all.each {|p| p.characters.map{|c| c.update(current_hp: c.calculate_hp, hp: c.calculate_hp, is_spellcaster: c.is_spellcaster?)}}
 
 Frodo = Character.create(name: "Frodo Baggins",player_id: 1,level: 6,klass_id: 11,race_id: 7,str: 11,dex: 15,con: 14,int: 18,wis: 12,cha: 16, image: Frodo_url)
 Sam = Character.create(name: "Samwise Gamgee",player_id: 1,level: 8,klass_id: 3,race_id: 7,str: 12,dex: 8,con: 9,int: 13,wis: 17,cha: 12, image: Sam_url)
@@ -128,7 +120,6 @@ fellowship = [Frodo, Sam, Pippin, Merry, Aragorn, Boromir, Legolas, Gimli, Ganda
 fellowship.map {|f| f.update(hp: f.calculate_hp, is_spellcaster: f.is_spellcaster?)}
 fellowship.map {|f| f.update(current_hp: f.hp)}
 
-
 puts "seeding skills...."
 
 skills = [{name: 'Acrobatics', stat: 'dex'}, {name: 'Animal Handling', stat: 'wis'}, {name: 'Arcana', stat: 'int'}, {name: 'Athletics', stat: 'str'}, {name: 'Deception', stat: 'cha'}, {name: 'History', stat: 'int'}, {name: 'Insight', stat: 'wis'}, {name: 'Intimidation', stat: 'cha'}, {name: 'Investigation', stat: 'int'}, {name: 'Medicine', stat: 'wis'}, {name: 'Nature', stat: 'int'}, {name: 'Perception', stat: 'wis'}, {name: 'Performance', stat: 'cha'}, {name: 'Persuasion', stat: 'cha'}, {name: 'Religion', stat: 'int'}, {name: 'Sleight of Hand', stat: 'dex'}, {name: 'Stealth', stat: 'dex'}, {name: 'Survival', stat: 'wis'}, {name: 'Str Save', stat: 'str'}, {name: 'Dex Save', stat: 'dex'}, {name: 'Con Save', stat: 'con'}, {name: 'Int Save', stat: 'int'}, {name: 'Wis Save', stat: 'wis'}, {name: 'Cha Save', stat: 'cha'}]
@@ -143,6 +134,8 @@ race_skills = [[3, 12], [6, 8]]
 klass_skills.each {|ks| CharSkill.create(klass_id: ks[0], skill_id: ks[1])}
 race_skills.each {|rs| CharSkill.create(race_id: rs[0], skill_id: rs[1])}
 
+klasses_with_spells = ['bard', 'cleric', 'druid', 'paladin', 'ranger', 'sorcerer', 'warlock', 'wizard']
+
 klasses_with_spells.each { |k| 
   response = RestClient.get "https://www.dnd5eapi.co/api/classes/#{k}/spells"
   spells = JSON.parse(response)
@@ -150,8 +143,6 @@ klasses_with_spells.each { |k|
   KlassSpell.create klass_id: Klass.find_by(name: k.capitalize()).id, spell_id: Spell.find_by(name: spell['name']).id
   end
 }
-
-# Character.all.each {|c| c.set_skills}
 
 Frodo_skills = [4,7,16,17]
 Sam_skills = [6,4,15,18]

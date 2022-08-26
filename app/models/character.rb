@@ -11,144 +11,71 @@ class Character < ActiveRecord::Base
 
     def calculate_hp 
         (self.klass.hit_die + self.con + (self.level*rand(1..self.klass.hit_die)))
-
     end
 
     def is_spellcaster?
         [2, 3, 4, 7, 8, 10, 11, 12].include?(self.klass_id)
     end
 
-    def grab_spells lvl, amt
-        self.klass.spells.where(level: lvl).sample(amt)
+    def grab_spells inputArray
+        self.klass.spells.where(level: inputArray[0]).sample(inputArray[1])
     end
 
     def fetch_spells
         spells = []
         if self.level == 20
-            spells << self.grab_spells(9, 1)
-            spells << self.grab_spells(8, 1)
-            spells << self.grab_spells(7, 2)
-            spells << self.grab_spells(6, 2)
-            spells << self.grab_spells(5, 3)
-            spells << self.grab_spells(4, 3)
-            spells << self.grab_spells(3, 3)
-            spells << self.grab_spells(2, 3)
-            spells << self.grab_spells(1, 4)
-            spells << self.grab_spells(0, 5)
+            args = [[9,1],[8,1],[7,2],[6,2],[5,3],[4,3],[3,3],[2,3],[1,4],[0,5]]
+            spells << args.map {|arg| self.grab_spells(arg)}
         elsif self.level == 19
-            spells << self.grab_spells(9, 1)
-            spells << self.grab_spells(8, 1)
-            spells << self.grab_spells(7, 1)
-            spells << self.grab_spells(6, 2)
-            spells << self.grab_spells(5, 3)
-            spells << self.grab_spells(4, 3)
-            spells << self.grab_spells(3, 3)
-            spells << self.grab_spells(2, 3)
-            spells << self.grab_spells(1, 4)
-            spells << self.grab_spells(0, 5)
+            args = [[9,1],[8,1],[7,1],[6,2],[5,3],[4,3],[3,3],[2,3],[1,4],[0,5]]
+            spells << args.map {|arg| self.grab_spells(arg)}
         elsif self.level == 18
-            spells << self.grab_spells(9, 1)
-            spells << self.grab_spells(8, 1)
-            spells << self.grab_spells(7, 1)
-            spells << self.grab_spells(6, 1)
-            spells << self.grab_spells(5, 3)
-            spells << self.grab_spells(4, 3)
-            spells << self.grab_spells(3, 3)
-            spells << self.grab_spells(2, 3)
-            spells << self.grab_spells(1, 4)
-            spells << self.grab_spells(0, 5)
+            args = [[9,1],[8,1],[7,1],[6,1],[5,3],[4,3],[3,3],[2,3],[1,4],[0,5]]
+            spells << args.map {|arg| self.grab_spells(arg)}
         elsif self.level == 17
-            spells << self.grab_spells(9, 1)
-            spells << self.grab_spells(8, 1)
-            spells << self.grab_spells(7, 1)
-            spells << self.grab_spells(6, 1)
-            spells << self.grab_spells(5, 2)
-            spells << self.grab_spells(4, 3)
-            spells << self.grab_spells(3, 3)
-            spells << self.grab_spells(2, 3)
-            spells << self.grab_spells(1, 4)
-            spells << self.grab_spells(0, 5)
+            args = [[9,1],[8,1],[7,1],[6,1],[5,2],[4,3],[3,3],[2,3],[1,4],[0,5]]
+            spells << args.map {|arg| self.grab_spells(arg)}
         elsif self.level == 15 || self.level == 16
-            spells << self.grab_spells(8, 1)
-            spells << self.grab_spells(7, 1)
-            spells << self.grab_spells(6, 1)
-            spells << self.grab_spells(5, 2)
-            spells << self.grab_spells(4, 3)
-            spells << self.grab_spells(3, 3)
-            spells << self.grab_spells(2, 3)
-            spells << self.grab_spells(1, 4)
-            spells << self.grab_spells(0, 5)
+            args = [[8,1],[7,1],[6,1],[5,2],[4,3],[3,3],[2,3],[1,4],[0,5]]
+            spells << args.map {|arg| self.grab_spells(arg)}
         elsif self.level == 13 || self.level == 14
-            spells << self.grab_spells(7, 1)
-            spells << self.grab_spells(6, 1)
-            spells << self.grab_spells(5, 2)
-            spells << self.grab_spells(4, 3)
-            spells << self.grab_spells(3, 3)
-            spells << self.grab_spells(2, 3)
-            spells << self.grab_spells(1, 4)
-            spells << self.grab_spells(0, 5)
+            args = [[7,1],[6,1],[5,2],[4,3],[3,3],[2,3],[1,4],[0,5]]
+            spells << args.map {|arg| self.grab_spells(arg)}
         elsif self.level == 11 || self.level == 12
-            spells << self.grab_spells(6, 1)
-            spells << self.grab_spells(5, 2)
-            spells << self.grab_spells(4, 3)
-            spells << self.grab_spells(3, 3)
-            spells << self.grab_spells(2, 3)
-            spells << self.grab_spells(1, 4)
-            spells << self.grab_spells(0, 5)
+            args = [[6,1],[5,2],[4,3],[3,3],[2,3],[1,4],[0,5]]
+            spells << args.map {|arg| self.grab_spells(arg)}
         elsif self.level == 10
-            spells << self.grab_spells(5, 2)
-            spells << self.grab_spells(4, 3)
-            spells << self.grab_spells(3, 3)
-            spells << self.grab_spells(2, 3)
-            spells << self.grab_spells(1, 4)
-            spells << self.grab_spells(0, 5)
+            args = [[5,2],[4,3],[3,3],[2,3],[1,4],[0,5]]
+            spells << args.map {|arg| self.grab_spells(arg)}
         elsif self.level == 9
-            spells << self.grab_spells(5, 1)
-            spells << self.grab_spells(4, 3)
-            spells << self.grab_spells(3, 3)
-            spells << self.grab_spells(2, 3)
-            spells << self.grab_spells(1, 4)
-            spells << self.grab_spells(0, 4)
+            args = [[5,1],[4,3],[3,3],[2,3],[1,4],[0,4]]
+            spells << args.map {|arg| self.grab_spells(arg)}
         elsif self.level == 8
-            spells << self.grab_spells(4, 2)
-            spells << self.grab_spells(3, 3)
-            spells << self.grab_spells(2, 3)
-            spells << self.grab_spells(1, 4)
-            spells << self.grab_spells(0, 4)
+            args = [[4,2],[3,3],[2,3],[1,4],[0,4]]
+            spells << args.map {|arg| self.grab_spells(arg)}
         elsif self.level == 7
-            spells << self.grab_spells(4, 1)
-            spells << self.grab_spells(3, 3)
-            spells << self.grab_spells(2, 3)
-            spells << self.grab_spells(1, 4)
-            spells << self.grab_spells(0, 4)
+            args = [[4,1],[3,3],[2,3],[1,4],[0,4]]
+            spells << args.map {|arg| self.grab_spells(arg)}
         elsif self.level == 6
-            spells << self.grab_spells(3, 3)
-            spells << self.grab_spells(2, 3)
-            spells << self.grab_spells(1, 4)
-            spells << self.grab_spells(0, 4)
+            args = [[3,3],[2,3],[1,4],[0,4]]
+            spells << args.map {|arg| self.grab_spells(arg)}
         elsif self.level == 5
-            spells << self.grab_spells(3, 2)
-            spells << self.grab_spells(2, 3)
-            spells << self.grab_spells(1, 4)
-            spells << self.grab_spells(0, 4)
+            args = [[3,2],[2,3],[1,4],[0,4]]
+            spells << args.map {|arg| self.grab_spells(arg)}
         elsif self.level == 4
-            spells << self.grab_spells(2, 3)
-            spells << self.grab_spells(1, 4)
-            spells << self.grab_spells(0, 4)
+            args = [[2,3],[1,4],[0,4]]
+            spells << args.map {|arg| self.grab_spells(arg)}
         elsif self.level == 3
-            spells << self.grab_spells(2, 2)
-            spells << self.grab_spells(1, 4)
-            spells << self.grab_spells(0, 3)
+            args = [[2,2],[1,4],[0,3]]
+            spells << args.map {|arg| self.grab_spells(arg)}
         elsif self.level == 2
-            spells << self.grab_spells(1, 3)
-            spells << self.grab_spells(0, 3)
+            args = [[1,3],[0,3]]
+            spells << args.map {|arg| self.grab_spells(arg)}
         elsif self.level == 1
-            spells << self.grab_spells(1, 2)
-            spells << self.grab_spells(0, 3)
+            args = [[1,2],[0,3]]
+            spells << args.map {|arg| self.grab_spells(arg)}
         end
-        # binding.pry
         spells = spells.flatten
-        # binding.pry
         spells
     end
 
