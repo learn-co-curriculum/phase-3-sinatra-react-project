@@ -24,11 +24,21 @@ Player.reset_pk_sequence
 
 Faker::UniqueGenerator.clear
 
+Gandalf_url = 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Gandalf600ppx.jpg/170px-Gandalf600ppx.jpg'
+Frodo_url = 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/Elijah_Wood_as_Frodo_Baggins.png/170px-Elijah_Wood_as_Frodo_Baggins.png'
+Sam_url = 'https://upload.wikimedia.org/wikipedia/en/7/7b/Sean_Astin_as_Samwise_Gamgee.png'
+Pippin_url = 'https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Pippinprintscreen.jpg/170px-Pippinprintscreen.jpg'
+Merry_url = 'https://upload.wikimedia.org/wikipedia/en/4/4a/Meriadoc_Brandybuck_screenshot.jpg'
+Aragorn_url = 'https://upload.wikimedia.org/wikipedia/en/3/35/Aragorn300ppx.png'
+Boromir_url = 'https://www.giantbomb.com/a/uploads/scale_medium/2/27024/857251-boromir6.jpg'
+Gimli_url = 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Gimli_With_Axe.jpg/220px-Gimli_With_Axe.jpg'
+Legolas_url = 'https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Legolas600ppx.jpg/220px-Legolas600ppx.jpg'
+
 puts "🎲 Seeding players..."
 
-Player.create(username: "Alie", image: "../avatars/Alie.jpg")
-Player.create(username: "Andrea", image: "../avatars/Andrea.jpg")
-Player.create(username: "Kelsey", image: "../avatars/Kelsey.jpg")
+Player.create(username: "Alie", image: "https://avatars.githubusercontent.com/u/106044550?v=4")
+Player.create(username: "Andrea", image: "https://media-exp1.licdn.com/dms/image/C4E03AQFbPdY0CapyEw/profile-displayphoto-shrink_200_200/0/1658856079190?e=1666828800&v=beta&t=yhWkzH9mNvUj2uLQPup3gxjakjc1NAC_N1ZVCAPRm_s")
+Player.create(username: "Kelsey", image: "https://media-exp1.licdn.com/dms/image/C4E03AQHVbkCeVZOzBQ/profile-displayphoto-shrink_200_200/0/1647623944644?e=1666828800&v=beta&t=IUdF9XqRszRGjGNCUFyREV6CwukgzaIgsfDYPxZZFjk")
 
 puts "⚔️ Seeding classes..."
 
@@ -103,15 +113,15 @@ puts "📜 Seeding characters..."
 # end
 # Player.all.each {|p| p.characters.map{|c| c.update(current_hp: c.calculate_hp, hp: c.calculate_hp, is_spellcaster: c.is_spellcaster?)}}
 
-Frodo = Character.create(name: "Frodo Baggins",player_id: 1,level: 6,klass_id: 11,race_id: 7,str: 11,dex: 15,con: 14,int: 18,wis: 12,cha: 16, image: "../avatars/frodo.jpg")
-Sam = Character.create(name: "Samwise Gamgee",player_id: 1,level: 8,klass_id: 3,race_id: 7,str: 12,dex: 8,con: 9,int: 13,wis: 17,cha: 12, image: "../avatars/sam.jpg")
-Pippin = Character.create(name: "Peregrin Took",player_id: 2,level: 7,klass_id: 2,race_id: 7,str: 13,dex: 20,con: 13,int: 13,wis: 7,cha: 16, image: "../avatars/pippin.jpg")
-Merry = Character.create(name: "Meriadoc Brandybuck",player_id: 2,level: 8,klass_id: 9,race_id: 7,str: 8,dex: 17,con: 14,int: 16,wis: 13,cha: 14, image: "../avatars/merry.jpg")
-Aragorn = Character.create(name: "Aragorn",player_id: 3,level: 18,klass_id: 8,race_id: 8,str: 18,dex: 16,con: 17,int: 13,wis: 18,cha: 12, image: "../avatars/aragorn.jpg")
-Boromir = Character.create(name: "Boromir",player_id: 2,level: 10,klass_id: 7,race_id: 8,str: 20,dex: 12,con: 16,int: 12,wis: 11,cha: 16, image: "../avatars/boromir.jpg")
-Legolas = Character.create(name: "Legolas",player_id: 3,level: 13,klass_id: 5,race_id: 3,str: 12,dex: 20,con: 15,int: 9,wis: 17,cha: 6, image: "../avatars/legolas.jpg")
-Gimli = Character.create(name: "Gimli",player_id: 3,level: 12,klass_id: 1,race_id: 2,str: 20,dex: 8,con: 15,int: 13,wis: 18,cha: 13, image: "../avatars/gimli.jpg")
-Gandalf = Character.create(name: "Gandalf the White",player_id: 1,level: 20,klass_id: 12,race_id: 9,str: 20,dex: 20,con: 20,int: 20,wis: 20,cha: 20, image: "../avatars/gandalf.jpg")
+Frodo = Character.create(name: "Frodo Baggins",player_id: 1,level: 6,klass_id: 11,race_id: 7,str: 11,dex: 15,con: 14,int: 18,wis: 12,cha: 16, image: Frodo_url)
+Sam = Character.create(name: "Samwise Gamgee",player_id: 1,level: 8,klass_id: 3,race_id: 7,str: 12,dex: 8,con: 9,int: 13,wis: 17,cha: 12, image: Sam_url)
+Pippin = Character.create(name: "Peregrin Took",player_id: 2,level: 7,klass_id: 2,race_id: 7,str: 13,dex: 20,con: 13,int: 13,wis: 7,cha: 16, image: Pippin_url)
+Merry = Character.create(name: "Meriadoc Brandybuck",player_id: 2,level: 8,klass_id: 9,race_id: 7,str: 8,dex: 17,con: 14,int: 16,wis: 13,cha: 14, image: Merry_url)
+Aragorn = Character.create(name: "Aragorn",player_id: 3,level: 18,klass_id: 8,race_id: 8,str: 18,dex: 16,con: 17,int: 13,wis: 18,cha: 12, image: Aragorn_url)
+Boromir = Character.create(name: "Boromir",player_id: 2,level: 10,klass_id: 7,race_id: 8,str: 20,dex: 12,con: 16,int: 12,wis: 11,cha: 16, image: Boromir_url)
+Legolas = Character.create(name: "Legolas",player_id: 3,level: 13,klass_id: 5,race_id: 3,str: 12,dex: 20,con: 15,int: 9,wis: 17,cha: 6, image: Legolas_url)
+Gimli = Character.create(name: "Gimli",player_id: 3,level: 12,klass_id: 1,race_id: 2,str: 20,dex: 8,con: 15,int: 13,wis: 18,cha: 13, image: Gimli_url)
+Gandalf = Character.create(name: "Gandalf the White",player_id: 1,level: 20,klass_id: 12,race_id: 9,str: 20,dex: 20,con: 20,int: 20,wis: 20,cha: 20, image: Gandalf_url)
 
 fellowship = [Frodo, Sam, Pippin, Merry, Aragorn, Boromir, Legolas, Gimli, Gandalf]
 
