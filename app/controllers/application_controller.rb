@@ -3,7 +3,8 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here - root route (basic path)
   get "/" do
-    { message: "Good luck with your project!" }.to_json
+    @projects = Project.all 
+    @projects.to_json(include: [:tasks])
   end
 
 end

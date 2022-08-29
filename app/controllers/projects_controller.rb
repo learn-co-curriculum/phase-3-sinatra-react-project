@@ -36,16 +36,3 @@ class ProjectsController < ApplicationController
         end
         
     end
-    
-    # patch "/projects/:id" do
-    #     project = Project.find(params[:id])
-    #     if project && project.update(params[:project])
-    #         params[:tasks].each do |task_params|
-    #             task = project.tasks.find(task_params[:id])
-    #             task.update(task_params)
-    #         end
-    #         project.to_json(include: [tasks])
-    #     else
-    #         { errors: project.errors.full_messages, status: "Unable to process request"}
-    #     end
-    # end
