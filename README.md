@@ -12,5 +12,6 @@ The frontend of this application will also need to be run on another port for th
 ## How To Use
 1. Fork and clone this repository
 2. Run 'bundle install'
-3. Run 'rake server' - this should open http://localhost:9292/
+3. Run 'rake db:migration db:seed'
+4. Run 'rake server' - this should open http://localhost:9292/
 5. Follow directions to start the frontent server [here](https://github.com/kyrstin-kempf/phase-3-sinatra-react-project-frontend/blob/main/README.md), if you haven't already.
