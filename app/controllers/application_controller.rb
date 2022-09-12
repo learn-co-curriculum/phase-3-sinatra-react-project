@@ -6,4 +6,47 @@ class ApplicationController < Sinatra::Base
     { message: "Good luck with your project!" }.to_json
   end
 
+  get '/bands' do
+    bands = Band.all
+    bands.to_json
+  end
+
+  get '/band/:id' do
+    band = Band.find(params[:id])
+    band.to_json
+  end
+
+  get '/cities' do
+    cities = City.all
+    cities.to_json
+  end
+
+  get '/cities/:id' do
+    city = Band.find(params[:id])
+    city.to_json
+  end
+
+  get '/concerts' do
+    concerts = Concert.all
+    concerts.to_json
+  end
+
+  get '/concerts/:id' do
+    concert = Concert.find(params[:id])
+    concert.to_json
+  end
+
+  get '/eateries' do
+    earteries = Eatery.all
+    eateries.to_json
+  end
+
+  get '/eateries/:id' do
+    eatery = eatery.find(params[:id])
+    eatery.to_json
+  end
+
+  
+
+
 end
