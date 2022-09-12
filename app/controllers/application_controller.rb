@@ -37,16 +37,16 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/eateries' do
-    earteries = Eatery.all
+    eateries = Eatery.all
     eateries.to_json
   end
 
   get '/eateries/:id' do
-    eatery = eatery.find(params[:id])
+    eatery = Eatery.find(params[:id])
     eatery.to_json
   end
 
-  
+
 
 
 end
