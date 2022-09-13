@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2022_09_12_210555) do
 
   create_table "templates", force: :cascade do |t|
     t.integer "level"
-    t.string "character_class"
+    t.string "class_name"
     t.string "race"
     t.integer "strength"
     t.integer "dexterity"

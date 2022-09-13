@@ -17,19 +17,14 @@ class ApplicationController < Sinatra::Base
     user_name.to_json
   end
 
-  patch "/users/:id" do
-    update_user = User.find(params[:id])
-    update_user.update(name: params[:name].to_json
-  end
-  
-  # get "/user/:name" do
-  #   user_name = User.find(name: params[:name])
-  #   user_name.to_json
-  # end
-
   post "/users" do
     new_user = User.create(name: params[:name])
     new_user.to_json
+  end
+  
+  patch "/users/:id" do
+    update_user = User.find(params[:id])
+    update_user.update(name: params[:name]).to_json
   end
 
   get "/characters" do
@@ -43,7 +38,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/characters" do 
-    temp_id = Template.all.where(character_class: params[:character_class]).pluck(:id).sample
+    temp_id = Template.all.where(class_name: params[:class_name]).pluck(:id).sample
     new_character = Character.create(name: params[:name], history: params[:history], user_id: params[:user_id], template_id: temp_id)
     new_character.to_json
   end

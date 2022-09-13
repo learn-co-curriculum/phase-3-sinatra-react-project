@@ -2,7 +2,7 @@ class CreateTemplates < ActiveRecord::Migration[6.1]
   def change
     create_table :templates do |t|
       t.integer :level
-      t.string :character_class
+      t.string :class_name
       t.string :race
       t.integer :strength
       t.integer :dexterity
