@@ -1,3 +1,5 @@
+require "faker"
+
 puts "🌱 Seeding spices..."
 
 puts "🌱 Seeding users..."
@@ -14,6 +16,11 @@ puts "🌱 Seeding words..."
 
 w1 = Word.create(word: 'banana', image_url: "banana.jpg")
 w2 = Word.create(word: 'ball', image_url: "ball.jpg")
+w3 = Word.create(word: "Cat", image_url: Faker::Avatar.image)
+w4 = Word.create(word: "Fish", image_url: Faker::Avatar.image)
+w5 = Word.create(word: "Lion", image_url: Faker::Avatar.image)
+w6 = Word.create(word: "Pig", image_url: Faker::Avatar.image)
+w7 = Word.create(word: "Frog", image_url: Faker::Avatar.image)
 
 puts "🌱 Seeding game_words..."
 
