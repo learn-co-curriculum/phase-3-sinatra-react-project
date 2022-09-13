@@ -13,15 +13,6 @@ function App() {
   const [chosenEateries, setChosenEateries] = useState([])
   const [userPrefs, setUserPrefs] = useState([])
   
-
-  // const history = useHistory()
-  
-  // function navigateToResults () {
-  //   history.push(`/results`)
-  //   window.scrollTo(0, 0)
-  // }
-
-
   //set state of eateries and bands relative to selected city
   //fetch request based off aforementioned state(s) (respectively)
 
@@ -30,7 +21,6 @@ function App() {
     setBandsPlaying([])
     setChosenEateries([])
   }
-
 
   return (
     <div className="App">
