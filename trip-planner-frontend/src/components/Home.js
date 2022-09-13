@@ -1,6 +1,10 @@
 import React from 'react';
 
-function Home() {
+function Home({attractionClick}) {
+    
+    function handleClick(e) {
+        attractionClick(e.target.value)
+    }
     
     
     
@@ -8,10 +12,10 @@ function Home() {
         <div>
             Home Page
             <div>
-                <button>Ready to rock</button>
+                <button value="concerts" onClick={handleClick}>Ready to rock</button>
             </div>
             <div>
-                <button>Ready to fill up</button>
+                <button value="eateries" onClick={handleClick}>Ready to fill up</button>
             </div>
         </div>
     )

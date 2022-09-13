@@ -3,11 +3,14 @@ import { Link, Switch } from 'react-router-dom'
 
 function NavBar ({attractionClick}) {
     
+    function handleClick(e) {
+        attractionClick(e.target.id)
+    }
     
     return (
         <nav>
-            <Link className="navLink" onClick={attractionClick} value="concerts" to="/attractions">Concerts</Link>
-            <Link className="navLink" onClick={attractionClick} value="eateries" to="/attractions">Eateries</Link>
+            <Link className="navLink" id="concerts" onClick={handleClick} to="/attractions">Concerts</Link>
+            <Link className="navLink" id="eateries" onClick={handleClick}  to="/attractions">Eateries</Link>
             <Link className="navLink" to="/">Home</Link>
         </nav>
     )
