@@ -1,11 +1,10 @@
 import React from 'react';
 
 
-function AttractionList({availableCities}) {
+function AttractionList({availableCities, displayData}) {
     return (
         <div>
             List
-            <h2>HELLO WORLD</h2>
             {/* <select>
                 {availableCities.map((city)=> <option value={city.name}>{city.name}</option>)}
             </select> */}

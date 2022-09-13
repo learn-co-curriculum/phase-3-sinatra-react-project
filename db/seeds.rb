@@ -32,14 +32,14 @@ Concert.create(date: "11/18/2023", city_id:5, band_id:9, venue_name: "Emos", ven
 Concert.create(date: "11/18/2023", city_id:5, band_id:10, venue_name: "Scoot Inn", venue_type: "Medium")
 
 
-Eatery.create(name: "Tacos Mas", cuisine_type: "Mexican", downtown?: false, address: "5514 MLK Blvd.", city_id:)
-Eatery.create(name: "Georgios", cuisine_type: "Italian", downtown?: true, address: "732 5th Ave.", city_id:)
-Eatery.create(name: "Splendid Sushi", cuisine_type: "Asian", downtown?: true, address: "3324 West St.", city_id:)
-Eatery.create(name: "Paneras Breads", cuisine_type: "Chain", downtown?: false, address: "5204 Suburbia", city_id:)
-Eatery.create(name: "Jack's Diner", cuisine_type: "American", downtown?: true, address: "2102 E 14th St.", city_id:)
-Eatery.create(name: "Joe's Crab Shack", cuisine_type: "Seafood", downtown?: true, address: "654 Waterway St.", city_id:)
-Eatery.create(name: "Rainforest Cafe", cuisine_type: "Chain", downtown?: false, address: "The Mall", city_id:)
-Eatery.create(name: "Glorias", cuisine_type: "Mexican", downtown?: false, address: "445 Lizard Lane", city_id:)
+Eatery.create(name: "Tacos Mas", cuisine_type: "Mexican", downtown?: false, address: "5514 MLK Blvd.", city_id:1)
+Eatery.create(name: "Georgios", cuisine_type: "Italian", downtown?: true, address: "732 5th Ave.", city_id:1)
+Eatery.create(name: "Splendid Sushi", cuisine_type: "Asian", downtown?: true, address: "3324 West St.", city_id:1)
+Eatery.create(name: "Paneras Breads", cuisine_type: "Chain", downtown?: false, address: "5204 Suburbia", city_id:2)
+Eatery.create(name: "Jack's Diner", cuisine_type: "American", downtown?: true, address: "2102 E 14th St.", city_id:3)
+Eatery.create(name: "Joe's Crab Shack", cuisine_type: "Seafood", downtown?: true, address: "654 Waterway St.", city_id:3)
+Eatery.create(name: "Rainforest Cafe", cuisine_type: "Chain", downtown?: false, address: "The Mall", city_id:4)
+Eatery.create(name: "Glorias", cuisine_type: "Mexican", downtown?: false, address: "445 Lizard Lane", city_id:5)
 
 
 puts "✅ Done seeding!"

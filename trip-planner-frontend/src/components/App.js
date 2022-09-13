@@ -1,5 +1,5 @@
 import '../App.css';
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Switch, Route, Link, useHistory } from "react-router-dom";
 import Home from './Home.js'
 import NavBar from './NavBar.js';
@@ -8,6 +8,8 @@ import AttractionsForm from './AttractionsForm.js';
 
 function App() {
   const [attractionType, setAttractionType] = useState("")
+  const [displayData, setDisplayData] = useState([])
+
   const [chosenCities, setChosenCities] = useState([])
   const [bandsPlaying, setBandsPlaying] = useState([])
   const [chosenEateries, setChosenEateries] = useState([])
@@ -21,21 +23,26 @@ function App() {
   //   setBandsPlaying([])
   //   setChosenEateries([])
   // }
+  
+ useEffect(()=> {
+  fetch(`http://localhost:9292/${attractionType}`)
+    .then((i) => i.json())
+    .then((attractionData)=> setDisplayData(attractionData))
+ })
 
- function attractionClick(){
-
- }
-
+  function attractionClick(e){
+    setAttractionType(e.target.value)
+  }
 
   return (
     <div className="App">
-      <NavBar/>
+      <NavBar attractionClick={attractionClick}/>
       <Switch>
         <Route exact path="/">
-          <Home/>
+          <Home attractionClick={attractionClick}/>
         </Route>
         <Route exact path="/attractions">
-          <AttractionList/> 
+          <AttractionList dislayData={displayData}/> 
         </Route>
         <Route exact path="/addAttraction">
           <AttractionsForm/>
