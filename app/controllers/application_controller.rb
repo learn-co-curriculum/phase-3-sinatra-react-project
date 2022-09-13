@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
     bands.to_json
   end
 
-  get '/band/:id' do
+  get '/bands/:id' do
     band = Band.find(params[:id])
     band.to_json
   end
@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/cities/:id' do
-    city = Band.find(params[:id])
+    city = City.find(params[:id])
     city.to_json
   end
 
@@ -45,8 +45,5 @@ class ApplicationController < Sinatra::Base
     eatery = Eatery.find(params[:id])
     eatery.to_json
   end
-
-
-
 
 end
