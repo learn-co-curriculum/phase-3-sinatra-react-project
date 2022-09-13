@@ -1,0 +1,213 @@
+.App {
+  text-align: center;
+}
+
+.logo{
+  border-radius: 150px;
+  height: 100px;
+}
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(70, 84, 89);
+  color: white;
+}
+
+.nav-links{
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.main{
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  padding: 90px 0 90px 0;
+  background-color: rgb(181, 181, 180);
+
+}
+
+
+.sub-main{
+  display: flex;
+  justify-content: center;
+  height: 600px;
+  width: 35%;
+  box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+  padding-top: 30px;
+  border-radius: 60px;
+  background-color: white;
+}
+
+.imgs{
+  padding-top: 20px;
+  justify-content: center;
+  display: flex;
+}
+
+.container-image{
+  background-color: rgb(223, 221, 221);
+  padding-left: 12px;
+  border-radius: 150px;
+  align-items: center;
+  display: flex;
+  height: 115px;
+  width: 115px;
+}
+
+.profile{
+  height: 100px;
+  width: 100px;
+  border-radius: 130px;
+}
+
+input{
+  width: 300px;
+  height: 50px;
+  border-radius: 60px;
+  box-shadow: inset 0px 0px 25px 0px #888;
+  border: none;
+  outline: none;
+  background-color: #fff;
+}
+
+.pass{
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  padding: 14px 0 0 25px;
+}
+
+.title{
+  font-size: 20px;
+  text-align: center;
+  align-items: center;
+}
+
+.second-input{
+  padding-top: 20px;
+}
+
+button{
+  width: 380px;
+  height: 50px;
+  border-radius: 60px;
+  background-color: rgb(97, 167, 230);
+  color: white;
+  font-size: 25px;
+  border: none;
+}
+
+.submit-button{
+  padding-top: 15px;
+}
+
+.likeToggle{
+  width: 150px;
+  height: 25px;
+  border-radius: 60px;
+  background-color: rgb(97, 167, 230);
+  color: white;
+  font-size: 15px;
+  border: none;
+  font-family: Franklin Gothic heavy, Arial
+}
+
+.lyrics{
+  font-size: 17px;
+  font-family: Franklin Gothic Demi, Arial;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 10em;
+  margin-right: 10em;
+  border-style: solid;
+  border-width: 5px;
+  border-color: rgb(97, 167, 230);
+  border-radius: 20px;
+  border-top: 25em;
+  border-bottom: 25em;
+  line-height:175%;
+  
+
+}
+
+#my_div > div {
+  height: 50px;
+  width: 50px;
+  background-color: #ccc;
+}
+
+.artist{
+  font-size: 20px;
+  font-family: Franklin Gothic heavy, Arial;
+  font-weight: bold;
+  
+}
+
+.songTitle{
+  font-family: Franklin Gothic heavy, Arial;
+  font-size: 25px  
+}
+
+.pageTitle{
+  font-size: 75px;
+  font-family: monospace, Arial;
+  font-weight: 900;
+  text-shadow: 3px 3px rgb(97, 167, 230);
+  opacity: 0.6;
+}
+
+.header{
+  font-size: 40px;
+  font-family: monospace, Arial;
+  font-weight: bold;
+  text-shadow: 3px 3px rgb(97, 167, 230);
+  opacity: 0.6;
+  margin-bottom: 20px
+}
+
+.image{
+  height: 300px;
+  width: 300px;
+}
+
+.nav-links{
+  font-family: monospace , Arial;
+  font-size: 15px  
+}
+.gridContainer{
+  padding-top: 40px
+}
+  /* display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-auto-rows: minmax(100px, auto)
+} */
+
+.rankedButtonUp{
+  width:50px;
+  height: 20px;
+  font-size: 10px;
+  
+}
+
+.rankedButtonDown{
+  width:50px;
+  height: 20px;
+  font-size: 10px;
+}
+
+.rankedNumbers{
+  padding-left: 700px;
+}
+
+
+.rankedTitles{
+  padding-right: 900px
+}
+
