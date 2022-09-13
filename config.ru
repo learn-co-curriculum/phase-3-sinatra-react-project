@@ -14,3 +14,6 @@ use Rack::JSONBodyParser
 # Our application
 run ApplicationController
 use ItemsController
+use MealItemsController
+use DaysController
+use MealsController
