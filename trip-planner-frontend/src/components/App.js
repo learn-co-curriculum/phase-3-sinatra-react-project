@@ -33,7 +33,7 @@ function App() {
   function attractionClick(e){
     setAttractionType(e)
   }
-
+  console.log(displayData)
   return (
     <div className="App">
       <NavBar attractionClick={attractionClick}/>
