@@ -10,7 +10,6 @@ function App() {
     <div>
       <Home />
       <Form />
-      <Game />
       <ScoreBoard />
     </div>
   );
