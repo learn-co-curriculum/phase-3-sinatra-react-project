@@ -8,4 +8,9 @@ class DaysController < ApplicationController
         day = Day.find(params[:id])
         day.to_json
     end
+
+    get '/days/:id/meals' do 
+        meals = Day.find(params[:id]).meals
+        meals.to_json
+    end
 end
