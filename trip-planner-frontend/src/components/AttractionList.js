@@ -1,4 +1,4 @@
-function List() {
+function AttractionList() {
     return (
         <div>
             List
@@ -6,4 +6,4 @@ function List() {
     )
 }
 
-export default List
+export default AttractionList
