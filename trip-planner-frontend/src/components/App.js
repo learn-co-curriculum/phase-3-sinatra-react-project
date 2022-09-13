@@ -7,7 +7,7 @@ import AttractionList from './AttractionList.js';
 import AttractionsForm from './AttractionsForm.js';
 
 function App() {
-  const [attractionType, setAttractionType] = useState([])
+  const [attractionType, setAttractionType] = useState("")
   const [chosenCities, setChosenCities] = useState([])
   const [bandsPlaying, setBandsPlaying] = useState([])
   const [chosenEateries, setChosenEateries] = useState([])
@@ -16,18 +16,21 @@ function App() {
   //set state of eateries and bands relative to selected city
   //fetch request based off aforementioned state(s) (respectively)
 
-  function resetChoices(){
-    setChosenCities([])
-    setBandsPlaying([])
-    setChosenEateries([])
-  }
+  // function resetChoices(){
+  //   setChosenCities([])
+  //   setBandsPlaying([])
+  //   setChosenEateries([])
+  // }
+
+ function attractionClick(){
+
+ }
+
 
   return (
     <div className="App">
+      <NavBar/>
       <Switch>
-        <Route>
-          <NavBar resetChosen={resetChoices}/>
-        </Route>
         <Route exact path="/">
           <Home/>
         </Route>
