@@ -3,14 +3,33 @@ class RemembersController < ApplicationController
 
     #Read
 
+        ##FOR "HOME"PAGE
+    # get '/remembers' do
+    # end 
+
+
     get '/remembers/all' do
         remembers = Remember.all
         remembers.to_json
     end
-    # actually, /remembers should == newly-created (if any) items
-    # default would just be the "main page"
 
-    # get all, get one, get [?]
+        ##SORT BY DATE
+
+    get '/remembers/all_reverse' do
+        remembers = Remember.all.sort_by(&:created_at).reverse!
+        remembers.to_json
+    end
+    #remembers/sort/:direction
+    # ascending sort_bysort_by(&:created_at)
+    # descending sort_by(&:created_at).reverse! 
+
+    # get '/remembers/sort/:direction' do
+    #     if ascending
+    #         sort_by(&:created_at)
+    #     else
+    #         sort_by(&:created_at).reverse!
+    #     end
+    # end 
 
     get '/remembers/:id' do
         remember = Remember.find_by(id: params[:id])
@@ -18,9 +37,7 @@ class RemembersController < ApplicationController
 
     end 
 
-    ##SORT BY DATE
 
-    ##DEFAULT PAGE
 
     #Create
 
@@ -29,22 +46,24 @@ class RemembersController < ApplicationController
         remember = Remember.create(
           user_id: params[:user_id],
           category_id: params[:category_id],
-          remember: params[:remember],
-          timestamps: params[:timestamps]
+          remember: params[:remember]
+        #   timestamps: params[:timestamps]
         )
         remember.to_json
     end
 
-      ##params read as an empty hash    
-
-
-    #   t.integer :user_id
-    #   t.integer :category_id
-    #   t.string :remember
-      
-    #   t.timestamps
-
     #Update
+
+    patch '/remembers/:id' do
+        remembers = Remember.find_by(id: params[:id])
+        remembers.update(
+            user_id: params[:user_id],
+            category_id: params[:category_id],
+            remember: params[:remember]
+        )
+        remembers.to_json
+    end
+    # working on it 
 
     #Destroy
     delete '/remembers/:id' do
