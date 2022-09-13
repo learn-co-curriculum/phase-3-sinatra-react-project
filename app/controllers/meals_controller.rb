@@ -9,6 +9,11 @@ class MealsController < ApplicationController
         meal.to_json
     end
 
+    get '/meals/:id/items' do 
+        items = Meal.find(params[:id]).meal_items
+        items.to_json
+    end
+
     patch '/meals/:id' do 
         meal = Meal.find(params[:id])
         meal.update(day_id: params[:day_id], meal_number: params[:meal_number])
