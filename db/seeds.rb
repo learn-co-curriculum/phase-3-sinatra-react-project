@@ -1,3 +1,7 @@
+User.destroy_all
+Template.destroy_all
+Character.destroy_all
+
 puts "🌱 Seeding spices..."
 puts "Seeding Users..."
 u1 = User.create(name: "Jonathon")
