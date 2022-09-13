@@ -1,3 +1,6 @@
+import React from 'react';
+
+
 function AttractionsForm() {
     return (
         <div>
