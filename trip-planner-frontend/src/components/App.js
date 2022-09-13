@@ -10,7 +10,7 @@ function App() {
   const [attractionType, setAttractionType] = useState("")
   const [displayData, setDisplayData] = useState([])
 
-  const [chosenCities, setChosenCities] = useState([])
+  const [availableCities, setAvailableCities] = useState([])
   const [bandsPlaying, setBandsPlaying] = useState([])
   const [chosenEateries, setChosenEateries] = useState([])
   const [userPrefs, setUserPrefs] = useState([])
@@ -30,9 +30,17 @@ function App() {
     .then((attractionData)=> setDisplayData(attractionData))
  }, [attractionType])
 
+ useEffect(()=> {
+  fetch(`http://localhost:9292/cities`)
+    .then((i) => i.json())
+    .then((citiesData)=> setAvailableCities(citiesData))
+ }, [])
+
   function attractionClick(e){
     setAttractionType(e)
   }
+
+  // console.log(displayData)
 
   return (
     <div className="App">
@@ -42,7 +50,7 @@ function App() {
           <Home attractionClick={attractionClick}/>
         </Route>
         <Route exact path="/attractions">
-          <AttractionList dislayData={displayData}/> 
+          <AttractionList displayData={displayData} availableCities={availableCities}/> 
         </Route>
         <Route exact path="/addAttraction">
           <AttractionsForm/>
