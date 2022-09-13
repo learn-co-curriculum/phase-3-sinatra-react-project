@@ -4,14 +4,9 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
 
-  get "/hello" do
-      '<h2>Hello <em>World</em>!</h2>'
+  get "/" do
+      'Hello World'
 end
 
 end
 
-
-# get "/" do
-
-# { message: "Good luck with your project!" }.to_json
-# end
