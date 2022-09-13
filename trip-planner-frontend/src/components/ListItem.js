@@ -3,7 +3,8 @@ import React from 'react';
 function ListItem({band, eatery}) {
     return (
         <div>
-            <div className="bandListItem">
+            ListItem
+            {/* <div className="bandListItem">
                 <h3>
                     {band.name}
                 </h3>
@@ -15,7 +16,7 @@ function ListItem({band, eatery}) {
                 <p>
                     {eatery.name}
                 </p>
-            </div>
+            </div> */}
         </div>
     )
 }
