@@ -13,3 +13,5 @@ use Rack::JSONBodyParser
 
 # Our application
 run ApplicationController
+use RemembersController
+use CategoriesController
