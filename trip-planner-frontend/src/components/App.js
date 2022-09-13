@@ -28,10 +28,10 @@ function App() {
   fetch(`http://localhost:9292/${attractionType}`)
     .then((i) => i.json())
     .then((attractionData)=> setDisplayData(attractionData))
- })
+ }, [attractionType])
 
   function attractionClick(e){
-    setAttractionType(e.target.value)
+    setAttractionType(e)
   }
 
   return (
