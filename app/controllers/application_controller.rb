@@ -1,10 +1,5 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
-  
-  # Add your routes here
-  get "/" do
-    { message: "Good luck with your project!" }.to_json
-  end
 
   get '/bands' do
     bands = Band.all
@@ -28,7 +23,7 @@ class ApplicationController < Sinatra::Base
 
   get '/concerts' do
     concerts = Concert.all
-    concerts.to_json
+    concerts.to_json(include: :band)
   end
 
   get '/concerts/:id' do
@@ -37,6 +32,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/eateries' do
+    # binding.pry
     eateries = Eatery.all
     eateries.to_json
   end
