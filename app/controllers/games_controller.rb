@@ -1,10 +1,37 @@
+require 'pry'
+
 class GamesController < ApplicationController
 
     get "/games" do 
         games = Game.all
         games.to_json
     end
-    
+
+    get "/topScores" do 
+        games = Game.orderedScores
+        users = Game.getUsersNames
+        results = games.zip(users)
+        results.to_json
+    end
+
+    get "/list/:id" do
+        game = Game.find(params[:id])
+        words = game.gameWords
+        booleans = game.wordBooleans
+        results = words.zip(booleans)
+        results.to_json
+    end
+
+    # get "/topScores" do 
+    #     games = Game.orderedScores
+    #     games.to_json
+    # end
+
+    get "/topUsers" do 
+        users = Game.getUsersNames
+        users.to_json
+    end
+ 
     get "/games/:id" do
         game = Game.find(params[:id])
         game.to_json

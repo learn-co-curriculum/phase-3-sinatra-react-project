@@ -4,7 +4,12 @@ class UsersController < ApplicationController
         users = User.all
         users.to_json
     end
-    
+
+    get "/userGames/:id" do
+        user = User.find(params[:id])
+        user.getAllGames.to_json
+    end
+
     get "/users/:id" do
         user = User.find(params[:id])
         user.to_json
