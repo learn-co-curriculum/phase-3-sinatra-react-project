@@ -49,8 +49,9 @@ class RemembersController < ApplicationController
           remember: params[:remember]
         #   timestamps: params[:timestamps]
         )
-        status 201
         remember.to_json
+        # status 201
+
     end
 
     #Update
