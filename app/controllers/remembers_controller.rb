@@ -49,6 +49,7 @@ class RemembersController < ApplicationController
           remember: params[:remember]
         #   timestamps: params[:timestamps]
         )
+        status 201
         remember.to_json
     end
 
@@ -70,6 +71,7 @@ class RemembersController < ApplicationController
         remember = Remember.find_by(id: params[:id])
         remember.destroy
         remember.to_json
+        status 204
     end 
 
 end 

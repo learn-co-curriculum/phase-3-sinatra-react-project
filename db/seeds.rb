@@ -1,5 +1,10 @@
 puts "🌱 Seeding spices..."
 
+User.destroy_all
+Category.destroy_all
+Remember.destroy_all
+
+
 # Seed your database here
 
 u1 = User.create(name: "Dan Magers", classroom: 1)

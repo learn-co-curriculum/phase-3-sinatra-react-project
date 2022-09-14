@@ -8,26 +8,24 @@ class CategoriesController < ApplicationController
 
     end
 
-
     #POST 
     post '/categories' do
         # binding.pry
         category = Category.create(
           name: params[:name],
         )
+        status 201
         category.to_json
     end
-    ##would I need an empty array here? 
 
     #UPDATE
-
-    patch '/categories/:id' do
-        category = Category.find_by(id: params[:id])
-        category.update(
-          name: params[:name],
-        )
-        category.to_json
-    end
+    # patch '/categories/:id' do
+    #     category = Category.find_by(id: params[:id])
+    #     category.update(
+    #       name: params[:name],
+    #     )
+    #     category.to_json
+    # end
     ##this is updating the category in question, but deleting all the entries
 
     #DELETE
@@ -35,6 +33,7 @@ class CategoriesController < ApplicationController
         category = Category.find_by(id: params[:id])
         category.destroy
         category.to_json
+        status 204
     end 
 
 
