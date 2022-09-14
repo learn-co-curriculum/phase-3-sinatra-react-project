@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ConcertItem from './ConcertItem.js';
 import EateryItem from './EateryItem.js';
+import AttractionsForm from './AttractionsForm.js';
 
 
 function AttractionList({availableCities, displayData, attractionType, onHandleChange, dropdownValue}) {
@@ -28,6 +29,7 @@ function AttractionList({availableCities, displayData, attractionType, onHandleC
                     )
                 })}
             </div>
+            <AttractionsForm attractionType={attractionType}/>
         </div>
     )
 }
