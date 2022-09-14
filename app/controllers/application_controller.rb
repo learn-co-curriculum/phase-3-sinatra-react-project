@@ -51,4 +51,10 @@ class ApplicationController < Sinatra::Base
     Eatery.where(city_id: params[:id]).to_json 
   end
 
+  patch '/eateries/:id' do
+    eatery = Eatery.find(params[:id])
+    eatery.update(rating: params[:rating])
+    eatery.to_json
+  end
+
 end
