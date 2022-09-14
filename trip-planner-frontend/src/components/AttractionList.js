@@ -3,7 +3,7 @@ import ConcertItem from './ConcertItem.js';
 import EateryItem from './EateryItem.js';
 
 
-function AttractionList({availableCities, displayData, attractionType, onHandleChange, dropdownValue}) {
+function AttractionList({availableCities, displayData, attractionType, onHandleChange, dropdownValue, onUpdateObject}) {
 
 
 
@@ -24,7 +24,8 @@ function AttractionList({availableCities, displayData, attractionType, onHandleC
                     return (attractionType === "concerts" ?
                         <ConcertItem attraction={attraction} key={attraction.id}/> 
                         : 
-                        <EateryItem attraction={attraction} key={attraction.id}/> 
+                        <EateryItem attraction={attraction} key={attraction.id}
+                        onUpdateObject={onUpdateObject}/> 
                     )
                 })}
             </div>
