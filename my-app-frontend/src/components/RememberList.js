@@ -1,0 +1,18 @@
+import React, { useState, useEffect } from 'react'
+import RememberItem from "./RememberItem"
+
+function RememberList({rememberList}) {
+    // const [localRememberList, setLocalRememberList] = useState(rememberList)
+    console.log(rememberList)
+    return (
+
+        <div className="remember-container">
+            <ul className="remember-list"></ul>
+                {rememberList ?  rememberList.map(remember => <RememberItem text={remember.remember} id={remember.id} /> ) : null}
+
+        </div>
+        
+    )
+    }
+
+export default RememberList
