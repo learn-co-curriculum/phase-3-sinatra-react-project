@@ -53,6 +53,16 @@ useEffect(()=> {
     setDropdownValue("All")
   }
 
+  function onUpdateObject(updatedObj) {
+    let updatedData = displayData.map(object => {
+      if (object.id === updatedObj.id) 
+        return updatedObj
+      else 
+        return object 
+    })
+    setDisplayData(updatedData)
+  }
+
   return (
     <div className="App">
       <NavBar attractionClick={attractionClick}/>
@@ -61,7 +71,7 @@ useEffect(()=> {
           <Home attractionClick={attractionClick}/>
         </Route>
         <Route exact path="/attractions">
-          <AttractionList displayData={displayData} availableCities={availableCities} attractionType={attractionType} onHandleChange={onHandleChange} dropdownValue={dropdownValue}/> 
+          <AttractionList displayData={displayData} availableCities={availableCities} attractionType={attractionType} onHandleChange={onHandleChange} dropdownValue={dropdownValue} onUpdateObject={onUpdateObject}/> 
         </Route>
         <Route exact path="/addAttraction">
           <AttractionsForm/>

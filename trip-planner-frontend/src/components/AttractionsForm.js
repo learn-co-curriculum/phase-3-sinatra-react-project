@@ -8,6 +8,7 @@ function AttractionsForm({attractionType}) {
    function submitNewCity(e){
     e.preventDefault();
 
+
         const newCity = {
             city: cityNameForm,
             state: stateNameForm,
@@ -27,6 +28,7 @@ function AttractionsForm({attractionType}) {
         <div>
             {attractionType === "concerts" ? <h1>Add A Concert</h1> : <h1>Add An Eatery</h1>}
                     {/*city form*/}
+
                     <form onSubmit={submitNewCity}>
                         <label>City</label>
                         <input type="text" name="city" onChange={(e)=>setCityNameForm(e.target.value)}/>

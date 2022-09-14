@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_12_203408) do
+ActiveRecord::Schema.define(version: 2022_09_14_203544) do
 
   create_table "bands", force: :cascade do |t|
     t.string "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2022_09_12_203408) do
     t.boolean "downtown?"
     t.string "address"
     t.integer "city_id"
+    t.integer "rating"
   end
 
 end
