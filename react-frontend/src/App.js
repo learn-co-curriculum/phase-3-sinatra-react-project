@@ -1,29 +1,61 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+// import { Route, Routes } from "react-router-dom";
 import './App.css';
 import User from './User';
 import NavBar from './NavBar';
 import CharacterCreation from "./CharacterCreation";
 import CharacterList from "./CharacterList";
+import Home from "./Home"
 
 function App() {
+
+  const [users, setUsers] = useState([])
+  
+  // const [characters, setCharacters] = useState([])
+  // const [templates, setTemplates] = useState([])
+
+  useEffect( () => {
+  fetch("http://localhost:9292/users")
+      .then(res => res.json())
+      .then(setUsers)
+  }, [])
+
+  // useEffect( () => {
+  //     fetch(`http://localhost:9292/users/${user.id}`)
+  //         .then(res => res.json())
+  //         .then(setUser(user))
+  //     }, [])
+
+    // const handleUsers = () => {
+    //   setUsers(users)
+    // }
+
+    // const handleSingleUser = () => {
+    //   setUser(user)
+    // }
+
+
+
+  // useEffect( () => {
+  //     fetch("http://localhost:9292/characters")
+  //         .then(res => res.json())
+  //         .then(characters => setCharacters(characters))
+  //     }, [])
+
+  // useEffect( () => {
+  //     fetch("http://localhost:9292/templates")
+  //             .then(res => res.json())
+  //         .then(templates => setTemplates(templates))
+  //      }, [])    
+
+
   return (
     <div className = "app">
       <NavBar/>
-         <Switch>  
-             <Route exact path = '/'>
-               <Home/>
-             </Route>
-             <Route path ="/user">
-             <User/>
-             </Route>
-             <Route path ="/create_characters" >
-             <CharacterCreation/>
-             </Route>
-             <Route path ="character_list">
-             <CharacterList/>
-             </Route>
-         </Switch>
+      <Home/>
+      <User users={users}/>
+      <CharacterCreation/>
+      <CharacterList/>
     </div>
   );
 }

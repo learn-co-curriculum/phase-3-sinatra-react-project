@@ -1,12 +1,13 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 function NavBar(){
+
     return(
         <div>
-           <NavLink to="/user" exact>User</NavLink>
-           <NavLink to="/create_characters" exact>Make a Character!</NavLink>
-           <NavLink to="character_list" exact>Archives</NavLink>
+           {/* <NavLink to="/users" exact>User</NavLink>
+           <NavLink to="/templates" exact>Make a Character!</NavLink>
+           <NavLink to="/characters" exact>Archives</NavLink> */}
         </div>
     )
 }
