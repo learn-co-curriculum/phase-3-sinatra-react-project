@@ -57,4 +57,44 @@ class ApplicationController < Sinatra::Base
     eatery.to_json
   end
 
+  post '/cities' do
+    city = City.create(
+      name: params[:name],
+      state: params[:state]
+    )
+    city.to_json
+  end
+
+  post '/eateries' do
+    eatery = Eatery.create(
+      name: params[:name],
+      cuisine_type: params[:cuisine_type],
+      downtown?: params[:downtown?],
+      cuisine_type: params[:cuisine_type],
+      address: params[:address]
+    )
+    eatery.to_json
+  end
+
+  post '/concerts' do
+    concert = Concert.create(
+    date: params[:date],
+    venue_name: params[:venue_name],
+    venue_type: params[:venue_type]
+    )
+    concert.to_json
+  end
+ 
+  post '/bands' do
+    band = Band.create(
+      name: params[:name], 
+      genre: params[:genre]
+    )
+    band.to_json
+  end
+
+
+
+
+
 end
