@@ -9,8 +9,8 @@ import AttractionsForm from './AttractionsForm.js';
 function App() {
   const [attractionType, setAttractionType] = useState("")
   const [displayData, setDisplayData] = useState([])
-
   const [availableCities, setAvailableCities] = useState([])
+  const [dropdownValue, setDropdownValue] = useState("All")
   const [bandsPlaying, setBandsPlaying] = useState([])
   const [chosenEateries, setChosenEateries] = useState([])
   const [userPrefs, setUserPrefs] = useState([])
@@ -24,23 +24,34 @@ function App() {
   //   setChosenEateries([])
   // }
 
- useEffect(()=> {
+useEffect(()=> {
   fetch(`http://localhost:9292/${attractionType}`)
     .then((i) => i.json())
     .then((attractionData)=> setDisplayData(attractionData))
  }, [attractionType])
-
+ 
  useEffect(()=> {
   fetch(`http://localhost:9292/cities`)
     .then((i) => i.json())
     .then((citiesData)=> setAvailableCities(citiesData))
  }, [])
 
+  function onHandleChange(value) {
+    setDropdownValue(value)
+    value === "All" ? 
+      fetch(`http://localhost:9292/${attractionType}`)
+        .then((i) => i.json())
+        .then((attractionData)=> setDisplayData(attractionData))
+      :
+      fetch(`http://localhost:9292/cities/${value}/${attractionType}`)
+        .then((i) => i.json())
+        .then(data => setDisplayData(data))
+      }
+
   function attractionClick(e){
     setAttractionType(e)
+    setDropdownValue("All")
   }
-
-  // console.log(displayData)
 
   return (
     <div className="App">
@@ -50,7 +61,7 @@ function App() {
           <Home attractionClick={attractionClick}/>
         </Route>
         <Route exact path="/attractions">
-          <AttractionList displayData={displayData} availableCities={availableCities} attractionType={attractionType}/> 
+          <AttractionList displayData={displayData} availableCities={availableCities} attractionType={attractionType} onHandleChange={onHandleChange} dropdownValue={dropdownValue}/> 
         </Route>
         <Route exact path="/addAttraction">
           <AttractionsForm/>

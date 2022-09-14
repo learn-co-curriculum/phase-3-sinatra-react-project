@@ -13,6 +13,7 @@ class ApplicationController < Sinatra::Base
 
   get '/cities' do
     cities = City.all
+    # cities.to_json(include: :concerts)
     cities.to_json
   end
 
@@ -40,6 +41,14 @@ class ApplicationController < Sinatra::Base
   get '/eateries/:id' do
     eatery = Eatery.find(params[:id])
     eatery.to_json
+  end
+
+  get '/cities/:id/concerts' do #:city = LA, :id = 1 -> /cities/1/concerts
+    Concert.where(city_id: params[:id]).to_json(include: :band) #Concert.where(city_id: 1)
+  end
+
+  get '/cities/:id/eateries' do 
+    Eatery.where(city_id: params[:id]).to_json 
   end
 
 end
