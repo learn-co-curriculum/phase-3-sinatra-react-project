@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import ArtistList from './ArtistList';
+import ArtistList from './Components/ArtistList';
 
 function App() {
   return (
