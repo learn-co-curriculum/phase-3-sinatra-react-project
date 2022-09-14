@@ -23,7 +23,7 @@ function App() {
   //   setBandsPlaying([])
   //   setChosenEateries([])
   // }
-  
+
  useEffect(()=> {
   fetch(`http://localhost:9292/${attractionType}`)
     .then((i) => i.json())
@@ -50,7 +50,7 @@ function App() {
           <Home attractionClick={attractionClick}/>
         </Route>
         <Route exact path="/attractions">
-          <AttractionList displayData={displayData} availableCities={availableCities}/> 
+          <AttractionList displayData={displayData} availableCities={availableCities} attractionType={attractionType}/> 
         </Route>
         <Route exact path="/addAttraction">
           <AttractionsForm/>
