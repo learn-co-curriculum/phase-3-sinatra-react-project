@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/" do
-    { message: "Lyric Finder" }.to_json
+    { message: "Lyric Finder !" }.to_json
   end
 
   get "/artist" do
