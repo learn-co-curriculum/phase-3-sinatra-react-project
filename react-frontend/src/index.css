@@ -7,7 +7,32 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.app {
+  text-align: center;
+}
+
+img {
+  max-width: 500px;
+  height: 500px;
+}
+
+#card {
+  text-align: left;
+  display: flex;
+}
+#info {
+  margin-left: 250px;
+  flex: 1;
+  max-width: 350px;
+  margin-right: 100px;
+}
+
+#image {
+  margin-right: 100px;
 }

@@ -14,26 +14,30 @@ function CharacterCard({ selectedCharacter }){
     }
 
     return(
-        <div>
-        <button onClick ={handleDelete}>Delete Character</button>
-        <h1>{selectedCharacter.name}</h1>
-        <p>Race: {template.race}</p>
-        <p>Level: {template.level}</p>
-        <p>Class: {template.class_name}</p>
-        <p>Background: {selectedCharacter.history}</p>
-        <p>Strength: {template.strength}</p>
-        <p>Dexterity: {template.dexterity}</p>
-        <p>Constitution: {template.constitution}</p>
-        <p>Intelligence: {template.intelligence}</p>
-        <p>Wisdom: {template.wisdom}</p>
-        <p>Charisma: {template.charisma}</p>
-        {template.spell1 ? <p>{template.spell1}</p> : null}
-        {template.spell2 ? <p>{template.spell2}</p> : null}
-        {template.ability1 ? <p>{template.ability1}</p> : null}
-        {template.ability2 ? <p>{template.ability2}</p> : null}
-        {template.weapon1 ? <p>{template.weapon1}</p> : null}
-        {template.weapon2 ? <p>{template.weapon2}</p> : null}
-        <img src={template.img_url} alt="Class Img"/>
+        <div id = "card">
+         <div id = "info">
+           <button onClick ={handleDelete}>Delete Character</button>
+           <h1>{selectedCharacter.name}</h1>
+           <p>Race: {template.race}</p>
+           <p>Level: {template.level}</p>
+           <p>Class: {template.class_name}</p>
+           <p>Background: {selectedCharacter.history}</p>
+           <p>Strength: {template.strength}</p>
+           <p>Dexterity: {template.dexterity}</p>
+           <p>Constitution: {template.constitution}</p>
+           <p>Intelligence: {template.intelligence}</p>
+           <p>Wisdom: {template.wisdom}</p>
+           <p>Charisma: {template.charisma}</p>
+           {template.spell1 ? <p>{template.spell1}</p> : null}
+           {template.spell2 ? <p>{template.spell2}</p> : null}
+           {template.ability1 ? <p>{template.ability1}</p> : null}
+           {template.ability2 ? <p>{template.ability2}</p> : null}
+           {template.weapon1 ? <p>{template.weapon1}</p> : null}
+           {template.weapon2 ? <p>{template.weapon2}</p> : null}
+         </div>
+          <div id = "image">
+            <img src={template.img_url} alt="Class Img"/>
+          </div>
         </div>
     )
 }
