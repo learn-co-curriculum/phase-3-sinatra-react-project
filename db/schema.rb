@@ -10,14 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_12_234711) do
-
+ActiveRecord::Schema.define(version: 2022_09_15_152623) do
   create_table "days", force: :cascade do |t|
     t.string "name"
   end
 
   create_table "items", force: :cascade do |t|
     t.string "name"
+    t.string "image"
+    t.string "url"
+    t.string "recipe"
+    t.string "ingredients"
+    t.string "nutrients"
   end
 
   create_table "meal_items", force: :cascade do |t|
@@ -29,5 +33,4 @@ ActiveRecord::Schema.define(version: 2022_09_12_234711) do
     t.integer "day_id"
     t.integer "meal_number"
   end
-
 end
