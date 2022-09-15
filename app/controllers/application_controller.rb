@@ -71,7 +71,7 @@ class ApplicationController < Sinatra::Base
       address: params[:newEatery][:address],
       city_id: city.id
     )
-    eatery.to_json
+    eatery.to_json(include: :city)
   end
 
   post '/concerts' do
@@ -95,7 +95,7 @@ class ApplicationController < Sinatra::Base
     city_id: city.id,
     band_id: band.id
     )
-    concert.to_json(include: :band)
+    concert.to_json(include: [:band, :city])
   end
 
   delete '/eateries/:id' do

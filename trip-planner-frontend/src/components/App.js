@@ -12,6 +12,11 @@ function App() {
   const [availableCities, setAvailableCities] = useState([])
   const [dropdownValue, setDropdownValue] = useState("All")
 
+  function onUpdateCities(newCity){
+    console.log(newCity)
+    setAvailableCities([...availableCities, newCity])
+  }
+
   useEffect(()=> {
     fetch(`http://localhost:9292/${attractionType}`)
       .then((i) => i.json())
@@ -70,7 +75,7 @@ function App() {
           <Home attractionClick={attractionClick}/>
         </Route>
         <Route exact path="/attractions">
-          <AttractionList displayData={displayData} availableCities={availableCities} attractionType={attractionType} onHandleChange={onHandleChange} dropdownValue={dropdownValue} onUpdateObject={onUpdateObject} onPost={onPost} onUpdateData={onUpdateData}/> 
+          <AttractionList displayData={displayData} availableCities={availableCities} attractionType={attractionType} onHandleChange={onHandleChange} dropdownValue={dropdownValue} onUpdateObject={onUpdateObject} onPost={onPost} onUpdateData={onUpdateData} onUpdateCities={onUpdateCities}/> 
         </Route>
       </Switch>
     </div>

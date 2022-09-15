@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState} from 'react'
 
-function AttractionsForm({ attractionType, onPost }) {
+function AttractionsForm({ attractionType, onPost, onUpdateCities }) {
     const [cityNameForm, setCityNameForm] = useState("")
     const [stateNameForm, setStateNameForm] = useState("")
     const [concertDate, setConcertDate] = useState("")
@@ -22,6 +22,7 @@ function AttractionsForm({ attractionType, onPost }) {
                     name: cityNameForm,
                     state: stateNameForm,
             }
+            onUpdateCities(newCity)
             const newBand = {
                     name: bandName,
                     genre: genre
@@ -41,7 +42,10 @@ function AttractionsForm({ attractionType, onPost }) {
                 body: JSON.stringify({newConcert, newBand, newCity})
             })
                 .then(res=> res.json()) 
-                .then(newConcertObj => onPost(newConcertObj))
+                .then(newConcertObj => {
+                    onPost(newConcertObj)
+                    onUpdateCities(newConcertObj.city)
+                })
         }
             
         else {
@@ -49,6 +53,7 @@ function AttractionsForm({ attractionType, onPost }) {
                 name: cityNameForm,
                 state: stateNameForm,
             }
+            onUpdateCities(newCity)
             const newEatery = {
                 name: eateryName,
                 cuisine_type: cuisineType,
@@ -65,8 +70,11 @@ function AttractionsForm({ attractionType, onPost }) {
                 body: JSON.stringify({newEatery, newCity})
             })
             .then(res=> res.json())
-            .then(newEateryObj => onPost(newEateryObj))
-        }
+            .then(newEateryObj => {
+                onPost(newEateryObj)
+                onUpdateCities(newEateryObj.city)
+            }
+        )}
     }
     
     return (

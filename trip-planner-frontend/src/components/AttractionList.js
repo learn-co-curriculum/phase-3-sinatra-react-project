@@ -4,7 +4,7 @@ import EateryItem from './EateryItem.js';
 import AttractionsForm from './AttractionsForm.js';
 
 
-function AttractionList({availableCities, displayData, attractionType, onHandleChange, dropdownValue, onUpdateObject, onPost, onUpdateData}) {
+function AttractionList({availableCities, displayData, attractionType, onHandleChange, dropdownValue, onUpdateObject, onPost, onUpdateData, onUpdateCities}) {
 
 
 
@@ -48,7 +48,7 @@ function AttractionList({availableCities, displayData, attractionType, onHandleC
                     )
                 })}
             </div>
-            <AttractionsForm attractionType={attractionType} onPost={onPost}/>
+            <AttractionsForm onUpdateCities={onUpdateCities} attractionType={attractionType} onPost={onPost}/>
         </div>
     )
 }
