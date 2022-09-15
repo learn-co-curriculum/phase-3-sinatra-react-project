@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
 
   get "/users/:id" do
     user_id = User.find_by(id: params[:id])
-    user_id.to_json
+    user_id.to_json(include: :characters)
   end
 
   get "/users/:id/characters" do

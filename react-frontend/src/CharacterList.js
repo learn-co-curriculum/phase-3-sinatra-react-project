@@ -1,5 +1,6 @@
 import CharacterCard from "./CharacterCard"
 import { useState } from 'react'
+import User from "./User"
 
 function CharacterList({ characters }) {
   const [selectedCharacter, setSelectedCharacter] = useState({})
@@ -11,7 +12,7 @@ function CharacterList({ characters }) {
     setSelectedCharacter(character)
     setSelectedCharacterState(!selectedCharacterState)
   }
-  
+
   const characterCard = characters.map(character => 
       <button onClick={() => handleSelectedCharacter(character)} key={character.id}>{character.name}</button>)
 

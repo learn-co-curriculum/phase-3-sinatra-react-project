@@ -22,11 +22,11 @@ function User({ users, handleUsers }){
 
     const handleChange = (e) => {
         setUser(e.target.value)
-        fetchingUserCharacters()  
+        fetchingUserCharacters(e.target.value)  
     }
     
 
-    const fetchingUserCharacters = () => {axios.get(`http://localhost:9292/users/${user}/characters`).then(resp => setCharacters(resp.data))}
+    const fetchingUserCharacters = (user) => {axios.get(`http://localhost:9292/users/${user}/characters`).then(resp => setCharacters(resp.data))}
     
     
     function handleClick () {
@@ -42,7 +42,7 @@ function User({ users, handleUsers }){
     return(
         <div>
             <form action="/action_page.php" onSubmit = {activate}>
-                <label for="name">Username:</label><br/>
+                <label htmlFor="name">Username:</label><br/>
                 <input type="text" id="name" name="name" onChange={handleUserName} value={userName}/><br/>
                 <input type="submit" value="Submit"/>
             </form>

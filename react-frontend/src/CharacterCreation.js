@@ -19,7 +19,7 @@ function CharacterCreation({ user }){
     }, [])
 
       useEffect(() => {
-      fetch("http://localhost:9292//templates/class_name")
+      fetch("http://localhost:9292/templates/class_name")
             .then(res => res.json())
             .then(data => setTemplates(data))
        }, [])
