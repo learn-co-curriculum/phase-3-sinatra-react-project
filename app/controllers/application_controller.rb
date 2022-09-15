@@ -57,22 +57,19 @@ class ApplicationController < Sinatra::Base
     eatery.to_json
   end
 
-  post '/cities' do
-    city = City.create(
-      name: params[:name],
-      state: params[:state]
+  post '/eateries' do
+    city = City.find_or_create_by(
+      name: params[:newCity][:name], 
+      state: params[:newCity][:state]
     )
     city.to_json
-  end
-
-  post '/eateries' do
     eatery = Eatery.create(
-      name: params[:name],
-      cuisine_type: params[:cuisine_type],
-      downtown?: params[:downtown?],
-      rating: params[:rating],
-      address: params[:address],
-      city_id: params[:city_id]
+      name: params[:newEatery][:name],
+      cuisine_type: params[:newEatery][:cuisine_type],
+      downtown?: params[:newEatery][:downtown?],
+      rating: params[:newEatery][:rating],
+      address: params[:newEatery][:address],
+      city_id: city.id
     )
     eatery.to_json
   end
@@ -81,7 +78,6 @@ class ApplicationController < Sinatra::Base
     # create variables for city and band id
     # the id will either be found or created
     # this will replace the params
-    binding.pry
     city = City.find_or_create_by(
       name: params[:newCity][:name], 
       state: params[:newCity][:state]
@@ -99,19 +95,17 @@ class ApplicationController < Sinatra::Base
     city_id: city.id,
     band_id: band.id
     )
-    concert.to_json
-  end
- 
-  post '/bands' do
-    band = Band.create(
-      name: params[:name], 
-      genre: params[:genre]
-    )
-    band.to_json
+    concert.to_json(include: :band)
   end
 
+  delete '/eateries/:id' do
+    eatery = Eatery.find(params[:id])
+    eatery.destroy.to_json
+  end
 
-
-
+  delete '/concerts/:id' do
+    concert = Concert.find(params[:id])
+    concert.destroy.to_json
+  end
 
 end

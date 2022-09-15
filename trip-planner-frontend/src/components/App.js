@@ -11,32 +11,18 @@ function App() {
   const [displayData, setDisplayData] = useState([])
   const [availableCities, setAvailableCities] = useState([])
   const [dropdownValue, setDropdownValue] = useState("All")
-  const [bandsPlaying, setBandsPlaying] = useState([])
-  const [chosenEateries, setChosenEateries] = useState([])
-  const [userPrefs, setUserPrefs] = useState([])
+
+  useEffect(()=> {
+    fetch(`http://localhost:9292/${attractionType}`)
+      .then((i) => i.json())
+      .then((attractionData)=> setDisplayData(attractionData))
+  }, [attractionType])
   
-  //set state of eateries and bands relative to selected city
-  //fetch request based off aforementioned state(s) (respectively)
-
-  // function resetChoices(){
-  //   setChosenCities([])
-  //   setBandsPlaying([])
-  //   setChosenEateries([])
-  // }
-
-
-
-useEffect(()=> {
-  fetch(`http://localhost:9292/${attractionType}`)
-    .then((i) => i.json())
-    .then((attractionData)=> setDisplayData(attractionData))
- }, [attractionType])
- 
- useEffect(()=> {
-  fetch(`http://localhost:9292/cities`)
-    .then((i) => i.json())
-    .then((citiesData)=> setAvailableCities(citiesData))
- }, [])
+  useEffect(()=> {
+    fetch(`http://localhost:9292/cities`)
+      .then((i) => i.json())
+      .then((citiesData)=> setAvailableCities(citiesData))
+  }, [])
 
   function onHandleChange(value) {
     setDropdownValue(value)
@@ -65,6 +51,17 @@ useEffect(()=> {
     setDisplayData(updatedData)
   }
 
+  function onPost(newObj) {
+    setDisplayData([...displayData, newObj])
+  }
+
+  function onUpdateData(deletedAttraction) {
+    let updatedData = displayData.filter((attraction) => {
+        return attraction.id !== deletedAttraction.id
+    })
+    setDisplayData(updatedData)
+}
+
   return (
     <div className="App">
       <NavBar attractionClick={attractionClick}/>
@@ -73,10 +70,7 @@ useEffect(()=> {
           <Home attractionClick={attractionClick}/>
         </Route>
         <Route exact path="/attractions">
-          <AttractionList displayData={displayData} availableCities={availableCities} attractionType={attractionType} onHandleChange={onHandleChange} dropdownValue={dropdownValue} onUpdateObject={onUpdateObject}/> 
-        </Route>
-        <Route exact path="/addAttraction">
-          <AttractionsForm/>
+          <AttractionList displayData={displayData} availableCities={availableCities} attractionType={attractionType} onHandleChange={onHandleChange} dropdownValue={dropdownValue} onUpdateObject={onUpdateObject} onPost={onPost} onUpdateData={onUpdateData}/> 
         </Route>
       </Switch>
     </div>
