@@ -15,6 +15,8 @@ function Home() {
 
     return(
         <div>
+            <h5>This handy app will help you create and keep track of your original Roleplaying Characters.</h5>
+            <h5>Please select your username bellow...</h5>
             <User users={users} handleUsers={handleUsers}/>
         </div>
     )
