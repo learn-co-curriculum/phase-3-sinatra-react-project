@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
-function CharacterCard({ selectedCharacter, setSelectedCharacter, setCharacters }){
+function CharacterCard({ selectedCharacter }){
     const [template, setTemplate] = useState({})
     
     useEffect( () => {
@@ -34,7 +34,6 @@ function CharacterCard({ selectedCharacter, setSelectedCharacter, setCharacters 
         {template.weapon1 ? <p>{template.weapon1}</p> : null}
         {template.weapon2 ? <p>{template.weapon2}</p> : null}
         <img src={template.img_url} alt="Class Img"/>
-
         </div>
     )
 }

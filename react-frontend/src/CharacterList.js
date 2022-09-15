@@ -1,7 +1,7 @@
 import CharacterCard from "./CharacterCard"
 import { useState } from 'react'
 
-function CharacterList({ user, characters }) {
+function CharacterList({ characters }) {
   const [selectedCharacter, setSelectedCharacter] = useState({})
   const [selectedCharacterState, setSelectedCharacterState] = useState(false)
 
@@ -11,9 +11,9 @@ function CharacterList({ user, characters }) {
     setSelectedCharacter(character)
     setSelectedCharacterState(!selectedCharacterState)
   }
+  
   const characterCard = characters.map(character => 
       <button onClick={() => handleSelectedCharacter(character)} key={character.id}>{character.name}</button>)
-  // debugger
 
   return(
     <div>

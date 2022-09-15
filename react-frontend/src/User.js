@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import axios from 'axios'
 import CharacterCreation from "./CharacterCreation";
 import CharacterList from "./CharacterList";
 import UserCard from "./UserCard";
-import axios from 'axios'
+
 
 function User({ users }){
     const [userRoute, setUserRoute] = useState(true)
@@ -18,7 +19,7 @@ function User({ users }){
     }
     console.log(user)
 
-    const fetching = () => {axios.get(`http://localhost:9292/users/${user}/characters`).then(res => setCharacters(res.data))}
+    const fetching = () => {axios.get(`http://localhost:9292/users/${user}/characters`).then(resp => setCharacters(resp.data))}
  
     console.log(characters)
 
