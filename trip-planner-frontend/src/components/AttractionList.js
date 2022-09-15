@@ -13,6 +13,26 @@ function AttractionList({availableCities, displayData, attractionType, onHandleC
         onHandleChange(e.target.value)
     }
 
+    function handleDelete(attraction) {
+        console.log(attraction)
+        // fetch(`http://localhost:9292/${attractionType}/${attraction.id}`, {
+        //     method: 'DELETE'
+        // })
+    }
+
+    // function updateData(attraction) {
+    //     onUpdateData(attraction)
+    // }
+
+
+    //for App component
+    // function onUpdateData(deletedAttraction) {
+    //     let updatedData = displayData.map((attraction) => {
+    //         return attraction.id !== deletedAttraction.id
+    //     })
+    //     setDisplayData(updatedData)
+    // }
+
     return (
         <div>
             <select value={dropdownValue} onChange={handleChange}>
@@ -22,11 +42,16 @@ function AttractionList({availableCities, displayData, attractionType, onHandleC
             <div>
                 {attractionType === "concerts" ? <h3>Concerts</h3> : <h3>Eateries</h3>}
                 {displayData.map((attraction) => {
-                    return (attractionType === "concerts" ?
-                        <ConcertItem attraction={attraction} key={attraction.id}/> 
+                    return (
+                        <div>
+                        <button onClick={() => handleDelete(attraction)}>Delete</button>
+                        {attractionType === "concerts" ?
+                            <ConcertItem attraction={attraction} key={attraction.id}/> 
                         : 
-                        <EateryItem attraction={attraction} key={attraction.id}
-                        onUpdateObject={onUpdateObject}/> 
+                            <EateryItem attraction={attraction} key={attraction.id}
+                            onUpdateObject={onUpdateObject}/> 
+                        }
+                        </div>
                     )
                 })}
             </div>
