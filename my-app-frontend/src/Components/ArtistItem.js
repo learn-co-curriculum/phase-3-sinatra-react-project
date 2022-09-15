@@ -6,6 +6,9 @@ function ArtistItem({artist, genre}) {
     const [showInfo, setShowInfo] = useState(false)
     const [moreInfo, setMoreInfo] = useState([])
     const [songInfo, setSongInfo] = useState([])
+    const [songTitle, setSongTitle] = useState("")
+    const [releaseDate, setReleaseDate] = useState("")
+    const [genreId, setGenreId] = useState()
 
     useEffect(() => {
         fetch(`http://localhost:9292/genre/${artist.id}`)
@@ -37,6 +40,25 @@ function ArtistItem({artist, genre}) {
 
 
 
+    const handleNewSong = (e) => {
+        e.preventDefault()
+            fetch("http://localhost:9292/song", {
+            method:"POST", 
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                artist_id: artist.id,
+                genre_id: genreId,
+                song_title: songTitle,
+                release_date: releaseDate
+            })
+        })
+    
+        .then(resp=>resp.json())
+        .then(console.log)
+
+    }
+
+
     return (
         <div>
             <h1>{artist.name}</h1>
@@ -49,6 +71,18 @@ function ArtistItem({artist, genre}) {
                     <button onClick={handleToggle}>Not Liked</button>
                 )}
                 <button onClick={handleDelete}>DELETE</button>
+            </div>
+            <div>
+            <form onSubmit={handleNewSong} >
+                {/* This form submits new song */}
+                 <input type="text" name="song" placeholder="Song Name" value={songTitle} onChange={(e) => setSongTitle(e.target.value)}/>
+                 <input type="text" name="date" placeholder="Release Date" value={releaseDate} onChange={(e) => setReleaseDate(e.target.value)} />
+                 <select id = "myList" onChange={(e) => setGenreId(e.target.value)} >
+                    <option>---Choose Genre---</option>
+                    {genre.map(gen=><option value={gen.id}>{gen.title}</option>)}
+                </select>
+                 <button type="submit">Add Song</button>
+            </form>
             </div>
         </div>
 
