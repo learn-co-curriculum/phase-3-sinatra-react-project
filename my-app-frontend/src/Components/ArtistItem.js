@@ -22,6 +22,14 @@ function ArtistItem({artist, genre}) {
           .then((songInfo) => setSongInfo(songInfo));
       }, []);
 
+        
+    const handleDelete = () => {
+        fetch(`http://localhost:9292/song/${songInfo.id}`, {
+            method: "DELETE"
+        })
+    }
+    
+
     const handleToggle = (e) => {
         setLikeToggle(likeToggle => !likeToggle)
     }
@@ -29,6 +37,8 @@ function ArtistItem({artist, genre}) {
     const handleInfo = () => {
         setShowInfo(!showInfo)
     } 
+
+
 
     const handleNewSong = (e) => {
         e.preventDefault()
@@ -48,6 +58,7 @@ function ArtistItem({artist, genre}) {
 
     }
 
+
     return (
         <div>
             <h1>{artist.name}</h1>
@@ -59,6 +70,7 @@ function ArtistItem({artist, genre}) {
                 ) : (
                     <button onClick={handleToggle}>Not Liked</button>
                 )}
+                <button onClick={handleDelete}>DELETE</button>
             </div>
             <div>
             <form onSubmit={handleNewSong} >
@@ -73,6 +85,8 @@ function ArtistItem({artist, genre}) {
             </form>
             </div>
         </div>
+
+     
     )
 }
 
