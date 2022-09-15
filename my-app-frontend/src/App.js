@@ -6,11 +6,17 @@ import About from "./components/About"
 import RememberList from "./components/RememberList"
 import DateSortBtn from "./components/DateSortBtn"
 import SessionRemList from "./components/SessionRemList"
+import RememberItemDetails from "./components/RememberItemDetails"
+import CategoriesPage from "./components/CategoriesPage"
+import CategoryItems from "./components/CategoryItems"
+
+
 
 
 function App() {
   const [page, setPage] = useState("/")
   const [rememberList, setRememberList] = useState("")
+  const [editedRowId, setEditedRowId] = useState(null)
 
 
   useEffect(() => {
@@ -20,12 +26,31 @@ function App() {
   },[])
 
 
-  const sortByDate = () => {
-    // console.log("clicked")
-    // const sortedList = rememberList.sort((remember1, remember2) => {return (new Date(remember2.created_at) - new Date(remember1.created_at) )})
-    // setRememberList(sortedList)
-    // console.log(sortedList)
+
+  const deleteRemember = (id) => {
+    fetch(`http://localhost:9292/remembers/${id}`, {
+      method: "DELETE",
+    })
+  
+      const data = rememberList.filter(i => i.id !== id)
+      setRememberList(data)
+    
   }
+
+  const updateRemember = (id) => {
+    console.log("here")
+    setEditedRowId(id)
+  }
+  
+
+
+
+
+
+
+
+
+
 
 
   return (
@@ -41,12 +66,25 @@ function App() {
           <SessionRemList />
 
         </Route>
+        <Route exact path="/remembers/:id">
+          <RememberItemDetails />
+
+        </Route>
         <Route path="/remembers">
-          <DateSortBtn sortByDate={sortByDate}/>
-          <RememberList  rememberList={rememberList}/>
+          {/* <DateSortBtn sortByDate={sortByDate}/> */}
+          <RememberList  rememberList={rememberList} deleteRemember={deleteRemember} updateRemember={updateRemember} editedRowId={editedRowId}/>
           {/* <Form /> */}
 
         </Route>
+        <Route exact path="/categories/:id">
+          <CategoryItems />
+
+        </Route>
+        <Route path="/categories">
+          <CategoriesPage />
+
+        </Route>
+
       <Route exact path="/">
           <About />
       </Route>
