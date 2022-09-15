@@ -62,6 +62,7 @@ function ArtistItem({artist, genre}) {
             </div>
             <div>
             <form onSubmit={handleNewSong} >
+                {/* This form submits new song */}
                  <input type="text" name="song" placeholder="Song Name" value={songTitle} onChange={(e) => setSongTitle(e.target.value)}/>
                  <input type="text" name="date" placeholder="Release Date" value={releaseDate} onChange={(e) => setReleaseDate(e.target.value)} />
                  <select id = "myList" onChange={(e) => setGenreId(e.target.value)} >
