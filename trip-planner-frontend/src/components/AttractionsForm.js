@@ -46,6 +46,13 @@ function AttractionsForm({ attractionType, onPost, onUpdateCities }) {
                     onPost(newConcertObj)
                     onUpdateCities(newConcertObj.city)
                 })
+            setCityNameForm("")
+            setStateNameForm("")
+            setConcertDate("")
+            setVenueName("")
+            setVenueType("")
+            setBandName("")
+            setGenre("")
         }
             
         else {
@@ -75,6 +82,12 @@ function AttractionsForm({ attractionType, onPost, onUpdateCities }) {
                 onUpdateCities(newEateryObj.city)
             }
         )}
+        setCityNameForm("")
+        setStateNameForm("")
+        setEateryName("")
+        setDowntown("")
+        setCuisineType("")
+        setAddress("")
     }
     
     return (
@@ -85,38 +98,38 @@ function AttractionsForm({ attractionType, onPost, onUpdateCities }) {
             {attractionType === "concerts" ?
                     <form onSubmit={submitNewCity}>
                         <label>City</label>
-                        <input type="text" name="city" onChange={(e)=>setCityNameForm(e.target.value)}/>
+                        <input placeholder="City Name" type="text" name="city" onChange={(e)=>setCityNameForm(e.target.value)} value={cityNameForm}/>
                         <label>State</label>
-                        <input type="text" name="state" onChange={(e)=>setStateNameForm(e.target.value)}/>
+                        <input placeholder="State Initial" type="text" name="state" onChange={(e)=>setStateNameForm(e.target.value)}value={stateNameForm}/>
                         {/* concert form */}
                         <label>Date</label>
-                        <input type="text" name="Date" onChange={(e) => setConcertDate(e.target.value)}/>
+                        <input placeholder="Date" type="text" name="Date" onChange={(e) => setConcertDate(e.target.value)} value={concertDate}/>
                         <label>Venue</label>
-                        <input type="text" name="Venue" onChange={(e)=>setVenueName(e.target.value)}/>
+                        <input placeholder="Venue Name" type="text" name="Venue" onChange={(e)=>setVenueName(e.target.value)} value={venueName}/>
                         <label>Venue Type</label>
-                        <input type="text" name="Venue Type"onChange={(e)=>setVenueType(e.target.value)}/>
+                        <input placeholder="Arena, Medium, Local?" type="text" name="Venue Type"onChange={(e)=>setVenueType(e.target.value)} value={venueType}/>
                         {/*band form*/}
                         <label>Band Name</label>
-                        <input type="text" name="name"onChange={(e)=>setBandName(e.target.value)}/>
+                        <input placeholder="Band/Artist Name" type="text" name="name"onChange={(e)=>setBandName(e.target.value)} value={bandName}/>
                         <label>Genre</label>
-                        <input type="text" name="genre"onChange={(e)=>setGenre(e.target.value)}/>
+                        <input placeholder="Genre" type="text" name="genre"onChange={(e)=>setGenre(e.target.value)} value={genre}/>
                         <input type="submit" />
                     </form>
                     :
                     <form onSubmit={submitNewCity}>
                         <label>City</label>
-                        <input type="text" name="city" onChange={(e)=>setCityNameForm(e.target.value)}/>
+                        <input placeholder="City Name" type="text" name="city" onChange={(e)=>setCityNameForm(e.target.value)} value={cityNameForm}/>
                         <label>State</label>
-                        <input type="text" name="state" onChange={(e)=>setStateNameForm(e.target.value)}/>
+                        <input placeholder="State Initial" type="text" name="state" onChange={(e)=>setStateNameForm(e.target.value)} value={stateNameForm}/>
                         {/*eatery form*/}
                         <label>Name</label>
-                        <input type="text" name="Name"onChange={(e)=>setEateryName(e.target.value)}/>
+                        <input placeholder="Eatery Name" type="text" name="Name"onChange={(e)=>setEateryName(e.target.value)} value={eateryName}/>
                         <label>Downtown?</label>
-                        <input placeholder="true or false" type="text" name="downtown?"onChange={(e)=>setDowntown(e.target.value)}/>
+                        <input placeholder="true or false" type="text" name="downtown?"onChange={(e)=>setDowntown(e.target.value)} value={downtown}/>
                         <label>Cuisine Type</label>
-                        <input type="text" name="cuisine type"onChange={(e)=>setCuisineType(e.target.value)}/>
+                        <input placeholder="Cuisine Type" type="text" name="cuisine type"onChange={(e)=>setCuisineType(e.target.value)} value={cuisineType}/>
                         <label>Address</label>
-                        <input type="text" name="Address"onChange={(e)=>setAddress(e.target.value)}/>
+                        <input placeholder="Address" type="text" name="Address"onChange={(e)=>setAddress(e.target.value)} value={address}/>
                         <input type="submit" />
                     </form>
             }
