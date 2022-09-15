@@ -17,7 +17,9 @@ function AttractionsForm({attractionType}) {
     
    function submitNewCity(e){
     e.preventDefault()
-        const newCity = {
+      
+    if (attractionType === "concert") {
+    const newCity = {
             city: cityNameForm,
             state: stateNameForm,
         }
@@ -56,13 +58,26 @@ function AttractionsForm({attractionType}) {
             body: JSON.stringify(newConcert)
         })
         .then(res=> res.json())  
-
-        const newEatery = {
+        }
+        else{
+            const newEatery = {
             name: eateryName,
             cuisine_type: cuisineType,
             downtown: downtown,
             address:address
         }
+        const newCity = {
+            city: cityNameForm,
+            state: stateNameForm,
+        }
+        fetch("http://localhost:9292/cities",{
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newCity)
+        })
+        .then(res=> res.json())   
         fetch("http://localhost:9292/eateries", {
             method: 'POST',
             headers: {
@@ -71,6 +86,7 @@ function AttractionsForm({attractionType}) {
             body: JSON.stringify(newEatery)
         })
         .then(res=> res.json())
+    }
 
     }
     
