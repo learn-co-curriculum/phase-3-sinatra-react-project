@@ -12,78 +12,58 @@ function AttractionsForm({attractionType}) {
     const [eateryName, setEateryName] = useState("")
     const [downtown, setDowntown] = useState("")
     const [cuisineType, setCuisineType] = useState("")
-    const [address,setAddress] = useState("")
-  
+    const [address,setAddress] = useState("")  
     
    function submitNewCity(e){
     e.preventDefault()
       
-    if (attractionType === "concert") {
-    const newCity = {
-            city: cityNameForm,
-            state: stateNameForm,
+    if (attractionType === "concerts") {
+        const newCity = {
+                name: cityNameForm,
+                state: stateNameForm,
         }
-        fetch("http://localhost:9292/cities",{
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newCity)
-        })
-        .then(res=> res.json())   
-        
         const newBand = {
-          name: bandName,
-          genre: genre
+                name: bandName,
+                genre: genre
         }
-        fetch("http://localhost:9292/bands",{
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newBand)
-        })
-        .then(res=> res.json())  
-
         const newConcert = {
-          date: concertDate,
-          venue_name: venueName,
-          venue_type: venueType
+                date: concertDate,
+                venue_name: venueName,
+                venue_type: venueType,
+                band_id: newBand.id,
+                city_id: newCity.id
         } 
+        // const postVariable = [newCity, newBand, newConcert]
         fetch("http://localhost:9292/concerts",{
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(newConcert)
+            body: JSON.stringify({newConcert, newBand, newCity})
         })
-        .then(res=> res.json())  
-        }
-        else{
-            const newEatery = {
-            name: eateryName,
-            cuisine_type: cuisineType,
-            downtown: downtown,
-            address:address
-        }
+            .then(res=> res.json())  
+            .then(newConcertObject => {console.log(newConcertObject)})
+    }
+        
+    else {
         const newCity = {
-            city: cityNameForm,
+            name: cityNameForm,
             state: stateNameForm,
         }
-        fetch("http://localhost:9292/cities",{
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newCity)
-        })
-        .then(res=> res.json())   
+        const newEatery = {
+            name: eateryName,
+            cuisine_type: cuisineType,
+            "downtown?": downtown,
+            address: address,
+            rating: 0,
+            city_id: newCity.id
+        }
         fetch("http://localhost:9292/eateries", {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(newEatery)
+            body: JSON.stringify({newEatery, newCity})
         })
         .then(res=> res.json())
     }
@@ -125,7 +105,7 @@ function AttractionsForm({attractionType}) {
                         <label>Name</label>
                         <input type="text" name="Name"onChange={(e)=>setEateryName(e.target.value)}/>
                         <label>Downtown?</label>
-                        <input type="text" name="downtown?"onChange={(e)=>setDowntown(e.target.value)}/>
+                        <input placeholder="true or false" type="text" name="downtown?"onChange={(e)=>setDowntown(e.target.value)}/>
                         <label>Cuisine Type</label>
                         <input type="text" name="cuisine type"onChange={(e)=>setCuisineType(e.target.value)}/>
                         <label>Address</label>
