@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState} from 'react'
 
-function AttractionsForm({attractionType}) {
+function AttractionsForm({ attractionType, onPost }) {
     const [cityNameForm, setCityNameForm] = useState("")
     const [stateNameForm, setStateNameForm] = useState("")
     const [concertDate, setConcertDate] = useState("")
@@ -14,60 +14,59 @@ function AttractionsForm({attractionType}) {
     const [cuisineType, setCuisineType] = useState("")
     const [address,setAddress] = useState("")  
     
-   function submitNewCity(e){
-    e.preventDefault()
-      
-    if (attractionType === "concerts") {
-        const newCity = {
+    function submitNewCity(e){
+        e.preventDefault()
+        
+        if (attractionType === "concerts") {
+            const newCity = {
+                    name: cityNameForm,
+                    state: stateNameForm,
+            }
+            const newBand = {
+                    name: bandName,
+                    genre: genre
+            }
+            const newConcert = {
+                    date: concertDate,
+                    venue_name: venueName,
+                    venue_type: venueType,
+                    band_id: newBand.id,
+                    city_id: newCity.id
+            } 
+            fetch("http://localhost:9292/concerts",{
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({newConcert, newBand, newCity})
+            })
+                .then(res=> res.json()) 
+                .then(newConcertObj => onPost(newConcertObj))
+        }
+            
+        else {
+            const newCity = {
                 name: cityNameForm,
                 state: stateNameForm,
-        }
-        const newBand = {
-                name: bandName,
-                genre: genre
-        }
-        const newConcert = {
-                date: concertDate,
-                venue_name: venueName,
-                venue_type: venueType,
-                band_id: newBand.id,
+            }
+            const newEatery = {
+                name: eateryName,
+                cuisine_type: cuisineType,
+                "downtown?": downtown,
+                address: address,
+                rating: 0,
                 city_id: newCity.id
-        } 
-        // const postVariable = [newCity, newBand, newConcert]
-        fetch("http://localhost:9292/concerts",{
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({newConcert, newBand, newCity})
-        })
-            .then(res=> res.json())  
-            .then(newConcertObject => {console.log(newConcertObject)})
-    }
-        
-    else {
-        const newCity = {
-            name: cityNameForm,
-            state: stateNameForm,
+            }
+            fetch("http://localhost:9292/eateries", {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({newEatery, newCity})
+            })
+            .then(res=> res.json())
+            .then(newEateryObj => onPost(newEateryObj))
         }
-        const newEatery = {
-            name: eateryName,
-            cuisine_type: cuisineType,
-            "downtown?": downtown,
-            address: address,
-            rating: 0,
-            city_id: newCity.id
-        }
-        fetch("http://localhost:9292/eateries", {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({newEatery, newCity})
-        })
-        .then(res=> res.json())
-    }
-
     }
     
     return (

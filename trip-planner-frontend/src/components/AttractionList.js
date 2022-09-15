@@ -4,7 +4,7 @@ import EateryItem from './EateryItem.js';
 import AttractionsForm from './AttractionsForm.js';
 
 
-function AttractionList({availableCities, displayData, attractionType, onHandleChange, dropdownValue, onUpdateObject}) {
+function AttractionList({availableCities, displayData, attractionType, onHandleChange, dropdownValue, onUpdateObject, onPost, onUpdateData}) {
 
 
 
@@ -14,24 +14,17 @@ function AttractionList({availableCities, displayData, attractionType, onHandleC
     }
 
     function handleDelete(attraction) {
-        console.log(attraction)
-        // fetch(`http://localhost:9292/${attractionType}/${attraction.id}`, {
-        //     method: 'DELETE'
-        // })
+        // console.log(attraction.id)
+        fetch(`http://localhost:9292/${attractionType}/${attraction.id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(deletedAttraction => updateData(deletedAttraction))
     }
 
-    // function updateData(attraction) {
-    //     onUpdateData(attraction)
-    // }
-
-
-    //for App component
-    // function onUpdateData(deletedAttraction) {
-    //     let updatedData = displayData.map((attraction) => {
-    //         return attraction.id !== deletedAttraction.id
-    //     })
-    //     setDisplayData(updatedData)
-    // }
+    function updateData(attraction) {
+        onUpdateData(attraction)
+    }
 
     return (
         <div>
@@ -55,7 +48,7 @@ function AttractionList({availableCities, displayData, attractionType, onHandleC
                     )
                 })}
             </div>
-            <AttractionsForm attractionType={attractionType}/>
+            <AttractionsForm attractionType={attractionType} onPost={onPost}/>
         </div>
     )
 }
