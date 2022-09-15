@@ -1,8 +1,12 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
-function CharacterCard({ selectedCharacter }){
+function CharacterCard({ selectedCharacter, setSelectedCharacter }){
     const [template, setTemplate] = useState({})
+    const [updatedName, setUpdatedName] = useState("")
+    const [updatedHistory, setUpdatedHistory] = useState("")
+    const [toggleForm, setToggleForm] = useState(false)
+
     
     useEffect( () => {
         axios.get(`http://localhost:9292/templates/${selectedCharacter.template_id}`).then(response => setTemplate(response.data))
@@ -13,9 +17,55 @@ function CharacterCard({ selectedCharacter }){
         axios.delete(`http://localhost:9292/characters/${selectedCharacter.id}`)
     }
 
+    const handleUpdateForm = (e) => {
+        e.preventDefault()
+        axios.patch(`http://localhost:9292/characters/${selectedCharacter.id}`, {name: updatedName, history: updatedHistory})
+            .then(res => setSelectedCharacter(res.data))
+            
+            setUpdatedName("")
+            setUpdatedHistory("")
+            setToggleForm(false)
+    }
+
+
+    const handleUpdatedName = (e) => {
+        setUpdatedName(e.target.value)
+    }
+
+    const handleUpdatedHistory = (e) => {
+        setUpdatedHistory(e.target.value)
+    }
+
+    const handleToggle = () => {
+        setToggleForm(!toggleForm)
+    }
+
     return(
         <div>
-        <button onClick ={handleDelete}>Delete Character</button>
+        <button onClick={handleDelete}>Delete Character</button>
+        <button onClick={handleToggle}>Update Character</button>
+        {toggleForm ? <form onSubmit={handleUpdateForm}> 
+            <label>Update Your Character</label>
+            <br/>
+            <input
+                type="text"
+                name="name"
+                placeholder='New Name'
+                value={updatedName}
+                onChange={handleUpdatedName}
+            />
+            <br/>
+            <input
+                type="text"
+                name="history"
+                placeholder='New Background Info'
+                value={updatedHistory}
+                onChange={handleUpdatedHistory}
+            />
+            <br/>
+            <button>Submit Update</button>
+        </form> : null}
+       <br/>
         <h1>{selectedCharacter.name}</h1>
         <p>Race: {template.race}</p>
         <p>Level: {template.level}</p>

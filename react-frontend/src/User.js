@@ -28,7 +28,10 @@ function User({ users, handleUsers }){
 
     const fetchingUserCharacters = (user) => {axios.get(`http://localhost:9292/users/${user}/characters`).then(resp => setCharacters(resp.data))}
     
+    // const updateUserName = axios.patch('https://localhost:9292/users/:id', { name: userName }.res.data.headers['Content-Type']).then(res => setUserName([...users, res.data]));
     
+
+
     function handleClick () {
             setUserRoute(userRoute => !userRoute)
     }
@@ -50,6 +53,7 @@ function User({ users, handleUsers }){
            <button onClick={handleClick}>{userRoute ? "Create Character": "Choose Character"}</button>
            <br/>
            <select onChange={handleChange}>
+            <br/>
            <option>Select User</option>
            {userList}
            </select>

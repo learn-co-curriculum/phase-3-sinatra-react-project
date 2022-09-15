@@ -56,7 +56,8 @@ class ApplicationController < Sinatra::Base
 
   patch "/characters/:id" do
     update_character = Character.find_by(id: params[:id])
-    update_character.update(name: params[:name], history: params[:history]).to_json
+    update_character.update(name: params[:name], history: params[:history])
+    update_character.to_json
   end
 
   get "/templates" do

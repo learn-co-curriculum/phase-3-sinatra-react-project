@@ -55,7 +55,7 @@ function CharacterCreation({ user }){
     const handleChange = (e) => {
         setClassName(e.target.value)
     }
-    const selectTemplate = templates.map(template => <option>{template}</option>)
+    const selectTemplate = templates.map(template => <option key={template.id}>{template}</option>)
 
     return(
         <div className='form-box'>
