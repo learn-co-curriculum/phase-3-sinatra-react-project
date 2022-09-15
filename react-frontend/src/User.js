@@ -5,40 +5,45 @@ import CharacterList from "./CharacterList";
 import UserCard from "./UserCard";
 
 
-function User({ users }){
+function User({ users, handleUsers }){
     const [userRoute, setUserRoute] = useState(true)
     const [user, setUser] = useState("")
     const [characters, setCharacters] = useState([])
+    const [userName, setUserName] = useState("")
 
     
+
+    function activate (e) {
+        e.preventDefault()
+        axios.post('http://localhost:9292//users', {name: userName}).then(resp => handleUsers([...users, resp.data]))
+
+        setUserName('')
+        }
 
     const handleChange = (e) => {
         setUser(e.target.value)
-        fetching()
-        
+        fetchingUserCharacters()  
     }
-    console.log(user)
+    
 
-    const fetching = () => {axios.get(`http://localhost:9292/users/${user}/characters`).then(resp => setCharacters(resp.data))}
- 
-    console.log(characters)
-
-    let userList = users.map(user => <option value={user.id}>{user.name}</option>)
+    const fetchingUserCharacters = () => {axios.get(`http://localhost:9292/users/${user}/characters`).then(resp => setCharacters(resp.data))}
+    
     
     function handleClick () {
-         setUserRoute( userRoute => !userRoute)
+            setUserRoute(userRoute => !userRoute)
     }
 
-        function activate (e) {
-            e.preventDefault()
-            console.log(e.target.name.value)
-         }
+    const handleUserName = (e) => {
+        setUserName(e.target.value)
+    }
+
+    let userList = users.map(user => <option value={user.id} key={user.id}>{user.name}</option>)
 
     return(
         <div>
             <form action="/action_page.php" onSubmit = {activate}>
-                <label for="fname">Username:</label><br/>
-                <input type="text" id="name" name="name"/><br/>
+                <label for="name">Username:</label><br/>
+                <input type="text" id="name" name="name" onChange={handleUserName} value={userName}/><br/>
                 <input type="submit" value="Submit"/>
             </form>
            <h1>User things go Here!</h1>
@@ -48,7 +53,7 @@ function User({ users }){
            <option>Select User</option>
            {userList}
            </select>
-           {userRoute ? user !== "" ?<CharacterCreation user={user}/> : null : characters === null ? null : <CharacterList user={user} characters={characters}/>}
+           {userRoute ? user !== "" ? <CharacterCreation user={user}/> : null : characters === null ? null : <CharacterList user={user} characters={characters}/>}
         </div>
     )
 }
