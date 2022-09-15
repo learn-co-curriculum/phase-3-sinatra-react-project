@@ -24,6 +24,8 @@ function App() {
   //   setChosenEateries([])
   // }
 
+
+
 useEffect(()=> {
   fetch(`http://localhost:9292/${attractionType}`)
     .then((i) => i.json())
