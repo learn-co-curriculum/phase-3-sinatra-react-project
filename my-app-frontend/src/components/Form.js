@@ -1,21 +1,49 @@
 import React, { useState, useEffect } from 'react'
+import CategoryDropDown from "./CategoryDropDown"
+
 // import RememberItem from "./RememberItem"
 
 // ...
 
 function Form({ addRemember }) {
-    const [value, setValue] = React.useState("");
-    const [categoryValue, setCategoryValue] = React.useState("");
+    const [value, setValue] = useState("");
+    const [categoryValue, setCategoryValue] = useState("");
 
   
     const handleSubmit = e => {
       e.preventDefault();
       if (!value) return;
       addRemember(value);
-      setValue("");
+      console.log(categoryValue)
+
+      // const body = 
+      // {
+      //   "user_id": 1,
+      //   "category_id": 3,
+      //   "remember": "I remember hours in the high school library running my hands along the spines of books."
+      // }
+     
+        fetch(`http://localhost:9292/remembers`, {
+          method: "POST",
+          headers: {
+            // Accept: 'application.json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            "user_id": 1,
+            "category_id": categoryValue,
+            "remember": value 
+          })
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+      
+        setValue("");
+
     };
   
     return (
+      <div>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -25,8 +53,10 @@ function Form({ addRemember }) {
         />
         
       </form>
-    //   <categorydropdown></>
-    // <button></button> will take over handleSubmit
+      
+      <CategoryDropDown setCategoryValue={setCategoryValue}/>
+    {/* // <button></button> will take over handleSubmit */}
+    </div>
     );
   }
 

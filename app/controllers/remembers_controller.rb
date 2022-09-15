@@ -3,41 +3,16 @@ class RemembersController < ApplicationController
 
     #Read
 
-        ##FOR "HOME"PAGE
-    # get '/remembers' do
-    # end 
-
-
     get '/remembers/all' do
         remembers = Remember.all
         remembers.to_json
     end
-
-        ##SORT BY DATE
-
-    get '/remembers/all_reverse' do
-        remembers = Remember.all.sort_by(&:created_at).reverse!
-        remembers.to_json
-    end
-    #remembers/sort/:direction
-    # ascending sort_bysort_by(&:created_at)
-    # descending sort_by(&:created_at).reverse! 
-
-    # get '/remembers/sort/:direction' do
-    #     if ascending
-    #         sort_by(&:created_at)
-    #     else
-    #         sort_by(&:created_at).reverse!
-    #     end
-    # end 
 
     get '/remembers/:id' do
         remember = Remember.find_by(id: params[:id])
         remember.to_json
 
     end 
-
-
 
     #Create
 
@@ -74,5 +49,24 @@ class RemembersController < ApplicationController
         remember.to_json
         status 204
     end 
+
+
+     ##EXTRA SORT BY DATE
+
+     get '/remembers/all_reverse' do
+        remembers = Remember.all.sort_by(&:created_at).reverse!
+        remembers.to_json
+    end
+    #remembers/sort/:direction
+    # ascending sort_bysort_by(&:created_at)
+    # descending sort_by(&:created_at).reverse! 
+
+    # get '/remembers/sort/:direction' do
+    #     if ascending
+    #         sort_by(&:created_at)
+    #     else
+    #         sort_by(&:created_at).reverse!
+    #     end
+    # end 
 
 end 
