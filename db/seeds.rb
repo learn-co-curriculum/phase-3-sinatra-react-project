@@ -29,8 +29,9 @@ t17 = Template.create(level: rand(1..10), constitution: rand(1..20), strength: r
 t18 = Template.create(level: rand(1..10), constitution: rand(1..20), strength: rand(1..20), intelligence: rand(1..20), charisma: rand(1..20), wisdom: rand(1..20), dexterity: rand(1..20), class_name: "Druid", race: "Human", spell1: "Animal Messenger", spell2: "Bark Skin", ability1: "Wild Shape", ability2: nil, weapon1: "Bow", weapon2: nil, img_url: "https://i.pinimg.com/736x/15/4d/6e/154d6e9e0e75cfd5d91af19772fbd269.jpg")
 
 puts "🧙‍♂️ Seeding Characters..."
-Character.create(name: "Lucifer", history: "Fell from grace, and now seeks revenge on his father who threw him out from heaven.", user_id: u1.id, template_id: t1.id )
-Character.create(name: "Oob", history: "Can only grant wishes. Who knows what kind of wishes... ", user_id: u3.id, template_id: t11.id )
-Character.create(name: "Pike Trickfoot", history: "Has trouble talking to her god, but tries really hard. Has a barbarian friend.", user_id: u2.id, template_id: t13.id )
+Character.create(name: "Lucifer", history: "Fell from grace, and now seeks revenge on his father who threw him out from heaven.", user_id: u1.id, template_id: t1.id)
+Character.create(name: "Oob", history: "Can only grant wishes. Who knows what kind of wishes... ", user_id: u3.id, template_id: t11.id)
+Character.create(name: "Pike Trickfoot", history: "Has trouble talking to her god, but tries really hard. Has a barbarian friend.", user_id: u2.id, template_id: t13.id)
+Character.create(name: "Bob", history: "His name is Bob.", user_id: u1.id, template_id: t4.id)
 
 puts "✅ Done seeding!🪴"
