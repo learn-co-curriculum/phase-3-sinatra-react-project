@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import ArtistDetail from "./ArtistDetail"
 
-function ArtistItem({artist, handleToggle}) {
+function ArtistItem({artist, genre, handleToggle}) {
     
     const [artistInfo, setArtistInfo] = useState([])
     const [showInfo, setShowInfo] = useState(false)
@@ -44,9 +44,9 @@ function ArtistItem({artist, handleToggle}) {
     }
     
 
-    const handleToggle = (e) => {
-        setLikeToggle(likeToggle => !likeToggle)
-    }
+    // const handleToggle = (e) => {
+    //     setLikeToggle(likeToggle => !likeToggle)
+    // }
 
 
     const handleInfo = () => {
