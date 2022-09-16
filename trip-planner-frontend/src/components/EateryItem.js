@@ -1,6 +1,6 @@
 import React from 'react';
 
-function EateryItem({ attraction, onUpdateObject }) {
+function EateryItem({ attraction, onUpdateObject, handleDelete }) {
 
     function handleStarClick(attraction) {
         console.log(attraction.rating)
@@ -19,17 +19,18 @@ function EateryItem({ attraction, onUpdateObject }) {
 
     return (
         <div>
-                <div>
-                    <p>{attraction.name}</p>
-                    <p>{attraction.cuisine_type}</p>
-                    <p>{attraction.address}</p>
-                    {attraction["downtown?"] ? <p>Downtown</p> : <p>Not Downtown</p>}
-                    <p>Rating: {"⭐️".repeat(attraction.rating)}</p>
-                    <p>{attraction.rating} stars</p>
-                    <button onClick={() => handleStarClick(attraction)}>Add Star</button>
-                </div>
-                <div>
-                    ===================
+                <div className="card listcard my-3 mx-4 concert-card">
+                    <div className="card-body">
+                        <p>{attraction.name}</p>
+                        <p>Type: {attraction.cuisine_type}</p>
+                        <p>Street Address: {attraction.address}</p>
+                        {attraction["downtown?"] ? <p>Downtown</p> : <p>Not Downtown</p>}
+                        <p>Rating: {"⭐️".repeat(attraction.rating)}</p>
+                        <p>{attraction.rating} stars</p>
+                        <button className="btn btn-success" onClick={() => handleStarClick(attraction)}>Add Star</button>
+                        <br></br>
+                        <button className='btn btn-danger delete' onClick={() => handleDelete(attraction)}>Delete</button>
+                    </div>
                 </div>
                 </div>
     )

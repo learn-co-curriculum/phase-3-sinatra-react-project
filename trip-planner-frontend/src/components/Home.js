@@ -11,15 +11,18 @@ function Home({attractionClick}) {
     
     return (
         <div>
-            Home Page
+            <br></br>
+            <h2>Welcome to Trip Planner!</h2>
+            <br></br>
             <div>
                 <Link exact="true" to="attractions">
-                    <button value="concerts" onClick={handleClick}>Ready to rock</button>
+                    <button type="button" className="btn btn-primary" value="concerts" onClick={handleClick}>Ready to rock</button>
                 </Link>
             </div>
+            <br></br>
             <div>
                 <Link exact="true" to="/attractions">
-                    <button value="eateries" onClick={handleClick}>Ready to fill up</button>
+                    <button className="btn btn-primary" value="eateries" onClick={handleClick}>Eager to eat</button>
                 </Link>
             </div>
         </div>
