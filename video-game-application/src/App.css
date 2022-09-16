@@ -1,0 +1,197 @@
+.app{
+  background: fixed;
+  background-image: url("https://img.freepik.com/free-vector/detailed-gamer-room-illustrated_52683-60505.jpg?w=2000");
+  background-size: cover;
+  border: groove;
+  border-width: 10px;
+  border-color: blueviolet;
+  padding-bottom: 500px;
+}
+.image_grid{
+  --gap: 16px;
+  --num-cols: 3;
+  --row-height: 400px;
+
+  box-sizing: border-box;
+  padding: var(--gap);
+
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  grid-auto-rows: var(--row-height);
+  gap: 130px 0px;
+}
+
+.item_image{
+  width: 300px;
+  height: 300px;
+  padding: 5px;
+  border: double;
+  padding: 1px;
+  border-color: aquamarine;
+  border-width: 5px;
+}
+
+.directory_header{
+  text-align: center;
+  font-size: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-shadow: 3px 2px 2px rgb(0, 0, 0);
+  color:rgb(121, 235, 255);
+  text-decoration: underline;
+  text-transform: uppercase;
+  border: double;
+  background-image: url("https://t3.ftcdn.net/jpg/02/42/75/76/360_F_242757656_LYhzT9Kzxb5XdOsNY6SYSyroxMzZBeRN.jpg");
+  margin: auto;
+  border-radius: 60%;
+  border-width: 20px;
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-top: 20px;
+}
+
+.item_div{
+  padding: 50px;
+  text-align: center;
+  font-style: oblique;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar{
+  background-image: url("https://s3.envato.com/files/b5dfa354-f5af-4580-b02a-06486bbebe10/inline_image_preview.jpg");
+  text-align: center;
+  padding: 1%;
+  font-size: 28px;
+  margin: auto;
+  border-color: rgb(121, 235, 255);
+  border-width: 8px;
+  border-style: groove;
+}
+
+.table_title{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: 45px;
+    color: rgb(234, 39, 117);
+    text-shadow: 2px 2px 3px rgb(20, 0, 24);
+    background-image: url("https://t3.ftcdn.net/jpg/02/42/75/76/360_F_242757656_LYhzT9Kzxb5XdOsNY6SYSyroxMzZBeRN.jpg");
+    border-radius: 5px;
+    border-style: double;
+    border-width: 5px;
+    border-color: rgb(12, 0, 116);
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    margin-top: 20px;
+    padding: 30px;
+    padding-left: 30px;
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+}
+
+.play_table{
+  text-align: center;
+  margin: auto;
+  border-style: double;
+  width: 600px;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: rgb(252, 25, 82);
+  text-shadow: 3px 2px 2px rgb(35, 25, 25);
+  background-image: url("https://videohive.img.customer.envatousercontent.com/files/1a8011a5-217f-4a8a-9618-c2ddefbe08e3/inline_image_preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=c2d3e49302699ffe29d8b925ff6bad7c");
+  background-size: contain;
+}
+
+.item_div2{
+  border: double;
+  background-image: url("https://t3.ftcdn.net/jpg/02/42/75/76/360_F_242757656_LYhzT9Kzxb5XdOsNY6SYSyroxMzZBeRN.jpg");
+  background-size: contain;
+  margin-left: 150px;
+  margin-right: 150px;
+  border-radius: 3%;
+  color: rgb(121, 235, 255);
+  text-shadow: 3px 2px 2px rgb(22, 0, 0);
+  padding-bottom: 6px;
+}
+
+.nav{
+  color: rgb(121, 235, 255);
+  text-shadow: 3px 2px 2px black;
+}
+
+.table_input{
+  text-align: center;
+  margin-left: 810px;
+  margin-bottom: 20px;
+  color: rgb(234, 39, 117);
+  background-color: rgb(31, 169, 255);
+  height: 30px;
+  font-size: 20px;
+  text-shadow: 2px 1px 1px rgb(255, 255, 255);
+}
+
+::placeholder{
+  color:rgb(255, 0, 89)
+}
+
+.form_div{
+  text-align: center;
+  font-size: 50px;
+  color: aqua;
+  text-shadow: 3px 2px 2px black;
+  border: double;
+  background-image: url("https://c.wallhere.com/photos/44/83/vaporwave_cyberpunk_Synth_synthwave_4K_palm_trees_OutRun_digital-1854525.jpg!d");
+  background-size: cover;
+  padding-bottom: 600px;
+}
+
+.form_input{
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(234, 39, 117);
+  background-color: rgb(31, 169, 255);
+  height: 30px;
+  font-size: 20px;
+  text-shadow: 2px 1px 1px rgb(46, 32, 32);
+  text-transform: uppercase;
+}
+
+.home_image{
+  max-width: 1200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: double;
+  border-color: bisque;
+  border-radius: 50%;
+  border-width: 5px;
+}
+
+.home_header{
+  text-align: center;
+  border-radius: 80px;
+  color: rgb(148, 228, 255);
+  font-size: 80px;
+  border-style: ridge;
+  border-width: 10px;
+  border-inline-color: blue;
+  border-top-color: rgb(81, 219, 254);
+  border-bottom-color:rgb(105, 220, 255);
+  text-shadow: 4px 3px 3px black;
+  background-image: url("https://t3.ftcdn.net/jpg/02/42/75/76/360_F_242757656_LYhzT9Kzxb5XdOsNY6SYSyroxMzZBeRN.jpg");
+}
+
+.summary{
+  text-align: center;
+  border-radius: 40px;
+  color: rgb(130, 236, 255);
+  font-size: 50px;
+  border-style: ridge;
+  border-width: 10px;
+  border-inline-color: blue;
+  border-top-color: rgb(81, 219, 254);
+  border-bottom-color:rgb(105, 220, 255);
+  text-shadow: 4px 3px 3px black;
+  background-image: url("https://t3.ftcdn.net/jpg/02/42/75/76/360_F_242757656_LYhzT9Kzxb5XdOsNY6SYSyroxMzZBeRN.jpg");
+}
