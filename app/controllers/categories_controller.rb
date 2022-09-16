@@ -19,7 +19,6 @@ class CategoriesController < ApplicationController
 
     #POST 
     post '/categories' do
-        # binding.pry
         category = Category.create(
           name: params[:name],
         )

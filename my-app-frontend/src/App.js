@@ -36,7 +36,6 @@ function App() {
   }
 
   const updateRemember = (id) => {
-    console.log("here")
     setEditedRowId(id)
   }
   

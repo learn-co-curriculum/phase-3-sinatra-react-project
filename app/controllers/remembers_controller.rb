@@ -40,7 +40,6 @@ class RemembersController < ApplicationController
         )
         remembers.to_json
     end
-    # working on it 
 
     #Destroy
     delete '/remembers/:id' do

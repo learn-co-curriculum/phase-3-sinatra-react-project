@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import CategoryDropDown from "./CategoryDropDown"
 
-// import RememberItem from "./RememberItem"
-
-// ...
 
 function Form({ addRemember }) {
     const [value, setValue] = useState("");
@@ -16,17 +13,9 @@ function Form({ addRemember }) {
       addRemember(value);
       console.log(categoryValue)
 
-      // const body = 
-      // {
-      //   "user_id": 1,
-      //   "category_id": 3,
-      //   "remember": "I remember hours in the high school library running my hands along the spines of books."
-      // }
-     
         fetch(`http://localhost:9292/remembers`, {
           method: "POST",
           headers: {
-            // Accept: 'application.json',
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
@@ -55,17 +44,9 @@ function Form({ addRemember }) {
       </form>
       
       <CategoryDropDown setCategoryValue={setCategoryValue}/>
-    {/* // <button></button> will take over handleSubmit */}
     </div>
     );
   }
-
-  
-  // ...
-
-    // onChange={inputTextHandler}
-    // onClick={submitToDoHandler}
-    // {inputText}
 
 
 export default Form
