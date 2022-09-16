@@ -1,3 +1,4 @@
+require "pry"
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
@@ -41,9 +42,24 @@ class ApplicationController < Sinatra::Base
     song.to_json
   end
 
+
   patch "/artist/:id" do
     artist = Artist.find(params[:id])
     artist.update(likes:params[:likes]).to_json
   end
+
+
+
+delete "/song/:id" do
+  song = Song.find(params[:id]).destroy
+end
+
+
+  post "/song" do
+          song = Song.create(artist_id: params[:artist_id], genre_id: params[:genre_id], song_title: params[:song_title], release_date: params[:release_date])
+  song.to_json
+  end
+
+
 
 end

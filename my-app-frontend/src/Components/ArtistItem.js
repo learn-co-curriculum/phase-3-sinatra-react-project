@@ -7,6 +7,7 @@ function ArtistItem({artist, handleToggle}) {
     const [showInfo, setShowInfo] = useState(false)
     const [moreInfo, setMoreInfo] = useState([])
     const [songInfo, setSongInfo] = useState([])
+
     const [likeToggle, setLikeToggle] = useState(artist.likes)
     
     useEffect(() => {
@@ -15,6 +16,11 @@ function ArtistItem({artist, handleToggle}) {
           .then((artistInfo) => setArtistInfo(artistInfo));
       }, []);
    
+
+    const [songTitle, setSongTitle] = useState("")
+    const [releaseDate, setReleaseDate] = useState("")
+    const [genreId, setGenreId] = useState()
+
 
     useEffect(() => {
         fetch(`http://localhost:9292/genre/${artist.id}`)
@@ -28,27 +34,45 @@ function ArtistItem({artist, handleToggle}) {
           .then((songInfo) => setSongInfo(songInfo));
       }, []);
 
-    // const handleToggle = () => {
-    //     let newLike = setLikeToggle(!likeToggle)
-    //     handleLikePatch(newLike)
-    // }
 
-    // const handleLikePatch = () => {
-    //     fetch(`http://localhost:9292/artist/${artist.id}`, {
-    //         method: "PATCH",
-    //         headers: {
-    //             'Content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify({likes: likeToggle})
-    //     })
-    //         .then(resp => resp.json())
-    //         .then(console.log)
-    // }
+  
+        
+    const handleDelete = () => {
+        fetch(`http://localhost:9292/song/${songInfo.id}`, {
+            method: "DELETE"
+        })
+    }
     
+
+    const handleToggle = (e) => {
+        setLikeToggle(likeToggle => !likeToggle)
+    }
+
 
     const handleInfo = () => {
         setShowInfo(!showInfo)
     } 
+
+
+
+    const handleNewSong = (e) => {
+        e.preventDefault()
+            fetch("http://localhost:9292/song", {
+            method:"POST", 
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                artist_id: artist.id,
+                genre_id: genreId,
+                song_title: songTitle,
+                release_date: releaseDate
+            })
+        })
+    
+        .then(resp=>resp.json())
+        .then(console.log)
+
+    }
+
 
     return (
         <div>
@@ -61,8 +85,23 @@ function ArtistItem({artist, handleToggle}) {
                 ) : (
                     <button onClick={()=>handleToggle(artist, setArtistInfo, likeToggle, setLikeToggle)}>Not Liked</button>
                 )}
+                <button onClick={handleDelete}>DELETE</button>
+            </div>
+            <div>
+            <form onSubmit={handleNewSong} >
+                {/* This form submits new song */}
+                 <input type="text" name="song" placeholder="Song Name" value={songTitle} onChange={(e) => setSongTitle(e.target.value)}/>
+                 <input type="text" name="date" placeholder="Release Date" value={releaseDate} onChange={(e) => setReleaseDate(e.target.value)} />
+                 <select id = "myList" onChange={(e) => setGenreId(e.target.value)} >
+                    <option>---Choose Genre---</option>
+                    {genre.map(gen=><option value={gen.id}>{gen.title}</option>)}
+                </select>
+                 <button type="submit">Add Song</button>
+            </form>
             </div>
         </div>
+
+     
     )
 }
 
