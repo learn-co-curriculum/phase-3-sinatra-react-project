@@ -8,10 +8,10 @@ function NavBar ({attractionClick}) {
     }
     
     return (
-        <nav>
+        <nav className="navbar navbar-expand-lg bg-light">
+            <Link className="navLink" to="/">Home</Link>
             <Link className="navLink" id="concerts" onClick={handleClick} to="/attractions">Concerts</Link>
             <Link className="navLink" id="eateries" onClick={handleClick}  to="/attractions">Eateries</Link>
-            <Link className="navLink" to="/">Home</Link>
         </nav>
     )
 }

@@ -37,12 +37,11 @@ function AttractionList({availableCities, displayData, attractionType, onHandleC
                 {displayData.map((attraction) => {
                     return (
                         <div>
-                        <button onClick={() => handleDelete(attraction)}>Delete</button>
                         {attractionType === "concerts" ?
-                            <ConcertItem attraction={attraction} key={attraction.id}/> 
-                        : 
+                            <ConcertItem attraction={attraction} key={attraction.id} handleDelete={handleDelete}/> 
+                            : 
                             <EateryItem attraction={attraction} key={attraction.id}
-                            onUpdateObject={onUpdateObject}/> 
+                            onUpdateObject={onUpdateObject} handleDelete={handleDelete}/> 
                         }
                         </div>
                     )
