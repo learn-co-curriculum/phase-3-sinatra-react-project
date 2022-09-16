@@ -3,9 +3,38 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/posts" do
-    #{ message: "Good luck with your project!" }.to_json
     posts = Post.all
     posts.to_json
+  end
+
+  get "/posts/:id" do
+    posts = Post.find(params[:id])
+    posts.to_json
+  end
+
+  delete "/posts/:id" do
+    post = Post.find(params[:id])
+    post.destroy
+    post.to_json
+  end
+
+  post "/posts" do
+    post = Post.create(
+      title: params[:title],
+      date: params[:date], 
+      entry: params[:entry]
+    )
+    post.to_json
+  end
+
+  patch "/posts/:id" do
+    post = Post.find(params[:id])
+    post.update(
+      title: params[:title],
+      date: params[:date], 
+      entry: params[:entry]
+    )
+    post.to_json
   end
 
 end
