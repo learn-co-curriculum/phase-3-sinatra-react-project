@@ -51,22 +51,4 @@ class RemembersController < ApplicationController
     end 
 
 
-     ##EXTRA SORT BY DATE
-
-     get '/remembers/all_reverse' do
-        remembers = Remember.all.sort_by(&:created_at).reverse!
-        remembers.to_json
-    end
-    #remembers/sort/:direction
-    # ascending sort_bysort_by(&:created_at)
-    # descending sort_by(&:created_at).reverse! 
-
-    # get '/remembers/sort/:direction' do
-    #     if ascending
-    #         sort_by(&:created_at)
-    #     else
-    #         sort_by(&:created_at).reverse!
-    #     end
-    # end 
-
 end 

@@ -4,7 +4,6 @@ import './App.css';
 import NavBar from "./components/NavBar"
 import About from "./components/About"
 import RememberList from "./components/RememberList"
-import DateSortBtn from "./components/DateSortBtn"
 import SessionRemList from "./components/SessionRemList"
 import RememberItemDetails from "./components/RememberItemDetails"
 import CategoriesPage from "./components/CategoriesPage"
@@ -26,7 +25,6 @@ function App() {
   },[])
 
 
-
   const deleteRemember = (id) => {
     fetch(`http://localhost:9292/remembers/${id}`, {
       method: "DELETE",
@@ -42,20 +40,7 @@ function App() {
     setEditedRowId(id)
   }
   
-
-
-
-
-
-
-
-
-
-
-
   return (
-
-
 
 <div className="App">
       <header><h1 className="sitehead">"I Remember" Creative Writing Tool</h1></header>
@@ -71,18 +56,14 @@ function App() {
 
         </Route>
         <Route path="/remembers">
-          {/* <DateSortBtn sortByDate={sortByDate}/> */}
           <RememberList  rememberList={rememberList} deleteRemember={deleteRemember} updateRemember={updateRemember} editedRowId={editedRowId}/>
-          {/* <Form /> */}
-
         </Route>
         <Route exact path="/categories/:id">
           <CategoryItems />
-
         </Route>
+
         <Route path="/categories">
           <CategoriesPage />
-
         </Route>
 
       <Route exact path="/">

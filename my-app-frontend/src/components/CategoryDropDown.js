@@ -6,9 +6,7 @@ export default function CategoryDropDown({setCategoryValue}) {
     return value;
   };
 
-
   const [categoriesList, setCategoriesList] = useState("")
-
 
     useEffect(() => {
         fetch("http://localhost:9292/categories/all")
@@ -27,18 +25,10 @@ export default function CategoryDropDown({setCategoryValue}) {
     <div>
       <select value={value} onChange={handleChange}>
         {categoriesList ? categoriesList.map(category => (<option value={category.id}>{category.name}</option>)  ) : null }
-        {/* <option value="1">covid</option>
-        <option value="2">jobs</option>
-        <option value="3">school</option>
-        <option value="4">newyork</option> */}
       </select>
       <p>{`You selected ${value}`}</p>
     </div>
   );
 }
 
-        {/* <option value="1">covid</option>
-        <option value="2">jobs</option>
-        <option value="3">school</option>
-        <option value="4">newyork</option> */}
 

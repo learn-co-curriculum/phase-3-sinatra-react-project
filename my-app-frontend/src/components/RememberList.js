@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import RememberItem from "./RememberItem"
 
 function RememberList({rememberList, deleteRemember, updateRemember, editedRowId}) {
-    // const [localRememberList, setLocalRememberList] = useState(rememberList)
-    console.log(rememberList)
     return (
 
         <div className="remember-container">

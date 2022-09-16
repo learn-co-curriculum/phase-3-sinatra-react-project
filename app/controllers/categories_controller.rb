@@ -27,24 +27,4 @@ class CategoriesController < ApplicationController
         category.to_json
     end
 
-    #UPDATE
-    # patch '/categories/:id' do
-    #     category = Category.find_by(id: params[:id])
-    #     category.update(
-    #       name: params[:name],
-    #     )
-    #     category.to_json
-    # end
-    ##this is updating the category in question, but deleting all the entries
-
-    # #DELETE
-    # delete '/categories/:id' do
-    #     category = Category.find_by(id: params[:id])
-    #     category.destroy
-    #     category.to_json
-    #     status 204
-    # end 
-
-
-
 end 

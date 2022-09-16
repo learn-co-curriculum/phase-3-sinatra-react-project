@@ -11,12 +11,9 @@ function CategoryForm({ addCategory }) {
       if (!value) return;
       addCategory(value);
 
-
-     
         fetch(`http://localhost:9292/categories`, {
           method: "POST",
           headers: {
-            // Accept: 'application.json',
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({

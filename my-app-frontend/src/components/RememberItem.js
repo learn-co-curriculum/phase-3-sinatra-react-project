@@ -47,10 +47,8 @@ const isCurrentTaskEdit = id === editedRowId
            >
             <li className='remember-item'>{localText ? localText : text}</li>
             </Link>)}
-            {/* <button className='complete-btn'>
-                <i className="fas fa-check"></i>
-            </button> */}
-            <button onClick={handleClick} className='trash-btn'>
+
+            <button onClick={handleClick} className='delete'>
                 <p className="delete">X</p>
             </button>
             <button onClick={handleUpdateClick} className='update'>

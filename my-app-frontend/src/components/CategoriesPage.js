@@ -2,20 +2,15 @@ import React, { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import CategoryForm from "./CategoryForm"
 
-
-
-
 function CategoriesPage() {
 
     const [categoriesList, setCategoriesList] = useState("")
-
 
     useEffect(() => {
         fetch("http://localhost:9292/categories/all")
         .then(res => res.json())
         .then(setCategoriesList)
     }, [])
-
 
 
 
