@@ -1,14 +1,26 @@
 import React, { useState, useEffect } from "react"
 import ArtistDetail from "./ArtistDetail"
 
-function ArtistItem({artist, genre}) {
-    const [likeToggle, setLikeToggle] = useState(artist.likes)
+function ArtistItem({artist, handleToggle}) {
+    
+    const [artistInfo, setArtistInfo] = useState([])
     const [showInfo, setShowInfo] = useState(false)
     const [moreInfo, setMoreInfo] = useState([])
     const [songInfo, setSongInfo] = useState([])
+
+    const [likeToggle, setLikeToggle] = useState(artist.likes)
+    
+    useEffect(() => {
+        fetch(`http://localhost:9292/artist/${artist.id}`)
+          .then((r) => r.json())
+          .then((artistInfo) => setArtistInfo(artistInfo));
+      }, []);
+   
+
     const [songTitle, setSongTitle] = useState("")
     const [releaseDate, setReleaseDate] = useState("")
     const [genreId, setGenreId] = useState()
+
 
     useEffect(() => {
         fetch(`http://localhost:9292/genre/${artist.id}`)
@@ -22,6 +34,8 @@ function ArtistItem({artist, genre}) {
           .then((songInfo) => setSongInfo(songInfo));
       }, []);
 
+
+  
         
     const handleDelete = () => {
         fetch(`http://localhost:9292/song/${songInfo.id}`, {
@@ -33,6 +47,7 @@ function ArtistItem({artist, genre}) {
     const handleToggle = (e) => {
         setLikeToggle(likeToggle => !likeToggle)
     }
+
 
     const handleInfo = () => {
         setShowInfo(!showInfo)
@@ -66,9 +81,9 @@ function ArtistItem({artist, genre}) {
             <p>{showInfo ? <ArtistDetail moreInfo={moreInfo} songInfo={songInfo}/> : null}</p>
             <div>
                 {likeToggle ? (
-                    <button onClick={handleToggle}>Liked!</button>
+                    <button onClick={()=>handleToggle(artist, setArtistInfo, likeToggle, setLikeToggle)}>Liked!</button>
                 ) : (
-                    <button onClick={handleToggle}>Not Liked</button>
+                    <button onClick={()=>handleToggle(artist, setArtistInfo, likeToggle, setLikeToggle)}>Not Liked</button>
                 )}
                 <button onClick={handleDelete}>DELETE</button>
             </div>

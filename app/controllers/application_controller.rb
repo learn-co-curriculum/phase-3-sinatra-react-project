@@ -14,11 +14,12 @@ class ApplicationController < Sinatra::Base
 
   get "/artist/:id" do
     artist = Artist.find(params[:id])
-    artist.to_json(only: [:name, :likes, :image_url], include: { 
-      songs: { only: [:song_title, :release_date], include: { 
-        genre: { only: [:title] }
-      } }
-      })
+    artist.to_json
+  end
+
+  post "/artist" do
+    artist = Artist.create(name:params[:name], image_url:params[:image_url], likes:true)
+    artist.to_json
   end
 
   get "/genre" do
@@ -42,6 +43,13 @@ class ApplicationController < Sinatra::Base
   end
 
 
+  patch "/artist/:id" do
+    artist = Artist.find(params[:id])
+    artist.update(likes:params[:likes]).to_json
+  end
+
+
+
 delete "/song/:id" do
   song = Song.find(params[:id]).destroy
 end
@@ -51,6 +59,7 @@ end
           song = Song.create(artist_id: params[:artist_id], genre_id: params[:genre_id], song_title: params[:song_title], release_date: params[:release_date])
   song.to_json
   end
+
 
 
 end
