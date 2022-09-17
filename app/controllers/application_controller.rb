@@ -11,9 +11,14 @@ class ApplicationController < Sinatra::Base
  end
 
  post "/products" do
-  jj = Category.create(name: json_params.category)
-  kk = Product.create(json_params)
-  kk.category_id = jj.id
+  puts request.body.read
+  # binding.pry
+  var = params
+  jj = Category.create(name: var["category"])
+  kk = Product.create(name: var["name"], image: var["image"], price: var["price"], category_id: jj["id"])
+  jj.save
+  kk.save
+  kk
 end
 
 delete "/products/:id" do |id|
