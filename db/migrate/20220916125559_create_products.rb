@@ -5,6 +5,7 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :price
       t.integer :category_id
+      t.boolean :is_cart
     end
   end
 end

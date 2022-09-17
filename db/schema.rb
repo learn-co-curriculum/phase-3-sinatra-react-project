@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2022_09_16_125912) do
     t.string "name"
     t.string "price"
     t.integer "category_id"
+    t.boolean "is_cart"
   end
 
 end

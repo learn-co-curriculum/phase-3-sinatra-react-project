@@ -27,6 +27,16 @@ delete "/products/:id" do |id|
   id
 end
 
+patch "/products/:id" do |id|
+  puts params
+  # binding.pry
+  var = params
+  a= Product.find_by(id: id.to_i)
+  a.is_cart= !a.is_cart
+  a.save
+  puts a
 
+  a.to_json
+end
 
 end
