@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-function EditPost({ post }) {
+function EditPost({ post, allPosts, setAllPosts, setEditId }) {
   const [title, setTitle] = useState(post.title);
   const [body, setBody] = useState(post.body);
   const [genre, setGenre] = useState(post.genre);
   const [user_id, setUser_id] = useState(post.user_id);
-  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -20,16 +18,11 @@ function EditPost({ post }) {
     })
       .then((res) => res.json())
       .then((data) => {
-        setTitle(data.title);
-        setBody(data.body);
-        setGenre(data.genre);
-        setUser_id(data.user_id);
+        setEditId(null);
+        const newPosts = allPosts.filter((post) => post.id !== data.id);
+        setAllPosts([data, ...newPosts]);
         console.log(data);
       });
-  }
-
-  function routeToHome() {
-    navigate("/");
   }
 
   return (
@@ -71,7 +64,6 @@ function EditPost({ post }) {
             color: "white",
           }}
           type="submit"
-          onClick={routeToHome}
         >
           Update
         </button>

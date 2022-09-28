@@ -22,7 +22,12 @@ function Home() {
     if (editId === post.id) {
       return (
         <div>
-          <EditPost post={post} />
+          <EditPost
+            post={post}
+            setAllPosts={setAllPosts}
+            allPosts={allPosts}
+            setEditId={setEditId}
+          />
           <button
             style={{ border: "none", backgroundColor: "red", color: "white" }}
             onClick={() => setEditId(null)}
