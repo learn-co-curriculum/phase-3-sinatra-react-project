@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
   post '/businesses' do 
     biz = Business.create(
       name: params[:name], 
-      type: params[:type],
+      business_type: params[:business_type],
       address: params[:address] 
     )
     biz.to_json 
