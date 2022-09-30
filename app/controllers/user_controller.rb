@@ -1,16 +1,20 @@
 class UserController < ApplicationController
   set :default_content_type, 'application/json'
 
-  post '/users' do
-    name = params[:username]
-    existing_user = User.where("username = '#{name}'")
-    if existing_user.empty?
-      user = User.create(username: name, password: params[:password])
-      user.initialize_session_cookie
+  post '/login' do
+    existing_user = User.where(username: params[:username])
+    return 'invalid username'.to_json if existing_user.empty?
+    return 'invalid password'.to_json unless existing_user[0].password == params[:password]
 
-      return user.to_json
-    else
-      existing_user.to_json
-    end
+    return existing_user[0].to_json
+  end
+
+  post '/signup' do
+    existing_user = User.where(username: params[:username])
+    return 'username already taken'.to_json unless existing_user.empty?
+
+    user = User.create(username: params[:username], password: params[:password])
+    user.initialize_session_cookie
+    return user.to_json
   end
 end
