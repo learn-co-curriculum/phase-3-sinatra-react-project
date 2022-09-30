@@ -10,7 +10,8 @@ class ApplicationController < Sinatra::Base
     new_review = Review.create(
       user_id: params[:user_id],
       business_id: params[:business_id],
-      star_rating: params[:star_rating]
+      star_rating: params[:star_rating],
+      comment: params[:comment]
     )
       new_review.to_json
   end
