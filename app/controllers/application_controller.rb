@@ -6,15 +6,28 @@ class ApplicationController < Sinatra::Base
     { message: "Good luck with your project!" }.to_json
   end
 
-  post '/review/:business_id' do
-
+  post '/review/' do
+    new_review = Review.create(
+      user_id: params[:user_id],
+      business_id: params[:business_id],
+      star_rating: params[:star_rating]
+    )
+      new_review.to_json
   end
-  patch '/review/:business_id' do
+  
 
+  patch '/review/:id' do
+    patch_review = Review.find(params[:id])
+    patch_review.update(
+      star_rating: params[:star_rating]
+    )
+    patch_review.to_json
   end
 
-  delete '/review/:business_id' do
-
+  delete '/review/:id' do
+    delete_review = Review.find(params[:id])
+    delete_review.destroy
+    delete_review.to_json
   end
 
 end
