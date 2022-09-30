@@ -11,6 +11,7 @@ class ApplicationController < Sinatra::Base
       user_id: params[:user_id],
       business_id: params[:business_id],
       star_rating: params[:star_rating]
+      comment: params[:comment]
     )
       new_review.to_json
   end
