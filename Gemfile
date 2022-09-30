@@ -36,7 +36,7 @@ gem "require_all", "~> 3.0"
 
 gem "rest-client"
 
-gem "dotenv-rails" 
+gem "dotenv" 
 
 gem "faker"
 
