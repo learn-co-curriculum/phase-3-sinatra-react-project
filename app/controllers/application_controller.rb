@@ -21,6 +21,7 @@ class ApplicationController < Sinatra::Base
     patch_review = Review.find(params[:id])
     patch_review.update(
       star_rating: params[:star_rating]
+      comment: params[:comment]
     )
     patch_review.to_json
   end
