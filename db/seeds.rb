@@ -21,7 +21,7 @@ end
 
 20.times do
   User.create(
-    username: Faker::FunnyName.name, 
+    username: Faker::Internet.username, 
     profile_picture: "https://thispersondoesnotexist.com/image"
   )
 end
@@ -30,7 +30,8 @@ end
   Review.create(
     user_id: User.all.pluck(:id).sample, 
     business_id: Business.all.pluck(:id).sample, 
-    star_rating: rand(1..5)
+    star_rating: rand(1..5),
+    comment: Faker::Restaurant.review
   )
 end 
 

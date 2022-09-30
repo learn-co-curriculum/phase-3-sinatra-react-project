@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2022_09_30_151035) do
     t.integer "user_id"
     t.integer "business_id"
     t.integer "star_rating"
+    t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
