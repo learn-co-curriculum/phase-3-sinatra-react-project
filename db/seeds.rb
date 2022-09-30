@@ -1,5 +1,5 @@
 puts "🌱 Seeding spices..."
 
-# Seed your database here
+response = RestClient.get "https://api.yelp.com/v3/businesses/{id}"
 
 puts "✅ Done seeding!"
