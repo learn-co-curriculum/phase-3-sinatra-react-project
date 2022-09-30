@@ -45,6 +45,8 @@ GEM
       railties (>= 3.2)
     erubi (1.11.0)
     eventmachine (1.2.7)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     ffi (1.15.3)
     http-accept (1.7.0)
     http-cookie (1.0.5)
@@ -150,6 +152,7 @@ DEPENDENCIES
   activerecord (~> 6.1)
   database_cleaner (~> 2.0)
   dotenv-rails
+  faker
   pry (~> 0.14.1)
   rack-contrib (~> 2.3)
   rack-cors (~> 1.1)

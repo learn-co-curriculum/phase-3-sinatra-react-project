@@ -38,6 +38,8 @@ gem "rest-client"
 
 gem "dotenv-rails" 
 
+gem "faker"
+
 # These gems will only be used when we are running the application locally
 group :development do
   gem "pry", "~> 0.14.1"
