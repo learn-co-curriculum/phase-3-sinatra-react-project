@@ -21,4 +21,5 @@ class ApplicationController < Sinatra::Base
       address: params[:address] 
     )
     biz.to_json 
+  end 
 end
