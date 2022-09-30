@@ -30,4 +30,20 @@ class ApplicationController < Sinatra::Base
     delete_review.to_json
   end
 
+  get '/businesses' do 
+    Business.all.to_json 
+  end 
+
+  get '/business/:id' do 
+    Business.find(params[:id]).to_json(include: :reviews)
+  end 
+
+  post '/businesses' do 
+    biz = Business.create(
+      name: params[:name], 
+      business_type: params[:business_type],
+      address: params[:address] 
+    )
+    biz.to_json 
+  end 
 end
