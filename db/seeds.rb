@@ -1,16 +1,18 @@
 require 'rest-client'
 require 'dotenv'
 require 'faker' 
+require 'pry' 
 
 puts "🌱 Seeding spices..."
 
-response = RestClient.get("https://api.yelp.com/v3/businesses/search?location=denver&limit=50", 
-  headers={
-    "Authorization": ENV['API_KEY']
-  })
+url = "https://api.yelp.com/v3/businesses/search?location=denver&limit=50"
 
+response = RestClient.get(url, headers={Authorization: ENV['API_KEY']})
 
-businesses = JSON.parse(response)
+#businesses["businesses"][0]["name"]
+
+businesses = JSON.parse(response)["businesses"]
+binding.pry
 
 businesses.each do |business|
   Business.create(
@@ -33,6 +35,7 @@ end
     business_id: businesses.all.id.sample, 
     star_rating: rand(1..5)
   )
+end 
 
 
 puts "✅ Done seeding!"
