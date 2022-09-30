@@ -12,13 +12,12 @@ response = RestClient.get(url, headers={Authorization: ENV['API_KEY']})
 #businesses["businesses"][0]["name"]
 
 businesses = JSON.parse(response)["businesses"]
-binding.pry
 
 businesses.each do |business|
   Business.create(
     name: business["name"], 
     business_type: business["categories"][0]["title"], 
-    address: business["location"]["display_address"]
+    address: business["location"]["display_address"].join(', ')
   )
 end
 
