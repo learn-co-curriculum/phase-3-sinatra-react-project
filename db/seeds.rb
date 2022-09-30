@@ -19,6 +19,19 @@ businesses.each do |business|
   )
 end
 
+20.times do
+  User.create(
+    username: Faker::FunnyName.name
+    profile_picture: "https://thispersondoesnotexist.com/image"
+  )
+end
+
+300.times do
+  Review.create(
+    user_id: users.all.id.sample
+    business_id: businesses.all.id.sample
+    star_rating: rand(1..5)
+  )
 
 
 puts "✅ Done seeding!"
