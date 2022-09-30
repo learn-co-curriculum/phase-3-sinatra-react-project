@@ -3,13 +3,11 @@ require 'dotenv'
 require 'faker' 
 require 'pry' 
 
-puts "🌱 Seeding spices..."
+puts "🌱 Seeding DB ..."
 
 url = "https://api.yelp.com/v3/businesses/search?location=denver&limit=50"
 
 response = RestClient.get(url, headers={Authorization: ENV['API_KEY']})
-
-#businesses["businesses"][0]["name"]
 
 businesses = JSON.parse(response)["businesses"]
 
@@ -30,11 +28,10 @@ end
 
 300.times do
   Review.create(
-    user_id: users.all.id.sample, 
-    business_id: businesses.all.id.sample, 
+    user_id: User.all.pluck(:id).sample, 
+    business_id: Business.all.pluck(:id).sample, 
     star_rating: rand(1..5)
   )
 end 
-
 
 puts "✅ Done seeding!"
