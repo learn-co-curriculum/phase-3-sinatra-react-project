@@ -6,4 +6,15 @@ class ApplicationController < Sinatra::Base
     { message: "Good luck with your project!" }.to_json
   end
 
+  post '/review/:business_id' do
+
+  end
+  patch '/review/:business_id' do
+
+  end
+
+  delete '/review/:business_id' do
+
+  end
+
 end
