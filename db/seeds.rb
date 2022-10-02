@@ -181,14 +181,19 @@ user_data = [
 decision_names_array = ["Happy Hour", "Breakfast", "Brunch", "Lunch", "Dinner", "Nightlife"]
 decision_descriptions_array = ["Flatiron Phase 1", "Flatiron Phase 3", "Flatiron Phase 5", "Flatiron Administration", "Colorado Rockies"]
 
+User.destroy_all
+Option.destroy_all
+Decision.destroy_all
 
-decision_data = [
-{
-    decision_name: 
-    decision_description:
-    decided: false
-},
-]
+10.times do
+    decision_name = decision_names_array[rand(0..(decision_names_array.length() -1))]
+    decision_description = decision_descriptions_array[rand(0..(decision_names_array.length() -1))]
+    Decision.create(decision_name: decision_name, decision_description: decision_description)
+end
+
+Option.create(option_data)
+User.create(user_data)
+
 
 puts "✅ Done seeding!"
 

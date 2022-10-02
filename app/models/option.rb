@@ -1,4 +1,4 @@
-class Option <ActiveRecord::BASE
+class Option < ActiveRecord::Base
   belongs_to :decision
 
 
