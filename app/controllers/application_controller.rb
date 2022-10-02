@@ -7,13 +7,27 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/favorites" do
-    favorites = Favorite.all
+    favorites = Favorite.select('books.*, favorites.*').joins(:book)
     favorites.to_json
   end
 
   get "/bookshelf" do
-    books = Stat.all.where("currently_reading = ?", true)
+    books = Stat.all.where("currently_reading = ?", true).select('books.*, stats.*').joins(:book)
     books.first.to_json
   end
 
+  delete "/favorites/:id" do
+    favorite = Favorite.find(params[:id])
+    favorite.destroy
+    favorite.to_json
+  end
+
+  # post "/favorites" do
+  #   favorite = Favorite.create(
+  #     star_rating: params[:star_rating]
+
+  #   )
+  # end
+
 end
+
