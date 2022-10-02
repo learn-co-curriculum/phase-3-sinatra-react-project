@@ -1,5 +1,5 @@
 puts "🌱 Seeding spices..."
 
-# Seed your database here
+User.create
 
 puts "✅ Done seeding!"
