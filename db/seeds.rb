@@ -21,7 +21,7 @@ end
 
 User.create(username: "MeganM", email: "megan@gmail.com")
 
-15.times do
+6.times do
     Favorite.create(
         star_rating: rand(1..5),
         book_id: rand(1..15),
@@ -29,7 +29,7 @@ User.create(username: "MeganM", email: "megan@gmail.com")
     )
 end
 
-15.times do
+5.times do
     Stat.create(
         currently_reading: Faker::Boolean.boolean,
         finished_reading: Faker::Boolean.boolean,
