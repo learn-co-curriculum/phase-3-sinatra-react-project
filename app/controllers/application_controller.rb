@@ -11,6 +11,11 @@ class ApplicationController < Sinatra::Base
     favorites.to_json
   end
 
+  get "/users" do
+    stats = Stat.select('books.*, stats.*').joins(:book)
+    stats.to_json
+  end
+
   get "/bookshelf" do
     books = Stat.all.where("currently_reading = ?", true).select('books.*, stats.*').joins(:book)
     books.first.to_json
