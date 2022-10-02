@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2022_10_02_171050) do
     t.integer "user_id"
     t.integer "category_id"
     t.integer "priority"
-    t.datetime "created_at"
     t.integer "completed?"
   end
 
