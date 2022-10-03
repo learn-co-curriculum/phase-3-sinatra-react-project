@@ -13,9 +13,11 @@
 ActiveRecord::Schema.define(version: 2022_09_30_180722) do
 
   create_table "decisions", force: :cascade do |t|
-    t.string "decision_name"
-    t.string "decision_description"
+    t.string "event_type"
     t.boolean "decided"
+    t.string "group_name"
+    t.datetime "event_time"
+    t.datetime "decision_deadline"
   end
 
   create_table "options", force: :cascade do |t|
@@ -32,7 +34,7 @@ ActiveRecord::Schema.define(version: 2022_09_30_180722) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.integer "decisions_made"
+    t.integer "num_decisions_made"
   end
 
 end
