@@ -1,3 +1,7 @@
+puts "Deleting players table..."
+Player.delete_all
+Player.reset_pk_sequence
+
 puts "Seeding players..."
 
 i=1

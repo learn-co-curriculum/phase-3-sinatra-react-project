@@ -34,6 +34,13 @@ gem "sqlite3", "~> 1.4"
 # Require all files in a folder
 gem "require_all", "~> 3.0"
 
+# Used to make network requests
+# https://github.com/rest-client/rest-client
+gem "rest-client", "~> 2.1"
+
+#Used to reset table id to 0
+gem 'activerecord-reset-pk-sequence'
+
 # These gems will only be used when we are running the application locally
 group :development do
   gem "pry", "~> 0.14.1"
