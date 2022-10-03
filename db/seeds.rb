@@ -18,6 +18,7 @@ User.create (first_name: “Bob”, last_name: “Dickinson” password: “some
 User.create (first_name: “Patrick”, last_name: “Star” password: “cone”)
 User.create (first_name: “Matt”, last_name: “Garcia” password: “taco”)
 User.create (first_name: “Franky”, last_name: “Liu” password: “stone”)
+User.create (first_name: “Kerry”, last_name: “Sasd” password: “asdaf”)
 Task.create(name: “Clean Sink”, user_id: 1, category_id: 1, priority: 1, completed?:false)
 Task.create(name: “Clean Tub”, user_id: 1, category_id: 7, priority: 1, completed?:false)
 Task.create(name: “Clean Mirror”, user_id: 1, category_id: 6, priority: 1, completed?:false)
