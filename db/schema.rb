@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2022_09_30_151035) do
     t.string "name"
     t.string "business_type"
     t.string "address"
+    t.string "price"
+    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
