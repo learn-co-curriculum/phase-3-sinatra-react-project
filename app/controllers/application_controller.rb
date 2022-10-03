@@ -21,6 +21,11 @@ class ApplicationController < Sinatra::Base
     books.first.to_json
   end
 
+  get "/articles" do
+    articles = Article.all
+    articles.to_json
+  end
+
   delete "/favorites/:id" do
     favorite = Favorite.find(params[:id])
     favorite.destroy

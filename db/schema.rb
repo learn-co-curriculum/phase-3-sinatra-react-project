@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_01_101503) do
+ActiveRecord::Schema.define(version: 2022_10_03_084055) do
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.string "publication_date"
+    t.string "link_to_article"
+    t.string "image_url"
+  end
 
   create_table "books", force: :cascade do |t|
     t.string "title"
