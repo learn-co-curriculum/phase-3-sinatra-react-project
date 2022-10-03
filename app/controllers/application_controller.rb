@@ -54,7 +54,7 @@ class ApplicationController < Sinatra::Base
       business.name.downcase.include?(params[:term].downcase) || 
       business.business_type.downcase.include?(params[:term].downcase)
     end
-    biz.to_json
+    biz.to_json(include: :reviews)
   end 
   
 end
