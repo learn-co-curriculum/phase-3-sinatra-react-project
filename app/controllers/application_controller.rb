@@ -2,33 +2,45 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   # Add your routes here
+  # Get = /pets or /pets/id, post = /pets, patch = /pets/id, delete = /pets/id
+
   # create
   post "/create" do
     decision = Decision.create(decision_params)
     status 201
-    decision
+    decision.to_json
   end
 
   post "/" do
     user = user.create(user_params)
     status 201
-    user
+    user.to_json
   end
   
   # read
-  # get "/decisions" do
-  #   "Hello World"
-  # end
 
   # get "/completed" do
   #   "Hello World"
   # end
 
-  get '/' do
-    users = users.all.order(:created_at)
-    users.to_json
+  # get '/' do
+  #   users = users.all.order(:created_at)
+  #   users.to_json
+  # end
+
+  get "/decisions" do
+    decisions = Decision.all
+    decisions.to_json
   end
 
+  # get "/completed" do
+  #   "Hello World"
+  # end
+
+
+  # get "/completed" do
+  #   "Hello World"
+  # end
 
   # update
   patch '/decision/:id' do

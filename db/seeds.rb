@@ -202,34 +202,38 @@ user_data = [
     # t.datetime :event_time
     # t.datetime :decision_deadline
 
+    # DateTime.new(2001,2,3,4,5,6)
+    #                 #=> #<DateTime: 2001-02-03T04:05:06+00:00 ...>
+    #                 %m/%d %H/%M
+
 decision_data = [
     {
     event_type: "Happy Hour",
     decided: false,
     group_name: "Flatiron Phase 3",
-    event_time: "10/31 20:00",
-    decision_deadline: "10/30 23:59"
+    event_time: DateTime.new(2022, 10, 31, 18),
+    decision_deadline: DateTime.new(2022, 10, 30, 23, 59)
     },
     {
     event_type: "Night Out",
     decided: false,
     group_name: "Flatiron Phase 1",
-    event_time: "10/14 17:00",
-    decision_deadline: "10/13 23:59"
+    event_time: DateTime.new(2022, 10, 12, 20),
+    decision_deadline: DateTime.new(2022, 10, 11, 23, 59)
     },
     {
     event_type: "Brunch",
     decided: false,
     group_name: "Flatiron Admin",
-    event_time: "10/08 10:00",
-    decision_deadline: "10/07 23:59"
+    event_time: DateTime.new(2022, 10, 8, 10),
+    decision_deadline: DateTime.new(2022, 10, 7, 23, 59)
     },
     {
     event_type: "Outdoor activities",
     decided: false,
     group_name: "Shelby, Jake, and Austin",
-    event_time: "10/16 07:00",
-    decision_deadline: "10/15 23:59"
+    event_time: DateTime.new(2022, 10, 16, 7),
+    decision_deadline: DateTime.new(2022, 10, 15, 23, 59)
     },
 ]
 
