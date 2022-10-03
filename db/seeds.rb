@@ -15,7 +15,9 @@ businesses.each do |business|
   Business.create(
     name: business["name"], 
     business_type: business["categories"][0]["title"], 
-    address: business["location"]["display_address"].join(', ')
+    address: business["location"]["display_address"].join(', '), 
+    price: business["price"], 
+    image_url: business["image_url"]
   )
 end
 
