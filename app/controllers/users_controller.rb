@@ -12,6 +12,11 @@ class UsersController < ApplicationController
       user.to_json
     end
 
+    get '/users-data/:email' do
+      user=User.find_by email: params[:email]
+      user.id.to_json
+    end
+
     #Create
     post '/users' do
       user = User.create(user_params)
@@ -22,6 +27,30 @@ class UsersController < ApplicationController
       user = User.find(params[:id])
       user.update(user_params)
       user.to_json
+    end
+
+
+    #FIX THIS QUICK
+    #
+    #
+    #
+    #
+    #
+    #
+    #
+
+    patch '/users-rejections/:id' do
+      # add a visited person to receivers, and change the match status to rejected
+      user=User.find(params[:id])
+      user.receivers << User.find(params[])
+      user.receivers.to_json
+    end
+
+
+    patch '/users-request/:id' do
+      #add a visited person to receivers and chang ethe match status to rejected IF match status doesn't already exist. if it exists and status is pending, change it to accept. if it 
+      #exists and status is rejected, don't change status.
+
     end
 
     #Delete
