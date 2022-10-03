@@ -12,22 +12,12 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/" do
-    user = user.create(user_params)
+    user = User.create(user_params)
     status 201
     user.to_json
   end
   
   # read
-
-  # get "/completed" do
-  #   "Hello World"
-  # end
-
-  # get '/' do
-  #   users = users.all.order(:created_at)
-  #   users.to_json
-  # end
-
   get "/decisions" do
     decisions = Decision.all
     decisions.to_json
@@ -37,10 +27,6 @@ class ApplicationController < Sinatra::Base
   #   "Hello World"
   # end
 
-
-  # get "/completed" do
-  #   "Hello World"
-  # end
 
   # update
   patch '/decision/:id' do
