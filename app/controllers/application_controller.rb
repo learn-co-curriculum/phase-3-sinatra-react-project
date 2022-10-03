@@ -51,4 +51,8 @@ delete '/tasks/:id' do
   task.to_json
 end
 
+post '/users' do
+  user = User.create(first_name: params[:first_name], last_name: params[:last_name])
+  user.to_json
+end
 end
