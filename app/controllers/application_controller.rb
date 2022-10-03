@@ -50,8 +50,8 @@ class ApplicationController < Sinatra::Base
   end 
 
   get '/businesses/search/:term' do 
-    biz = Business.pluck(:name).filter do |name| 
-      name.downcase.include?(params[:term].downcase)
+    biz = Business.all.filter do |business| 
+      business.name.downcase.include?(params[:term].downcase)
     end
     biz.to_json
   end 
