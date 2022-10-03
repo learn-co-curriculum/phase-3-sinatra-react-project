@@ -1,7 +1,7 @@
 # Bookworm
 
 ### Description
-Bookworm is a SPA for book lovers that allows a user to keep track of their favorite books and find new books to read.
+Bookworm is a SPA for book lovers that allows a user to keep track of their favorite books and articles and find new books and articles to read.
 
 A user is able to:
 - See which book they are currently reading
@@ -11,6 +11,7 @@ A user is able to:
 - Remove a book from favorites
 - Add a book to favorites
 - Add a new book to the database 
+- View a list of articles from the New York Times
 
 ### Build
 
