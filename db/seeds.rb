@@ -1,7 +1,7 @@
 require 'rest-client'
 require 'dotenv'
-require 'faker' 
-require 'pry' 
+require 'faker'
+require 'pry'
 
 puts "🌱 Seeding DB ..."
 
@@ -13,28 +13,28 @@ businesses = JSON.parse(response)["businesses"]
 
 businesses.each do |business|
   Business.create(
-    name: business["name"], 
-    business_type: business["categories"][0]["title"], 
-    address: business["location"]["display_address"].join(', '), 
-    price: business["price"], 
+    name: business["name"],
+    business_type: business["categories"][0]["title"],
+    address: business["location"]["display_address"].join(', '),
+    price: business["price"],
     image_url: business["image_url"]
   )
 end
 
 20.times do
   User.create(
-    username: Faker::Internet.username, 
-    profile_picture: "https://thispersondoesnotexist.com/image"
+    username: Faker::Internet.username,
+    profile_picture: Faker::Avatar.image
   )
 end
 
 300.times do
   Review.create(
-    user_id: User.all.pluck(:id).sample, 
-    business_id: Business.all.pluck(:id).sample, 
+    user_id: User.all.pluck(:id).sample,
+    business_id: Business.all.pluck(:id).sample,
     star_rating: rand(1..5),
     comment: Faker::Restaurant.review
   )
-end 
+end
 
 puts "✅ Done seeding!"
