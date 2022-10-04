@@ -47,7 +47,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/business/:id' do
-    Business.find(params[:id]).to_json(only: [:name, :address, :business_type, :id, :price, :image_url], include:
+    Business.find(params[:id]).to_json(only: [:name, :address, :business_type, :id, :price, :image_url, :phone_number, :website], include:
       { reviews: { only: [:comment, :star_rating, :id, :business_id], include: {
         user: { only: [:username, :profile_picture, :id] }
       } } })
