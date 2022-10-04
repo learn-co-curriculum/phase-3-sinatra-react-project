@@ -16,7 +16,9 @@ class UsersController < ApplicationController
       user=User.find_by email: params[:email]
       user.id.to_json
     end
-
+    get '/last-user' do
+      User.last.to_json
+    end
 
     #GET ALL PEOPLE THAT YOU HAVEN'T VISITED BEFORE
     get "users-unseen/:id" do
