@@ -17,12 +17,26 @@ class UsersController < ApplicationController
       user.id.to_json
     end
 
+
+    #UNCOMMENT WHEN YOU NEED TO CHECK FOR THE VISITED PEOPLE
+    # get '/users-rejections/:id' do
+    #   # add a visited person to receivers, and change the match status to rejected
+    #   User.find(params[:id]).receivers.to_json
+    # end
+
     #Create
     post '/users' do
       user = User.create(user_params)
     end
 
     #Update
+    patch '/users-rejections/:id' do
+      # add a visited person to receivers, and change the match status to rejected
+      rejected_person=User.find(params["rejected_person_id"]);
+      rejected_person.receivers << User.find(params[:id])
+      rejected_person.receivers.to_json
+    end
+
     patch '/users/:id' do
       user = User.find(params[:id])
       user.update(user_params)
@@ -30,21 +44,8 @@ class UsersController < ApplicationController
     end
 
 
-    #FIX THIS QUICK
-    #
-    #
-    #
-    #
-    #
-    #
-    #
+  
 
-    patch '/users-rejections/:id' do
-      # add a visited person to receivers, and change the match status to rejected
-      user=User.find(params[:id])
-      user.receivers << User.find(params[])
-      user.receivers.to_json
-    end
 
 
     patch '/users-request/:id' do
