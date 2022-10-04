@@ -23,9 +23,19 @@ class ApplicationController < Sinatra::Base
     decisions.to_json
   end
 
-  # get "/completed" do
-  #   "Hello World"
-  # end
+  get "/completed" do
+    "Hello World"
+  end
+
+  get "/users" do
+    user = User.all
+    user.to_json
+  end
+
+  get "/joints" do
+    joins = UserDecisionJoin.all
+    joins.to_json
+  end
 
   get "/" do
     "hellow worldsdfsdf actually howdy"
