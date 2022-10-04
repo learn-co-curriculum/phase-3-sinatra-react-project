@@ -24,7 +24,7 @@ end
 20.times do
   User.create(
     username: Faker::Internet.username,
-    profile_picture: "https://source.unsplash.com/800x800/?face?#{rand(1000).to_s}"
+    profile_picture: "https://source.unsplash.com/400x400/?face?#{rand(1000).to_s}"
   )
 end
 
