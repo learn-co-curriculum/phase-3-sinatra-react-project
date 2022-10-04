@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
       star_rating: params[:star_rating],
       comment: params[:comment]
     )
-      new_review.to_json
+    new_review.to_json
   end
 
 
@@ -37,7 +37,10 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/business/:id' do
-    Business.find(params[:id]).to_json(include: { reviews: { include: :user } })
+    Business.find(params[:id]).to_json(only: [:name, :address, :business_type, :id, :price, :image_url], include:
+      { reviews: { only: [:comment, :star_rating, :id, :business_id], include: {
+        user: { only: [:username, :profile_picture, :id] }
+      } } })
   end
 
   post '/businesses' do
