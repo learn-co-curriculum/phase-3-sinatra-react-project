@@ -27,6 +27,9 @@ class ApplicationController < Sinatra::Base
   #   "Hello World"
   # end
 
+  get "/" do
+    "hellow worldsdfsdf actually howdy"
+  end
 
   # update
   patch '/decision/:id' do
