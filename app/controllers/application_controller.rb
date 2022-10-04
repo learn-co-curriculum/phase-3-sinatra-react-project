@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
     decision.to_json
   end
 
-  post "/" do
+  post "/users" do
     user = User.create(user_params)
     status 201
     user.to_json
