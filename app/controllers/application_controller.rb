@@ -7,29 +7,39 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/review/' do
-    new_review = Review.create(
-      user_id: params[:user_id],
-      business_id: params[:business_id],
-      star_rating: params[:star_rating],
-      comment: params[:comment]
-    )
-    new_review.to_json
+    if User.find(params[:user_id]).session_cookie == params[:session_cookie]
+      new_review = Review.create(
+        user_id: params[:user_id],
+        business_id: params[:business_id],
+        star_rating: params[:star_rating],
+        comment: params[:comment]
+      )
+      new_review.to_json
+    end
   end
 
 
   patch '/review/:id' do
     patch_review = Review.find(params[:id])
-    patch_review.update(
-      star_rating: params[:star_rating],
-      comment: params[:comment]
-    )
-    patch_review.to_json
+    if patch_review.user.id == params[:user_id]
+      if patch_review.user.session_cookie == params[:session_cookie]
+        patch_review.update(
+          star_rating: params[:star_rating],
+          comment: params[:comment]
+        )
+        patch_review.to_json
+      end
+    end
   end
 
   delete '/review/:id' do
     delete_review = Review.find(params[:id])
-    delete_review.destroy
-    delete_review.to_json
+    if delete_review.user.id == params[:user_id]
+      if delete_review.user.session_cookie == params[:session_cookie]
+        delete_review.destroy
+        delete_review.to_json
+      end
+    end
   end
 
   get '/businesses' do
