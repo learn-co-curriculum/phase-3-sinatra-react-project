@@ -1,6 +1,6 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
-  
+
   # Add your routes here
   get "/" do
     { message: "Good luck with your project!" }.to_json
@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
     )
       new_review.to_json
   end
-  
+
 
   patch '/review/:id' do
     patch_review = Review.find(params[:id])
@@ -32,29 +32,29 @@ class ApplicationController < Sinatra::Base
     delete_review.to_json
   end
 
-  get '/businesses' do 
-    Business.all.to_json 
-  end 
+  get '/businesses' do
+    Business.all.to_json
+  end
 
-  get '/business/:id' do 
-    Business.find(params[:id]).to_json(include: :reviews)
-  end 
+  get '/business/:id' do
+    Business.find(params[:id]).to_json(include: { reviews: { include: :user } })
+  end
 
-  post '/businesses' do 
+  post '/businesses' do
     biz = Business.create(
-      name: params[:name], 
+      name: params[:name],
       business_type: params[:business_type],
-      address: params[:address] 
+      address: params[:address]
     )
-    biz.to_json 
-  end 
+    biz.to_json
+  end
 
-  get '/businesses/search/:term' do 
-    biz = Business.all.filter do |business| 
-      business.name.downcase.include?(params[:term].downcase) || 
+  get '/businesses/search/:term' do
+    biz = Business.all.filter do |business|
+      business.name.downcase.include?(params[:term].downcase) ||
       business.business_type.downcase.include?(params[:term].downcase)
     end
     biz.to_json(include: :reviews)
-  end 
-  
+  end
+
 end
