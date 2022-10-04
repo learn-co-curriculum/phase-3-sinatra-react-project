@@ -237,20 +237,19 @@ decision_data = [
     },
 ]
 
-10.times do
-        user_id =User.ids.sample
-        decision_id = Decision.ids.sample
-        UserDecisionJoin.create(user_id: user_id, decision_id: decision_id)
-end
+
 
 User.destroy_all
 User.create(user_data)
 Decision.destroy_all
 Decision.create(decision_data)
-# UserDecisionJoin.destroy_all
-# UserDecisionJoin.create(joins_data)
 
-
+UserDecisionJoin.destroy_all
+10.times do
+    user_id =User.ids.sample
+    decision_id = Decision.ids.sample
+    UserDecisionJoin.create(user_id: user_id, decision_id: decision_id)
+end
 
 puts "✅ Done seeding!"
 
