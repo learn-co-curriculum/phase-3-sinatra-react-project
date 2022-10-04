@@ -34,6 +34,10 @@ class UsersController < ApplicationController
     #Create
     post '/users' do
       user = User.create(user_params)
+      5.times do 
+        User.receivers << User.sample
+        Match.last.update(status: "pending");
+      end
     end
 
     #Update
@@ -61,6 +65,8 @@ class UsersController < ApplicationController
         if existing_match.status == "pending"
           existing_match.update(status: "accepted")
           curr_match.update(status: "accepted")
+          #DO SOMETHING ONCE THE STATUS IS ACCEPTED
+          #
         else
           curr_match.update(status:"rejected")
         end
