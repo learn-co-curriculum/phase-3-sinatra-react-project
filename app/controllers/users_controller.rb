@@ -17,6 +17,9 @@ class UsersController < ApplicationController
       user.id.to_json
     end
 
+    get '/last-user' do
+      User.last.to_json
+    end
 
     #GET ALL PEOPLE THAT YOU HAVEN'T VISITED BEFORE
     get "users-unseen/:id" do
