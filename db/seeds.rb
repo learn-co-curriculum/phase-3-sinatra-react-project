@@ -16,12 +16,3 @@ puts "Seeding Random Users"
 
 puts "✅ Done seeding!"
 
-#    t.string "first_name"
-    # t.string "last_name"
-    # t.string "email"
-    # t.integer "age"
-    # t.text "bio"
-    # t.string "profile_img"
-    # t.string "desired_sex"
-    # t.datetime "created_at", precision: 6, null: false
-    # t.datetime "updated_at", precision: 6, null: false
