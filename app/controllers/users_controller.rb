@@ -64,7 +64,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-      {first_name:params[:first_name], last_name:params[:last_name], gender:params[:gender], email:params[:email], bio:params[:bio], profile_img:params[:profile_img], desired_sex:params[:desired_sex]}
+      {first_name:params[:first_name], last_name:params[:last_name], gender:params[:gender], email:params[:email], age:params[:age], bio:params[:bio], profile_img:params[:profile_img], desired_sex:params[:desired_sex]}
     end
 
 end
