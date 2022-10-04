@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2022_10_03_192638) do
     t.string "category"
     t.integer "price"
     t.string "location"
+    t.string "image_url"
   end
 
   create_table "reviews", force: :cascade do |t|

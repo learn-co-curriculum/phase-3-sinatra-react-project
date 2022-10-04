@@ -5,6 +5,7 @@ class CreatePlaces < ActiveRecord::Migration[6.1]
       t.string :category
       t.integer :price
       t.string :location
+      t.string :image_url
     end
   end
 end
