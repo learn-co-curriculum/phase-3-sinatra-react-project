@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_30_195738) do
+ActiveRecord::Schema.define(version: 2022_10_04_162650) do
 
   create_table "matches", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 2022_09_30_195738) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["receiver_id"], name: "index_matches_on_receiver_id"
     t.index ["user_id"], name: "index_matches_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "message_sender_id"
+    t.integer "message_receiver_id"
+    t.string "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["message_receiver_id"], name: "index_messages_on_message_receiver_id"
+    t.index ["message_sender_id"], name: "index_messages_on_message_sender_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,4 +48,6 @@ ActiveRecord::Schema.define(version: 2022_09_30_195738) do
 
   add_foreign_key "matches", "users"
   add_foreign_key "matches", "users", column: "receiver_id"
+  add_foreign_key "messages", "users", column: "message_receiver_id"
+  add_foreign_key "messages", "users", column: "message_sender_id"
 end

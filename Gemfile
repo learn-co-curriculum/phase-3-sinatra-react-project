@@ -38,6 +38,9 @@ gem "require_all", "~> 3.0"
 # https://github.com/rest-client/rest-client
 gem "rest-client", "~> 2.1"
 
+# using the faker gem.
+gem 'faker'
+
 # These gems will only be used when we are running the application locally
 group :development do
   gem "pry", "~> 0.14.1"
