@@ -15,4 +15,3 @@ use Rack::JSONBodyParser
 run ApplicationController
 use UsersController
 use MatchesController
-use CurrentUsersController

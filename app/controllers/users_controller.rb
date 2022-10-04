@@ -34,10 +34,11 @@ class UsersController < ApplicationController
     #Create
     post '/users' do
       user = User.create(user_params)
-      5.times do 
-        User.receivers << User.sample
-        Match.last.update(status: "pending");
-      end
+      # 5.times do 
+      #   User.receivers << User.sample
+      #   Match.last.update(status: "pending");
+      # end
+      user.to_json
     end
 
     #Update
