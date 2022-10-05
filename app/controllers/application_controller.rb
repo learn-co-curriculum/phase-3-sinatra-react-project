@@ -21,15 +21,18 @@ class ApplicationController < Sinatra::Base
     place = Place.find(params[:id])
     place.to_json(include: { reviews: { include: :user }})
   end
-  # get "/places/cheapest" do
-  #   cheapest = Place.cheapest
-  #   cheapest.to_json
-  # end
-  #returns array of the places with selected category
+  #grabs all the 
   get "/places/category_sort/:category" do
     category = Place.category_sort(params[:category])
     category.to_json
   end
+
+#post request from input form
+  post '/places' do
+    place = Place.create(name:params[:name], category:params[:category], price:params[:price], location:params[:location], image_url:params[:image_url])
+    place.to_json
+  end
+
 
   delete "/places/:id" do 
     place = Place.find(params[:id])
