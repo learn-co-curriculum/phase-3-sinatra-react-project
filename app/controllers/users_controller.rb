@@ -56,6 +56,16 @@ class UsersController < ApplicationController
       curr_person.receivers.to_json
     end
 
+    patch '/users-edit-profile/:id' do
+      curr_person=User.last
+      curr_person.update(profile_img: params["profile_img"])
+      curr_person.update(first_name: params["first_name"])
+      curr_person.update(last_name: params["last_name"])
+      curr_person.update(age: params["age"])
+      curr_person.update(bio: params["bio"])
+      curr_person.update(desired_sex: params["desired_sex"])
+      curr_person.to_json
+    end
 
     patch '/users-likes/:id' do
       # add a visited person to receivers, and change the match status to pending if doesn't exist or accepted if it does
@@ -100,7 +110,10 @@ class UsersController < ApplicationController
     #Delete
     delete '/users/:id' do
       user = User.find(params[:id])
+      Match.where(user_id: params[:id]).destroy_all
+      Match.where(receiver_id: params[:id]).destroy_all
       user.destroy
+
       status 204
     end
 
