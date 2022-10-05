@@ -2,10 +2,6 @@ class Place < ActiveRecord::Base
     has_many :reviews
     has_many :users, through: :reviews
 
-    #orders it from the highest to lowest star rating
-    # def self.favorite_place
-    #     order(:star_rating)
-    # end
     #returns place that is the cheapest
     def self.cheapest
         order(:price)
