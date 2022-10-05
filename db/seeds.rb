@@ -33,7 +33,7 @@ end
   )
 end
 
-300.times do
+1500.times do
   Review.create(
     user_id: User.all.pluck(:id).sample,
     business_id: Business.all.pluck(:id).sample,
