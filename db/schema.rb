@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_04_162650) do
+ActiveRecord::Schema.define(version: 2022_10_04_181910) do
+
+  create_table "current_users", force: :cascade do |t|
+    t.string "username"
+    t.string "password"
+    t.string "email"
+  end
 
   create_table "matches", force: :cascade do |t|
     t.integer "user_id", null: false
