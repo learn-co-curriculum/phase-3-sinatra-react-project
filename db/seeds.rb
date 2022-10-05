@@ -6,10 +6,12 @@ require 'pry'
 puts "🌱 Seeding DB ..."
 
 url = "https://api.yelp.com/v3/businesses/search?location=denver&limit=50"
+businesses = []
 
-response = RestClient.get(url, headers={Authorization: ENV['API_KEY']})
-
-businesses = JSON.parse(response)["businesses"]
+5.times.with_index do |i|
+  response = RestClient.get(url + "&offset=#{i * 50}", headers = { Authorization: ENV['API_KEY'] })
+  businesses.concat JSON.parse(response)["businesses"]
+end
 
 Faker::Config.locale = 'en-US'
 businesses.each do |business|
