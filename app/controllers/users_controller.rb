@@ -28,18 +28,17 @@ class UsersController < ApplicationController
       User.select{|user| !curr_receivers.includes user}
     end
 
-    #UNCOMMENT WHEN YOU NEED TO CHECK FOR ALL VISITED PEOPLE
-    # get '/users-receivers/:id' do
-    #   User.find(params[:id]).receivers.to_json
-    # end
+    get '/users-receivers/:id' do
+      User.find(params[:id]).receivers.to_json
+    end
 
     #Create
     post '/users' do
       user = User.create(user_params)
-      # 5.times do 
-      #   User.receivers << User.sample
-      #   Match.last.update(status: "pending");
-      # end
+      5.times do 
+         User.all.sample.receivers << user
+        Match.last.update(status: "pending");
+      end
       user.to_json
     end
 
@@ -51,8 +50,8 @@ class UsersController < ApplicationController
       curr_person.receivers << User.find(params["rejected_person_id"])
 
       curr_match = Match.where(user_id: params[:id]).find_by receiver_id: params["rejected_person_id"]
-      curr_match.update(status: "rejected")
 
+      curr_match.update(status:"rejected")
       curr_person.receivers.to_json
     end
 
@@ -79,6 +78,7 @@ class UsersController < ApplicationController
           existing_match.update(status: "accepted")
           curr_match.update(status: "accepted")
           #DO SOMETHING ONCE THE STATUS IS ACCEPTED
+          return "#{params[:id]} just matched with #{params["liked_person_id"]}".to_json
           #
         else
           curr_match.update(status:"rejected")
