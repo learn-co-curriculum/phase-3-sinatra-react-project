@@ -63,8 +63,27 @@ p32= Place.create(name:"Buckhead Collision", category: "Auto", price: rand(50..1
 
 # Create Reviews 
 r1 = Review.create(review: "Beers too expensive", user_id: u1.id, place_id: p1.id, star_rating: rand(1..5))
-r2 = Review.create(review: "Love the reclining and heated seats", user_id: u2.id, place_id: p8.id, star_rating: rand(1..5))
-r3 = Review.create(review: "Best tequila in town", user_id: u3.id, place_id: p19.id, star_rating: rand(1..5))
-r4 = Review.create(review: "Ripped me off, dudes are a scam", user_id: u4.id, place_id: p24.id, star_rating: rand(1..5))
+r2 = Review.create(review: " What's an adults-only movie theater without some adult-only snacks?", user_id: u1.id, place_id: p2.id, star_rating: rand(1..5))
+r3 = Review.create(review: "The wait is too long", user_id: u1.id, place_id: p3.id, star_rating: rand(1..5))
+r4 = Review.create(review: "Dinner and show, if you know what I mean 😉", user_id: u1.id, place_id: p4.id, star_rating: rand(1..5))
+r5 = Review.create(review: "Could be cleaner", user_id: u2.id, place_id: p5.id, star_rating: rand(1..5))
+r6 = Review.create(review: "Shoes were smelly", user_id: u3.id, place_id: p6.id, star_rating: rand(1..5))
+r7 = Review.create(review: "Quaint, thats all I'll say", user_id: u4.id, place_id: p7.id, star_rating: rand(1..5))
+r8 = Review.create(review: "B-e-a-utiful", user_id: u2.id, place_id: p8.id, star_rating: rand(1..5))
+
+r9 = Review.create(review: "Love the reclining and heated seats", user_id: u2.id, place_id: p9.id, star_rating: rand(1..5))
+r10 = Review.create(review: "Nice and spacious", user_id: u2.id, place_id: p10.id, star_rating: rand(1..5))
+r11 = Review.create(review: "Guess who's going to jail tonight!", user_id: u2.id, place_id: p11.id, star_rating: rand(1..5))
+r12 = Review.create(review: "A romping good time", user_id: u3.id, place_id: p13.id, star_rating: rand(1..5))
+r13 = Review.create(review: "Almost fell to my death a couple times", user_id: u2.id, place_id: p15.id, star_rating: rand(1..5))
+r14 = Review.create(review: "Best tequila in town", user_id: u3.id, place_id: p17.id, star_rating: rand(1..5))
+r15 = Review.create(review: "A boozy time to remember, or not", user_id: u2.id, place_id: p18.id, star_rating: rand(1..5))
+r16 = Review.create(review: "Do you believe in life after love?", user_id: u2.id, place_id: p22.id, star_rating: rand(1..5))
+r17 = Review.create(review: "Come se dice..lit en ingles", user_id: u2.id, place_id: p23.id, star_rating: rand(1..5))
+r18 = Review.create(review: "Ripped me off, dudes are a scam", user_id: u4.id, place_id: p25.id, star_rating: rand(1..5))
+r18 = Review.create(review: "My car was looking like Fred Flinstones afterwards", user_id: u4.id, place_id: p27.id, star_rating: rand(1..5))
+r18 = Review.create(review: "Solid work", user_id: u3.id, place_id: p29.id, star_rating: rand(1..5))
+r19 = Review.create(review: "They tried to fill my Tesla up with gas", user_id: u3.id, place_id: p32.id, star_rating: rand(1..5))
+
 
 puts "✅ Done seeding!"
