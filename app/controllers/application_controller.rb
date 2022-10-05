@@ -74,6 +74,13 @@ private
     num_decisions_made:params[:num_decisions_made]}
   end
 
+  def option_params
+    {option_name:params[:option_name],
+    num_votes:params[:num_votes],
+    decision_id:params[:decision_id],
+    chosen:params[:chosen],
+  }
+
 end
 
 
