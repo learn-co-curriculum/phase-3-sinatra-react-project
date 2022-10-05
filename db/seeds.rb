@@ -251,6 +251,11 @@ UserDecisionJoin.destroy_all
     UserDecisionJoin.create(user_id: user_id, decision_id: decision_id)
 end
 
+UserDecisionJoin.create(user_id: 3, decision_id: 1)
+UserDecisionJoin.create(user_id: 3, decision_id: 2)
+UserDecisionJoin.create(user_id: 3, decision_id: 3)
+UserDecisionJoin.create(user_id: 3, decision_id: 4)
+
 puts "✅ Done seeding!"
 
 
