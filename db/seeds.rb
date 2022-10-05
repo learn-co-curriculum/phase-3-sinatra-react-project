@@ -34,11 +34,18 @@ end
 end
 
 1500.times do
+  review = Faker::Restaurant.review
+
+  review_stated_stars = review.match(/(\d)\ star/)
+
+  stars = rand(1..5)
+  stars = review_stated_stars[1].to_i.clamp(1, 5) unless review_stated_stars.nil?
+
   Review.create(
     user_id: User.all.pluck(:id).sample,
     business_id: Business.all.pluck(:id).sample,
-    star_rating: rand(1..5),
-    comment: Faker::Restaurant.review
+    star_rating: stars,
+    comment: review
   )
 end
 
