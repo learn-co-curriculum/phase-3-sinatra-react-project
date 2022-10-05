@@ -16,6 +16,12 @@ class ApplicationController < Sinatra::Base
     status 201
     user.to_json
   end
+
+  post "/create-options" do
+    options = Option.create(option_params)
+    status 201
+    options.to_json
+  end
   
   # read
   get "/decisions" do
