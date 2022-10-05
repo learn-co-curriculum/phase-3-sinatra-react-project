@@ -34,12 +34,11 @@ class ApplicationController < Sinatra::Base
 
   delete '/review/:id' do
     delete_review = Review.find(params[:id])
-    if delete_review.user.id == params[:user_id]
-      if delete_review.user.session_cookie == params[:session_cookie]
+    
         delete_review.destroy
         delete_review.to_json
-      end
-    end
+      
+  
   end
 
   get '/businesses' do
