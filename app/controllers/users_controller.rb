@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     #Create
     post '/users' do
       user = User.create(user_params)
-      5.times do 
+      20.times do 
          User.all.sample.receivers << user
         Match.last.update(status: "pending");
       end
