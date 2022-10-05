@@ -20,6 +20,12 @@ class UsersController < ApplicationController
       User.last.to_json
     end
 
+    get '/users/random/:number' do
+      # params[:number]
+      users = User.take(params[:number])
+      users.to_json
+    end
+
     #GET ALL PEOPLE THAT YOU HAVEN'T VISITED BEFORE
     get "users-unseen/:id" do
       #you want to get all users that aren't part of this user's receivers
@@ -87,10 +93,6 @@ class UsersController < ApplicationController
     end
 
 
-  
-
-
-
     patch '/users-request/:id' do
       #add a visited person to receivers and chang ethe match status to rejected IF match status doesn't already exist. if it exists and status is pending, change it to accept. if it 
       #exists and status is rejected, don't change status.
@@ -104,10 +106,28 @@ class UsersController < ApplicationController
       status 204
     end
 
+    
+  
+    
+    
+    
+    
+    
     private
 
     def user_params
-      {first_name:params[:first_name], last_name:params[:last_name], gender:params[:gender], email:params[:email], age:params[:age], bio:params[:bio], profile_img:params[:profile_img], desired_sex:params[:desired_sex]}
+      {
+        first_name:params[:first_name], 
+        last_name:params[:last_name], 
+        gender:params[:gender], 
+        email:params[:email], 
+        age:params[:age], 
+        bio:params[:bio], 
+        profile_img:params[:profile_img], 
+        desired_sex:params[:desired_sex],
+        username: params[:username],
+        password: params[:password]
+      }
     end
 
 end
