@@ -1,4 +1,11 @@
 puts "🌱 Seeding users..."
+puts "Deleting prior data..."
+Place.delete_all
+Review.delete_all
+User.delete_all
+Place.reset_pk_sequence
+User.reset_pk_sequence
+Review.reset_pk_sequence
 
 # Create 4 users
 u1= User.create(name: "Ben")
