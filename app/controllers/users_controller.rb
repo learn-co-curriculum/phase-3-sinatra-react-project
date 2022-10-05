@@ -16,8 +16,14 @@ class UsersController < ApplicationController
       user=User.find_by email: params[:email]
       user.id.to_json
     end
+    
     get '/last-user' do
       User.last.to_json
+    end
+
+    get '/users-data/:username' do
+      user=User.find_by username: params[:username]
+      user.id.to_json
     end
 
     #GET ALL PEOPLE THAT YOU HAVEN'T VISITED BEFORE
@@ -42,6 +48,16 @@ class UsersController < ApplicationController
       # end
       user.to_json
     end
+
+    post "/users/login" do 
+      user = User.find_by username: params[:username]
+       if user[:password] ==  params[:password]
+        user.to_json
+       else 
+        status 403
+       end
+    end
+      
 
     #Update
     patch '/users-rejections/:id' do
@@ -107,7 +123,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-      {first_name:params[:first_name], last_name:params[:last_name], gender:params[:gender], email:params[:email], age:params[:age], bio:params[:bio], profile_img:params[:profile_img], desired_sex:params[:desired_sex]}
+      {first_name:params[:first_name], last_name:params[:last_name], gender:params[:gender], email:params[:email], age:params[:age], bio:params[:bio], profile_img:params[:profile_img], desired_sex:params[:desired_sex], username:params[:username], password:params[:password]}
     end
 
 end
