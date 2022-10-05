@@ -78,8 +78,8 @@ private
     {option_name:params[:option_name],
     num_votes:params[:num_votes],
     decision_id:params[:decision_id],
-    chosen:params[:chosen],
-  }
+    chosen:params[:chosen]}
+  end
 
 end
 
