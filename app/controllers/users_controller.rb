@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
     get '/users/:id' do
       user = User.find(params[:id])
+      puts user
       user.to_json
     end
 
@@ -47,6 +48,18 @@ class UsersController < ApplicationController
       User.find(params[:id]).receivers.to_json
     end
 
+    get '/matches/user/:id' do
+      matches = Match.where(["user_id = ? and status = ?", params[:id], "accepted"])
+
+      matches_data = matches.map { |match|
+          match = match,
+          conversation = match.messages,
+          receiver = match.receiver
+      }
+      
+      matches_data.to_json
+    end
+
     #Create
     post '/users' do
       user = User.create(user_params)
@@ -54,6 +67,38 @@ class UsersController < ApplicationController
          User.all.sample.receivers << user
         Match.last.update(status: "pending");
       end
+      user.to_json
+    end
+
+    # test route for creating a match
+    post '/matches/create/:id' do
+      match = Match.create(
+        user_id: params[:id],
+        receiver_id: User.all.sample.id,
+        status: "accepted"
+      )
+      match.to_json
+    end
+
+    
+    # testing create route
+    post '/user/create' do
+      user = User.create(
+        first_name:params[:first_name], 
+        last_name:params[:last_name], 
+        gender:params[:gender], 
+        email:params[:email], 
+        age:params[:age], 
+        bio:params[:bio], 
+        profile_img:params[:profile_img], 
+        desired_sex:params[:desired_sex], 
+        username:params[:username], 
+        password:params[:password]
+      )
+      # 20.times do 
+      #    User.all.sample.receivers << user
+      #   Match.last.update(status: "pending");
+      # end
       user.to_json
     end
 
@@ -80,16 +125,7 @@ class UsersController < ApplicationController
       curr_person.receivers.to_json
     end
 
-    patch '/users-edit-profile/:id' do
-      curr_person=User.last
-      curr_person.update(profile_img: params["profile_img"])
-      curr_person.update(first_name: params["first_name"])
-      curr_person.update(last_name: params["last_name"])
-      curr_person.update(age: params["age"])
-      curr_person.update(bio: params["bio"])
-      curr_person.update(desired_sex: params["desired_sex"])
-      curr_person.to_json
-    end
+
 
     patch '/users-likes/:id' do
       # add a visited person to receivers, and change the match status to pending if doesn't exist or accepted if it does
@@ -98,6 +134,7 @@ class UsersController < ApplicationController
       curr_match = Match.where(user_id: params[:id]).find_by receiver_id: params["liked_person_id"]
       #because you like that person, you want to check if the match the other way is pending or not
       existing_match=Match.where(user_id: params["liked_person_id"]).find_by receiver_id: params[:id]
+      
       if existing_match
         if existing_match.status == "pending"
           existing_match.update(status: "accepted")
@@ -113,6 +150,17 @@ class UsersController < ApplicationController
       end
 
       "".to_json
+    end
+
+    patch '/users-edit-profile/:id' do
+      curr_person=User.last
+      curr_person.update(profile_img: params["profile_img"])
+      curr_person.update(first_name: params["first_name"])
+      curr_person.update(last_name: params["last_name"])
+      curr_person.update(age: params["age"])
+      curr_person.update(bio: params["bio"])
+      curr_person.update(desired_sex: params["desired_sex"])
+      curr_person.to_json
     end
 
     patch '/users/:id' do
@@ -145,7 +193,18 @@ class UsersController < ApplicationController
     private
 
     def user_params
-      {first_name:params[:first_name], last_name:params[:last_name], gender:params[:gender], email:params[:email], age:params[:age], bio:params[:bio], profile_img:params[:profile_img], desired_sex:params[:desired_sex], username:params[:username], password:params[:password]}
+      {
+        first_name:params[:first_name], 
+        last_name:params[:last_name], 
+        gender:params[:gender], 
+        email:params[:email], 
+        age:params[:age], 
+        bio:params[:bio], 
+        profile_img:params[:profile_img], 
+        desired_sex:params[:desired_sex], 
+        username:params[:username], 
+        password:params[:password]
+      }
     end
 
 end

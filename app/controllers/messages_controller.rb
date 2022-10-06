@@ -7,11 +7,17 @@ class MessagesController < ApplicationController
     end
 
     post '/messages/new' do
+        match = Match.find(params[:match_id])
+        sender = params[:sender_id]
+        receiver = params[:reciever_id]
+
         message = Message.create(
-            message_sender_id: params[:message_sender],
-            message_receiver_id: params[:message_reciever],
+            match_id: match[:id],
+            message_sender: sender,
+            message_receiver: receiver,
             message: params[:message]
         )
+
         message.to_json
     end
 
@@ -37,6 +43,11 @@ class MessagesController < ApplicationController
         # Message.all.to_json
         params[:sender].to_json
         # "jello"
+    end
+
+    get '/matches/messages/:id' do
+        messages = Match.find(params[:id]).messages
+        messages.to_json
     end
 
 

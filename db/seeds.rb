@@ -6,8 +6,20 @@ puts "Seeding Random Users"
     
     age=rand (18..50)
     user_hash=JSON.parse(response)["results"]
-    desired_sex=["male","female", "all"].sample
-    User.create(first_name: Faker::Name.unique.first_name, last_name: Faker::Name.unique.last_name, email: Faker::Internet.email, username: Faker::Internet.username, password: Faker::Internet.password, age: age, bio: Faker::Quote.yoda, profile_img: Faker::Avatar.image, gender: "female", desired_sex: desired_sex)
+
+    desired_sex=["Men","Women", "All"].sample
+    User.create(
+        first_name: Faker::Name.unique.first_name, 
+        last_name: Faker::Name.unique.last_name, 
+        email: Faker::Internet.email, 
+        username: Faker::Internet.username, 
+        password: Faker::Internet.password, 
+        age: age, bio: Faker::Quote.yoda, 
+        profile_img: Faker::Avatar.image, 
+        gender: "female", 
+        desired_sex: desired_sex
+    )
+
 }
 
 10.times {
