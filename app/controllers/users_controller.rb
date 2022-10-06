@@ -46,9 +46,9 @@ class UsersController < ApplicationController
       User.find(params[:id]).receivers.to_json
     end
 
-    get '/users/matches/:id' do
+    get '/matches/user/:id' do
       matches = Match.where(["user_id = ? and status = ?", params[:id], "accepted"])
-      
+
       matches_data = matches.map { |match|
           match = match,
           conversation = match.messages,
