@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_30_180722) do
+ActiveRecord::Schema.define(version: 2022_10_06_165955) do
 
   create_table "decisions", force: :cascade do |t|
     t.string "event_type"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2022_09_30_180722) do
 
   create_table "user_decision_joins", force: :cascade do |t|
     t.integer "decision_id"
-    t.integer "user_id"
+    t.string "group_name"
   end
 
   create_table "users", force: :cascade do |t|
