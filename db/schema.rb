@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2022_09_30_151035) do
     t.string "image_url"
     t.string "phone_number"
     t.string "website"
+    t.string "transactions"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
