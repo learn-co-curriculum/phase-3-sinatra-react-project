@@ -7,6 +7,13 @@ class UsersController < ApplicationController
       users.to_json
     end
 
+    get '/users/:user_age/:range' do
+      user_age = params[:user_age].to_i
+      range = params[:range].to_i
+      users = User.age_pref(user_age, range)
+      users.to_json
+    end
+
     get '/users/:id' do
       user = User.find(params[:id])
       user.to_json
