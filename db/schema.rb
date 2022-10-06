@@ -24,13 +24,13 @@ ActiveRecord::Schema.define(version: 2022_10_04_162650) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.integer "message_sender_id"
-    t.integer "message_receiver_id"
+    t.integer "match_id", null: false
+    t.integer "message_sender"
+    t.integer "message_receiver"
     t.string "message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["message_receiver_id"], name: "index_messages_on_message_receiver_id"
-    t.index ["message_sender_id"], name: "index_messages_on_message_sender_id"
+    t.index ["match_id"], name: "index_messages_on_match_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,6 +50,5 @@ ActiveRecord::Schema.define(version: 2022_10_04_162650) do
 
   add_foreign_key "matches", "users"
   add_foreign_key "matches", "users", column: "receiver_id"
-  add_foreign_key "messages", "users", column: "message_receiver_id"
-  add_foreign_key "messages", "users", column: "message_sender_id"
+  add_foreign_key "messages", "matches"
 end
