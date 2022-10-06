@@ -112,7 +112,7 @@ class UsersController < ApplicationController
         curr_match.update(status: "pending")
       end
 
-      liked_person.receivers.to_json
+      "".to_json
     end
 
     patch '/users/:id' do
