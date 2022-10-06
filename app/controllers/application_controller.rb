@@ -53,12 +53,19 @@ class ApplicationController < Sinatra::Base
     decision.update(decision_params)
   end
 
+  patch '/option/:id' do
+    option = Option.find(params[:id])
+    option.update(option_params)
+  end
+
   # delete
   delete '/decisions/:id' do
     decision = Decision.find(params[:id])
     decision.destroy 
     status 204 
   end 
+
+
 
 private
   def decision_params
