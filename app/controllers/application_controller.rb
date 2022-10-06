@@ -22,6 +22,12 @@ class ApplicationController < Sinatra::Base
     status 201
     options.to_json
   end
+
+  post "/create-joints" do
+    joins = UserDecisionJoin.create(join_params)
+    status 201
+    joins.to_json
+  end
   
   # read
   get "/decisions" do
@@ -58,6 +64,8 @@ class ApplicationController < Sinatra::Base
     option.update(option_params)
   end
 
+
+
   # delete
   delete '/decisions/:id' do
     decision = Decision.find(params[:id])
@@ -86,6 +94,11 @@ private
     num_votes:params[:num_votes],
     decision_id:params[:decision_id],
     chosen:params[:chosen]}
+  end
+
+  def join_params
+    {decision_id:params[:decision_id],
+    user_id:params[:user_id]}
   end
 
 end
