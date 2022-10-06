@@ -16,6 +16,8 @@ class UsersController < ApplicationController
       users2.to_json
     end
 
+
+
     get '/users/:id' do
       user = User.find(params[:id])
       puts user
@@ -36,13 +38,6 @@ class UsersController < ApplicationController
       user.id.to_json
     end
 
-    #GET ALL PEOPLE THAT YOU HAVEN'T VISITED BEFORE
-    get "users-unseen/:id" do
-      #you want to get all users that aren't part of this user's receivers
-      curr_receivers=User.find(params[:id]).receivers
-      #curr_receivers is an array of all YOUR receivers. now, we need to filter the actual ALL users so that it only returns the users that aren't part of your receivers
-      User.select{|user| !curr_receivers.includes user}
-    end
 
     get '/users-receivers/:id' do
       User.find(params[:id]).receivers.to_json
@@ -142,8 +137,10 @@ class UsersController < ApplicationController
           #DO SOMETHING ONCE THE STATUS IS ACCEPTED
           return "#{params[:id]} just matched with #{params["liked_person_id"]}".to_json
           #
-        else
+        elsif existing_match.status == "rejected"
           curr_match.update(status:"rejected")
+        else 
+          return "".to_json
         end
       else 
         curr_match.update(status: "pending")
