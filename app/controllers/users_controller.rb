@@ -7,11 +7,13 @@ class UsersController < ApplicationController
       users.to_json
     end
 
-    get '/users/:user_age/:range' do
+    get '/users/:user_age/:range/:gender/:interested' do
       user_age = params[:user_age].to_i
       range = params[:range].to_i
+      id = params[:id].to_i
       users = User.age_pref(user_age, range)
-      users.to_json
+      users2 = users.gender_pref(params[:gender], params[:interested])
+      users2.to_json
     end
 
     get '/users/:id' do
@@ -147,7 +149,7 @@ class UsersController < ApplicationController
         curr_match.update(status: "pending")
       end
 
-      liked_person.receivers.to_json
+      "".to_json
     end
 
     patch '/users-edit-profile/:id' do
