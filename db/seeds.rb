@@ -7,7 +7,7 @@ puts "Seeding Random Users"
     age=rand (18..50)
     user_hash=JSON.parse(response)["results"]
 
-    desired_sex=["Men","Women", "All"].sample
+    desired_sex=["male","female", "all"].sample
     User.create(
         first_name: Faker::Name.unique.first_name, 
         last_name: Faker::Name.unique.last_name, 
@@ -66,16 +66,6 @@ puts "Seeding Random Users"
 
 }
 
-
-# Seed your database here
-puts "Seeding Messages Users"
-50.times {
-    Message.create(
-        message_sender_id: User.all.sample.id,
-        message_receiver_id: User.all.sample.id,
-        message: Faker::Quote.yoda
-    )
-}
 
 
 puts "✅ Done seeding!"
