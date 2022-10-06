@@ -237,12 +237,41 @@ decision_data = [
     },
 ]
 
+option_data = [
+    {
+    option_name: "McDonald's Burgers",
+    num_votes: 7,
+    decision_id: 7,
+    chosen: false
+    },  
+    {
+    option_name: "Wendy's Burgers",
+    num_votes: 4,
+    decision_id: 9,
+    chosen: false
+    },
+    {
+    option_name: "Burger King's Burgers",
+    num_votes: 2,
+    decision_id: 15,
+    chosen: false
+    },
+    {
+    option_name: "Hardee's Burgers",
+    num_votes: 18,
+    decision_id: 3,
+    chosen: false
+    }
+]
+
 
 
 User.destroy_all
 User.create(user_data)
 Decision.destroy_all
 Decision.create(decision_data)
+Option.destroy_all
+Option.create(option_data)
 
 UserDecisionJoin.destroy_all
 10.times do

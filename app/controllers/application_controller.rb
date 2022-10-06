@@ -29,6 +29,11 @@ class ApplicationController < Sinatra::Base
     decisions.to_json
   end
 
+  get "/options" do
+    options = Option.all
+    options.to_json
+  end
+
   get "/completed" do
     "Hello World"
   end
