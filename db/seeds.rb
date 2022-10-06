@@ -237,16 +237,24 @@ decision_data = [
     },
 ]
 
+
+
 User.destroy_all
 User.create(user_data)
 Decision.destroy_all
 Decision.create(decision_data)
 
+UserDecisionJoin.destroy_all
 10.times do
+    user_id =User.ids.sample
     decision_id = Decision.ids.sample
-    user_id = User.ids.sample
-    UserDecisionJoin.create(decision_id: decision_id, user_id: user_id)
-    end
+    UserDecisionJoin.create(user_id: user_id, decision_id: decision_id)
+end
+
+UserDecisionJoin.create(user_id: 3, decision_id: 1)
+UserDecisionJoin.create(user_id: 3, decision_id: 2)
+UserDecisionJoin.create(user_id: 3, decision_id: 3)
+UserDecisionJoin.create(user_id: 3, decision_id: 4)
 
 puts "✅ Done seeding!"
 

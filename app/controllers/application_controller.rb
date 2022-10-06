@@ -16,11 +16,21 @@ class ApplicationController < Sinatra::Base
     status 201
     user.to_json
   end
+
+  post "/create-options" do
+    options = Option.create(option_params)
+    status 201
+    options.to_json
+  end
   
   # read
   get "/decisions" do
     decisions = Decision.all
     decisions.to_json
+  end
+
+  get "/completed" do
+    "Hello World"
   end
 
   get "/users" do
@@ -33,15 +43,19 @@ class ApplicationController < Sinatra::Base
     joins.to_json
   end
 
-  # get "/completed" do
-  #   "Hello World"
-  # end
-
+  get "/" do
+    "hellow worldsdfsdf actually howdy"
+  end
 
   # update
   patch '/decision/:id' do
     decision = Decision.find(params[:id])
     decision.update(decision_params)
+  end
+
+  patch '/option/:id' do
+    option = Option.find(params[:id])
+    option.update(option_params)
   end
 
   # delete
@@ -50,6 +64,8 @@ class ApplicationController < Sinatra::Base
     decision.destroy 
     status 204 
   end 
+
+
 
 private
   def decision_params
@@ -63,6 +79,13 @@ private
   def user_params
     {username:params[:username], 
     num_decisions_made:params[:num_decisions_made]}
+  end
+
+  def option_params
+    {option_name:params[:option_name],
+    num_votes:params[:num_votes],
+    decision_id:params[:decision_id],
+    chosen:params[:chosen]}
   end
 
 end
