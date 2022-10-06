@@ -22,7 +22,8 @@ businesses.each do |business|
     price: business["price"],
     image_url: business["image_url"],
     phone_number: "(#{Faker::PhoneNumber.area_code}) #{Faker::PhoneNumber.exchange_code}-#{Faker::PhoneNumber.subscriber_number(length: 4)}",
-    website: Faker::Internet.url
+    website: Faker::Internet.url, 
+    transactions: business["transactions"]
   )
 end
 

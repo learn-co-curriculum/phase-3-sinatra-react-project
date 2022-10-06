@@ -8,7 +8,7 @@ class CreateBusinesses < ActiveRecord::Migration[6.1]
       t.string :image_url
       t.string :phone_number
       t.string :website
-      
+      t.string :transactions 
       t.timestamps
     end
 
