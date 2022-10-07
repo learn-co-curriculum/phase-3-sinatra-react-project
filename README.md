@@ -1,124 +1,139 @@
-# Phase 3 Project Guidelines
+# TwoSum
 
-## Learning Goals
+Phase 3 Project for Flatiron School: React/Ruby Full Stack Application Backend Segment
 
-- Build a web basic API with Sinatra and Active Record to support a React
-  frontend
+## General Information
 
-## Introduction
+Looking for love but just don't know where to go? Look no further -- TwoSum is a brand new, full-stack dating site for all your romantic needs. The project was built using a React frontend and a Ruby/SQLite3 Backend. We worked as a team of four to deploy both the frontend and backend servers in a week.
 
-Congrats on getting through all the material for Phase 3! Now's the time to put
-it all together and build something from scratch to reinforce what you know and
-expand your horizons.
+## Technologies Used
 
-The focus of this project is **building a Sinatra API backend** that uses
-**Active Record** to access and persist data in a database, which will be used
-by a separate **React frontend** that interacts with the database via the API.
+ -Ruby 2.7.4
+ -Active Model Serializers 0.10.12
+ -NodeJS (v16) and npm
+ -React 17.0.2
+ -React-Router-Dom 5.3.3
 
-## Requirements
+See the Environment Setup below for instructions on installing these tools if you don't already have them.
 
-For this project, you must:
+##Features
+###Sign Up/Sign In
+Start finding love by creating an account on our home page. Our authentication runs by creating a cookie of a new user every time someone either logs in or creates a new account, saving it to our local storage to persist in the future.
+![image](https://user-images.githubusercontent.com/60560932/194465932-029b80af-ad09-4325-a3a5-ba988133467c.png)
 
-- Use Active Record to interact with a database.
-- Have at least two models with a one-to-many relationship.
-- At a minimum, set up the following API routes in Sinatra:
-  - create and read actions for both models
-  - full CRUD capability for one of the models
-- Build a separate React frontend application that interacts with the API to
-  perform CRUD actions.
-- Use good OO design patterns. You should have separate classes for each of your
-  models, and create instance and class methods as necessary.
+###Create Account
+On signing up, you are greeted with a page to create your own account. You can fill out forms with information like your name, a bio, and add a profile picture that will register a POST request to our backend, officially registering you as a new user, and matching you up with a few of our lovely pre-registered bots!
+![image](https://user-images.githubusercontent.com/60560932/194466097-2603a991-557e-4402-b69a-202a9edf417c.png)
 
-For example, build a todo list application with a React frontend interface and a
-Sinatra backend API, where a user can:
+###Browse Page
+Once you're all signed up, feel free to browse through our vast collection of wonderful bots! Based on your gender preferences, you are met with users that fulfill that requirement. On viewing the page, you can either like or dislike different bots until you hit a match, or when the backend registers that you've sent a like to a bot who has been set to match with you (the real matches will come soon)!
+![image](https://user-images.githubusercontent.com/60560932/194466324-49326a2a-d15a-45c9-88e2-1e9b3e8828c7.png)
 
-- **Create** a new todo
-- **Read** a list of all todos
-- **Update** an individual todo
-- **Delete** a todo
 
-A `Todo` can be tagged with a `Category`, so that each todo _belongs to_ a
-category and each category _has many_ todos.
+###Match Found
+On finding a match, two things will happen: first, the website will dynamically render both you and the user of interest, displaying your pictures in a modal that announces your match. Secondly, the website will create a chat feature between you and said user that will display their name and either the last message sent, or a simple "Stasrt the conversation!"
+![image](https://user-images.githubusercontent.com/60560932/194466717-c85e1ced-19f4-4559-be47-241b759b5abc.png)
 
-## Getting Started
 
-### Backend Setup
+###Chat
+On clicking into one of your conversations, you can now enter a chat with said user. All messages are POST requests sent to the backend, processed, cleaned up, and displayed along with the first name of the user who sent the message.
+![image](https://user-images.githubusercontent.com/60560932/194466850-565b522f-e516-44a2-b345-8cc14b19275e.png)
 
-This repository has all the starter code needed to get a Sinatra backend up and
-running. [**Fork and clone**][fork link] this repository to get started. Then, run
-`bundle install` to install the gems.
 
-**Important**: Be sure you fork a copy of the repo into your GitHub account
-before cloning it. You can do this by using the link above or by clicking the
-"Octocat" button at the top of this page, then clicking "Fork" in the upper
-right corner of the repo page.
+###Edit Profile
+If there's anything about your profile you'd like to change, simply click into your profile to start personalizing. Switch up your name, profile picture, bio, and have it all persist via a PATCH request with the push of a button!
 
-[fork link]: https://github.com/learn-co-curriculum/phase-3-sinatra-react-project/fork
+You also have the option to either logout or delete your account, which will delete both your account and all its associated matche, redirecting you back to the home page.
+![image](https://user-images.githubusercontent.com/60560932/194466892-210498c6-ae4d-427e-8e67-1742f51bd0bd.png)
 
-The `app/controllers/application_controller.rb` file has an example GET route
-handler. Replace this route with routes for your project.
 
-You can start your server with:
+
+
+##Environment Setup
+### Clone repository
+
+**clone** the front-end project repository from github: [https://github.com/roylee0912/twosum](https://github.com/roylee0912/twosum)
 
 ```console
-$ bundle exec rake server
+$ git clone https://github.com/roylee0912/twosum
 ```
 
-This will run your server on port
-[http://localhost:9292](http://localhost:9292).
+### Install NodeJS
 
-### Frontend Setup
+Verify you are running a recent version of Node with:
 
-Your backend and your frontend should be in **two different repositories**.
+```sh
+node -v
+```
 
-Create a new repository in a **separate folder** with a React app for your
-frontend. To do this, `cd` out of the backend project directory, and use
-[create-react-app][] to generate the necessary code for your React frontend:
+If your Node version is not 16.x.x, install it and set it as the current and
+default version with:
+
+```sh
+nvm install 16
+nvm use 16
+nvm alias default 16
+```
+
+You can also update your npm version with:
+
+```sh
+npm i -g npm
+```
+
+You'll also need to run the backend server at the same time. 
+**clone** the back-end project repository from github: [https://github.com/roylee0912/two-sum-backend](https://github.com/roylee0912/two-sum-backend)
 
 ```console
-$ npx create-react-app my-app-frontend
+$ git clone https://github.com/roylee0912/two-sum-backend
+```
+### Install the Latest Ruby Version
+
+Verify which version of Ruby you're running by entering this in the terminal:
+
+```sh
+ruby -v
 ```
 
-After creating the project locally, you should also
-[create a repository on GitHub][create repo] to host your repo and help
-collaborate, if you're working with a partner.
+Make sure that the Ruby version you're running is listed in the [supported
+runtimes][] by Heroku. At the time of writing, supported versions are 2.6.8,
+2.7.4, or 3.0.2. Our recommendation is 2.7.4, but make sure to check the site
+for the latest supported versions.
 
-### Fetch Example
+If it's not, you can use `rvm` to install a newer version of Ruby:
 
-Your React app should make fetch requests to your Sinatra backend! Here's an
-example:
+```sh
+rvm install 2.7.4 --default
+```
+[supported runtimes]: https://devcenter.heroku.com/articles/ruby-support#supported-runtimes
 
-```js
-fetch("http://localhost:9292/test")
-  .then((r) => r.json())
-  .then((data) => console.log(data));
+### Application Install
+
+When you're ready to start building your project, run in the back-end:
+
+```sh
+bundle install
 ```
 
-## Project Tips
+## Server Start
 
-- This project is intended to focus more on the backend than the frontend, so
-  try and keep the React side of things relatively simple. Focus on working with
-  Active Record and performing CRUD actions. What are some interesting queries you can write? What kinds of questions can you ask of your data?
-- Once you have a project idea, come up with a domain model and decide what
-  relationships exist between the models in your application. Use a tool like
-  [dbdiagram.io][] to help visualize your models.
-- Decide on your API endpoints. What data should they return? What kind of CRUD
-  action should they perform? What data do they need from the client?
-- Use [Postman][postman download] to test your endpoints.
-- Use `binding.pry` to debug your requests on the server. It's very helpful to use a
-  `binding.pry` in your controller within a route to see what `params` are being
-  sent.
-- Use the [Network Tab in the Dev Tools][network tab] in the frontend to debug
-  your requests.
+You can use the following commands to run the application:
 
-## Resources
+- `rake db:migrate db:seed`: migrate and seed the database (use `db:seed:replant` if this is not the first time running)
+- `rake server`: run the backend on [http://localhost:9292](http://localhost:9292)
+- `npm start`: run the frontend on
+  [http://localhost:3000](http://localhost:3000)
+  
+  ## Project Status
 
-- [create-react-app][]
-- [dbdiagram.io][]
-- [Postman][postman download]
+- Project is: _in progress_.
 
-[create-react-app]: https://create-react-app.dev/docs/getting-started
-[create repo]: https://docs.github.com/en/get-started/quickstart/create-a-repo
-[dbdiagram.io]: https://dbdiagram.io/
-[postman download]: https://www.postman.com/downloads/
-[network tab]: https://developer.chrome.com/docs/devtools/network/
+## Room for Improvement
+
+Backend:
+
+- Fix the conversation feature to have it fully functional on both ends, consider implementing a more secure user-auth system
+
+Frontend:
+
+- Add transitions, make it responsive
