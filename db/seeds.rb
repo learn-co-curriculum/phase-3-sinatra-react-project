@@ -1,6 +1,8 @@
 puts "Deleting players table..."
 Player.delete_all
 Player.reset_pk_sequence
+Team.delete_all
+Team.reset_pk_sequence
 
 puts "Seeding players..."
 
@@ -28,3 +30,16 @@ i=1
 end
 
 puts "Done seeding!"
+
+Team.create(name: "", user_id: 1, player_id: 18, starter: true)
+Team.create(name: "", user_id: 1, player_id: 19, starter: false)
+Team.create(name: "", user_id: 1, player_id: 11, starter: true)
+Team.create(name: "", user_id: 1, player_id: 14)
+Team.create(name: "", user_id: 1, player_id: 221)
+Team.create(name: "", user_id: 1, player_id: 16)
+Team.create(name: "", user_id: 1, player_id: 29)
+Team.create(name: "", user_id: 1, player_id: 23)
+Team.create(name: "", user_id: 1, player_id: 28)
+Team.create(name: "", user_id: 1, player_id: 30)
+Team.create(name: "", user_id: 1, player_id: 33)
+Team.create(name: "", user_id: 1, player_id: 37)
