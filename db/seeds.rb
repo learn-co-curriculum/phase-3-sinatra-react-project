@@ -241,25 +241,73 @@ option_data = [
     {
     option_name: "McDonald's Burgers",
     num_votes: 7,
-    decision_id: 7,
+    decision_id: 1,
     chosen: false
     },  
     {
     option_name: "Wendy's Burgers",
     num_votes: 4,
-    decision_id: 9,
+    decision_id: 1,
     chosen: false
     },
     {
     option_name: "Burger King's Burgers",
     num_votes: 2,
-    decision_id: 15,
+    decision_id: 2,
     chosen: false
     },
     {
     option_name: "Hardee's Burgers",
     num_votes: 18,
+    decision_id: 2,
+    chosen: false
+    },
+    {
+    option_name: "Panera",
+    num_votes: 18,
     decision_id: 3,
+    chosen: false
+    },
+    {
+    option_name: "Met Market",
+    num_votes: 18,
+    decision_id: 3,
+    chosen: false
+    },
+    {
+    option_name: "StarBar",
+    num_votes: 18,
+    decision_id: 4,
+    chosen: false
+    },
+    {
+    option_name: "idk",
+    num_votes: 18,
+    decision_id: 4,
+    chosen: false
+    },
+    {
+    option_name: "AHHH YUM CAVA",
+    num_votes: 18,
+    decision_id: 1,
+    chosen: false
+    },
+    {
+    option_name: "BirdCall",
+    num_votes: 18,
+    decision_id: 2,
+    chosen: false
+    },
+    {
+    option_name: "the hotel room mini bar",
+    num_votes: 18,
+    decision_id: 3,
+    chosen: false
+    },
+    {
+    option_name: "we have food at home",
+    num_votes: 18,
+    decision_id: 4,
     chosen: false
     }
 ]

@@ -103,7 +103,7 @@ private
 
   def join_params
     {decision_id:params[:decision_id],
-    user_id:params[:user_id]}
+    group_name:params[:group_name]}
   end
 
 end
