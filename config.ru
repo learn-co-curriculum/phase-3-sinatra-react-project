@@ -15,5 +15,5 @@ use Rack::JSONBodyParser
 run ApplicationController
 use UsersController
 use MessagesController
-# use MatchesController
+use MatchesController
 
