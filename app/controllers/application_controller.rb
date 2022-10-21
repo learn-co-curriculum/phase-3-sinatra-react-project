@@ -1,10 +1,27 @@
+# require 'pry'
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  # Add your routes here
-  get "/" do
-    { message: "Good luck with your project!" }.to_json 
-  end
+  #get all entries from all users - for global-brews tab
+ get '/api/entries' do
+    all_entries = Entry.all
+    all_entries.to_json
+ end
 
-  
+ #get specific user's entries based on user id
+ get '/api/entries/user/:id' do
+    id = params[:id].to_i
+    user_entries = Entry.all.filter { |entry| entry.user_id == id}
+    user_entries.to_json
+ end
+
+ #get username based on user id: run fetch from front end to access user instance
+ get '/api/users/user-id/:id' do
+    user_id = params[:id].to_i
+    user = User.all.find_by(id: user_id) #returns user instance from user_id
+    user.to_json
+ end
+
 end
+
+
