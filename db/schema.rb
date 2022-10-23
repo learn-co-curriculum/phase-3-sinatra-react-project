@@ -16,10 +16,12 @@ ActiveRecord::Schema.define(version: 2022_10_23_154759) do
     t.string "name"
     t.string "date_added"
     t.string "cover_image"
+    t.string "master_album_url"
     t.string "release_description"
     t.integer "year"
+    t.boolean "needs_year_update"
     t.integer "artist_id"
-    t.integer "genre_id"
+    t.string "genre_id"
   end
 
   create_table "artists", force: :cascade do |t|
