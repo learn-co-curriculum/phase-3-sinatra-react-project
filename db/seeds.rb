@@ -5,7 +5,7 @@ require "json"
 puts "🌱 Seeding spices..."
 
 URL =
-  "https://api.discogs.com/users/theyear1000/collection/folders/0/releases?per_page=100"
+  "https://api.discogs.com/users/theyear1000/collection/folders/0/releases?per_page=10"
 
 uri = URI.parse(URL)
 response = Net::HTTP.get_response(uri)
