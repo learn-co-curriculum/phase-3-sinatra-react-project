@@ -3,7 +3,12 @@ class ApplicationController < Sinatra::Base
 
   # Add your routes here
   get "/albums" do
-    albums = Album.all
+    albums = Album.pluck(:id, :name)
     albums.to_json
+  end
+
+  get "/albums/:id" do
+    album = Album.find(:id)
+    album.to_json
   end
 end
