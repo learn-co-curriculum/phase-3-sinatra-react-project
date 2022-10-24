@@ -18,4 +18,4 @@
 .results.json
 
 # Other
-.key
+db/.key
