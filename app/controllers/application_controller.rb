@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
   # Add your routes here
   get "/albums" do
     albums = Album.pluck(:id, :name)
-    albums.to_json
+    albums.sort_by! { |a| a[1] }.to_json
   end
 
   get "/albums/:id" do
@@ -13,8 +13,8 @@ class ApplicationController < Sinatra::Base
     album.to_json(include: :artist)
   end
 
-  get "/artists/:id" do
-    artist = Artist.find(params[:id])
-    Artist.to_json
-  end
+  # get "/artists/:id" do
+  #   artist = Artist.find(params[:id])
+  #   Artist.to_json(include :albums)
+  # end
 end
