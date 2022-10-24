@@ -22,6 +22,24 @@ class ApplicationController < Sinatra::Base
     user.to_json
  end
 
+ get '/api/users' do
+    all_users = User.all
+    all_users.to_json
 end
 
+ #get favorited entries for a specific user
+ get '/api/favorited_entries/users/:id' do
+    user_id = params[:id].to_i
+    favorited_entries = User.find(user_id).favorited_entries
+    favorited_entries.to_json
+ end
+
+#  post an entry to ALL entries list
+ post '/api/entries' do
+  #create new entry w/ form data
+  newBrew = Entry.create(params)
+  newBrew.to_json
+end
+
+end
 
