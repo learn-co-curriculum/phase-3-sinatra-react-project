@@ -4,8 +4,10 @@ require "json"
 
 puts "🌱 Seeding spices..."
 
+key = open("./db/.key").read
+
 URL =
-  "https://api.discogs.com/users/theyear1000/collection/folders/0/releases?per_page=10"
+  "https://api.discogs.com/users/theyear1000/collection/folders/0/releases?per_page=10#{key}"
 
 uri = URI.parse(URL)
 response = Net::HTTP.get_response(uri)
