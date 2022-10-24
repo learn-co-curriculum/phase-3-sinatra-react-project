@@ -16,3 +16,6 @@
 
 # Canvas-specific .results.json
 .results.json
+
+# Other
+keys.rb

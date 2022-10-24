@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/albums/:id" do
-    album = Album.find(:id)
+    album = Album.find(params[:id])
     album.to_json
   end
 end
