@@ -16,10 +16,10 @@ class ApplicationController < Sinatra::Base
     therapist.to_json
   end
 
+
   get "/therapists/:id/clients" do 
     therapist_clients = Therapist.find(params[:id]).clients
       therapist_clients.to_json
-
   end
 
   post "/therapists" do
@@ -63,6 +63,26 @@ class ApplicationController < Sinatra::Base
       therapist_id: params[:therapist_id]
     )
     client.to_json
+  end
+
+  get "/appointments" do 
+    appointments = Appointment.all
+    appointments.to_json
+  end
+
+  get "/appointments/:id" do 
+    appointment = Appointment.find(params[:id])
+    appointment.to_json
+  end
+
+  post "/appointments" do 
+    appointment = Appointment.create(
+      date: params[:date], 
+      time: params[:time], 
+      therapist_id: params[:therapist_id],
+      client_id: params[:client_id]
+    )
+    appointment.to_json
   end
 
 end
