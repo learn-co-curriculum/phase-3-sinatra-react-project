@@ -43,8 +43,8 @@ data["releases"].map do |r|
 end
 
 1000.times do
-  ListenEvents.create(
-    album_id: rand(1..100),
+  ListenEvent.create(
+    album_id: rand(1..Album.count),
     created_at: DateTime.now - (rand * 7),
     updated_at: DateTime.now - (rand * 7)
   )

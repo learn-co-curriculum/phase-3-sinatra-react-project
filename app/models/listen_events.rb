@@ -6,18 +6,27 @@ class ListenEvent < ActiveRecord::Base
   end
 
   def self.most_listens
-    artists =
-      group(:album_id)
+    albums =
+      ListenEvent
+        .group(:album_id)
         .order("count_id DESC")
         .limit(5)
         .count(:id)
-        .map { |a| Artist.find(Album.find(a[0]).artist_id) }
-    values =
-      group(:album_id)
+        .to_a
+        .map { |a| a[0] }
+        .map { |a| Album.find(a) }
+
+    listens =
+      ListenEvent
+        .group(:album_id)
         .order("count_id DESC")
         .limit(5)
         .count(:id)
+        .to_a
         .map { |a| a[1] }
-    array = artists.zip(values)
+
+    albumsWith = albums.map { |a| JSON.parse(a.to_json(include: :artist)) }
+
+    albumsWithListens = albumsWith.zip(listens)
   end
 end

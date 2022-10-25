@@ -10,11 +10,12 @@ class ApplicationController < Sinatra::Base
   get "/albums/:id" do
     album = Album.find(params[:id])
     album.update_year
-    album.to_json(include: :artist)
+    album.change_latest_listen
+    album.to_json(include: %i[artist listen_events])
   end
 
-  # get "/artists/:id" do
-  #   artist = Artist.find(params[:id])
-  #   Artist.to_json(include :albums)
-  # end
+  get "/most_listens/" do
+    response = ListenEvent.most_listens
+    response.to_json
+  end
 end

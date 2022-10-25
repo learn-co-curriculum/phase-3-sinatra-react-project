@@ -21,4 +21,10 @@ class Album < ActiveRecord::Base
       "does not need"
     end
   end
+
+  def change_latest_listen
+    latest = ListenEvent.where(id: id).order(:updated_at).first.updated_at
+    update(latest_listen: latest)
+    latest_listen
+  end
 end
