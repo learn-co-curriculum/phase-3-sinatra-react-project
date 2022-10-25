@@ -1,4 +1,4 @@
-# Phase 3 Project Guidelines - TEST
+# Phase 3 Project Guidelines
 
 ## Learning Goals
 
