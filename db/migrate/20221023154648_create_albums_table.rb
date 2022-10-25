@@ -10,7 +10,7 @@ class CreateAlbumsTable < ActiveRecord::Migration[6.1]
       t.boolean :needs_year_update
       t.integer :artist_id
       t.string :genre_id
-      t.string :latest_listen
+      t.datetime :latest_listen
     end
   end
 end
