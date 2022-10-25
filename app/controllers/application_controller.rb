@@ -48,7 +48,11 @@ class ApplicationController < Sinatra::Base
   end
 
   #######post favorite an entry in my brews by clicking add favorite
-
+  post '/api/favorites' do
+    new_fav = Favorite.create(user_id: params[:user_id], entry_id: params[:entry_id])
+    new_fav.to_json
+    #Favorite.create(user_id: User.all.sample.id, entry_id: Entry.all.sample.id)
+  end
 
   #delete a favorited entry for a user - used in FavBrewCard.js
   delete '/api/favorited_entries/entry-id/:id' do
@@ -58,6 +62,17 @@ class ApplicationController < Sinatra::Base
   end
 
   #########delete entire entry
+  delete '/api/entries/entry-id/:id' do
+    deleted_entry = Entry.find_by(id: params[:id].to_i)
+    deleted_entry.destroy
+  end
+
+  ######## patch request to edit entries
+  # patch '/api/entries/entry-id/:id' do
+  #   update_entry = Entry.find_by(id: params[:id].to_i)
+  #   update_entry.update(name:?,description:?,location:?, image_url:?)
+  # end
+
 
 end
 
