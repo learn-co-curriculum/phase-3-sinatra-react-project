@@ -18,12 +18,13 @@ ActiveRecord::Schema.define(version: 2022_10_24_214445) do
     t.string "notes"
     t.string "location"
     t.integer "tutor_id"
-    t.integer "pupil_id"
+    t.integer "student_id"
   end
 
-  create_table "pupils", force: :cascade do |t|
+  create_table "students", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.integer "age"
     t.string "location"
     t.string "subject"
   end
