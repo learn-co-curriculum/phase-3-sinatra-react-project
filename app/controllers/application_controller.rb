@@ -12,14 +12,14 @@ class ApplicationController < Sinatra::Base
     tutor.to_json(include: :appointments)
   end
 
-  get "/pupils" do
-    pupils = Pupil.all
-    pupils.to_json
+  get "/students" do
+    students = Student.all
+    students.to_json
   end
 
-  get "/pupils/:id" do
-    pupil = Pupil.find(params[:id])
-    pupil.to_json(include: :appointments)
+  get "/students/:id" do
+    student = Student.find(params[:id])
+    student.to_json(include: :appointments)
   end
 
   get "/appointments" do

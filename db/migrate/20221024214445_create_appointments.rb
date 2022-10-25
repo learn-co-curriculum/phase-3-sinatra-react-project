@@ -6,7 +6,7 @@ class CreateAppointments < ActiveRecord::Migration[6.1]
       t.string :notes
       t.string :location
       t.integer :tutor_id
-      t.integer :pupil_id
+      t.integer :student_id
     end
   end
 end
