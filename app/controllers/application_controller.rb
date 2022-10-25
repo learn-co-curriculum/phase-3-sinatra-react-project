@@ -8,6 +8,12 @@ class ApplicationController < Sinatra::Base
       all_entries.to_json
   end
 
+  #get specific entry w/ entry_id
+  get '/api/entries/entry-id/:id' do
+    entry = Entry.find_by(id: params[:id].to_i)
+    entry.to_json
+  end
+
   #get specific user's entries based on user id
   get '/api/entries/user/:id' do
       id = params[:id].to_i
@@ -54,6 +60,13 @@ class ApplicationController < Sinatra::Base
     #Favorite.create(user_id: User.all.sample.id, entry_id: Entry.all.sample.id)
   end
 
+  #patch - update an entry w/ entry_id
+  patch '/api/entries/entry-id/:id' do
+    entry = Entry.find_by(id: params[:id].to_i)
+    entry.update(params)
+    entry.to_json
+  end
+
   #delete a favorited entry for a user - used in FavBrewCard.js
   delete '/api/favorited_entries/entry-id/:id' do
     id = params[:id].to_i
@@ -66,13 +79,6 @@ class ApplicationController < Sinatra::Base
     deleted_entry = Entry.find_by(id: params[:id].to_i)
     deleted_entry.destroy
   end
-
-  ######## patch request to edit entries
-  # patch '/api/entries/entry-id/:id' do
-  #   update_entry = Entry.find_by(id: params[:id].to_i)
-  #   update_entry.update(name:?,description:?,location:?, image_url:?)
-  # end
-
 
 end
 
