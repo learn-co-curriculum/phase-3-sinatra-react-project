@@ -43,6 +43,9 @@ group :development do
   gem "rerun"
 end
 
+#faker
+gem 'faker', '~> 2.10', '>= 2.10.2'
+
 # These gems will only be used when we are running tests
 group :test do
   gem "database_cleaner", "~> 2.0"

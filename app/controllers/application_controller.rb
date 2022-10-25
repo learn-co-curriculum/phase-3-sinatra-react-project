@@ -2,8 +2,35 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   # Add your routes here
-  get "/" do
-    { message: "Good luck with your project!" }.to_json
+  get '/users' do
+    users2 = User.all
+    users2.to_json
+  end
+
+  get '/reviews' do
+    reviews2 = Review.all
+    reviews2.to_json
+  end
+
+  get '/restaurants' do
+    restaurants2 = Restaurant.all
+    restaurants2.to_json
+  end
+  
+  
+  get '/users/:id' do
+    users = User.find(params[:id])
+    users.to_json
+  end
+
+  get '/reviews/:id' do
+    reviews = Review.find(params[:id])
+    reviews.to_json
+  end
+
+  get '/restaurants/:id' do
+    restaurants = Restaurant.find(params[:id])
+    restaurants.to_json
   end
 
 end
