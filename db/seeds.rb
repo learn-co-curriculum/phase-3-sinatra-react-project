@@ -42,4 +42,12 @@ data["releases"].map do |r|
   )
 end
 
+1000.times do
+  ListenEvents.create(
+    album_id: rand(1..100),
+    created_at: DateTime.now - (rand * 7),
+    updated_at: DateTime.now - (rand * 7)
+  )
+end
+
 puts "✅ Done seeding!"

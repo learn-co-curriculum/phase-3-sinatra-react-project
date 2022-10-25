@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 2022_10_23_154759) do
 
   create_table "listen_events", force: :cascade do |t|
     t.integer "album_id"
-    t.integer "artist_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
