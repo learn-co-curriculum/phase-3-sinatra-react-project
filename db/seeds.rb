@@ -13,8 +13,21 @@ t4 = Tutor.create(first_name: "Chris", last_name: "Erlendson", location: "Virtua
 puts "Creating students..."
 s1 = Student.create(first_name: "Dan", last_name: "Boley", age: rand(18..45), location: "CT", subject: "SE")
 s2 = Student.create(first_name: "Sam", last_name: "Avery", age: rand(18..45), location: "IL", subject: "SE")
-s3 = Student.create(first_name: "Tim", last_name: "Johnson", age: rand(18..45), location: "NY", subject: "SE")
-s4 = Student.create(first_name: "Matt", last_name: "Matthews", age: rand(18..45), location: "NJ", subject: "SE")
+s3 = Student.create(first_name: "Seth", last_name: "Brendle", age: rand(18..45), location: "NC", subject: "SE")
+s4 = Student.create(first_name: "Nico", last_name: "Garbaccio", age: rand(18..45), location: "NJ", subject: "SE")
+s5 = Student.create(first_name: "Emily", last_name: "Fernschild", age: rand(18..45), location: "CT", subject: "SE")
+s6 = Student.create(first_name: "Paul", last_name: "Yang", age: rand(18..45), location: "NY", subject: "SE")
+s7 = Student.create(first_name: "Jim", last_name: "Baldridge", age: rand(18..45), location: "NY", subject: "SE")
+s8 = Student.create(first_name: "Tyler", last_name: "Hall", age: rand(18..45), location: "NJ", subject: "SE")
+s9 = Student.create(first_name: "Peter", last_name: "Kenz", age: rand(18..45), location: "NC", subject: "SE")
+s10 = Student.create(first_name: "Lucy", last_name: "Tittle", age: rand(18..45), location: "CO", subject: "SE")
+s11 = Student.create(first_name: "Zach", last_name: "Youngdale", age: rand(18..45), location: "TX", subject: "SE")
+s12 = Student.create(first_name: "Chloe", last_name: "Scheffler", age: rand(18..45), location: "TN", subject: "SE")
+s13 = Student.create(first_name: "Gian", last_name: "Carlo De Castro", age: rand(18..45), location: "TX", subject: "SE")
+s14 = Student.create(first_name: "Brianna", last_name: "Brewster", age: rand(18..45), location: "TX", subject: "SE")
+s15 = Student.create(first_name: "Tristen", last_name: "Hammon", age: rand(18..45), location: "GA", subject: "SE")
+s16 = Student.create(first_name: "James", last_name: "Liu", age: rand(18..45), location: "CA", subject: "SE")
+s17 = Student.create(first_name: "Kim", last_name: "Rodrig", age: rand(18..45), location: "CA", subject: "SE")
 
 puts "Creating appointments..."
 
