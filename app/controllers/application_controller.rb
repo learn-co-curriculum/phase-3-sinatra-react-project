@@ -55,7 +55,7 @@ class ApplicationController < Sinatra::Base
   # Appointment Routes
   get "/appointments" do
     appointments = Appointment.all
-    appointments.to_json
+    appointments.to_json(include: [student: { only: [:first_name, :last_name] }, tutor: { only: [:first_name, :last_name] } ])
   end
 
   get "/appointments/:id" do

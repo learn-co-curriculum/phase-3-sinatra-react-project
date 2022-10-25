@@ -11,10 +11,10 @@ t3 = Tutor.create(first_name: "Taylor", last_name: "Tyler", location: "Virtual",
 t4 = Tutor.create(first_name: "Chris", last_name: "Erlendson", location: "Virtual", subject: "SE")
 
 puts "Creating students..."
-s1 = Student.create(first_name: "Dan", last_name: "Boley", location: "CT", subject: "SE")
-s2 = Student.create(first_name: "Sam", last_name: "Avery", location: "IL", subject: "SE")
-s3 = Student.create(first_name: "Tim", last_name: "Johnson", location: "NY", subject: "SE")
-s4 = Student.create(first_name: "Matt", last_name: "Matthews", location: "NJ", subject: "SE")
+s1 = Student.create(first_name: "Dan", last_name: "Boley", age: rand(18..45), location: "CT", subject: "SE")
+s2 = Student.create(first_name: "Sam", last_name: "Avery", age: rand(18..45), location: "IL", subject: "SE")
+s3 = Student.create(first_name: "Tim", last_name: "Johnson", age: rand(18..45), location: "NY", subject: "SE")
+s4 = Student.create(first_name: "Matt", last_name: "Matthews", age: rand(18..45), location: "NJ", subject: "SE")
 
 puts "Creating appointments..."
 
