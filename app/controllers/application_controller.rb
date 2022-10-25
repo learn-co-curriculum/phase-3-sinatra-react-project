@@ -48,6 +48,11 @@ class ApplicationController < Sinatra::Base
   end
 
   #######post favorite an entry in my brews by clicking add favorite
+  post '/api/favorites' do
+    new_fav = Favorite.create(user_id: params[:user_id], entry_id: params[:entry_id])
+    new_fav.to_json
+    #Favorite.create(user_id: User.all.sample.id, entry_id: Entry.all.sample.id)
+  end
 
 
   #delete a favorited entry for a user - used in FavBrewCard.js
