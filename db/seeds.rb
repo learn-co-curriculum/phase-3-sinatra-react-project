@@ -9,6 +9,7 @@ t1 = Tutor.create(first_name: "Shree", last_name: "Pandey", location: "Miami", s
 t2 = Tutor.create(first_name: "Gehrig", last_name: "Barnes", location: "Philly", subject: "SE")
 t3 = Tutor.create(first_name: "Taylor", last_name: "Tyler", location: "Virtual", subject: "SE")
 t4 = Tutor.create(first_name: "Chris", last_name: "Erlendson", location: "Virtual", subject: "SE")
+t5 = Tutor.create(first_name: "D", last_name: "Ritchey", location: "Virtual", subject: "SE")
 
 puts "Creating students..."
 s1 = Student.create(first_name: "Dan", last_name: "Boley", age: rand(18..45), location: "CT", subject: "SE")
