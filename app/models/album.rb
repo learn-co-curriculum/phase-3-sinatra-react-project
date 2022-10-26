@@ -23,8 +23,15 @@ class Album < ActiveRecord::Base
   end
 
   def change_latest_listen
-    latest = ListenEvent.where(id: id).order(:updated_at).first.updated_at
-    update(latest_listen: latest)
-    latest_listen
+    if latest =
+         ListenEvent.where(album_id: id) {
+           latest =
+             ListenEvent.where(album_id: id).order(:updated_at).first.updated_at
+           update(latest_listen: latest)
+           latest_listen
+         }
+    else
+      null
+    end
   end
 end

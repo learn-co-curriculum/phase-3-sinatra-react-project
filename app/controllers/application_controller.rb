@@ -22,6 +22,6 @@ class ApplicationController < Sinatra::Base
   get "/listens/:id" do
     listens = ListenEvent.where(album_id: params[:id])
     orderedListens = listens.order(:updated_at)
-    orderedListens.to_json
+    orderedListens.to_json(include: :album)
   end
 end
