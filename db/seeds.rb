@@ -17,7 +17,8 @@ end
     name: Faker::Restaurant.name,
     food_type: Faker::Restaurant.type,
     summary: Faker::Restaurant.description[0..200],
-    price_rating: rand(0..60) # random number between 10 and 100
+    price_rating: rand(0..60), # random number between 10 and 100
+    favorite: false
   )
 
   

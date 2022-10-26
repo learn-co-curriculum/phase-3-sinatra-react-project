@@ -5,6 +5,7 @@ class CreateRestaurants < ActiveRecord::Migration[6.1]
       t.string :summary
       t.string :food_type
       t.string :price_rating
+      t.boolean :favorite
     end
   end
 end

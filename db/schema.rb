@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2022_10_25_144119) do
     t.string "summary"
     t.string "food_type"
     t.string "price_rating"
+    t.boolean "favorite"
   end
 
   create_table "reviews", force: :cascade do |t|
