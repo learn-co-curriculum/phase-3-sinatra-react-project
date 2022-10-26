@@ -1,6 +1,6 @@
 class Client < ActiveRecord::Base
-    belongs_to :therapist
     has_many :appointments
+    has_many :therapists, through: :appointments
 
     def full_name 
         "#{self.first_name} #{self.last_name}"

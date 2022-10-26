@@ -13,3 +13,6 @@ use Rack::JSONBodyParser
 
 # Our application
 run ApplicationController
+use TherapistController
+use ClientController
+use AppointmentController
