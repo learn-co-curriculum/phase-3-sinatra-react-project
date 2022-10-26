@@ -1,6 +1,6 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
-  
+
   # Tutor Routes
   get "/tutors" do
     tutors = Tutor.all
@@ -72,7 +72,9 @@ class ApplicationController < Sinatra::Base
       tutor_id: params[:tutor_id],
       student_id: params[:student_id]
     )
-    appointment.to_json
+    new_array = []
+    new_array << appointment
+    new_array.to_json(include: [student: { only: [:first_name, :last_name] }, tutor: { only: [:first_name, :last_name] } ])
   end
 
   patch "/appointments/:id" do

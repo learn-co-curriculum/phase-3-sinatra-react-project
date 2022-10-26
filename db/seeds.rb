@@ -5,7 +5,7 @@ Appointment.destroy_all
 puts "🌱 Seeding..."
 
 puts "Creating tutors..."
-t1 = Tutor.create(first_name: "Shree", last_name: "Panday", location: "MIA", subject: "SE")
+t1 = Tutor.create(first_name: "Shree", last_name: "Pandey", location: "Miami", subject: "SE")
 t2 = Tutor.create(first_name: "Gehrig", last_name: "Barnes", location: "Philly", subject: "SE")
 t3 = Tutor.create(first_name: "Taylor", last_name: "Tyler", location: "Virtual", subject: "SE")
 t4 = Tutor.create(first_name: "Chris", last_name: "Erlendson", location: "Virtual", subject: "SE")
