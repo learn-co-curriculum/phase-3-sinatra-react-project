@@ -18,19 +18,5 @@ class ApplicationController < Sinatra::Base
   end
   
   
-  get '/users/:id' do
-    users = User.find(params[:id])
-    users.to_json
-  end
-
-  get '/reviews/:id' do
-    reviews = Review.find(params[:id])
-    reviews.to_json
-  end
-
-  get '/restaurants/:id' do
-    restaurants = Restaurant.find(params[:id])
-    restaurants.to_json
-  end
 
 end

@@ -16,7 +16,7 @@ end
   restaurant = Restaurant.create(
     name: Faker::Restaurant.name,
     food_type: Faker::Restaurant.type,
-    summary: Faker::Restaurant.description,
+    summary: Faker::Restaurant.description[0..200],
     price_rating: rand(0..60) # random number between 10 and 100
   )
 
@@ -31,7 +31,7 @@ end
     # A review belongs to a restaurant and a user, so we must provide those foreign keys
     Review.create(
       score: rand(1..10),
-      comment: Faker::Lorem.sentence,
+      comment: Faker::Restaurant.review,
       restaurant_id: restaurant.id,
       user_id: user.id
     )
