@@ -28,8 +28,6 @@
   </p>
 </div>
 
-
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -141,7 +139,7 @@ Andrea Rosentel - [LinkedIn][linkedin-url1] - [GitHub](https://github.com/Andrea
 
 Alie Brubaker - [LinkedIn][linkedin-url2] - [GitHub](https://github.com/AlbertaLynnBrubaker)
 
-Kelsey Weeks - [@twitter_handle][linkedin-url3] - [GitHub]()
+Kelsey Weeks - [LinkedIn][linkedin-url3]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
