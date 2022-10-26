@@ -24,4 +24,15 @@ class ApplicationController < Sinatra::Base
     orderedListens = listens.order(:updated_at)
     orderedListens.to_json(include: :album)
   end
+
+  get "/search/value=:class&search=:term" do
+    search = "name LIKE (?)", "%#{params[:term]}%"
+    response = params[:class].constantize.where(search)
+    response.to_json
+  end
+
+  delete "/listen_events/:id" do
+    event = ListenEvent.find(params[:id])
+    event.destroy
+  end
 end
