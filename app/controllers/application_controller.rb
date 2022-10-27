@@ -25,6 +25,17 @@ class ApplicationController < Sinatra::Base
     orderedListens.to_json(include: :album)
   end
 
+  post "/listens/create" do
+    Album.find(params[:album_id]).update(latest_listen: params[:dateTime])
+    newListen =
+      ListenEvent.create(
+        album_id: params[:album_id],
+        created_at: params[:dateTime],
+        updated_at: params[:dateTime]
+      )
+    newListen.to_json
+  end
+
   get "/search/value=:class&search=:term" do
     search = "name LIKE (?)", "%#{params[:term]}%"
     response = params[:class].constantize.where(search)
