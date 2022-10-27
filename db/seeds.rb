@@ -49,7 +49,7 @@ puts "🌱 Seeding..."
 puts "Creating tutors..."
 t1 = Tutor.create(first_name: "Shree", last_name: "Pandey", location: people_locations.sample, subject: subjects.sample)
 t2 = Tutor.create(first_name: "Gehrig", last_name: "Barnes", location: people_locations.sample, subject: subjects.sample)
-t3 = Tutor.create(first_name: "Taylor", last_name: "Tyler", location: people_locations.sample, subject: subjects.sample)
+t3 = Tutor.create(first_name: "Tyler", last_name: "Taylor", location: people_locations.sample, subject: subjects.sample)
 t4 = Tutor.create(first_name: "Chris", last_name: "Erlendson", location: people_locations.sample, subject: subjects.sample)
 t5 = Tutor.create(first_name: "D", last_name: "Ritchey", location: people_locations.sample, subject: subjects.sample)
 
