@@ -10,7 +10,7 @@ class ListenEvent < ActiveRecord::Base
       ListenEvent
         .group(:album_id)
         .order("count_id DESC")
-        .limit(5)
+        .limit(15)
         .count(:id)
         .to_a
         .map { |a| a[0] }
@@ -20,7 +20,7 @@ class ListenEvent < ActiveRecord::Base
       ListenEvent
         .group(:album_id)
         .order("count_id DESC")
-        .limit(5)
+        .limit(15)
         .count(:id)
         .to_a
         .map { |a| a[1] }

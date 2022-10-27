@@ -14,6 +14,20 @@ class ApplicationController < Sinatra::Base
     album.to_json(include: %i[artist listen_events])
   end
 
+  get "/artists/:id" do
+    response = Artist.find(params[:id])
+    Artist.find(params[:id]).map { |a| a.update_year }
+    # albumsChrono = artist.albums.order!(:year)
+    # returnArray = artist.merge(albumsChrono)
+    response.to_json
+  end
+
+  get "/artistAlbum/:id" do
+    response = Album.find_by(artist_id: params[:id])
+    # chrono = response.order(:year)
+    response.to_json
+  end
+
   get "/most_listens/" do
     response = ListenEvent.most_listens
     response.to_json
