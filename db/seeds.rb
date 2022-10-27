@@ -16,7 +16,7 @@ end
   restaurant = Restaurant.create(
     name: Faker::Restaurant.name,
     food_type: Faker::Restaurant.type,
-    summary: Faker::Restaurant.description[0..200],
+    summary: Faker::Restaurant.description[0..180],
     price_rating: rand(0..60), # random number between 10 and 100
     favorite: false
   )

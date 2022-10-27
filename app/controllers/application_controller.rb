@@ -43,6 +43,11 @@ class ApplicationController < Sinatra::Base
     # send a response with the deleted review as JSON
     delRes.to_json
   end
+
+  get "/favorite_restaurants" do
+    fav_res = Restaurant.all.where(favorite: true)
+    fav_res.to_json
+  end
   
 
 end
