@@ -38,8 +38,13 @@ class ApplicationController < Sinatra::Base
 
   get "/search/value=:class&search=:term" do
     search = "name LIKE (?)", "%#{params[:term]}%"
+
     response = params[:class].constantize.where(search)
-    response.to_json
+    if (params[:class] == "Artist")
+      response.to_json
+    else
+      response.to_json(include: :artist)
+    end
   end
 
   delete "/listen_events/:id" do
