@@ -41,6 +41,11 @@ class ApplicationController < Sinatra::Base
     response.to_json
   end
 
+  get "/home_page/" do
+    response = Album.all.shuffle.first(3)
+    response.to_json(include: :artist)
+  end
+
   get "/listens/:id" do
     listens = ListenEvent.where(album_id: params[:id])
     orderedListens = listens.order(:updated_at)
