@@ -7,6 +7,11 @@ class ApplicationController < Sinatra::Base
     albums.sort_by! { |a| a[1] }.to_json
   end
 
+  get "/artists" do
+    artists = Artist.pluck(:id, :name)
+    artists.sort_by! { |a| a[1] }.to_json
+  end
+
   get "/albums/:id" do
     album = Album.find(params[:id])
     album.update_year
