@@ -17,8 +17,11 @@ class ApplicationController < Sinatra::Base
   get "/artists/:id" do
     response = Artist.find(params[:id])
     Artist.find(params[:id]).albums.map { |a| a.update_year }
-    # albumsChrono = artist.albums.order!(:year)
-    # returnArray = artist.merge(albumsChrono)
+    response.to_json
+  end
+
+  get "/artistInfo/:id" do
+    response = Artist.find(params[:id]).artist_fetch
     response.to_json
   end
 
