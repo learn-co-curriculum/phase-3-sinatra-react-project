@@ -1,5 +1,55 @@
+require "net/http"
+require "open-uri"
+require "json"
+
 puts "🌱 Seeding spices..."
 
-# Seed your database here
+key = open("./db/.key").read
+
+URL =
+  "https://api.discogs.com/users/theyear1000/collection/folders/0/releases?per_page=500#{key}"
+
+uri = URI.parse(URL)
+response = Net::HTTP.get_response(uri)
+data = JSON.parse(response.body)
+data["releases"].map do |r|
+  remastered =
+    r["basic_information"]["formats"][0]["descriptions"].include? "Remastered"
+  reissue =
+    r["basic_information"]["formats"][0]["descriptions"].include? "Reissue"
+  blank_year = r["basic_information"]["year"] == 0
+  Album.create(
+    name: r["basic_information"]["title"],
+    date_added: r["date_added"],
+    cover_image: r["basic_information"]["cover_image"],
+    release_description:
+      r["basic_information"]["formats"][0]["descriptions"].join(", "),
+    year: r["basic_information"]["year"],
+    artist_id:
+      Artist.find_or_create_by(
+        name:
+          if r["basic_information"]["artists"][0]["name"].slice(-3, 1) == "("
+            r["basic_information"]["artists"][0]["name"].chop.chop.chop.chop
+          else
+            r["basic_information"]["artists"][0]["name"]
+          end,
+        resource_url: r["basic_information"]["artists"][0]["resource_url"]
+      ).id,
+    genre_id:
+      r["basic_information"]["genres"]
+        .map { |g| Genre.find_or_create_by(name: g).id }
+        .join(", "),
+    needs_year_update: reissue || blank_year || remastered,
+    master_album_url: r["basic_information"]["master_url"]
+  )
+end
+
+3000.times do
+  ListenEvent.create(
+    album_id: rand(1..Album.count),
+    created_at: DateTime.now - (rand * 35),
+    updated_at: DateTime.now - (rand * 35)
+  )
+end
 
 puts "✅ Done seeding!"

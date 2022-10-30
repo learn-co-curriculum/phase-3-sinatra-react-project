@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/thomas/code/messarounds/discogs-backend/app/controllers/application_controller.rb:43 self.GET /search/value=:class&search=:term:
+
+    [1;34m38[0m: 
+    [1;34m39[0m:   get [31m[1;31m"[0m[31m/search/value=:class&search=:term[1;31m"[0m[31m[0m [32mdo[0m
+    [1;34m40[0m:     search = [31m[1;31m"[0m[31mname LIKE (?)[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m%#{params[:term]}[0m[31m%[1;31m"[0m[31m[0m
+    [1;34m41[0m:     (params[[33m:class[0m] == [31m[1;31m"[0m[31mArtist[1;31m"[0m[31m[0m) ? i = [1;36mnil[0m : i = [31m[1;31m"[0m[31m(include: :artist)[1;31m"[0m[31m[0m
+    [1;34m42[0m:     response = params[[33m:class[0m].constantize.where(search) { i }
+ => [1;34m43[0m:     binding.pry
+    [1;34m44[0m:     response.to_json
+    [1;34m45[0m:   [32mend[0m
+    [1;34m46[0m: 
+    [1;34m47[0m:   delete [31m[1;31m"[0m[31m/listen_events/:id[1;31m"[0m[31m[0m [32mdo[0m
+    [1;34m48[0m:     event = [1;34;4mListenEvent[0m.find(params[[33m:id[0m])
+

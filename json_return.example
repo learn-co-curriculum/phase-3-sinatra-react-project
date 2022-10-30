@@ -1,0 +1,66 @@
+"id"=>1158751, 
+"instance_id"=>920602891, 
+"date_added"=>"2022-01-20T18:30:44-08:00", 
+"rating"=>0, 
+"basic_information"=>{
+    "id"=>1158751, 
+    "master_id"=>21520, 
+    "master_url"=>"https://api.discogs.com/masters/21520", 
+    "resource_url"=>"https://api.discogs.com/releases/1158751", 
+    "thumb"=>"", 
+    "cover_image"=>"", 
+    "title"=>"In Rainbows", 
+    "year"=>2007, 
+    "formats"=>[
+        {
+            "name"=>"Vinyl", 
+            "qty"=>"2", 
+            "descriptions"=>["12\"", "45 RPM", "Album"]}, 
+        {
+            "name"=>"CD", 
+            "qty"=>"1", 
+            "descriptions"=>["Album"]}, 
+        {
+            "name"=>"CD", 
+            "qty"=>"1", 
+            "descriptions"=>["Enhanced"]}, 
+        {
+            "name"=>"Box Set", 
+            "qty"=>"1", 
+            "descriptions"=>["Limited Edition"]}
+    ], 
+    "labels"=>[
+        {
+            "name"=>"_Xurbia_Xendless Limited", 
+            "catno"=>"_X_X001", 
+            "entity_type"=>"1", 
+            "entity_type_name"=>"Label", 
+            "id"=>101131, 
+            "resource_url"=>"https://api.discogs.com/labels/101131"}, 
+        {
+            "name"=>"_Xurbia_Xendless Limited", 
+            "catno"=>"CD_X_X001", 
+            "entity_type"=>"1", 
+            "entity_type_name"=>"Label", 
+            "id"=>101131, 
+            "resource_url"=>"https://api.discogs.com/labels/101131"}, 
+        {
+            "name"=>"_Xurbia_Xendless Limited", 
+            "catno"=>"CDS_X_X001", 
+            "entity_type"=>"1", 
+            "entity_type_name"=>"Label", 
+            "id"=>101131, 
+            "resource_url"=>"https://api.discogs.com/labels/101131"}
+    ], 
+    "artists"=>[
+        {
+            "name"=>"Radiohead", 
+            "anv"=>"", 
+            "join"=>"", 
+            "role"=>"", 
+            "tracks"=>"", 
+            "id"=>3840, 
+            "resource_url"=>"https://api.discogs.com/artists/3840"}
+    ], 
+    "genres"=>["Rock"], 
+    "styles"=>["Indie Rock"]

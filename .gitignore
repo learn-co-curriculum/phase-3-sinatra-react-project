@@ -16,3 +16,9 @@
 
 # Canvas-specific .results.json
 .results.json
+
+# Other
+db/.key
+/vendor
+app.rb
+
