@@ -26,7 +26,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/artistInfo/:id" do
-    response = Artist.find(params[:id]).artist_fetch
+    response = Artist.find(params[:id]).get_data
     response.to_json
   end
 
