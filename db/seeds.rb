@@ -1,6 +1,8 @@
 puts "🌱 Seeding spices..."
 
-
+Therapist.destroy_all
+Client.destroy_all
+Appointment.destroy_all
 
 t1 = Therapist.create(first_name: "Sarah", last_name: "Smith", licensure: "LPC", years_of_experience: 5)
 t2 = Therapist.create(first_name: "Rick", last_name: "McNab", licensure: "LCSW", years_of_experience: 3)

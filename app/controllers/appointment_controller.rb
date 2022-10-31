@@ -1,6 +1,6 @@
 class AppointmentController < ApplicationController
     get "/appointments" do 
-        appointments = Appointment.all.order(:time)
+        appointments = Appointment.all.order(:time).reorder(:date)
         appointments.to_json(include: [:therapist, :client])
       end
     
