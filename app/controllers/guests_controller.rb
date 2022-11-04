@@ -10,6 +10,16 @@ class GuestsController < ApplicationController
     guest.to_json(include: [:tables])
   end
 
+  delete "/guests/:id" do
+    guest = Guest.find_by_id(params["id"])
+    if guest
+      guest.destroy
+      guest.to_json
+    else
+      { errors: ["Guest Doesn't Exists"]}.to_json
+    end
+  end
+
   patch "/guests/:id" do
     guest = Guest.find_by_id(params["id"])
     if guest
