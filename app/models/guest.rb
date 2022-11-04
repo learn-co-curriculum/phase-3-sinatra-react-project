@@ -1,6 +1,6 @@
 class Guest < ActiveRecord::Base
   belongs_to :table, dependent: :destroy
-  validates :name, :number_of_guests, :reservation, :guest_id, presence: true
+  validates :name, :number_of_guests, :reservation, :table_id, presence: true
   validates :reservation, uniqueness: true
 
   # def as_json(options={})
