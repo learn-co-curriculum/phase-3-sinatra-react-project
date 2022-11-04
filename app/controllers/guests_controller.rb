@@ -10,6 +10,22 @@ class GuestsController < ApplicationController
     guest.to_json(include: [:tables])
   end
 
+  post "/guests" do
+    guest = Guest.create(
+      name: params[:name],
+      number_of_guests: params[:number_of_guests],
+      reservation: params[:reservation],
+      notes: params[:notes],
+      table_id: params[:table_id]
+      ) 
+      guest.to_json
+    if guest.save
+      guest.to_json(include: :tables)
+    else
+      { error: guest.errors.full_messages }.to_json
+    end
+  end
+
   delete "/guests/:id" do
     guest = Guest.find_by_id(params["id"])
     if guest
