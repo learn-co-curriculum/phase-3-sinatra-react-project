@@ -21,6 +21,14 @@ class TablesController < ApplicationController
     end
   end
 
-
+  delete "/tables/:id" do
+    table = Table.find_by_id(params["id"])
+    if table 
+      table.destroy
+      table.to_json
+    else
+      { errors: ["Cannot Delete Table Now"]}
+    end
+  end
 
 end
