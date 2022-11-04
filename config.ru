@@ -12,6 +12,6 @@ end
 use Rack::JSONBodyParser
 
 # Our application
-use guests_controller
-use tables_controller
+use GuestsController
+# use TablesController
 run ApplicationController
