@@ -2,12 +2,12 @@ class TablesController < ApplicationController
 
   get "/tables" do
     table = Table.all
-    table.to_json(include: [:guest])
+    table.to_json(include: [:guests])
   end
 
   get "/tables/:id" do
     table = Table.find_by_id(params["id"])
-    table.to_json(include: [:guest])
+    table.to_json(include: [:guests])
   end
 
   post "/tables" do
@@ -15,7 +15,7 @@ class TablesController < ApplicationController
       table_number: params[:table_number],
     )
     if table.save
-      table.to_json(include: :guest)
+      table.to_json(include: :guests)
     else
       { error: table.errors.full_messages }.to_json
     end

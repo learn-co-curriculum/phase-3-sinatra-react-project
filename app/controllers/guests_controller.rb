@@ -2,12 +2,12 @@ class GuestsController < ApplicationController
 
   get "/guests" do
     guest = Guest.all
-    guest.to_json(include: :tables)
+    guest.to_json(include: :table)
   end
 
   get "/guests/:id" do
     guest = Guest.find_by_id(params["id"])
-    guest.to_json(include: [:tables])
+    guest.to_json(include: [:table])
   end
 
   post "/guests" do
@@ -20,7 +20,7 @@ class GuestsController < ApplicationController
       ) 
       guest.to_json
     if guest.save
-      guest.to_json(include: :tables)
+      guest.to_json(include: :table)
     else
       { error: guest.errors.full_messages }.to_json
     end
@@ -40,7 +40,7 @@ class GuestsController < ApplicationController
     guest = Guest.find_by_id(params["id"])
     if guest
       guest.update(params)
-      guest.to_json(include: :tables)
+      guest.to_json(include: :table)
     else
       { error: guest.errors.full_messages }.to_json
     end
