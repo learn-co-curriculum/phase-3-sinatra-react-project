@@ -58,3 +58,12 @@ const ProjectList = ({
     useEffect(() => {
       setSelectedPhase(phase);
     }, [phase, setSelectedPhase])
+    useEffect(() => {
+        // this effect depends on the search query parameter from the url:
+        // For example: ?q=code
+        // it will update the state for the text input to match the value
+        // in the URL (used when sharing search results with others by link)
+        // For more info on how this works, feel free to read the docs below:
+        // https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/get
+        setSearchInputText(new URLSearchParams(search).get('q'))
+      }, [search])
