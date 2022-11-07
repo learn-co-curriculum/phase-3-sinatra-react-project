@@ -6,11 +6,11 @@ const ProjectList = ({
   projects,
   onProjectEdit,
   onProjectDelete,
-  setSelectedPhase,
+  setSelectedCategory,
   setSearchQuery
 }) => {
   const [searchInputText, setSearchInputText] = useState("");
-  const { phase } = useParams();
+  const { category } = useParams();
   // useLocation provides access to query parameters as search
   const { search } = useLocation();
   // useHistory gives access to the history object so we can update the url
@@ -19,8 +19,9 @@ const ProjectList = ({
   const { url } = useRouteMatch(); 
 
   
-  console.log('useLocation() search', search);
-  console.log('useRouteMatch url', url);
+  // console.log('useLocation() search', search);
+  // console.log('useRouteMatch url', url);
+
 
   const projectItems = projects.map((project) => {
     return (
@@ -32,45 +33,109 @@ const ProjectList = ({
       />
     );
   });
+
   const handleOnChange = (e) => setSearchInputText(e.target.value);
 
   useEffect(() => {
     const scheduledUpdate = setTimeout(() => {
       setSearchQuery(searchInputText);
+
       if (searchInputText) {
         history.push(`${url}?${new URLSearchParams({q: encodeURI(searchInputText)}).toString()}`)
       } else {
         history.push(`${url}`)
       }
     }, 300)
+    
     return () => {
-        clearTimeout(scheduledUpdate);
-      }
-    }, [setSearchQuery, searchInputText, history, url])
-  
-    useEffect(() => {
-      setSelectedPhase(phase);
-    }, [phase, setSelectedPhase])
-    useEffect(() => {
-        setSearchInputText(new URLSearchParams(search).get('q'))
-      }, [search])
-      return (
-        <section>
-         <h2>Books</h2>
-          <div className='filter'>
-          <button style={{color: "darkkhaki"}} onClick={()=>setSelectedCategory("")}>All</button>
-          <button style={{color: "darkkhaki"}} onClick={()=>setSelectedCategory("Non-Fiction")}>Non-Fiction</button>
-          <button style={{color: "darkkhaki"}} onClick={()=>setSelectedCategory("Comic")}>Comic</button>
-          <button style={{color: "darkkhaki"}} onClick={()=>setSelectedCategory("Thiller")}>Thriller</button>
-          <button style={{color: "darkkhaki"}} onClick={()=>setSelectedCategory("Romance")}>Romance</button>
-          <button style={{color: "darkkhaki"}} onClick={()=>setSelectedCategory("Fiction")}>Fiction</button>
-          <button style={{color: "darkkhaki"}} onClick={()=>setSelectedCategory("TextBook")}>Textbook</button>
-          </div>
-          <input type="text" placeholder="Search..." onChange={handleOnChange} value={searchInputText} />
-    
-          <ul className="cards">{projectItems}</ul>
-        </section>
-      );
-    };
-    
-    export default ProjectList;
+      clearTimeout(scheduledUpdate);
+    }
+  }, [setSearchQuery, searchInputText, history, url])
+
+  useEffect(() => {
+    setSelectedCategoty(category);
+  }, [category, setSelectedCategory])
+
+  useEffect(() => {
+
+    setSearchInputText(new URLSearchParams(search).get('q'))
+  }, [search])
+
+
+  return (
+    <section>
+      <h2>Books</h2>
+
+      <div className="filter">
+        <NavLink 
+          className="button" 
+          exact to={{
+            pathname: "/books",
+            search: search
+          }}
+        >
+          All
+        </NavLink>
+        <NavLink 
+          className="button" 
+          to={{
+            pathname: "/books/category/non-fiction",
+            search: search
+          }}
+        >
+          Non-fiction
+        </NavLink>
+        <NavLink 
+          className="button" 
+          to={{
+            pathname: "/books/category/comic",
+            search: search
+          }}
+        >
+          Comic
+        </NavLink>
+        <NavLink
+          className="button"
+          to={{
+            pathname: "/books/category/thriller",
+            search: search
+          }}
+        >
+          Thiller
+        </NavLink>
+        <NavLink 
+          className="button" 
+          to={{
+            pathname:"/books/category/romance",
+            search: search
+          }}
+        >
+          Romance
+        </NavLink>
+        <NavLink 
+          className="button" 
+          to={{
+            pathname: "/books/category/fiction",
+            search: search
+          }}
+        >
+          Fiction
+        </NavLink>
+        <NavLink 
+          className="button" 
+          to={{
+            pathname: "/books/category/textbook",
+            search: search
+          }}
+        >
+          TextBook
+        </NavLink>
+      </div>
+      <input type="text" placeholder="Search..." onChange={handleOnChange} value={searchInputText} />
+
+      <ul className="cards">{projectItems}</ul>
+    </section>
+  );
+};
+
+export default ProjectList;

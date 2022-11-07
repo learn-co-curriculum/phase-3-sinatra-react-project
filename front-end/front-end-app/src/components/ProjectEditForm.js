@@ -2,16 +2,18 @@ import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 
 const initialState = {
-  name: "",
-  about: "",
-  phase: "",
-  link: "",
-  image: "",
-};
+
+  title:"",
+  author:"",
+  summary:"",
+  price:"",
+  image:"",
+  category:""
+  };
 const ProjectEditForm = ({ onUpdateProject }) => {
   const [formData, setFormData] = useState(initialState);
 
-  const { name, about, phase, link, image } = formData;
+  const { title, author, summary, price, image ,category} = formData;
 
   const { id } = useParams();
   const history = useHistory()
@@ -49,58 +51,74 @@ const ProjectEditForm = ({ onUpdateProject }) => {
 
   return (
     <form onSubmit={handleSubmit} className="form" autoComplete="off">
-      <h3>Edit Project</h3>
+      <h3>Edit Book</h3>
 
-      <label htmlFor="name">Name</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        value={name}
+      <label htmlFor="tilte">Title</label>
+       <input 
+       type="text"
+        id="title" 
+        name="title"
         onChange={handleChange}
-      />
+        value={formData.title}
+        />
 
-      <label htmlFor="about">About</label>
-      <textarea
-        id="about"
-        name="about"
-        value={about}
-        onChange={handleChange}
-      />
+      <label htmlFor="author">Author</label>
+       <input 
+       type="text" 
+       id="author" 
+       name="author"
+       onChange={handleChange}
+       value={formData.author}
+       />
+       
 
-      <label htmlFor="phase">Phase</label>
-      <select
-        name="phase"
-        id="phase"
-        value={phase}
-        onChange={handleChange}
-      >
-        <option value="1">Phase 1</option>
-        <option value="2">Phase 2</option>
-        <option value="3">Phase 3</option>
-        <option value="4">Phase 4</option>
-        <option value="5">Phase 5</option>
-      </select>
+      <label htmlFor="summary">Summary</label>
+       <textarea 
+       id="summary" 
+       name="summary"
+       onChange={handleChange}
+       value={formData.summary}
+       ></textarea>
+      
 
-      <label htmlFor="link">Project Homepage</label>
-      <input
-        type="text"
-        id="link"
-        name="link"
-        value={link}
-        onChange={handleChange}
-      />
+       <label htmlFor="category">Category</label>
+       <select 
+       name="category" 
+       id="category"
+       onChange={handleChange}
+       value={formData.category}
+       >
 
-      <label htmlFor="image">Screenshot</label>
-      <input
-        type="text"
-        id="image"
+       <option>Select category</option>
+       <option value="Non Fiction">Non Fiction</option>
+       <option value="Comic">Comic</option>
+       <option value="Thiller">Thriller</option>
+       <option value="Romance">Romance</option>
+       <option value="Fiction">Fiction</option>
+       <option value="TextBook">TextBook</option>
+       </select>
+
+
+       <lable htmlFor='image'>Image</lable>
+        <input 
+        type="text" 
+        id="image" 
         name="image"
-        value={image}
         onChange={handleChange}
-      />
+        value={formData.image}
+        />
 
-      <button type="submit">Update Project</button>
+        <label htmlFor="price">Price</label>
+       <input 
+       type="text" 
+       id="price" 
+       name="price"
+       onChange={handleChange}
+       value={formData.price}
+       
+       />
+
+      <button type="submit">Update Book</button>
     </form>
   );
 };
