@@ -50,3 +50,11 @@ const ProjectList = ({
         history.push(`${url}`)
       }
     }, 300)
+    return () => {
+        clearTimeout(scheduledUpdate);
+      }
+    }, [setSearchQuery, searchInputText, history, url])
+  
+    useEffect(() => {
+      setSelectedPhase(phase);
+    }, [phase, setSelectedPhase])
