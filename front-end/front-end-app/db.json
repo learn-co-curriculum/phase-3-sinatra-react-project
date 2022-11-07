@@ -1,103 +1,96 @@
 {
-    "projects": [
-      {
-        "id": 1,
-        "name": "Great Outdoors Guide",
-        "about": "Plan your next adventure to in the U.S. National Parks!",
-        "phase": 4,
-        "link": "https://great-outdoors-guide.netlify.app",
-        "image": "https://i.imgur.com/8GnP2Uw.png",
-        "claps": 0
-      },
-      {
-        "id": 2,
-        "name": "Book Her #3",
-        "about": "The app takes you (the Casting Director) through a series of questions to determine the Models you need for your next Project.",
-        "phase": 4,
-        "link": "https://bookher.netlify.app/new_project",
-        "image": "https://i.imgur.com/INs84Uk.png",
-        "claps": 5
-      },
-      {
-        "id": 3,
-        "name": "Code Bucket",
-        "about": "Web-based CSS, JS and HTML Editor",
-        "phase": 4,
-        "link": "https://code-bucket.netlify.app",
-        "image": "https://i.imgur.com/Hz84TA2.png",
-        "claps": 7
-      },
-      {
-        "id": 11,
-        "name": "Yourseum",
-        "about": "Find great art",
-        "phase": 4,
-        "link": "https://yourseum.netlify.app",
-        "image": "https://i.imgur.com/yywQCoi.png",
-        "claps": 0
-      },
-      {
-        "id": 12,
-        "name": "Spreddit",
-        "about": "A Global Community of Like Minded Humans Socially Distancing ",
-        "phase": 4,
-        "link": "https://spreddit.netlify.app",
-        "image": "https://i.imgur.com/cyZCpWs.png",
-        "claps": 0
-      },
-      {
-        "id": 13,
-        "name": "snackATTACK",
-        "about": "It's Time to Discover",
-        "phase": 4,
-        "link": "https://snackattack.netlify.app",
-        "image": "https://i.imgur.com/VTJB4qy.png",
-        "claps": 0
-      },
-      {
-        "id": 20,
-        "name": "YouTravel",
-        "about": "YouTube for Travel Videos",
-        "phase": 3,
-        "link": "https://youtravel.netlify.app/",
-        "image": "https://i.imgur.com/Y6mlORn.png",
-        "claps": 0
-      },
-      {
-        "id": 22,
-        "name": "Breathe",
-        "about": "Meditation",
-        "phase": 3,
-        "link": "https://github.com/maifam/breathe_frontend",
-        "image": "https://i.imgur.com/hAuKx3K.png",
-        "claps": 0
-      },
-      {
-        "id": 23,
-        "name": "HomeStory",
-        "about": "A web app for storing info about furniture items you plan on purchasing in the future or simply just want to keep tabs of.",
-        "phase": 3,
-        "link": "https://homestory.netlify.app",
-        "image": "https://i.imgur.com/il8ft21.png",
-        "claps": 0
-      },
-      {
-        "id": 24,
-        "name": "Locksley To Do",
-        "about": "A todo list and calendar app",
-        "phase": 4,
-        "link": "https://www.locksleyr.com",
-        "image": "https://i.imgur.com/XOnaclL.png",
-        "claps": 0
-      },
-      {
-        "id": 25,
-        "name": "GamesRx",
-        "about": "Game info and reviews",
-        "phase": 4,
-        "link": "https://gamesrx.netlify.app",
-        "image": "https://i.imgur.com/Japzh6v.png",
-        "claps": 0
-      }
-    ]
-  }
+  "projects": [
+    {
+      "id": 1,
+      "title": "The Subtle Art Of Not Giving A Fuck",
+      "author": "Mark Manson",
+      "summary": "A counterintuitive Approach To Living A Good Life.",
+      "category": "Non-Fiction",
+      "image": "https://covers.openlibrary.org/b/id/8231990-M.jpg",
+      "price": 1500,
+      "claps": 0
+    },
+    {
+      "id": 2,
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "summary": "An Easy And Proven Wyto Build Good Habits and Break ad Ones. ",
+      "category": "Non-Fiction",
+      "image": "https://covers.openlibrary.org/b/id/12539702-M.jpg",
+      "claps": 5
+    },
+    {
+      "id": 6,
+      "title": "ENDLESSLY",
+      "author": "Kiersten White",
+      "summary": "Sixteen-year-old Evie is forced to face the truth about her supernatural past.",
+      "category": "Thiller",
+      "image": "https://covers.openlibrary.org/w/id/8787911-M.jpg",
+      "claps": 7
+    },
+    {
+      "id": "8",
+      "title": "A HUSBANDS PRICE",
+      "author": "Diana Hamilton",
+      "summary": "Two Loves Birds",
+      "category": "Romance",
+      "image": "https://covers.openlibrary.org/w/id/2407332-M.jpg",
+      "claps": 0
+    },
+    {
+      "id": "10",
+      "title": "IT",
+      "author": "Stephen King",
+      "summary": "Scary",
+      "category": "Thiller",
+      "image": "https://covers.openlibrary.org/w/id/8569284-M.jpg",
+      "claps": 0
+    },
+    {
+      "id": "12",
+      "title": "CALCULUS",
+      "author": "Robert Ellis",
+      "summary": "Two Loves Birds",
+      "category": "Textbook",
+      "image": "https://covers.openlibrary.org/w/id/19874-M.jpg",
+      "claps": 0
+    },
+    {
+      "id": "13",
+      "title": "NATURE MATHEMATICS",
+      "author": "Karl j Smith",
+      "summary": "Mathematics",
+      "category": "Textbook",
+      "image": "https://covers.openlibrary.org/w/id/364010-M.jpg",
+      "claps": 0
+    },
+    {
+      "id": "14",
+      "title": "DICTIONARY OF STATISTICS TERMS",
+      "author": "Oliver Boyd",
+      "summary": "Statistics terms",
+      "category": "Textbook",
+      "image": "https://covers.openlibrary.org/w/id/4522317-M.jpg",
+      "claps": 0
+    },
+    {
+      "id": "15",
+      "title": "It Ends With Us",
+      "author": "Coolen Hoover",
+      "summary": "Lily has always had it easy",
+      "price": "2000",
+      "category": "Romance",
+      "image": "https://covers.openlibrary.org/b/id/10473609-M.jpg",
+      "claps": 0
+    },
+    {
+      "title": "Science and controversey",
+      "author": "A. J. Meadows",
+      "summary": "a biography of Sir Norman Lockyer",
+      "price": "4000",
+      "category": "TextBook",
+      "image": "https://covers.openlibrary.org/w/id/8919212-M.jpg",
+      "claps": 0
+    }
+  ]
+}

@@ -22,7 +22,7 @@ const App = () => {
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/projects">
+        <Route path="/books">
           <ProjectsContainer />
         </Route>
       </Switch>
