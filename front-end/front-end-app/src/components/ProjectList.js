@@ -56,63 +56,15 @@ const ProjectList = ({
       }, [search])
       return (
         <section>
-          <h2>Projects</h2>
-    
-          <div className="filter">
-            <NavLink 
-              className="button" 
-              exact to={{
-                pathname: "/projects",
-                search: search
-              }}
-            >
-              All
-            </NavLink>
-            <NavLink 
-              className="button" 
-              to={{
-                pathname: "/projects/phase/5",
-                search: search
-              }}
-            >
-              Phase 5
-            </NavLink>
-            <NavLink 
-              className="button" 
-              to={{
-                pathname: "/projects/phase/4",
-                search: search
-              }}
-            >
-              Phase 4
-            </NavLink>
-            <NavLink
-              className="button"
-              to={{
-                pathname: "/projects/phase/3",
-                search: search
-              }}
-            >
-              Phase 3
-            </NavLink>
-            <NavLink 
-              className="button" 
-              to={{
-                pathname: "/projects/phase/2",
-                search: search
-              }}
-            >
-              Phase 2
-            </NavLink>
-            <NavLink 
-              className="button" 
-              to={{
-                pathname: "/projects/phase/1",
-                search: search
-              }}
-            >
-              Phase 1
-            </NavLink>
+         <h2>Books</h2>
+          <div className='filter'>
+          <button style={{color: "darkkhaki"}} onClick={()=>setSelectedCategory("")}>All</button>
+          <button style={{color: "darkkhaki"}} onClick={()=>setSelectedCategory("Non-Fiction")}>Non-Fiction</button>
+          <button style={{color: "darkkhaki"}} onClick={()=>setSelectedCategory("Comic")}>Comic</button>
+          <button style={{color: "darkkhaki"}} onClick={()=>setSelectedCategory("Thiller")}>Thriller</button>
+          <button style={{color: "darkkhaki"}} onClick={()=>setSelectedCategory("Romance")}>Romance</button>
+          <button style={{color: "darkkhaki"}} onClick={()=>setSelectedCategory("Fiction")}>Fiction</button>
+          <button style={{color: "darkkhaki"}} onClick={()=>setSelectedCategory("TextBook")}>Textbook</button>
           </div>
           <input type="text" placeholder="Search..." onChange={handleOnChange} value={searchInputText} />
     
