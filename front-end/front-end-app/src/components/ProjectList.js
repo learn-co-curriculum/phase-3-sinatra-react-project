@@ -37,13 +37,6 @@ const ProjectList = ({
   useEffect(() => {
     const scheduledUpdate = setTimeout(() => {
       setSearchQuery(searchInputText);
-      // when we debounce and update the fetch request we also want to:
-      // update the url with the contents of the search input text
-      // we use the url from useRouteMatch to access the current route
-      // without query parameters
-      // currently this could be /projects or /projects/phase/5
-      // we'll add on a query parameter containing the search text or 
-      // remove the query parameter if the search input is empty
       if (searchInputText) {
         history.push(`${url}?${new URLSearchParams({q: encodeURI(searchInputText)}).toString()}`)
       } else {
@@ -59,11 +52,73 @@ const ProjectList = ({
       setSelectedPhase(phase);
     }, [phase, setSelectedPhase])
     useEffect(() => {
-        // this effect depends on the search query parameter from the url:
-        // For example: ?q=code
-        // it will update the state for the text input to match the value
-        // in the URL (used when sharing search results with others by link)
-        // For more info on how this works, feel free to read the docs below:
-        // https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/get
         setSearchInputText(new URLSearchParams(search).get('q'))
       }, [search])
+      return (
+        <section>
+          <h2>Projects</h2>
+    
+          <div className="filter">
+            <NavLink 
+              className="button" 
+              exact to={{
+                pathname: "/projects",
+                search: search
+              }}
+            >
+              All
+            </NavLink>
+            <NavLink 
+              className="button" 
+              to={{
+                pathname: "/projects/phase/5",
+                search: search
+              }}
+            >
+              Phase 5
+            </NavLink>
+            <NavLink 
+              className="button" 
+              to={{
+                pathname: "/projects/phase/4",
+                search: search
+              }}
+            >
+              Phase 4
+            </NavLink>
+            <NavLink
+              className="button"
+              to={{
+                pathname: "/projects/phase/3",
+                search: search
+              }}
+            >
+              Phase 3
+            </NavLink>
+            <NavLink 
+              className="button" 
+              to={{
+                pathname: "/projects/phase/2",
+                search: search
+              }}
+            >
+              Phase 2
+            </NavLink>
+            <NavLink 
+              className="button" 
+              to={{
+                pathname: "/projects/phase/1",
+                search: search
+              }}
+            >
+              Phase 1
+            </NavLink>
+          </div>
+          <input type="text" placeholder="Search..." onChange={handleOnChange} value={searchInputText} />
+    
+          <ul className="cards">{projectItems}</ul>
+        </section>
+      );
+    };
+    
+    export default ProjectList;
