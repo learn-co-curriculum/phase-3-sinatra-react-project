@@ -13,4 +13,22 @@ const App = () => {
     setIsDarkMode((isDarkMode) => !isDarkMode);
   };
 
+  return (
+    <div className={isDarkMode ? "App" : "App light"}>
+      <Header isDarkMode={isDarkMode} onToggleDarkMode={onToggleDarkMode} />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/projects">
+          <ProjectsContainer />
+        </Route>
+      </Switch>
+    </div>
+  );
+};
+
 export default App;
