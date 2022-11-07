@@ -9,3 +9,20 @@ function ProjectsContainer() {
     const [projects, setProjects] = useState([]);
     const [selectedPhase, setSelectedPhase] = useState("");
     const [searchQuery, setSearchQuery] = useState("");
+
+    useEffect(() => {
+        let url;
+        if (selectedPhase && searchQuery) {
+          url = `http://localhost:4000/projects?phase=${selectedPhase}&q=${encodeURI(searchQuery)}`;
+        } else if (searchQuery) {
+          url = `http://localhost:4000/projects?q=${encodeURI(searchQuery)}`;
+        } else if (selectedPhase) {
+          url = `http://localhost:4000/projects?phase=${selectedPhase}`;
+        } else {
+          url = "http://localhost:4000/projects";
+        }
+        fetch(url)
+          .then((resp) => resp.json())
+          .then((projects) => setProjects(projects));
+      }, [selectedPhase, searchQuery]);
+      
