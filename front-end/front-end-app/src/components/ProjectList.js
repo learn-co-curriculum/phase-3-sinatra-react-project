@@ -21,3 +21,14 @@ const ProjectList = ({
   
   console.log('useLocation() search', search);
   console.log('useRouteMatch url', url);
+
+  const projectItems = projects.map((project) => {
+    return (
+      <ProjectListItem
+        key={project.id}
+        project={project}
+        onProjectEdit={onProjectEdit}
+        onProjectDelete={onProjectDelete}
+      />
+    );
+  });
