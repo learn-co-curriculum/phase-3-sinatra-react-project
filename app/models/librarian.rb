@@ -1,0 +1,2 @@
+class Librarian < Member
+end
