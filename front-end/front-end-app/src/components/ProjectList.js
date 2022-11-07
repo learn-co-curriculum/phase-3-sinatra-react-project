@@ -32,3 +32,21 @@ const ProjectList = ({
       />
     );
   });
+  const handleOnChange = (e) => setSearchInputText(e.target.value);
+
+  useEffect(() => {
+    const scheduledUpdate = setTimeout(() => {
+      setSearchQuery(searchInputText);
+      // when we debounce and update the fetch request we also want to:
+      // update the url with the contents of the search input text
+      // we use the url from useRouteMatch to access the current route
+      // without query parameters
+      // currently this could be /projects or /projects/phase/5
+      // we'll add on a query parameter containing the search text or 
+      // remove the query parameter if the search input is empty
+      if (searchInputText) {
+        history.push(`${url}?${new URLSearchParams({q: encodeURI(searchInputText)}).toString()}`)
+      } else {
+        history.push(`${url}`)
+      }
+    }, 300)
