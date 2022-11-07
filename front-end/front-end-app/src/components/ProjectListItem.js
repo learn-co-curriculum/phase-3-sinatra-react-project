@@ -16,3 +16,10 @@ const ProjectListItem = ({
     const handleEditClick = () => {
       onProjectEdit(project);
     };
+
+    const handleDeleteClick = () => {
+        onProjectDelete(id)
+        fetch(`http://localhost:4000/projects/${id}`, {
+          method: "DELETE"
+        })
+      };
