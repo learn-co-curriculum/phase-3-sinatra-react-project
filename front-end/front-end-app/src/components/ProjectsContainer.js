@@ -25,4 +25,21 @@ function ProjectsContainer() {
           .then((resp) => resp.json())
           .then((projects) => setProjects(projects));
       }, [selectedPhase, searchQuery]);
-      
+
+      const onAddProject = (newProj) => {
+        setProjects((projects) => [...projects, newProj]);
+      };
+    
+      const onUpdateProject = (updatedProject) => {
+        setProjects(projects => projects.map(originalProject => {
+          if (originalProject.id === updatedProject.id) {
+            return updatedProject;
+          } else {
+            return originalProject;
+          }
+        }))
+      };
+    
+      const onProjectDelete = (projectId) => {
+        setProjects(projects => projects.filter(p => p.id !== projectId))
+      };
