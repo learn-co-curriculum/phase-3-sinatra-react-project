@@ -8,3 +8,16 @@ const ProjectList = ({
   onProjectDelete,
   setSelectedPhase,
   setSearchQuery
+}) => {
+  const [searchInputText, setSearchInputText] = useState("");
+  const { phase } = useParams();
+  // useLocation provides access to query parameters as search
+  const { search } = useLocation();
+  // useHistory gives access to the history object so we can update the url
+  const history = useHistory();
+  // useRouteMatch used to access the url without any query parameters
+  const { url } = useRouteMatch(); 
+
+  
+  console.log('useLocation() search', search);
+  console.log('useRouteMatch url', url);
