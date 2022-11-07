@@ -5,10 +5,12 @@ import About from "./components/About";
 import ProjectsContainer from "./components/ProjectsContainer";
 
 import Home from "./components/Home";
-function App() {
-  return (
-    <App/>
-  );
-}
+
+const App = () => {
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  const onToggleDarkMode = () => {
+    setIsDarkMode((isDarkMode) => !isDarkMode);
+  };
 
 export default App;
