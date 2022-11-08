@@ -6,7 +6,14 @@ class ApplicationController < Sinatra::Base
     Item.all.to_json(include: {category: {only: [:id, :name]}})
   end
   
-post "/" do 
+  post "/bucket_list" do
+    item = Item.new(name: params[:name], completed: false, category_id: params[:category_id])
+    if item.save
+      item.to_json(include: {category: {only: [:id, :name]}})
+    else
+      {errors: item.errors_array}.to_json
+    end  
+  end
 
 
 end
