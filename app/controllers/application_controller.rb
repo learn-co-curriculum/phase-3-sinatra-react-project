@@ -15,11 +15,16 @@ class ApplicationController < Sinatra::Base
     end  
   end
 
-
-end
-patch "/" do
-
-end
+delete '/bucket_list/:id' do
+    item = Item.find_by_id(params[:id])
+    
+    if item 
+      item.destroy
+      item.to_json(include: {category: {only: [:id, :name]}})
+    else
+      {errors: "Item not found"}.to_json
+    end  
+  end
 delete "/" do
   
 end
