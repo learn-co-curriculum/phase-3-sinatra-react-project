@@ -2,8 +2,8 @@ class ApplicationController < Sinatra::Base
   
     
     # Add your routes here
-    get "/" do
-
+  get "/" do
+    #  working controller
         end
 
   post "/" do 
