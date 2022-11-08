@@ -5,7 +5,7 @@ class CreateBooks < ActiveRecord::Migration[6.1]
       t.integer :author_id
       t.string :summary
       t.string :category
-      t.string :image_url
+      t.string :image
       t.integer :price
   end
 end

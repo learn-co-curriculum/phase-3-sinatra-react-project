@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2022_11_07_204425) do
     t.integer "author_id"
     t.string "summary"
     t.string "category"
-    t.string "image_url"
+    t.string "image"
     t.integer "price"
   end
 
