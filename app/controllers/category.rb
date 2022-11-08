@@ -16,9 +16,14 @@ class ApplicationController < Sinatra::Base
             {errors: category.errors_array}.to_json
         end
       end
-  
-  delete "/" do
-    
-  end
 
-  end
+     delete '/bucket_list/categories/:name' do
+        category = Category.find_by(name: params[:name])
+        if category
+            category.destroy
+            category.to_json(include: :items)
+        else
+            {errors: "Category not found"}.to_json
+        end
+    end
+end
