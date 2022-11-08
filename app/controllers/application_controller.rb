@@ -113,10 +113,30 @@ class ApplicationController < Sinatra::Base
     data ? data.to_json : {message: "Could Not find that deliverable"}.to_json
   end
 
+  # update deliverables by project id
+  put "/api/projects/:id/deliverables/:item_id" do
+    #find the item by id
+    item = Deliverable.find(params[:item_id])
+    #update by project id
+    item.update(
+      name: params[:name]? params[:name] : item[:name],
+      status: params[:status],
+      assigned: params[:assigned]? params[:assigned] : item[:assigned]
+     )
+  end
+
+   # deletes project deliverable by id
+   delete "/api/projects/:id/deliverables/:item_id" do
+    #find the item by id
+    item = Deliverable.find(params[:item_id])
+    item.destroy
+
+    {message:"Project Deliverable Deleted Successfully"}.to_json
+  end
+
+
   # post deliverables by project id
   post "/api/projects/:id/deliverables" do
-    #find the user
-    data = Project.find(params[:id])
     #find add by project id
     Deliverable.create(
       name: params[:name],
@@ -124,7 +144,6 @@ class ApplicationController < Sinatra::Base
       assigned: params[:assigned]
      )
   end
-
 
 
   # deletes projects by id
