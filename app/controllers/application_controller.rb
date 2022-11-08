@@ -124,6 +124,17 @@ class ApplicationController < Sinatra::Base
       assigned: params[:assigned]? params[:assigned] : item[:assigned]
      )
   end
+
+   # deletes project deliverable by id
+   delete "/api/projects/:id/deliverables/:item_id" do
+    #find the item by id
+    item = Deliverable.find(params[:item_id])
+    item.destroy
+
+    {message:"Project Deliverable Deleted Successfully"}.to_json
+  end
+
+
   # post deliverables by project id
   post "/api/projects/:id/deliverables" do
     #find the user
