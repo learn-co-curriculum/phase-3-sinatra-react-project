@@ -25,9 +25,8 @@ class ApplicationController < Sinatra::Base
     User.find(params[:id]).to_json
   end
 
-
+  #allows for user creation,
   post "/api/users" do
-
     User.create(
       username: params[:username],
       email: params[:email],
@@ -37,6 +36,7 @@ class ApplicationController < Sinatra::Base
      )
   end
 
+  # helps us to put/update user info
   put "/api/users/:id" do
     user = User.find(params[:id])
     user.update(
@@ -50,12 +50,67 @@ class ApplicationController < Sinatra::Base
     user.to_json
   end
 
+  # deletes user by id
   delete "/api/users/:id" do
     user = User.find(params[:id])
     user.destroy
 
-    {message:"Deleted Successfully"}.to_json
+    {message:"User Deleted Successfully"}.to_json
   end
 
+
+
+
+  #====================================
+  # PROJECT CONTROLLER SECTION
+  #====================================
+
+   # get all projects in the database
+   get "/api/projects" do
+    Project.all.to_json
+  end
+
+  #Get all projects by ID
+  get "/api/projects/:id" do
+    Project.find(params[:id]).to_json
+  end
+
+  #allows for projects creation,
+  post "/api/projects" do
+   
+    Project.create(
+      name: params[:name],
+      creator: params[:creator],
+      desc: params[:desc],
+      timeframe: params[:timeframe],
+      status: params[:status],
+      scope: params[:scope],
+      approach: params[:approach]
+     )
+  end
+
+  # helps us to put/update projects info
+  put "/api/projects/:id" do
+    project = Project.find(params[:id])
+    project.update(
+      name: params[:name]? params[:name]: project[:name],
+      creator: params[:creator]?  params[:creator]: project[:creator],
+      desc: params[:desc]? params[:desc]: project[:desc],
+      timeframe: params[:timeframe]? params[:timeframe]: project[:timeframe],
+      status: params[:status]? params[:status]: project[:status],
+      scope: params[:scope]? params[:scope]: project[:scope],
+      approach: params[:approach]? params[:approach]: project[:approach]
+    )
+
+    project.to_json
+  end
+
+  # deletes projects by id
+  delete "/api/projects/:id" do
+    project = Project.find(params[:id])
+    project.destroy
+
+    {message:"Project Deleted Successfully"}.to_json
+  end
 
 end
