@@ -105,6 +105,16 @@ class ApplicationController < Sinatra::Base
     project.to_json
   end
 
+  # get deliverables by project id
+  get "/api/projects/:id/deliverables" do
+    data = Deliverable.find_by(project_id: params[:id])
+    data ? data.to_json : {message: "Could Not find that deliverable"}.to_json
+  end
+
+  
+
+
+
   # deletes projects by id
   delete "/api/projects/:id" do
     project = Project.find(params[:id])
