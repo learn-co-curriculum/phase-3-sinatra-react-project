@@ -1,14 +1,14 @@
 class ApplicationController < Sinatra::Base
   
-    get '/bucket_list/categories' do
+    get '/jipange-react-app/categories' do
         Category.all.to_json(include: :items)
     end
     
-    get '/bucket_list/categories/:name' do
+    get '/jipange-react-app/categories/:name' do
         category = Category.find_by(name: params[:name]).items.to_json(include: :category)
     end
 
-    post '/bucket_list/categories' do
+    post '/jipange-react-app/categories' do
         category = Category.new(name: params[:name])
         if category.save
             category.to_json(include: :items)
@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
         end
       end
 
-     delete '/bucket_list/categories/:name' do
+     delete '/jipange-react-app/categories/:name' do
         category = Category.find_by(name: params[:name])
         if category
             category.destroy
