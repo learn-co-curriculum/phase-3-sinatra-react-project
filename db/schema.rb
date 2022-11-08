@@ -14,13 +14,14 @@ ActiveRecord::Schema.define(version: 2022_11_08_080319) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.boolean "completed_event"
   end
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.boolean "completed_event"
+    t.boolean "completed"
     t.integer "category_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
