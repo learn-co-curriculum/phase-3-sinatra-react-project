@@ -25,8 +25,16 @@ delete '/bucket_list/:id' do
       {errors: "Item not found"}.to_json
     end  
   end
-delete "/" do
-  
-end
+
+patch '/bucket_list/:id' do
+    item = Item.find_by_id(params[:id])
+    if item 
+      item.update(completed: (params[:completed]))
+      item.to_json(include: {category: {only: [:id, :name]}})
+    else
+      {errors: "Item not found"}.to_json
+    end  
+    # item.update(name: params[:name]) 
+  end  
 end
  
