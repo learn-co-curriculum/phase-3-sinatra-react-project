@@ -15,12 +15,9 @@ const Home = () => {
 
   return (
     <section className="box">
-      <h2 style={{ fontSize: "3rem" }}>View Awesome Projects.</h2>
-      <p>
-        Looking for someone to hire? Check out these awesome projects from
-        Flatiron students.
-      </p>
-      <h3>Recent :</h3>
+      <h2 style={{ fontSize: "3rem" }}>View Favorite Books.</h2>
+    
+      <h3>Recently Added Book:</h3>
       {recentProjects.map((project) => (
         <p key={project.id}>{project.name}</p>
       ))}
