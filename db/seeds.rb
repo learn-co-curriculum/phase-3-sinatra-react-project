@@ -2,30 +2,34 @@ puts "🌱 Seeding spices..."
 
 # Seed your database here
 
-    travel = Category.create(name: "travel")
-    lifestyle = Category.create(name: "lifestyle")
-    education = Category.create(name: "education")
+travel = Category.create(name: "travel")
+lifestyle = Category.create(name: "lifestyle")
+education = Category.create(name: "education")
 
-    Item.create(name: "Travel to Diani, Coast", completed: false, category_id: 1)
+
+Item.create(name: "Travel to Diani, Coast", completed: false, category_id: 1)
     Item.create(name: "Travel to Wasini, Malindi", completed: false, category_id: 1)
-    Item.create(name: "Road trip on The Wild Atlantic Way, Ireland's coastal route", completed: false, category_id: 1)
-    Item.create(name: "Visit the Yellowstone National Park", completed: false, category_id: 1)
-    Item.create(name: "Visit the Glacier national park", completed: false, category_id: 1)
-    Item.create(name: "Visit Alaska to see Northern lights", completed: false, category_id: 1)
+    Item.create(name: "Road trip to Lake Nakuru, South of Nakuru", completed: false, category_id: 1)
+    Item.create(name: "Visit Amboseli National Park", completed: false, category_id: 1)
+    Item.create(name: "Visit Giraffe Centre", completed: false, category_id: 1)
+    Item.create(name: "Travel to Tsavo East National Park, Taita-Taveta", completed: false, category_id: 1)
 
     Item.create(name: "Meal prep every sunday", completed: false, category_id: 2)
-    Item.create(name: "Go to the gym and lift heavy 3 times a week", completed: false, category_id: 2)
-    Item.create(name: "Yoga and stretching twice a week", completed: false, category_id: 2)
-    Item.create(name: "Learn new language", completed: false, category_id: 2)
-    Item.create(name: "Talk to parents once a week", completed: false, category_id: 2)
+    Item.create(name: "Go to the gym 3 times a week", completed: false, category_id: 2)
+    Item.create(name: "Do swimming  twice a week", completed: false, category_id: 2)
+    Item.create(name: "Learn new Skill", completed: false, category_id: 2)
+    Item.create(name: "Meet with friends once a week", completed: false, category_id: 2)
     Item.create(name: "Read 1 book a month", completed: false, category_id: 2)
 
-    Item.create(name: "Go to pottery class", completed: false, category_id: 3)
-    Item.create(name: "Try Curling", completed: false, category_id: 3)
-    Item.create(name: "Bungee jumping", completed: false, category_id: 3)
-    Item.create(name: "Try white water rafting", completed: false, category_id: 3)
-    Item.create(name: "See musical live", completed: false, category_id: 3)
-    Item.create(name: "Learn how to make Cannoli", completed: false, category_id: 3)
+    Item.create(name: "Visit Karen Blixen Museum", completed: false, category_id: 3)
+    Item.create(name: "Visit the Local Ocean Conservation, Watamu", completed: false, category_id: 3)
+    Item.create(name: "Watch a documentary every week", completed: false, category_id: 3)
+    Item.create(name: "Go for a Tour at the Bomas of Kenya", completed: false, category_id: 3)
+    Item.create(name: "Visit Ol pejeta Conservancy", completed: false, category_id: 3)
+    Item.create(name: "Read two books every month", completed: false, category_id: 3)
+
+
+
 
 
 
