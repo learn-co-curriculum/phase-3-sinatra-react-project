@@ -47,7 +47,7 @@ const ProjectForm = ({ onAddProject }) => {
        type="text"
         id="title" 
         name="title"
-        onChange={handleOnChange}
+        onChange={handleChange}
         value={formData.title}
         />
 
