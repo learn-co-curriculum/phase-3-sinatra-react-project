@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2022_11_08_080319) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.boolean "completed_events"
+    t.boolean "completed_event"
   end
 
   create_table "items", force: :cascade do |t|
