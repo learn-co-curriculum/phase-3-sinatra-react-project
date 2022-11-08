@@ -17,7 +17,7 @@ const ProjectDetail = () => {
 
   if(!project) { return <div></div>}
 
-  const { image, name, about, link, phase } = project;
+  const { image, title, author, summary,price, category} = project;
 
   const handleClapClick = () => {
     setClaps((claps) => claps + 1);
@@ -33,17 +33,15 @@ const ProjectDetail = () => {
           </button>
         </div>
         <div className="details">
-          <h2>{name}</h2>
-          <p>{about}</p>
-          {link ? (
-            <p>
-              <a target="_blank" rel="noreferrer" href={link}>
-                Project Homepage
-              </a>
-            </p>
-          ) : null}
+          <h2>{title}</h2>
+          <p>
+           {summary} 
+         </p>
+          <p >Author: {author}</p>
+         <p>Price {price}</p>
+        
           <div className="extra">
-            <span className="badge blue">Phase {phase}</span>
+            <span className="badge blue">Category {category}</span>
           </div>
         </div>
       </div>
