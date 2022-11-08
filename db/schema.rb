@@ -10,19 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_08_060147) do
+ActiveRecord::Schema.define(version: 2022_11_08_122517) do
 
   create_table "deliverables", force: :cascade do |t|
     t.string "name"
     t.integer "project_id"
-    t.integer "assigned"
+    t.string "assigned"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+    t.string "creator"
+    t.string "desc"
+    t.string "timeframe"
+    t.string "status"
+    t.string "scope"
+    t.string "approach"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.integer "email"
+    t.string "email"
     t.integer "phone_number"
     t.string "gender"
     t.integer "age"

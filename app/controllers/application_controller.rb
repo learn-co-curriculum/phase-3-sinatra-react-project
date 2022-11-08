@@ -12,7 +12,12 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/" do
-    { message: "Good luck with your project!" }.to_json
+    { message: "Am Lucky to have a code that works on first instance" }.to_json
   end
+
+  get "/api/users" do
+    { message: "performing user fetch request here" }.to_json
+  end
+
 
 end
