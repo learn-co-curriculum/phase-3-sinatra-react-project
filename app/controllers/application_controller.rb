@@ -2,9 +2,10 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   # Add your routes here
-  get "/" do
-    { message: "Good luck with your project!" }.to_json
+  get "/bucket_list" do
+    Item.all.to_json(include: {category: {only: [:id, :name]}})
   end
+  
 post "/" do 
 
 
