@@ -26,4 +26,13 @@ class ApplicationController < Sinatra::Base
             {errors: "Category not found"}.to_json
         end
     end
+    patch '/jipange_app/categories/:name' do
+        category = Category.find_by(name: params[:name])
+        if category
+            category.update
+            category.to_json(include: :items)
+        else
+            {errors: "Category not found"}.to_json
+        end
+    end
 end

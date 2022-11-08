@@ -26,15 +26,6 @@ delete '/jipange_app/:id' do
     end  
   end
 
-patch '/jipange_app/:id' do
-    item = Item.find_by_id(params[:id])
-    if item 
-      item.update(completed: (params[:completed]))
-      item.to_json(include: {category: {only: [:id, :name]}})
-    else
-      {errors: "Item not found"}.to_json
-    end  
-    # item.update(name: params[:name]) 
-  end  
+
 end
  

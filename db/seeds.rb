@@ -5,6 +5,8 @@ puts "🌱 Seeding spices..."
 travel = Category.create(name: "travel")
 lifestyle = Category.create(name: "lifestyle")
 education = Category.create(name: "education")
+sports = Category.create(name: "sports")
+food = Category.create(name: "food")
 
 
 Item.create(name: "Travel to Diani, Coast", completed: false, category_id: 1)
