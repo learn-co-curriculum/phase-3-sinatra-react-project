@@ -3,7 +3,7 @@ belongs_to :category
 
  validates :name, presence: true
  validates :category_id, presence: true
- validates :completed_event inclusion: { in: [true, false] }
+ validates :completed, inclusion: { in: [true, false] }
 
     def errors_array
         self.errors.full_messages
