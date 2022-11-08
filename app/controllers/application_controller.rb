@@ -2,11 +2,11 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   # Add your routes here
-  get "/bucket_list" do
+  get "/jipange-react-app" do
     Item.all.to_json(include: {category: {only: [:id, :name]}})
   end
   
-  post "/bucket_list" do
+  post "/jipange-react-app" do
     item = Item.new(name: params[:name], completed: false, category_id: params[:category_id])
     if item.save
       item.to_json(include: {category: {only: [:id, :name]}})
@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
     end  
   end
 
-delete '/bucket_list/:id' do
+delete '/jipange-react-app/:id' do
     item = Item.find_by_id(params[:id])
     
     if item 
@@ -26,7 +26,7 @@ delete '/bucket_list/:id' do
     end  
   end
 
-patch '/bucket_list/:id' do
+patch '/jipange-react-app/:id' do
     item = Item.find_by_id(params[:id])
     if item 
       item.update(completed: (params[:completed]))
