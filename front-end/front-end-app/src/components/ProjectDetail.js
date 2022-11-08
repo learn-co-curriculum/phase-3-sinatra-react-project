@@ -27,7 +27,7 @@ const ProjectDetail = () => {
     <section>
       <div className="project-detail box">
         <div className="project-image">
-          <img src={image} alt={name} />
+          <img src={image} alt={title} />
           <button className="claps" onClick={handleClapClick}>
             👏{claps}
           </button>

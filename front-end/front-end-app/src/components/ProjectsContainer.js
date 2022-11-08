@@ -7,24 +7,24 @@ import ProjectDetail from "./ProjectDetail";
 
 function ProjectsContainer() {
     const [projects, setProjects] = useState([]);
-    const [selectedPhase, setSelectedPhase] = useState("");
+    const [selectedCategory, setSelectedCategory] = useState("");
     const [searchQuery, setSearchQuery] = useState("");
 
     useEffect(() => {
         let url;
-        if (selectedPhase && searchQuery) {
-          url = `http://localhost:4000/projects?phase=${selectedPhase}&q=${encodeURI(searchQuery)}`;
+        if (selectedCategory && searchQuery) {
+          url = `http://localhost:4000/projects?phase=${selectedCategory}&q=${encodeURI(searchQuery)}`;
         } else if (searchQuery) {
           url = `http://localhost:4000/projects?q=${encodeURI(searchQuery)}`;
-        } else if (selectedPhase) {
-          url = `http://localhost:4000/projects?phase=${selectedPhase}`;
+        } else if (selectedCategory) {
+          url = `http://localhost:4000/projects?phase=${selectedCategory}`;
         } else {
           url = "http://localhost:4000/projects";
         }
         fetch(url)
           .then((resp) => resp.json())
           .then((projects) => setProjects(projects));
-      }, [selectedPhase, searchQuery]);
+      }, [selectedCategory, searchQuery]);
 
       const onAddProject = (newProj) => {
         setProjects((projects) => [...projects, newProj]);
@@ -47,30 +47,30 @@ function ProjectsContainer() {
       return (
         <>
           <Switch>
-            <Route path="/projects/:id/edit">
+            <Route path="/books/:id/edit">
               <ProjectEditForm
                 onUpdateProject={onUpdateProject}
               />
             </Route>
-            <Route path="/projects/new">
+            <Route path="/books/new">
               <ProjectForm onAddProject={onAddProject} />
             </Route>
-            <Route exact path="/projects/:id">
+            <Route exact path="/books/:id">
               <ProjectDetail />
             </Route>
-             <Route path="/projects/phase/:phase">
+             <Route path="/books/category/:category">
               <ProjectList
                 projects={projects}
                 onProjectDelete={onProjectDelete}
-                setSelectedPhase={setSelectedPhase}
+                setSelectedCategory={setSelectedCategory}
                 setSearchQuery={setSearchQuery}
                 />
             </Route>
-            <Route path="/projects">
+            <Route path="/books">
               <ProjectList
                 projects={projects}
                 onProjectDelete={onProjectDelete}
-                setSelectedPhase={setSelectedPhase}
+                setSelectedCategory={setSelectedCategory}
                 setSearchQuery={setSearchQuery}
                 />
             </Route>

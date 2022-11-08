@@ -9,6 +9,7 @@ const ProjectList = ({
   setSelectedCategory,
   setSearchQuery
 }) => {
+  
   const [searchInputText, setSearchInputText] = useState("");
   const { category } = useParams();
   // useLocation provides access to query parameters as search
@@ -19,8 +20,8 @@ const ProjectList = ({
   const { url } = useRouteMatch(); 
 
   
-  // console.log('useLocation() search', search);
-  // console.log('useRouteMatch url', url);
+  console.log('useLocation() search', search);
+  console.log('useRouteMatch url', url);
 
 
   const projectItems = projects.map((project) => {
@@ -53,7 +54,7 @@ const ProjectList = ({
   }, [setSearchQuery, searchInputText, history, url])
 
   useEffect(() => {
-    setSelectedCategoty(category);
+    setSelectedCategory(category);
   }, [category, setSelectedCategory])
 
   useEffect(() => {

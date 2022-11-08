@@ -7,7 +7,7 @@ const ProjectListItem = ({
   onProjectEdit,
   onProjectDelete,
 }) => {
-  const { id, image, title, summary, author, category } = project;
+  const { id, image, title, summary, author,price, category } = project;
 
   const [clapCount, setClapCount] = useState(0);
 
@@ -28,7 +28,7 @@ const ProjectListItem = ({
     <li className="card">
       <Link to={`/books/${id}`}>
         <figure className="image">
-          <img src={image} alt={name} />
+          <img src={image} alt={title} />
           <button onClick={handleClap} className="claps">
             👏{clapCount}
           </button>
@@ -39,7 +39,7 @@ const ProjectListItem = ({
         <h4>{title}</h4>
         <p>{summary}</p>
         <p >Author: {author}</p>
-        <p>Price {price}</p>
+        <p>Price: {price}</p>
       </section>
 
       <footer className="extra">
