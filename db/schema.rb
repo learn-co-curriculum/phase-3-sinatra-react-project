@@ -10,35 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_08_103516) do
+ActiveRecord::Schema.define(version: 2022_11_08_180657) do
 
   create_table "apartments", force: :cascade do |t|
-    t.string "room"
-    t.integer "apartment_number"
+    t.string "title"
     t.string "image"
     t.string "description"
-    t.integer "block_id"
+    t.integer "room"
+    t.integer "location_id"
+    t.integer "caretaker_contact"
     t.integer "rent"
   end
 
   create_table "appointments", force: :cascade do |t|
     t.integer "client_id"
-    t.integer "caretaker_id"
     t.integer "apartment_id"
-  end
-
-  create_table "blocks", force: :cascade do |t|
-    t.string "name"
-    t.string "image"
-    t.string "description"
-    t.integer "location_id"
-    t.string "apartments"
-    t.string "amenities"
-  end
-
-  create_table "caretakers", force: :cascade do |t|
-    t.string "name"
-    t.integer "block_id"
   end
 
   create_table "clients", force: :cascade do |t|
