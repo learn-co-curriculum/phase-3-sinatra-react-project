@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_07_214717) do
+ActiveRecord::Schema.define(version: 2022_11_08_080319) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.boolean "completed_events"
   end
 
-  create_table "events", force: :cascade do |t|
+  create_table "items", force: :cascade do |t|
     t.string "name"
     t.boolean "completed_event"
+    t.integer "category_id"
   end
 
 end
