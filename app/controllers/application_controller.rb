@@ -70,6 +70,8 @@ class ApplicationController < Sinatra::Base
     Project.all.to_json
   end
 
+
+
   #Get all projects by ID
   get "/api/projects/:id" do
     Project.find(params[:id]).to_json
@@ -107,11 +109,21 @@ class ApplicationController < Sinatra::Base
 
   # get deliverables by project id
   get "/api/projects/:id/deliverables" do
-    data = Deliverable.find_by(project_id: params[:id])
+    data = Deliverable.where(project_id: params[:id])
     data ? data.to_json : {message: "Could Not find that deliverable"}.to_json
   end
 
-  
+  # post deliverables by project id
+  post "/api/projects/:id/deliverables" do
+    #find the user
+    data = Project.find(params[:id])
+    #find add by project id
+    Deliverable.create(
+      name: params[:name],
+      project_id: params[:id],
+      assigned: params[:assigned]
+     )
+  end
 
 
 
