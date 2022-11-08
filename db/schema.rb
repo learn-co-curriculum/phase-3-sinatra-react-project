@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2022_11_08_122517) do
   create_table "deliverables", force: :cascade do |t|
     t.string "name"
     t.integer "project_id"
+    t.boolean "status", default: false
     t.string "assigned"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

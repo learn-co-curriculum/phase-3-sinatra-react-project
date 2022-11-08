@@ -137,8 +137,6 @@ class ApplicationController < Sinatra::Base
 
   # post deliverables by project id
   post "/api/projects/:id/deliverables" do
-    #find the user
-    data = Project.find(params[:id])
     #find add by project id
     Deliverable.create(
       name: params[:name],
@@ -146,7 +144,6 @@ class ApplicationController < Sinatra::Base
       assigned: params[:assigned]
      )
   end
-
 
 
   # deletes projects by id
