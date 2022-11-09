@@ -132,3 +132,15 @@ fetch("http://localhost:9292/test")
 [dbdiagram.io]: https://dbdiagram.io/
 [postman download]: https://www.postman.com/downloads/
 [network tab]: https://developer.chrome.com/docs/devtools/network/
+
+
+## Authors
+
+- [@malise5](https://www.github.com/malise5)
+- [@Ramayan0](https://www.github.com/Ramayan0)
+
+## Acknowledgements
+
+- [Understnding sinatra](http://sinatra-org-book.herokuapp.com/)
+- [Ruby Gems and Dependecies](https://rubygems.org/)
+- [ActiveRecords Guidlines](https://guides.rubyonrails.org/active_record_querying.html)
