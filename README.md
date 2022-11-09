@@ -49,9 +49,6 @@ Sinatra backend API, where a user can:
 - **Update** an individual Post
 - **Delete** a Post
 
-A `Todo` can be tagged with a `Category`, so that each todo _belongs to_ a
-category and each category _has many_ todos.
-
 ## Getting Started
 
 ### Backend Setup
