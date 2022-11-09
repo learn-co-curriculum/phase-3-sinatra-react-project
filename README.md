@@ -1,5 +1,11 @@
 # Phase 3 Project Guidelines
 
+# Project Title
+
+Tittle : Back-End Database for TeckBlog
+
+The Application Helps to fetch Data from The Client side THrough the Help of ActiveRecords and Sinatra
+
 ## Learning Goals
 
 - Build a web basic API with Sinatra and Active Record to support a React
