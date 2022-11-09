@@ -5,5 +5,12 @@ class ApplicationController < Sinatra::Base
   get "/" do
     { message: "Good luck with your project!" }.to_json
   end
-
+  get "/contacts" do 
+    contacts = Contact.all
+    contacts.to_json
+  end
+  get "/contacts/:name" do
+    contacts = Contact.where(name: params[:name])
+    contacts.to_json
+  end
 end
