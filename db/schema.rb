@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_09_204426) do
+ActiveRecord::Schema.define(version: 2022_11_09_211159) do
 
   create_table "customers", force: :cascade do |t|
     t.string "full_name"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2022_11_09_204426) do
     t.integer "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "rating"
     t.index ["customer_id"], name: "index_reviews_on_customer_id"
     t.index ["product_id"], name: "index_reviews_on_product_id"
   end
