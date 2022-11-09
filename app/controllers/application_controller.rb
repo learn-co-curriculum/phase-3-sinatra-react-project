@@ -24,15 +24,10 @@ post '/books' do
     book1.to_json
 end
 
-patch '/books/only:id' do
-    book = Book.find(params[:id])
-    book.update(body: params[:body])
-    book.to_json
-  end
 patch '/books/:id' do
-    book = Book.find(params[:id])
-    book.update(body: params[:body])
-    book.to_json
+    book1 = Book.find(params[:id])
+    book1.update(body: params[:body])
+    book1.to_json
   end
 
 delete '/books/only/:id' do
