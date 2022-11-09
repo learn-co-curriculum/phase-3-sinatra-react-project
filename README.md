@@ -1,6 +1,8 @@
 # Phase 3 Project Guidelines
-the book sport
-## Learning Goals
+
+
+3The Book spot
+
 
 - Build a web basic API with Sinatra and Active Record to support a React 
   frontend
