@@ -2,7 +2,9 @@
 
       Github branches ni kama mini-repositories
       na kila branch ina kazi yake.
-      
+
+      N.B Don't contribute to the main or development branch without discussing with members of the team. :smile:
+
 
 ## steps for cntribution to a branch
 
