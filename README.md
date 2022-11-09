@@ -2,7 +2,7 @@
 
 Tittle : Back-End Database for TeckBlog
 
-The Application Helps to Data from THe Client side THrough the Help of ActiveRecordsand Sinatra
+The Application Helps to fetch Data from The Client side THrough the Help of ActiveRecords and Sinatra
 
 # Project Title
 
