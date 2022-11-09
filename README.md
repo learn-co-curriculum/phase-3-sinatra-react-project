@@ -1,15 +1,17 @@
 # Phase 3 Project Guidelines
 
+# Project Title
+
+Tittle : Back-End Database for TeckBlog
+
+The Application Helps to fetch Data from The Client side THrough the Help of ActiveRecords and Sinatra
+
 ## Learning Goals
 
 - Build a web basic API with Sinatra and Active Record to support a React
   frontend
 
 ## Introduction
-
-Congrats on getting through all the material for Phase 3! Now's the time to put
-it all together and build something from scratch to reinforce what you know and
-expand your horizons.
 
 The focus of this project is **building a Sinatra API backend** that uses
 **Active Record** to access and persist data in a database, which will be used
@@ -42,10 +44,10 @@ For this project, you must:
 For example, build a todo list application with a React frontend interface and a
 Sinatra backend API, where a user can:
 
-- **Create** a new todo
-- **Read** a list of all todos
-- **Update** an individual todo
-- **Delete** a todo
+- **Create** a new Post
+- **Read** a list of all Post
+- **Update** an individual Post
+- **Delete** a Post
 
 A `Todo` can be tagged with a `Category`, so that each todo _belongs to_ a
 category and each category _has many_ todos.
