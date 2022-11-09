@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2022_11_09_125907) do
 
   create_table "orders", force: :cascade do |t|
     t.integer "customer_id"
-    t.datetime "ordered_at"
     t.integer "amount"
   end
 
