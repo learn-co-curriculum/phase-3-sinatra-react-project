@@ -1,6 +1,6 @@
 class CreateBookReaders < ActiveRecord::Migration[6.1]
   def change
-    create_table :readers_books do |t|
+    create_table :book_readers do |t|
       t.integer :reader_id
       t.integer :book_id
       t.boolean :read
