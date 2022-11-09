@@ -1,4 +1,4 @@
 class Product < ActiveRecord::Base
     has_many :orderDetails
-    has_many :cusotmer, through :reviews
+    has_many :cusotmers, through :reviews
 end
