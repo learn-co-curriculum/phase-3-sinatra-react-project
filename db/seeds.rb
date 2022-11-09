@@ -1,9 +1,11 @@
-#NOTE: Due to nature of foreign_key generation, drop table if you want to seed again.
+#NOTE: Due to random nature of foreign_key generation, drop table then migrate if you want to seed again.
 puts "🌱 Seeding spices..."
 
 Customer.destroy_all
 Product.destroy_all
 Review.destroy_all
+Order.destroy_all
+OrderDetail.destroy_all
 
 #create 20 customers
 20.times do
@@ -31,6 +33,25 @@ end
             customer_id: rand(1..20) #only create random ids between 1 and 20 for number of customers
         )
     end
+end
+
+#create 100 orders
+100.times do
+    order = Order.create(
+        amount: rand(1..10),
+        customer_id: rand(1..20), #customer table has ids from 1 to 20
+        shipping_address: Faker::Address.street_name,
+        order_status: ["shipped", "delivered", "processing", "returned"].sample
+    )
+end
+
+#create 20 order details
+20.times do
+    order_detail = OrderDetail.create(
+        quantity: rand(1..10),
+        order_id: rand(1..100), #order table has ids from 1 to 100
+        product_id: rand(1..50) #product table has ids from 1 to 50
+    ) 
 end
 
 puts "✅ Done seeding!"
