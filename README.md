@@ -44,10 +44,10 @@ For this project, you must:
 For example, build a todo list application with a React frontend interface and a
 Sinatra backend API, where a user can:
 
-- **Create** a new todo
-- **Read** a list of all todos
+- **Create** a new Post
+- **Read** a list of all Post
 - **Update** an individual todo
-- **Delete** a todo
+- **Delete** a Post
 
 A `Todo` can be tagged with a `Category`, so that each todo _belongs to_ a
 category and each category _has many_ todos.
