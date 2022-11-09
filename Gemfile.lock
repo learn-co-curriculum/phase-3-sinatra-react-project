@@ -23,6 +23,8 @@ GEM
     database_cleaner-core (2.0.1)
     diff-lcs (1.5.0)
     eventmachine (1.2.7)
+    faker (3.0.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
@@ -96,6 +98,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord (~> 6.1)
   database_cleaner (~> 2.0)
+  faker
   pry (~> 0.14.1)
   puma
   rack-contrib (~> 2.3)
@@ -112,4 +115,4 @@ DEPENDENCIES
   thin (~> 1.8)
 
 BUNDLED WITH
-   2.2.23
+   2.3.24
