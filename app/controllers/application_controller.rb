@@ -44,6 +44,7 @@ class ApplicationController < Sinatra::Base
       price: params[:price],
       fuel_type: params[:fuel_type],
       year: params[:year],
+      model: params[:model],
       price: params[:price],
       seats: params[:seats]
     )
