@@ -1,0 +1,16 @@
+current directory: /home/lynn/Desktop/Moringa-projects/Sinatra-react-project/phase-3-sinatra-react-project/vendor/bundle/ruby/3.0.0/gems/eventmachine-1.2.7/ext/fastfilereader
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20221109-73739-c0k5bm.rb extconf.rb
+creating Makefile
+
+current directory: /home/lynn/Desktop/Moringa-projects/Sinatra-react-project/phase-3-sinatra-react-project/vendor/bundle/ruby/3.0.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= clean
+
+current directory: /home/lynn/Desktop/Moringa-projects/Sinatra-react-project/phase-3-sinatra-react-project/vendor/bundle/ruby/3.0.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\=
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.so
+
+current directory: /home/lynn/Desktop/Moringa-projects/Sinatra-react-project/phase-3-sinatra-react-project/vendor/bundle/ruby/3.0.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20221109-73739-z0b39f
