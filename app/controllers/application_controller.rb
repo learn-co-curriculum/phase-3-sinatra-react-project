@@ -33,7 +33,9 @@ class ApplicationController < Sinatra::Base
       email: params[:buyer_email]
     )
     car =Car.find_by(model: params[:model])
+    car_quantity = car.quantity -= 1
+    car.update(quantity: car_quantity)
     transaction = Transaction.create(buyer: buyer, car: car)
-    transaction.to_json
+    buyer.to_json
   end
 end
