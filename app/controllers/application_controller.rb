@@ -13,4 +13,14 @@ class ApplicationController < Sinatra::Base
     contacts = Contact.where(name: params[:name])
     contacts.to_json
   end
+  post "/contacts" do
+    contact = Contact.create(
+      name: params[:name],
+      phone: params[:phone],
+      email: params[:email],
+      company_id: params[:company_id],
+      title: params[:title]    
+    )
+    contact.to_json
+  end
 end
