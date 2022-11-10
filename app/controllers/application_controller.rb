@@ -16,7 +16,7 @@ class ApplicationController < Sinatra::Base
 
   # Product Routes
   get "/products" do
-    Product.all.to_json
+    Product.all.to_json(include: :reviews)
   end
 
   get "/products/:id" do
@@ -57,6 +57,16 @@ class ApplicationController < Sinatra::Base
       review.to_json
     else
       halt 422
+    end
+  end
+
+  delete "/reviews/:id" do
+    review = Review.where(id: params["id"]).first
+
+    if review.destroy
+      { success: "Record Deleted Successfully!" }.to_json
+    else
+      halt 500
     end
   end
 
