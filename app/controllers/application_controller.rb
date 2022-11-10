@@ -6,4 +6,8 @@ class ApplicationController < Sinatra::Base
     car = Car.all
     car.to_json
   end
+  get '/cars/:id' do 
+    car = Car.find(params[:id])
+    car.to_json
+  end
 end
