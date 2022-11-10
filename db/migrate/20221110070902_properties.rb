@@ -1,7 +1,7 @@
 class Properties < ActiveRecord::Migration[6.1]
   def up
     create_table :properties do |t|
-     # t.blob    :coverPhoto
+     # t.blob    :cover_photo
       t.integer :price
       t.integer :rent_frequency
       t.integer :rooms
