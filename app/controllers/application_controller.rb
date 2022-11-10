@@ -22,8 +22,18 @@ class ApplicationController < Sinatra::Base
       back_url:params[:back_url],
       side_url: params[:side_url],
       inside_url:params[:inside_url],
+      quantity: params[:quantity],
       transmission: params[:transmission]
     )
     car.to_json
+  end
+  post '/sell_car' do
+    buyer = Buyer.create(
+      name:params[:buyer_name],
+      email: params[:buyer_email]
+    )
+    car =Car.find_by(model: params[:model])
+    transaction = Transaction.create(buyer: buyer, car: car)
+    transaction.to_json
   end
 end
