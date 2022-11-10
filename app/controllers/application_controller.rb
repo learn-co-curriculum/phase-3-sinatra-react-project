@@ -34,11 +34,13 @@ class ApplicationController < Sinatra::Base
   patch "/contacts/:id" do 
     contact = Contact.find(params[:id])
     contact.update(
-      name: params[:name],
+        name: params[:name],
       phone: params[:phone],
       email: params[:email],
+      company_name:params[:company_name],
       company_id: params[:company_id],
-      title: params[:title]
+      title: params[:title],
+      photo: params[:photo]
     )
     contact.to_json
   end
