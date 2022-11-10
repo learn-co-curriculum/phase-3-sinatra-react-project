@@ -39,4 +39,10 @@ class ApplicationController < Sinatra::Base
     )
     contact.to_json
   end
+
+  delete "/contacts/:id" do 
+    contact = Contact.find(params[:id])
+    contact.destroy
+    contact.to_json
+  end
 end
