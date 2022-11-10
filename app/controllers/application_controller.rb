@@ -38,6 +38,7 @@ class ApplicationController < Sinatra::Base
     transaction = Transaction.create(buyer: buyer, car: car)
     buyer.to_json
   end
+  
   patch '/update' do 
     car = Car.find(params[:id])
     car.update(
