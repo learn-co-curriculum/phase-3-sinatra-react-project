@@ -43,6 +43,8 @@ group :development do
   gem "rerun"
 
   gem "faker"
+
+  gem "shotgun"
 end
 
 # These gems will only be used when we are running tests
