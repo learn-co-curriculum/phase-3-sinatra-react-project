@@ -14,8 +14,9 @@ class ApplicationController < Sinatra::Base
     contact.to_json
   end
   
-  get "/contacts/:name" do
-    contacts = Contact.where(name: params[:name])
+  get "/contacts/:name" do 
+
+    contacts = Contact.where(name:params[:name])
     contacts.to_json
   end
   post "/contacts" do
