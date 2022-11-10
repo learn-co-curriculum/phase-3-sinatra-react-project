@@ -3,17 +3,21 @@ class ApplicationController < Sinatra::Base
   
  
   get '/books' do
-    books = Author.all
-    books.to_json(include: :books)
-end
-
-get '/books/only' do
     books = Book.all
+    books.to_json(include: :author)
+end
+  get '/authors' do
+    books = Author.all
     books.to_json
 end
 
+get '/books/:id' do
+    books = Book.find(params[:id])
+    books.to_json(include: :author)
+end
+
 post '/books' do
-    book1 = Book.create(
+    books = Book.create(
         title: params[:title],
         author_id: params[:author_id], 
         summary: params[:summary],
@@ -21,20 +25,22 @@ post '/books' do
         image: params[:image],
        
     )
-    book1.to_json
+    books.to_json
 end
 
 patch '/books/:id' do
-    book1 = Book.find(params[:id])
-    book1.update(body: params[:body])
-    book1.to_json
+    books = Book.find(params[:id])
+    books.update(  
+        title: params[:title],
+        author_id: params[:author_id], 
+        summary: params[:summary],
+        category: params[:category],
+        image: params[:image],
+    )
+    books.to_json
   end
 
-delete '/books/only/:id' do
-    deleted = Book.find(params[:id])
-    deleted.destroy
-    deleted.to_json
-end
+
 
 delete '/books/:id' do
     deleted = Book.find(params[:id])
