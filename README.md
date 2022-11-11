@@ -61,7 +61,10 @@ Copyright [2022][Group 7]
 ### Authors Info
 
 > github: 'https://github.com/MaureenMurugi'
-          'https://github.com/KelvinMatheka-1'
-          'https://github.com/Gift-koech'
-          'https://github.com/MercyChebet'
+          
+> 'https://github.com/KelvinMatheka-1'
+
+> 'https://github.com/Gift-koech'
+
+> 'https://github.com/MercyChebet'
 
