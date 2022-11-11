@@ -10,13 +10,12 @@ class ApplicationController < Sinatra::Base
     contacts.to_json
   end
   get "/contacts/:id" do
-    contact = Contact.find(params[:id])
+    contact = Contact.find_by(id:params[:id])
     contact.to_json
   end
   
   get "/contacts/:name" do 
-
-    contacts = Contact.where(name:params[:name])
+    contacts = Contact.all.where(company_name:params[:name])
     contacts.to_json
   end
   post "/contacts" do
