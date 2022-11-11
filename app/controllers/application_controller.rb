@@ -20,7 +20,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/products/:id" do
-    Product.where(id: params["id"]).first.to_json
+    Product.where(id: params["id"]).first.to_json(include: :reviews)
   end
 
   # Order Routes
