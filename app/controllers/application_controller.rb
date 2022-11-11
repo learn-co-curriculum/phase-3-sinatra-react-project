@@ -50,4 +50,12 @@ class ApplicationController < Sinatra::Base
     )
     car.to_json
   end
+
+get '/admin' do
+  admin = Admin.all
+  admin.to_json
+
+end
+
+
 end
