@@ -21,7 +21,11 @@ end
         product_name: Faker::Commerce.product_name,
         price: Faker::Commerce.price(range: 50.0..1000.0),
         description: Faker::Commerce.department,
-        img_url: Faker::LoremFlickr.image
+        img_url: ["https://img.joomcdn.net/a8d43fd9914842311432f9503edadf18c6a73216_original.jpeg",
+        "https://cdn.shopify.com/s/files/1/0928/3306/products/geometric-mens-sneakers_533x.jpg?v=1627927774",
+        "https://images.yaoota.com/Mj3qUEOBDl7GOpun_VUq5-pSMVU=/trim/yaootaweb-production-ke/media/crawledproductimages/8e1e2e31e3a57098b792fdc007d93229e94dd6ea.jpg",
+        "https://static01.nyt.com/images/2021/05/27/fashion/24SNEAKERCOLORS-sacai-SUB/24SNEAKERCOLORS-sacai-SUB-mediumSquareAt3X.jpg"
+        ].sample
     )
 
     #create between 1 to 5 reviews for each product
