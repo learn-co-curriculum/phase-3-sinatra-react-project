@@ -23,6 +23,12 @@ class ApplicationController < Sinatra::Base
     Product.where(id: params["id"]).first.to_json(include: :reviews)
   end
 
+  post "products/:id" do
+    review = Review.create(params)
+    review.update(product_id: params["id"])
+    # Review.create(product_id: params["id"] )
+  end
+
   # Order Routes
   get "/orders" do
     Order.all.to_json
