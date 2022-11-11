@@ -112,6 +112,11 @@ class ApplicationController < Sinatra::Base
     data = Deliverable.where(project_id: params[:id])
     data ? data.to_json : {message: "Could Not find that deliverable"}.to_json
   end
+   # get deliverables by project id
+   get "/api/projects/:id/deliverables/:specific_id" do
+    data = Deliverable.find(params[:specific_id])
+    data ? data.to_json : {message: "Could Not find that deliverable"}.to_json
+  end
 
   # update deliverables by project id
   put "/api/projects/:id/deliverables/:item_id" do

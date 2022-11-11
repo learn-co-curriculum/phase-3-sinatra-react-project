@@ -28,11 +28,11 @@ gem "sinatra-activerecord", "~> 2.0"
 # https://github.com/ruby/rake
 gem "rake", "~> 13.0"
 
-# # Provides functionality to interact with a SQLite3 database
-# gem "sqlite3", "~> 1.4"
+# Provides functionality to interact with a SQLite3 database
+gem "sqlite3", "~> 1.4"
 
-# Provides functionality to interact with a Postgres database
-gem 'pg', '~> 1.4', '>= 1.4.4'
+# # Provides functionality to interact with a Postgres database
+# gem 'pg', '~> 1.4', '>= 1.4.4'
 
 # Require all files in a folder
 gem "require_all", "~> 3.0"
