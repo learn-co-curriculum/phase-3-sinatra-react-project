@@ -1,10 +1,10 @@
 class Agencies < ActiveRecord::Migration[6.1]
   def up
     create_table :agencies do |t|
-      t.string :name 
+      t.string :name
       t.string :email
-      #t.blob   :logo
-      
+      t.string :password
+
       t.timestamps
     end
   end

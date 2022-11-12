@@ -10,24 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_10_070902) do
+ActiveRecord::Schema.define(version: 2022_11_10_192926) do
 
   create_table "agencies", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
-    t.integer "phone"
     t.string "email"
+    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "properties", force: :cascade do |t|
+    t.string "cover_photo"
     t.integer "price"
     t.integer "rent_frequency"
     t.integer "rooms"
@@ -37,10 +39,13 @@ ActiveRecord::Schema.define(version: 2022_11_10_070902) do
     t.string "is_verified"
     t.integer "external_id"
     t.string "description"
-    t.string "type"
+    t.string "typen"
     t.string "purpose"
     t.string "furnishing_status"
     t.string "amenities"
+    t.string "photos"
+    t.integer "agency_id"
+    t.integer "client_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "agencies_id"
