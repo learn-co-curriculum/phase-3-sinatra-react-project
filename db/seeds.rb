@@ -14,33 +14,7 @@ puts "🌱 Seeding spices..."
 
 # Seed your database here
 # create users
-10.times do
-    user = User.create(
-        user_name: Faker::Name.name,
-        password: 123,
-        balance: rand(1..100000000)
-    )
 
-    watchlist = Watchlist.create(
-        user_id: user.id
-    )
-
-    WatchstocksJoin.create(
-        watchlist_id: watchlist.id,
-        stock_id: 1
-    )
-
-    WatchstocksJoin.create(
-        watchlist_id: watchlist.id,
-        stock_id: 2
-    )
-
-    rand(1..5).times do
-        UserstocksJoin.create(
-            user
-        )
-    end
-end
 
 #create stock1
 
@@ -77,6 +51,35 @@ StockPrice.create(
     close: rand(300...400),
     stock_id: stock2.id
 )
+
+10.times do
+    user = User.create(
+        user_name: Faker::Name.name,
+        password: 123,
+        balance: rand(1..100000000)
+    )
+
+    watchlist = Watchlist.create(
+        user_id: user.id
+    )
+
+    WatchstocksJoin.create(
+        watchlist_id: watchlist.id,
+        stock_id: 1
+    )
+
+    WatchstocksJoin.create(
+        watchlist_id: watchlist.id,
+        stock_id: 2
+    )
+
+    rand(1..5).times do
+        UserstocksJoin.create(
+            user_id: user.id,
+            stock_id: Stock.all.ids.sample
+        )
+    end
+end
 
 
 
