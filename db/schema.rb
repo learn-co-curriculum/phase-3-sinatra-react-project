@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_14_033324) do
+ActiveRecord::Schema.define(version: 2022_11_14_184654) do
+
+  create_table "restaurant_images", force: :cascade do |t|
+    t.integer "restaurant_id"
+    t.string "image_url"
+  end
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
@@ -20,6 +25,25 @@ ActiveRecord::Schema.define(version: 2022_11_14_033324) do
     t.float "latitude"
     t.string "neighborhood"
     t.string "formatted_address"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "likes"
+    t.integer "dislikes"
+    t.boolean "favorited?"
+    t.integer "restaurant_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

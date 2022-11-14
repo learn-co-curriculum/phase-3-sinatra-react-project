@@ -33,6 +33,8 @@ GEM
     minitest (5.14.4)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    net-http (0.3.0)
+      uri
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -83,6 +85,7 @@ GEM
     tilt (2.0.10)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    uri (0.11.0)
     zeitwerk (2.4.2)
 
 PLATFORMS
@@ -92,6 +95,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord (~> 6.1)
   database_cleaner (~> 2.0)
+  net-http
   pry (~> 0.14.1)
   rack-contrib (~> 2.3)
   rack-cors (~> 1.1)
