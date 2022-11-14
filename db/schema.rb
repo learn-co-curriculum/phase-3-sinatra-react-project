@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2022_11_14_202647) do
     t.boolean "is_liked"
     t.string "image_url"
     t.datetime "date_posted"
+    t.string "user_posted_username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
