@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_14_160805) do
+ActiveRecord::Schema.define(version: 2022_11_14_161820) do
 
   create_table "playgrounds", force: :cascade do |t|
     t.string "name"
     t.string "address"
+    t.integer "town_id", null: false
   end
 
   create_table "towns", force: :cascade do |t|
