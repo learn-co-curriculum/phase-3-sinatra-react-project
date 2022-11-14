@@ -3,13 +3,12 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/" do
-     contacts = Contact.all
+    { message: "Good luck with your project!" }.to_json
+  end
+  get "/contacts" do 
+    contacts = Contact.all
     contacts.to_json
   end
-  # get "/contacts" do 
-  #   contacts = Contact.all
-  #   contacts.to_json
-  # end
   get "/contacts/:id" do
     contact = Contact.find_by(id:params[:id])
     contact.to_json
