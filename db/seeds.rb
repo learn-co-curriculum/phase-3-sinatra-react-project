@@ -22,6 +22,13 @@ Car.create(category:"toyota", model:"urban cruiser",fuel_type:"diesel",year:"202
 Car.create(category:"toyota", model:"fortuner",fuel_type:"diesel",year:"2023",transmission:"automatic", price:15000000, seats:5,quantity: 15,front_url:"https://www.toyotakenya.ke/media/gamme/modeles/images/6848f3b7777b0f8ffa7d919d52e4abe9.png", side_url:"https://www.toyotakenya.ke/media/gamme/modeles/images/3a039f85a76f6ab6f85a5238ff169d89.png", inside_url:"https://www.toyotakenya.ke/media/gamme/modeles/images/549e5927a82a82695ec39aea338eb012.png", back_url:"https://www.toyotakenya.ke/media/gamme/modeles/images/2d1a928d368f37a006b17450b8515230.png")
 Car.create(category:"toyota", model:"LC 300",fuel_type:"diesel",year:"2023",transmission:"automatic", price: 18600000, seats:8,quantity: 15,front_url:"https://www.toyotakenya.ke/media/gamme/modeles/images/5cfc7eac09818170f664f1698d76843d.png", side_url:"https://www.toyotakenya.ke/media/gamme/modeles/images/377644bfacf70cd0e0b428b19c83e710.png", inside_url:"https://www.toyotakenya.ke/media/gamme/modeles/images/c1cadbc142f293d065ae3b73f26b2552.png", back_url:"https://www.toyotakenya.ke/media/gamme/modeles/images/899ed375436549772106cd9ab1b0e810.png")
 Car.create(category:"toyota", model: "prado",fuel_type:"diesel",year:"2023",transmission: "automatic", price:7700000 , seats:8,quantity: 15,front_url:"https://www.toyotakenya.ke/media/gamme/modeles/images/587c7b1f6eed6ed5517581e67b3884c8.png" , side_url:"https://www.toyotakenya.ke/media/gamme/modeles/images/405d5cbbc44b9256a5363461d13bfc33.png", inside_url:"https://www.toyotakenya.ke/media/gamme/modeles/images/b096c3f7d24602d498b6acc0d8b6bf04.png", back_url:"https://www.toyotakenya.ke/media/gamme/modeles/images/d76d4d618bfe9782a9684430e14b030f.png")
+Review.create(comment: "this car is cool", rating: 10,car_id: 200)
+Review.create(comment: "not bad", rating: 10,car_id: 201)
+Review.create(comment: "nice car", rating: 15, car_id: 201)
+Review.create(comment: "i would wish to buy one", rating: 0,car_id: 202)
+Review.create(comment: "this iscool", rating: 10,car_id: 203)
+
+
 Admin.create(username: "nicco", password: "1234")
 Admin.create(username: "timo", password: "1234")
 Admin.create(username: "jid", password: "1234")

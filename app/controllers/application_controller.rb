@@ -4,11 +4,11 @@ class ApplicationController < Sinatra::Base
   # Add your routes here
   get "/cars" do
     car = Car.all
-    car.to_json
+    car.to_json(include: :reviews)
   end
   get '/cars/:id' do 
     car = Car.find(params[:id])
-    car.to_json
+    car.to_json(include: :reviews)
   end
   post '/add_car' do 
     car = Car.create(
@@ -32,10 +32,15 @@ class ApplicationController < Sinatra::Base
       name:params[:buyer_name],
       email: params[:buyer_email]
     )
-    car =Car.find_by(model: params[:model])
+    car = Car.filter(model: params[:model])
+
     car_quantity = car.quantity -= 1
+
+
     car.update(quantity: car_quantity)
+
     transaction = Transaction.create(buyer: buyer, car: car)
+    
     buyer.to_json
   end
   patch '/update' do 
@@ -54,7 +59,20 @@ class ApplicationController < Sinatra::Base
 get '/admin' do
   admin = Admin.all
   admin.to_json
+end
+get "/transactions" do
+  transaction_arr =Transaction.buyer
+  transaction_arr.to_json
+end
 
+post "/reviews"   do
+reviews = Review.create(
+  email:params[:email],
+  comment:params[:comment],
+  rating:params[:rating],
+  car_id:params[:car_id]
+)
+reviews.to_json
 end
 
 

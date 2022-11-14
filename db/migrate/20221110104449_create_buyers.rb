@@ -6,3 +6,4 @@ class CreateBuyers < ActiveRecord::Migration[6.1]
     end
   end
 end
+M-49-updates
