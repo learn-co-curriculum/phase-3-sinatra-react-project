@@ -4,6 +4,7 @@ import FilterOfFavorite from './FilterOfFavorite'
 function FavoriteDestinations() {
   return (
     <div>
+      <h2>FavoriteDestinations</h2>
       <FilterOfFavorite/>
     </div>
   )

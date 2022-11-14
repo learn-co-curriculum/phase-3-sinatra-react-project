@@ -3,6 +3,7 @@ import React from 'react'
 function AddDestinationsForm() {
   return (
     <div>
+      <h2>Add New Destinations</h2>
       <form>
         <input
             className='city-name'
