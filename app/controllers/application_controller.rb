@@ -8,8 +8,8 @@ class ApplicationController < Sinatra::Base
 
 
   get "/users/:user_name" do
-    binding.pry
-    User.find_by(params[:user_name]).to_json
+    # binding.pry
+    User.find_by(user_name: params[:user_name]).to_json
   end
 
 
