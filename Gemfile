@@ -37,6 +37,7 @@ gem "require_all", "~> 3.0"
 gem 'uri'
 gem 'net-http'
 gem 'openssl'
+gem 'faker'
 
 # These gems will only be used when we are running the application locally
 group :development do
