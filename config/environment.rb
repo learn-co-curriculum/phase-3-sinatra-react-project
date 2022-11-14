@@ -1,10 +1,10 @@
-# This is an _environment variable_ that is used by some of the Rake tasks to determine
-# if our application is running locally in development, in a test environment, or in production
-ENV['RACK_ENV'] ||= "development"
+ENV["SINATRA_ENV"] ||= "development"
 
-# Require in Gems
-require 'bundler/setup'
-Bundler.require(:default, ENV['RACK_ENV'])
+# require "dotenv/load"
+require "bundler/setup"
+Bundler.require(:default, ENV["SINATRA_ENV"])
 
-# Require in all files in 'app' directory
-require_all 'app'
+# set :database, {adapter: "sqlite3", database: "db/#{ENV["SINATRA_ENV"]}.sqlite"}
+set :database_file, "./database.yml"
+
+require_all "app"
