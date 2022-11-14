@@ -6,13 +6,18 @@ class ApplicationController < Sinatra::Base
     { message: "Good luck with your project!" }.to_json
   end
 
+
+  get "/users/:user_name" do
+    binding.pry
+    User.find_by(params[:user_name]).to_json
+  end
+
+
   get "/users" do
     User.all.to_json
   end
 
-  get "/users?user_name=:user_name" do
-    User.find_by(params[:user_name]).to_json
-  end
+  
 
   get "/users/:id" do
     user = User.find(params[:id])
