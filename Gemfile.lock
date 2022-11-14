@@ -35,6 +35,7 @@ GEM
       ruby2_keywords (~> 0.0.1)
     net-http (0.3.0)
       uri
+    openssl (3.0.1)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -96,6 +97,7 @@ DEPENDENCIES
   activerecord (~> 6.1)
   database_cleaner (~> 2.0)
   net-http
+  openssl
   pry (~> 0.14.1)
   rack-contrib (~> 2.3)
   rack-cors (~> 1.1)
@@ -109,6 +111,7 @@ DEPENDENCIES
   sinatra-activerecord (~> 2.0)
   sqlite3 (~> 1.4)
   thin (~> 1.8)
+  uri
 
 BUNDLED WITH
    2.2.23
