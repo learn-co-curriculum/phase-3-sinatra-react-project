@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_14_171842) do
+ActiveRecord::Schema.define(version: 2022_11_15_190859) do
 
   create_table "stock_prices", force: :cascade do |t|
-    t.integer "current_price"
     t.integer "stock_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "change_percentage"
+    t.float "change_point"
+    t.float "price"
+    t.string "total_vol"
   end
 
   create_table "stocks", force: :cascade do |t|

@@ -4,6 +4,7 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/" do
+    Stock.rufus
     { message: "Good luck with your project!" }.to_json
   end
 
@@ -32,6 +33,7 @@ class ApplicationController < Sinatra::Base
   get "/users/:user_name/watchlist" do
     User.find_by(user_name: params[:user_name]).watchlist.stocks.to_json(include:{stock_prices:{only:[:current_price]}})
   end
+
 
 
 end

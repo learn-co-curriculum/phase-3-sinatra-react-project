@@ -54,3 +54,7 @@ end
 gem "awesome_print"
 gem "faker"
 gem 'alpaca-trade-api'
+gem 'dotenv'
+gem 'rest-client'
+gem 'whenever'
+gem 'rufus-scheduler'

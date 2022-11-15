@@ -15,6 +15,10 @@ puts "🌱 Seeding spices..."
 # Seed your database here
 # create users
 
+require 'uri'
+require 'net/http'
+require 'openssl'
+
 
 #create stock1
 
@@ -24,10 +28,10 @@ stock1 = Stock.create(
 )
 
 #create stock1 prices
-StockPrice.create(
-    current_price: rand(1..500),
-    stock_id: stock1.id
-)
+# StockPrice.create(
+#     current_price: rand(1..500),
+#     stock_id: stock1.id
+# )
 
 #create stock2
 stock2 = Stock.create(
@@ -37,11 +41,12 @@ stock2 = Stock.create(
 
 #create stock2 prices
 
-StockPrice.create(
-    current_price: rand(1..500),
-    stock_id: stock2.id
-)
+# StockPrice.create(
+#     current_price: rand(1..500),
+#     stock_id: stock2.id
+# )
 
+Stock.get_prices
 
 10.times do
     user = User.create(

@@ -16,3 +16,5 @@
 
 # Canvas-specific .results.json
 .results.json
+
+/config/.env
