@@ -1,6 +1,6 @@
 # RESTly
 
-RESTly is an app that helps users find great food around San Diego! With RESTly, users can browse through our collection of restaurants, search and filter for specific cuisines, prices, and dining options, and review restaurants based on their own experiences. With this app, we hope to provide the framework and the foundation that the greater San Diego community can use to highlight the best food in the city!
+RESTly is an app that helps users find great food around San Diego! With RESTly, users can browse through our collection of restaurants, search and filter for specific cuisines, prices, and dining options, and review restaurants based on their own experiences. With this app, we hope to provide the framework and the foundation that the greater San Diego community can use to highlight the best food in the city!!
 
 # User Stories
 
