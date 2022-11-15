@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SearchFilter() {
+function SearchFilter({search, handleSearch}) {
   return (
     <div className='search'>
       <h2>Destination Search</h2>
@@ -8,6 +8,8 @@ function SearchFilter() {
         className='search-input'
         type='text'
         placeholder='Search for Destinations!'
+        value={search}
+        onChange={handleSearch}
       ></input>
     </div>
   )
