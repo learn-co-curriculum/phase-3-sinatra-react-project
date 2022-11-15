@@ -13,12 +13,10 @@
 ActiveRecord::Schema.define(version: 2022_11_14_171842) do
 
   create_table "stock_prices", force: :cascade do |t|
-    t.datetime "date"
-    t.float "open"
-    t.float "high"
-    t.float "low"
-    t.float "close"
+    t.integer "current_price"
     t.integer "stock_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "stocks", force: :cascade do |t|

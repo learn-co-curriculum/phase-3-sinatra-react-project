@@ -1,3 +1,4 @@
+require 'awesome_print'
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
@@ -22,6 +23,10 @@ class ApplicationController < Sinatra::Base
   get "/users/:id" do
     user = User.find(params[:id])
     user.to_json
+  end
+
+  get "/stocks" do
+    Stock.all.to_json(include:{stock_prices:{only:[:close]}})
   end
 
 
