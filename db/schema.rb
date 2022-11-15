@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_15_182957) do
+ActiveRecord::Schema.define(version: 2022_11_15_221036) do
 
   create_table "comments", force: :cascade do |t|
     t.string "comment"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2022_11_15_182957) do
     t.integer "following"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
+    t.string "email"
   end
 
   create_table "users_posts", force: :cascade do |t|
