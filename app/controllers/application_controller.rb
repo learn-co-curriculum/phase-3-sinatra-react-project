@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
   
   get "/users/:user_name" do
     
-      User.find_by(user_name: params[:user_name]).to_json
+      User.find_by(user_name: params[:user_name]).to_json(include:{})
     
     # binding.pry
   end
@@ -39,6 +39,11 @@ class ApplicationController < Sinatra::Base
   get "/users/:user_name/watchlist" do
     User.find_by(user_name: params[:user_name]).watchlist.stocks.to_json(include:{stock_price:{only:[:price]}})
     # User.find_by(user_name: params[User.first.user_name]).watchlist.stocks.to_json(include:{stock_price:{only:[:price]}})
+  end
+
+  get '/users/:user_name/watchlist/stocks/:id' do
+    User.find_by(user_name: params[:user_name]).watchlist.stocks.where(id: params[:id])
+    # binding.pry
   end
 
 
