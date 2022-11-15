@@ -11,10 +11,10 @@ kesh = User.create(user_name: "keshav", password: "kesh123")
 har = User.create(user_name: "harrison", password: "har123")
 
 
-cin = Candle.create(name: "cinnamon breeze", price: 12)
-card = Candle.create(name: "cardamom breeze", price: 12)
-forest = Candle.create(name: "forest breeze", price: 12)
-sea = Candle.create(name: "sea breeze", price: 12)
+cin = Candle.create(name: "cinnamon breeze", price: 12, image: "candle.jpeg")
+card = Candle.create(name: "cardamom breeze", price: 12, image: "candle.jpeg")
+forest = Candle.create(name: "forest breeze", price: 12, image: "candle.jpeg")
+sea = Candle.create(name: "sea breeze", price: 12, image: "candle.jpeg")
 
 
 CandleScent.create(candle: cin, scent: cinnamon)
