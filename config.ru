@@ -13,3 +13,9 @@ use Rack::JSONBodyParser
 
 # Our application
 run ApplicationController
+
+use UsersController
+
+use PostsController
+
+use CommentsController
