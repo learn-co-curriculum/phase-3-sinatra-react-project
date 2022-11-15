@@ -6,6 +6,7 @@ class CreateReviews < ActiveRecord::Migration[6.1]
       t.boolean :favorited?
       t.integer :restaurant_id
       t.integer :user_id
+      t.string :review_detail_comment
       t.timestamps
     end
   end
