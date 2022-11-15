@@ -10,29 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_14_220738) do
+ActiveRecord::Schema.define(version: 2022_11_15_052719) do
 
-  create_table "available_dishes", force: :cascade do |t|
+  create_table "cuisines", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "dish_ingredients", force: :cascade do |t|
     t.integer "ingredient_id"
     t.integer "dish_id"
   end
 
   create_table "dishes", force: :cascade do |t|
     t.string "name"
-    t.string "cuisine"
-    t.integer "ingredient_id"
-    t.integer "user_id"
-    t.boolean "in_stock"
-    t.string "comments"
+    t.integer "cuisine_id"
     t.integer "times_cooked"
     t.string "instructions"
   end
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
-    t.integer "quantity"
-    t.integer "dish_id"
+  end
+
+  create_table "user_dishes", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "dish_id"
+  end
+
+  create_table "user_ingredients", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "ingredient_id"
+    t.integer "quantity"
     t.boolean "in_stock"
   end
 

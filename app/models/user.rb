@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
-    has_many :ingredients
-    has_many :dishes
-    has_many :favorite_dishes, through: :dishes
+    has_many :user_ingredients
+    has_many :ingredients, through: :user_ingredients
+    has_many :user_dishes
+    has_many :dishes, through: :user_dishes
 
     # def toggle_favorite
     #     favorited = Dish.favorite

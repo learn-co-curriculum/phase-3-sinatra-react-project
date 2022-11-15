@@ -1,5 +1,5 @@
 class Ingredient < ActiveRecord::Base
-    has_many :users
-    has_many :dishes
+    belongs_to :user
+    belongs_to :dish
     
 end
