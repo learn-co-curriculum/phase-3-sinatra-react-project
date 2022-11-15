@@ -53,3 +53,4 @@ end
 
 gem "awesome_print"
 gem "faker"
+gem 'alpaca-trade-api'
