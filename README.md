@@ -5,6 +5,7 @@
 
 **Project Name:** Find A Motel.
 
+**Project Site:** https://front-end-project-xi.vercel.app/books
 
 **Github frontend:** **link:** https://github.com/Essyuge/Front-end-Project
  
