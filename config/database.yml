@@ -1,9 +1,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: phase-3-project
+  database: motels
   host: localhost
-  username: 'motels' 
+  username: "postgres" 
   pool: 5
 production:
   adapter: postgresql
