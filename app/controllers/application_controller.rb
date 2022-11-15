@@ -12,12 +12,17 @@ class ApplicationController < Sinatra::Base
     users.to_json
   end
 
-  get "/restaurant_images" do
-    restaurant_images = RestaurantImage.all
+  get "/restaurant/:id" do
+    restaurant = Restaurant.find(params[:id])
+    restaurant.to_json
+  end
+
+  get "/restaurant/:id/images" do
+    restaurant_images = Restaurant.find(params[:id]).restaurant_images
     restaurant_images.to_json
   end
 
-  get "/users/:id/" do
+  get "/users/:id" do
     user = User.find(params[:id])
     user.to_json
   end
