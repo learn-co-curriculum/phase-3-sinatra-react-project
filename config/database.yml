@@ -2,14 +2,15 @@ development:
   adapter: postgresql
   encoding: unicode
   database: motels
+  pool: 2
   host: localhost
-  username: "postgres" 
-  pool: 5
+  username: "postgres"
+  password: Vincere21.
 production:
   adapter: postgresql
   encoding: unicode
-  database: production
+  pool: 5
+  host: <%= ENV['DATABASE_HOST'] %>
   database: <%= ENV['DATABASE_NAME'] %>
   username: <%= ENV['DATABASE_USER'] %>
-  host: <%= ENV[‘DATABASE_HOST’] %>
-  pool: 5
+  password: <%= ENV['DATABASE_PASSWORD'] %>
