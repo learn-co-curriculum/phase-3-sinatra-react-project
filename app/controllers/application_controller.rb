@@ -14,7 +14,6 @@ class ApplicationController < Sinatra::Base
   post "/candles" do
     candle = Candle.create(name:params[:name], price:params[:price], image:params[:image]) 
     scents = params[:scents]
-    binding.pry
     scents.map do |scent|
       CandleScent.create( candle_id:candle.id, scent_id:Scent.find_by(name: scent).id )
     end
