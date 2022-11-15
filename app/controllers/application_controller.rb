@@ -3,8 +3,7 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/restaurants" do
-    restaurants = Restaurant.all
-    restaurants.to_json
+    Restaurant.all.to_json(include: :restaurant_images)
   end
 
   get "/users" do
@@ -13,8 +12,9 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/restaurant/:id" do
-    restaurant = Restaurant.find(params[:id])
-    restaurant.to_json
+    restaurant = Restaurant.find(params[:id]).attributes
+    complete_restaurant = restaurant.merge!(images: Restaurant.find(params[:id]).restaurant_images.pluck(:image_url))
+    complete_restaurant.to_json
   end
 
   get "/restaurant/:id/images" do
