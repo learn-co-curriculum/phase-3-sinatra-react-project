@@ -41,6 +41,3 @@ Favorite menu items (favorites):
 - Restaurant id (foreign key)
 
 # Wireframes:
-![page 1](/wireframes/Page_1.png)
-![page 2](/wireframes/Page_2.png)
-![page 3](/wireframes/Page_3.png)
