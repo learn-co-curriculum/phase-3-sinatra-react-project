@@ -10,20 +10,20 @@ puts "🌱 Seeding spices..."
 end
 
 #message data. messages will be a slack emoji for some reason
-20.times. do
+20.times do
     Meassage.create(
         message: Faker::SlackEmoji.message, 
         timestamp: Faker::Date.timestamp
     )
 end
 
-#user data. passwords will be the name of a tea
+#user data. passwords will be the name of a tea. teacher/student boolean values will be randomly true/fasle 
 10.times do 
     User.create(
         first_name: Faker::Name.first_name, 
         last_name: Faker::Name.last_name, 
-        teacher: rand(2) == 1 ? true : false
-        student: rand(2) == 1 ? true : false
+        teacher: rand(2) == 1 ? true : false,
+        student: rand(2) == 1 ? true : false,
         password: Faker::Tea.password
     )
 end
