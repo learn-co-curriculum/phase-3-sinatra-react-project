@@ -27,4 +27,9 @@ class ApplicationController < Sinatra::Base
     deleted_candle.destroy
     deleted_candle.to_json
 
+   get '/scents' do
+    scents = Scent.all
+    scents.to_json
+   end
+end
 end
