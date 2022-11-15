@@ -3,12 +3,19 @@ import SearchFilter from './SearchFilter'
 import OrderBy from './OrderBy'
 import DestinationCards from './DestinationCards'
 
-function DestinationsContainer({search, handleSearch}) {
+function DestinationsContainer({ destinations, setDestinations, search, handleSearch, handleDelete}) {
+
+  function handleDelete(id) {
+    fetch(`http://localhost:9292/destinations/${id}`, {
+      method: "DELETE",
+    }).then(() => removeDestination(id));
+  }
+
   return (
     <div>
       <SearchFilter search={search} handleSearch={handleSearch}/>
       <OrderBy/>
-      <DestinationCards/>
+      <DestinationCards destinations={destinations} setDestinations={setDestinations} handleDelete={handleDelete}/>
     </div>
   )
 }
