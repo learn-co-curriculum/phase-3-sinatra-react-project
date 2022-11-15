@@ -12,7 +12,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/candles" do
-    candle = Candle.create(name:params[:name], price:params[:price])
+    candle = Candle.create(name:params[:name], price:params[:price], image:params[:image])
     candle.to_json 
   end
 
@@ -31,6 +31,8 @@ class ApplicationController < Sinatra::Base
    get "/scents" do
     scents = Scent.all
     scents.to_json
+
    end
+
 
 end
