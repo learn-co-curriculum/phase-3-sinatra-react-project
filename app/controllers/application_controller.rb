@@ -12,7 +12,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/candles" do
-    candle = Candle.create(name:params[:name], price:params[:price])
+    candle = Candle.create(name:params[:name], price:params[:price], image:params[:image])
     candle.to_json 
   end
 
@@ -26,10 +26,11 @@ class ApplicationController < Sinatra::Base
     deleted_candle = Candle.find(params[:id])
     deleted_candle.destroy
     deleted_candle.to_json
+  end
 
    get '/scents' do
     scents = Scent.all
     scents.to_json
-   end
-end
+  end
+
 end
