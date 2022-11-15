@@ -1,19 +1,20 @@
-require 'faker'
 puts "🌱 Seeding spices..."
 
-#chatroom data. title of chatroom will be a funny name
+#chatroom data. title of a chatroom will be a spice name
 5.times do 
     Chatroom.create(
-        title: Faker::FunnyName.title, 
-        timestamp: Faker::Date.timestamp
+        title: Faker::Food.spice, 
+        timestamp: Faker::Date.between(from: '2022-11-15', to: "2021-11-15")
     )
 end
 
 #message data. messages will be a slack emoji for some reason
 20.times do
-    Meassage.create(
-        message: Faker::SlackEmoji.message, 
-        timestamp: Faker::Date.timestamp
+    Message.create(
+        message: Faker::SlackEmoji.emoji, 
+        timestamp: Faker::Date.between(from: '2022-11-15', to: "2021-11-15"),
+        user_id: rand(1..10),
+        chatroom_id: rand(1..5)
     )
 end
 
@@ -22,10 +23,8 @@ end
     User.create(
         first_name: Faker::Name.first_name, 
         last_name: Faker::Name.last_name, 
-        teacher: rand(2) == 1 ? true : false,
-        student: rand(2) == 1 ? true : false,
-        password: Faker::Tea.password
+        isTeacher?: rand(2) == 1 ? true : false,
+        password: Faker::Tea.variety 
     )
 end
-
 puts "✅ Done seeding!"
