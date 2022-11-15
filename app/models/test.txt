@@ -1,0 +1,21 @@
+Test Cases for Relationships
+
+1. Customer.first.address_details
+
+2. Customer.first.payment_details
+
+3. Customer.first.order_histories
+
+4. Product.first.order_histories
+
+NOTE: This call will get customers via ORDER_HISTORY! 
+5.  Product.first.customers 
+
+6.  Product.first.inventories
+
+7. Customer.first.cart_items
+8. Customer.first.order_histories
+
+9. Product.first.customers.first.payment_details.first.order_histories
+
+10. Customer.first.cart_items.first.product
