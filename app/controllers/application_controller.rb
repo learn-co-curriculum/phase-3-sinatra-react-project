@@ -5,10 +5,9 @@ class ApplicationController < Sinatra::Base
   get "/data" do
     User.all.to_json(
       include: {
-        posts: {
-          include: :comments
-        }
-      } 
+        posts: {include: :comments}}
+        
+
     )
     
   end

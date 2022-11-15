@@ -19,3 +19,5 @@ use UsersController
 use PostsController
 
 use CommentsController
+
+use UsersPostsController

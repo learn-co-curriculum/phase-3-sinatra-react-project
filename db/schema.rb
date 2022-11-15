@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_14_202647) do
+ActiveRecord::Schema.define(version: 2022_11_15_182957) do
 
   create_table "comments", force: :cascade do |t|
     t.string "comment"
+    t.integer "likes"
+    t.boolean "is_liked"
+    t.datetime "comment_date"
     t.integer "post_id"
     t.integer "user_id"
-    t.datetime "comment_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -27,6 +29,7 @@ ActiveRecord::Schema.define(version: 2022_11_14_202647) do
     t.boolean "is_liked"
     t.string "image_url"
     t.datetime "date_posted"
+    t.string "comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -36,6 +39,13 @@ ActiveRecord::Schema.define(version: 2022_11_14_202647) do
     t.string "image_url"
     t.integer "followers"
     t.integer "following"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users_posts", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
