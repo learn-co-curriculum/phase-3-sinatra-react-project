@@ -27,11 +27,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/stocks" do
-    Stock.all.to_json(include:{stock_prices:{only:[:current_price]}})
+    Stock.all.to_json(include:{stock_prices:{only:[:price]}})
   end
 
   get "/users/:user_name/watchlist" do
-    User.find_by(user_name: params[:user_name]).watchlist.stocks.to_json(include:{stock_prices:{only:[:current_price]}})
+    User.find_by(user_name: params[:user_name]).watchlist.stocks.to_json(include:{stock_prices:{only:[:price]}})
   end
 
 
