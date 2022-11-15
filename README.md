@@ -41,13 +41,9 @@ Favorite menu items (favorites):
 - Restaurant id (foreign key)
 
 # Wireframes:
+
 ![Page_1](https://user-images.githubusercontent.com/110696444/201938248-d4fcee27-d902-4e51-88b3-2308468e2c5b.png)
 
 ![Page_2](https://user-images.githubusercontent.com/110696444/201938260-b14c7a3a-21d6-4582-9970-b833cae7c89d.png)
 
-
 ![Page_3](https://user-images.githubusercontent.com/110696444/201938264-831b443d-8dec-4bcf-a4b2-cf641a856afd.png)
-
-
-
-
