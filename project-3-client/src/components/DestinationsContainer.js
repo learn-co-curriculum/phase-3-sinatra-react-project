@@ -3,10 +3,10 @@ import SearchFilter from './SearchFilter'
 import OrderBy from './OrderBy'
 import DestinationCards from './DestinationCards'
 
-function DestinationsContainer() {
+function DestinationsContainer({search, handleSearch}) {
   return (
     <div>
-      <SearchFilter/>
+      <SearchFilter search={search} handleSearch={handleSearch}/>
       <OrderBy/>
       <DestinationCards/>
     </div>
