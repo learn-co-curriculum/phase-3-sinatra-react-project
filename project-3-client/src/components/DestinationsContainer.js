@@ -3,7 +3,7 @@ import SearchFilter from './SearchFilter'
 import OrderBy from './OrderBy'
 import DestinationCards from './DestinationCards'
 
-function DestinationsContainer({ destinations, setDestinations, search, handleSearch, handleDelete}) {
+function DestinationsContainer({ destinations, setDestinations, search, handleSearch, removeDestination}) {
 
   function handleDelete(id) {
     fetch(`http://localhost:9292/destinations/${id}`, {
