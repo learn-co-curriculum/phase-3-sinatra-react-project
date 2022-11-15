@@ -10,11 +10,16 @@ end
     books = Author.all
     books.to_json
 end
+  get '/authors' do
+    books = Author.all
+    books.to_json
+end
 
 get '/books/:id' do
     books = Book.find(params[:id])
     books.to_json(include: :author)
 end
+
 
 post '/books' do
     books = Book.create(
