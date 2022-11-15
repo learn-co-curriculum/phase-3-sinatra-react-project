@@ -12,8 +12,13 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/candles" do
-    candle = Candle.create(name:params[:name], price:params[:price], image:params[:image])
-    candle.to_json 
+    candle = Candle.create(name:params[:name], price:params[:price], image:params[:image]) 
+    scents = params[:scents]
+    binding.pry
+    scents.map do |scent|
+      CandleScent.create( candle_id:candle.id, scent_id:Scent.find_by(name: scent).id )
+    end
+    candle.to_json
   end
 
   
@@ -24,6 +29,7 @@ class ApplicationController < Sinatra::Base
 
   delete "/candles/:id" do 
     deleted_candle = Candle.find(params[:id])
+    CandleScent.where(candle_id: params[:id]).destroy 
     deleted_candle.destroy
     deleted_candle.to_json
   end
