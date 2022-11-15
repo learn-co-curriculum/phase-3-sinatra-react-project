@@ -26,7 +26,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/stocks" do
-    Stock.all.to_json(include:{stock_prices:{only:[:close]}})
+    Stock.all.to_json(include:{stock_prices:{only:[:current_price]}})
   end
 
 
