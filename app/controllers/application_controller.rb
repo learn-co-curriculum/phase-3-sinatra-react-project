@@ -22,14 +22,15 @@ class ApplicationController < Sinatra::Base
     candles.to_json
   end
 
-  delete '/candles/:id' do 
+  delete "/candles/:id" do 
     deleted_candle = Candle.find(params[:id])
     deleted_candle.destroy
     deleted_candle.to_json
+  end
 
-   get '/scents' do
+   get "/scents" do
     scents = Scent.all
     scents.to_json
    end
-end
+
 end
