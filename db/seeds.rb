@@ -24,17 +24,10 @@ stock1 = Stock.create(
 )
 
 #create stock1 prices
-15.times do
-    StockPrice.create(
-        date: DateTime.now,
-        open: rand(300..400),
-        high: rand(400..500),
-        low: rand(200..300),
-        close: rand(300...400),
-        stock_id: stock1.id
-
-    )
-end
+StockPrice.create(
+    current_price: rand(1..500),
+    stock_id: stock1.id
+)
 
 #create stock2
 stock2 = Stock.create(
@@ -43,14 +36,12 @@ stock2 = Stock.create(
 )
 
 #create stock2 prices
+
 StockPrice.create(
-    date: DateTime.now,
-    open: rand(300..400),
-    high: rand(400..500),
-    low: rand(200..300),
-    close: rand(300...400),
+    current_price: rand(1..500),
     stock_id: stock2.id
 )
+
 
 10.times do
     user = User.create(
