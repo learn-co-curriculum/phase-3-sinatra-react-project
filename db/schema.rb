@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_14_184654) do
+ActiveRecord::Schema.define(version: 2022_11_15_141220) do
+
+  create_table "friendships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "following_id"
+  end
 
   create_table "restaurant_images", force: :cascade do |t|
     t.integer "restaurant_id"
