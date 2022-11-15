@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 2022_11_15_141220) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "likes"
-    t.integer "dislikes"
+    t.boolean "likes"
+    t.boolean "dislikes"
     t.boolean "favorited?"
     t.integer "restaurant_id"
     t.integer "user_id"
