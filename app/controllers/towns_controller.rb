@@ -7,7 +7,7 @@ class TownsController < ApplicationController
     #returns a specific town with its playgrounds- the show page for a town
     get "/towns/:id" do
         town=Town.find_by_id(params["id"])
-        town.to_json(include: [:books])
+        town.to_json(include: [:playgrounds])
     end
   
     post "/towns" do
