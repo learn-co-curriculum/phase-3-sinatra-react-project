@@ -15,9 +15,9 @@ class TablesController < ApplicationController
       table_number: params[:table_number],
     )
     if table.save
-      table.to_json(include: :guests)
+      table.to_json(include: [:guests])
     else
-      { error: table.errors.full_messages }.to_json
+      { errors: table.errors.full_messages }.to_json
     end
   end
 
@@ -30,5 +30,15 @@ class TablesController < ApplicationController
       { errors: ["Cannot Delete Table Now"]}
     end
   end
+
+  patch "/tables/:id" do
+    table = Table.find_by_id(params["id"])
+    if table.update(params)
+      table.to_json(include: [:guests])
+    else
+      { errors: table.errors.full_messages }.to_json
+    end
+  end
+
 
 end
