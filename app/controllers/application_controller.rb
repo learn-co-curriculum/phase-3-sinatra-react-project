@@ -45,6 +45,7 @@ class ApplicationController < Sinatra::Base
     user.to_json(include: { candles: { include: :scents } } )
   end
 
+
   get "/users/:user_id/cart" do
     # user = User.find_by(user_name: params[:username])
     cart = UserCandle.where(user_id: params[:user_id])
@@ -52,6 +53,16 @@ class ApplicationController < Sinatra::Base
       candle.candle
     end
     carty.to_json(include: :scents)
+
+  post "/users" do
+    user = User.new(params)
+    if user.user_name.blank? || user.password.blank? || User.find_by(user_name: params[:username])
+      { message: "Invalid Username or Password" }.to_json
+    else
+      user.save
+      user.to_json
+    end
+
   end
 
 end
