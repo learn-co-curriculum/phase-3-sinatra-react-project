@@ -42,7 +42,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/users/:user_name/watchlist/stocks/:id' do
-    User.find_by(user_name: params[:user_name]).watchlist.stocks.where(id: params[:id])
+    response.headers['Access-Control-Allow-Origin'] = *
+    User.find_by(user_name: params[:user_name]).watchlist.stocks.where(id: (params[:id].to_i))
     # binding.pry
   end
 
