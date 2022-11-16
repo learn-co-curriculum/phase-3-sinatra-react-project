@@ -23,13 +23,29 @@ class ApplicationController < Sinatra::Base
 
   get "/restaurant/:id" do
     restaurant = Restaurant.find(params[:id]).attributes
-    complete_restaurant = restaurant.merge!(images: Restaurant.find(params[:id]).restaurant_images.pluck(:image_url))
+    complete_restaurant = restaurant
+      .merge!(images: Restaurant.find(params[:id]).restaurant_images.pluck(:image_url))
+      .merge!(reviews: Restaurant.find(params[:id]).reviews)
     complete_restaurant.to_json
   end
 
   get "/restaurant/:id/images" do
     restaurant_images = Restaurant.find(params[:id]).restaurant_images
     restaurant_images.to_json
+  end
+
+  get "/restaurant/:id/reviews" do
+    restaurant_reviews = Restaurant.find(params[:id]).reviews
+    restaurant_reviews.to_json
+  end
+
+  post "/restaurant/:id/reviews" do
+    restaurant_review = Review.create(
+      restaurant_id: params[:restaurant_id],
+      user_id: params[:user_id],
+      review_detail_comment: params[:review_detail_comment]
+    )
+    restaurant_review.to_json
   end
 
   get "/users/:id" do
