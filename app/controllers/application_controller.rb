@@ -43,4 +43,14 @@ class ApplicationController < Sinatra::Base
     user.to_json(include: { candles: { include: :scents } } )
   end
 
+  post "/users" do
+    user = User.new(params)
+    if user.user_name.blank? || user.password.blank? || User.find_by(user_name: params[:username])
+      { message: "Invalid Username or Password" }.to_json
+    else
+      user.save
+      user.to_json
+    end
+  end
+
 end
