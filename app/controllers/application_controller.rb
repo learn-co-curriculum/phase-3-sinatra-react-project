@@ -1,6 +1,10 @@
 require 'awesome_print'
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
+
+  before do
+    response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
+  end
   
   # Add your routes here
   get "/" do
