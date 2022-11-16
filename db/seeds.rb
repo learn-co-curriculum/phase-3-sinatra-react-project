@@ -2,6 +2,7 @@ puts "🌱 Seeding spices..."
 u1 = User.create(name: "Alexis Torosina", username: "alexistorosina", image_url:"http://www.stickpng.com/img/icons-logos-emojis/users/young-user-icon", followers: 15, following: 126, password: "123")
 u2 = User.create(name: "Taylan Postalci", username: "taylanpostalci", image_url:"http://www.stickpng.com/img/icons-logos-emojis/users/young-user-icon", followers: 78, following: 5, password: "123")
 
+
 p1 = Post.create(description: "My Dog", likes: 0, is_liked: false, image_url: "https://thumbs.dreamstime.com/z/golden-retriever-dog-21668976.jpg", date_posted: Date.today)
 p2 = Post.create(description: "Cats", likes: 0, is_liked: false, image_url: "https://mediaproxy.salon.com/width/1200/https://media.salon.com/2022/05/cats-party-0516221.jpg", date_posted: Date.today)
 

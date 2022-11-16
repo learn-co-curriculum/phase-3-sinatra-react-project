@@ -34,7 +34,7 @@ class UsersController < ApplicationController
       redirect "/login"
     end
 
-    get "/users" do
+      get "/users" do
         users = User.all.to_json
       end
 
@@ -42,8 +42,8 @@ class UsersController < ApplicationController
         user = User.find(params[:id]).to_json
       end
 
-      post "/users" do
-        user = User.create(params).to_json
+      get "/users/username/:username" do
+        user = User.find_by(username: params[:username]).to_json
       end
 
       patch "/users/:id" do
