@@ -3,15 +3,16 @@ import ReviewList from './ReviewList'
 import AddReview from './AddReview'
 
 function Destination({destination}) {
-  const {id, city_name, country_name, img_url, created_at, updated_at} = destination;
+  const {city_name, country_name, continent, img_url, created_at, updated_at} = destination;
 
   return (
     <>
     <div className='card'>
       <div className='container'>
         <h1>{city_name}</h1>
-        <img className='image' src={img_url} alt={id}/>
+        <img className='image' src={img_url} alt={city_name}/>
         <h2>{country_name}</h2>
+        <h2>{continent?.continent_name}</h2>
         <p>{created_at}</p>
         <p>{updated_at}</p>
       </div>
