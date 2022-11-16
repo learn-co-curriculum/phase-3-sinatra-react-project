@@ -54,5 +54,7 @@ class ApplicationController < Sinatra::Base
 
   # post "/users/:user_name/watchlist" do
   #   User.find_by(user_name: params[:user_name]).watchlist.stocks.to_json(include:{stock_price:{only:[:price]}})
+  #   user_id = User.find_by(user_name: params[:user_name]).id
+  #   stockToPost = WatchstocksJoin.create()
   # end
 end
