@@ -1,12 +1,10 @@
 import React from 'react'
 import Destination from './Destination'
 
-function DestinationCards({ destinations, handleDelete}) {
-  const eachDestination = destinations.map((destination) => (
-    <Destination destination={destination} key={destination.id} handleDelete={handleDelete}/>
-  ))
+function DestinationCards() {
+  
   return (
-    <div>{eachDestination}</div>
+    <div><Destination/></div>
   )
 }
 

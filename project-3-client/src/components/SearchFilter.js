@@ -1,17 +1,8 @@
 import React from 'react'
 
-function SearchFilter({search, handleSearch}) {
+function SearchFilter() {
   return (
-    <div className='search'>
-      <h2>Destination Search</h2>
-      <input
-        className='search-input'
-        type='text'
-        placeholder='Search for Destinations!'
-        value={search}
-        onChange={handleSearch}
-      ></input>
-    </div>
+    <div></div>
   )
 }
 
