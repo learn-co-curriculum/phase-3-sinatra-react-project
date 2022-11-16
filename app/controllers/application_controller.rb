@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/users/:user_name/userstocks_joins" do
-    User.find_by(user_name: params[:user_name]).to_json(include: {userstocks_joins: {only: [:id, :user_id, :stock_id]}})
+    User.find_by(user_name: params[:user_name]).to_json(include: {userstocks_joins: {only: [:id, :user_id, :stock_id]}, stocks: {only: [:id, :ticker]}})
     binding.pry
   end
 
