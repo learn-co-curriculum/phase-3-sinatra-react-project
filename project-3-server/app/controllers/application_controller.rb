@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
 
   get "/destinations" do
     destinations = Destination.all 
-    destinations.to_json
+    destinations.to_json(include: :continent)
   end
 
   get "/destinations/:id" do
@@ -45,7 +45,7 @@ class ApplicationController < Sinatra::Base
 
   get "/reviews" do
     reviews = Review.all 
-    reviews.to_json
+    reviews.to_json(include: :destination)
   end
 
   get "/reviews/:id" do
