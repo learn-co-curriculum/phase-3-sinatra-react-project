@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
 
   before do 
-    response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3001'
+    response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
   end
   
   # Add your routes here
@@ -37,7 +37,12 @@ class ApplicationController < Sinatra::Base
     Stock.find_by(ticker: params[:query].upcase).to_json(include:{stock_price:{only:[:price]}})
   end
 
-  get "/users/:user_name/watchlist/stocks/:id" do 
+  delete "/users/:user_name/watchlist/stocks/:id" do 
     User.find_by(user_name: params[:user_name]).watchlist.stocks.where(id: params[:id].to_i).to_json(include:{stock_price:{only:[:price]}})
+    # binding.pry
+    user_id = User.find_by(user_name: params[:user_name]).id
+    stockToDelete = WatchstocksJoin.find_by watchlist_id: user_id, stock_id: params[:id]
+    stockToDelete.destroy
+    stockToDelete.to_json
   end
 end
