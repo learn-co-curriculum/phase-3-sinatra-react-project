@@ -40,12 +40,16 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/restaurant/:id/reviews" do
-    restaurant_review = Review.create(
-      restaurant_id: params[:restaurant_id],
-      user_id: params[:user_id],
-      review_detail_comment: params[:review_detail_comment]
-    )
-    restaurant_review.to_json
+    binding.pry
+    # restaurant_review = Review.create(
+    #   likes: params[:likes],
+    #   dislikes: params[:dislikes],
+    #   favorited?: params[:favorited?],
+    #   restaurant_id: params[:restaurant_id],
+    #   user_id: params[:user_id],
+    #   review_detail_comment: params[:review_detail_comment]
+    # )
+    # restaurant_review.to_json
   end
 
   get "/users/:id" do
