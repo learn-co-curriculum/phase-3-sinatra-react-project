@@ -1,30 +1,31 @@
-require 'faker'
-puts "🌱 Seeding spices..."
+# require 'faker'
+puts "🌱 Seeding messages..."
 
 #chatroom data. title of chatroom will be a funny name
 5.times do 
     Chatroom.create(
         title: Faker::FunnyName.title, 
-        timestamp: Faker::Date.timestamp
+        # timestamp: Faker::Date.timestamp
     )
 end
 
 #message data. messages will be a slack emoji for some reason
 20.times do
-    Meassage.create(
-        message: Faker::SlackEmoji.message, 
-        timestamp: Faker::Date.timestamp
+    Message.create(
+        content: Faker::Lorem.sentence(word_count: 3)
+        # message: Faker::SlackEmoji.message, 
+        # timestamp: Faker::Date.timestamp
     )
 end
 
 #user data. passwords will be the name of a tea. teacher/student boolean values will be randomly true/fasle 
 10.times do 
     User.create(
-        first_name: Faker::Name.first_name, 
-        last_name: Faker::Name.last_name, 
-        teacher: rand(2) == 1 ? true : false,
-        student: rand(2) == 1 ? true : false,
-        password: Faker::Tea.password
+        first_name: Faker::Name.name, 
+        last_name: Faker::Name.name, 
+        user_role: %w[student teacher].sample,
+        password: "password",
+        # profile_pic: Faker::LoremFlickr.unique.image
     )
 end
 

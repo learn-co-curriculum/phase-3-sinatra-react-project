@@ -10,28 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_15_161615) do
+ActiveRecord::Schema.define(version: 2022_11_16_162858) do
 
   create_table "chatrooms", force: :cascade do |t|
     t.string "title"
-    t.datetime "timestamp"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "messages", force: :cascade do |t|
-    t.integer "user_id_id"
-    t.integer "chatroom_id_id"
-    t.string "message"
-    t.datetime "timestmap"
-    t.index ["chatroom_id_id"], name: "index_messages_on_chatroom_id_id"
-    t.index ["user_id_id"], name: "index_messages_on_user_id_id"
+    t.string "content"
+    t.integer "user_id"
+    t.integer "chatroom_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.boolean "teacher"
-    t.boolean "student"
+    t.string "user_role"
     t.string "password"
+    t.string "profile_pic"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
