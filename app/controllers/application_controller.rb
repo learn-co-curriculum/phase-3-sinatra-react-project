@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
 
   get "/candles" do
     candles = Candle.all
-    candles.to_json
+    candles.to_json(include: [:scents])
   end
 
   post "/candles" do
@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
   
   get "/candles/:id" do 
     candles = Candle.find(params[:id])
-    candles.to_json
+    candles.to_json(include: [:scents])
   end
 
   delete "/candles/:id" do 
@@ -33,11 +33,14 @@ class ApplicationController < Sinatra::Base
     deleted_candle.to_json
   end
 
-   get "/scents" do
+  get "/scents" do
     scents = Scent.all
     scents.to_json
+  end
 
-   end
-
+  get "/users/:username" do
+    user = User.find_by(user_name: params[:username])
+    user.to_json(include: { candles: { include: :scents } } )
+  end
 
 end
