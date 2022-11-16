@@ -19,13 +19,19 @@ class UsersController < ApplicationController
     end
 
     post "/login" do 
-      user = User.find_by_username(params [:username])
+      user = User.find_by_username(params[:username])
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
         redirect "/posts"
       else
         flash[:error] = "Invalid Login"
+        redirect "/login"
       end
+    end
+
+    get "/logout" do 
+      session.clear
+      redirect "/login"
     end
 
     get "/users" do
