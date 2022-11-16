@@ -53,6 +53,18 @@ class ApplicationController < Sinatra::Base
       candle.candle
     end
     carty.to_json(include: :scents)
+  end
+
+  delete "/users/:user_id/:candle_id/cart" do
+    cart_candle_to_delete = UserCandle.find_by(user_id: params[:user_id], candle_id: params[:candle_id])
+    cart_candle_to_delete.destroy 
+    cart_candle_to_delete.to_json 
+  end
+
+  post "/users/:user_id/cart" do
+    candle_to_add = UserCandle.create(user_id: params[:user_id], candle_id: params[:candle_id])
+    candle_to_add.to_json(include: :scents)
+  end
 
   post "/users" do
     user = User.new(params)
