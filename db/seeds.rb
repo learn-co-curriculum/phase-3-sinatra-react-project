@@ -54,6 +54,8 @@ greentea = Scent.create(name: "Green Tea", category: "Edible")
 corn = Scent.create(name: "Roasted Corn", category: "Edible")
 cream = Scent.create(name: "Cream", category: "Edible")
 salt = Scent.create(name: "Salt", category: "Edible")
+marshmellow = Scent.create(name: "marshmellow", category: "Edible")
+chocolate = Scent.create(name: "chocolate", category: "Edible")
 
 # Earthy 
 musk = Scent.create(name: "Musk", category: "Earthy")
@@ -76,6 +78,7 @@ har = User.create(user_name: "harrison", password: "har123")
 autumn = Candle.create(name: "Fall Fun Fair", price: 12, image: "https://cb.scene7.com/is/image/Crate/ShinolaCandle3ThymeOlvBlueSSF21/$web_pdp_main_carousel_high$/210427132020/shinola-no.-3-bergamot-eucalyptus-and-amber-scented-candle.jpg")
 sea = Candle.create(name: "Tide Wave", price: 12, image: "https://cb.scene7.com/is/image/Crate/ShinolaCandle3ThymeOlvBlueSSF21/$web_pdp_main_carousel_high$/210427132020/shinola-no.-3-bergamot-eucalyptus-and-amber-scented-candle.jpg")
 driftwood = Candle.create(name: "Driftwood", price: 12, image: "https://cb.scene7.com/is/image/Crate/ShinolaCandle3ThymeOlvBlueSSF21/$web_pdp_main_carousel_high$/210427132020/shinola-no.-3-bergamot-eucalyptus-and-amber-scented-candle.jpg")
+fire = Candle.create(name: "By the Fire", price: 12, image: "https://cb.scene7.com/is/image/Crate/ShinolaCandle3ThymeOlvBlueSSF21/$web_pdp_main_carousel_high$/210427132020/shinola-no.-3-bergamot-eucalyptus-and-amber-scented-candle.jpg")
 
 # Autumn Air
 CandleScent.create(candle: autumn, scent: apple)
@@ -96,6 +99,12 @@ CandleScent.create(candle: driftwood, scent: sandalwood)
 CandleScent.create(candle: driftwood, scent: seawater)
 CandleScent.create(candle: driftwood, scent: salt)
 CandleScent.create(candle: driftwood, scent: yuzu)
+
+#by the fire
+CandleScent.create(candle: fire, scent: pine)
+CandleScent.create(candle: fire, scent: marshmellow)
+CandleScent.create(candle: fire, scent: orange)
+CandleScent.create(candle: fire, scent: pepper)
 
 
 UserCandle.create(user: mad, candle: autumn)
