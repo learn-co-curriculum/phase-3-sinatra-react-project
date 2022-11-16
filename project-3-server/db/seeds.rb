@@ -1,5 +1,7 @@
+Continent.destroy_all
 puts "🌱 Seeding continents..."
 # Continent.create(continent_name: "")
+
 
 asia = Continent.create(continent_name: "Asia")
 europe = Continent.create(continent_name: "Europe")
@@ -10,7 +12,7 @@ africa = Continent.create(continent_name: "Africa")
 antarctica = Continent.create(continent_name: "Antarctica")
 
 
-
+Destination.destroy_all
 puts "🌱 Seeding destinations..."
 # Destination.create(city_name: "", country_name: "", img_url: "", continent_id: )
 
@@ -41,7 +43,7 @@ wellington = Destination.create(city_name: "Wellington", country_name: "New Zeal
 mcmurdo_station = Destination.create(city_name: "McMurdo Station", country_name: "United States", img_url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMcMurdo_Station&psig=AOvVaw1OmPd6Q7PgigIgqMku2Cbl&ust=1668645646410000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCLDyj8q7sfsCFQAAAAAdAAAAABAD", continent_id: antarctica.id)
 
 
-
+User.destroy_all
 puts "🌱 Seeding users..."
 # User.create(first_name: "", last_name: "")
 
@@ -57,7 +59,7 @@ reilly = User.create(first_name: "Reilly", last_name: "Pollard")
 alessio = User.create(first_name: "Alessio", last_name: "Finley")
 
 
-
+Review.destroy_all
 puts "🌱 Seeding reviews..."
 # Review.create(message: "", stars: , user_id: , destination_id: )
 
