@@ -9,7 +9,10 @@ class PostsController < ApplicationController
       end
 
       post "/posts" do
-        post = Post.create(params).to_json
+        post = Post.new(params).to_json
+        post.user_id = session[:user_id]
+        post.save
+        redirect "/posts/#{post.id}"
       end
 
       patch "/posts/:id" do
