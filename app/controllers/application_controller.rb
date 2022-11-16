@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
 
   before do 
-    response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3001'
+    response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
   end
   
   # Add your routes here
@@ -46,4 +46,8 @@ class ApplicationController < Sinatra::Base
     stockToDelete.destroy
     stockToDelete.to_json
   end
+
+  # post "/users/:user_name/watchlist" do
+  #   User.find_by(user_name: params[:user_name]).watchlist.stocks.to_json(include:{stock_price:{only:[:price]}})
+  # end
 end
