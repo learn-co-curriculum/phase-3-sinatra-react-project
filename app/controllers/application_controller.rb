@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
 
   get "/users/:user_name/userstocks_joins" do
     User.find_by(user_name: params[:user_name]).to_json(include: {userstocks_joins: {only: [:id, :user_id, :stock_id]}, stocks: {only: [:id, :ticker]}})
-    binding.pry
+    # binding.pry
   end
 
   get "/users/:id" do
@@ -52,9 +52,11 @@ class ApplicationController < Sinatra::Base
     stockToDelete.to_json
   end
 
-  # post "/users/:user_name/watchlist" do
-  #   User.find_by(user_name: params[:user_name]).watchlist.stocks.to_json(include:{stock_price:{only:[:price]}})
-  #   user_id = User.find_by(user_name: params[:user_name]).id
-  #   stockToPost = WatchstocksJoin.create()
-  # end
+  post "/users/:user_name/watchlist/addstock/:id" do
+    # User.find_by(user_name: params[:user_name]).watchlist.stocks.to_json(include:{stock_price:{only:[:price]}})
+    user_id = User.find_by(user_name: params[:user_name]).id
+    stock_id = Stock.find_by(id: params[:id]).id
+    stockToPost = WatchstocksJoin.create(watchlist_id: user_id, stock_id: stock_id )
+    # binding.pry
+  end
 end
