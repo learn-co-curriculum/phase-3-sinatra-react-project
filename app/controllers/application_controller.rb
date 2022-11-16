@@ -3,17 +3,23 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/restaurants" do
+    #Optional parameters - limit is number of restaurant objects returned. All restaurant instances divided into pages, which page with number of instances = the limit
+    limit = params[:limit].to_i
+    page = params[:page].to_i
+
+    begin_index = (page - 1) * limit
+    end_index = begin_index + limit
+
     rest_array = []
-    Restaurant.all.map do |r|
+    Restaurant.all[begin_index...end_index].map do |r|
       restaurant = r.attributes
         .merge!(likes: r.reviews.select{|r| r.likes == true}.length)
         .merge!(dislikes: r.reviews.select{|r| r.dislikes == true}.length)
         .merge!(images: r.restaurant_images.map{|url_obj| url_obj.image_url})
         .merge!(reviews: r.reviews.map{|r| r.attributes})
-      rest_array << restaurant
-    end
-    rest_array.to_json
-    
+        rest_array << restaurant
+      end
+      rest_array.to_json
   end
 
   get "/users" do
