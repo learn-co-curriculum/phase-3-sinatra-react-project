@@ -26,6 +26,8 @@ class ApplicationController < Sinatra::Base
     candles.to_json(include: [:scents])
   end
 
+
+
   delete "/candles/:id" do 
     deleted_candle = Candle.find(params[:id])
     CandleScent.where(candle_id: params[:id]).destroy 
@@ -43,6 +45,15 @@ class ApplicationController < Sinatra::Base
     user.to_json(include: { candles: { include: :scents } } )
   end
 
+
+  get "/users/:user_id/cart" do
+    # user = User.find_by(user_name: params[:username])
+    cart = UserCandle.where(user_id: params[:user_id])
+    carty = cart.map do |candle| 
+      candle.candle
+    end
+    carty.to_json(include: :scents)
+
   post "/users" do
     user = User.new(params)
     if user.user_name.blank? || user.password.blank? || User.find_by(user_name: params[:username])
@@ -51,6 +62,7 @@ class ApplicationController < Sinatra::Base
       user.save
       user.to_json
     end
+
   end
 
 end
