@@ -22,6 +22,11 @@ class ApplicationController < Sinatra::Base
       rest_array.to_json
   end
 
+  get "/restaurants/search" do
+    zipcode = params[:zipcode].to_i
+    Restaurant.find_nearby_restaurants(zipcode).to_json
+  end
+
   get "/users" do
     users = User.all
     users.to_json
