@@ -16,25 +16,20 @@ ActiveRecord::Schema.define(version: 2022_11_15_052719) do
     t.string "name"
   end
 
-  create_table "dish_ingredients", force: :cascade do |t|
-    t.integer "ingredient_id"
-    t.integer "dish_id"
-  end
-
-  create_table "dishes", force: :cascade do |t|
-    t.string "name"
-    t.integer "cuisine_id"
-    t.integer "times_cooked"
-    t.string "instructions"
-  end
-
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
   end
 
-  create_table "user_dishes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "dish_id"
+  create_table "recipe_ingredients", force: :cascade do |t|
+    t.integer "ingredient_id"
+    t.integer "recipe_id"
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "name"
+    t.integer "cuisine_id"
+    t.integer "times_cooked"
+    t.string "instructions"
   end
 
   create_table "user_ingredients", force: :cascade do |t|
@@ -42,6 +37,11 @@ ActiveRecord::Schema.define(version: 2022_11_15_052719) do
     t.integer "ingredient_id"
     t.integer "quantity"
     t.boolean "in_stock"
+  end
+
+  create_table "user_recipes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "recipe_id"
   end
 
   create_table "users", force: :cascade do |t|

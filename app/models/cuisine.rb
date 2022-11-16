@@ -1,3 +1,3 @@
 class Cuisine < ActiveRecord::Base 
-    belongs_to :dish
+    belongs_to :recipe
 end
