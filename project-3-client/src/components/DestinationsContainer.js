@@ -1,17 +1,19 @@
-import React from 'react'
-import SearchFilter from './SearchFilter'
-import OrderBy from './OrderBy'
-import DestinationCards from './DestinationCards'
+import React from "react";
+import SearchFilter from "./SearchFilter";
+import OrderBy from "./OrderBy";
+import DestinationCards from "./DestinationCards";
 
-function DestinationsContainer() {
-
+function DestinationsContainer({ destinations, setDestinations }) {
   return (
     <div>
-      <SearchFilter/>
-      <OrderBy/>
-      <DestinationCards/>
+      <SearchFilter />
+      <OrderBy />
+      <DestinationCards
+        destinations={destinations}
+        setDestinations={setDestinations}
+      />
     </div>
-  )
+  );
 }
 
-export default DestinationsContainer
+export default DestinationsContainer;

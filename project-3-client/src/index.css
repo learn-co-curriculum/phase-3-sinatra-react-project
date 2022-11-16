@@ -1,0 +1,21 @@
+.image {
+    float: center;
+    width:  290px;
+    height: 190px;
+    object-fit: cover;
+  }
+
+  .card {
+    text-align: center;
+    border: grey solid 1px;
+    padding: 1rem;
+    width: 20rem;
+    height: 30rem;
+    display: inline-block;
+    margin: 1rem 3.5rem;
+    box-shadow: 3px 4px black;
+    font-family:'Courier New', Courier, monospace;
+    background-color: rgb(211,211,211);
+    font-weight: bold;
+    color: black;
+  }
