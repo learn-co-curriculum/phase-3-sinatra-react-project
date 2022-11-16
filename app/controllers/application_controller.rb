@@ -12,7 +12,9 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/candles" do
-    candle = Candle.create(name:params[:name], price:params[:price], image:params[:image]) 
+    candle = Candle.create(name:params[:name], price:params[:price], image:params[:image])
+    user = User.find_by(id: params[:user_id])
+    UserCandle.create(user_id: user.id, candle_id: candle.id)
     scents = params[:scents]
     scents.map do |scent|
       CandleScent.create( candle_id:candle.id, scent_id:Scent.find_by(name: scent).id )
@@ -40,17 +42,21 @@ class ApplicationController < Sinatra::Base
 
   get "/users/:username" do
     user = User.find_by(user_name: params[:username])
-    user.to_json(include: { candles: { include: :scents } } )
+    if user
+      user.to_json(include: { candles: { include: :scents } } )
+    else
+      { message: "Invalid Login" }.to_json 
+    end
   end
 
   post "/users" do
     user = User.new(params)
-    if user.user_name.blank? || user.password.blank? || User.find_by(user_name: params[:username])
+    if user.user_name.blank? || user.password.blank? || User.find_by(user_name: user.user_name) || User.find_by(password: user.password)
       { message: "Invalid Username or Password" }.to_json
     else
       user.save
       user.to_json
-    end
+    end 
   end
 
 end
