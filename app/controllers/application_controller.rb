@@ -4,14 +4,14 @@ class ApplicationController < Sinatra::Base
   # GET Request for all restaurants
   get "/restaurants" do
     restaurants = Restaurant.all
-    restaurants.to_json 
+    restaurants.to_json(include: [:reviews, :favorites])
   end
 
-  #GET Request for a specific restaurant, its reviews, and its favorites
-  get "/restaurants/:id" do
-    restaurant = Restaurant.find(params[:id])
-    restaurant.to_json(include: [:reviews, :favorites])
-  end
+  # #GET Request for a specific restaurant, its reviews, and its favorites
+  # get "/restaurants/:id" do
+  #   restaurant = Restaurant.find(params[:id])
+  #   restaurant.to_json(include: [:reviews, :favorites])
+  # end
 
   #DELETE Request for a review
   delete '/reviews/:id' do
