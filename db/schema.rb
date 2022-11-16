@@ -10,18 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_15_161615) do
+ActiveRecord::Schema.define(version: 2022_11_16_162858) do
 
   create_table "chatrooms", force: :cascade do |t|
     t.string "title"
-    t.datetime "timestamp"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "messages", force: :cascade do |t|
+<<<<<<< HEAD
     t.integer "user_id"
     t.integer "chatroom_id"
     t.string "message"
     t.datetime "timestamp"
+=======
+    t.string "content"
+    t.integer "user_id"
+    t.integer "chatroom_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+>>>>>>> 6d7b8ff (added table updates and seeds)
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
@@ -29,8 +38,15 @@ ActiveRecord::Schema.define(version: 2022_11_15_161615) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+<<<<<<< HEAD
     t.boolean "isTeacher?"
+=======
+    t.string "user_role"
+>>>>>>> 6d7b8ff (added table updates and seeds)
     t.string "password"
+    t.string "profile_pic"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
