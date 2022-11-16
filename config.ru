@@ -13,3 +13,9 @@ use Rack::JSONBodyParser
 
 # Our application
 run ApplicationController
+
+use UserController
+
+use ChatroomController
+
+use MessagesController

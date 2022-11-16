@@ -18,19 +18,18 @@ ActiveRecord::Schema.define(version: 2022_11_15_161615) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.integer "user_id_id"
-    t.integer "chatroom_id_id"
+    t.integer "user_id"
+    t.integer "chatroom_id"
     t.string "message"
-    t.datetime "timestmap"
-    t.index ["chatroom_id_id"], name: "index_messages_on_chatroom_id_id"
-    t.index ["user_id_id"], name: "index_messages_on_user_id_id"
+    t.datetime "timestamp"
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.boolean "teacher"
-    t.boolean "student"
+    t.boolean "isTeacher?"
     t.string "password"
   end
 
