@@ -6,7 +6,7 @@ function SearchFilter({ search, handleSearch }) {
       <input
         className="search input"
         type="text"
-        placeholder="Search for Destinations!"
+        placeholder="Search for a City!"
         value={search}
         onChange={handleSearch}
       ></input>

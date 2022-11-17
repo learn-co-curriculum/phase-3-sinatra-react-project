@@ -18,9 +18,9 @@ function DestinationsContainer({
 
   console.log(destinations)
 
-  const filteredDestinations = destinations ? destinations.filter((destination) =>
+  const filteredDestinations = destinations.filter((destination) =>
   destination.city_name.toLowerCase().includes(search.toLowerCase())
-) : null
+)
 
   const eachDestination = filteredDestinations.map((destination) => (
     <Destination destination={destination} key={destination.id}/>
