@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/candles" do
-    candles = Candle.all
+    candles = Candle.all.limit(10)
     candles.to_json(include: [:scents])
   end
 
@@ -75,6 +75,22 @@ class ApplicationController < Sinatra::Base
       user.save
       user.to_json
     end 
+  end
+
+  get "/edit/candle/:id" do
+    candle = Candle.find_by(id: params[:id])
+    candle.to_json(include: :scents)
+  end
+
+  patch "/edit/candle/:id" do
+    candle = Candle.find_by(id: params[:id])
+    candle.update(name: params[:name])
+    scents = params[:scents]
+    candle.scents.destroy_all
+    scents.map do |scent|
+      CandleScent.create( candle_id:candle.id, scent_id:Scent.find_by(name: scent).id )
+    end
+    candle.to_json
   end
 
 end
