@@ -39,6 +39,103 @@ stock2 = Stock.create(
     company: "Microsoft"
 )
 
+stock3 = Stock.create(
+    ticker: "TSLA",
+    company: "Tesla"
+)
+
+stock4 = Stock.create(
+    ticker: "TSLA",
+    company: "Tesla"
+)
+
+stock5 = Stock.create(
+    ticker: "T",
+    company: "AT&T"
+)
+
+stock6 = Stock.create(
+    ticker: "GOOG",
+    company: "Google Class C"
+)
+
+stock7 = Stock.create(
+    ticker: "AMZN",
+    company: "Amazon"
+)
+
+stock8 = Stock.create(
+    ticker: "META",
+    company: "META Platforms"
+)
+
+stock9 = Stock.create(
+    ticker: "PFE",
+    company: "Pfizer Inc"
+)
+
+stock10 = Stock.create(
+    ticker: "COST",
+    company: "Costco Wholesale Corporation"
+)
+
+stock11 = Stock.create(
+    ticker: "KO",
+    company: "Coca-Cola Company"
+)
+
+
+stock12 = Stock.create(
+    ticker: "NKE",
+    company: "Nike, Inc"
+)
+
+
+stock13 = Stock.create(
+    ticker: "ADBE",
+    company: "Adobe Inc"
+)
+
+
+stock14 = Stock.create(
+    ticker: "UPS",
+    company: "United Parcel Service"
+)
+
+
+stock15 = Stock.create(
+    ticker: "MS",
+    company: "Morgan Stanley Common Stock"
+)
+
+
+stock16 = Stock.create(
+    ticker: "QCOM",
+    company: "QUALCOMM Incorporated"
+)
+
+
+stock17 = Stock.create(
+    ticker: "NFLX",
+    company: "Netflix, Inc"
+)
+
+
+stock18 = Stock.create(
+    ticker: "IBM",
+    company: "International Business Machines Corporation"
+)
+
+
+stock19 = Stock.create(
+    ticker: "GS",
+    company: "Goldman Sachs Group, Inc"
+)
+
+Stock20 = Stock.create(
+    ticker: "AMD",
+    company: "Advanced Micro Devices"
+)
 #create stock2 prices
 
 # StockPrice.create(
