@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/candles" do
-    candle = Candle.create(name:params[:name], price:params[:price], image:params[:image])
+    candle = Candle.create(name:params[:name], price:params[:price], image:params[:image], color:params[:color])
     user = User.find_by(id: params[:user_id])
     UserCandle.create(user_id: user.id, candle_id: candle.id)
     scents = params[:scents]
