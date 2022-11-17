@@ -40,8 +40,8 @@ stock2 = Stock.create(
 )
 
 stock3 = Stock.create(
-    ticker: "TSLA",
-    company: "Tesla"
+    ticker: "INTC",
+    company: "Intel Corp"
 )
 
 stock4 = Stock.create(
@@ -132,7 +132,7 @@ stock19 = Stock.create(
     company: "Goldman Sachs Group, Inc"
 )
 
-Stock20 = Stock.create(
+stock20 = Stock.create(
     ticker: "AMD",
     company: "Advanced Micro Devices"
 )
