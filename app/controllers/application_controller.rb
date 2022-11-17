@@ -62,6 +62,7 @@ class ApplicationController < Sinatra::Base
     restaurant_review.to_json
   end
 
+
   patch "/reviews" do
     user = params[:user]
     restaurant = params[:restaurant]
@@ -78,6 +79,16 @@ class ApplicationController < Sinatra::Base
     restaurant = params[:restaurant]
     restaurant_review = Review.where(user_id: user, restaurant_id: restaurant)
     restaurant_review.to_json
+
+  get "/reviews/:id" do
+    review = Review.find(params[:id])
+    review.to_json
+  end
+  
+  delete "/reviews/:id" do
+    review = Review.find(params[:id])
+    review.destroy
+    review.to_json
   end
 
   get "/users/:id" do
