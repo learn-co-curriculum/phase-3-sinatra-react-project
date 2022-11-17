@@ -14,24 +14,25 @@ class UsersController < ApplicationController
       end
     end
 
-    # get "/login" do 
-    #   erb :"users/login"
-    # end
-
     post "/login" do 
       user = User.find_by_username(params[:username])
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
-        return {user: user}.to_json
+        return {user: user}.to_json(
+          include: {
+            posts: {
+              include: [comments: {include: :commented_user}]
+              }
+          }
+        )
       else
-        # flash[:error] = "Invalid Login"
         return {error: "Invalid Login"}.to_json
       end
     end
 
     get "/logout" do 
       session.clear
-      redirect "/login"
+      return ("/newUser").to_json
     end
 
       get "/users" do
