@@ -10,7 +10,7 @@ p2 = Post.create(description: "Cats", likes: 0, is_liked: false, image_url: "htt
 up1 = UsersPost.create(user_id: u1.id, post_id: p2.id)
 up2 = UsersPost.create(user_id: u2.id, post_id: p1.id)
 
-c1 = Comment.create(comment: "Cute!", post_id: p1.id, user_id: u2.id, comment_date: Date.today)
-c2 = Comment.create(comment: "Breed?", post_id: p2.id, user_id: u1.id, comment_date: Date.today)
+c1 = Comment.create(comment: "Breed?", post_id: p1.id, user_id: u1.id, comment_date: Date.today)
+c2 = Comment.create(comment: "Cute, Kitties!", post_id: p2.id, user_id: u2.id, comment_date: Date.today)
 
 puts "✅ Done seeding!"
