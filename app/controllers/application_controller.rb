@@ -37,7 +37,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/users/:user_name/watchlist" do
-    User.find_by(user_name: params[:user_name]).watchlist.stocks.to_json(include:{stock_price:{only:[:price]}})
+    User.find_by(user_name: params[:user_name]).watchlist.stocks.uniq.to_json(include:{stock_price:{only:[:price]}})
   end
 
   get '/stocks/:query' do
