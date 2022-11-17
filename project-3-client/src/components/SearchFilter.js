@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
 
-function SearchFilter() {
+function SearchFilter({ search, handleSearch }) {
   return (
-    <div></div>
-  )
+    <div className="search">
+      <input
+        className="search input"
+        type="text"
+        placeholder="Search for Destinations!"
+        value={search}
+        onChange={handleSearch}
+      ></input>
+    </div>
+  );
 }
 
-export default SearchFilter
+export default SearchFilter;
