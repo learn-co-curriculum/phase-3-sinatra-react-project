@@ -44,6 +44,14 @@ class ApplicationController < Sinatra::Base
     Stock.joins(:stock_price).order("ABS(change_point) DESC").to_json(include:{stock_price:{only:[:price,:change_percentage,:change_point,:total_vol]}})
   end
 
+  get "/gainers_by_percentage" do
+    Stock.joins(:stock_price).order("change_percentage DESC").to_json(include:{stock_price:{only:[:price,:change_percentage,:change_point,:total_vol]}})
+  end
+  
+  get "/losers_by_percentage" do
+    Stock.joins(:stock_price).order("change_percentage").to_json(include:{stock_price:{only:[:price,:change_percentage,:change_point,:total_vol]}})
+  end
+
   get "/users/:user_name/watchlist" do
     User.find_by(user_name: params[:user_name]).watchlist.stocks.uniq.to_json(include:{stock_price:{only:[:price]}})
   end
