@@ -5,7 +5,7 @@ function AddDestinationsForm({ postedDestination }) {
     city_name: "",
     image_url: "",
     country_name: "",
-    continent: "",
+    continent_id: "",
   });
 
   function handleChange(e) {
@@ -21,7 +21,7 @@ function AddDestinationsForm({ postedDestination }) {
       city_name: formData.city_name,
       image_url: formData.image_url,
       country_name: formData.country_name,
-      continent: formData.continent,
+      continent: formData.continent_id,
     };
 
     fetch("http://localhost:9292/destinations", {
@@ -65,7 +65,7 @@ function AddDestinationsForm({ postedDestination }) {
         <label for="continents">Pick a Continent:</label>
         <select
           name="continent"
-          value={formData.continent}
+          value={formData.continent_id}
           onChange={handleChange}
         >
           <optgroup label="Continents">
