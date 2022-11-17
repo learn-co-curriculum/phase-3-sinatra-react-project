@@ -112,4 +112,23 @@ class ApplicationController < Sinatra::Base
     user_followers.to_json
   end
 
+  post "/users/new" do
+    new_user = User.create(
+      username: params[:uname],
+      email: params[:email],
+      password: params[:pass]
+    )
+    new_user.to_json
+  end
+
+  post "/users/login" do
+    username = params[:uname]
+    password = params[:pass]
+    
+    current_user = User.find_by(username: username)
+    current_user.login(username, password).to_json
+
+
+  end
+
 end
