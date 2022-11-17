@@ -1,35 +1,37 @@
 class PlaygroundsController < ApplicationController
     # returns all playgrounds
     get "/playgrounds" do
-        playground_to_json
-        # all.to_json(include: [town: {only: [:id, :name]}])
+        Playground.all.to_json
     end
 
-  
-    #creates a playground and associates the town 
+    get "/playgrounds/:id" do
+        playground = Playground.find(params[:id])
+        playground.to_json
+    end
+
+
     post "/playgrounds" do
-        town = Town.find_by(id: params[:id]) 
-        playground = town.playgrounds.create(
+        town = Town.find(params["town_id"])
+        playground = Playground.create(
             name: params[:name],
-            address: params[:address]
+            address: params[:address],
+            town_id: town.id
         )
-        playground_to_json
+        playground.to_json
+    end
 
+    patch "/playgrounds/:id" do
+        playground = Playground.find(params[:id])
+        playground.update(params)
+        playground.to_json
     end
 
 
-
-    private
-    #@ creates private instance methods for playground
-        def find_playground
-        @playground = Playground.find_by_id(params["id"])
-        end
+    # delete "/playgrounds/:id"
+    #     playground = Playground.find(params[:id])
+    #     playground.destroy
+    # end
 
 
-        def playground_to_json
-        @playground.to_json(include: [:town])
-        end
-
-
- end
+end
  
