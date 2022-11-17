@@ -85,6 +85,7 @@ fruitsalad = Candle.create(name: "Fruit Salad", price: 8, image: "https://cb.sce
 skilodge = Candle.create(name: "Après-Ski", price: 12, image: "https://cb.scene7.com/is/image/Crate/ShinolaCandle3ThymeOlvBlueSSF21/$web_pdp_main_carousel_high$/210427132020/shinola-no.-3-bergamot-eucalyptus-and-amber-scented-candle.jpg")
 christmas = Candle.create(name: "Christmas Morning", price: 12, image: "https://cb.scene7.com/is/image/Crate/ShinolaCandle3ThymeOlvBlueSSF21/$web_pdp_main_carousel_high$/210427132020/shinola-no.-3-bergamot-eucalyptus-and-amber-scented-candle.jpg")
 tea = Candle.create(name: "Citrus Tea", price: 12, image: "https://cb.scene7.com/is/image/Crate/ShinolaCandle3ThymeOlvBlueSSF21/$web_pdp_main_carousel_high$/210427132020/shinola-no.-3-bergamot-eucalyptus-and-amber-scented-candle.jpg")
+charlie = Candle.create(name: "Scentsitive Lumberjack", price: 12, image: "https://cb.scene7.com/is/image/Crate/ShinolaCandle3ThymeOlvBlueSSF21/$web_pdp_main_carousel_high$/210427132020/shinola-no.-3-bergamot-eucalyptus-and-amber-scented-candle.jpg")
 
 # Autumn Air
 CandleScent.create(candle: autumn, scent: apple)
@@ -149,6 +150,12 @@ CandleScent.create(candle: tea, scent: greentea)
 CandleScent.create(candle: tea, scent: yuzu)
 CandleScent.create(candle: tea, scent: grapefruit)
 CandleScent.create(candle: tea, scent: cucumber)
+
+#charlie
+CandleScent.create(candle: charlie, scent: pine)
+CandleScent.create(candle: charlie, scent: lavender)
+CandleScent.create(candle: charlie, scent: ced)
+CandleScent.create(candle: charlie, scent: cucumber)
 
 UserCandle.create(user: mad, candle: autumn)
 UserCandle.create(user: ang, candle: autumn)
