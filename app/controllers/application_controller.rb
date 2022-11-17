@@ -62,6 +62,24 @@ class ApplicationController < Sinatra::Base
     restaurant_review.to_json
   end
 
+  patch "/reviews" do
+    user = params[:user]
+    restaurant = params[:restaurant]
+    restaurant_review = Review.where(user_id: user, restaurant_id: restaurant)
+    restaurant_review.update(
+      likes: params[:likes],
+      dislikes: params[:dislikes]
+    )
+    restaurant_review.to_json
+  end
+
+  get "/reviews" do 
+    user = params[:user]
+    restaurant = params[:restaurant]
+    restaurant_review = Review.where(user_id: user, restaurant_id: restaurant)
+    restaurant_review.to_json
+  end
+
   get "/users/:id" do
     user = User.find(params[:id])
     user.to_json
@@ -75,6 +93,11 @@ class ApplicationController < Sinatra::Base
   get "/users/:id/following" do
     user_following = Friendship.where(follower_id: params[:id]).map{|f| f.following}
     user_following.to_json
+  end
+
+  get "/users/:id/reviews" do
+    user_followers = User.find(params[:id]).reviews
+    user_followers.to_json
   end
 
 end
