@@ -66,10 +66,12 @@ class ApplicationController < Sinatra::Base
   patch "/users/:user_name" do
     # binding.pry
     User.find_by(user_name: params[:user_name]).update(balance: params[:balance])
+    User.find_by(user_name: params[:user_name]).to_json
+    
   end
 
 #Add stocks to user
-  post "/users/:id/userstocks_joins" do
+  post "/users/:user_name/userstocks_joins" do
     binding.pry
   end
 
