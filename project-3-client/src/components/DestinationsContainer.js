@@ -1,33 +1,27 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import SearchFilter from "./SearchFilter";
 import OrderBy from "./OrderBy";
-//import DestinationCards from "./DestinationCards";
-import Destination from "./Destination"
+import Destination from "./Destination";
 
-
-
-function DestinationsContainer({
-
-  destinations,
-  //setDestinations,
-  // search,
-  // handleSearch,
-}) {
-
+function DestinationsContainer({ destinations, deleteDestination }) {
   const [search, setSearch] = useState("");
 
-  //console.log(destinations)
-
   const filteredDestinations = destinations.filter((destination) =>
-  destination.city_name.toLowerCase().includes(search.toLowerCase())
-)
+    destination.city_name.toLowerCase().includes(search.toLowerCase())
+  );
 
   const eachDestination = filteredDestinations.map((destination) => (
-    <Destination destination={destination} key={destination.id}/>
-  ))
+    <Destination handleDelete={handleDelete} destination={destination} key={destination.id} />
+  ));
 
   function handleSearch(e) {
     setSearch(e.target.value);
+  }
+
+  function handleDelete(id) {
+    fetch(`http://localhost:9292/destinations/${id}`, {
+      method: "DELETE",
+    }).then(() => deleteDestination(id));
   }
 
   return (
@@ -35,10 +29,6 @@ function DestinationsContainer({
       <SearchFilter search={search} handleSearch={handleSearch} />
       <OrderBy />
       {eachDestination}
-      {/* <Destination
-        destinations={eachDestination}
-        //setDestinations={setDestinations}
-      /> */}
     </div>
   );
 }

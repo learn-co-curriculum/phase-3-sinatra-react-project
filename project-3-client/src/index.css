@@ -19,3 +19,16 @@
     color: black;
     display: inline-grid
   }
+
+  .delete {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    font-family:'Courier New', Courier, monospace;
+  }

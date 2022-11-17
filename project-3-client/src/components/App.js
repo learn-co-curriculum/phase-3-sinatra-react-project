@@ -8,7 +8,6 @@ import NavBar from "./NavBar";
 function App() {
   const [destinations, setDestinations] = useState([]);
   const [reviews, setReviews] = useState([]);
-  //const [search, setSearch] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:9292/destinations")
@@ -22,17 +21,14 @@ function App() {
       .then((data) => setReviews(data));
   }, []);
 
-  console.log(reviews)
+  console.log(reviews);
 
-  //   function handleSearch(e) {
-  //     setSearch(e.target.value);
-  //   }
-
-  //   const filteredDestinations = destinations ? destinations.filter((destination) =>
-  //   destination.name.toLowerCase().includes(search.toLowerCase())
-  // ) : null
-
-  // console.log(destinations)
+  function deleteDestination(id) {
+    const newDestinations = destinations.filter(
+      (destination) => destination.id !== id
+    );
+    setDestinations(newDestinations);
+  }
 
   return (
     <>
@@ -44,8 +40,7 @@ function App() {
             <DestinationsContainer
               reviews={reviews}
               destinations={destinations}
-              // search={search}
-              // handleSearch={handleSearch}
+              deleteDestination={deleteDestination}
             />
           }
         />
