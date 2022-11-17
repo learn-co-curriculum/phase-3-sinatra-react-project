@@ -13,27 +13,11 @@ class UsersController < ApplicationController
         return {user: user}.to_json
       end
     end
-    get "/profile" do
-      # p session[:user_id]
-      user = User.find(session[:user_id])
-      if user
-        return {user: user}.to_json(
-          include: {
-            posts: {
-              include: [comments: {include: :commented_user}]
-              }
-          }
-        ) # here
 
-      else
-          return {error: "User not found"}.to_json
-      end
-    end
     post "/login" do 
       user = User.find_by_username(params[:username])
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
-
         return {user: user}.to_json(
           include: {
             posts: {
@@ -54,7 +38,7 @@ class UsersController < ApplicationController
 
     get "/logout" do 
       session.clear
-      return ("Please, login...").to_json
+      return ("Logged out successfully!").to_json
     end
 
       get "/users" do
