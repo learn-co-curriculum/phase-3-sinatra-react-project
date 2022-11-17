@@ -15,7 +15,7 @@ violets = Scent.create(name: "Violets", category: "Floral")
 
 # Citrus scents
 orange = Scent.create(name: "Orange", category: "Citrus")
-clementine = Scent.create(name: "Clemetine", category: "Citrus")
+clementine = Scent.create(name: "Clementine", category: "Citrus")
 lemon = Scent.create(name: "Lemon", category: "Citrus")
 grapefruit = Scent.create(name: "Grapefruit", category: "Citrus")
 yuzu = Scent.create(name: "Yuzu", category: "Citrus")
