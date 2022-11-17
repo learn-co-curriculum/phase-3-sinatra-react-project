@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/candles" do
-    candles = Candle.all
+    candles = Candle.all.limit(10)
     candles.to_json(include: [:scents])
   end
 
