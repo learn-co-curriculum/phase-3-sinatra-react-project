@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
     get "/logout" do 
       session.clear
-      return ("/newUser").to_json
+      return ("Logged out successfully!").to_json
     end
 
       get "/users" do
