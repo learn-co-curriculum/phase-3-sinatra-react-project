@@ -1,7 +1,7 @@
 .image {
     float: center;
-    width:  290px;
-    height: 190px;
+    width:  280px;
+    height: 250px;
     object-fit: cover;
   }
 
@@ -10,7 +10,7 @@
     border: grey solid 1px;
     padding: 1rem;
     width: 20rem;
-    height: 30rem;
+    height: 35rem;
     margin: 1rem 3.5rem;
     box-shadow: 3px 4px black;
     font-family:'Courier New', Courier, monospace;

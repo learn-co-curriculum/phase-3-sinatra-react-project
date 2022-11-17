@@ -23,6 +23,10 @@ function App() {
 
   console.log(reviews);
 
+  function postedDestination(addedDestination) {
+    setDestinations([...destinations, addedDestination]);
+  }
+
   function deleteDestination(id) {
     const newDestinations = destinations.filter(
       (destination) => destination.id !== id
@@ -44,7 +48,12 @@ function App() {
             />
           }
         />
-        <Route path="/add_new_destinations" element={<AddDestinationsForm />} />
+        <Route
+          path="/add_new_destinations"
+          element={
+            <AddDestinationsForm postedDestination={postedDestination} />
+          }
+        />
         <Route
           path="/favorite_destinations"
           element={<FavoriteDestinations />}
