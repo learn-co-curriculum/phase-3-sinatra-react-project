@@ -86,10 +86,12 @@ class ApplicationController < Sinatra::Base
   # post "/userstocks_joins" do
   #   binding.pry
   # end
-  post "/users/:user_name/userstocks_joins/" do
+  post "/users/:user_name/userstocks_joins/:amount" do
     # binding.pry
+    params[:amount].to_i.times do
       UserstocksJoin.create(user_id: params[:user_id], stock_id: params[:stock_id])
-      User.find(params[:user_id]).portfolio.to_json
+    end
+    User.where(id: params[:user_id])[0].portfolio.to_json
     
 #     params[:amount].to_i.times do
 # binding.pry
