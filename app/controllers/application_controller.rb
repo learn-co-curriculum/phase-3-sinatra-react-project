@@ -1,18 +1,17 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  # Add your routes here
   get "/hello" do
     { message: "HW wuz here" }.to_json
   end
 
   get "/candles" do
-    candles = Candle.all
+    candles = Candle.all.limit(10)
     candles.to_json(include: [:scents])
   end
 
   post "/candles" do
-    candle = Candle.create(name:params[:name], price:params[:price], image:params[:image])
+    candle = Candle.create(name:params[:name], price:params[:price], image:params[:image], color:params[:color])
     user = User.find_by(id: params[:user_id])
     UserCandle.create(user_id: user.id, candle_id: candle.id)
     scents = params[:scents]
@@ -22,13 +21,10 @@ class ApplicationController < Sinatra::Base
     candle.to_json
   end
 
-  
   get "/candles/:id" do 
     candles = Candle.find(params[:id])
     candles.to_json(include: [:scents])
   end
-
-
 
   delete "/candles/:id" do 
     deleted_candle = Candle.find(params[:id])
@@ -50,7 +46,6 @@ class ApplicationController < Sinatra::Base
       { message: "Invalid Login" }.to_json 
     end
   end
-
 
   get "/users/:user_id/cart" do
     # user = User.find_by(user_name: params[:username])
@@ -82,5 +77,20 @@ class ApplicationController < Sinatra::Base
     end 
   end
 
+  get "/edit/candle/:id" do
+    candle = Candle.find_by(id: params[:id])
+    candle.to_json(include: :scents)
+  end
+
+  patch "/edit/candle/:id" do
+    candle = Candle.find_by(id: params[:id])
+    candle.update(name: params[:name])
+    scents = params[:scents]
+    candle.scents.destroy_all
+    scents.map do |scent|
+      CandleScent.create( candle_id:candle.id, scent_id:Scent.find_by(name: scent).id )
+    end
+    candle.to_json
+  end
 
 end
