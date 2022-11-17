@@ -32,7 +32,10 @@ class User < ActiveRecord::Base
         @user_hash = BCrypt::Password.new(@user.password_hash)
         # BCrypt tests if the pwd (string) is equal to the password_hash stored in the db
         if @user_hash == pwd 
-            {message: "Success"}
+            {
+                user_id: @user.id,
+                message: "Success"
+            }
         else 
             {message: "Error"}
         end
