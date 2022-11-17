@@ -79,6 +79,7 @@ class ApplicationController < Sinatra::Base
     restaurant = params[:restaurant]
     restaurant_review = Review.where(user_id: user, restaurant_id: restaurant)
     restaurant_review.to_json
+  end
 
   get "/reviews/:id" do
     review = Review.find(params[:id])
