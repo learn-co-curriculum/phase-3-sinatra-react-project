@@ -60,4 +60,16 @@ class ApplicationController < Sinatra::Base
     stockToPost = WatchstocksJoin.create(watchlist_id: user_id, stock_id: stock_id )
     # binding.pry
   end
+#========================================================
+  patch "/users/:user_name" do
+    binding.pry
+  end
+
+  post "/users/:id/userstocks_joins" do
+    binding.pry
+  end
+
+  delete "/users/:id/userstocks_joins" do
+    binding.pry
+  end
 end
