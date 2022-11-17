@@ -14,11 +14,12 @@ class ApplicationController < Sinatra::Base
   # end
 
   #DELETE Request for a review
-  delete '/reviews/:id' do
-    review = Review.find(Params[:id])
+  delete '/delete/:id' do
+    review = Review.find(params[:id])
     review.destroy
     review.to_json
   end
+
 
   #POST Request for a new item
   post '/favorites' do
@@ -29,12 +30,25 @@ class ApplicationController < Sinatra::Base
     )
   end
 
-  #PATCH Request for a review
-  patch '/reviews/:id' do
-    review = review.find(params[:id])
-    review.update(
+  post '/review' do
+    review = Review.create(
+      username: params[:username],
+      date: params[:date],
+      review: params[:review],
       rating: params[:rating],
-      review: params[:review]
+      restaurant_id: params[:restaurant_id]
     )
+  end
+
+
+
+  #PATCH Request for a review
+  patch '/patch/:id' do
+    review = Review.find(params[:id])
+    review.update(
+      date: params[:date],
+      username: params[:username]
+    )
+    review.to_json
   end
 end
