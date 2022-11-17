@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
 
   before do 
-    response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3001'
+    response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
   end
   
   # Add your routes here
@@ -33,6 +33,7 @@ class ApplicationController < Sinatra::Base
 
   get "/stocks" do
     Stock.all.to_json(include:{stock_price:{only:[:price]}})
+    # binding.pry
   end
 
   get "/users/:user_name/watchlist" do
@@ -61,14 +62,18 @@ class ApplicationController < Sinatra::Base
     # binding.pry
   end
 #========================================================
+#Update user's balance
   patch "/users/:user_name" do
-    binding.pry
+    # binding.pry
+    User.find_by(user_name: params[:user_name]).update(balance: params[:balance])
   end
 
+#Add stocks to user
   post "/users/:id/userstocks_joins" do
     binding.pry
   end
 
+#Delete stocks from user
   delete "/users/:id/userstocks_joins" do
     binding.pry
   end
