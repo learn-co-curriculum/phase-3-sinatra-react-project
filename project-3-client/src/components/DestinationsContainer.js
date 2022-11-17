@@ -16,7 +16,7 @@ function DestinationsContainer({
 
   const [search, setSearch] = useState("");
 
-  console.log(destinations)
+  //console.log(destinations)
 
   const filteredDestinations = destinations.filter((destination) =>
   destination.city_name.toLowerCase().includes(search.toLowerCase())

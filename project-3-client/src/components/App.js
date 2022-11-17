@@ -7,6 +7,7 @@ import NavBar from "./NavBar";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
+  const [reviews, setReviews] = useState([]);
   //const [search, setSearch] = useState("");
 
   useEffect(() => {
@@ -15,16 +16,23 @@ function App() {
       .then((data) => setDestinations(data));
   }, []);
 
-//   function handleSearch(e) {
-//     setSearch(e.target.value);
-//   }
+  useEffect(() => {
+    fetch("http://localhost:9292/reviews")
+      .then((r) => r.json())
+      .then((data) => setReviews(data));
+  }, []);
 
+  console.log(reviews)
 
-//   const filteredDestinations = destinations ? destinations.filter((destination) =>
-//   destination.name.toLowerCase().includes(search.toLowerCase())
-// ) : null
+  //   function handleSearch(e) {
+  //     setSearch(e.target.value);
+  //   }
 
-// console.log(destinations)
+  //   const filteredDestinations = destinations ? destinations.filter((destination) =>
+  //   destination.name.toLowerCase().includes(search.toLowerCase())
+  // ) : null
+
+  // console.log(destinations)
 
   return (
     <>
@@ -34,6 +42,7 @@ function App() {
           path="/home_destinations"
           element={
             <DestinationsContainer
+              reviews={reviews}
               destinations={destinations}
               // search={search}
               // handleSearch={handleSearch}
