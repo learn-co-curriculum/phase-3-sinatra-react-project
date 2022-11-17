@@ -46,6 +46,12 @@ class UsersController < ApplicationController
       end
     end
 
+    post "/users/:id/posts" do
+      post = Post.new(description: params[:description], image_url: params[:image_url])
+      post.save
+      return {post: post}.to_json
+    end
+
     get "/logout" do 
       session.clear
       return ("Please, login...").to_json
@@ -57,6 +63,9 @@ class UsersController < ApplicationController
 
       get "/users/:id" do
         user = User.find(params[:id]).to_json
+      end
+      get "/users/:id/posts" do 
+        user = User.find(params[:id]).posts.to_json(include: [comments: {include: :commented_user}])
       end
 
       get "/users/username/:username" do
