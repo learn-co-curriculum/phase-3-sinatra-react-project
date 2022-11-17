@@ -78,16 +78,27 @@ class ApplicationController < Sinatra::Base
   # post "/userstocks_joins" do
   #   binding.pry
   # end
-  post "/users/:user_name/userstocks_joins" do
+  post "/users/:user_name/userstocks_joins/" do
     # binding.pry
-    UserstocksJoin.create(user_id: params[:user_id], stock_id: params[:stock_id])
-    User.find(params[:user_id])
+      UserstocksJoin.create(user_id: params[:user_id], stock_id: params[:stock_id])
+      User.find(params[:user_id]).portfolio.to_json
+    
+#     params[:amount].to_i.times do
+# binding.pry
+#       UserstocksJoin.create(user_id: params[:user_id], stock_id: params[:stock_id])
+#       User.find(params[:user_id])
+#     end
   end
 
 #Delete stocks from user
-  delete "/users/:user_name/userstocks_joins" do
-    binding.pry
-
+  delete "/userstocks_joins/:user_id/:stock_id/" do
+    # binding.pry
+  # params[:amount].times do
+    #   UserstocksJoin.where(user_id: params[:user_id], stock_id: params[:stock_id]).first.destroy
+    #   UserstocksJoin.where(user_id: params[:user_id], stock_id: params[:stock_id]).first.to_json
+    # end
+      UserstocksJoin.where(user_id: params[:user_id], stock_id: params[:stock_id]).first.destroy
+      User.where(id: params[:user_id])[0].portfolio.to_json
   end
 
   
