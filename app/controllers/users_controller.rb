@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     get "/logout" do 
       session.clear
       return ("Please, login...").to_json
-@@ -58,6 +64,9 @@ class UsersController < ApplicationController
+    end
       get "/users/:id" do
         user = User.find(params[:id]).to_json
       end
