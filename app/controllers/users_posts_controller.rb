@@ -13,7 +13,7 @@ class UsersPostsController < ApplicationController
       end
 
       patch "/usersposts/:id" do
-        puserspost = UsersPost.find(params[:id])
+        userspost = UsersPost.find(params[:id])
         userspost.update(params)
         userspost.to_json
       end
