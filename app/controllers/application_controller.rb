@@ -85,8 +85,9 @@ class ApplicationController < Sinatra::Base
   end
 
 #Delete stocks from user
-  delete "/users/:id/userstocks_joins" do
-    # binding.pry
+  delete "/users/:user_name/userstocks_joins" do
+    binding.pry
+
   end
 
   
