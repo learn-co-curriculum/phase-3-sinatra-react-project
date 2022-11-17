@@ -50,15 +50,15 @@ class ApplicationController < Sinatra::Base
   get "/users/:user_id/cart" do
     # user = User.find_by(user_name: params[:username])
     cart = UserCandle.where(user_id: params[:user_id])
-    carty = cart.map do |candle| 
-      candle.candle
+    carty = cart.map do |cart_item| 
+      cart_item.candle
     end
     carty.to_json(include: :scents)
   end
 
   delete "/users/:user_id/:candle_id/cart" do
-    cart_candle_to_delete = UserCandle.find_by(user_id: params[:user_id], candle_id: params[:candle_id])
-    cart_candle_to_delete.destroy 
+    cart_candle_to_delete = UserCandle.where(user_id: params[:user_id], candle_id: params[:candle_id])
+    cart_candle_to_delete.first.destroy
     cart_candle_to_delete.to_json 
   end
 
