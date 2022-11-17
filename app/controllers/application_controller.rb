@@ -99,14 +99,15 @@ class ApplicationController < Sinatra::Base
   end
 
 #Delete stocks from user
-  delete "/userstocks_joins/:user_id/:stock_id/" do
+  delete "/userstocks_joins/:user_id/:stock_id/:amount" do
     # binding.pry
-  # params[:amount].times do
-    #   UserstocksJoin.where(user_id: params[:user_id], stock_id: params[:stock_id]).first.destroy
-    #   UserstocksJoin.where(user_id: params[:user_id], stock_id: params[:stock_id]).first.to_json
-    # end
+  params[:amount].to_i.times do
       UserstocksJoin.where(user_id: params[:user_id], stock_id: params[:stock_id]).first.destroy
-      User.where(id: params[:user_id])[0].portfolio.to_json
+    end
+    User.where(id: params[:user_id])[0].portfolio.to_json
+    # UserstocksJoin.where(user_id: params[:user_id], stock_id: params[:stock_id]).first.to_json
+    # UserstocksJoin.where(user_id: params[:user_id], stock_id: params[:stock_id]).first.destroy
+    # User.where(id: params[:user_id])[0].portfolio.to_json
   end
 
   
