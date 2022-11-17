@@ -36,9 +36,8 @@ class ApplicationController < Sinatra::Base
     # binding.pry
   end
 
-  get "/test" do
-    binding.pry
-    StockPrice.all.order(:change_point)
+  get "/top_movers_by_points" do
+    Stock.joins(:stock_price).order("ABS(change_point) DESC").to_json(include:{stock_price:{only:[:price,:change_percentage,:change_point,:total_vol]}})
   end
 
   get "/users/:user_name/watchlist" do
