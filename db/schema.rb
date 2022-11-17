@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_15_141220) do
+ActiveRecord::Schema.define(version: 2022_11_17_050500) do
 
   create_table "friendships", force: :cascade do |t|
     t.integer "follower_id"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2022_11_15_141220) do
     t.string "avatar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_hash"
   end
 
 end

@@ -55,3 +55,9 @@ group :test do
   gem "rspec", "~> 3.10"
   gem "rspec-json_expectations", "~> 2.2"
 end
+
+# Gem Json Web Token for user authentication
+gem 'jwt'
+gem 'json'
+gem 'bcrypt'
+# gem 'sinatra-authentication'
