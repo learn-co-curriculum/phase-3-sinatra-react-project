@@ -1,7 +1,6 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  # Add your routes here
   get "/hello" do
     { message: "HW wuz here" }.to_json
   end
@@ -22,13 +21,10 @@ class ApplicationController < Sinatra::Base
     candle.to_json
   end
 
-  
   get "/candles/:id" do 
     candles = Candle.find(params[:id])
     candles.to_json(include: [:scents])
   end
-
-
 
   delete "/candles/:id" do 
     deleted_candle = Candle.find(params[:id])
@@ -50,7 +46,6 @@ class ApplicationController < Sinatra::Base
       { message: "Invalid Login" }.to_json 
     end
   end
-
 
   get "/users/:user_id/cart" do
     # user = User.find_by(user_name: params[:username])
@@ -81,6 +76,5 @@ class ApplicationController < Sinatra::Base
       user.to_json
     end 
   end
-
 
 end
