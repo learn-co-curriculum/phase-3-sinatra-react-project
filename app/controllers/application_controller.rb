@@ -27,6 +27,10 @@ class ApplicationController < Sinatra::Base
     User.find(params[:id]).to_json
   end
 
+  get '/stocks/:query' do
+    Stock.where("ticker LIKE ?", "%#{params[:query].upcase}%").to_json(include:{stock_price:{only:[:price]}})
+    # Stock.find_by(ticker: params[:query].upcase).to_json(include:{stock_price:{only:[:price]}})
+  end
   get "/users" do
     User.all.to_json
   end
@@ -44,10 +48,6 @@ class ApplicationController < Sinatra::Base
     User.find_by(user_name: params[:user_name]).watchlist.stocks.uniq.to_json(include:{stock_price:{only:[:price]}})
   end
 
-  get '/stocks/:query' do
-    Stock.where("ticker LIKE ?", "%#{params[:query].upcase}%").to_json(include:{stock_price:{only:[:price]}})
-    # Stock.find_by(ticker: params[:query].upcase).to_json(include:{stock_price:{only:[:price]}})
-  end
 
   delete "/users/:user_name/watchlist/stocks/:id" do 
     User.find_by(user_name: params[:user_name]).watchlist.stocks.where(id: params[:id].to_i).to_json(include:{stock_price:{only:[:price]}})
