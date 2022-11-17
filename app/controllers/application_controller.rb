@@ -77,4 +77,20 @@ class ApplicationController < Sinatra::Base
     end 
   end
 
+  get "/edit/candle/:id" do
+    candle = Candle.find_by(id: params[:id])
+    candle.to_json(include: :scents)
+  end
+
+  patch "/edit/candle/:id" do
+    candle = Candle.find_by(id: params[:id])
+    candle.update(name: params[:name])
+    scents = params[:scents]
+    candle.scents.destroy_all
+    scents.map do |scent|
+      CandleScent.create( candle_id:candle.id, scent_id:Scent.find_by(name: scent).id )
+    end
+    candle.to_json
+  end
+
 end
