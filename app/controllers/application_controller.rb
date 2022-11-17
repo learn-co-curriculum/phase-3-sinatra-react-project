@@ -71,8 +71,13 @@ class ApplicationController < Sinatra::Base
   end
 
 #Add stocks to user
+  # post "/userstocks_joins" do
+  #   binding.pry
+  # end
   post "/users/:user_name/userstocks_joins" do
-    binding.pry
+    # binding.pry
+    UserstocksJoin.create(user_id: params[:user_id], stock_id: params[:stock_id])
+    User.find(params[:user_id])
   end
 
 #Delete stocks from user

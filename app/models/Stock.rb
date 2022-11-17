@@ -16,8 +16,9 @@ class Stock < ActiveRecord::Base
     def self.rufus 
         Thread.new do
             while true do
-            #   puts Time.now # or call tick function
+            #  method calls external api for price data
             self.get_prices
+            # timer in seconds
               sleep 300
             end
           end
