@@ -127,8 +127,6 @@ class ApplicationController < Sinatra::Base
     
     current_user = User.find_by(username: username)
     current_user.login(username, password).to_json
-
-
   end
 
 end
