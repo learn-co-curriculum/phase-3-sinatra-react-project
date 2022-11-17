@@ -32,8 +32,13 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/stocks" do
-    Stock.all.to_json(include:{stock_price:{only:[:price]}})
+    Stock.all.to_json(include:{stock_price:{only:[:price,:change_percentage,:change_point,:total_vol]}})
     # binding.pry
+  end
+
+  get "/test" do
+    binding.pry
+    StockPrice.all.order(:change_point)
   end
 
   get "/users/:user_name/watchlist" do
@@ -82,6 +87,8 @@ class ApplicationController < Sinatra::Base
 
 #Delete stocks from user
   delete "/users/:id/userstocks_joins" do
-    binding.pry
+    # binding.pry
   end
+
+  
 end
