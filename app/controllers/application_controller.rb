@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
 
   before do 
-    response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
+    response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3001'
   end
   
   # Add your routes here
@@ -18,7 +18,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/users/:user_name/userstocks_joins" do
-    User.find_by(user_name: params[:user_name]).to_json(include: {userstocks_joins: {only: [:id, :user_id, :stock_id]}, stocks: {only: [:id, :ticker]}})
+    # User.find_by(user_name: params[:user_name]).to_json(include: {userstocks_joins: {only: [:id, :user_id, :stock_id]}, stocks: {only: [:id, :ticker]}})
+    User.find_by(user_name: params[:user_name]).portfolio.to_json
     # binding.pry
   end
 
