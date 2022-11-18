@@ -61,3 +61,5 @@ gem 'jwt'
 gem 'json'
 gem 'bcrypt'
 # gem 'sinatra-authentication'
+
+gem 'geocoder'

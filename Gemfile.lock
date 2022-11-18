@@ -27,6 +27,7 @@ GEM
     faker (2.19.0)
       i18n (>= 1.6, < 2)
     ffi (1.15.3)
+    geocoder (1.8.1)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     json (2.6.2)
@@ -103,6 +104,7 @@ DEPENDENCIES
   bcrypt
   database_cleaner (~> 2.0)
   faker
+  geocoder
   json
   jwt
   net-http
