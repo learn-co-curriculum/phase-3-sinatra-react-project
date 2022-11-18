@@ -27,10 +27,10 @@ class PlaygroundsController < ApplicationController
     end
 
 
-    # delete "/playgrounds/:id"
-    #     playground = Playground.find(params[:id])
-    #     playground.destroy
-    # end
+    delete "/playgrounds/:id" do
+        playground = Playground.find(params[:id])
+        playground.destroy
+    end
 
 
 end
