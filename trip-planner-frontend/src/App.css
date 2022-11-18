@@ -13,12 +13,13 @@
   transition: 0.1s;
 }
 
-.delete {
-  display: flex;
+/* .delete { */
+  /* display: flex; */
   /* flex-direction: row; */
-  width: 50%;
-  justify-content: center;
-}
+  /* width: 50%; */
+  /* justify-content: center; */
+  /* align-items: center; */
+/* } */
 
 .row {
   display: flex;

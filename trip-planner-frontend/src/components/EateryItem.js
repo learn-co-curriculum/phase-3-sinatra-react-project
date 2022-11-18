@@ -18,21 +18,35 @@ function EateryItem({ attraction, onUpdateObject, handleDelete }) {
     }
 
     return (
-        <div>
-                <div className="card listcard my-3 mx-4 concert-card">
-                    <div className="card-body">
-                        <p>{attraction.name}</p>
-                        <p>Type: {attraction.cuisine_type}</p>
-                        <p>Street Address: {attraction.address}</p>
-                        {attraction["downtown?"] ? <p>Downtown</p> : <p>Not Downtown</p>}
-                        <p>Rating: {"⭐️".repeat(attraction.rating)}</p>
-                        <p>{attraction.rating} stars</p>
-                        <button className="btn btn-success" onClick={() => handleStarClick(attraction)}>Add Star</button>
-                        <br></br>
-                        <button className='btn btn-danger delete' onClick={() => handleDelete(attraction)}>Delete</button>
+        <div className="card-deck col-sm-3 my-3">
+            <div className="card" style={{height: '360px'}}>
+                <div className="card-body">
+                    <p className='card-title'>{attraction.name}</p>
+                    <p className='card-text'>Type: {attraction.cuisine_type}</p>
+                    <p className='card-text'>Street Address: {attraction.address}</p>
+                    {attraction["downtown?"] ? <p className='card-text'>Downtown</p> : <p>Not Downtown</p>}
+                    <p className='card-text'>Rating: {"⭐️".repeat(attraction.rating)}</p>
+                    {/* <p className='card-text'>{attraction.rating} stars</p> */}
+                    <div>
+                        <button 
+                            className='btn btn-success my-2' 
+                            onClick={() => handleStarClick(attraction)}
+                        >
+                            Add Star
+                        </button>
+                    </div>
+                    {/* <br/> */}
+                    <div>
+                        <button 
+                            className='btn btn-danger'
+                            onClick={() => handleDelete(attraction)}
+                        >
+                            Delete
+                        </button>
                     </div>
                 </div>
-                </div>
+            </div>
+        </div>
     )
 }
 

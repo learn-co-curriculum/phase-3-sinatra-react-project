@@ -13,7 +13,6 @@ class ApplicationController < Sinatra::Base
 
   get '/cities' do
     cities = City.all
-    # cities.to_json(include: :concerts)
     cities.to_json
   end
 
@@ -33,7 +32,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/eateries' do
-    # binding.pry
     eateries = Eatery.all
     eateries.to_json
   end

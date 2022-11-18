@@ -2,20 +2,29 @@ import React from 'react';
 
 function ConcertItem({ attraction, handleDelete }) {
     return (
-        <div className="card listcard my-3 mx-4 concert-card">
+        <div className="card-deck col-sm-3 my-3">
+                <div className="card" style={{height: '300px'}}>
                 <div className="card-body">
-                    <p>Date: {attraction.date}</p>
+                    <p className='card-title'>Date: {attraction.date}</p>
                     {attraction.band ? 
                         <div>
-                            <p>Who's Playing: {attraction.band.name}</p>
-                            <p>Genre: {attraction.band.genre}</p>
+                            <p className='card-text'>Who's Playing: {attraction.band.name}</p>
+                            <p className='card-text'>Genre: {attraction.band.genre}</p>
                         </div> : 
                         null
                     }
-                    <p>Venue: {attraction.venue_name}</p>
-                    <p>{attraction.venue_type}</p>
+                    <p className='card-text'>Venue: {attraction.venue_name}</p>
+                    <p className='card-text'>{attraction.venue_type}</p>
+                    {/* <div className='card-footer'> */}
+                        <button 
+                            className='btn btn-danger' 
+                            onClick={() => handleDelete(attraction)}
+                        >
+                            Delete
+                        </button>
+                    {/* </div> */}
+                    </div>
                 </div>
-                <button className='btn btn-danger delete' onClick={() => handleDelete(attraction)}>Delete</button>
         </div>
     )
 }
