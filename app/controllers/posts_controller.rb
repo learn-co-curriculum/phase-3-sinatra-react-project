@@ -12,7 +12,7 @@ class PostsController < ApplicationController
         post = Post.new(params)
         post = session[:user_id]
         post.save
-        redirect "/posts/#{post.id}"
+        return "/posts/#{post.id}"
       end
 
       patch "/posts/:id" do
