@@ -8,11 +8,11 @@ class PostsController < ApplicationController
         post = Post.find(params[:id]).to_json
       end
 
-      post "/posts" do
+      post "users/:id/posts" do
         post = Post.new(params)
-        post = session[:user_id]
+        post.users_posts.new(user_id: session[:user_id]).save
         post.save
-        redirect "/posts/#{post.id}"
+        return {posts: {include: :users_posts}}.to_json
       end
 
       patch "/posts/:id" do

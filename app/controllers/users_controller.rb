@@ -46,7 +46,7 @@ class UsersController < ApplicationController
       return ("Please, login...").to_json
     end
       get "/users/:id" do
-        user = User.find(params[:id]).to_json
+        user = User.find(session[:user_id]).to_json
       end
 
       get "/users/username/:username" do
