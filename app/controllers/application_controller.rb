@@ -84,7 +84,7 @@ class ApplicationController < Sinatra::Base
 
   patch "/edit/candle/:id" do
     candle = Candle.find_by(id: params[:id])
-    candle.update(name: params[:name])
+    candle.update(name: params[:name], color: params[:color])
     scents = params[:scents]
     candle.scents.destroy_all
     scents.map do |scent|
