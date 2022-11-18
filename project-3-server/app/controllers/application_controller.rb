@@ -37,14 +37,13 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/destinations" do
-    continent = Continent.find_by(continent_name: params[:continent_name])
+    continent = Continent.find_by(continent_name: params[:continent])
     destination = Destination.create(
       city_name: params[:city_name],
       country_name: params[:country_name],
       img_url: params[:img_url],
-      continent: continent.id
+      continent: continent
     )
-    binding.pry
     destination.to_json
   end
 
@@ -67,6 +66,17 @@ class ApplicationController < Sinatra::Base
   get "/destinations/:id/reviews" do
     destination = Destination.find(params[:id]).reviews
     destination.to_json
+  end
+
+  post "/destinations/:id/reviews" do
+    destination = Destination.find(params[:id])
+
+    review = Review.create(
+      message: params[:message],
+      stars: params[:stars],
+      destination_id: destination.id
+    )
+    review.to_json
   end
 
   get "/destinations/:id/reviews/:revid" do

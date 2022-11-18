@@ -5,11 +5,6 @@ import EditReview from './EditReview'
 function ReviewList({reviews, destinationId}) {
   const [displayedReviews, setDisplayedReviews] = useState([]);
 
-  // let eachReview = reviews.map(review => review.message)
-
-  // console.log(reviews)
-  // console.log(displayedReviews)
-
   useEffect(() => {
     fetch(`http://localhost:9292/destinations/${destinationId}/reviews`)
       .then((r) => r.json())
