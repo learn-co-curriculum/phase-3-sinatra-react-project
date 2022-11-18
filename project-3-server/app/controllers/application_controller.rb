@@ -1,3 +1,5 @@
+require "pry"
+
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
@@ -35,12 +37,14 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/destinations" do
+    continent = Continent.find_by(continent_name: params[:continent_name])
     destination = Destination.create(
       city_name: params[:city_name],
       country_name: params[:country_name],
       img_url: params[:img_url],
-      continent_id: params[:continent_id]
+      continent: continent.id
     )
+    binding.pry
     destination.to_json
   end
 
