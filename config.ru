@@ -11,6 +11,11 @@ end
 # Parse JSON from the request body into the params hash
 use Rack::JSONBodyParser
 
+# use Rack::Session::Cookie, :key => 'session',
+#     :path => '/',
+#     :expire_after => 2592000,
+#     :secret => 'cs-secret'
+
 # Our application
 run ApplicationController
 

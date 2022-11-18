@@ -8,11 +8,10 @@ class PostsController < ApplicationController
         post = Post.find(params[:id]).to_json
       end
 
-      post "users/:id/posts" do
-        post = Post.new(params)
-        post.users_posts.new(user_id: session[:user_id]).save
-        post.save
-        return {posts: {include: :users_posts}}.to_json
+      post "/createpost" do
+        post = Post.create(description: params[:description], image_url: params[:image_url])
+        UsersPost.create(user_id: session[:user_id], post_id: post.id)
+        post.to_json
       end
 
       patch "/posts/:id" do
