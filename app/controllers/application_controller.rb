@@ -38,9 +38,9 @@ class ApplicationController < Sinatra::Base
     scents.to_json
   end
 
-  get "/users/:username" do
+  get "/users/:username/:password/login" do
     user = User.find_by(user_name: params[:username])
-    if user
+    if user && user.password == params[:password]
       user.to_json(include: { candles: { include: :scents } } )
     else
       { message: "Invalid Login" }.to_json 
