@@ -3,10 +3,10 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   configure do
-    set :views, "app/views"
+    set :views, "app/views" 
     enable :sessions
     set :session_secret, "secret"
-    register Sinatra::Flash
+    # register Sinatra::Flash
   end
 
   get "/data" do

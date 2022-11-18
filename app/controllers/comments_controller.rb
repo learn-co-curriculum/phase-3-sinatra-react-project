@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
 
       post "/posts/:id" do
+        puts "HERE" 
+        puts session[:user_id]
         comments = Comment.create!(comment: params[:comment], user_id: params[:user_id], post_id: params[:post_id]).to_json
       end
 
