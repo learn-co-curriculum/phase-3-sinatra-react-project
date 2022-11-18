@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import Review from './Review'
 import EditReview from './EditReview'
 
-function ReviewList({reviews}) {
+function ReviewList({reviews, destinationId}) {
   const [displayedReviews, setDisplayedReviews] = useState([]);
 
   // let eachReview = reviews.map(review => review.message)
@@ -10,15 +10,21 @@ function ReviewList({reviews}) {
   // console.log(reviews)
   // console.log(displayedReviews)
 
+  useEffect(() => {
+    fetch(`http://localhost:9292/destinations/${destinationId}/reviews`)
+      .then((r) => r.json())
+      .then((data) => setDisplayedReviews(data));
+  }, []);
+
   function handleDelete(deletedItem) {
-    const updatedReviews = reviews.filter((review) => review.id !== deletedItem.id);
-    reviews = updatedReviews;
+    const updatedReviews = displayedReviews.filter((review) => review.id !== deletedItem.id);
+    setDisplayedReviews(updatedReviews);
   }
 
   return (
     <div>
         <ul>
-          {reviews.map((review) => (
+          {displayedReviews.map((review) => (
             <Review
               key={review.id}
               review={review}
@@ -26,6 +32,7 @@ function ReviewList({reviews}) {
               // stars={review.stars}
               // user={review.user}
               onDeleteReview={handleDelete}
+              destinationId={destinationId}
             />
           ))}
         </ul>

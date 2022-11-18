@@ -44,10 +44,36 @@ class ApplicationController < Sinatra::Base
     destination.to_json
   end
 
+  patch "/destinations/:id" do
+    destination = Destination.create(
+      city_name: params[:city_name],
+      country_name: params[:country_name],
+      img_url: params[:img_url],
+      continent_id: params[:continent_id]
+    )
+    destination.to_json
+  end
+
   delete "/destinations/:id" do
     destination = Destination.find(params[:id])
     destination.destroy
     destination.to_json
+  end
+
+  get "/destinations/:id/reviews" do
+    destination = Destination.find(params[:id]).reviews
+    destination.to_json
+  end
+
+  get "/destinations/:id/reviews/:revid" do
+    review = Destination.find(params[:id]).reviews.find(params[:revid])
+    review.to_json
+  end
+
+  delete "/destinations/:id/reviews/:revid" do
+    review = Destination.find(params[:id]).reviews.find(params[:revid])
+    review.destroy
+    review.to_json
   end
 
   get "/reviews" do

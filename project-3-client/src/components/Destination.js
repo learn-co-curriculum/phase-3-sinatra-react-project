@@ -9,7 +9,7 @@ function Destination({destination, handleDelete}) {
   // useEffect(() => {
   //   fetch("http://localhost:9292/reviews")
   //     .then((r) => r.json())
-  //     .then((data) => setReviews(data));
+  //     .then((data) => setDestReviews(data));
   // }, []);
 
   console.log(destReviews);
@@ -28,7 +28,7 @@ function Destination({destination, handleDelete}) {
           >Delete</button>
         </div>
       </div>
-      <ReviewList reviews={reviews}/>
+      <ReviewList reviews={reviews} destinationId={id}/>
       <AddReview/>
     </>
   )
