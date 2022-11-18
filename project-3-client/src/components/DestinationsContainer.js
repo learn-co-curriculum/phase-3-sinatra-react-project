@@ -44,7 +44,9 @@ function DestinationsContainer({ destinations, deleteDestination }) {
       />
       <SearchFilter search={search} handleSearch={handleSearch} />
       <OrderBy />
-      {eachDestination}
+      <div className='destinationsDiv'>
+        {eachDestination}
+      </div>
     </div>
   );
 }

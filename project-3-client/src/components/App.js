@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import DestinationsContainer from "./DestinationsContainer";
-import FavoriteDestinations from "./FavoriteDestinations";
+// import FavoriteDestinations from "./FavoriteDestinations";
 import AddDestinationsForm from "./AddDestinationsForm";
 import NavBar from "./NavBar";
+import AddReviewForm from "./AddReviewForm";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -15,16 +16,13 @@ function App() {
       .then((data) => setDestinations(data));
   }, []);
 
-  useEffect(() => {
-    fetch("http://localhost:9292/reviews")
-      .then((r) => r.json())
-      .then((data) => setReviews(data));
-  }, []);
-
-  console.log(reviews);
 
   function postedDestination(addedDestination) {
     setDestinations([...destinations, addedDestination]);
+  }
+
+  function postedReview(addedReview) {
+    setReviews([...reviews, addedReview])
   }
 
   function deleteDestination(id) {
@@ -43,7 +41,6 @@ function App() {
           element={
             <>
               <DestinationsContainer
-                reviews={reviews}
                 destinations={destinations}
                 deleteDestination={deleteDestination}
               />
@@ -57,9 +54,15 @@ function App() {
           }
         />
         <Route
+          path="/add_new_reviews"
+          element={
+            <AddReviewForm postedReview={postedReview}/>
+          }
+        />
+        {/* <Route
           path="/favorite_destinations"
           element={<FavoriteDestinations />}
-        />
+        /> */}
       </Routes>
     </>
   );

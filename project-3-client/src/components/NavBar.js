@@ -14,8 +14,11 @@ function NavBar() {
             <Link to="/add_new_destinations">Add New Destination</Link>
           </li>
           <li>
-            <Link to="/favorite_destinations">Favorite Destinations</Link>
+            <Link to="/add_new_reviews">Add New Review</Link>
           </li>
+          {/* <li>
+            <Link to="/favorite_destinations">Favorite Destinations</Link>
+          </li> */}
         </ul>
       </nav>
     </div>

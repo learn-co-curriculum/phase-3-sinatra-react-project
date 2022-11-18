@@ -19,7 +19,14 @@ class ApplicationController < Sinatra::Base
 
   get "/destinations" do
     destinations = Destination.all 
-    destinations.to_json(include: :continent)
+    destinations.to_json(:include => {
+      :continent => {
+        :only => :continent_name
+      },
+      :reviews => {
+        :include => :user
+      }
+    })
   end
 
   get "/destinations/:id" do
@@ -50,6 +57,12 @@ class ApplicationController < Sinatra::Base
 
   get "/reviews/:id" do
     review = Review.find(params[:id])
+    review.to_json
+  end
+
+  delete '/reviews/:id' do
+    review = Review.find(params[:id])
+    review.destroy
     review.to_json
   end
 

@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import ReviewList from './ReviewList'
 import AddReview from './AddReview'
 
 function Destination({destination, handleDelete}) {
-  const {id, city_name, country_name, continent, img_url, created_at, updated_at} = destination;
+  const {id, city_name, country_name, continent, img_url, reviews, created_at, updated_at} = destination;
+  const [destReviews, setDestReviews] = useState([]);
+
+  // useEffect(() => {
+  //   fetch("http://localhost:9292/reviews")
+  //     .then((r) => r.json())
+  //     .then((data) => setReviews(data));
+  // }, []);
+
+  console.log(destReviews);
 
   return (
     <>
@@ -19,7 +28,7 @@ function Destination({destination, handleDelete}) {
           >Delete</button>
         </div>
       </div>
-      <ReviewList/>
+      <ReviewList reviews={reviews}/>
       <AddReview/>
     </>
   )

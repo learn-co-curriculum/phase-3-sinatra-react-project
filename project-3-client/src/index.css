@@ -1,34 +1,41 @@
 .image {
-    float: center;
-    width:  280px;
-    height: 250px;
-    object-fit: cover;
-  }
+  float: center;
+  width:  280px;
+  height: 250px;
+  object-fit: cover;
+}
 
-  .card {
-    text-align: center;
-    border: grey solid 1px;
-    padding: 1rem;
-    width: 20rem;
-    height: 33rem;
-    margin: 1rem 3.5rem;
-    box-shadow: 3px 4px black;
-    font-family:'Courier New', Courier, monospace;
-    background-color: rgb(211,211,211);
-    font-weight: bold;
-    color: black;
-    display: inline-grid
-  }
+.card {
+  text-align: center;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: 20rem;
+  height: 33rem;
+  margin: 1rem 3.5rem;
+  box-shadow: 3px 4px black;
+  font-family:'Courier New', Courier, monospace;
+  background-color: rgb(211,211,211);
+  font-weight: bold;
+  color: black;
+  display: inline-grid
+}
 
-  .delete {
-    background-color: black;
-    border: none;
-    color: white;
-    padding: 10px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    cursor: pointer;
-    font-family:'Courier New', Courier, monospace;
-  }
+.delete {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  font-family:'Courier New', Courier, monospace;
+}
+
+/* .destinationsDiv {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10%, 1fr));
+  columns: 2;
+  padding-top: 20px;
+} */
