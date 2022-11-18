@@ -39,13 +39,15 @@ function App() {
       <NavBar />
       <Routes>
         <Route
-          path="/home_destinations"
+          path="/"
           element={
-            <DestinationsContainer
-              reviews={reviews}
-              destinations={destinations}
-              deleteDestination={deleteDestination}
-            />
+            <>
+              <DestinationsContainer
+                reviews={reviews}
+                destinations={destinations}
+                deleteDestination={deleteDestination}
+              />
+            </>
           }
         />
         <Route
