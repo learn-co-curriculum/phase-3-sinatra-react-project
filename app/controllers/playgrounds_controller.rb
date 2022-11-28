@@ -4,6 +4,7 @@ class PlaygroundsController < ApplicationController
         Playground.all.to_json
     end
 
+#is this neccessary?
     get "/playgrounds/:id" do
         playground = Playground.find(params[:id])
         playground.to_json
