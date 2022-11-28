@@ -11,10 +11,12 @@ class TownsController < ApplicationController
     end
   
     post "/towns" do
-        town = Town.new(params)
-        if town.save
-            town.to_json
-    end
+        town = Town.create(params)
+        town.to_json
+        # town = Town.new(params)
+        # if town.save
+        #     town.to_json
+    # end
     end
 
  end
