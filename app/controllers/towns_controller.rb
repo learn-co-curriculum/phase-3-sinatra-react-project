@@ -13,10 +13,6 @@ class TownsController < ApplicationController
     post "/towns" do
         town = Town.create(params)
         town.to_json
-        # town = Town.new(params)
-        # if town.save
-        #     town.to_json
-    # end
     end
 
  end
