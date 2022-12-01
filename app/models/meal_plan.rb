@@ -1,4 +1,3 @@
 class MealPlan < ActiveRecord::Base
-    belongs_to :Restaurant
-    
+    belongs_to :restaurant
 end

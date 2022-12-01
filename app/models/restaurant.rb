@@ -1,4 +1,3 @@
 class Restaurant < ActiveRecord::Base
-    has_many :MealPlan
-    
+    has_many :meal_plans
 end
