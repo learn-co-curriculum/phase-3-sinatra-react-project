@@ -39,4 +39,10 @@ Restaurant.all.each do |restaurant|
     MealPlan.create(name: "Large", number_of_meals: 12, restaurant_id: restaurant.id, price: 120)
 end
 
+
+# Create pre-populated restaurant requests
+RestaurantRequest.create(name: "Birdcall", location: "Denver, CO")
+RestaurantRequest.create(name: "Panera", location: "Denver, CO")
+RestaurantRequest.create(name: "Snarf's Sandwiches", location: "Denver, CO")
+
 puts "✅ Done seeding!"
