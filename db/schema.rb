@@ -16,9 +16,8 @@ ActiveRecord::Schema.define(version: 2022_12_05_164331) do
     t.string "title"
     t.string "artist"
     t.string "genre"
-    t.string "image"
-    t.integer "rating"
-    t.integer "catalog_number"
+    t.string "image_url"
+    t.string "catalog_number"
   end
 
   create_table "reviews", force: :cascade do |t|

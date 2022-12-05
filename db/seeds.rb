@@ -11,7 +11,6 @@ Album.create([
     genre: "Jazz",
     artist: "Julian Lage",
     image_url: "https://cdn.shopify.com/s/files/1/1418/3572/products/Album-Art.png?v=1655395606",
-    rating: 0,
     catalog_number: "B0B4FV36ZS"
 },
 {
@@ -19,7 +18,6 @@ Album.create([
     genre: "Nu Metal",
     artist: "Linkin Park",
     image_url: "https://beatsperminute.com/wp-content/uploads/2020/10/linkin-park-hybrid-theory.jpg",
-    rating: 0,
     catalog_number: "B00004Z459"
 },
 {
@@ -27,7 +25,6 @@ Album.create([
     genre: "Hard Rock",
     artist: "The Who",
     image_url: "https://m.media-amazon.com/images/I/71hBf-lAsjL._SL1098_.jpg",
-    rating: 0,
     catalog_number: "B000002P6S"
 },
 ]
@@ -43,10 +40,10 @@ u4 = User.create(comment: "If you've never listened to this... Add it to the lis
 puts "Userdata loading completed!"
 
 puts "Collecting Reviews"
-Review.create(rating:7, album: album.all.sample, user: u1)
-Review.create(rating:7, album: album.all.sample, user: u2)
-Review.create(rating:7, album: album.all.sample, user: u3)
-Review.create(rating:7, album: album.all.sample, user: u4)
+Review.create(rating:7, album: Album.all.sample, user: u1)
+Review.create(rating:7, album: Album.all.sample, user: u2)
+Review.create(rating:7, album: Album.all.sample, user: u3)
+Review.create(rating:7, album: Album.all.sample, user: u4)
 puts "Reviews are ready for display!"
 
 puts "✅ Done seeding!"
