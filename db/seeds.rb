@@ -5,7 +5,8 @@ User.destroy_all
 puts "Database Cleared!"
 
 puts "creating album data"
-Album.create([{
+Album.create!([
+    {
     title: "View With A Room"
     genre: "Jazz"
     artist: "Julian Lage"
