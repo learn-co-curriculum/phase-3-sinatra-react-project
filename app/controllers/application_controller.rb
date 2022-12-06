@@ -1,11 +1,11 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  # Add your routes here
+    get "/destinations" do
+      destinations = Destination.all
+      destinations.to_json
 
-  get "/" do #'Hello World
-    { message: "Good luck with your project!" }.to_json
-  end
+    end
 
 
     # HTTP VERBS (are going to determine the type of request our client side is making)
