@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_05_174307) do
+ActiveRecord::Schema.define(version: 2022_12_06_145612) do
 
   create_table "bubbleteas", force: :cascade do |t|
     t.string "base"
     t.string "topping_1"
     t.string "topping_2"
     t.integer "size"
+    t.string "image_url"
   end
 
   create_table "customers", force: :cascade do |t|
