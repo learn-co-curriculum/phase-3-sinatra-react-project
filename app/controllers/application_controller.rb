@@ -16,5 +16,5 @@ class ApplicationController < Sinatra::Base
     review = Review.all
     review.to_json
   end
-  
+
 end
