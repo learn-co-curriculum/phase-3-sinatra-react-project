@@ -35,7 +35,7 @@ puts "album data created"
 puts "Loading Userdata"
 u1 = User.create(comment: "OMG! This is my favvvvv!")
 u2 = User.create(comment: "Just a vibe...")
-u3 = User.create(comment: "Old school always has a palce in my heart")
+u3 = User.create(comment: "Old school always has a place in my heart")
 u4 = User.create(comment: "If you've never listened to this... Add it to the list!")
 puts "Userdata loading completed!"
 
