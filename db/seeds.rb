@@ -7,7 +7,7 @@ b1=Bubbletea.create(image_url: "https://www.pngfind.com/pngs/m/104-1041358_fresh
 b2=Bubbletea.create(image_url: "https://www.nicepng.com/png/full/315-3151395_milk-tea-with-pudding-coco-milk-tea-pudding.png")
 b3=Bubbletea.create(image_url: "https://p.kindpng.com/picc/s/730-7308452_milk-tea-matcha-png-transparent-png.png")
 b4=Bubbletea.create(image_url: "https://bobakingusa.com/wp-content/uploads/2020/11/mangotango-400x400.png")
-b5=Bubbletea.create(image_url:  
+b5=Bubbletea.create(image_url: "https://748145.smushcdn.com/1388612/wp-content/uploads/2022/10/Pearl-Milk-Tea.png?lossy=1&strip=1&webp=1")
 
 # # Seed your database here
 # b1=Bubbletea.create(base: "oolong tea", topping_1: "boba", topping_2: "grass jelly", size: 16  )
