@@ -1,3 +1,3 @@
-class Destination < ApplicationController
+class DestinationController < ApplicationController
     
 end
