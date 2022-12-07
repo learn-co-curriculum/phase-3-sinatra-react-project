@@ -1,7 +1,8 @@
 class CreateUsers < ActiveRecord::Migration[6.1]
   def change
     create_table :users do |t|
-    t.string :comment   
+      t.string :comment   
+      t.integer :rating
     end
   end
 end
