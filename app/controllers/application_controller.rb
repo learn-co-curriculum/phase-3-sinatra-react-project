@@ -7,10 +7,6 @@ class ApplicationController < Sinatra::Base
     album.to_json
   end
 
-  get '/users' do
-    user = User.all
-    user.to_json
-  end
 
   get'/reviews' do
     review = Review.all
