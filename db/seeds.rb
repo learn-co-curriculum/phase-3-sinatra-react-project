@@ -30,21 +30,21 @@ Album.create([
     title: "View With A Room",
     image_url: "https://cdn.shopify.com/s/files/1/1418/3572/products/Album-Art.png?v=1655395606",
     catalog_number: "B0B4FV36ZS",
-    review: Review.all.sample,
+    review: Review.third,
     band: b1
 },
 {
     title: "Hybrid Theory",
     image_url: "https://beatsperminute.com/wp-content/uploads/2020/10/linkin-park-hybrid-theory.jpg",
     catalog_number: "B00004Z459",
-    review: Review.all.sample,
+    review: Review.last,
     band: b2
 },
 {
     title: "It's Hard",
     image_url: "https://m.media-amazon.com/images/I/71hBf-lAsjL._SL1098_.jpg",
     catalog_number: "B000002P6S",
-    review: Review.all.sample,
+    review: Review.fourth
     band: b3
 },])
 puts "album data created"
