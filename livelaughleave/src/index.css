@@ -1,13 +1,143 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.Welcome-header {
+  font:'Zapfino';
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav {
+  background-color: rgb(249, 247, 247);
+  color: white;
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 2rem 2rem;
 }
+
+.navtitle {
+  text-align: center;
+}
+
+span {
+  text-shadow: #990033;
+}
+
+body {
+  margin: 0;
+  font: 'Zapfino';
+  font-family: 'Zapfino';
+  font-size: '1.2em';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  /* background-image: url('https://images8.alphacoders.com/645/645320.png'); */
+  background-size: fill;
+  background-position: center;
+}
+
+h1 {
+  font:'Zapfino';
+  font-size: 70px;
+  width: '100%';
+  background-position:'fill';
+  color: rgb(3, 3, 3);
+  padding: 10px;
+}
+
+h2 {
+  font:'Zapfino';
+  width: '100%';
+  background-position: 'fill';
+
+  /* background-color: rgb(4, 3, 3); */
+  color: rgb(243, 9, 134);
+}
+
+p {
+  font-size:20px;
+}
+
+
+.search {
+  width: 50%;
+  text-align: center;
+  font:'Zapfino';
+  position: relative;
+  display: block;
+  margin: auto;
+  padding: 2rem;
+}
+
+.searchTerm {
+  
+  text-align: center;
+  width: 100%;
+  border: 7px solid #990033;
+  padding: 5px;
+  height: 3rem;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1.5rem;
+}
+
+
+.wrapper {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.cardContainer {
+  align-items: grid;
+  grid-template-columns: repeat;
+  grid-template-rows: repeat;
+  grid-gap: 20px;
+  margin: 3px;
+} 
+
+.character-item {
+  padding: 5px;
+  border: solid black 2px;
+  box-shadow: 3px 5px #222A;
+  width: 300px;
+  background-color: white;
+  border: solid black 7px;
+  display: grid;
+}
+
+.character-item img {
+  width: 100%;
+}
+
+.character-item img:hover {
+  filter: drop-shadow(0 0 0.75rem rgb(245, 3, 120))
+}
+
+.character-form {
+  font:'Zapfino';
+  text-align: left;
+}
+
+.character-form input, .character-form label {
+  font:'Zapfino';
+  display: block;
+  margin-top: 0.5em;
+}
+
+
+button, input[type=submit] {
+  border: solid black 6px;
+  border-radius: 0.5em;
+  background-color: white;
+  font-family: 'Zapfino';
+}
+
+input {
+  border: solid black 2px;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+

@@ -3,7 +3,8 @@ import './App.css';
 import React, {useState, useEffect} from 'react';
 // import { Route, Routes, Link } from "react-router-dom";
 import DestinationList from './DestinationList';
-import Header from './Header';
+import NavBar from './NavBar'
+// import { BrowserRouter } from 'react-router-dom'
 
 const API = 'http://localhost:9292/destinations'
 
@@ -19,8 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>hello</h1>
-        <Header/>
+        <NavBar />
         <DestinationList destinations={destinations}/>
 
     </div>
