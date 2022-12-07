@@ -7,13 +7,13 @@ class ApplicationController < Sinatra::Base
     album.to_json
   end
 
-  get '/users' do
-    user = User.all
-    user.to_json
-  end
-
   get'/reviews' do
     review = Review.all
+    review.to_json
+  end
+
+  post'/reviews' do
+    review = User.create(comment: params[:comment], rating: params[:rating])
     review.to_json
   end
 
