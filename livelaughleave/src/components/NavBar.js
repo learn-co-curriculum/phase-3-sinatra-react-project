@@ -20,7 +20,7 @@ function NavBar() {
             <NavLink to="/"><a className="nav-links"><span>Home Sweet Home</span></a></NavLink>
             <NavLink to="/destination"><a className="nav-links"><span>Destinations</span></a></NavLink>
             <NavLink to="/search"><a className="nav-links"><span>Search</span></a></NavLink>
-            <NavLink to="/reviews"><a className="nav-links"><button className="home_button" onClick={goForm}></button><span>Reviews</span></a></NavLink>
+            <NavLink to="/reviews"><a className="nav-links" onClick={goForm}><span>Reviews</span></a></NavLink>
             </ul>
         </div>
 
