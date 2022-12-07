@@ -1,10 +1,12 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
+
+    get "/" do
+      {message: "Working!"}.to_json
+    end
   
     get "/destinations" do
-      destinations = Destination.all
-      destinations.to_json
-
+      Destination.all.to_json(include: :reviews)
     end
 
 
