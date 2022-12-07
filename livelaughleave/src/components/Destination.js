@@ -10,6 +10,8 @@ function Destination({destination}){
             <div className="image">
                 <img src={destination.image} alt="image"/>
                 <h4>{destination.name}</h4>
+                <p>{destination.review}</p>
+            
             </div>
         </li>
     )

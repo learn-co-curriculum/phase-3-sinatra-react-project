@@ -1,9 +1,10 @@
 
 import './App.css';
 import React, {useState, useEffect} from 'react';
-// import { Route, Routes, Link } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 import DestinationList from './DestinationList';
 import NavBar from './NavBar'
+import NewReviewForm from './NewReviewForm'
 // import { BrowserRouter } from 'react-router-dom'
 
 const API = 'http://localhost:9292/destinations'
@@ -22,6 +23,9 @@ function App() {
     <div className="App">
         <NavBar />
         <DestinationList destinations={destinations}/>
+        <Switch>
+          <Route exact path="/NewReviewForm" component={NewReviewForm}/>
+        </Switch>
 
     </div>
   );
