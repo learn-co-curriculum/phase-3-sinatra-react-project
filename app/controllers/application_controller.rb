@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post'/reviews' do
-    review = User.create(comment: params[:comment], rating: params[:rating])
+    review = Review.create(comment: params[:comment], rating: params[:rating])
     review.to_json
   end
 
