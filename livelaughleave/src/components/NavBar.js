@@ -1,5 +1,5 @@
 import React from "react"
-import {NavLink, useHistory} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 
 
 
@@ -17,10 +17,10 @@ function NavBar() {
             <ul className="navtitle">
             {/* <img href="/liveloveleave.gif"/> */}
             <h1 className="nav-title">Live, Laugh, Leave</h1>
-            <NavLink to="/"><a className="nav-links"><span>Home Sweet Home</span></a></NavLink>
-            <NavLink to="/destination"><a className="nav-links"><span>Destinations</span></a></NavLink>
-            <NavLink to="/search"><a className="nav-links"><span>Search</span></a></NavLink>
-            <NavLink to="/reviews"><a className="nav-links" onClick={goForm}><span>Reviews</span></a></NavLink>
+            <Link to="/"><span>Home Sweet Home</span></Link>
+            <Link to="/destination"><span>Destinations</span></Link>
+            <Link to="/search"><span>Search</span></Link>
+            <Link to="/reviews"><span>Reviews</span></Link>
             </ul>
         </div>
 

@@ -1,11 +1,13 @@
 
 import './App.css';
 import React, {useState, useEffect} from 'react';
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch, BrowserRouter as router} from "react-router-dom";
 import DestinationList from './DestinationList';
 import NavBar from './NavBar'
 import NewReviewForm from './NewReviewForm'
-// import { BrowserRouter } from 'react-router-dom'
+import Search from './Search'
+// import DestinationDetails from './DestinationDetails';
+
 
 const API = 'http://localhost:9292/destinations'
 
@@ -20,14 +22,21 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <>
         <NavBar />
-        <DestinationList destinations={destinations}/>
         <Switch>
-          <Route exact path="/NewReviewForm" component={NewReviewForm}/>
+          <Route exact path='/'> 
+          </Route>
+          <Route path="/newreviewform">
+          </Route>
+          <Route path="/search">
+          </Route>
+          <Route path="/destination" >
+            <DestinationList destinations={destinations}/>
+          </Route>
         </Switch>
 
-    </div>
+    </>
   );
 }
 

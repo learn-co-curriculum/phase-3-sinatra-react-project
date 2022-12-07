@@ -3,7 +3,7 @@ import Review from './Review';
 import NewReviewForm from './NewReviewForm';
 import {useParams} from 'react-router-dom';
 
-function ReviewList(){
+function ReviewList({detailsId}){
 
     const [reviews, setReviews] = useState([])
     const {id} = useParams();
@@ -18,9 +18,14 @@ function ReviewList(){
         });
     },[id])
 
+    function handleAddReview(newReview){
+        const updatedReviewArr = [...reviews, newReview];
+        setReviews(updatedReviewArr);
+    }
+
     return(
         <div className="review-list">
-            <NewReviewForm reviews={reviews} setReviews={setReviews} />
+            <NewReviewForm reviews={reviews} setReviews={setReviews} onAddReview={handleAddReview} detailsId={detailsId}/>
             <div className="reviews">
                 {reviews.map(review => <Review key={review.id} review={review}/>)}
             </div>

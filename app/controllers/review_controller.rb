@@ -10,12 +10,18 @@ class ReviewController < ApplicationController
         reviews.to_json
     end
 
+    get "/destinations/:id/reviews" do
+        reviews = Review.where(destination_id: params[:id])
+        reviews.to_json
+    end
+
     post "/reviews" do
         review = Review.create(
             comment: params[:comment],
             destination_id: params[:destination_id]
         )
     review.to_json
+    
     end
 
 end

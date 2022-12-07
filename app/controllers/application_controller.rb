@@ -9,6 +9,11 @@ class ApplicationController < Sinatra::Base
       Destination.all.to_json(include: :reviews)
     end
 
+    get "/detinations/:id" do
+      destination = Destination.find(params[:id])
+      destination.to_json(only: [:id, :name, :location, :description, :image], inclue: [:reviews])
+    end
+
 
     # HTTP VERBS (are going to determine the type of request our client side is making)
     
