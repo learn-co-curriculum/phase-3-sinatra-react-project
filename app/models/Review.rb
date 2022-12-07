@@ -1,4 +1,4 @@
 class Review < ActiveRecord::Base
-    belongs_to :user
-    belongs_to :album
+    has_many :albums
+    has_many :bands, through: :albums
 end
