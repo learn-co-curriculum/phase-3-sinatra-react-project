@@ -1,28 +1,43 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
 
-    get "/" do
-      {message: "Working!"}.to_json
-    end
+   
   
     get "/destinations" do
-      Destination.all.to_json(include: :reviews)
+      Destination.all.to_json()
     end
 
-    get "/detinations/:id" do
-      destination = Destination.find(params[:id])
-      destination.to_json(only: [:id, :name, :location, :description, :image], inclue: [:reviews])
+   
+    get "/reviews" do 
+       Review.all.to_json()
+         
     end
+  
+    post "/reviews/:id" do
+        Review.create(comment: params[:comment]).to_json
+    end
+  
+    post "/destinations/:id/" do
+        Review.create(name: params[:name], location: params[:location], description: params[:description], image: [:image]).to_json
+    end
+  
+    delete '/reviews/:id' do
+        Review.find(params[:id]).destroy
 
-
-    # HTTP VERBS (are going to determine the type of request our client side is making)
+    end
     
-    # GET, POST, PATCH, DELETE
+    delete '/destinations/:id' do
+        Review.find(params[:id]).destroy
 
-    # 'endpoint'/'path' - /url
+    end
 
-    # block: what determines how we handle the request
-
-
-
+    get '/destinations/:id' do
+      Destination.find(params[:id]).to_json(include: :reviews)
+    end
+  
+    patch "/destination/:id" do
+      Destination.find(params[:id])
+      Destination.update(likes:params[:likes]).to_json
+    end
+  
 end

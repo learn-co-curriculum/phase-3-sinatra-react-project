@@ -2,12 +2,20 @@
   font:'Zapfino';
 }
 
+.logo {
+  display: flex;
+  margin: auto;
+  width: 50%;
+}
+
 .nav {
-  background-color: rgb(249, 247, 247);
+  background-color: rgb(255, 255, 255);
+  background-image: url('https://i.gifer.com/embedded/download/UDG7.gif');
   color: white;
   /* display: flex; */
-  justify-content: space-between;
-  align-items: stretch;
+  /* justify-content: space-between; */
+  justify-content: center;
+  /* align-items: center; */
   gap: 2rem;
   padding: 2rem 2rem;
 }
@@ -17,24 +25,36 @@
 }
 
 span {
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  width: '100%';
+  background-position:'fill';
   text-shadow: #990033;
+  gap: 2rem;
+  padding: 2rem 2rem;
+  justify-content: center;
+}
+
+p {
+  font-size: px;
 }
 
 body {
   margin: 0;
-  font: 'Zapfino';
-  font-family: 'Zapfino';
+  font: 'Reborn';
+  font-family: 'Reborn';
   font-size: '1.2em';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  /* background-image: url('https://images8.alphacoders.com/645/645320.png'); */
+  /* background-image: url('https://i.pinimg.com/originals/b0/4d/3a/b04d3a0946bbe86a2722ce7fc2f4f472.gif'); */
   background-size: fill;
   background-position: center;
 }
 
 h1 {
-  font:'Zapfino';
+  font:'Domaine Display';
   font-size: 70px;
   width: '100%';
   background-position:'fill';
@@ -43,7 +63,7 @@ h1 {
 }
 
 h2 {
-  font:'Zapfino';
+  font:'Domaine Display';
   width: '100%';
   background-position: 'fill';
 
@@ -112,7 +132,7 @@ grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .character-form {
-  font:'Zapfino';
+  font:'Reborn';
   text-align: left;
 }
 
@@ -124,13 +144,14 @@ grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 
 
 button, input[type=submit] {
-  border: solid black 6px;
-  border-radius: 0.5em;
+  /* border: solid black 6px; */
+  border-radius: 2em;
   background-color: white;
   font-family: 'Zapfino';
 }
 
 input {
+  font:'Reborn';
   border: solid black 2px;
 }
 

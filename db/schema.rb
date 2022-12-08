@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2022_12_06_191755) do
     t.string "location"
     t.string "description"
     t.string "image"
+    t.integer "likes"
   end
 
   create_table "reviews", force: :cascade do |t|
