@@ -1,4 +1,4 @@
 class Album < ActiveRecord::Base
     belongs_to :band
-    belongs_to :review
+    has_many :reviews
 end

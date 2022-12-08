@@ -1,4 +1,3 @@
 class Review < ActiveRecord::Base
-    has_many :albums
-    has_many :bands, through: :albums
+    belongs_to :album
 end

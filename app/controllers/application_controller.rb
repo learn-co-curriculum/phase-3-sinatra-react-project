@@ -16,6 +16,11 @@ class ApplicationController < Sinatra::Base
     review = Review.find(params[:id])
     review.to_json
   end
+  
+  get'/reviews_album/:id' do
+    album = Album.find(params[:id])
+    album.reviews.to_json
+  end
 
   post'/reviews' do
     data = JSON.parse(request.body.read)

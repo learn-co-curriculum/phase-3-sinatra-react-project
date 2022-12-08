@@ -4,8 +4,7 @@ class CreateAlbums < ActiveRecord::Migration[6.1]
       t.string :title
       t.string :image_url
       t.string :catalog_number
-      t.belongs_to :review
-      t.belongs_to :band
+      t.integer :band_id
     end
   end
 end

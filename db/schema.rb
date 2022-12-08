@@ -16,10 +16,7 @@ ActiveRecord::Schema.define(version: 2022_12_07_164036) do
     t.string "title"
     t.string "image_url"
     t.string "catalog_number"
-    t.integer "review_id"
     t.integer "band_id"
-    t.index ["band_id"], name: "index_albums_on_band_id"
-    t.index ["review_id"], name: "index_albums_on_review_id"
   end
 
   create_table "bands", force: :cascade do |t|
@@ -30,6 +27,7 @@ ActiveRecord::Schema.define(version: 2022_12_07_164036) do
   create_table "reviews", force: :cascade do |t|
     t.string "comment"
     t.integer "rating"
+    t.integer "album_id"
   end
 
 end
