@@ -16,9 +16,13 @@ class ApplicationController < Sinatra::Base
     post "/reviews/:id" do
         Review.create(comment: params[:comment]).to_json
     end
-  
-    post "/destinations/:id/" do
-        Review.create(name: params[:name], location: params[:location], description: params[:description], image: [:image]).to_json
+
+    post "/destinations/:id" do
+        Review.create(comment: params[:comment], destination_id: params[:id]).to_json
+    end
+
+    post "/destinations" do
+      Destination.create(name: params[:name], location: params[:location], description: params[:description], image: params[:image]).to_json
     end
   
     delete '/reviews/:id' do

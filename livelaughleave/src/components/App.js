@@ -5,9 +5,7 @@ import { Route, Switch, BrowserRouter as router} from "react-router-dom";
 import DestinationList from './DestinationList';
 import NavBar from './NavBar'
 import DestinationShow from './DestinationShow'
-// import NewReviewForm from './NewReviewForm'
-// import Search from './Search'
-// import DestinationDetails from './DestinationDetails';
+
 
 
 const API = 'http://localhost:9292/destinations'

@@ -14,21 +14,21 @@ function DestinationShow({setDestinationForm, destinationForm}){
     }, [])
 
     let initialForm ={
-        review: "",
+        comment: "",
     }
 
     const [form, setForm] = useState(initialForm)
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch("http://localhost:9292/destinations", {
+        fetch(`http://localhost:9292/destinations/${param.id}`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            Body: JSON.stringify(form),
+            body: JSON.stringify(form),
     }).then(r => r.json())
       .then(data => {
         setForm(initialForm)
-        setDestinationForm([...destinationForm, data ])})
+        setDestination( {...destination, reviews:[...destination.reviews, data ]} )})
       }
 
       let handleChange = (e) => {
@@ -40,11 +40,13 @@ function DestinationShow({setDestinationForm, destinationForm}){
     
     return(
         <div>
-            {destination.reviews.map(review => <p>{review.comment}</p>)}
+           
             <img src={destination.image}/>
+            <p>{destination.description}</p>
             <form id="form" onSubmit={handleSubmit}>
-                <input value={form.review} placeholder = "addReview" name= "review-form" type="text" onChange={handleChange} />
+                <input value={form.review} placeholder= "name" name= "comment" type="text" onChange={handleChange} />
                 <button className="button-85" id="addReviewBtn">Add Review</button>
+                {destination.reviews.map(review => <p>{review.comment}</p>)}
             </form>
         </div>
     )
