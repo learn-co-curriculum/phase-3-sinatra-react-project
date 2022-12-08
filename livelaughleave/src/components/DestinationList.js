@@ -37,7 +37,7 @@ function DestinationList({destinations, setDestinations, handleDeleteDestination
      <input value={form.location} placeholder = "location" name= "destination-form" type="text" onChange={handleChange} />
      <input value={form.description} placeholder = "description" name= "destination-form" type="text" onChange={handleChange} />
      <input value={form.image} placeholder = "image" name= "destination-form" type="text" onChange={handleChange} />
-            <button className="button-85" id="addReviewBtn">Add Destination</button>
+            <button className="review-btn" id="addReviewBtn">Add Destination</button>
      </form>
     {destinations.map(destination => <Destination key={destination.id} destination={destination} handleDeleteDestination={handleDeleteDestination} handleClickLikes={handleClickLikes}/>)}
     </>

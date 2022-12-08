@@ -67,9 +67,18 @@ function App() {
             <h1>404 not found</h1>
           </Route>
         </Switch>
-
+        {/* <div className="home-container">
+          <div className="home">
+            <img className="home-images" src="https://img.freepik.com/premium-photo/sea-sandy-beach-vertical-seascape-with-space-your-own-text-may-be-used-as-background_483040-76.jpg?w=2000" alt='home_1'/>
+            <img className="home-images" src="https://travel.home.sndimg.com/content/dam/images/travel/fullrights/2018/12/31/0/CI_Alabama_Tourism_Dept_Fairhope-Downtown.jpg.rend.hgtvcom.406.542.suffix/1546453234469.jpeg" alt='home_2' />
+            <img className="home-images" src="https://cdn2.storyasset.link/cuigamKkJkeJuJRupi2ppVaeBel2/1-ms-ktsbzbffor.jpg" alt='home_3' />
+            <img className="home-images" src="https://i.pinimg.com/originals/a8/ed/e7/a8ede7fa754f27f2c71d08f655b98d3c.jpg" alt= 'home_4' />
+            <img className="home-images" src="https://images.pexels.com/photos/13474751/pexels-photo-13474751.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt='home_5' />
+          </div>
+        </div> */}
     </>
   );
+ 
 }
 
 export default App;

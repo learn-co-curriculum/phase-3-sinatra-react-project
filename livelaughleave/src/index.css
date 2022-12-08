@@ -5,7 +5,8 @@
 .logo {
   display: flex;
   margin: auto;
-  width: 50%;
+  width: 40%;
+  padding: 10px;
 }
 
 .nav {
@@ -16,8 +17,9 @@
   /* justify-content: space-between; */
   justify-content: center;
   /* align-items: center; */
-  gap: 2rem;
-  padding: 2rem 2rem;
+  /* gap: 2rem; */
+  /* padding: 2rem 2rem; */
+  /* padding-bottom: 10px; */
 }
 
 .navtitle {
@@ -34,10 +36,6 @@ span {
   gap: 2rem;
   padding: 2rem 2rem;
   justify-content: center;
-}
-
-p {
-  font-size: px;
 }
 
 body {
@@ -73,8 +71,17 @@ h2 {
 
 p {
   font-size:20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: auto;
 }
 
+h4 {
+  font-size: 140%;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  margin: auto;
+}
 
 .search {
   width: 50%;
@@ -153,12 +160,62 @@ button, input[type=submit] {
 input {
   font:'Reborn';
   border: solid black 2px;
+  height: 30px;
+  margin-right: 5px;
+  margin-top: 20px;
 }
 
-img {
+.destination-images {
   width: 300px;
   height: 300px;
-  border-radius: 100px;
+  border-radius: 50px;
   object-fit: cover;
+  flex-direction: column;
+  position: relative;
 }
 
+.card-container {
+  vertical-align: top;
+  display: inline-grid;
+  margin-right: 10px;
+  margin-left: 25px;
+}
+.card {
+  padding-bottom: 15px;
+  padding-top: 30px
+}
+
+.home {
+  vertical-align: top;
+  /* display: inline-grid; */
+  margin-top: 5px; 
+  margin-right: 10px; 
+  margin-left: 10px; 
+ } 
+
+.home-images {
+  width: 250px;
+  height: 350px;
+  /* border-radius: 50px; */
+  padding-right: 20px; 
+  padding-top: 30px;
+}
+
+.like-btn {
+  height: 40px;
+  width: 200px;
+
+}
+
+.delete-btn {
+  height: 40px;
+  width: 80px;
+}
+
+.review-btn {
+  height: 40px;
+  width: 200px;
+}
+.home-btn {
+  font-size: x-large;
+}

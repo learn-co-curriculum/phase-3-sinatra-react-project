@@ -23,15 +23,15 @@ function Destination({destination, handleDeleteDestination, handleClickLikes}){
  
     return(
         
-            <div className="card" onClick={handleClick}>
-                
-                <img src={image} alt="image"/>
+        <div className="card-container">
+            <div className="card">
+                <img className="destination-images" onClick={handleClick} src={image} alt="destinations"/>
                 <h4>{name}</h4>
                 <p>{likes} Likes</p>
                 <button onClick={()=> handleClickLikes(destination)}className="like-btn">Like 🖤</button>
-                <button className="button-85"onClick={()=>handleDelete(destination.id)}>Delete</button> 
-                 
-            </div>
+                <button className="delete-btn"onClick={()=>handleDelete(destination.id)}>Delete</button> 
+            </div>   
+        </div>
        
     )
 }
