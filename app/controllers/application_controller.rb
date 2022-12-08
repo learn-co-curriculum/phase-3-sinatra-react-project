@@ -12,10 +12,10 @@ class ApplicationController < Sinatra::Base
     review.to_json
   end
 
-  get'/reviews/:id' do
-    review = Review.find(params[:id])
-    review.to_json
-  end
+  # get'/reviews/:id' do
+  #   review = Review.find(params[:id])
+  #   review.to_json
+  # end
   
   get'/reviews_album/:id' do
     album = Album.find(params[:id])
@@ -25,6 +25,12 @@ class ApplicationController < Sinatra::Base
   post'/reviews' do
     data = JSON.parse(request.body.read)
     review = Review.create(comment: data["comment"], rating: data["rating"])
+    review.to_json
+  end
+
+  post'/reviews/:id' do
+    data = JSON.parse(request.body.read)
+    review = Review.create(comment: data["comment"], rating: data["rating"], album_id: null)
     review.to_json
   end
   
