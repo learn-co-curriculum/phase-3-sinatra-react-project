@@ -44,7 +44,7 @@ Album.create([
     title: "It's Hard",
     image_url: "https://m.media-amazon.com/images/I/71hBf-lAsjL._SL1098_.jpg",
     catalog_number: "B000002P6S",
-    review: Review.fourth
+    review: Review.fourth,
     band: b3
 },])
 puts "album data created"
