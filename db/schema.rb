@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_07_170657) do
+ActiveRecord::Schema.define(version: 2022_12_08_023738) do
 
   create_table "bubbleteas", force: :cascade do |t|
     t.string "image_url"
@@ -19,7 +19,9 @@ ActiveRecord::Schema.define(version: 2022_12_07_170657) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
-    t.string "review"
+    t.string "phone"
+    t.string "email"
+    t.string "address"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -27,6 +29,7 @@ ActiveRecord::Schema.define(version: 2022_12_07_170657) do
     t.integer "customer_id"
     t.integer "bubbletea_id"
     t.string "size"
+    t.string "comment"
   end
 
 end

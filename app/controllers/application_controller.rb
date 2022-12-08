@@ -7,10 +7,30 @@ class ApplicationController < Sinatra::Base
     bubbleteas.to_json
     # {message: 'hi'}.to_json
   end
+
+  get "/bubbleteas/:id" do
+    bubbleteas = Bubbletea.find(params[:id])
+    bubbleteas.to_json
+  end
   
   get '/customers' do
     customers = Customer.all
     customers.to_json
+  end
+  post '/customers' do
+    customer = Customer.create(
+      name: params[:name],
+      phone: params[:phone],
+      email: params[:email],
+      address: params[:address]
+    )
+    customer.to_json
+  end
+
+  delete '/customers/:id' do
+    customer = Customer.find(params[:id])
+    customer.destroy
+    customer.to_json
   end
 
   get '/orders' do
@@ -18,8 +38,28 @@ class ApplicationController < Sinatra::Base
     orders.to_json
   end
 
-end
+  get '/orders/customer_id' do
+    orders = Order.where(customer_id: params[:customer_id])
+    orders.to_json
+  end
 
+  post '/orders' do
+    order = Order.create(
+    price: params[:price],
+    customer_id: params[:customer_id],
+    bubbletea_id: params[:bubbletea_id],
+    size: params[:size],
+    comment: params[:comment]
+    )
+    order.to_json
+  end
+
+  delete '/orders/:id' do
+    order = Order.find(params[:id])
+    order.destroy
+    order.to_json
+  end
+end
 # get "/bubleteas/:id" do
 #   bubbleteas = Bubbletea.find(params[:id])
 #   bubbleteas.to_json

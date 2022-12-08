@@ -2,17 +2,22 @@
 
 
 puts "🌱 Seeding spices..."
-# Bubbletea.where(id: 6).update(base:"milk tea",topping_1:"tapioca",topping_2:"grass jelly", size:"16")
-# Bubbletea.where(id: 7).update(base:"chocolate",topping_1:"boba",topping_2:"lychee jelly", size:"12")
-# Bubbletea.where(id: 8).update(base:"peach",topping_1:"boba",topping_2:"coconut jelly", size:"8")
-# Bubbletea.where(id: 9).update(base:"coffee",topping_1:"lychee jelly",topping_2:"coconut jelly", size:"8")
-# Bubbletea.where(id: 10).update(base:"taro",topping_1:"coconut jelly",topping_2:"mango pearls", size:"8")
+# Bubbletea.where(id: 1).update(menu_name:"Lychee Jelly Milk Tea")
+# Bubbletea.where(id: 2).update(menu_name:"Boba Milk Tea")
+# Bubbletea.where(id: 3).update(menu_name:"Barley Chocolate Milk Tea")
+# Bubbletea.where(id: 4).update(menu_name:"Pudding Milk Tea")
+# Bubbletea.where(id: 5).update(menu_name:"Taro Milk Tea")
+# Bubbletea.where(id: 6).update(menu_name:"Thai Iced Tea")
+# Bubbletea.where(id: 7).update(menu_name:"Sesame Milk Tea")
+# Bubbletea.where(id: 8).update(menu_name:"Coffee Jelly with Milk Tea")
+# Bubbletea.where(id: 9).update(menu_name:"Tiger Milk Tea")
+# Bubbletea.where(id: 10).update(menu_name:"Almond Milk Tea")
 
-# Bubbletea.update(image_url: "https://www.pngfind.com/pngs/m/104-1041358_fresh-milk-oolong-tea-w-boba-fresh-milk.png")
-# b2=Bubbletea.create(image_url: "https://www.nicepng.com/png/full/315-3151395_milk-tea-with-pudding-coco-milk-tea-pudding.png")
-# b3=Bubbletea.create(image_url: "https://p.kindpng.com/picc/s/730-7308452_milk-tea-matcha-png-transparent-png.png")
-# b4=Bubbletea.create(image_url: "https://bobakingusa.com/wp-content/uploads/2020/11/mangotango-400x400.png")
-# b5=Bubbletea.create(image_url: "https://748145.smushcdn.com/1388612/wp-content/uploads/2022/10/Pearl-Milk-Tea.png?lossy=1&strip=1&webp=1")
+Bubbletea.update(image_url: "https://www.pngfind.com/pngs/m/104-1041358_fresh-milk-oolong-tea-w-boba-fresh-milk.png")
+b2=Bubbletea.create(image_url: "https://www.nicepng.com/png/full/315-3151395_milk-tea-with-pudding-coco-milk-tea-pudding.png")
+b3=Bubbletea.create(image_url: "https://p.kindpng.com/picc/s/730-7308452_milk-tea-matcha-png-transparent-png.png")
+b4=Bubbletea.create(image_url: "https://bobakingusa.com/wp-content/uploads/2020/11/mangotango-400x400.png")
+b5=Bubbletea.create(image_url: "https://748145.smushcdn.com/1388612/wp-content/uploads/2022/10/Pearl-Milk-Tea.png?lossy=1&strip=1&webp=1")
 
 # # Seed your database here
 # b1=Bubbletea.create(base: "oolong tea", topping_1: "boba", topping_2: "grass jelly", size: 16  )
