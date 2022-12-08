@@ -33,6 +33,17 @@ class ApplicationController < Sinatra::Base
     customer.to_json
   end
 
+  patch '/customers/:id' do
+    customer = Customer.find(params[:id])
+    customer.update(
+      name: params[:name],
+      phone: params[:phone],
+      email: params[:email],
+      address: params[:address]
+    )
+    customer.to_json
+  end
+
   get '/orders' do
     orders = Order.all
     orders.to_json
@@ -59,6 +70,20 @@ class ApplicationController < Sinatra::Base
     order.destroy
     order.to_json
   end
+
+  patch '/orders/:id' do
+    order = Order.find(params[:id])
+    order.update(
+    price: params[:price],
+    customer_id: params[:customer_id],
+    bubbletea_id: params[:bubbletea_id],
+    size: params[:size],
+    comment: params[:comment]
+    )
+    order.to_json
+  end
+
+
 end
 # get "/bubleteas/:id" do
 #   bubbleteas = Bubbletea.find(params[:id])
