@@ -34,10 +34,10 @@ function DestinationList({destinations, setDestinations, handleDeleteDestination
     return(
     <>
     <form id="form" onSubmit={handleSubmit}>
-     <input value={form.name} placeholder = "name" name= "name" type="text" onChange={handleChange} />
-     <input value={form.location} placeholder = "location" name= "location" type="text" onChange={handleChange} />
-     <input value={form.description} placeholder = "description" name= "description" type="text" onChange={handleChange} />
-     <input value={form.image} placeholder = "image" name= "image" type="text" onChange={handleChange} />
+     <input value={form.name} placeholder = "name" name= "destination-form" type="text" onChange={handleChange} />
+     <input value={form.location} placeholder = "location" name= "destination-form" type="text" onChange={handleChange} />
+     <input value={form.description} placeholder = "description" name= "destination-form" type="text" onChange={handleChange} />
+     <input value={form.image} placeholder = "image" name= "destination-form" type="text" onChange={handleChange} />
             <button className="button-85" id="addReviewBtn">Add Destination</button>
      </form>
     {destinations.map(destination => <Destination key={destination.id} destination={destination} handleDeleteDestination={handleDeleteDestination} handleClickLikes={handleClickLikes}/>)}
