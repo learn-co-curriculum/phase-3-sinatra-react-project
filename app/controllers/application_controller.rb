@@ -33,6 +33,4 @@ class ApplicationController < Sinatra::Base
     review.update(comment: params["comment"], rating: params["rating"])
     review.to_json
   end
-  # the information in the body of my request isnt even showing up in the params hash
-
 end

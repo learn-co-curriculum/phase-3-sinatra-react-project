@@ -10,6 +10,7 @@ puts "creating band"
 b1 = Band.create(artist_name: "Julian Lage", genre: "Jazz")
 b2 = Band.create(artist_name: "Linkin Park", genre: "Nu Metal")
 b3 = Band.create(artist_name: "The Who", genre: "Hard Rock")
+b4 = Band.create(artist_name: "Brad Mehldau", genre: "Progressive Rock")
 
 puts "band created"
 
@@ -33,6 +34,12 @@ Album.create([
     image_url: "https://m.media-amazon.com/images/I/71hBf-lAsjL._SL1098_.jpg",
     catalog_number: "B000002P6S",
     band_id: b3.id
+},
+{
+    title: "Jacob's Ladder",
+    image_url: "https://cdn2.jazztimes.com/2022/04/brad-mehldau-jacobs-ladder.jpg",
+    catalog_number: "075597913460",
+    band_id: b4.id
 },])
 
 puts "album data created"
