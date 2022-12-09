@@ -1,0 +1,3 @@
+class TodosController < ApplicationController
+
+end
