@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
     end
 
     post "/destinations" do
-      Destination.create(name: params[:name], location: params[:location], description: params[:description], image: params[:image]).to_json
+        Destination.create(name: params[:name], location: params[:location], description: params[:description], image: params[:image]).to_json
     end
   
     delete '/reviews/:id' do
@@ -31,7 +31,7 @@ class ApplicationController < Sinatra::Base
     end
     
     delete '/destinations/:id' do
-        Review.find(params[:id]).destroy
+        Destination.find(params[:id]).destroy
 
     end
 
@@ -39,9 +39,10 @@ class ApplicationController < Sinatra::Base
       Destination.find(params[:id]).to_json(include: :reviews)
     end
   
-    patch "/destination/:id" do
-      Destination.find(params[:id])
-      Destination.update(likes:params[:likes]).to_json
+    patch "/destinations/:id" do
+      destination = Destination.find(params[:id])
+      destination.update(likes: params[:likes])
+      destination.to_json
     end
   
 end
