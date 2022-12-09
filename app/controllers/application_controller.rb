@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
   # Add your routes here
   get '/albums' do
     album = Album.all
-    album.to_json
+    album.to_json(include: :reviews)
   end
 
   get'/reviews' do
@@ -29,8 +29,6 @@ class ApplicationController < Sinatra::Base
   end
     
   patch '/reviews/:id' do
-    binding.pry
-    data = JSON.parse(request.body.read)
     review = Review.find(params[:id])
     review.update(comment: params["comment"], rating: params["rating"])
     review.to_json
