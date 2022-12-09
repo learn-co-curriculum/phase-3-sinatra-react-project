@@ -29,6 +29,7 @@ class ApplicationController < Sinatra::Base
   end
     
   patch '/reviews/:id' do
+    binding.pry
     data = JSON.parse(request.body.read)
     review = Review.find(params[:id])
     review.update(comment: params["comment"], rating: params["rating"])
