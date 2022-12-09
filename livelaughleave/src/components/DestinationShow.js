@@ -41,12 +41,12 @@ function DestinationShow({setDestinationForm, destinationForm}){
     return(
         <div>
            
-            <img src={destination.image}/>
-            <p>{destination.description}</p>
+            <img className="review-image" src={destination.image} alt="reviews"/>
+            <p className="review-page">{destination.description}</p>
             <form id="form" onSubmit={handleSubmit}>
                 <input value={form.review} placeholder= "leave a review!" name= "comment" type="text" onChange={handleChange} />
-                <button className="button-85" id="addReviewBtn">Add Review</button>
-                {destination.reviews.map(review => <p>{review.comment}</p>)}
+                <button className="review-btn" id="addReviewBtn">Add Review</button>
+                {destination.reviews.map(review => <p className="review-page">{review.comment}</p>)}
             </form>
         </div>
     )
