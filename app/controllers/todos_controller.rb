@@ -1,3 +1,0 @@
-class TodosController < ApplicationController
-
-end
