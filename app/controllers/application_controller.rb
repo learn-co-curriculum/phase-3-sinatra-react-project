@@ -11,11 +11,6 @@ class ApplicationController < Sinatra::Base
     review = Review.all
     review.to_json
   end
-
-  # get'/reviews/:id' do
-  #   review = Review.find(params[:id])
-  #   review.to_json
-  # end
   
   get'/reviews_album/:id' do
     album = Album.find(params[:id])
@@ -23,14 +18,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post'/reviews' do
-    data = JSON.parse(request.body.read)
-    review = Review.create(comment: data["comment"], rating: data["rating"])
-    review.to_json
-  end
-
-  post'/reviews/:id' do
-    data = JSON.parse(request.body.read)
-    review = Review.create(comment: data["comment"], rating: data["rating"], album_id: null)
+    review = Review.create(comment: params["comment"], rating: params["rating"], album_id: params[:album_id])
     review.to_json
   end
   
@@ -43,7 +31,7 @@ class ApplicationController < Sinatra::Base
   patch '/reviews/:id' do
     data = JSON.parse(request.body.read)
     review = Review.find(params[:id])
-    review.update(comment: data["comment"], rating: data["rating"])
+    review.update(comment: params["comment"], rating: params["rating"])
     review.to_json
   end
   # the information in the body of my request isnt even showing up in the params hash
