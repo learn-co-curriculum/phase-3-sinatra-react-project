@@ -44,7 +44,7 @@ function DestinationShow({setDestinationForm, destinationForm}){
             <img src={destination.image}/>
             <p>{destination.description}</p>
             <form id="form" onSubmit={handleSubmit}>
-                <input value={form.review} placeholder= "name" name= "comment" type="text" onChange={handleChange} />
+                <input value={form.review} placeholder= "leave a review!" name= "comment" type="text" onChange={handleChange} />
                 <button className="button-85" id="addReviewBtn">Add Review</button>
                 {destination.reviews.map(review => <p>{review.comment}</p>)}
             </form>
