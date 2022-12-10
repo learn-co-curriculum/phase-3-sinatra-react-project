@@ -8,10 +8,11 @@ class ReviewsController < ApplicationController
         review.to_json
     end
 
-    post '/reviews' do
+    post '/reviews/:bookId' do
         #binding.pry
         review = Review.create(
-        review: params[:review]
+        review: params[:review],
+        book_id: params[:bookId]
         )
         review.to_json
     end
