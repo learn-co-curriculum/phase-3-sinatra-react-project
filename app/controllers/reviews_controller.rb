@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
     get '/reviews' do
-        'todo'
+        Review.all.to_json
     end
 end
