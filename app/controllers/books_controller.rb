@@ -7,5 +7,13 @@ class BooksController < ApplicationController
         book = Book.find(params[:id])
         book.to_json
     end
+
+    post '/books' do
+        #binding.pry
+        book = Book.create(
+        title: params[:title]
+        )
+        book.to_json
+    end
 end
 

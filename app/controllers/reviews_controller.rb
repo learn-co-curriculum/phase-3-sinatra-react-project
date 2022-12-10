@@ -7,4 +7,12 @@ class ReviewsController < ApplicationController
         review = Review.find(params[:id])
         review.to_json
     end
+
+    post '/reviews' do
+        #binding.pry
+        review = Review.create(
+        review: params[:review]
+        )
+        review.to_json
+    end
 end
