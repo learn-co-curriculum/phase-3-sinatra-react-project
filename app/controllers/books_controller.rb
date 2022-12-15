@@ -11,7 +11,10 @@ class BooksController < ApplicationController
     post '/books' do
         #binding.pry
         book = Book.create(
-        title: params[:title]
+        title: params[:title],
+        author: params[:author],
+        year: params[:year],
+        pages: params[:pages]
         )
         book.to_json
     end
