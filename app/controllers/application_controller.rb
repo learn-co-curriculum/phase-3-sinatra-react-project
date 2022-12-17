@@ -12,4 +12,9 @@ class ApplicationController < Sinatra::Base
     restaurant.to_json(include: :meal_plans)
   end
 
+  get "/restaurant-requests" do
+    requests = RestaurantRequest.all
+    requests.to_json(include: :request_votes)
+  end
+
 end
