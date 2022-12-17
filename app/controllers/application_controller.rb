@@ -14,7 +14,26 @@ class ApplicationController < Sinatra::Base
 
   get "/restaurant-requests" do
     requests = RestaurantRequest.all
-    requests.to_json(include: :request_votes)
+    requests.to_json
   end
+
+  get "/restaurant-requests/:id/votes" do
+    votes = {
+      upvotes: RestaurantRequest.find(params[:id]).upvotes,
+      downvotes: RestaurantRequest.find(params[:id]).downvotes
+    }
+    votes.to_json
+  end
+
+  patch "/restaurant-requests/:id" do
+    restaurant = RestaurantRequest.find(params[:id])
+    restaurant.update(
+      upvotes: params[:upvotes],
+      downvotes: params[:downvotes]
+    )
+    restaurant.to_json
+  end
+
+
 
 end
