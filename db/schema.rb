@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_17_190714) do
+ActiveRecord::Schema.define(version: 2022_12_18_203712) do
 
   create_table "meal_plans", force: :cascade do |t|
     t.string "name"
@@ -19,18 +19,14 @@ ActiveRecord::Schema.define(version: 2022_12_17_190714) do
     t.integer "price"
   end
 
-  create_table "request_votes", force: :cascade do |t|
-    t.integer "vote"
-    t.integer "restaurant_request_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "restaurant_requests", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.integer "upvotes"
-    t.integer "downvotes"
+  end
+
+  create_table "restaurant_votes", force: :cascade do |t|
+    t.integer "vote"
+    t.integer "restaurant_request_id"
   end
 
   create_table "restaurants", force: :cascade do |t|

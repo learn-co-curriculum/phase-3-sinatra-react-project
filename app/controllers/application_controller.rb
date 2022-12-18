@@ -17,23 +17,6 @@ class ApplicationController < Sinatra::Base
     requests.to_json
   end
 
-  get "/restaurant-requests/:id/votes" do
-    votes = {
-      upvotes: RestaurantRequest.find(params[:id]).upvotes,
-      downvotes: RestaurantRequest.find(params[:id]).downvotes
-    }
-    votes.to_json
-  end
-
-  patch "/restaurant-requests/:id" do
-    restaurant = RestaurantRequest.find(params[:id])
-    restaurant.update(
-      upvotes: params[:upvotes],
-      downvotes: params[:downvotes]
-    )
-    restaurant.to_json
-  end
-
 
 
 end

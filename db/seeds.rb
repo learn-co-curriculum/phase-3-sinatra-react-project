@@ -41,10 +41,9 @@ end
 
 
 # Populate restaurant requests
-RestaurantRequest.create(name: "Birdcall", location: "Denver, CO", upvotes: 7, downvotes: 2)
-RestaurantRequest.create(name: "Panera", location: "Denver, CO", upvotes: 4, downvotes: 4)
-RestaurantRequest.create(name: "Snarf's Sandwiches", location: "Denver, CO", upvotes: 5, downvotes: 9)
-
+RestaurantRequest.create(name: "Birdcall", location: "Denver, CO")
+RestaurantRequest.create(name: "Panera", location: "Denver, CO")
+RestaurantRequest.create(name: "Five Guys", location: "Denver, CO")
 
 
 puts "✅ Done seeding!"
