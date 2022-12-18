@@ -5,7 +5,14 @@ class BooksController < ApplicationController
 
     get '/books/:id' do
         book = Book.find(params[:id])
-        book.to_json
+        bookDTO = BookDTO.new
+        bookDTO.title = book.title
+        bookDTO.author = book.author 
+        bookDTO.year = book.year
+        bookDTO.pages = book.pages
+        reviews = Review.where(book_id: params[:id])
+        bookDTO.reviews = reviews
+        bookDTO.to_json
     end
 
     post '/books' do
