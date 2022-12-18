@@ -45,5 +45,21 @@ RestaurantRequest.create(name: "Birdcall", location: "Denver, CO")
 RestaurantRequest.create(name: "Panera", location: "Denver, CO")
 RestaurantRequest.create(name: "Five Guys", location: "Denver, CO")
 
+randNumber = 
+
+# Random Upvotes
+RestaurantRequest.all.each do |request|
+    rand(12..24).times do
+        RestaurantVote.create(vote: 1, restaurant_request_id: request.id)
+    end
+end
+
+# Random Downvotes
+RestaurantRequest.all.each do |request|
+    rand(2..12).times do
+        RestaurantVote.create(vote: -1, restaurant_request_id: request.id)
+    end
+end
+
 
 puts "✅ Done seeding!"
