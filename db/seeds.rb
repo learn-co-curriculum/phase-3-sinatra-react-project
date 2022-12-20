@@ -45,8 +45,6 @@ RestaurantRequest.create(name: "Birdcall", location: "Denver, CO")
 RestaurantRequest.create(name: "Panera", location: "Denver, CO")
 RestaurantRequest.create(name: "Five Guys", location: "Denver, CO")
 
-randNumber = 
-
 # Random Upvotes
 RestaurantRequest.all.each do |request|
     rand(1..20).times do
