@@ -14,17 +14,38 @@ class ApplicationController < Sinatra::Base
 
   get '/restaurant-requests' do
     requests = RestaurantRequest.all
-    requests.to_json
-  end
-
-  get '/restaurant-votes/:id' do
-    votes = RestaurantRequest.find(params[:id]).restaurant_votes.length
-    votes.to_json
+    requests.to_json(include: :restaurant_votes)
   end
 
   get '/restaurant-requests/:id' do
-    restaurant = RestaurantRequest.find(params[:id])
-    restaurant.to_json(include: :restaurant_votes)
+    request = RestaurantRequest.find(params[:id])
+    request.to_json
+  end
+
+  delete '/restaurant-requests/:id' do
+    request = RestaurantRequest.find(params[:id])
+    request.destroy
+    request.to_json
+  end
+
+  get '/restaurant-requests/count/:id' do
+    votes = RestaurantRequest.find(params[:id]).restaurant_votes.count
+    votes.to_json
+  end
+
+  get '/restaurant-requests/votes/:id' do
+    first_vote = RestaurantVote.find_by(restaurant_request_id: params[:id])
+    first_vote.to_json
+  end
+
+  delete '/restaurant-requests/votes/:id' do
+    first_vote = RestaurantVote.find_by(restaurant_request_id: params[:id])
+
+    first_vote.destroy
+
+    remaining_votes = RestaurantRequest.find(params[:id]).restaurant_votes.count
+
+    remaining_votes.to_json
   end
 
   post '/restaurant-votes' do
@@ -34,6 +55,21 @@ class ApplicationController < Sinatra::Base
     )
     restaurant_vote.to_json
   end
+
+  get '/restaurants/meal-plans/:id' do
+    restaurant_subs = MealPlan.find(params[:id]).restaurant.subscribers
+    restaurant_subs.to_json
+  end
+
+  patch '/restaurants/:id' do
+    restaurant = Restaurant.find(params[:id])
+    restaurant.update(
+      subscribers: params[:subscribers]
+    )
+    restaurant.to_json
+  end
+
+
 
 
 
