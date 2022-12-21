@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
     request.to_json
   end
 
-  delete '/restaurant-requests/:id' do
+  delete '/restaurant-requests/:id' do 
     request = RestaurantRequest.find(params[:id])
     request.destroy
     request.to_json
