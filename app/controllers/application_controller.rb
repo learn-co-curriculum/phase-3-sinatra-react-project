@@ -17,6 +17,15 @@ class ApplicationController < Sinatra::Base
     requests.to_json(include: :restaurant_votes)
   end
 
+  post '/restaurant-requests' do
+    request = RestaurantRequest.create(
+      name: params[:name],
+      location: params[:location],
+      creator: params[:creator]
+    )
+    request.to_json
+  end
+
   get '/restaurant-requests/:id' do
     request = RestaurantRequest.find(params[:id])
     request.to_json
