@@ -22,7 +22,7 @@ Restaurant.create(
     name: "Sweetgreen", 
     address: "1750 Wewatta St, Denver, CO 80202", 
     tag: "Bowls",
-    logo_url: "https://yt3.ggpht.com/kX32AV9ChK-NyKDRd8f5Xzz6WkPejWVoOvndMyZywo_stWTjKfV6ye03VF487MLtFWPJKan62GU=s900-c-k-c0x00ffffff-no-rj",
+    logo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgoqgk2njXIUsTJ8Jbt7Q7hH2vw-V88ECJA1uKUGDeGV5w979UtH05nLKjiTJueYwhf50&usqp=CAU",
     image_url: "https://cdn.vox-cdn.com/thumbor/h2A1furYlS-qWGUmJ8QDVfeZoCg=/0x0:2098x1430/1200x800/filters:focal(882x548:1216x882)/cdn.vox-cdn.com/uploads/chorus_image/image/58608261/sweetgreen_century_city_outside.0.png",
     bio: "We’re leading a movement to reimagine fast food for a new era. We believe in the healing power of food. Serving farm fresh bowls and salads."
     )

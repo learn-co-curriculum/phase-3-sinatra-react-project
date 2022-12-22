@@ -4,12 +4,12 @@ class ApplicationController < Sinatra::Base
 
   get '/restaurants' do
     restaurants = Restaurant.all
-    restaurants.to_json
+    restaurants.to_json(include: :meal_plans)
   end
 
-  get '/restaurants/:id' do
-    restaurant = Restaurant.find(params[:id])
-    restaurant.to_json(include: :meal_plans)
+  get '/meal-plans/:id' do
+    meal_plan = MealPlan.find(params[:id])
+    meal_plan.to_json
   end
 
   get '/restaurant-requests' do
@@ -63,11 +63,6 @@ class ApplicationController < Sinatra::Base
       restaurant_request_id: params[:restaurant_request_id]
     )
     restaurant_vote.to_json
-  end
-
-  get '/restaurants/meal-plans/:id' do
-    restaurant_subs = MealPlan.find(params[:id]).restaurant.subscribers
-    restaurant_subs.to_json
   end
 
   patch '/restaurants/:id' do
