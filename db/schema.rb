@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_22_191438) do
+ActiveRecord::Schema.define(version: 2022_12_22_223729) do
 
   create_table "meal_plans", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_12_22_191438) do
     t.integer "restaurant_id"
     t.integer "price"
     t.integer "subscribers"
+    t.boolean "subscription_status"
   end
 
   create_table "restaurant_requests", force: :cascade do |t|

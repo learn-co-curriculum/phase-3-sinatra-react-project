@@ -18,22 +18,22 @@ Restaurant.create(
     bio: "At ModMarket we make our food, in house, from scratch and we partner with local purveyors to bring you the freshest products."
     )
 
-Restaurant.create(
-    name: "Sweetgreen", 
-    address: "1750 Wewatta St, Denver, CO 80202", 
-    tag: "Bowls",
-    logo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgoqgk2njXIUsTJ8Jbt7Q7hH2vw-V88ECJA1uKUGDeGV5w979UtH05nLKjiTJueYwhf50&usqp=CAU",
-    image_url: "https://cdn.vox-cdn.com/thumbor/h2A1furYlS-qWGUmJ8QDVfeZoCg=/0x0:2098x1430/1200x800/filters:focal(882x548:1216x882)/cdn.vox-cdn.com/uploads/chorus_image/image/58608261/sweetgreen_century_city_outside.0.png",
-    bio: "We’re leading a movement to reimagine fast food for a new era. We believe in the healing power of food. Serving farm fresh bowls and salads."
-    )
+    Restaurant.create(
+        name: "Cosmic Food Hall", 
+        address: "891 14th St, Denver, CO 80202", 
+        tag: "Healthy",
+        logo_url: "https://static.vecteezy.com/system/resources/thumbnails/008/362/666/small/the-letter-c-logo-that-makes-up-the-cosmic-planet-vector.jpg",
+        image_url: "https://www.tysonsgalleria.com/content/dam/b2c/mall-campaigns/urbanspace/tysons-galleria-urbanspace/TysonsGalleriaATasteOfUrbanSpaceHero-Compressed-3.jpg",
+        bio: "At Cosmic Food Hall you'll have all the food options you'll ever need. We are farm-to-fork and healthy, offering bowls, sandwiches, and salads."
+        )
 
 
 
 # Create multiple MealPlan sizes for each restaurant
 Restaurant.all.each do |restaurant|
-    MealPlan.create(name: "Small", number_of_meals: 6, restaurant_id: restaurant.id, price: 72, subscribers: rand(25..100))
-    MealPlan.create(name: "Medium", number_of_meals: 8, restaurant_id: restaurant.id, price: 88, subscribers: rand(25..100))
-    MealPlan.create(name: "Large", number_of_meals: 12, restaurant_id: restaurant.id, price: 120, subscribers: rand(25..100))
+    MealPlan.create(name: "Small", number_of_meals: 6, restaurant_id: restaurant.id, price: 72, subscribers: rand(25..100), subscription_status: false)
+    MealPlan.create(name: "Medium", number_of_meals: 8, restaurant_id: restaurant.id, price: 88, subscribers: rand(25..100), subscription_status: false)
+    MealPlan.create(name: "Large", number_of_meals: 12, restaurant_id: restaurant.id, price: 120, subscribers: rand(25..100), subscription_status: false)
 end
 
 
