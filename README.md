@@ -6,6 +6,8 @@
 
 #### Books can be created and read
 
+#### Reviews can be created, deleted, edited and read
+
 ## Requirements
 
 - `ruby` v2.6.1
