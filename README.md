@@ -4,6 +4,8 @@
 
 ### This project exposes REST api for books and reviews CRUD operations.
 
+#### Books can be created and read
+
 ## Requirements
 
 - `ruby` v2.6.1
