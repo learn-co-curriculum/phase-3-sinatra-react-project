@@ -10,3 +10,5 @@
    - `$ bundle install`
 2. To create migrations run:
    - `$ rake db:migrate`
+3. To seed the database run:
+   - `$ rake db:seed`
