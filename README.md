@@ -8,4 +8,5 @@
 
 1. cd into the project and run:
    - `$ bundle install`
-   
+2. To create migrations run:
+   - `$ rake db:migrate`
