@@ -8,6 +8,7 @@
 
 - `ruby` v2.6.1
 - `sqlite3` v3.31.1
+- `sinatra` v2.1
 
 ## Installation
 
