@@ -10,6 +10,7 @@
 - `sqlite3` v3.31.1
 - `sinatra` v2.1
 - `sinatra active record` v 2.0
+- `thin` v1.8
 
 ## Installation
 
