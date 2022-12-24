@@ -12,3 +12,5 @@
    - `$ rake db:migrate`
 3. To seed the database run:
    - `$ rake db:seed`
+4. The server will run on http://localhost:9292/. To start the server run:
+   - `$ rake server`
