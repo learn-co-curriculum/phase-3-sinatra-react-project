@@ -6,6 +6,8 @@
 
 ## Requirements
 
+- `ruby` v2.6.1
+
 ## Installation
 
 1. cd into the project and run:
