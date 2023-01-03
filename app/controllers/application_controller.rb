@@ -7,15 +7,17 @@ class ApplicationController < Sinatra::Base
 
 
   #Full CRUD Post Model 
+
+  get "/posts/:id" do
+    post = Post.find(params[:id])
+    post.to_json(include: :comments)
+  end
+
+
   get "/posts" do
     posts = Post.all.order(:created_at, :ASC)
     posts.to_json(include: :comments)
   end
-
-  # get "/posts/:id" do
-  #   post = Post.find(params[:id])
-  #   post.to_json(include: :comments)
-  # end
 
   post '/posts' do
     post = Post.create(
@@ -41,11 +43,19 @@ class ApplicationController < Sinatra::Base
     post.to_json
   end
 
+  # once user has 10 posts patch to bold their name and give a star for being "verified"
+
   #CRUD for comments 
   get "/comments" do
     comments = Comment.all.order(:created_at, :ASC)
     comments.to_json
   end
+
+  # patch '/posts/:id/comments/:id' do
+  #   comment = Comment.find(params[:id])
+  #   comment.update(body: params[:body])
+  #   comment.to_json
+  # end
 
 
   #Create and read for users 
