@@ -51,18 +51,45 @@ class ApplicationController < Sinatra::Base
     comments.to_json
   end
 
-  # patch '/posts/:id/comments/:id' do
+  # patch '/post/:id/comments/:id' do
   #   comment = Comment.find(params[:id])
   #   comment.update(body: params[:body])
   #   comment.to_json
   # end
 
+  # once user has 10 comments add emoji next to name to show theyre active 
+
+
+
+
+
+
 
   #Create and read for users 
+
+  # search by user 
 
   get "/users" do
     users = User.all.order(:created_at, :ASC)
     users.to_json
+  end
+
+  post '/users' do
+    user = User.create(
+     first_name: params[:first_name],
+     last_name: params[:last_name],
+     username: params[:username],
+     email: params[:email],
+    )
+    user.to_json
+
+  end
+
+  delete '/users/:id' do
+    user = User.find(params[:id])
+    user.destroy
+    user.to_json
+
   end
 
 
