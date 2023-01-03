@@ -9,10 +9,15 @@ class ApplicationController < Sinatra::Base
   #Full CRUD Post Model 
   get "/posts" do
     posts = Post.all.order(:created_at, :ASC)
-    posts.to_json
+    posts.to_json(include: :comments)
   end
 
-  post './posts' do
+  # get "/posts/:id" do
+  #   post = Post.find(params[:id])
+  #   post.to_json(include: :comments)
+  # end
+
+  post '/posts' do
     post = Post.create(
       title: params[:title],
       body: params[:body],
@@ -37,9 +42,20 @@ class ApplicationController < Sinatra::Base
   end
 
   #CRUD for comments 
+  get "/comments" do
+    comments = Comment.all.order(:created_at, :ASC)
+    comments.to_json
+  end
 
 
   #Create and read for users 
+
+  get "/users" do
+    users = User.all.order(:created_at, :ASC)
+    users.to_json
+  end
+
+
 
 
 end
