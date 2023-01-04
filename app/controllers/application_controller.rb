@@ -1,9 +1,12 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  # Add your routes here
-  get "/" do
-    { message: "changing stuff to create routes" }.to_json
+  #add your routes here 
+  get "/activities" do
+    activities = Activity.all
+    activities.to_json
   end
+
+  
 
 end
