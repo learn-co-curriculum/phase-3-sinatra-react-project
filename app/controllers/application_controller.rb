@@ -97,7 +97,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/purchases' do
-    purchases = Purchase.create(
+    purchase = Purchase.create(
       item_name: params[:item_name],
       review: params[:review],
       star_rating: params[:star_rating],
