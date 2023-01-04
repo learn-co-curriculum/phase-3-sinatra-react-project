@@ -24,9 +24,10 @@ class ApplicationController < Sinatra::Base
     post = Post.create(
       title: params[:title],
       body: params[:body],
-      user_id: params[:user_id],
+      user_id: params[:user_id]
     )
-    post.to_json
+  
+    post.to_json(include: :user)
   end
 
   patch '/posts/:id' do
@@ -35,7 +36,7 @@ class ApplicationController < Sinatra::Base
       title: params[:title],
       body: params[:body],
     )
-    post.to_json
+    post.to_json(include: :user)
   end
 
   delete '/posts/:id' do
