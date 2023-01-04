@@ -1,8 +1,10 @@
 class Unit < ActiveRecord::Base
 
-    has_many  :owners
-    has_many  :maintenancerequests
-    #should these both be belongs_to ?
+    # has_many  :owners
+    # has_many  :maintenancerequests
+    belongs_to  :owners
+    belongs_to  :maintenancerequests
+    
 
 
 
