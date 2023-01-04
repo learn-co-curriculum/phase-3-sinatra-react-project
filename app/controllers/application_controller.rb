@@ -22,7 +22,12 @@ class ApplicationController < Sinatra::Base
 
   patch '/tasks/:id' do
     task_to_update = Task.find(params[:id])
-    task_to_update.update(description: params[:description], category_id: params[:category_id, :day_id])
+    task_to_update.update(
+      description: params[:description],
+      category_id: params[:category_id],
+      day_id: params[:day_id]
+    )
+    task_to_update.to_json
   end
 
   delete 'tasks/:id' do
@@ -50,12 +55,52 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/categories/:id' do
-    category_to_update.update(urgent: params[:urgent], day_id: params[:day_id, task_id: params[:task_id])
+    category_to_update = Category.find(params[:id])
+    category_to_update.update(
+      urgent: params[:urgent],
+      day_id: params[:day_id,
+      task_id: params[:task_id]
+    )
+    category_to_update.to_json
   end
 
   delete '/categories/:id' do
     category_to_delete = Category.find(params[:id])
     category_to_delete.delete
+  end
+
+  get '/days' do
+    day = Day.all
+    day.to_json
+  end
+
+  get '/days/:id' do
+    day = Day.find(params[:id])
+    day.to_json
+  end
+
+  post '/days/:id' do
+    day_to_add = Day.create(
+      day_of_week: params[:day_of_week],
+      task_id: params[:task_id],
+      category_id: params[:category_id]
+    )
+    day_to_add.to_json
+  end
+
+  patch '/days/:id' do
+    day_to_update = Day.find(params[:id])
+    day_to_update.update(
+      day_of_week: params[:day_of_week],
+      category_id: params[:category_id],
+      task_id: params[:task_id]
+    )
+    day_to_update.to_json
+  end
+
+  delete '/days/:id' do
+    day_to_delete = Day.find(params[:id])
+    day_to_delete.delete
   end
 
 end
