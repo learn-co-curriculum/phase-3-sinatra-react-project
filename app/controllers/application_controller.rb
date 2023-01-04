@@ -58,8 +58,8 @@ class ApplicationController < Sinatra::Base
     category_to_update = Category.find(params[:id])
     category_to_update.update(
       urgent: params[:urgent],
-      day_id: params[:day_id,
-      task_id: params[:task_id]
+      day_id: params[:day_id],
+      task_id: params[:task_id],
     )
     category_to_update.to_json
   end
