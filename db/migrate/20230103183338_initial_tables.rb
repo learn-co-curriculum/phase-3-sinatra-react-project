@@ -2,6 +2,7 @@ class InitialTables < ActiveRecord::Migration[6.1]
   def change
     create_table :activities do |t|
       t.string :activity_name
+      t.string :activity_image_url
       t.string :item_first
       t.string :item_second
       t.string :item_third

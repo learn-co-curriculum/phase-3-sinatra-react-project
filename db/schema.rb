@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2023_01_03_203219) do
 
   create_table "activities", force: :cascade do |t|
     t.string "activity_name"
+    t.string "activity_image_url"
     t.string "item_first"
     t.string "item_second"
     t.string "item_third"
@@ -21,6 +22,7 @@ ActiveRecord::Schema.define(version: 2023_01_03_203219) do
 
   create_table "items", force: :cascade do |t|
     t.string "item_name"
+    t.string "item_image_url"
   end
 
   create_table "purchases", force: :cascade do |t|
