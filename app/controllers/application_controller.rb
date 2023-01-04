@@ -16,7 +16,8 @@ class ApplicationController < Sinatra::Base
 
   get "/posts" do
     posts = Post.all.order(:created_at, :ASC)
-    posts.to_json(include: :comments)
+    # binding.pry
+    posts.to_json(include: :user)
   end
 
   post '/posts' do
@@ -91,8 +92,5 @@ class ApplicationController < Sinatra::Base
     user.to_json
 
   end
-
-
-
 
 end

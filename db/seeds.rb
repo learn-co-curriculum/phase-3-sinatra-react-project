@@ -2,7 +2,7 @@ puts "🌱 Seeding spices..."
 
 
 User.create(first_name: "Frank", last_name: "Savena" , username: "fsavena1" , email: "fs@gmail.com" )
-User.create(first_name: "DJ" , last_name: "Richty"  , username: "Dj234" ,  email: "dj@gmail.com" )
+User.create(first_name: "DJ" , last_name: "Ritchey"  , username: "Dj234" ,  email: "dj@gmail.com" )
 User.create(first_name: "Gehrig", last_name: "Barnes" , username: "Gehrig" ,  email: "gb@gmail.com" )
 User.create(first_name: "Kamran" , last_name: "Hussein" , username: "KH38432" ,  email: "kamran@gmail.com" )
 User.create(first_name: "Addison", last_name: "Savena" , username: "Addie134" ,  email: "addison@gmail.com" )
