@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2023_01_04_064903) do
 
-  create_table "menu_items", force: :cascade do |t|
+  create_table "foods", force: :cascade do |t|
     t.string "name"
     t.string "img_url"
     t.string "spice"

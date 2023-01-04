@@ -1,5 +1,5 @@
 class Review < ActiveRecord::Base
-    belongs_to :menu_item
+    belongs_to :food
     def self.by_rating
         all.order(rating: :asc)
       end

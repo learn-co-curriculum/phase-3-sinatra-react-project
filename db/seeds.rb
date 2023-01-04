@@ -1,20 +1,20 @@
 puts "🌱 Seeding spices..."
 require 'pry'
-MenuItem.destroy_all
+Food.destroy_all
 Review.destroy_all
 
-m1=MenuItem.create(name: "Shrimp Chop Suey", img_url: "https://www.bitesofberi.com/wp-content/uploads/2022/03/shrimp-chop-suey-3-768x1024.jpg", spice: "mild")
-m2=MenuItem.create(name: "Chicken Satay", img_url: "https://www.closetcooking.com/wp-content/uploads/2010/03/Chicken-Satay-1200-4611.jpg", spice: "medium")
-m3=MenuItem.create(name: "Crab Rangoon", img_url: "https://www.thecookierookie.com/wp-content/uploads/2021/11/crab-rangoon-recipe-3.jpg", spice: "mild")
-m4=MenuItem.create(name: "Hot and Sour Soup", img_url: "https://www.recipetineats.com/wp-content/uploads/2019/02/Hot-and-Sour-Soup_1_6.jpg", spice: "medium")
-m5=MenuItem.create(name: "Eggplant with Garlic Sauce", img_url: "https://static.toiimg.com/photo/75454071.cms", spice: "mild")
-m6=MenuItem.create(name: "Chicken Burrito", img_url: "https://healthynibblesandbits.com/wp-content/uploads/2016/02/Sushi-Burrito-FF.jpg", spice: "mild")
-m7=MenuItem.create(name: "Short Rib Taco", img_url: "https://www.discoverlosangeles.com/sites/default/files/images/2019-03/Kogi%20Taqueria%20Short%20Rib%20Taco%20Jakob%20Layman.JPG?width=1600&height=1200&fit=crop&quality=78&auto=webp", spice: "spicy")
-m8=MenuItem.create(name: "Fried Chicken Gua Bao", img_url: "https://www.njlux.com/media/Top-5-Asian-Fusion-Restaurants-in-Bergen-County.jpeg", spice: "mild")
-m9=MenuItem.create(name: "Japanese Omelette Over Rice", img_url: "https://qph.cf2.quoracdn.net/main-qimg-655eca697f1c1a590cf401bf15e53adb.webp", spice: "mild")
-m10=MenuItem.create(name: "Braised Beef Bahn Mi", img_url: "https://i.cbc.ca/1.5266309.1567194178!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_940/bahn-mi.jpg", spice: "mild")
-m11=MenuItem.create(name: "Singaporean Chili Crab Recipe", img_url: "https://www.seriouseats.com/thmb/qSGnrRY6RTXCmTaLfdxHDZP6lF4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2013__02__20130224-242112-singapore-chili-crab-edit-e02be72e16974f5da6fef41ec4ca7ea4.jpg", spice: "spicy")
-m12=MenuItem.create(name: "Vegan Asian Sesame Noodles", img_url: "https://christieathome.com/wp-content/uploads/2021/01/Vegan-Asian-Sesame-Noodles-2-b-scaled.jpg", spice: "mild")
+m1=Food.create(name: "Shrimp Chop Suey", img_url: "https://www.bitesofberi.com/wp-content/uploads/2022/03/shrimp-chop-suey-3-768x1024.jpg", spice: "mild")
+m2=Food.create(name: "Chicken Satay", img_url: "https://www.closetcooking.com/wp-content/uploads/2010/03/Chicken-Satay-1200-4611.jpg", spice: "medium")
+m3=Food.create(name: "Crab Rangoon", img_url: "https://www.thecookierookie.com/wp-content/uploads/2021/11/crab-rangoon-recipe-3.jpg", spice: "mild")
+m4=Food.create(name: "Hot and Sour Soup", img_url: "https://www.recipetineats.com/wp-content/uploads/2019/02/Hot-and-Sour-Soup_1_6.jpg", spice: "medium")
+m5=Food.create(name: "Eggplant with Garlic Sauce", img_url: "https://static.toiimg.com/photo/75454071.cms", spice: "mild")
+m6=Food.create(name: "Chicken Burrito", img_url: "https://healthynibblesandbits.com/wp-content/uploads/2016/02/Sushi-Burrito-FF.jpg", spice: "mild")
+m7=Food.create(name: "Short Rib Taco", img_url: "https://www.discoverlosangeles.com/sites/default/files/images/2019-03/Kogi%20Taqueria%20Short%20Rib%20Taco%20Jakob%20Layman.JPG?width=1600&height=1200&fit=crop&quality=78&auto=webp", spice: "spicy")
+m8=Food.create(name: "Fried Chicken Gua Bao", img_url: "https://www.njlux.com/media/Top-5-Asian-Fusion-Restaurants-in-Bergen-County.jpeg", spice: "mild")
+m9=Food.create(name: "Japanese Omelette Over Rice", img_url: "https://qph.cf2.quoracdn.net/main-qimg-655eca697f1c1a590cf401bf15e53adb.webp", spice: "mild")
+m10=Food.create(name: "Braised Beef Banh Mi", img_url: "https://i.cbc.ca/1.5266309.1567194178!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_940/bahn-mi.jpg", spice: "mild")
+m11=Food.create(name: "Singaporean Chili Crab Recipe", img_url: "https://www.seriouseats.com/thmb/qSGnrRY6RTXCmTaLfdxHDZP6lF4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2013__02__20130224-242112-singapore-chili-crab-edit-e02be72e16974f5da6fef41ec4ca7ea4.jpg", spice: "spicy")
+m12=Food.create(name: "Vegan Asian Sesame Noodles", img_url: "https://christieathome.com/wp-content/uploads/2021/01/Vegan-Asian-Sesame-Noodles-2-b-scaled.jpg", spice: "mild")
 
 
 
