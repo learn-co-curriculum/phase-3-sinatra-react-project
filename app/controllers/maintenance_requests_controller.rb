@@ -1,3 +1,4 @@
+require 'pry'
 class MaintenanceRequestsControllers < ApplicationController
 
     #CRUD
@@ -15,9 +16,32 @@ class MaintenanceRequestsControllers < ApplicationController
     end
 
     #create
+    # {"urgency"=>"high",                      params
+    #     "description"=>"this is a test",
+    #     "expected_cost"=>175,
+    #     "actual_cost"=>200,
+    #     "date_opened"=>12252022,
+    #     "date_closed"=>12262022}
+
     post '/maintenancerequests' do
-        
+        maintreqs = MaintenanceRequest.create(params)
+        maintreqs.to_json
     end
+
+    #update
+    patch '/maintenancerequests/:id' do
+        maintreqs = MaintenanceRequest.find(params[:id])
+        maintreqs.update(actual_cost: params[:actual_cost])
+        maintreqs.to_json
+    end
+
+    #delete
+    delete '/maintenancerequests/:id' do
+        maintreqs = MaintenanceRequest.find(params[:id])
+        maintreqs.destroy
+    end
+
+
 
 
 #
