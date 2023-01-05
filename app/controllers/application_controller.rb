@@ -12,7 +12,7 @@ class ApplicationController < Sinatra::Base
 
   # private
   # def current_user
-  #   Owner.first
+  #   Owner.all.sample
   # end
 
 end
