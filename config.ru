@@ -13,8 +13,8 @@ use Rack::JSONBodyParser
 
 # Our application
 run ApplicationController
-run MaintenanceRequestsControllers
-# use OwnersControllers
+use MaintenanceRequestsControllers
+use OwnersControllers
 # use UnitsControllers
 
 
