@@ -10,7 +10,11 @@ class ApplicationController < Sinatra::Base
 
   get "/posts/:id" do
     post = Post.find(params[:id])
-    post.to_json(include: :comments)
+    post.to_json(include: {
+      comments: { only: [:body, :id], include: {
+        user: { only: [:username] }
+      } }
+    })
   end
 
 
@@ -26,7 +30,6 @@ class ApplicationController < Sinatra::Base
       body: params[:body],
       user_id: params[:user_id]
     )
-  
     post.to_json(include: :user)
   end
 
@@ -50,26 +53,31 @@ class ApplicationController < Sinatra::Base
   #CRUD for comments 
   get "/comments" do
     comments = Comment.all.order(:created_at, :ASC)
-    comments.to_json
+    comments.to_json(include: :user)
   end
 
-  # patch '/post/:id/comments/:id' do
-  #   comment = Comment.find(params[:id])
-  #   comment.update(body: params[:body])
-  #   comment.to_json
-  # end
+
+  post '/comments' do
+    commnet = Comment.create(
+      body: params[:body],
+      user_id: params[:user_id],
+      post_id: params[:post_id],
+    )
+    commnet.to_json(include: :user)
+  end
+
+  delete '/comments/:id' do
+    comment = Comment.find(params[:id])
+    comment.destroy
+    comment.to_json
+
+  end
+
+
+
 
   # once user has 10 comments add emoji next to name to show theyre active 
 
-
-
-
-
-
-
-  #Create and read for users 
-
-  # search by user 
 
   get "/users" do
     users = User.all.order(:created_at, :ASC)
