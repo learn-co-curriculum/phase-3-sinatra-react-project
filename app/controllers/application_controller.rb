@@ -6,10 +6,13 @@ class ApplicationController < Sinatra::Base
     #{ message: "Good luck with your project!" }.to_json
     "buy LINK 🔗" #just testing
 
-
     ## making seperate controller files - this is how it is noted in our lecture and is best practice!!!
 
-
   end
+
+  # private
+  # def current_user
+  #   Owner.first
+  # end
 
 end

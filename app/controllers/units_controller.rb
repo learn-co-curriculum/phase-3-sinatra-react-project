@@ -16,6 +16,7 @@ class UnitsControllers < ApplicationController
     #create
     post '/units' do
         units = Unit.create(params)
+        # units.owner = current_user  see app controller
         units.to_json
     end
 
@@ -27,12 +28,11 @@ class UnitsControllers < ApplicationController
         units.to_json
     end
 
-
-
-
-
-
-
+    #delete
+    delete '/units/:id' do 
+        units = Unit.find(params[:id])
+        units.destroy
+    end
 
 #
 end
