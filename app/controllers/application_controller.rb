@@ -2,6 +2,7 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
 
   get "/tasks" do
+    # binding.pry
     tasks = Task.all
     tasks.to_json
   end
@@ -15,7 +16,7 @@ class ApplicationController < Sinatra::Base
     task_to_add = Task.create(
       description: params[:description],
       category_id: params[:category_id],
-      day_id: params[:day_id]
+      # day_id: params[:day_id]
     )
     task_to_add.to_json
   end
@@ -24,8 +25,8 @@ class ApplicationController < Sinatra::Base
     task_to_update = Task.find(params[:id])
     task_to_update.update(
       description: params[:description],
-      category_id: params[:category_id],
-      day_id: params[:day_id]
+      # category_id: params[:category_id],
+      # day_id: params[:day_id]
     )
     task_to_update.to_json
   end
@@ -48,8 +49,8 @@ class ApplicationController < Sinatra::Base
   post '/categories' do
     category_to_add = Category.create(
       urgent: params[:urgent],
-      day_id: params[:day_id],
-      task_id: params[:task_id]
+      # day_id: params[:day_id],
+      # task_id: params[:task_id]
     )
     category_to_add.to_json
   end
@@ -58,8 +59,8 @@ class ApplicationController < Sinatra::Base
     category_to_update = Category.find(params[:id])
     category_to_update.update(
       urgent: params[:urgent],
-      day_id: params[:day_id],
-      task_id: params[:task_id],
+      # day_id: params[:day_id],
+      # task_id: params[:task_id]
     )
     category_to_update.to_json
   end
@@ -82,8 +83,8 @@ class ApplicationController < Sinatra::Base
   post '/days/:id' do
     day_to_add = Day.create(
       day_of_week: params[:day_of_week],
-      task_id: params[:task_id],
-      category_id: params[:category_id]
+      # task_id: params[:task_id],
+      # category_id: params[:category_id]
     )
     day_to_add.to_json
   end
@@ -92,8 +93,8 @@ class ApplicationController < Sinatra::Base
     day_to_update = Day.find(params[:id])
     day_to_update.update(
       day_of_week: params[:day_of_week],
-      category_id: params[:category_id],
-      task_id: params[:task_id]
+      # category_id: params[:category_id],
+      # task_id: params[:task_id]
     )
     day_to_update.to_json
   end
