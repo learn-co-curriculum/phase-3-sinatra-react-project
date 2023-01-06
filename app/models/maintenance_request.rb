@@ -4,7 +4,9 @@ class MaintenanceRequest < ActiveRecord::Base
     has_many :owners, through: :units
 
 
-
+    def self.open_requests
+        self.all.where(open_request?: true)
+    end
 
 
 

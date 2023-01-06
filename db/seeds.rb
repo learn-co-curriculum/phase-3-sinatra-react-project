@@ -27,13 +27,13 @@ puts "TENANTS DRIVE ME NUTS"
 
 
 puts "seeding units"
-u1 = Unit.create(address: "123 Fake Street Columbia, MO 65203", current_tenant: "Jim Jones", open_request?: false, owner_id: o3.id, maintenancerequest_id: m1.id)
+u1 = Unit.create(address: "123 Fake Street Columbia, MO 65203", current_tenant: "Jim Jones", open_request?: true, owner_id: o3.id, maintenancerequest_id: m1.id)
 u2 = Unit.create(address: "4585 North Ave. Jefferson City, MO 65111", current_tenant: "Katy Katters", open_request?: false, owner_id: o2.id, maintenancerequest_id: m1.id)
-u3 = Unit.create(address: "13898 SE Rollins Rd. Columbia, MO 65203", current_tenant: "Mike Meddler", open_request?: false, owner_id: o4.id, maintenancerequest_id: m3.id)
+u3 = Unit.create(address: "13898 SE Rollins Rd. Columbia, MO 65203", current_tenant: "Mike Meddler", open_request?: true, owner_id: o4.id, maintenancerequest_id: m3.id)
 u4 = Unit.create(address: "411 River Rd. Rocheport, MO 65279", current_tenant: "Brian Bukowski", open_request?: false, owner_id: o5.id, maintenancerequest_id: m4.id)
 u5 = Unit.create(address: "666 Unlucky Ave. Jefferson City, MO 65111", current_tenant: "Jack Black", open_request?: false, owner_id: o2.id, maintenancerequest_id: m5.id)
 u6 = Unit.create(address: "1 Broadway Blvd. Unit 1 Columbia, MO 65201", current_tenant: "Timmy Taylor", open_request?: false, owner_id: o1.id, maintenancerequest_id: m6.id)
-u7 = Unit.create(address: "1 Broadway Blvd. Unit 2 Columbia, MO 65201", current_tenant: "Tammy Taylor", open_request?: false, owner_id: o1.id, maintenancerequest_id: m7.id)
+u7 = Unit.create(address: "1 Broadway Blvd. Unit 2 Columbia, MO 65201", current_tenant: "Tammy Taylor", open_request?: true, owner_id: o1.id, maintenancerequest_id: m7.id)
 u8 = Unit.create(address: "420 Pleasant St. Columbia, MO 65203", current_tenant: "Bob Marley", open_request?: false, owner_id: o1.id, maintenancerequest_id: m8.id)
 puts 'NO VACANT UNITS'
 

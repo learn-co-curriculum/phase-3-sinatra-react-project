@@ -13,15 +13,19 @@ class UnitsControllers < ApplicationController
         units.to_json
     end
 
-    get '/open_requests' do 
-        Unit.open_requests.to_json
-    end
+    # get '/openrequests' do 
+    #     Unit.open_requests.to_json
+    # end
 
     #create
     post '/units' do
         # units = Unit.create(owner_id: current_user, params)
         # # units.owner = current_user
         # units.to_json
+
+        # units = Unit.create(params)
+        # units.to_json
+
 
         Unit.create_new_unit(current_user).to_json
     end

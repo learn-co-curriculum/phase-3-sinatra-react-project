@@ -15,6 +15,11 @@ class MaintenanceRequestsControllers < ApplicationController
         maintreqs.to_json
     end
 
+    
+    get '/openrequests' do 
+        MaintenanceRequest.open_requests.to_json
+    end
+
     #create
     # {"urgency"=>"high",                      params
     #     "description"=>"this is a test",
