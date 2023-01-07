@@ -4,7 +4,8 @@ class ApplicationController < Sinatra::Base
   get "/tasks" do
     # binding.pry
     tasks = Task.all
-    tasks.to_json
+
+    tasks.to_json(:include => [:day, :category])
   end
 
   get "/tasks/:id" do
@@ -16,7 +17,7 @@ class ApplicationController < Sinatra::Base
     task_to_add = Task.create(
       description: params[:description],
       category_id: params[:category_id],
-      # day_id: params[:day_id]
+      day_id: params[:day_id]
     )
     task_to_add.to_json
   end
