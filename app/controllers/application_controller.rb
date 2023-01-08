@@ -5,22 +5,22 @@ class ApplicationController < Sinatra::Base
     # binding.pry
     tasks = Task.all.includes(:category, :day)
     tasks.to_json(:include => [:category, :day])
-  
+
   end
 
-  # get "/tasks/:id" do
-  #   task = Task.find(params[:id])
-  #   task.to_json
-  # end
+  get "/tasks/:id" do
+    task = Task.find(params[:id])
+    task.to_json
+  end
 
-  # post '/tasks' do
-  #   task_to_add = Task.create(
-  #     description: params[:description],
-  #     category_id: params[:category_id],
-  #     day_id: params[:day_id]
-  #   )
-  #   task_to_add.to_json
-  # end
+  post '/tasks' do
+    task_to_add = Task.create(
+      description: params[:description],
+      category: params[:category],
+      day: params[:day]
+    )
+    task_to_add.to_json
+  end
 
   # patch '/tasks/:id' do
   #   task_to_update = Task.find(params[:id])
