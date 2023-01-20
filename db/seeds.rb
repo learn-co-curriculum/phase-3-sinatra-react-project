@@ -5,7 +5,7 @@ Concert.destroy_all
 
 puts "Creating concerts..."
 taylor_swift = Concert.create(artist: "Taylor Swift", date: "March 5th, 2023", unsold_tickets: 10)
-sza = Concert.create(artist: "SZA", date: "June 27th, 2023", unsold_tickets: 5)
+sza = Concert.create(artist: "SZA", date: "June 27th, 2023", unsold_tickets: 0)
 bad_bunny = Concert.create(artist: "Bad Bunny", date: "November 8th, 2023", unsold_tickets: 8)
 
 puts "Creating users..."
