@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
   # Add your routes here
   get "/users" do
     users = User.all
-    users.to_json
+    users.to_json(include: :tickets)
   end
 
   get "/users/:id" do
@@ -33,7 +33,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/tickets" do
-    newTicket = Ticket.create(concert_id: params[:concert_id], user_id: params[:user_id])
+    newTicket = Ticket.create(id: params[:id], concert_id: params[:concert_id], user_id: params[:user_id])
     newTicket.to_json
   end
 
@@ -41,6 +41,12 @@ class ApplicationController < Sinatra::Base
     user = User.find(params[:id])
     user.update(name: params[name], password: params[:password], email: params[:email], tickets: params[:tickets])
     user.to_json
+  end
+
+  patch "/concerts/:id" do
+    concert = Concert.find(params[:id])
+    concert.update(unsold_tickets: params[:unsold_tickets])
+    concert.to_json
   end
 
   delete "/tickets/:id" do
