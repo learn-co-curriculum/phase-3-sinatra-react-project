@@ -1,6 +1,7 @@
 import './App.css';
 import React, {useEffect, useState} from "react";
 import PersonDetail from './PersonDetail';
+import PersonForm from './PersonForm';
 import PurchasedTickets from './PurchasedTickets';
 import ConcertList from './ConcertList';
 import Person from './Person.js';
@@ -28,10 +29,16 @@ function App() {
     const selectPerson = personList.filter((person) => (person.name === personName))
     setCurrentPerson(selectPerson[0])
   }
+
+  function addPerson(newPerson) {
+    setPersonList([...personList, newPerson])
+  }
+
   return (
     <div className="App">
       <header className="App-header">
       <PersonDetail personList={personList} showPerson={showPerson}/>
+      <PersonForm addPerson={addPerson}/>
       <PurchasedTickets person={currentPerson} concertList={concertList}/>
       <ConcertList concertList={concertList} currentPerson={currentPerson} setConcertList={setConcertList} setCurrentPerson={setCurrentPerson}/>
       <Person />

@@ -32,6 +32,11 @@ class ApplicationController < Sinatra::Base
     ticket.to_json(include: :concert)
   end
 
+  post "/users" do
+    newUser = User.create(id: params[:id], name: params[:name], email: params[:email], password: params[:password])
+    newUser.to_json
+  end
+
   post "/tickets" do
     newTicket = Ticket.create(id: params[:id], concert_id: params[:concert_id], user_id: params[:user_id])
     newTicket.to_json
