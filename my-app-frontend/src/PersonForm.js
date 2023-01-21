@@ -21,7 +21,12 @@ function PersonForm({addPerson}) {
             headers: {
               "Content-Type": 'application/json',
             },
-            body: JSON.stringify({newPerson}),
+            body: JSON.stringify({
+                id: Math.floor(Math.random() * 100000) + 1,
+                name: newPerson.name,
+                email: newPerson.email,
+                password: newPerson.password,
+            }),
           })
           .then((r) => r.json())
 
