@@ -4,7 +4,7 @@ class CreateBars < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :category
       t.string :price
-      t.string :closing_time
+      t.integer :closing_time
       t.string :location
     end
   end
