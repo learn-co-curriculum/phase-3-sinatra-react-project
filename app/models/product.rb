@@ -1,4 +1,4 @@
-Class Product < ActiveRecord::Base
+class Product < ActiveRecord::Base
     has_many :purchases
     belongs_to :farm
     

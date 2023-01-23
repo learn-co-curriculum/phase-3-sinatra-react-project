@@ -1,5 +1,3 @@
-Class Farm < ActiveRecord::Base
+class Farm < ActiveRecord::Base
     has_many :products
-
-
 end
