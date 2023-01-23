@@ -10,31 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_23_183538) do
+ActiveRecord::Schema.define(version: 2023_01_23_193020) do
 
-  create_table "buyers", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "address"
-    t.datetime "time_stamp"
-  end
-
-  create_table "items", force: :cascade do |t|
-    t.integer "buyer_id"
-    t.integer "sell_id"
+  create_table "Farms", force: :cascade do |t|
     t.string "name"
-    t.string "category"
-    t.integer "price"
-    t.integer "stock"
-    t.string "description"
-    t.string "picture_link"
-  end
-
-  create_table "sellers", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
     t.string "location"
     t.integer "rating"
+  end
+
+  create_table "Products", force: :cascade do |t|
+    t.integer "farm_id"
+    t.string "name"
+    t.string "category"
+    t.string "description"
+    t.string "picture_link"
+    t.integer "price"
+    t.integer "stock"
+  end
+
+  create_table "Purchases", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "discount"
+    t.integer "total"
+    t.integer "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
