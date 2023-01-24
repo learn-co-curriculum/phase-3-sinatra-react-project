@@ -25,7 +25,7 @@ p9 = Painting.create(title: "A Bar at the Folies-Bergere" , medium: "oil on canv
 p10 = Painting.create(title: "Little Girl in a Blue Armchair" , medium: "oil on canvas" , year: 1878 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nga.gov%2Fcollection%2Fart-object-page.61368.html&psig=AOvVaw2oFvQLmO1e6B6oQZHG_kkN&ust=1674594456274000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCJCFzc_M3vwCFQAAAAAdAAAAABAE", artist_id: a10.id)
 p11 = Painting.create(title: "Self-Portrait with Monkey" , medium: "oil on canvas" , year: 1940 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tate.org.uk%2Fwhats-on%2Ftate-modern%2Ffrida-kahlo&psig=AOvVaw3l3XModKMgkOEd_Y1P-vo8&ust=1674669126175000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCICC8OTi4PwCFQAAAAAdAAAAABAK", artist_id: a1.id)
 p12 = Painting.create(title: "Self-Portrait" , medium: "oil on canvas" , year: 1938 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.metmuseum.org%2Ffr%2Fart%2Fcollection%2Fsearch%2F492697&psig=AOvVaw0hOf-7_YiaJaxqdTzFSHTy&ust=1674669321617000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCKjQ98Lj4PwCFQAAAAAdAAAAABAF", artist_id: a2.id)
-
+p13 = Painting.create(title: "Tar Beach 2" , medium: "oil and acrylic on fabric" , year: 1992, famous: true, img_link: "https://artsandculture.google.com/asset/tar-beach-2/aQGZKjzGoaXfjg?utm_source=google&utm_medium=kp&hl=en&avm=2", artist_id: a3.id)
 
 
 puts "✅ Done seeding!"
