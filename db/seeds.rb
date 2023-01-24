@@ -20,7 +20,7 @@ p4 = Painting.create(title: "Jerry" , medium: "oil on canvas", year: 1931 , famo
 p5 = Painting.create(title:  "School of Beauty, School of Culture", medium: "acrylic and glitter on canvas" , year: 2012 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.npr.org%2F2017%2F03%2F28%2F521683667%2Fkerry-james-marshall-a-black-presence-in-the-art-world-is-not-negotiable&psig=AOvVaw2N-3qtcGf00clpwCCixka0&ust=1674594876316000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCPClp5fO3vwCFQAAAAAdAAAAABAE", artist_id: a5.id)
 p6 = Painting.create(title: "Blue Boy" , medium: "oil on linen"  , year: 2014 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.latimes.com%2Fentertainment-arts%2Fstory%2F2020-03-05%2Fhuntington-library-blue-boy-pinkie-lynette-yiadom-boakye&psig=AOvVaw115M4XtF0R3IU_3oJ9ie5u&ust=1674594805479000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCIDm6PXN3vwCFQAAAAAdAAAAABAE" , artist_id: a6.id)
 p7 = Painting.create(title: "Homage to Monet" , medium: "oil on linen"  , year: 2019 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Faforsay.org%2Fevents%2Falex-katz-homage-to-monet%2F&psig=AOvVaw1kBxaqyYKZq9zOC526JzSz&ust=1674668845518000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCLDk4t_h4PwCFQAAAAAdAAAAABAG" , artist_id: a7.id)
-
+p8 = Painting.create(title: "Guernica" , medium: "oil on canvas" , year: 1937 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theguardian.com%2Fartanddesign%2Fjonathanjonesblog%2F2016%2Foct%2F12%2Fpicasso-guernica-aleppo-syria&psig=AOvVaw2ci8Z98aUg9aDRmMs45vW5&ust=1674594659593000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOCXo7DN3vwCFQAAAAAdAAAAABAR" , artist_id: a8.id)
 
 
 puts "✅ Done seeding!"
