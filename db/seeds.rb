@@ -17,7 +17,7 @@ p1 = Painting.create(title: "Self-Portrait with Necklace and Hummingbird" , medi
 p2 = Painting.create(title: "Green Tea" , medium: "oil on canvas" , year: 1942 , famous: false, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.moma.org%2Fcollection%2Fworks%2F297568&psig=AOvVaw31R-m9873OCscwq3PKCGAU&ust=1674595308295000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCOiiouXP3vwCFQAAAAAdAAAAABAE", artist_id: a2.id)
 p3 = Painting.create(title: "Matisse's Model, The French Collection, Part 1" , medium: "oil and acrylic on fabric" , year: 1991, famous: false, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fnews.artnet.com%2Fart-world%2Ffaith-ringgold-new-museum-2088395&psig=AOvVaw3aA0UzhyoBLudchEptOKfV&ust=1674595143214000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCPiy_ZbP3vwCFQAAAAAdAAAAABAJ", artist_id: a3.id)
 p4 = Painting.create(title: "Jerry" , medium: "oil on canvas", year: 1931 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.toledomuseum.org%2Fart%2Fartminute%2Faug-27-art-minute-paul-cadmus-jerry&psig=AOvVaw3Y0U0qRMWyaD43f0AD-kWL&ust=1674595074712000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCKC7y_bO3vwCFQAAAAAdAAAAABAE", artist_id: a4.id)
-
+p5 = Painting.create(title:  "School of Beauty, School of Culture", medium: "acrylic and glitter on canvas" , year: 2012 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.npr.org%2F2017%2F03%2F28%2F521683667%2Fkerry-james-marshall-a-black-presence-in-the-art-world-is-not-negotiable&psig=AOvVaw2N-3qtcGf00clpwCCixka0&ust=1674594876316000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCPClp5fO3vwCFQAAAAAdAAAAABAE", artist_id: a5.id)
 
 
 puts "✅ Done seeding!"
