@@ -9,7 +9,7 @@ a4 = Artist.create(first_name: "Paul", last_name: "Cadmus", living: false, img_l
 a5 = Artist.create(first_name: "Kerry James", last_name: "Marshall", living: true, img_link:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nytimes.com%2F2016%2F10%2F17%2Ft-magazine%2Fkerry-james-marshall-artist.html&psig=AOvVaw3nP7JnKes4oELC2yaJucD0&ust=1674593917316000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNDKts7K3vwCFQAAAAAdAAAAABAL" )
 a6 = Artist.create(first_name: "Lynette", last_name: "Yiadom-Boakye", living: true, img_link:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vogue.com%2Farticle%2Fartist-lynette-yiadom-boakye-paintings-portray-black-lives&psig=AOvVaw2dAJs8_ipAqzZrpStjzKz-&ust=1674593946681000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNjztdzK3vwCFQAAAAAdAAAAABAE" )
 a7 = Artist.create(first_name: "Alex", last_name: "Katz", living: true, img_link:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.interviewmagazine.com%2Fart%2Falex-katz&psig=AOvVaw2c6QytXO5XPRvfnVHeYIe8&ust=1674594003231000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCPDst_fK3vwCFQAAAAAdAAAAABAK" )
-
+a8 = Artist.create(first_name: "Pablo", last_name: "Picasso", livng: false, img_link:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPablo_Picasso&psig=AOvVaw2sAfb4HLem0_46atwbmmzZ&ust=1674594030863000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNjzuoTL3vwCFQAAAAAdAAAAABAE" )
 
 
 puts "✅ Done seeding!"
