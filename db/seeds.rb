@@ -27,7 +27,7 @@ p11 = Painting.create(title: "Self-Portrait with Monkey" , medium: "oil on canva
 p12 = Painting.create(title: "Self-Portrait with Hyena" , medium: "oil on canvas" , year: 1938 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.metmuseum.org%2Ffr%2Fart%2Fcollection%2Fsearch%2F492697&psig=AOvVaw0hOf-7_YiaJaxqdTzFSHTy&ust=1674669321617000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCKjQ98Lj4PwCFQAAAAAdAAAAABAF", artist_id: a2.id)
 p13 = Painting.create(title: "Tar Beach 2" , medium: "oil and acrylic on fabric" , year: 1992, famous: true, img_link: "https://artsandculture.google.com/asset/tar-beach-2/aQGZKjzGoaXfjg?utm_source=google&utm_medium=kp&hl=en&avm=2", artist_id: a3.id)
 p14 = Painting.create(title: "Finistere" , medium: "egg tempera on paper on board", year: 1952 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwhitney.org%2Fartists%2F210&psig=AOvVaw22LUJPmQP0nBN4JXa433Az&ust=1674669687722000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCIDKn_Hk4PwCFQAAAAAdAAAAABAH", artist_id: a4.id)
-p15 = Painting.create(title: "" , medium: "", year: 1952 , famous: true, img_link: "", artist_id: a5.id)
+p15 = Painting.create(title: "Untitled (Studio)" , medium: "oil on canvas", year: 2014, famous: false, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.metmuseum.org%2Fart%2Fonline-features%2Fmetcollects%2Fkerry-james-marshall-untitled-studio&psig=AOvVaw2KR4LMzwvZ5w_gbg-I-Fyk&ust=1674669862142000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNi35cPl4PwCFQAAAAAdAAAAABAD", artist_id: a5.id)
 
 
 puts "✅ Done seeding!"
