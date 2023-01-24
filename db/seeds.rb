@@ -19,5 +19,8 @@ p3 = Painting.create(title: "Matisse's Model, The French Collection, Part 1" , m
 p4 = Painting.create(title: "Jerry" , medium: "oil on canvas", year: 1931 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.toledomuseum.org%2Fart%2Fartminute%2Faug-27-art-minute-paul-cadmus-jerry&psig=AOvVaw3Y0U0qRMWyaD43f0AD-kWL&ust=1674595074712000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCKC7y_bO3vwCFQAAAAAdAAAAABAE", artist_id: a4.id)
 p5 = Painting.create(title:  "School of Beauty, School of Culture", medium: "acrylic and glitter on canvas" , year: 2012 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.npr.org%2F2017%2F03%2F28%2F521683667%2Fkerry-james-marshall-a-black-presence-in-the-art-world-is-not-negotiable&psig=AOvVaw2N-3qtcGf00clpwCCixka0&ust=1674594876316000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCPClp5fO3vwCFQAAAAAdAAAAABAE", artist_id: a5.id)
 p6 = Painting.create(title: "Blue Boy" , medium: "oil on linen"  , year: 2014 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.latimes.com%2Fentertainment-arts%2Fstory%2F2020-03-05%2Fhuntington-library-blue-boy-pinkie-lynette-yiadom-boakye&psig=AOvVaw115M4XtF0R3IU_3oJ9ie5u&ust=1674594805479000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCIDm6PXN3vwCFQAAAAAdAAAAABAE" , artist_id: a6.id)
+p7 = Painting.create(title: "Homage to Monet" , medium: "oil on linen"  , year: 2019 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Faforsay.org%2Fevents%2Falex-katz-homage-to-monet%2F&psig=AOvVaw1kBxaqyYKZq9zOC526JzSz&ust=1674668845518000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCLDk4t_h4PwCFQAAAAAdAAAAABAG" , artist_id: a7.id)
+
+
 
 puts "✅ Done seeding!"
