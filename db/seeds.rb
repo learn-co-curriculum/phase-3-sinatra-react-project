@@ -23,7 +23,7 @@ p7 = Painting.create(title: "Homage to Monet" , medium: "oil on linen"  , year: 
 p8 = Painting.create(title: "Guernica" , medium: "oil on canvas" , year: 1937 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theguardian.com%2Fartanddesign%2Fjonathanjonesblog%2F2016%2Foct%2F12%2Fpicasso-guernica-aleppo-syria&psig=AOvVaw2ci8Z98aUg9aDRmMs45vW5&ust=1674594659593000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOCXo7DN3vwCFQAAAAAdAAAAABAR" , artist_id: a8.id)
 p9 = Painting.create(title: "A Bar at the Folies-Bergere" , medium: "oil on canvas"  , year: 1882 , famous: false, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FA_Bar_at_the_Folies-Berg%25C3%25A8re&psig=AOvVaw3_BoT_0cybCWeN1eVE67Ov&ust=1674594498041000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCKCapOPM3vwCFQAAAAAdAAAAABAS" ,  artist_id: a9.id)
 p10 = Painting.create(title: "Little Girl in a Blue Armchair" , medium: "oil on canvas" , year: 1878 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nga.gov%2Fcollection%2Fart-object-page.61368.html&psig=AOvVaw2oFvQLmO1e6B6oQZHG_kkN&ust=1674594456274000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCJCFzc_M3vwCFQAAAAAdAAAAABAE", artist_id: a10.id)
-
+p11 = Painting.create(title: "Self-Portrait with Monkey" , medium: "oil on canvas" , year: 1940 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tate.org.uk%2Fwhats-on%2Ftate-modern%2Ffrida-kahlo&psig=AOvVaw3l3XModKMgkOEd_Y1P-vo8&ust=1674669126175000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCICC8OTi4PwCFQAAAAAdAAAAABAK", artist_id: a1.id)
 
 
 
