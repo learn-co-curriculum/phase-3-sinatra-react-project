@@ -28,6 +28,6 @@ p12 = Painting.create(title: "Self-Portrait with Hyena" , medium: "oil on canvas
 p13 = Painting.create(title: "Tar Beach 2" , medium: "oil and acrylic on fabric" , year: 1992, famous: true, img_link: "https://artsandculture.google.com/asset/tar-beach-2/aQGZKjzGoaXfjg?utm_source=google&utm_medium=kp&hl=en&avm=2", artist_id: a3.id)
 p14 = Painting.create(title: "Finistere" , medium: "egg tempera on paper on board", year: 1952 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwhitney.org%2Fartists%2F210&psig=AOvVaw22LUJPmQP0nBN4JXa433Az&ust=1674669687722000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCIDKn_Hk4PwCFQAAAAAdAAAAABAH", artist_id: a4.id)
 p15 = Painting.create(title: "Untitled (Studio)" , medium: "oil on canvas", year: 2014, famous: false, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.metmuseum.org%2Fart%2Fonline-features%2Fmetcollects%2Fkerry-james-marshall-untitled-studio&psig=AOvVaw2KR4LMzwvZ5w_gbg-I-Fyk&ust=1674669862142000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNi35cPl4PwCFQAAAAAdAAAAABAD", artist_id: a5.id)
-
+p16 = Painting.create(title: "A Concentration" , medium: "oil on linen"  , year: 2018, famous: false, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fflash---art.com%2Farticle%2Flynette-yiadom-boakyes%2F&psig=AOvVaw3nlxjAqgUR6EmGYqovg-kL&ust=1674669982313000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCKjahP3l4PwCFQAAAAAdAAAAABAE" , artist_id: a6.id)
 
 puts "✅ Done seeding!"
