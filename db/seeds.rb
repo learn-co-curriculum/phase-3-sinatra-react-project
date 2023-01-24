@@ -11,5 +11,6 @@ a6 = Artist.create(first_name: "Lynette", last_name: "Yiadom-Boakye", living: tr
 a7 = Artist.create(first_name: "Alex", last_name: "Katz", living: true, img_link:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.interviewmagazine.com%2Fart%2Falex-katz&psig=AOvVaw2c6QytXO5XPRvfnVHeYIe8&ust=1674594003231000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCPDst_fK3vwCFQAAAAAdAAAAABAK" )
 a8 = Artist.create(first_name: "Pablo", last_name: "Picasso", livng: false, img_link:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPablo_Picasso&psig=AOvVaw2sAfb4HLem0_46atwbmmzZ&ust=1674594030863000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNjzuoTL3vwCFQAAAAAdAAAAABAE" )
 a9 = Artist.create(first_name: "Edouard", last_name: "Manet", living: false,  img_link:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.manet.org%2F&psig=AOvVaw2sUFlTHV4yaBgQvPDd05JB&ust=1674594047727000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCJC3vozL3vwCFQAAAAAdAAAAABAE")
+a10 = Artist.create(first_name: "Mary", last_name: "Cassatt", living: false, img_link:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fnmwa.org%2Fart%2Fartists%2Fmary-cassatt%2F&psig=AOvVaw3LX5Vu66Z0iL7NhOAsQYEO&ust=1674594068491000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCJD4tJbL3vwCFQAAAAAdAAAAABAK" )
 
 puts "✅ Done seeding!"
