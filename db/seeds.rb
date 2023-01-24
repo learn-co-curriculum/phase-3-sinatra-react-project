@@ -30,6 +30,8 @@ p14 = Painting.create(title: "Finistere" , medium: "egg tempera on paper on boar
 p15 = Painting.create(title: "Untitled (Studio)" , medium: "oil on canvas", year: 2014, famous: false, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.metmuseum.org%2Fart%2Fonline-features%2Fmetcollects%2Fkerry-james-marshall-untitled-studio&psig=AOvVaw2KR4LMzwvZ5w_gbg-I-Fyk&ust=1674669862142000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNi35cPl4PwCFQAAAAAdAAAAABAD", artist_id: a5.id)
 p16 = Painting.create(title: "A Concentration" , medium: "oil on linen"  , year: 2018, famous: false, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fflash---art.com%2Farticle%2Flynette-yiadom-boakyes%2F&psig=AOvVaw3nlxjAqgUR6EmGYqovg-kL&ust=1674669982313000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCKjahP3l4PwCFQAAAAAdAAAAABAE" , artist_id: a6.id)
 p17 = Painting.create(title: "Ada in the Rain" , medium: "oil on linen"  , year: 1977 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fnews.artnet.com%2Fart-world%2Fthree-things-to-know-alex-katz-2207833&psig=AOvVaw2KrlRs2_jLBMU9CXgC_g6k&ust=1674670097917000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCMiArrTm4PwCFQAAAAAdAAAAABAq" , artist_id: a7.id)
+p18 = Painting.create(title: "Acrobat and Young Harlequin" , medium: "oil on canvas" , year: 1905, famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPicasso%2527s_Rose_Period&psig=AOvVaw1BIK58vDMFZk7tNIFNyxl6&ust=1674670338666000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCLDOi6fn4PwCFQAAAAAdAAAAABAE" , artist_id: a8.id)
+
 
 
 puts "✅ Done seeding!"
