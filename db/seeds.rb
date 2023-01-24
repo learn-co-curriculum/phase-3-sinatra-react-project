@@ -14,7 +14,7 @@ a9 = Artist.create(first_name: "Edouard", last_name: "Manet", living: false,  im
 a10 = Artist.create(first_name: "Mary", last_name: "Cassatt", living: false, img_link:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fnmwa.org%2Fart%2Fartists%2Fmary-cassatt%2F&psig=AOvVaw3LX5Vu66Z0iL7NhOAsQYEO&ust=1674594068491000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCJD4tJbL3vwCFQAAAAAdAAAAABAK" )
 
 p1 = Painting.create(title: "Self-Portrait with Necklace and Hummingbird" , medium: "oil on canvas" , year: 1940 , famous: true, img_link: "https://www.fridakahlo.org/images/paintings/self-portrait-with-necklace-of-thorns.jpg", artist_id: a1.id)
-
+p2 = Painting.create(title: "Green Tea" , medium: "oil on canvas" , year: 1942 , famous: false, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.moma.org%2Fcollection%2Fworks%2F297568&psig=AOvVaw31R-m9873OCscwq3PKCGAU&ust=1674595308295000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCOiiouXP3vwCFQAAAAAdAAAAABAE", artist_id: a2.id)
 
 
 
