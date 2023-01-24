@@ -21,6 +21,10 @@ p5 = Painting.create(title:  "School of Beauty, School of Culture", medium: "acr
 p6 = Painting.create(title: "Blue Boy" , medium: "oil on linen"  , year: 2014 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.latimes.com%2Fentertainment-arts%2Fstory%2F2020-03-05%2Fhuntington-library-blue-boy-pinkie-lynette-yiadom-boakye&psig=AOvVaw115M4XtF0R3IU_3oJ9ie5u&ust=1674594805479000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCIDm6PXN3vwCFQAAAAAdAAAAABAE" , artist_id: a6.id)
 p7 = Painting.create(title: "Homage to Monet" , medium: "oil on linen"  , year: 2019 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Faforsay.org%2Fevents%2Falex-katz-homage-to-monet%2F&psig=AOvVaw1kBxaqyYKZq9zOC526JzSz&ust=1674668845518000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCLDk4t_h4PwCFQAAAAAdAAAAABAG" , artist_id: a7.id)
 p8 = Painting.create(title: "Guernica" , medium: "oil on canvas" , year: 1937 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theguardian.com%2Fartanddesign%2Fjonathanjonesblog%2F2016%2Foct%2F12%2Fpicasso-guernica-aleppo-syria&psig=AOvVaw2ci8Z98aUg9aDRmMs45vW5&ust=1674594659593000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOCXo7DN3vwCFQAAAAAdAAAAABAR" , artist_id: a8.id)
+p9 = Painting.create(title: "A Bar at the Folies-Bergere" , medium: "oil on canvas"  , year: 1882 , famous: false, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FA_Bar_at_the_Folies-Berg%25C3%25A8re&psig=AOvVaw3_BoT_0cybCWeN1eVE67Ov&ust=1674594498041000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCKCapOPM3vwCFQAAAAAdAAAAABAS" ,  artist_id: a9.id)
+
+
+
 
 
 puts "✅ Done seeding!"
