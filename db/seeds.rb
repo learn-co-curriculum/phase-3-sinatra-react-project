@@ -32,6 +32,6 @@ p16 = Painting.create(title: "A Concentration" , medium: "oil on linen"  , year:
 p17 = Painting.create(title: "Ada in the Rain" , medium: "oil on linen"  , year: 1977 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fnews.artnet.com%2Fart-world%2Fthree-things-to-know-alex-katz-2207833&psig=AOvVaw2KrlRs2_jLBMU9CXgC_g6k&ust=1674670097917000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCMiArrTm4PwCFQAAAAAdAAAAABAq" , artist_id: a7.id)
 p18 = Painting.create(title: "Acrobat and Young Harlequin" , medium: "oil on canvas" , year: 1905, famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPicasso%2527s_Rose_Period&psig=AOvVaw1BIK58vDMFZk7tNIFNyxl6&ust=1674670338666000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCLDOi6fn4PwCFQAAAAAdAAAAABAE" , artist_id: a8.id)
 p19 = Painting.create(title: "Boating" , medium: "oil on canvas"  , year: 1874 , famous: true, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdrawpaintacademy.com%2Fedouard-manet%2F&psig=AOvVaw324foLoYqSLCDiaeJ7ndol&ust=1674670448871000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCJjgvNvn4PwCFQAAAAAdAAAAABAJ" ,  artist_id: a9.id)
-
+p20 = Painting.create(title: "Simone in a Blue Bonnet" , medium: "oil on canvas" , year: 1903 , famous: false, img_link: "https://www.google.com/url?sa=i&url=https%3A%2F%2Frisdmuseum.org%2Fart-design%2Fcollection%2Fsimone-blue-bonnet-60095&psig=AOvVaw0a2c5tQ0SAaIuh73-OMP0a&ust=1674670565066000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCPDXppPo4PwCFQAAAAAdAAAAABAE", artist_id: a10.id)
 
 puts "✅ Done seeding!"
