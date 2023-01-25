@@ -13,9 +13,7 @@
 ActiveRecord::Schema.define(version: 5) do
 
   create_table "bar_crawls", force: :cascade do |t|
-    t.string "bar_name"
-    t.integer "user_id"
-    t.integer "bar_id"
+    t.string "bar__crawl_name"
   end
 
   create_table "bars", force: :cascade do |t|
@@ -27,7 +25,6 @@ ActiveRecord::Schema.define(version: 5) do
   end
 
   create_table "favorite_bars", force: :cascade do |t|
-    t.string "bar_name"
     t.integer "user_id"
     t.integer "bar_id"
   end
