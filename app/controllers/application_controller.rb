@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
 
   get '/reviews' do
     reviews = Review.all
-    reviews.to_json
+    reviews.to_json(include: {user: {only: [:username]}})
   end
   
   get '/reviews/:id' do
@@ -49,6 +49,11 @@ class ApplicationController < Sinatra::Base
   post '/crawl_list' do 
     bar_crawl_bar = BarCrawlBar.create(bar_id:params[:bar_id], bar_crawl_id:params[:bar_crawl_id])
     bar_crawl_bar.to_json
+  end
+
+  get '/users' do 
+    user = User.all
+    user.to_json
   end
 
 end
