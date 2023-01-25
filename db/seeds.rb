@@ -24,6 +24,10 @@ Review.create(star_rating: 4.5, content: "blah blah bleh", bar_id: clock.id, use
 Review.create(star_rating: 4.5, content: "blah blah bleh", bar_id: ten.id, user_id:joey.id)
 Review.create(star_rating: 4.5, content: "blah blah bleh", bar_id: whitehorse.id, user_id:billy.id)
 
+puts "🌱 Seeding favorite bars..."
+FavoriteBar.create(user_id: joey.id, bar_id: se.id, favorited?: true)
+FavoriteBar.create(user_id: joey.id, bar_id: harry.id, favorited?: true)
+FavoriteBar.create(user_id: joey.id, bar_id: whitehorse.id, favorited?: true)
 
 puts "✅ Done seeding!"
 

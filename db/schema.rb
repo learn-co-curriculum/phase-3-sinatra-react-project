@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 5) do
   end
 
   create_table "favorite_bars", force: :cascade do |t|
-    t.string "bar_name"
+    t.boolean "favorited?"
     t.integer "user_id"
     t.integer "bar_id"
   end
