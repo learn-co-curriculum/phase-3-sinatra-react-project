@@ -17,12 +17,12 @@ class CharactersController < ApplicationController
 
   # GET: /characters/5
   get "/characters/:id" do
-    erb :"/characters/show.html"
+    
   end
 
   # GET: /characters/5/edit
   get "/characters/:id/edit" do
-    erb :"/characters/edit.html"
+    
   end
 
   # PATCH: /characters/5
