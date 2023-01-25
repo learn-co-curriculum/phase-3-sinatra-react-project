@@ -65,11 +65,11 @@ FavoriteBar.create(user_id: diana.id, bar_id: jeremy.id)
 FavoriteBar.create(user_id: sophia.id, bar_id: rabbit.id)
 
 
-puts "🌱 Seeding bar_crawls..."
-BarCrawl.create(bar_crawl_name: "Shots?", user_id: james.id bar1_id: ready.id, bar2_id: whitehorse.id, bar3_id: rabbit.id, bar4_id: ten.id, bar5_id: apotheke.id)
-BarCrawl.create(bar_crawl_name: "Vamos a la fiesta", user_id: vero.id bar1_id: tavernreade.id, bar2_id: se.id, bar3_id: clock.id, bar4_id: jeremy.id, bar5_id: nil)
-BarCrawl.create(bar_crawl_name: "Friyay", user_id: avi.id bar1_id: rabbit.id, bar2_id: broadstone.id, bar3_id: clock.id, bar4_id: nil, bar5_id: nil)
-BarCrawl.create(bar_crawl_name: "I guess I can go out", user_id: tomer.id bar1_id: jeremy.id, bar2_id: harry.id, bar3_id: story.id, bar4_id: se.id, bar5_id: nil)
+# puts "🌱 Seeding bar_crawls..."
+# BarCrawl.create(bar_crawl_name: "Shots?", user_id: james.id bar1_id: ready.id, bar2_id: whitehorse.id, bar3_id: rabbit.id, bar4_id: ten.id, bar5_id: apotheke.id)
+# BarCrawl.create(bar_crawl_name: "Vamos a la fiesta", user_id: vero.id bar1_id: tavernreade.id, bar2_id: se.id, bar3_id: clock.id, bar4_id: jeremy.id, bar5_id: nil)
+# BarCrawl.create(bar_crawl_name: "Friyay", user_id: avi.id bar1_id: rabbit.id, bar2_id: broadstone.id, bar3_id: clock.id, bar4_id: nil, bar5_id: nil)
+# BarCrawl.create(bar_crawl_name: "I guess I can go out", user_id: tomer.id bar1_id: jeremy.id, bar2_id: harry.id, bar3_id: story.id, bar4_id: se.id, bar5_id: nil)
 
 
 puts "✅ Done seeding!"

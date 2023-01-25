@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
     has_many :reviews
     has_many :bars, through: :reviews
-    has_many :favorite_bars
-    has_many :bars, through: :favorite_bars
-    has_many :bar_crawls
-    has_many :bars, through: :bar_crawls
+    # has_many :favorite_bars
+    # has_many :bars, through: :favorite_bars
+    has_many :bar_crawl_bars
+ 
 
 
     def favorite(bar)
