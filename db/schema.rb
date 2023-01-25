@@ -13,7 +13,12 @@
 ActiveRecord::Schema.define(version: 5) do
 
   create_table "bar_crawls", force: :cascade do |t|
-    t.string "bar__crawl_name"
+    t.string "bar_crawl_name"
+    t.integer "bar1_id"
+    t.integer "bar2_id"
+    t.integer "bar3_id"
+    t.integer "bar4_id"
+    t.integer "bar5_id"
   end
 
   create_table "bars", force: :cascade do |t|
