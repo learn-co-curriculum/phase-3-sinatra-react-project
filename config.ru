@@ -12,4 +12,6 @@ end
 use Rack::JSONBodyParser
 
 # Our application
+use ArtistsController
+use PaintingsController
 run ApplicationController
