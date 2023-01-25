@@ -2,7 +2,7 @@ class CharactersController < ApplicationController
 
   # GET: /characters
   get "/characters" do
-    erb :"/characters/index.html"
+    Character.all.to_json(include: [:reviews])
   end
 
   # GET: /characters/new
