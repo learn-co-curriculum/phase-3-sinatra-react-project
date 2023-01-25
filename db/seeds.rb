@@ -1,8 +1,6 @@
-puts "🌱 Seeding spices.").").")"
+Joke.destroy_all
 
 # Seed your database here
-
-puts "✅ Done seeding!")"
 
 Joke.create("I'm tired of following my dreams. I'm just going to ask them where they are going and meet up with them later.")
 Joke.create("Did you hear about the guy whose whole left side was cut off? He's all right now.")
@@ -752,3 +750,5 @@ Joke.create("What did the calculator say to the student? You can count on me.")
 Joke.create("What do you call a gorilla wearing headphones? Anything you'd like, it can't hear you.")
 Joke.create("Have you heard about corduroy pillows? They're making headlines!")
 Joke.create("Why are giraffes so slow to apologize? Because it takes them a long time to swallow their pride.")
+
+puts "✅ Done seeding!
