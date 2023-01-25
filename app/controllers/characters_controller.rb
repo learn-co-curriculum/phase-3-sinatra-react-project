@@ -7,7 +7,7 @@ class CharactersController < ApplicationController
 
   # GET: /characters/new
   get "/characters/new" do
-    
+    ## does this need to stay? Ryry
   end
 
   # POST: /characters
