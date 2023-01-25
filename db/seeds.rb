@@ -18,16 +18,16 @@ billy = User.create(display_name: "Billy", username: "bj011", password: "123abc"
 
 
 puts "🌱 Seeding reviews..."
-Review.create(star_rating: 4.5, content: "blah blah bleh", bar_id: whitehorse.id, user_id:joey.id)
-Review.create(star_rating: 3.2, content: "blah blah bleh", bar_id: ready.id, user_id:billy.id)
-Review.create(star_rating: 4.5, content: "blah blah bleh", bar_id: clock.id, user_id:billy.id)
-Review.create(star_rating: 4.5, content: "blah blah bleh", bar_id: ten.id, user_id:joey.id)
-Review.create(star_rating: 4.5, content: "blah blah bleh", bar_id: whitehorse.id, user_id:billy.id)
+Review.create(star_rating: 4.5, content: "blah blah bleh", bar_id: whitehorse.id, user_id: joey.id)
+Review.create(star_rating: 3.2, content: "blah blah bleh", bar_id: ready.id, user_id: billy.id)
+Review.create(star_rating: 4.5, content: "blah blah bleh", bar_id: clock.id, user_id: billy.id)
+Review.create(star_rating: 4.5, content: "blah blah bleh", bar_id: se.id, user_id: joey.id)
+Review.create(star_rating: 4.5, content: "blah blah bleh", bar_id: whitehorse.id, user_id: billy.id)
 
-puts "🌱 Seeding favorite bars..."
-FavoriteBar.create(user_id: joey.id, bar_id: se.id, favorited?: true)
-FavoriteBar.create(user_id: joey.id, bar_id: harry.id, favorited?: true)
-FavoriteBar.create(user_id: joey.id, bar_id: whitehorse.id, favorited?: true)
+# puts "🌱 Seeding favorite bars..."
+# FavoriteBar.create(bar_name: "Split Eights", user_id: joey.id, bar_id: se.id)
 
+# puts "🌱 Seeding bar_crawls..."
+# BarCrawl.create()
 puts "✅ Done seeding!"
 
