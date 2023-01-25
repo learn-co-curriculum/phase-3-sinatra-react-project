@@ -6,7 +6,7 @@ class CreateBars < ActiveRecord::Migration[6.1]
       t.string :price
       t.integer :closing_time
       t.string :location
-      # t.float :average_bar_star_rating DEFAULT '(Bar.find(params[:id]).reviews.average(:star_rating))'
+      t.references :owner
     end
   end
 end

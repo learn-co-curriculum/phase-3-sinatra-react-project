@@ -25,6 +25,8 @@ olivia = User.create(display_name: "Olivia", username: "or012", password: "210ro
 vero = User.create(display_name: "Veronique", username: "vc004", password: "400cv")
 sophia = User.create(display_name: "Sophia", username: "sb030", password: "030bs")
 diana = User.create(display_name: "Diana", username: "dp026", password: "620pd")
+# 3 times do 
+#   User.create(display_name: Faker::Name.name, username: Faker::Internet.username, password: Faker::Internet.password)
 
 
 puts "🌱 Seeding reviews..."
