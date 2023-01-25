@@ -4,7 +4,8 @@ class CreateLocations < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :terrain
       t.string :inhabitants
-
+      t.text :img_url
+      
       t.timestamps
     end
   end
