@@ -10,21 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_25_170922) do
-
-  create_table "bar_crawl_bars", force: :cascade do |t|
-    t.integer "bar_crawl_id"
-    t.integer "bar_id"
-  end
+ActiveRecord::Schema.define(version: 5) do
 
   create_table "bar_crawls", force: :cascade do |t|
     t.string "bar_crawl_name"
     t.integer "user_id"
-    t.integer "bar1_id"
-    t.integer "bar2_id"
-    t.integer "bar3_id"
-    t.integer "bar4_id"
-    t.integer "bar5_id"
+    t.string "contents_of_bar_crawl"
   end
 
   create_table "bars", force: :cascade do |t|
@@ -33,6 +24,8 @@ ActiveRecord::Schema.define(version: 2023_01_25_170922) do
     t.string "price"
     t.integer "closing_time"
     t.string "location"
+    t.integer "owner_id"
+    t.index ["owner_id"], name: "index_bars_on_owner_id"
   end
 
   create_table "favorite_bars", force: :cascade do |t|

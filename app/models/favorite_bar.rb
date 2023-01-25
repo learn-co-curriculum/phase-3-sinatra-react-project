@@ -1,4 +1,4 @@
 class FavoriteBar < ActiveRecord::Base
-    belongs_to :user, class_name: "User", foreign_key: "user_id"
-    belongs_to :bar, class_name: "Bar", foreign_key: "bar_id"
+    belongs_to :user
+    belongs_to :bar
 end
