@@ -6,5 +6,9 @@ ENV['RACK_ENV'] ||= "development"
 require 'bundler/setup'
 Bundler.require(:default, ENV['RACK_ENV'])
 
+#config.I18n.default_locale = :en
+require 'faker'
+I18n.reload!
+
 # Require in all files in 'app' directory
 require_all 'app'
