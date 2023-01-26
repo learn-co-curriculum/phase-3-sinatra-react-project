@@ -10,12 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 5) do
+
+ActiveRecord::Schema.define(version: 6) do
+
+  create_table "bar_crawl_bars", force: :cascade do |t|
+    t.integer "bar_crawl_id"
+    t.integer "bar_id"
+  end
 
   create_table "bar_crawls", force: :cascade do |t|
     t.string "bar_crawl_name"
     t.integer "user_id"
-    t.string "contents_of_bar_crawl"
+    t.integer "bar_id"
   end
 
   create_table "bars", force: :cascade do |t|
