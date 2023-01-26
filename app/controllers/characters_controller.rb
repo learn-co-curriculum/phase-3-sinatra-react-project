@@ -12,7 +12,8 @@ class CharactersController < ApplicationController
 
   # POST: /characters
   post "/characters" do
-    
+    character = Character.create(name: params[:body], username: params[:username])
+    character.to_json
   end
 
   # GET: /characters/5
