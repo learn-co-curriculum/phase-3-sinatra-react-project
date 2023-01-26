@@ -1,6 +1,27 @@
+require 'faker'
+
+User.destroy_all
+Comment.destroy_all 
 Joke.destroy_all
 
 # Seed your database here
+
+20.times do 
+    User.create( 
+        username: Faker::Name.username,
+    )
+end
+
+25.times do 
+    Comment.create( 
+        body: Faker::Lorem.paragraph(sentence_count: 3)
+        rating: Faker::Number.between(from: 0, to: 5)
+        user_id: Faker::Number.between(from: 0, to: 20)
+        joke_id: Faker::Number.between(from: 0, to: 748)
+    )
+end
+
+Faker::
 
 Joke.create("I'm tired of following my dreams. I'm just going to ask them where they are going and meet up with them later.")
 Joke.create("Did you hear about the guy whose whole left side was cut off? He's all right now.")
@@ -536,7 +557,6 @@ Joke.create("Today a girl said she recognized me from vegetarian club, but I'm s
 Joke.create("How do you organize a space party? You planet.")
 Joke.create("How do you make holy water? You boil the hell out of it.")
 Joke.create("A man is washing the car with his son. The son asks, 'Dad, can't you just use a sponge?")
-
 Joke.create("Today, my son asked `Can I have a book mark?' and I burst into tears. 11 years old and he still doesn't know my name is Brian.")
 Joke.create("When does a joke become a dad joke? When it becomes apparent.")
 Joke.create("What's brown and sounds like a bell? Dung!")
