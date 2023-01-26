@@ -15,8 +15,18 @@ class ApplicationController < Sinatra::Base
     jokes.to_json
   end
 
-  get '/j/:joke_id' do 
 
+  post '/jokes' do 
+    comments = Comment.create(
+      comment: params[:comment],
+      rating: params[:rating],
+      user_id: 'by' + params[:user_id],
+    )
+  end
+
+  get '/j/:joke_id' do 
+    one_joke = Joke.find_by(params[:joke_id])
+    one_joke.to_json
   end
 
   get '/j/search' do 
