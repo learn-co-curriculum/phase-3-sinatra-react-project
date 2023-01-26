@@ -1,10 +1,12 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  # Add your routes here
-  
   get "/" do
-    { message: "Good luck with your project!" }.to_json
+  User.all
   end
-
+  patch "/games/:id" do
+    game = Game.find(params[:id])
+    game.update(difficulty: params[:difficulty])
+    game.to_json
+  end
 end

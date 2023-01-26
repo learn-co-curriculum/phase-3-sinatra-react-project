@@ -4,6 +4,7 @@ class CreateCards < ActiveRecord::Migration[6.1]
       t.string :question
       t.string :answer
       t.string :hint
+      t.string :description
     end
   end
 end

@@ -5,6 +5,7 @@ class CreateGame < ActiveRecord::Migration[6.1]
       t.integer :cardset_id
       t.timestamp :date
       t.integer :score
+      t.difficulty :difficulty
 
     end
   end
