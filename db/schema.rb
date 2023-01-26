@@ -16,11 +16,14 @@ ActiveRecord::Schema.define(version: 2023_01_24_174747) do
     t.string "question"
     t.string "answer"
     t.string "hint"
+    t.string "description"
+    t.integer "cardset_id"
   end
 
   create_table "cardsets", force: :cascade do |t|
     t.integer "card_id"
     t.integer "user_id"
+    t.string "title"
   end
 
   create_table "games", force: :cascade do |t|
@@ -28,6 +31,7 @@ ActiveRecord::Schema.define(version: 2023_01_24_174747) do
     t.integer "cardset_id"
     t.datetime "date"
     t.integer "score"
+    t.string "difficulty"
   end
 
   create_table "users", force: :cascade do |t|
