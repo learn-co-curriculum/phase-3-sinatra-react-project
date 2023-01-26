@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 5) do
 
   create_table "bars", force: :cascade do |t|
     t.string "name"
+    t.string "image"
     t.string "category"
     t.string "price"
     t.integer "closing_time"
