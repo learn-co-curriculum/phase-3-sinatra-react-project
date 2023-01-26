@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 6) do
 
   create_table "bar_crawl_bars", force: :cascade do |t|
@@ -29,6 +30,8 @@ ActiveRecord::Schema.define(version: 6) do
     t.string "price"
     t.integer "closing_time"
     t.string "location"
+    t.integer "owner_id"
+    t.index ["owner_id"], name: "index_bars_on_owner_id"
   end
 
   create_table "favorite_bars", force: :cascade do |t|

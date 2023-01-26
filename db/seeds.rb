@@ -13,8 +13,8 @@ story = Bar.create(name: "Overstory", category: "Hotel Bar", price: "$$$$", clos
 ready = Bar.create(name: "The Ready Rooftop Bar", category: "Hotel Bar", price: "$$", closing_time: "2200", location: "112 E 11th St, New York, NY 10003")
 
 puts "🌱 Seeding users..."
-joey = User.create(display_name: "Joey", username: "jb110", password: "011bj")
-jason = User.create(display_name: "Jason", username: "jm015", password: "510mj")
+joey = User.create(display_name: "Joey", username: "j-money", password: "joey123")
+jason = User.create(display_name: "Jason", username: "jay-son", password: "jason123")
 tomer = User.create(display_name: "Tomer", username: "tt016", password: "610tt")
 kevin = User.create(display_name: "Kevin", username: "km022", password: "220mk")
 dan = User.create(display_name: "Daniel", username: "dy008", password: "800yd")
@@ -25,6 +25,8 @@ olivia = User.create(display_name: "Olivia", username: "or012", password: "210ro
 vero = User.create(display_name: "Veronique", username: "vc004", password: "400cv")
 sophia = User.create(display_name: "Sophia", username: "sb030", password: "030bs")
 diana = User.create(display_name: "Diana", username: "dp026", password: "620pd")
+# 3 times do 
+#   User.create(display_name: Faker::Name.name, username: Faker::Internet.username, password: Faker::Internet.password)
 
 
 puts "🌱 Seeding reviews..."
@@ -32,11 +34,11 @@ Review.create(star_rating: 4.5, content: "blah blah bleh", bar_id: story.id, use
 Review.create(star_rating: 3.0, content: "blah blah bleh", bar_id: apotheke.id, user_id: joey.id)
 Review.create(star_rating: 3.5, content: "blah blah bleh", bar_id: clock.id, user_id: avi.id)
 Review.create(star_rating: 5.0, content: "blah blah bleh", bar_id: se.id, user_id: joey.id)
-Review.create(star_rating: 4.5, content: "blah blah bleh", bar_id: whitehorse.id, user_id: adam.id)
+Review.create(star_rating: 4.5, content: "The White Horse Tavern is a historic spot with a charming atmosphere. The food is solid, with a focus on American classics like burgers and sandwiches. The drinks menu is also impressive, offering a variety of beers, wines, and cocktails. Service is friendly and attentive. Highly recommended for those looking for a casual and cozy spot to grab a bite or a drink.", bar_id: whitehorse.id, user_id: adam.id)
 Review.create(star_rating: 2.5, content: "blah blah bleh", bar_id: rabbit.id, user_id: adam.id)
 Review.create(star_rating: 3.0, content: "blah blah bleh", bar_id: jeremy.id, user_id: adam.id)
 Review.create(star_rating: 4.0, content: "blah blah bleh", bar_id: ten.id, user_id: vero.id)
-Review.create(star_rating: 3.5, content: "blah blah bleh", bar_id: tavernreade.id, user_id: vero.id)
+Review.create(star_rating: 3.5, content: "I was extremely disappointed with my experience at Tavern on Reade. The food was mediocre at best, with bland flavors and subpar ingredients. The service was slow and unorganized, and the staff seemed uninterested in providing a good customer experience. The atmosphere was also unremarkable. I would not recommend this establishment, and will not be returning.", bar_id: tavernreade.id, user_id: vero.id)
 Review.create(star_rating: 4.5, content: "blah blah bleh", bar_id: se.id, user_id: tomer.id)
 Review.create(star_rating: 2.5, content: "blah blah bleh", bar_id: ten.id, user_id: jason.id)
 Review.create(star_rating: 3.5, content: "blah blah bleh", bar_id: harry.id, user_id: kevin.id)

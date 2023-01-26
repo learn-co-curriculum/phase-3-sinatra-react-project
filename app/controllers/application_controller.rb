@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
 
   get '/reviews' do
     reviews = Review.all
-    reviews.to_json
+    reviews.to_json(include: {user: {only: [:username]}})
   end
   
   get '/reviews/:id' do
@@ -34,7 +34,22 @@ class ApplicationController < Sinatra::Base
     review.to_json
   end
 
-  get '/users' do 
+  get '/crawl_list' do
+    bar_crawl = BarCrawl.all
+    bar_crawl.to_json
+  end
+
+  get '/crawl_list/:id' do
+    bar_crawl = BarCrawl.find(params[:id])
+    bar_crawl.to_json(only: [:bar_crawl_name], include: {user: {only: [:display_name]}})
+  end
+
+  post '/crawl_list' do 
+    bar_crawl_bar = BarCrawlBar.create(bar_id:params[:bar_id], bar_crawl_id:params[:bar_crawl_id])
+    bar_crawl_bar.to_json
+  end
+
+get '/users' do 
     user = User.all
     user.to_json
   end
@@ -44,21 +59,5 @@ class ApplicationController < Sinatra::Base
     user.to_json(only: [:username], include: {reviews: {only: [:star_rating, :content]}})
   end
 
+
 end
-
-
-# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-# post '/bars' do
-#   bar = Bar.create(name:params[:name], category:params[:category], price:params[:price], closing_time:params[:closing_time], location:params[:location])
-#   bar.to_json
-# end
-
-# delete '/bars/:id' do
-#   bar = Bar.find(params[:id])
-#   bar.destroy
-#   bar.to_json
-# end
-
-
