@@ -4,16 +4,16 @@ Location.destroy_all
 Character.destroy_all
 Review.destroy_all
 # Seed your database here
-l1 = Location.create(name: "The Shire" , terrain: "Green pastures", inhabitants: "Hobbits")
-l2 = Location.create(name: "The Prancing Pony", terrain: "The local Inn", inhabitants: "Hobbits, Dwarves, Human")
-l3 = Location.create(name: "Rohan", terrain: "Lovely Countryside", inhabitants: "Human")
-l4 = Location.create(name: "Rivendell", terrain: "Immaculate buildings, Rivers, Waterfalls", inhabitants: "Elves")
-l5 = Location.create(name: "Moria", terrain: "Dark abandoned mines", inhabitants: "Goblins")
-l6 = Location.create(name: "Lothlorien", terrain: "Golden Trees", inhabitants: "Elves")
-l7 = Location.create(name: "Emyn Muill", terrain: "Large River", inhabitants: "Orcs")
-l8 = Location.create(name: "Minas Tirith", terrain: "Tall city built into a mountain", inhabitants: "Human")
-l9 = Location.create(name: "Shelobs Lair", terrain: "Cave", inhabitants: "Spiders")
-l10 = Location.create(name: "Mordor", terrain: "Volcanic Wasteland", inhabitants: "Orcs")
+l1 = Location.create(name: "The Shire" , terrain: "Green pastures", inhabitants: "Hobbits", img_url: "https://media.cntraveller.com/photos/611be79fd5b6f5a4a3deec79/4:3/w_1704,h_1278,c_limit/hobbiton.jpg")
+l2 = Location.create(name: "The Prancing Pony", terrain: "The local Inn", inhabitants: "Hobbits, Dwarves, Human", img_url: "https://greycompanypodcast.files.wordpress.com/2016/06/prancing_pony_tavern_by_daroz-d6htwmm.jpg")
+l3 = Location.create(name: "Rohan", terrain: "Lovely Countryside", inhabitants: "Human", img_url: "https://static.wikia.nocookie.net/moviedatabase/images/d/de/Rohan.jpg/revision/latest?cb=20180122211341")
+l4 = Location.create(name: "Rivendell", terrain: "Immaculate buildings, Rivers, Waterfalls", inhabitants: "Elves", img_url: "https://static.wikia.nocookie.net/lotr/images/d/d8/614690.jpg/revision/latest?cb=20180501204919")
+l5 = Location.create(name: "Moria", terrain: "Dark abandoned mines", inhabitants: "Goblins", img_url: "https://static.wikia.nocookie.net/lotr/images/8/86/Khazad-d%C3%BBm_-_The_Rings_of_Power.png/revision/latest?cb=20220902211108")
+l6 = Location.create(name: "Lothlorien", terrain: "Golden Trees", inhabitants: "Elves", img_url: "https://static.wikia.nocookie.net/middle-earth-roleplay/images/c/cf/Lorien.jpg/revision/latest?cb=20161005001852")
+l7 = Location.create(name: "Nen Hitheol", terrain: "Large River", inhabitants: "Orcs", img_url: "https://static.wikia.nocookie.net/lotr/images/1/11/Aax.jpg/revision/latest?cb=20180417200919")
+l8 = Location.create(name: "Minas Tirith", terrain: "Tall city built into a mountain", inhabitants: "Human", img_url: "https://static.wikia.nocookie.net/lotr/images/e/e4/Minas_Tirith.jpg/revision/latest?cb=20141228214636")
+l9 = Location.create(name: "Shelobs Lair", terrain: "Cave", inhabitants: "Spiders", img_url: "https://www.thefandomentals.com/wp-content/uploads/2018/01/shelob09-1024x425.jpg")
+l10 = Location.create(name: "Mordor", terrain: "Volcanic Wasteland", inhabitants: "Orcs", img_url: "https://static.wikia.nocookie.net/lotr/images/b/b0/Fotr6.jpg/revision/latest?cb=20130419144638")
 
 c1 = Character.create(name: "Bilbo Baggins", description: "Adventerous Hobbit, has been around much of middle earth. Bilbo was the first hobbit to become famous in the world at large, and one of the few to set foot in the Undying Lands.")
 c2 = Character.create(name: "Gandalf", description: "Gandalf the Grey, later known as Gandalf the White, and originally named Olórin was an Istar (Wizard), dispatched to Middle-earth in the Third Age to combat the threat of Sauron.")
