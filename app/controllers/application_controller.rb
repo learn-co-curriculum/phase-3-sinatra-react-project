@@ -12,6 +12,7 @@ class ApplicationController < Sinatra::Base
 
   get '/jokes' do 
     jokes = Joke.all
+    jokes.to_json
   end
 
   get '/j/:joke_id' do 
