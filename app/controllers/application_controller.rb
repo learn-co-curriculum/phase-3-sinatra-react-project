@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
   # fetch for all bars on "home page"
   get '/bars' do
     bars = Bar.all
-    bars.to_json(only: [:name, :category, :price], include: [:reviews])
+    bars.to_json(only: [:id, :name, :category, :price])
   end
 
 #  get for each individual bar in bar info
