@@ -5,6 +5,7 @@ class CreateCards < ActiveRecord::Migration[6.1]
       t.string :answer
       t.string :hint
       t.string :description
+      t.integer :cardset_id
     end
   end
 end
