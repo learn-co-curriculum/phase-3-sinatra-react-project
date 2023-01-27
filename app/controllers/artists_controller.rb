@@ -11,6 +11,8 @@ class ArtistsController < ApplicationController
 #     "Hello World"
 #   end
 
+
+
   #aka owners
   get '/artists' do
     artists = Artist.all
