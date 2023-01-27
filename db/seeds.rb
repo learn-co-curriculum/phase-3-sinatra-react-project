@@ -9,9 +9,8 @@ Joke.destroy_all
 
 #Create 20 random usernames
 20.times do 
-    User.create( 
-        username: "joe"
-    )
+    User.create(username: Faker::Name.name, password: 'password')
+    
 end
 
 #create 25 random comments
@@ -19,7 +18,6 @@ end
     Comment.create( 
         comment: Faker::Lorem.paragraph(sentence_count: 3),
         rating: Faker::Number.between(from: 0, to: 5),
-        user_id: Faker::Number.between(from: 0, to: 20),
         joke_id: Faker::Number.between(from: 0, to: 748)
     )
 end
