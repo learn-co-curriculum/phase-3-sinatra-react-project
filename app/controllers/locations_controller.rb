@@ -10,17 +10,17 @@ class LocationsController < ApplicationController
 
   # GET: /locations/new
   get "/locations/new" do
+    
+  end
+  
+  # POST: /locations
+  post "/locations" do
     location = Location.create(name: params[:name], terrain: params[:terrain], inhabitants: params[:inhabitants], img_url: params[:img_url])
     if location.id
       halt 201, location.to_json
     else
       halt 400, location.errors.full_messages.to_sentence.to_json  
     end
-    
-  end
-
-  # POST: /locations
-  post "/locations" do
     
   end
 
