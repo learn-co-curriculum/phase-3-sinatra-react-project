@@ -4,6 +4,7 @@ class PaintingsController < ApplicationController
 
 #aka dogs
  get '/paintings' do
+    # pry
     paintings = Painting.all
     paintings.to_json
   end
