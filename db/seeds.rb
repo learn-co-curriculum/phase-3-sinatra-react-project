@@ -1,7 +1,6 @@
 puts "🌱 Seeding spices..."
-Location.destroy_all
-Character.destroy_all
-Review.destroy_all
+puts "🌱 Seeding spices..."
+
 # Seed your database here
 l1 = Location.create(name: "The Shire" , terrain: "Green pastures", inhabitants: "Hobbits")
 l2 = Location.create(name: "The Prancing Pony", terrain: "The local Inn", inhabitants: "Hobbits, Dwarves, Human")
