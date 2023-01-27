@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
 
   # GET: /reviews
   get "/reviews" do
-    
+    Review.all.to_json( except: [:created_at, :updated_at])
   end
 
   # GET: /reviews/new
@@ -14,9 +14,14 @@ class ReviewsController < ApplicationController
 
   # POST: /reviews
   post "/reviews" do
-    
-    
+    review = Review.create(rating: params[:rating], text: params[:text])
+    if review.id
+      halt 201, location.to_json
+    else
+      halt 400, location.errors.full_messages.to_sentence.to_json
+    end
   end
+    
 
   # GET: /reviews/5
   get "/reviews/:id" do
@@ -35,6 +40,9 @@ class ReviewsController < ApplicationController
 
   # DELETE: /reviews/5/delete
   delete "/reviews/:id/delete" do
+    review = Review.find(params[:id])
+    review.destroy
+    review.to_json
     
   end
 end

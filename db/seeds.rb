@@ -2,16 +2,16 @@ puts "🌱 Seeding spices..."
 puts "🌱 Seeding spices..."
 
 # Seed your database here
-l1 = Location.create(name: "The Shire" , terrain: "Green pastures", inhabitants: "Hobbits")
-l2 = Location.create(name: "The Prancing Pony", terrain: "The local Inn", inhabitants: "Hobbits, Dwarves, Human")
-l3 = Location.create(name: "Rohan", terrain: "Lovely Countryside", inhabitants: "Human")
-l4 = Location.create(name: "Rivendell", terrain: "Immaculate buildings, Rivers, Waterfalls", inhabitants: "Elves")
-l5 = Location.create(name: "Moria", terrain: "Dark abandoned mines", inhabitants: "Goblins")
-l6 = Location.create(name: "Lothlorien", terrain: "Golden Trees", inhabitants: "Elves")
-l7 = Location.create(name: "Emyn Muill", terrain: "Large River", inhabitants: "Orcs")
-l8 = Location.create(name: "Minas Tirith", terrain: "Tall city built into a mountain", inhabitants: "Human")
-l9 = Location.create(name: "Shelobs Lair", terrain: "Cave", inhabitants: "Spiders")
-l10 = Location.create(name: "Mordor", terrain: "Volcanic Wasteland", inhabitants: "Orcs")
+l1 = Location.create(name: "The Shire" , terrain: "Green pastures", inhabitants: "Hobbits", img_url: "https://www.cheatsheet.com/wp-content/uploads/2021/09/Lord-of-the-Rings-hobbit-home-in-the-Shire-filming-location.jpg")
+l2 = Location.create(name: "The Prancing Pony", terrain: "The local Inn", inhabitants: "Hobbits, Dwarves, Human", img_url: "https://greycompanypodcast.files.wordpress.com/2016/06/prancing_pony_tavern_by_daroz-d6htwmm.jpg")
+l3 = Location.create(name: "Rohan", terrain: "Lovely Countryside", inhabitants: "Human", img_url: "https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1024,h_768/http://thewanderingblonde.com/wp-content/uploads/CC250F23-D85A-489F-A6FC-2DEA2494BD1F-e1586806059765-1024x768.jpg")
+l4 = Location.create(name: "Rivendell", terrain: "Immaculate buildings, Rivers, Waterfalls", inhabitants: "Elves", img_url: "https://p4.wallpaperbetter.com/wallpaper/335/429/69/nature-mountains-the-city-waterfall-the-lord-of-the-rings-hd-wallpaper-preview.jpg")
+l5 = Location.create(name: "Moria", terrain: "Dark abandoned mines", inhabitants: "Goblins", img_url: "https://returntomoria.com/img/HOME_BACKGROUND.png")
+l6 = Location.create(name: "Lothlorien", terrain: "Golden Trees", inhabitants: "Elves", img_url: "https://pbs.twimg.com/media/B_nHYcBU8AEti83.jpg:large")
+l7 = Location.create(name: "Emyn Muill", terrain: "Large River", inhabitants: "Orcs", img_url: "https://storage.googleapis.com/moviemaps/img/34p.l2498.940.jpg")
+l8 = Location.create(name: "Minas Tirith", terrain: "Tall city built into a mountain", inhabitants: "Human", img_url: "https://i.pinimg.com/originals/29/98/4e/29984e8bbc0282590014cf0579c904e7.jpg")
+l9 = Location.create(name: "Shelobs Lair", terrain: "Cave", inhabitants: "Spiders", img_url: "https://static.wikia.nocookie.net/lotr/images/a/a4/Shelobslair.jpg/revision/latest?cb=20100526104131")
+l10 = Location.create(name: "Mordor", terrain: "Volcanic Wasteland", inhabitants: "Orcs", img_url: "https://cdn.vox-cdn.com/thumbor/HAstnw_9Iupryue6ovUGjx-DH-M=/0x0:3816x1575/1200x0/filters:focal(0x0:3816x1575):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/22280932/ROTK_eye_of_sauron.jpg")
 
 c1 = Character.create(name: "Bilbo Baggins", description: "Adventerous Hobbit, has been around much of middle earth. Bilbo was the first hobbit to become famous in the world at large, and one of the few to set foot in the Undying Lands.")
 c2 = Character.create(name: "Gandalf", description: "Gandalf the Grey, later known as Gandalf the White, and originally named Olórin was an Istar (Wizard), dispatched to Middle-earth in the Third Age to combat the threat of Sauron.")

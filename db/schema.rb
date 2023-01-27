@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2023_01_24_162044) do
     t.string "name"
     t.string "terrain"
     t.string "inhabitants"
+    t.text "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
