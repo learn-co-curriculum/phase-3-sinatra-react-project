@@ -38,6 +38,9 @@ class CharactersController < ApplicationController
 
   # DELETE: /characters/5/delete
   delete "/characters/:id/delete" do
+    character = Character.find(params[:id])
+    character.destroy
+    character.to_json
     
   end
 end
