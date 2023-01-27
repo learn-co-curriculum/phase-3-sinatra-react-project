@@ -8,6 +8,7 @@ class LocationsController < ApplicationController
     
   end
 
+
   # POST: /locations
   post "/locations" do
     location = Location.create(name: params[:name], terrain: params[:terrain], inhabitants: params[:inhabitants], img_url: params[:img_url])
@@ -16,8 +17,6 @@ class LocationsController < ApplicationController
     else
       halt 400, location.errors.full_messages.to_sentence.to_json  
     end
-  end
-  
 
   # GET: /locations/5
   get "/locations/:id" do
