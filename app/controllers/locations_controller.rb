@@ -3,6 +3,8 @@ class LocationsController < ApplicationController
   # GET: /locations
   get "/locations" do
     Location.all.to_json(include: [:reviews])
+    ## do we need to change the Locations schema to include reviews?
+    ## we also need characters?? or no?
   end
 
   # GET: /locations/new

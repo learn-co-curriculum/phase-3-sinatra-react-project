@@ -2,7 +2,7 @@ class CharactersController < ApplicationController
 
   # GET: /characters
   get "/characters" do
-    Character.all.to_json(include: [:reviews])
+    Character.all.to_json( except: [:created_at, :updated_at])
   end
 
   # GET: /characters/new
@@ -12,8 +12,13 @@ class CharactersController < ApplicationController
 
   # POST: /characters
   post "/characters" do
-    character = Character.create(name: params[:body], username: params[:username])
-    character.to_json
+    character = Character.create(name: params[:name], description: params[:description])
+    if character.id
+    ##binding.pry
+    halt 201, character.to_json
+    else
+      halt 400, character.errors.full_messages.to_sentence.to_json
+    end
   end
 
   # GET: /characters/5

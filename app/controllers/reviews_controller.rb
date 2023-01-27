@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
 
   # GET: /reviews
   get "/reviews" do
-    
+    System.all.to_json(include: [:characters, :locations], except: [:created_at, :updated_at])
   end
 
   # GET: /reviews/new
@@ -14,9 +14,10 @@ class ReviewsController < ApplicationController
 
   # POST: /reviews
   post "/reviews" do
-    
-    
+    review = Review.create(rating: params[:rating], text: params[:text])
+    review.to_json
   end
+    
 
   # GET: /reviews/5
   get "/reviews/:id" do
