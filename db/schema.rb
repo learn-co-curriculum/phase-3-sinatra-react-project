@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2023_01_24_174747) do
     t.integer "card_id"
     t.integer "user_id"
     t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "games", force: :cascade do |t|

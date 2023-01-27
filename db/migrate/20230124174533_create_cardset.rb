@@ -4,7 +4,7 @@ class CreateCardset < ActiveRecord::Migration[6.1]
     t.integer :card_id
     t.integer :user_id
     t.string :title
-
+      t.timestamps
     end
   end
 end
