@@ -13,14 +13,12 @@
 ActiveRecord::Schema.define(version: 2023_01_25_214645) do
 
   create_table "comments", force: :cascade do |t|
+    t.integer "joke_id"
     t.string "comment"
     t.integer "rating"
-    t.integer "user_id"
-    t.integer "joke_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["joke_id"], name: "index_comments_on_joke_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "jokes", force: :cascade do |t|
@@ -29,7 +27,7 @@ ActiveRecord::Schema.define(version: 2023_01_25_214645) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
