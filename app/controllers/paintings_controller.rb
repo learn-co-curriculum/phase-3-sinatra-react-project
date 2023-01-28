@@ -6,7 +6,7 @@ class PaintingsController < ApplicationController
  get '/paintings' do
     # pry
     paintings = Painting.all
-    paintings.to_json
+    paintings.to_json(include: :artist)
   end
 
 #  this is the add from the Painting Form 
