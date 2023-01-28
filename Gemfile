@@ -28,6 +28,8 @@ gem "sinatra-activerecord", "~> 2.0"
 
 gem "bcrypt"
 
+gem "shotgun"
+
 # Run common tasks from the command line
 # https://github.com/ruby/rake
 gem "rake", "~> 13.0"
