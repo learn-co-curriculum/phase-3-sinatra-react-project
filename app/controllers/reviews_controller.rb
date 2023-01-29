@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
 
   # GET: /reviews
   get "/reviews" do
-    Review.all.to_json( except: [:created_at, :updated_at])
+    Review.all.to_json(include: [:character, :location], except: [:created_at, :updated_at])
   end
 
   # GET: /reviews/new
