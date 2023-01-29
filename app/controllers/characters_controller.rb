@@ -19,7 +19,7 @@ class CharactersController < ApplicationController
     end
   end
 
-  GET: /characters/5
+  #GET: /characters/5
   get "/characters/:id" do
     binding.pry
     singleCharacter = Character.find_by(id: params[:id])
