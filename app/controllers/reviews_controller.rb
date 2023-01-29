@@ -24,9 +24,14 @@ class ReviewsController < ApplicationController
     
 
   # GET: /reviews/5
-  get "/reviews/:id" do
-    
-  end
+    get "/reviews/:id" do
+      singleReview = Review.find_by(id: params[:id])
+      if singleReview
+       halt 200, singleReview.to_json(include: [:locations, :characters], except: [:created_at, :updated_at])
+      else 
+       halt 400, "Golumns led you astray".to_json
+      end
+    end
 
   # GET: /reviews/5/edit
   get "/reviews/:id/edit" do

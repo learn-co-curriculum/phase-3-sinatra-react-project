@@ -7,10 +7,6 @@ class LocationsController < ApplicationController
     ## we also need characters?? or no?
   end
 
-  # POST: /locations
-  post "/locations" do
-    
-  end
   
    # POST: /locations
    post "/locations" do
@@ -35,7 +31,9 @@ class LocationsController < ApplicationController
 
   # PATCH: /locations/5
   patch "/locations/:id" do
-    
+    location = Location.find(params[:id])
+    location.update(name: params[:name], description: params[:description])
+    character.to_json
   end
 
   # DELETE: /locations/5/delete
