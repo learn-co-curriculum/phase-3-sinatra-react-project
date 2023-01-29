@@ -16,13 +16,11 @@ end
 #create 25 random comments
 80.times do 
     Comment.create( 
-        # comment: Faker::Lorem.paragraph(sentence_count: 3),
+        comment: Faker::Lorem.paragraph(sentence_count: 3),
         rating: Faker::Number.between(from: 0, to: 5),
         joke_id: Faker::Number.between(from: 0, to: 108)
     )
 end
-
-Comment.create(comment: "anything", rating: 10, joke_id: 402)
 
 
 #748 lines of dad jokes 🥴
