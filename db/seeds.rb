@@ -1,5 +1,8 @@
 puts "🌱 Seeding spices..."
 puts "🌱 Seeding spices..."
+Location.destroy_all
+Character.destroy_all
+Review.destroy_all
 
 # Seed your database here
 l1 = Location.create(name: "The Shire" , terrain: "Green pastures", inhabitants: "Hobbits", img_url: "https://www.cheatsheet.com/wp-content/uploads/2021/09/Lord-of-the-Rings-hobbit-home-in-the-Shire-filming-location.jpg")
