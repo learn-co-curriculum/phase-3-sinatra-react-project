@@ -18,26 +18,34 @@ class JokesController < ApplicationController
   #   )
   # end
 
-  post '/comments' do
-    jokes = Joke.find_by_id(params[:id])
-    comment = Comment.create(joke_id: jokes.id, comment:params[:comment],
-    rating:params[:rating])
-    comment.save
-    comment.to_json
-    end
-
     patch '/jokes/:id' do
       joke = Joke.find(params[:id])
       joke.update(joke: params[:joke])
       joke.to_json
     end
 
-    # patch '/jokes/:joke_id/comment' do 
-    #   joke = Joke.find_by_id(params[:id]) 
-    #   comment = Comment.update(joke_id:jokes.id, 
-    #   comment:params[:comment])
-    #   comment.to_json
-    # end
+    post 'jokes/comments' do
+      jokes = Joke.find_by_id(params[:id])
+      comment = Comment.create(joke_id: jokes.id, comment:params[:comment],
+      rating:params[:rating])
+      comment.save
+      comment.to_json
+      end
+
+    patch '/jokes/comment' do 
+      joke = Joke.find_by_id(params[:id]) 
+      comment = Comment.update(joke_id:jokes.id, 
+      comment:params[:comment])
+      comment.to_json
+    end
+
+    delete '/jokes/comments' do 
+      joke = Joke.find_by_id(params[:id]) 
+      comment = Comment.update(joke_id:jokes.id, 
+      comment:params[:comment])
+      comment.destroy
+      comment.to_json
+    end
 
   post '/jokes/new' do 
     joke = Joke.create(joke:params[:joke]) 
@@ -56,10 +64,5 @@ class JokesController < ApplicationController
       comments: { only: [:comment, :rating]#, include: { 
        # user: { only: [:name] }
      }] )
-  end
-
-  get '/jokes/search' do 
-    
-
   end
 end 
