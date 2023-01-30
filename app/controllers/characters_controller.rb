@@ -14,7 +14,6 @@ class CharactersController < ApplicationController
   post "/characters" do
     character = Character.create(name: params[:name], description: params[:description])
     if character.id
-    ##binding.pry
     halt 201, character.to_json
     else
       halt 400, character.errors.full_messages.to_sentence.to_json

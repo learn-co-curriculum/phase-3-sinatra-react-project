@@ -14,9 +14,13 @@ class ReviewsController < ApplicationController
 
   # POST: /reviews
   post "/reviews" do
-    review = Review.create(rating: params[:rating], text: params[:text])
-    if review.id
-      halt 201, location.to_json
+    text = params[:text]
+    rating = params[:rating]
+    location = Location.find_by(id: params[:location_id])
+    character = Character.find_by(name: params[:character])
+    if location && character 
+    review = Review.create(rating: rating, text: text, location: location, character: character)
+      halt 201, review.to_json(include: [:location, :character])
     else
       halt 400, location.errors.full_messages.to_sentence.to_json
     end
@@ -35,14 +39,15 @@ class ReviewsController < ApplicationController
 
   # PATCH: /reviews/5
   patch "/reviews/:id" do
-    
+    review = Message.find_by(id: params[:id])
+    review.update(body: params[:body])
+    review.to_json
   end
 
   # DELETE: /reviews/5/delete
-  delete "/reviews/:id/delete" do
+  delete "/reviews/:id" do
     review = Review.find(params[:id])
     review.destroy
     review.to_json
-    
   end
 end
