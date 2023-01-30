@@ -21,9 +21,6 @@ end
     )
 end
 
-#Comment.create(comment: "anything", rating: 10, joke_id: 402)
-
-
 #99 lines of dad jokes 🥴
 Joke.create(joke: "I'm tired of following my dreams. I'm just going to ask them where they are going and meet up with them later.")
 Joke.create(joke: "Did you hear about the guy whose whole left side was cut off? He's all right now.")
