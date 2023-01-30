@@ -15,16 +15,16 @@ end
 #create 80 random comments
 80.times do 
     Comment.create( 
-        # comment: Faker::Lorem.paragraph(sentence_count: 3),
+        comment: Faker::Lorem.paragraph(sentence_count: 3),
         rating: Faker::Number.between(from: 0, to: 5),
         joke_id: Faker::Number.between(from: 0, to: 108)
     )
 end
 
-Comment.create(comment: "anything", rating: 10, joke_id: 402)
+#Comment.create(comment: "anything", rating: 10, joke_id: 402)
 
 
-#748 lines of dad jokes 🥴
+#99 lines of dad jokes 🥴
 Joke.create(joke: "I'm tired of following my dreams. I'm just going to ask them where they are going and meet up with them later.")
 Joke.create(joke: "Did you hear about the guy whose whole left side was cut off? He's all right now.")
 Joke.create(joke: "Why didn't the skeleton cross the road? Because he had no guts.")
