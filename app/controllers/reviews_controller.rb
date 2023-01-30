@@ -39,8 +39,8 @@ class ReviewsController < ApplicationController
 
   # PATCH: /reviews/5
   patch "/reviews/:id" do
-    review = Message.find_by(id: params[:id])
-    review.update(body: params[:body])
+    review = Review.find_by(id: params[:id])
+    review.update(text: params[:text])
     review.to_json
   end
 
