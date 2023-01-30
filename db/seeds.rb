@@ -10,10 +10,9 @@ Joke.destroy_all
 #Create 20 random usernames
 20.times do 
     User.create(username: Faker::Name.name, password: 'password')
-    
 end
 
-#create 25 random comments
+#create 80 random comments
 80.times do 
     Comment.create( 
         # comment: Faker::Lorem.paragraph(sentence_count: 3),

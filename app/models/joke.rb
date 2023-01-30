@@ -5,9 +5,7 @@ class Joke < ActiveRecord::Base
         "Dad Jokes:\n #{self.joke}"
     end
 
-    def submit_joke(user)
 
-    end
 
     def self.best_jokes 
         best_jokes = self.all.where(:rating >= 5)
