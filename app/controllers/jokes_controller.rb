@@ -25,7 +25,7 @@ class JokesController < ApplicationController
     comment.save
     comment.to_json
     end
-
+    
     # patch '/jokes/:joke_id/comment' do 
     #   joke = Joke.find_by_id(params[:id]) 
     #   comment = Comment.update(joke_id:jokes.id, 
@@ -39,16 +39,17 @@ class JokesController < ApplicationController
       joke.to_json
     end
 
+    # patch '/jokes/:joke_id/comment' do 
+    #   joke = Joke.find_by_id(params[:id]) 
+    #   comment = Comment.update(joke_id:jokes.id, 
+    #   comment:params[:comment])
+    #   comment.to_json
+    # end
+
   post '/jokes/new' do 
     joke = Joke.create(joke:params[:joke]) 
     joke.to_json
     end
-
-  patch '/jokes' do 
-    # comment: params[:comment], 
-    # rating: params[:rating], 
-    # user_id: 'by' +params[:user_id]
-  end
 
   delete '/jokes/:id' do 
     jokes = Joke.find(params[:id])
