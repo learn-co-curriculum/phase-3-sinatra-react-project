@@ -9,6 +9,12 @@ class PaintingsController < ApplicationController
     paintings.to_json(include: :artist)
   end
 
+ get '/paintings/:id' do
+    # pry
+    paintings = Painting.where(:artist_id => params[:id])
+    paintings.to_json(include: :artist)
+  end
+
 #  this is the add from the Painting Form 
 post '/paintings' do
   painting = Painting.create(params)

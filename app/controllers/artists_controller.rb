@@ -20,6 +20,12 @@ class ArtistsController < ApplicationController
     artists = Artist.all
     artists.to_json(include: :paintings)
   end
+  
+    get '/artists/:id/paintings' do
+      # pry
+      paintings = Painting.where(:artist_id => params[:id])
+      paintings.to_json(include: :artist)
+    end
 
   #artists show route (owners) this is a dynamic route
   # getting the request, parsing it, in the params hash and key of id and value is 4 or whatever the id is
@@ -28,3 +34,4 @@ class ArtistsController < ApplicationController
     artist.to_json(include: :paintings)
     end 
   end
+
