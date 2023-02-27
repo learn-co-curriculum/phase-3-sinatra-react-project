@@ -1,0 +1,17 @@
+current directory: /home/randy/Desktop/Development/Projects/Phase-3-Project/phase-3-sinatra-react-project/project-server/vendor/bundle/ruby/2.7.0/gems/thin-1.8.1/ext/thin_parser
+/usr/share/rvm/rubies/ruby-2.7.4/bin/ruby -I /usr/share/rvm/rubies/ruby-2.7.4/lib/ruby/site_ruby/2.7.0 extconf.rb
+checking for main() in -lc... yes
+creating Makefile
+
+current directory: /home/randy/Desktop/Development/Projects/Phase-3-Project/phase-3-sinatra-react-project/project-server/vendor/bundle/ruby/2.7.0/gems/thin-1.8.1/ext/thin_parser
+make DESTDIR\= sitearchdir\=./.gem.20230227-47521-15zck2c sitelibdir\=./.gem.20230227-47521-15zck2c clean
+
+current directory: /home/randy/Desktop/Development/Projects/Phase-3-Project/phase-3-sinatra-react-project/project-server/vendor/bundle/ruby/2.7.0/gems/thin-1.8.1/ext/thin_parser
+make DESTDIR\= sitearchdir\=./.gem.20230227-47521-15zck2c sitelibdir\=./.gem.20230227-47521-15zck2c
+compiling parser.c
+compiling thin.c
+linking shared-object thin_parser.so
+
+current directory: /home/randy/Desktop/Development/Projects/Phase-3-Project/phase-3-sinatra-react-project/project-server/vendor/bundle/ruby/2.7.0/gems/thin-1.8.1/ext/thin_parser
+make DESTDIR\= sitearchdir\=./.gem.20230227-47521-15zck2c sitelibdir\=./.gem.20230227-47521-15zck2c install
+/usr/bin/install -m 0755 thin_parser.so ./.gem.20230227-47521-15zck2c

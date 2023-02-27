@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+libdir = "#{File.expand_path(File.dirname(File.dirname(__FILE__)))}/lib"
+$LOAD_PATH.unshift libdir unless $LOAD_PATH.include?(libdir)
+
+require 'rerun'
+require 'optparse'
+
+options = Rerun::Options.parse config_file: ".rerun"
+
+if options and options[:verbose]
+  puts "\nrerun options:\n\t#{options}"
+end
+
+exit if options.nil? or options[:cmd].nil? or options[:cmd].empty?
+
+Rerun::Runner.keep_running(options[:cmd], options)
