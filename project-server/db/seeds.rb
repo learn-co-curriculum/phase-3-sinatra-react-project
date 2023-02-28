@@ -8,16 +8,19 @@ categories = [
     { name: "Household Items" }
   ]
   
+#   this is for looping over the categories
 #   categories.each do |category|
 #     Category.create(name: category[:name])
 #   end
   
+# incomplete but here is where we add name, img, location, category_id
 #   donations = [
 #     { name: "Donation 1", image: "https://images.pexels.com/photos/9090746/pexels-photo-9090746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", location: "Location 1", category_id: 1 },
 #     { name: "Donation 2", image: "https://images.pexels.com/photos/9090747/pexels-photo-9090747.jpeg?cs=srgb&dl=pexels-lagos-food-bank-initiative-9090747.jpg&fm=jpg", location: "Location 2", category_id: 2 },
 #     { name: "Donation 3", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf-5LppqufZjDKASkEFbkxnTtK8BtoeVHIshrWh67M6g3X8KrG4tbJZHOseEZc-N00LQE&usqp=CAU", location: "Location 3", category_id: 3 }
 #   ]
   
+#  seed a donations table in a database with some initial data. or iterates through each donation hash and creates a corresponding Donation object in the database by calling the create method with the attributes from the hash.
 #   donations.each do |donation|
 #     Donation.create(
 #       name: donation[:name], 
@@ -68,10 +71,14 @@ charities = [
         description: charity[:description],
         year_established: charity[:year_established]
       )
-  end 
-    
-  
-#   category = Category.find_by(name: "Food")
-#   category.charities << charity
+  end
+
+# Charity.create(charities)
+
+#  This will add the charity with name "Pandemic Chow" to the category with name "Food"
+# category = Category.find_by(name: "Food")
+# charity = Charity.find_by(name: "Pandemic Chow")
+# category.charities << charity
+
 
 puts "✅ Done seeding!"
