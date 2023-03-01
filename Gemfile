@@ -36,6 +36,8 @@ gem "require_all"
 
 gem 'faker'
 
+gem 'psych', '< 4'
+
 # These gems will only be used when we are running the application locally
 group :development do
   gem "pry"
