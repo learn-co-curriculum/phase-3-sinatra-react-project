@@ -31,6 +31,9 @@ gem "rake", "~> 13.0"
 # Provides functionality to interact with a SQLite3 database
 gem "sqlite3", "~> 1.4"
 
+
+gem "webrick", "~> 1.8.1"
+
 # Require all files in a folder
 gem "require_all", "~> 3.0"
 
