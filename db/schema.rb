@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_28_201220) do
+ActiveRecord::Schema.define(version: 2023_03_01_104014) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
@@ -21,38 +21,19 @@ ActiveRecord::Schema.define(version: 2023_02_28_201220) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "domestic_cleanings", force: :cascade do |t|
-    t.string "image_url"
-    t.string "name"
-    t.integer "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "fumigations", force: :cascade do |t|
-    t.string "image_url"
-    t.string "name"
-    t.integer "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "laundry_services", force: :cascade do |t|
-    t.string "image_url"
-    t.string "name"
-    t.integer "quantity"
-    t.integer "wash_price"
-    t.integer "dry_price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "services", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "image_url"
+  end
+
+  create_table "work_services", force: :cascade do |t|
     t.integer "worker_id"
+    t.integer "service_id"
     t.integer "client_id"
-    t.integer "laundry_service_id"
-    t.integer "domestic_cleaning_id"
-    t.integer "fumigation_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
