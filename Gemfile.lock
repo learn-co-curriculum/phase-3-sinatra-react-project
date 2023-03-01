@@ -86,6 +86,7 @@ GEM
     tilt (2.1.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    webrick (1.8.1)
     zeitwerk (2.6.7)
 
 PLATFORMS
@@ -109,6 +110,7 @@ DEPENDENCIES
   sinatra-activerecord (~> 2.0)
   sqlite3 (~> 1.4)
   thin (~> 1.8)
+  webrick (~> 1.8.1)
 
 BUNDLED WITH
    2.2.23

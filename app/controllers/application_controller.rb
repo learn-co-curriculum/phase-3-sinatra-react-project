@@ -50,8 +50,6 @@ class ApplicationController < Sinatra::Base
   get "/todos/:id" do
     todo = Todo.find(params[:id])
     todo.to_json
-<<<<<<< HEAD
-=======
   end
 
 
