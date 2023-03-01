@@ -5,6 +5,7 @@ class CreateTodos < ActiveRecord::Migration[6.1]
       t.string :description
       t.string :category
       t.string :priority
+      t.integer :user_id
     end
   end
 end
