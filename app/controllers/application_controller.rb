@@ -1,6 +1,46 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
-  
+  # GET all users
+  get '/users' do
+    User.all.to_json(only: [:id, :name, :image_url])
+  end
+  # GET a specific user by ID
+  get '/users/:id' do |id|
+    user = User.find_by(id: id)
+    if user
+      user.to_json(only: [:id, :name, :image_url])
+    else
+      status 404
+    end
+  end
+  # CREATE a new user
+  post '/users' do
+    user_data = JSON.parse(request.body.read)
+    new_user = User.create(name: user_data['name'], image_url: user_data['image_url'])
+    status 201
+    new_user.to_json(only: [:id, :name, :image_url])
+  end
+  # UPDATE an existing user by ID
+  patch '/users/:id' do |id|
+    user = User.find_by(id: id)
+    if user
+      user_data = JSON.parse(request.body.read)
+      user.update(name: user_data['name'], image_url: user_data['image_url'])
+      user.to_json(only: [:id, :name, :image_url])
+    else
+      status 404
+    end
+  end
+  # DELETE a user by ID
+  delete '/users/:id' do |id|
+    user = User.find_by(id: id)
+    if user
+      user.destroy
+      status 204
+    else
+      status 404
+    end
+  end
   # Get all todos
   get "/todos" do
     todos = Todo.all
