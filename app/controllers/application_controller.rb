@@ -56,6 +56,11 @@ class ApplicationController < Sinatra::Base
     todo = Todo.where(priority: params[:priority])
     todo.to_json
   end
+#get by title
+  get "/todos/t/:title" do
+    todo = Todo.where(title: params[:title])
+    todo.to_json
+  end
 #create todo
   post '/todos' do
     todo = Todo.create(
