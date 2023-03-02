@@ -29,7 +29,8 @@ gem "sinatra-activerecord"
 gem "rake"
 
 # Provides functionality to interact with a SQLite3 database
-gem "sqlite3"
+# gem "sqlite3"
+
 
 # Require all files in a folder
 gem "require_all"
@@ -53,4 +54,9 @@ group :test do
   gem "rack-test"
   gem "rspec"
   gem "rspec-json_expectations"
+end
+
+group :production do
+  gem 'pg', '~> 1.4', '>= 1.4.6'
+  gem 'puma', '~> 6.1', '>= 6.1.1'
 end
