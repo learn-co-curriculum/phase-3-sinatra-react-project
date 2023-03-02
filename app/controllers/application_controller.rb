@@ -51,6 +51,11 @@ class ApplicationController < Sinatra::Base
     todo = Todo.find(params[:id])
     todo.to_json
   end
+  # Get user todo
+  get "/todos/user/:id" do
+    todo = Todo.where(user_id: params[:id])
+    todo.to_json
+  end
   #get by prority
   get "/todos/p/:priority" do
     todo = Todo.where(priority: params[:priority])
