@@ -1,12 +1,12 @@
 // GET all users
 export function getUsers() {
-    return fetch('/users')
+    return fetch('http://localhost:3000/users')
         .then(response => response.json())
 }
 
 // GET a specific user by ID
 export function getUserById(id) {
-    return fetch(`/users/${id}`)
+    return fetch(`http://localhost:3000/users/${id}`)
         .then(response => {
             if (response.status === 404) {
                 throw new Error('User not found')
@@ -17,7 +17,7 @@ export function getUserById(id) {
 
 // CREATE a new user
 export function createUser(name, imageUrl) {
-    return fetch('/users', {
+    return fetch('http://localhost:3000/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ export function createUser(name, imageUrl) {
 
 // UPDATE an existing user by ID
 export function updateUser(id, name, imageUrl) {
-    return fetch(`/users/${id}`, {
+    return fetch(`http://localhost:3000/users/${id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ export function updateUser(id, name, imageUrl) {
 
 // DELETE a user by ID
 export function deleteUser(id) {
-    return fetch(`/users/${id}`, { method: 'DELETE' })
+    return fetch(`http://localhost:3000/users/${id}`, { method: 'DELETE' })
         .then(response => {
             if (response.status === 404) {
                 throw new Error('User not found')
@@ -56,37 +56,37 @@ export function deleteUser(id) {
 
 // GET all todos
 export function getTodos() {
-    return fetch('/todos')
+    return fetch('http://localhost:3000/todos')
         .then(response => response.json())
 }
 
 // GET one todo
 export function getTodoById(id) {
-    return fetch(`/todos/${id}`)
+    return fetch(`http://localhost:3000/todos/${id}`)
         .then(response => response.json())
 }
 
 // Get user todo
 export function getUserTodos(id) {
-    return fetch(`/todos/user/${id}`)
+    return fetch(`http://localhost:3000/todos/user/${id}`)
         .then(response => response.json())
 }
 
 // get by priority
 export function getTodosByPriority(priority) {
-    return fetch(`/todos/p/${priority}`)
+    return fetch(`http://localhost:3000/todos/p/${priority}`)
         .then(response => response.json())
 }
 
 // get by title
 export function getTodosByTitle(title) {
-    return fetch(`/todos/t/${title}`)
+    return fetch(`http://localhost:3000/todos/t/${title}`)
         .then(response => response.json())
 }
 
 // create todo
 export function createTodo(title, description, category, priority, userId) {
-    return fetch('/todos', {
+    return fetch('http://localhost:3000/todos', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -104,7 +104,7 @@ export function createTodo(title, description, category, priority, userId) {
 
 // update todo
 export function updateTodo(id, title, description, category, priority, userId) {
-    return fetch(`/todos/${id}`, {
+    return fetch(`http://localhost:3000/todos/${id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
@@ -122,7 +122,7 @@ export function updateTodo(id, title, description, category, priority, userId) {
 
 // delete todo
 export function deleteTodo(id) {
-    return fetch(`/todos/${id}`, { method: 'DELETE' })
+    return fetch(`http://localhost:3000/todos/${id}`, { method: 'DELETE' })
         .then(response => {
             if (response.status === 404) {
                 throw new Error('Todo not found')
