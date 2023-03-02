@@ -10,9 +10,9 @@ categories = [
   ]
   
 #   this is for looping over the categories
-#   categories.each do |category|
-#     Category.create(name: category[:name])
-#   end
+  categories.each do |category|
+    Category.create(name: category[:name])
+  end
   
 # incomplete but here is where we add name, img, location, category_id
   donations = [
