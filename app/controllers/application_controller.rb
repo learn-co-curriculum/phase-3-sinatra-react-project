@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
 
   get '/services/:id' do
     service = Service.find(params[:id])
-    service.to_json
+    service.to_json(include: :workers)
   end
 
   post '/services' do
