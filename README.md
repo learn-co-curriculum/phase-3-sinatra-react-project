@@ -10,7 +10,7 @@ by a separate **React frontend** that interacts with the database via the API.
 This backend should give the users capabilities to;
 
 1. Perform a given CRUD action on this backend over a given endpoint on specified data that this endpoint has to return
-2. Also be able to test the endpoints using postman
+2. Provide the front end with seamless data-manipulation capabilities. 
 
 # Project Setup
 
