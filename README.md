@@ -40,14 +40,24 @@ This is an example that shows how you can make to this sinatra backend using you
 ```js
 fetch("http://localhost:9292/test")
   .then((r) => r.json())
-  .then((data) => console.log(data));
+  .then((data) => console.log(data));  
 ```
+
+## Technologies
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Semantic UI React](https://img.shields.io/badge/Semantic%20UI%20React-%2335BDB2.svg?style=for-the-badge&logo=SemanticUIReact&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Ruby](https://img.shields.io/badge/ruby-%23CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white)
 
 ## Authors
 
-- [randy](https://www.github.com/randy-04)
-- [mukandalee](https://github.com/mukandalee)
-- [kenneth](https://github.com/kenneth732)
+- [@mukandalee](https://github.com/mukandalee)
+- [@kenneth](https://github.com/kenneth732)
+- [@Randy](https://www.github.com/randy-04)
 
 # License
 
