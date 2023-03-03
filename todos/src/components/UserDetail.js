@@ -1,29 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card, Button, Header, Icon } from 'semantic-ui-react';
+import { useParams } from 'react-router-dom';
 
-const UserDetail = ({ userId }) => {
+const UserDetail = () => {
   const [user, setUser] = useState({});
   const [todos, setTodos] = useState([]);
+  const { id } = useParams();
 
   useEffect(() => {
     // Get user and their todos from the API
-    axios.get(`http://localhost:4000/users/${userId}`)
+    axios.get(`http://localhost:4000/users/${id}`)
       .then(res => {
         setUser(res.data);
-        setTodos(res.data.todos);
+        return axios.get(`http://localhost:4000/todos/user/${id}`);
+      })
+      .then(res => {
+        setTodos(res.data);
       })
       .catch(err => {
         console.log(err);
       });
-  }, [userId]);
+  }, [id]);
 
-  const handleDelete = () => {
-    // Delete the user from the API and redirect to UserList component
-    axios.delete(`http://localhost:4000/users/${userId}`)
+  const handleDelete = (todoId) => {
+    // Delete the todo from the API and update the state
+    axios.delete(`http://localhost:4000/todos/${todoId}`)
       .then(res => {
-        console.log(res.data.message);
-        // redirect to UserList component
+        setTodos(todos.filter(todo => todo.id !== todoId));
       })
       .catch(err => {
         console.log(err);

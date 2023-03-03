@@ -11,19 +11,19 @@ import { Container } from 'semantic-ui-react';
 
 function App() {
   return (
-    
+
     <BrowserRouter>
-      <Routes>
-        <Container style={{ marginTop: 20 }}>
-          <Route exact path="/" component={UserList} />
-          <Route exact path="/users/new" component={UserForm} />
-          <Route exact path="/users/:id" component={UserDetail} />
-          <Route exact path="/todos/new" component={TodoForm} />
-          <Route exact path="/todos/:id" component={TodoDetail} />
-          <Route exact path='' component={TodoList}/>
-          <Route exact path='' component={EditTodoModal}/>
-        </Container>
-      </Routes>
+      <Container style={{ marginTop: 20 }}>
+        <Routes>
+          <Route exact path="/" element={<UserList />} />
+          <Route exact path="/users/new" element={<UserForm />} />
+          <Route exact path="/users/details/:id" element={<UserDetail />} />
+          <Route exact path="/todos/new" element={<TodoForm />} />
+          <Route exact path="/todos/details" element={<TodoDetail />} />
+          <Route exact path="/todos" element={<TodoList />} />
+          <Route exact path="/todos/edit" element={<EditTodoModal />} />
+        </Routes>
+      </Container>
     </BrowserRouter>
   );
 }
