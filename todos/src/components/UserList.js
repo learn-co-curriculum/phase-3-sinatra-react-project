@@ -32,7 +32,7 @@ function UserList() {
                 <Image src={user.image_url} size="tiny" rounded />
               </Table.Cell>
               <Table.Cell>
-                <Link to={`http://localhost:4000/users/${user.id}`}>View</Link>
+                <Link to={`/users/details/${user.id}`}>View</Link>
               </Table.Cell>
             </Table.Row>
           ))}
