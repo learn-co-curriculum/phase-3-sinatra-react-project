@@ -51,4 +51,8 @@ class ApplicationController < Sinatra::Base
         find_pet.to_json
   end
 
+  post "/user" do
+    new_user = User.create(JSON.parse(request.body.read))
+  end
+
 end
