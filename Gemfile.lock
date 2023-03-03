@@ -35,9 +35,12 @@ GEM
     minitest (5.14.4)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    nio4r (2.5.8)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
+    puma (6.1.1)
+      nio4r (~> 2.0)
     rack (2.2.3)
     rack-contrib (2.3.0)
       rack (~> 2.0)
@@ -96,6 +99,7 @@ DEPENDENCIES
   database_cleaner (~> 2.0)
   faker
   pry (~> 0.14.1)
+  puma
   rack-contrib (~> 2.3)
   rack-cors (~> 1.1)
   rack-test (~> 1.1)
