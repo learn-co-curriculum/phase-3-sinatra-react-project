@@ -17,4 +17,4 @@ production:
 
 deployment:
   <<: *default
-  database: db/production.sqlite3
+  database: db/deployment.sqlite3
