@@ -26,4 +26,11 @@ class ApplicationController < Sinatra::Base
     search_response = my_pets.pets.where('name LIKE ? OR breed LIKE ?', "%#{body['query']}%", "%#{body['query']}%")
     search_response.to_json
   end 
+  
+     #returns a list of all the pets in the database
+     get "/pets"  do
+      all_pets = Pet.all
+      all_pets.to_json
+    end
+
 end
