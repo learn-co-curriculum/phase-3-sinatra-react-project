@@ -43,5 +43,12 @@ class ApplicationController < Sinatra::Base
       find_pet = Pet.find(params[:id])
       find_pet.destroy
     end
+      #changes the details of a single pet
+  put "/pets/:id" do 
+    new_details = JSON.parse(request.body.read)
+        find_pet = Pet.find(params[:id])
+        find_pet.update(data)
+        find_pet.to_json
+  end
 
 end
