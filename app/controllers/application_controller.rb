@@ -38,4 +38,10 @@ class ApplicationController < Sinatra::Base
     new_pet = Pet.create(JSON.parse(request.body.read))
   end
 
+    #removes a pet from the database
+    delete "/pets/:id" do
+      find_pet = Pet.find(params[:id])
+      find_pet.destroy
+    end
+
 end

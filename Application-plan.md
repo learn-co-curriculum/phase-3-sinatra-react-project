@@ -27,6 +27,7 @@ the pets they have added. The user should also be able to:
     4.Search for an animal through its name or breed
     5.Update an animals details
     6.Delete an animal
+    7.Create a user 
 
 ### deploy ruby application 
 
