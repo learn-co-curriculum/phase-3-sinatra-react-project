@@ -1,5 +1,10 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
+
+  configure do 
+    enable :cross_origin
+  end
+
     # returns all the users
   get "/" do 
     all_users = User.all
