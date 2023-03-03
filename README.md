@@ -48,4 +48,5 @@ This app uses the following API endpoints:
 
 ## ERD
 
-![alt text]
+
+![ERD diagram ](/Erd.png)
