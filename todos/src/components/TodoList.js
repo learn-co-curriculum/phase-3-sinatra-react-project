@@ -10,7 +10,7 @@ const TodoList = ({ user }) => {
 
   useEffect(() => {
     const fetchTodos = async () => {
-      const response = await axios.get(`http://localhost:4000/users/${user.id}/todos`);
+      const response = await axios.get(`http://localhost:4000/user/${user.id}/todos`);
       setTodos(response.data);
     };
     fetchTodos();

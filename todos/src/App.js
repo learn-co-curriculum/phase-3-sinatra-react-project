@@ -21,7 +21,7 @@ function App() {
           <Route exact path="/todos/new" element={<TodoForm />} />
           <Route exact path="/todos/details" element={<TodoDetail />} />
           <Route exact path="/todos" element={<TodoList />} />
-          <Route exact path="/todos/edit" element={<EditTodoModal />} />
+          <Route exact path="/todos/edit/:id" element={<EditTodoModal />} />
         </Routes>
       </Container>
     </BrowserRouter>
