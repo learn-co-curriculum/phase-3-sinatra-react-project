@@ -20,7 +20,7 @@ class ApplicationController < Sinatra::Base
     #Searches through the list of all the pets and returns the pets that match
     post '/pets/search_all' do
       search_request = JSON.parse(request.body.read)
-      search_response = Pet.where('name LIKE ? OR breed LIKE ?', "%#{body['query']}%", "%#{body['query']}%")
+      search_response = Pet.where('name LIKE ? OR breed LIKE ?', "%#{search_request['query']}%", "%#{search_request['query']}%")
       search_response.to_json
     end 
 
