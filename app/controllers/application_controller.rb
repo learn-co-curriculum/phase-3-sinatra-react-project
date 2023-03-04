@@ -39,7 +39,7 @@ class ApplicationController < Sinatra::Base
     end
 
       #adds a new pet into the database
-  post "/pets" do
+  post "/pet" do
     new_pet = Pet.create(JSON.parse(request.body.read))
   end
 
