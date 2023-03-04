@@ -41,6 +41,7 @@ class ApplicationController < Sinatra::Base
       #adds a new pet into the database
   post "/pet" do
     new_pet = Pet.create(JSON.parse(request.body.read))
+    new_pet.to_json
   end
 
     #removes a pet from the database
@@ -58,6 +59,7 @@ class ApplicationController < Sinatra::Base
 
   post "/user" do
     new_user = User.create(JSON.parse(request.body.read))
+    new_user.to_json
   end
 
 end
