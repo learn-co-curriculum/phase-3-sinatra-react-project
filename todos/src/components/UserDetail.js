@@ -104,10 +104,10 @@ const UserDetail = () => {
   return (
     <div>
       <Header as='h2' icon textAlign='center'>
-        <Icon name='user' circular />
+        <Icon name='user' circular size='large' />
         <Header.Content>{user.name}</Header.Content>
       </Header>
-      <Button icon labelPosition='left' style={{ margin: "15px" }} onClick={handleAddModalOpen}> <Icon name='plus' /> Add Todo </Button>
+      <center>  <Button icon labelPosition='left' style={{ margin: "15px" }} onClick={handleAddModalOpen}> <Icon name='plus' /> Add Todo </Button></center>
       <Card.Group centered>
         {todos.map(todo => (
           <Card key={todo.id}>
