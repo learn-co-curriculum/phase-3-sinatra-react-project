@@ -36,13 +36,14 @@ class ProjectController < ApplicationController
       
       begin
         user= User.find_by_username(params[:username])
+        project = Project.find_by_id(params[:project_id]).users
 
         if (user.id != nil)
           member = Member.create(       
             user_id: user.id,
             project_id: params[:project_id]
           )
-          member.to_json
+          project.to_json
         end 
       rescue => e
         [422, {error: e.message}.to_json]
