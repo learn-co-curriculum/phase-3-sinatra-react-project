@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import EditTodoModal from './EditTodoModal';
 import 'semantic-ui-css/semantic.min.css';
-import { Card, Button, Header, Icon, Modal, Form } from 'semantic-ui-react';
+import { Card, Button, Header, Icon } from 'semantic-ui-react';
 import { useParams } from 'react-router-dom';
+import TodoForm from './TodoForm';
 
-const UserDetail = ({ userId }) => {
+const UserDetail = () => {
   const [user, setUser] = useState({});
   const [todos, setTodos] = useState([]);
   const [editModalOpen, setEditModalOpen] = useState(false);
+  const [addModalOpen, setAddModalOpen] = useState(false);
   const [editingTodo, setEditingTodo] = useState({});
   const { id } = useParams()
+  const userId = parseInt(id);
+
 
   useEffect(() => {
     // Get user and their todos from the API
@@ -66,6 +71,35 @@ const UserDetail = ({ userId }) => {
         console.log(err);
       });
   };
+  const handleAddModalOpen = () => {
+    setAddModalOpen(true);
+  }
+
+  const handleAddModalClose = () => {
+
+    setAddModalOpen(false);
+  }
+
+  const handleAddTodoSubmit = ({ title, description, category, priority }) => {
+    const todoNew = {
+      user_id: userId,
+      title: title,
+      description: description,
+      category: category,
+      priority: priority
+    };
+
+    axios.post(`http://localhost:4000/todos`, todoNew)
+      .then(res => {
+        console.log(res.data.message);
+        setTodos([...todos, res.data]);
+        handleAddModalClose();
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
 
   return (
     <div>
@@ -73,6 +107,7 @@ const UserDetail = ({ userId }) => {
         <Icon name='user' circular />
         <Header.Content>{user.name}</Header.Content>
       </Header>
+      <Button icon labelPosition='left' style={{ margin: "15px" }} onClick={handleAddModalOpen}> <Icon name='plus' /> Add Todo </Button>
       <Card.Group centered>
         {todos.map(todo => (
           <Card key={todo.id}>
@@ -95,75 +130,20 @@ const UserDetail = ({ userId }) => {
           </Card>
         ))}
       </Card.Group>
-      <Modal
-        open={editModalOpen}
-        onClose={handleEditModalClose}
-        closeIcon
-      >
-        <Modal.Header>Edit Todo</Modal.Header>
-        <Modal.Content>
-          <Form onSubmit={handleEditTodoSubmit}>
-            <Form.Field>
-              <label>Title</label>
-              <input
-                type='text'
-                value={editingTodo.title}
-                onChange={(e) =>
-                  setEditingTodo({
-                    ...editingTodo,
-                    title: e.target.value,
-                  })
-                }
-              />
-            </Form.Field>
-            <Form.Field>
-              <label>Description</label>
-              <input
-                type='text'
-                value={editingTodo.description}
-                onChange={(e) =>
-                  setEditingTodo({
-                    ...editingTodo,
-                    description: e.target.value,
-                  })
-                }
-              />
-            </Form.Field>
-            <Form.Field>
-              <label>Category</label>
-              <input
-                type='text'
-                value={editingTodo.category}
-                onChange={(e) =>
-                  setEditingTodo({
-                    ...editingTodo,
-                    category: e.target.value,
-                  })
-                }
-              />
-            </Form.Field>
-            <Form.Field>
-              <label>Priority</label>
-              <input
-                type='text'
-                value={editingTodo.priority}
-                onChange={(e) =>
-                  setEditingTodo({
-                    ...editingTodo,
-                    priority: e.target.value,
-                  })
-                }
-              />
-            </Form.Field>
-            <Button type='submit' color='green'>
-              Save
-            </Button>
-            <Button onClick={handleEditModalClose} color='red'>
-              Cancel
-            </Button>
-          </Form>
-        </Modal.Content>
-      </Modal>
+      {/*  modal to open editing */}
+
+      <EditTodoModal
+        editModalOpen={editModalOpen}
+        handleEditModalClose={handleEditModalClose}
+        setEditingTodo={setEditingTodo}
+        editingTodo={editingTodo}
+        handleEditTodoSubmit={handleEditTodoSubmit}
+      />
+      <TodoForm
+        addModalOpen={addModalOpen}
+        handleAddModalClose={handleAddModalClose}
+        handleAddTodoSubmit={handleAddTodoSubmit}
+      />
     </div>);
 };
 
