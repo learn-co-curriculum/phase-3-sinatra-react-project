@@ -1,5 +1,7 @@
 require_relative "./config/environment"
 
+bundle exec rake db:migrate
+
 # Allow CORS (Cross-Origin Resource Sharing) requests
 use Rack::Cors do
   allow do
