@@ -28,8 +28,9 @@ gem "sinatra-activerecord", "~> 2.0"
 # https://github.com/ruby/rake
 gem "rake", "~> 13.0"
 
-# Provides functionality to interact with a SQLite3 database
-gem "sqlite3", "~> 1.4"
+
+
+
 
 
 gem "webrick", "~> 1.8.1"
@@ -42,12 +43,16 @@ gem "faker", "~> 3.1.1"
 # These gems will only be used when we are running the application locally
 group :development do
   gem "pry", "~> 0.14.1"
-
+# Provides functionality to interact with a SQLite3 database
+# gem "sqlite3", "~> 1.4"
   # Automatically reload when there are changes
   # https://github.com/alexch/rerun
   gem "rerun"
 end
-
+group :production do
+ gem 'pg', '~> 1.4', '>= 1.4.6'
+ gem 'puma', '~> 6.1', '>= 6.1.1'
+end
 # These gems will only be used when we are running tests
 group :test do
   gem "database_cleaner", "~> 2.0"
