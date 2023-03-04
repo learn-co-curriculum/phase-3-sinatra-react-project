@@ -5,7 +5,7 @@ require "sinatra/activerecord/rake"
 
 desc "Start the server"
 task :server do
-    exec "rerun -b 'rackup config.ru' "
+    exec 'rackup config.ru' 
 end
 
 desc "Start the console"
