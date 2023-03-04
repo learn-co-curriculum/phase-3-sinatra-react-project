@@ -53,7 +53,7 @@ class ApplicationController < Sinatra::Base
   put "/pets/:id" do 
     new_details = JSON.parse(request.body.read)
         find_pet = Pet.find(params[:id])
-        find_pet.update(data)
+        find_pet.update(new_details)
         find_pet.to_json
   end
 
