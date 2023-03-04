@@ -5,6 +5,7 @@ require "sinatra/activerecord/rake"
 
 desc "Start the server"
 task :server do
+    exec rake db:migrate
     exec 'rackup config.ru' 
 end
 
