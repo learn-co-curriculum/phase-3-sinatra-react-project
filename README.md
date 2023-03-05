@@ -7,6 +7,3 @@
   The front-end react application has also been deployed to vercel and is accessible through this link: <br>
   [https://phase-3-project-pet-finder.vercel.app]
   <br>
-
-
-## 
