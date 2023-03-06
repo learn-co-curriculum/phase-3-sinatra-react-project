@@ -13,9 +13,9 @@ test:
 
 production:
   adapter: postgresql
-  database: 'railway'
-  username: 'postgres'
-  password: 'ceWdYrBBimRvEngXXDQq'
-  host: 'containers-us-west-57.railway.app'
-  port: '6796'
+  database: railway
+  username: postgres
+  password: z0IvPvehQX0R1zYfehZI
+  host: containers-us-west-57.railway.app
+  port: 7208
   pool: 5

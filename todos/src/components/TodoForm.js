@@ -27,19 +27,19 @@ const TodoForm = ({ addModalOpen, handleAddModalClose, handleAddTodoSubmit }) =>
         <Form onSubmit={(e) => handleSubmit(e)}>
           <Form.Field>
             <label>Title</label>
-            <input placeholder='Title' value={title} onChange={(e) => setTitle(e.target.value)} />
+            <input placeholder='Title' required value={title} onChange={(e) => setTitle(e.target.value)} />
           </Form.Field>
           <Form.Field>
             <label>Description</label>
-            <input placeholder='Description' value={description} onChange={(e) => setDescription(e.target.value)} />
+            <input placeholder='Description' required value={description} onChange={(e) => setDescription(e.target.value)} />
           </Form.Field>
           <Form.Field>
             <label>Category</label>
-            <input placeholder='Category' value={category} onChange={(e) => setCategory(e.target.value)} />
+            <input placeholder='Category' required value={category} onChange={(e) => setCategory(e.target.value)} />
           </Form.Field>
           <Form.Field>
             <label>Priority</label>
-            <input placeholder='Priority' value={priority} onChange={(e) => setPriority(e.target.value)} />
+            <input placeholder='Priority' required value={priority} onChange={(e) => setPriority(e.target.value)} />
           </Form.Field>
           <Button type='submit'>Add</Button>
         </Form>
