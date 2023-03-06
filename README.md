@@ -4,8 +4,8 @@ This is a web application that allows users to create and manage a list of tasks
 
 ## Installation
 
-To install the app, clone this repository
-live link <a href="https://phase-3-sinatra-react-project-production-dd92.up.railway.app/">Link</a>
+<p>To install the app, clone this repository</p>
+<p>live link <a href="https://phase-3-sinatra-react-project-production-dd92.up.railway.app/">'https://phase-3-sinatra-react-project-production-dd92.up.railway.app/'</a></p>
 ### BackEnd Setup
 
 <ol>
