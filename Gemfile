@@ -44,7 +44,7 @@ gem "faker", "~> 3.1.1"
 group :development do
   gem "pry", "~> 0.14.1"
 # Provides functionality to interact with a SQLite3 database
-  gem "sqlite3", "~> 1.4"
+  # gem "sqlite3", "~> 1.4"
   # Automatically reload when there are changes
   # https://github.com/alexch/rerun
   gem "rerun"

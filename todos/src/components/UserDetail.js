@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import EditTodoModal from './EditTodoModal';
 import 'semantic-ui-css/semantic.min.css';
-import { Card, Button, Header, Icon } from 'semantic-ui-react';
+import { Card, Button, Header, Icon, Image } from 'semantic-ui-react';
 import { useParams } from 'react-router-dom';
 import TodoForm from './TodoForm';
 
@@ -104,7 +104,7 @@ const UserDetail = () => {
   return (
     <div>
       <Header as='h2' icon textAlign='center'>
-        <Icon name='user' circular size='large' />
+      <Image src={user.image_url} avatar />
         <Header.Content>{user.name}</Header.Content>
       </Header>
       <center>  <Button icon labelPosition='left' style={{ margin: "15px" }} onClick={handleAddModalOpen}> <Icon name='plus' /> Add Todo </Button></center>
