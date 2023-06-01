@@ -39,3 +39,23 @@ puts 'NO VACANT UNITS'
 
 
 puts "✅ Done seeding!"
+
+
+#maintreq should be join table (belong to owner, belong to unit). 
+
+#newmaintreq should have owner ID and unit ID.
+
+
+#as user, I am manager. first, i can see an overview of current units. 
+    # - lets add in a column for owner name, to the right of Owner ID in units overview. 
+    #from the unit overview, I can see which unit has an open request. 
+
+#in open reqs, I can 
+    #see all info about requests, inlcluding tenant and owner
+    #delete a request (in case of mistake, etc.)
+    #update the open request to closed - once this is done I should no longer see the request (as it has been marked closed) 
+            #this means that open_req boolean needs to be in maintreq, not in unit.
+
+
+    #in all (past) requests, i can
+        #see all requests, including those currently open and reqs that have been closed. 
