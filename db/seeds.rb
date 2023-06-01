@@ -45,6 +45,9 @@ puts "✅ Done seeding!"
 
 #newmaintreq should have owner ID and unit ID.
 
+#going to have to review migrations, etc. in order to fix some things here. 
+
+#date closed should be null on open reqs. this will be changed when the user marks as closed on the front end.
 
 #as user, I am manager. first, i can see an overview of current units. 
     # - lets add in a column for owner name, to the right of Owner ID in units overview. 
@@ -55,6 +58,7 @@ puts "✅ Done seeding!"
     #delete a request (in case of mistake, etc.)
     #update the open request to closed - once this is done I should no longer see the request (as it has been marked closed) 
             #this means that open_req boolean needs to be in maintreq, not in unit.
+        #update actual cost - we make note of expected cost while subbing form, and actual cost at time of closing the open request.
 
 
     #in all (past) requests, i can
