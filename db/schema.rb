@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 2023_01_03_235355) do
     t.string "description"
     t.float "expected_cost"
     t.float "actual_cost"
-    t.date "date_opened"
-    t.date "date_closed"
+    t.string "date_opened"
+    t.string "date_closed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
