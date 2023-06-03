@@ -1,5 +1,7 @@
 class MaintenanceRequest < ActiveRecord::Base
 
+    #this is a test
+
     belongs_to :unit
     has_many :owners, through: :units
 
