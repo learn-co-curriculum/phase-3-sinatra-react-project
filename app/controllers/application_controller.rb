@@ -1,8 +1,9 @@
+require 'app/models/user.rb'
+  require 'app/models/message.rb'
+  
+
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
-  require './models/user'
-  require './models/message'
-  
   # 
   get "/api/users" do
     user = User.new(name: params[:name])
@@ -31,7 +32,7 @@ class ApplicationController < Sinatra::Base
      else
       # Handle validation errors or either failure cases
      end
-
+    end
 end
 
 
