@@ -5,6 +5,7 @@ class CreateMessages < ActiveRecord::Migration[6.1]
       t.integer :from_number
       t.integer :to_number
       t.string :message_text
+      t.timestamps null: false
     end
       
   end
