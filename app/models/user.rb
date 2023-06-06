@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-    has_many :meassages
+    has_many :messages
 end
