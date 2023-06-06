@@ -15,7 +15,8 @@ class ApplicationController < Sinatra::Base
 
 # retrieve messages for a specific user
   get "/api/users/:user_id/messages" do
-    user = users.find(params[:user_id])
+    user = User.find(params[:user_id])
+    messages = user.messages
     users.to_json
   end
 
@@ -24,6 +25,12 @@ class ApplicationController < Sinatra::Base
     message = Message.find(params[:message_id])
 
      if message.updated(content: params[:content])
+
+      # Return a JSON response, redirect, or render a template
+
+     else
+      # Handle validation errors or either failure cases
+     end
 
 end
 
