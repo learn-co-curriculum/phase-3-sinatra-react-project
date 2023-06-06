@@ -1,9 +1,6 @@
 puts "🌱 Seeding spices..."
 
 # Seed your database here
-
-puts "✅ Done seeding!"
-
 10.times do 
     User.create(
     user_id: Faker::User.user_id,
@@ -13,4 +10,7 @@ puts "✅ Done seeding!"
 )
 end
 
-puts "Done seeding!"
+puts "✅ Done seeding!"
+
+
+
