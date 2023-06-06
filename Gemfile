@@ -29,10 +29,13 @@ gem "sinatra-activerecord", "~> 2.0"
 gem "rake", "~> 13.0"
 
 # Provides functionality to interact with a SQLite3 database
-gem "sqlite3", "~> 1.4"
+# gem "sqlite3", "~> 1.4"
+gem "pg"
 
 # Require all files in a folder
 gem "require_all", "~> 3.0"
+
+gem "faker"
 
 # These gems will only be used when we are running the application locally
 group :development do
@@ -50,3 +53,13 @@ group :test do
   gem "rspec", "~> 3.10"
   gem "rspec-json_expectations", "~> 2.2"
 end
+
+
+# group :development do
+#    gem 'sqlite3'
+# end
+
+# group :production do
+#    gem 'pg'
+#    gem 'activerecord-postgresql-adapter'
+# end
