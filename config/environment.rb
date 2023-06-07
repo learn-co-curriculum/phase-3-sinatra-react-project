@@ -8,3 +8,4 @@ Bundler.require(:default, ENV['RACK_ENV'])
 
 # Require in all files in 'app' directory
 require_all 'app'
+require 'sinatra/activerecord'
