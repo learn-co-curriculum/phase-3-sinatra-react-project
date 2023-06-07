@@ -1,6 +1,3 @@
-require '/models/user'
-require '/models/message'
-
 class ApplicationController < Sinatra::Base
   before do
     # Implement user authentication logic here (e.g., checking authentication token)
@@ -16,13 +13,8 @@ class ApplicationController < Sinatra::Base
     message = user.messages.create(text: params[:text])
     message.to_json
   end
-<<<<<<< HEAD
 
 end 
 
-=======
- 
-end
->>>>>>> 079dcc4c82dec2b87b2294a3c85c901bc93c97c6
 
 
