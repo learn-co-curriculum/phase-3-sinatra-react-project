@@ -1,5 +1,5 @@
-require '/models/user'
-require '/models/message'
+# require '/models/user'
+# require '/models/message'
 
 class ApplicationController < Sinatra::Base
   before do
