@@ -19,31 +19,26 @@ class ApplicationController < Sinatra::Base
   post '/users' do
   end
 
-  post '/messages' do
     # Create a new message record based on the request parameters
-    message = Message.new(
-      message_id: params[:message_id],
-      from_number: params[:from_number],
-      to_number: params[:to_number],
-      user_id: params[:user_id],
-      message_text: params[:message_text]
-    )
-  
-    # Save the message record to the database
-    if message.save
-      status 201 # Created
-      json message
-    else
-      status 400 # Bad Request
-      json error: message.errors.full_messages
+    post '/messages' do
+      message = Message.create(
+        message_text: params[:message_text],
+        user_id: params[:user_id],
+        from_number: params[:from_number],
+        to_number: params[:to_number],
+        created_at: params[:created_at],
+        updated_at:params[:updated_at]
+      )
+      message.to_json
     end
-  end
+   
 
-
-
-  patch '/messages' do
-    user = User.find_by(id: params[:user_id])
-    message = user.messages.create(text: params[:text])
+ patch '/messages/:id' do
+    message = Message.find(params[:id])
+    message.update(
+      message_text: params[:message_text],
+      user_id: params[:user_id]
+    )
     message.to_json
   end
 
