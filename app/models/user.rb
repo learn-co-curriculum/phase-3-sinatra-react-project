@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
     has_many :messages
 
-     # Validation rules
-  validates :username, presence: true, uniqueness: true
-  validates :password, presence: true, length: { minimum: 6 }
+#      # Validation rules
+#   validates :username, presence: true, uniqueness: true
+#   validates :password, presence: true, length: { minimum: 6 }
 
   # Authenticate user with password
   def authenticate(password)
