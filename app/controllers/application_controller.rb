@@ -6,8 +6,6 @@ class ApplicationController < Sinatra::Base
     # Implement user authentication logic here (e.g., checking authentication token)
   end
 
-  # controllers/message.rb
-
   get '/messages' do
     messages = Message.all
     messages.to_json
