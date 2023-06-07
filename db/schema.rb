@@ -17,18 +17,14 @@ ActiveRecord::Schema.define(version: 2023_06_06_100623) do
     t.integer "from_number"
     t.integer "to_number"
     t.string "message_text"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "user_id"
-    t.string "message_id"
     t.string "first_name"
     t.string "last_name"
     t.string "avatar"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
