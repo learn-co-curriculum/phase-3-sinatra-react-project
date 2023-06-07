@@ -11,5 +11,5 @@ class ApplicationController < Sinatra::Base
     exercises.to_json
   end
 
-
+ 
 end
