@@ -41,6 +41,11 @@ group :development do
   # Automatically reload when there are changes
   # https://github.com/alexch/rerun
   gem "rerun"
+
+  # Faker, a port of Data::Faker from Perl,
+  # is used to easily generate fake data: names, addresses, phone numbers, etc.
+  # https://github.com/faker-ruby/faker
+  gem "faker"
 end
 
 # These gems will only be used when we are running tests
