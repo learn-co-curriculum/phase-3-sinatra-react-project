@@ -97,6 +97,8 @@ After creating the project locally, you should also
 [create a repository on GitHub][create repo] to host your repo and help
 collaborate, if you're working with a partner.
 
+Heres a link to My front end [front end]
+
 ### Fetch Example
 
 Your React app should make fetch requests to your Sinatra backend! Here's an
@@ -133,6 +135,7 @@ fetch("http://localhost:9292/test")
 
 [create-react-app]: https://create-react-app.dev/docs/getting-started
 [create repo]: https://docs.github.com/en/get-started/quickstart/create-a-repo
+[front end]: https://github.com/Naulikha/phase-3-sinatra-react-project-front-end.git
 [dbdiagram.io]: https://dbdiagram.io/
 [postman download]: https://www.postman.com/downloads/
 [network tab]: https://developer.chrome.com/docs/devtools/network/
