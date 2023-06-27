@@ -4,3 +4,4 @@ class Project < ActiveRecord::Base
     validates :name, presence: true, uniqueness: true
     # rollbacks transaction if project title reused
 end
+

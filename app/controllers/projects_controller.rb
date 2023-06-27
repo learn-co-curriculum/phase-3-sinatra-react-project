@@ -12,7 +12,8 @@ class ProjectsController < ApplicationController
 
     post "/projects" do
         # binding.pry
-        project = Project.create(params)
+        project = Project.create(params) 
+    # new - needs save to db, .create both at the same time
         if project.save
             project.to_json
         else
