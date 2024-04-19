@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+    /* -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; */
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 17.5pt;
+  background-image: url("https://webdesigndev.com/wp-content/uploads/2020/11/Old-Papyrus.jpg.webp");
+  background-size: cover;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.app {
+  text-align: center;
+}
+
+img {
+  max-width: 700px;
+  height: 700px;
+  padding: 1px;
+  margin-top: 150px;
+  margin-left: 20px;
+  justify-content: center;
+}
+
+#card {
+  text-align: left;
+  display: flex;
+}
+#info {
+  margin-left: 250px;
+  flex: 1;
+  max-width: 350px;
+  margin-right: 100px;
+}
+
+#image {
+  margin-right: 100px;
+
+}
+
+/* buttons */
+.fancy-btn  {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.fancy-btn :hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.fancy-btn :focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
