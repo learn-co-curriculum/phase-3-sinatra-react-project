@@ -1,0 +1,14 @@
+# TODO: stop using symbols here once we no longer support Ruby 2.7 and can rely on symbolize_names
+:sqlite3:
+  # checksum verified by first checking the published sha3(256) checksum against https://sqlite.org/download.html:
+  #
+  # $ sha3sum -a 256 ports/archives/sqlite-autoconf-3410000.tar.gz
+  # d783ab44a2b44394331d392b8b8d4d2ea4964cbb2befc7c6c649bcfbdb3c9ffe  ports/archives/sqlite-autoconf-3410000.tar.gz
+  #
+  # $ sha256sum ports/archives/sqlite-autoconf-3410000.tar.gz
+  # 49f77ac53fd9aa5d7395f2499cb816410e5621984a121b858ccca05310b05c70  ports/archives/sqlite-autoconf-3410000.tar.gz
+  #
+  :version: "3.41.0"
+  :files:
+    - :url: "https://sqlite.org/2023/sqlite-autoconf-3410000.tar.gz"
+      :sha256: "49f77ac53fd9aa5d7395f2499cb816410e5621984a121b858ccca05310b05c70"
